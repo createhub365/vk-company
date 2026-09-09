@@ -1,0 +1,20 @@
+.details {
+  min-width: 0;
+}
+
+.link {
+  max-width: 100%;
+  align-items: flex-start;
+  color: var(--navy);
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: .2em;
+  color: var(--teal);
+}
+
+.value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

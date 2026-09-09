@@ -1,0 +1,3 @@
+import "server-only";import { createPrivilegedClient } from "@/lib/supabase/admin";
+export async function adminRows(table:string,select:string="*",limit=50){const db=createPrivilegedClient();if(!db)return[];const{data,error}=await db.from(table).select(select).order("created_at",{ascending:false}).limit(limit);if(error)return[];return(data||[])as unknown as Record<string,unknown>[];}
+export async function count(table:string,filter?:[string,string]){const db=createPrivilegedClient();if(!db)return 0;let query=db.from(table).select("id",{count:"exact",head:true});if(filter)query=query.eq(filter[0],filter[1]);const{count}=await query;return count||0;}
