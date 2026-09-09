@@ -1,0 +1,5 @@
+import Link from "next/link";
+export type Column={key:string;label:string;render?:(row:Record<string,unknown>)=>React.ReactNode};
+export function DataTable({rows,columns,empty="No records yet."}:{rows:Record<string,unknown>[];columns:Column[];empty?:string}){return <div className="data-card">{rows.length===0?<div className="empty">{empty}</div>:<table className="data-table"><thead><tr>{columns.map(column=><th key={column.key}>{column.label}</th>)}</tr></thead><tbody>{rows.map((row,index)=><tr key={String(row.id||index)}>{columns.map(column=><td key={column.key}>{column.render?column.render(row):String(row[column.key]??"—")}</td>)}</tr>)}</tbody></table>}</div>}
+export const statusColumn:Column={key:"status",label:"Status",render:(row)=><span className="pill">{String(row.status).replaceAll("_"," ")}</span>};
+export const referenceColumn:Column={key:"reference",label:"Reference",render:(row)=><Link className="text-link" href="#">{String(row.reference||row.public_tracking_code||"—")}</Link>};
