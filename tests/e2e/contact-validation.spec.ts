@@ -20,7 +20,7 @@ async function fillContact(page: Page) {
   await page.goto("/contact");
   await page.getByLabel("Name", { exact: true }).fill("Test Customer");
   await page.getByLabel("Email", { exact: true }).fill("customer@example.com");
-  await page.getByLabel("Subject", { exact: true }).fill("Shipment question");
+  await page.getByLabel("Subject", { exact: true }).selectOption("Shipment Support");
   await page.getByLabel("Message", { exact: true }).fill("Please explain the shipment route.");
 }
 
@@ -50,7 +50,9 @@ test("invalid Email gets its own error and focus without any submission request"
 test("Subject and Message minimum errors focus the first invalid field and retain text", async ({ page }) => {
   const requests = await interceptSubmissions(page);
   await fillContact(page);
-  await page.getByLabel("Subject", { exact: true }).fill("Hi");
+  await page.getByLabel("Subject", { exact: true }).evaluate((element: HTMLSelectElement) => {
+    element.add(new Option("Hi", "Hi")); element.value = "Hi";
+  });
   await page.getByLabel("Message", { exact: true }).fill("Hi");
   await page.getByRole("button", { name: "Send message", exact: true }).click();
   await expect(page.locator("#contact-subject-error")).toHaveText("Enter a subject with at least 3 characters.");

@@ -25,7 +25,7 @@ Local production build and Chromium only; no live deployment was tested. The in-
 - Independent fresh browser contexts at 768 × 1024, 1440 × 900, 390 × 844, and 360 × 800: all passed. Mobile contexts used touch emulation and device pixel ratio 3; desktop/tablet used ratio 1.
 - Resized an already loaded page 1440 → 768 → 390 → 360 → 1440 without navigation: all five checks passed.
 - All images decoded within the existing five-second load-check bound. Background filled the container; no horizontal overflow or foreground clipping was observed. The existing full-background cover crop was preserved.
-- Both hero links passed hit testing and navigated to `/get-a-quote` and `/track` from every fresh viewport. No forms were submitted.
+- The hero quote link passed hit testing and navigated to `/get-a-quote` from every fresh viewport. No forms were submitted.
 - Observed layout-shift total was zero during the measured load/resize windows, including a 300ms settling observation after image decode; this is not a field-performance guarantee.
 - No failed hero-resource response or uncaught browser exception was captured during final diagnostic verification.
 - `npx playwright test --config=test-results/hero-loading.config.ts`: **2 passed**, running the existing desktop/mobile `visual.spec.ts` unchanged, including the previously failing 768px assertion. No assertions were weakened. Its existing load/decode checks already guard the reported failure; no speculative application fix or new failure-specific test was added.

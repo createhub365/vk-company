@@ -19,6 +19,18 @@ const photographs = {
     width: 1080,
     height: 570,
   },
+  internationalReview: {
+    src: "/media/international/shipment-review.jpg",
+    alt: "A courier reviewing shipment details with a customer beside packed parcels",
+    width: 1600,
+    height: 900,
+  },
+  internationalCargo: {
+    src: "/media/international/air-cargo-loading.jpg",
+    alt: "Air cargo containers being loaded into a wide-body aircraft at an airport",
+    width: 1600,
+    height: 1200,
+  },
 };
 
 export function ProcessPhoto({ action, sizes }: {

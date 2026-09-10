@@ -4,7 +4,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { ContactShadows, Float, RoundedBox, useTexture } from "@react-three/drei";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
-import type { SceneVariant, TrackingVisualState } from "./scene-types";
+import type { SceneVariant } from "./scene-types";
 
 const colors = {
   navy: "#16344f",
@@ -209,7 +209,7 @@ function Ground({ dark = false }: { dark?: boolean }) {
   return <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.05, 0]}><planeGeometry args={[44, 34]} /><meshStandardMaterial color={dark ? colors.navyDeep : "#e6eeed"} roughness={0.92} /></mesh>;
 }
 
-function SceneContent({ variant, reduced, progress, tracking, quoteScale }: { variant: SceneVariant; reduced: boolean; progress: number; tracking: TrackingVisualState; quoteScale: [number, number, number] }) {
+function SceneContent({ variant, reduced, progress, quoteScale }: { variant: SceneVariant; reduced: boolean; progress: number; quoteScale: [number, number, number] }) {
   const moving = useRef<THREE.Group>(null);
   const secondary = useRef<THREE.Group>(null);
   const baseProgress = reduced ? 0.42 : progress;
@@ -236,7 +236,6 @@ function SceneContent({ variant, reduced, progress, tracking, quoteScale }: { va
   }
   if (variant === "international") return <Studio dark><Ground dark /><group ref={moving} position={[-1.4, 2.25, 0]}><Globe scale={1.42} /></group><group ref={secondary} position={[2.6 + Math.cos(baseProgress * Math.PI) * 1.4, 3.6 + Math.sin(baseProgress * Math.PI) * 0.9, 1.2]}><CargoPlane scale={0.8} rotation={[0.08, -0.35, -0.16]} /></group><RouteArc radius={3.2} rotation={[1.2, 0.3, -0.6]} /><Parcel position={[4.8, 0.55, 0]} scale={0.8} branded /></Studio>;
   if (variant === "quote") return <Studio><Ground /><group ref={moving} position={[0, 1.35, 0]} rotation={[0.06, baseProgress * 0.45, 0]}><Parcel branded scale={quoteScale} /></group><RouteArc radius={2.8} rotation={[Math.PI / 2, 0, 0.15]} /><LocationPin position={[-3, 0.15, 0.4]} scale={0.8} /><LocationPin position={[3, 0.15, -0.4]} scale={0.8} /></Studio>;
-  if (variant === "tracking") return <Studio dark><Ground dark /><group ref={moving} position={[0, 1.35, 0]}><Parcel branded scale={tracking === "delivered" ? 1.72 : 1.48} /></group><mesh position={[0, 1.25, 1.15]} rotation={[0, 0, tracking === "loading" ? Math.sin(progress * 18) * 0.3 : 0]}><planeGeometry args={[5.2, 0.055]} /><meshBasicMaterial color={tracking === "unknown" || tracking === "exception" ? "#e88371" : colors.tealBright} transparent opacity={0.8} /></mesh>{tracking === "delivered" && <LocationPin position={[2.3, 0.1, 0]} scale={0.9} />}<RouteArc radius={2.8} rotation={[Math.PI / 2, 0, 0]} /></Studio>;
   if (variant === "about") return <Studio><Ground /><Warehouse position={[2.8, 0, -1.4]} scale={0.78} /><group ref={moving} position={[-3.2, 2.1, 0]}><Globe scale={0.85} /></group>{[[-2.2, 0.5, 1.4], [-0.8, 0.65, 1.1], [0.6, 0.5, 1.3]].map((p, i) => <Parcel key={i} position={p as [number, number, number]} scale={0.62} branded={i === 1} />)}<RouteArc radius={3.6} rotation={[Math.PI / 2, 0, -0.2]} /></Studio>;
   if (variant === "contact") return <Studio><Ground /><Float speed={reduced ? 0 : 1.2} floatIntensity={0.18}><LocationPin position={[0, 1.6, 0]} scale={1.25} /></Float><Parcel position={[-2.2, 0.6, 0.5]} scale={0.8} branded /><Parcel position={[2.1, 0.52, -0.4]} scale={0.68} /><RouteArc radius={2.9} rotation={[Math.PI / 2, 0, 0.35]} /></Studio>;
   if (variant === "faq") return <Studio><Ground />{[-1.35, 0, 1.35].map((y, i) => <group key={y} position={[i * 0.48 - 0.48, y * 0.58 + 1, -i * 0.12]} rotation={[0, -0.18 + i * 0.12, -0.05 + i * 0.03]}><Parcel branded={i === 1} scale={[2.4, 0.55, 1.25]} /></group>)}</Studio>;
@@ -249,10 +248,10 @@ function CameraRig({ variant, reduced, progress }: { variant: SceneVariant; redu
   const { camera, pointer } = useThree();
   useFrame(() => {
     const mobile = window.innerWidth < 700;
-    const darkScene = variant === "international" || variant === "tracking" || variant === "footer" || variant === "admin";
+    const darkScene = variant === "international" || variant === "footer" || variant === "admin";
     const targetX = mobile ? 0 : (darkScene ? 0.5 : -0.5) + (reduced ? 0 : pointer.x * 0.28);
     const targetY = mobile ? 4.8 : 4.5 + (reduced ? 0 : pointer.y * 0.16);
-    const closeScene = ["quote", "tracking", "contact", "faq", "legal", "admin"].includes(variant);
+    const closeScene = ["quote", "contact", "faq", "legal", "admin"].includes(variant);
     const targetZ = mobile ? (closeScene ? 11.8 : 14.4) : variant === "footer" ? 14 : closeScene ? 10.2 : 13.2 - progress * (reduced ? 0 : 0.35);
     camera.position.lerp(new THREE.Vector3(targetX, targetY, targetZ), reduced ? 1 : 0.045);
     camera.lookAt(variant === "journey" ? 1.15 : 0, 1.1, 0);
@@ -261,23 +260,19 @@ function CameraRig({ variant, reduced, progress }: { variant: SceneVariant; redu
 }
 
 function World({ variant, reduced, progress }: { variant: SceneVariant; reduced: boolean; progress: number }) {
-  const [tracking, setTracking] = useState<TrackingVisualState>("neutral");
   const [quoteScale, setQuoteScale] = useState<[number, number, number]>([1.4, 1.2, 1.25]);
   useEffect(() => {
-    const onTracking = (event: Event) => setTracking((event as CustomEvent<{ state: TrackingVisualState }>).detail?.state || "neutral");
     const onQuote = (event: Event) => {
       const detail = (event as CustomEvent<{ dimensions?: [number, number, number]; success?: boolean }>).detail;
       if (detail?.dimensions) setQuoteScale(detail.dimensions);
       if (detail?.success) setQuoteScale([1.15, 1.15, 1.15]);
     };
-    window.addEventListener("vk:tracking-state", onTracking);
     window.addEventListener("vk:quote-visual", onQuote);
     return () => {
-      window.removeEventListener("vk:tracking-state", onTracking);
       window.removeEventListener("vk:quote-visual", onQuote);
     };
   }, []);
-  return <><CameraRig variant={variant} reduced={reduced} progress={progress} /><SceneContent variant={variant} reduced={reduced} progress={progress} tracking={tracking} quoteScale={quoteScale} /></>;
+  return <><CameraRig variant={variant} reduced={reduced} progress={progress} /><SceneContent variant={variant} reduced={reduced} progress={progress} quoteScale={quoteScale} /></>;
 }
 
 export default function CourierCanvas({ variant, reduced, active, progress }: { variant: SceneVariant; reduced: boolean; active: boolean; progress: number }) {

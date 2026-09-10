@@ -2,8 +2,10 @@
 
 import { useRef, useState } from "react";
 import { Send } from "lucide-react";
+import { zodErrors } from "@/lib/schemas";
+import { buildQuotePayload, quoteFormSchema, quoteOutcome, quoteOutcomeMessages, QUOTE_BODY_LIMIT, QUOTE_FORMSUBMIT_ENDPOINT, QUOTE_TIMEOUT_MS } from "@/lib/quote-formsubmit";
 
-type Result = { ok: boolean; message: string; reference?: string; fields?: Record<string,string>; notificationStatus?: string };
+type Result = { ok: boolean; message: string; fields?: Record<string,string> };
 
 function FieldError({ name, errors }: { name: string; errors: Record<string,string> }) {
   return errors[name] ? <span className="field-error" id={`${name}-error`}>{errors[name]}</span> : null;
@@ -11,26 +13,49 @@ function FieldError({ name, errors }: { name: string; errors: Record<string,stri
 
 export function EnquiryForm() {
   const formRef = useRef<HTMLFormElement>(null);
-  const key = useRef(crypto.randomUUID());
+  const attempts = useRef<number[]>([]);
   const submitting = useRef(false);
   const [result, setResult] = useState<Result | null>(null);
   const [pending, setPending] = useState(false);
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (submitting.current) return;
+    const form = event.currentTarget;
+    const parsed = quoteFormSchema.safeParse({ ...Object.fromEntries(new FormData(form)), pickupRequested: false });
+    if (!parsed.success) {
+      const fields = zodErrors(parsed.error);
+      setResult({ ok: false, message: fields.website ? "We could not validate this form. Please reload and try again." : "Please correct the highlighted fields.", fields });
+      const firstInvalid = Array.from(form.elements).find(element =>
+        (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement || element instanceof HTMLSelectElement)
+        && element.name !== "website" && fields[element.name]);
+      if (firstInvalid instanceof HTMLElement) firstInvalid.focus();
+      return;
+    }
+    const body = JSON.stringify(buildQuotePayload(parsed.data));
+    if (new TextEncoder().encode(body).byteLength > QUOTE_BODY_LIMIT) {
+      setResult({ ok: false, message: "The request is too large. Please shorten your message." });
+      return;
+    }
+    const now = Date.now();
+    attempts.current = attempts.current.filter(time => time > now - 15 * 60_000);
+    if (attempts.current.length >= 8) {
+      setResult({ ok: false, message: "Too many attempts. Please wait 15 minutes before trying again." });
+      return;
+    }
+    attempts.current.push(now);
     submitting.current = true;
     setPending(true); setResult(null);
-    const form = new FormData(event.currentTarget);
-    const payload: Record<string, unknown> = Object.fromEntries(form.entries());
-    payload.idempotencyKey = key.current;
-    payload.pickupRequested = false;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), QUOTE_TIMEOUT_MS);
     try {
-      const response = await fetch("/api/enquiries", { method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify(payload) });
-      const body = await response.json() as Result;
-      setResult(body);
-      if (response.ok && body.ok && body.notificationStatus === "accepted") { formRef.current?.reset(); key.current = crypto.randomUUID(); }
-    } catch { setResult({ ok:false, message:"We could not confirm sending. Your email may have been accepted. Please check with the company before resubmitting." }); }
-    finally { submitting.current = false; setPending(false); }
+      const response = await fetch(QUOTE_FORMSUBMIT_ENDPOINT, { method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" }, body, signal: controller.signal });
+      const json: unknown = await response.json();
+      const outcome = quoteOutcome(response.status, json);
+      setResult({ ok: outcome === "accepted", message: quoteOutcomeMessages[outcome] });
+      if (outcome === "accepted") formRef.current?.reset();
+    } catch { setResult({ ok: false, message: quoteOutcomeMessages.uncertain }); }
+    finally { clearTimeout(timeout); submitting.current = false; setPending(false); }
   }
   const errors = result?.fields || {};
   const fieldProps = (name: string) => ({ "aria-invalid": Boolean(errors[name]), "aria-describedby": errors[name] ? `${name}-error` : undefined });
@@ -59,7 +84,7 @@ export function EnquiryForm() {
       <div className="field field-full"><label htmlFor="instructions">Additional instructions</label><textarea id="instructions" name="instructions" {...fieldProps("instructions")}/><FieldError name="instructions" errors={errors}/></div>
     </div></fieldset>
     <p className="notice">Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch.</p>
-    {result && <div className={`form-status ${result.ok ? "" : "error"}`} role="status">{result.message}{result.reference && <><br/><strong>Reference: {result.reference}</strong></>}</div>}
+    {result && <div className={`form-status ${result.ok ? "" : "error"}`} role="status">{result.message}</div>}
     <button className="button" type="submit" disabled={pending}>{pending ? "Submitting…" : <>Send quote request <Send size={17}/></>}</button>
   </form>;
 }

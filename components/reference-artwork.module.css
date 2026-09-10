@@ -1,0 +1,2 @@
+.frame { position: relative; width: 100%; overflow: hidden; border-radius: inherit; }
+.frame > img { position: absolute; display: block; max-width: none; height: auto; margin: 0; }

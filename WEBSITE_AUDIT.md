@@ -2,13 +2,13 @@
 
 Date: 9 September 2026. **Audit only: no application, dependency, schema, configuration or test files changed.** Diagnostic screenshots are in [test-results/website-audit](test-results/website-audit/). Existing-file checksums were compared before and after the audit.
 
-The website is **not ready to describe all customer workflows as operational**. Quote sending lacks SMTP configuration, Tracking lacks its data service, Contact's real provider acknowledgement is still unverified, and customer-facing validation/accessibility issues remain. No Critical exploit or confirmed customer-data disclosure was demonstrated; that is not a security clearance.
+The website is **not ready to describe all customer workflows as operational**. Quote sending lacks SMTP configuration, Contact's real provider acknowledgement is still unverified, and customer-facing validation/accessibility issues remain. No Critical exploit or confirmed customer-data disclosure was demonstrated; that is not a security clearance.
 
 ## Scope and evidence boundaries
 
 - Rendered the production build on a separate local server at `127.0.0.1:3102`. Main inspections used **1440×900, 390×844 and 360×800**, covering 11 routes at each size, plus 200% root-text enlargement. Chromium touch emulation was used; these were not physical-device or Safari tests.
 - The in-app browser could not initialize (`Cannot redefine property: process`). Isolated Chromium was used instead.
-- Every diagnostic form POST was intercepted and fulfilled/aborted locally before reaching the application or FormSubmit. Synthetic values were clearly labelled `AUDIT`/`NOT SENT`. No live enquiries, activation, emails, calls, login attempts, bookings or mutations were made. Tracking's unconfigured/invalid responses were **real local GET responses**.
+- Every diagnostic form POST was intercepted and fulfilled/aborted locally before reaching the application or FormSubmit. Synthetic values were clearly labelled `AUDIT`/`NOT SENT`. No live enquiries, activation, emails, calls, login attempts, bookings or mutations were made.
 - Schema/guard reproductions invoked the actual modules in isolated diagnostic processes without network requests. Existing tests were run unchanged; no assertion was weakened to pass.
 - Normal-size screenshots and scans found no broken rendered images on the three requested sizes, no horizontal document overflow, and no layout-shift entries during the measured initial page-load windows. These short local observations are not a field performance measurement. Enlarged-text clipping and an extra tablet image failure are recorded below.
 
@@ -33,16 +33,6 @@ The website is **not ready to describe all customer workflows as operational**. 
 **Evidence/cause:** [SupportForm](components/forms/support-form.tsx:54) unconditionally parses JSON, accepts only `response.ok` plus boolean `true` or string `"true"`, ignores provider message/error fields, and maps every other outcome or exception to `UNCONFIRMED`. [Intercepted rejection screenshot](test-results/website-audit/contact-rejection-intercepted.png). The existing unit suite also confirms the 20-second abort path. There is no saved uncertain-submission state: status, attempt counts and pending locks are component memory only.
 
 **Smallest recommended fix:** First obtain one authorized real failed-request capture, then map only demonstrated provider responses to safe distinct outcomes. Keep ambiguous network/parse/timeout outcomes uncertain and avoid automatic retries. **This audit does not establish the cause of the user's previous real FormSubmit failure, prove activation is missing, or prove CORS is failing.** The rejection/activation response bodies above are mocks, not captured FormSubmit replies.
-
-### 3. Important — Tracking is unavailable, but the page does not disclose this before lookup
-
-**Route/reproduction:** Open `/track`; enter `VKC-AUDIT000001` and perform a local read-only lookup with Supabase absent.
-
-**Expected / observed:** Either verified tracking data, or upfront availability guidance and an actionable support path. Actual HTTP **503**, JSON `{"ok":false,"message":"Tracking is not configured yet."}`. The page initially invites a lookup; its “Contact support” instruction is plain text. Invalid `bad` correctly returns **422** with “Enter a valid VK tracking code.” No invented status is shown.
-
-**Evidence/cause:** [Tracking API](app/api/track/route.ts:9), [Tracking page](app/(site)/track/page.tsx), [form](components/forms/tracking-form.tsx). The nullable admin client is handled safely here.
-
-**Smallest recommended fix:** Surface the existing configuration status before lookup and make Contact support a link. Configure the existing tracking service independently; neither enquiry form needs a database.
 
 ### 4. Important — Enlarged mobile text makes footer navigation inaccessible
 
@@ -136,16 +126,6 @@ There is also a related authorization boundary gap in [adminRows/count](lib/admi
 
 **Smallest recommended fix:** Change only the promise to accurate enquiry-processing wording, conditional on acceptance. Keep the hero composition, provider and official contact block intact.
 
-### 13. Minor — Tracking shows the previous shipment during a new lookup
-
-**Route/reproduction:** With GET responses intercepted, show synthetic `VKC-AUDITFIRST` as Delivered. Change the input to `VKC-AUDITSECOND` and hold its response for 2.5 seconds.
-
-**Expected / observed:** The displayed shipment should not be mistaken for the new lookup. The button says “Checking…” while the old Delivered result remains visible beneath the new input. The old result does retain its own code, which limits the ambiguity. It disappears when the mocked unavailable response completes.
-
-**Evidence/cause:** [TrackingForm](components/forms/tracking-form.tsx:7) sets pending without clearing or labelling the prior result. [Screenshot](test-results/website-audit/tracking-stale-intercepted.png). No real shipment was queried.
-
-**Smallest recommended fix:** Clear the previous result at lookup start or explicitly label it as the previous lookup until the new response arrives.
-
 ### 14. Minor — Mobile admin login clips the logo
 
 **Route/reproduction:** Open `/admin/login` directly at 390×844 and 360×800, scroll position zero.
@@ -180,18 +160,18 @@ Official Contact details rendered correctly at all three requested widths, with 
 Only variable names are listed; no secret values were read into the report.
 
 - **Quote SMTP (all absent):** `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `NOTIFICATION_FROM_EMAIL`. Next action: owner configures the existing provider and authorized sender in server environment, then separately authorizes a single labelled end-to-end test. Do not infer inbox delivery from SMTP acknowledgement.
-- **Admin/tracking/real quote review (absent):** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, plus applied existing migrations and a provisioned owner identity. These are not prerequisites for Contact or Quote request emailing.
+- **Admin/real quote review (absent):** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, plus applied existing migrations and a provisioned owner identity. These are not prerequisites for Contact or Quote request emailing.
 - **Production origin:** `NEXT_PUBLIC_SITE_URL` is absent. Local `/robots.txt` and `/sitemap.xml` therefore contain `http://localhost:3000` from the fallback. Set the confirmed deployed origin before deployment; no production domain was supplied or audited.
 - **Quote deployment rate protection:** `ENQUIRY_TRUST_PROXY` is absent/default-off. The conservative shared bucket allows eight Quote attempts across all clients per 15 minutes per process. Isolated invocation with nine distinct forwarded IP strings returned eight `true`, then `false` (zero network traffic). Configure a trusted edge that overwrites client IP and prevents direct-origin access before enabling trust, or supply appropriate deployment-level limits. Do not simply trust arbitrary forwarded headers or disable safeguards. Contact's in-memory per-form limit is also not deployment-wide protection; provider-side spam controls/limits remain unverified.
 - **FormSubmit:** no Gmail, SMTP or Supabase credentials are required by Contact. Actual endpoint activation, real browser response format, spam filtering and receiving-inbox delivery are unknown. No activation request was triggered.
-- Quote and Tracking fetches have no explicit browser-side deadline (unlike Contact). Server SMTP/body deadlines exist, but prolonged intermediary/network stalls and offline recovery need dedicated follow-up validation. No automatic retry should be added for ambiguous email outcomes.
+- Quote fetches have no explicit browser-side deadline (unlike Contact). Server SMTP/body deadlines exist, but prolonged intermediary/network stalls and offline recovery need dedicated follow-up validation. No automatic retry should be added for ambiguous email outcomes.
 - Privacy/Terms require approved factual content. Database-backed settings/address/hours/courier integrations were not configured or verified. Pickup is explicitly unavailable; no live GPS, online payment or partner integration was treated as working.
 
 ## Coverage, checks and limits
 
 | Route group | Result |
 | --- | --- |
-| `/`, `/services/domestic`, `/services/international`, `/about`, `/contact`, `/get-a-quote`, `/track`, `/faq`, `/privacy`, `/terms` | Rendered and inspected at all three requested sizes. All 10 distinct internal link destinations returned 200. Service links, header/footer navigation and direct navigation resolve. Privacy/Terms content remains unfinished. |
+| `/`, `/services/domestic`, `/services/international`, `/about`, `/contact`, `/get-a-quote`, `/faq`, `/privacy`, `/terms` | Rendered and inspected at all three requested sizes. Service links, header/footer navigation and direct navigation resolve. Privacy/Terms content remains unfinished. |
 | `/admin/login` | Rendered without credentials at all three sizes; correct unconfigured notice, clipping reproduced; no sign-in performed. |
 | `/admin`, `/admin/content`, `/admin/enquiries`, `/admin/enquiries/[id]`, `/admin/quotes`, `/admin/bookings`, `/admin/shipments`, `/admin/support`, `/admin/support/[id]`, `/admin/settings`, `/admin/audit` | Normal navigation redirected to login. Protected content and mutations **not tested**; detail-page server exceptions reproduced. |
 | `/quote/[token]` | Synthetic well-formed token showed “Quote review is not configured.” Real offers, expiry, acceptance and bookings **not tested**. |
@@ -214,6 +194,5 @@ Physical iOS/Android devices, Safari/Firefox, assistive-technology sessions, dep
 ## Optional feature suggestions — not implemented
 
 1. An owner-only integration-readiness panel that separates Contact activation evidence, Quote SMTP configuration and Tracking availability without revealing credentials.
-2. A copy-tracking-code control alongside an actual verified result, to reduce transcription errors when asking the company for help.
 
 Resolve the confirmed failures and missing configuration before adding these features. No deployment or remote push was performed.

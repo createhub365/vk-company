@@ -17,7 +17,7 @@ One client-only controller (`components/image-feedback.tsx`) is mounted inside t
 | `/services/domestic` | Road photograph in PageHero, shared logos |
 | `/services/international` | Cargo aircraft photograph in PageHero, shared logos |
 | `/about` | Dispatch workspace photograph in PageHero, shared logos |
-| `/contact`, `/get-a-quote`, `/track`, `/faq`, `/privacy`, `/terms` | Shared logos; hero markers are CSS/text decoration, not photographs |
+| `/contact`, `/get-a-quote`, `/faq`, `/privacy`, `/terms` | Shared logos; hero markers are CSS/text decoration, not photographs |
 | `/admin/login` | Dispatch background and standalone logo; tested without authentication configuration |
 | `/quote/[token]` | Only the unconfigured quote-review state and shared logo feedback were accessible using a synthetic token. No real customer quote or acceptance tested. |
 | `/admin`, `/admin/content`, `/admin/enquiries`, `/admin/enquiries/[id]`, `/admin/quotes`, `/admin/bookings`, `/admin/shipments`, `/admin/support`, `/admin/support/[id]`, `/admin/settings`, `/admin/audit` | Login redirects verified. Authenticated pages were inaccessible. Their shared admin logo is marked for the same feedback, but not verified behind authentication. |
@@ -45,7 +45,7 @@ Coverage uses Chromium at 1440×900, 390×844 and 360×800; mobile contexts use 
 
 Checks include per-route feedback, hover staying static, active-animation duration/scale/origin, stationary containers and text, completion cleanup, repeated activation, reduced motion, exact native logo navigation and Enter activation, foreground exclusion, text selection, drag, touch scroll/cancel and unmount cleanup. Screenshots freeze an already-started animation at 200ms for visual inspection; runtime assertions also sample it while running. No horizontal overflow was found at the three tested widths. Artifacts are under ignored `test-results/image-feedback-results/`.
 
-Checksum verification confirms the Contact details page/CSS, all enquiry/tracking/acceptance form components and validation schema are unchanged. No backend implementation was edited.
+Checksum verification confirms the Contact details page/CSS and enquiry/acceptance form components and validation schema are unchanged. No backend implementation was edited.
 
 ## Changed files
 

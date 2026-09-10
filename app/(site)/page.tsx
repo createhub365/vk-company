@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Box, CircleCheck, FileText, MapPin, Search } from "lucide-react";
+import { ArrowRight, Box, CircleCheck, FileText, MapPin } from "lucide-react";
 import { FaqList } from "@/components/faq-list";
 import { ProcessPhoto } from "@/components/process-photo";
 
@@ -21,7 +21,7 @@ export default function HomePage() {
           <h1>Across cities.<br/><em>Across borders.</em></h1>
           <p className="cinematic-support">We keep your parcels moving.</p>
           <p className="lede">Domestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step.</p>
-          <div className="hero-actions"><Link className="button button-teal" href="/get-a-quote">Get a quote <ArrowRight size={18}/></Link><Link className="button button-ghost" href="/track">Track shipment</Link></div>
+          <div className="hero-actions"><Link className="button button-teal" href="/get-a-quote">Get a quote <ArrowRight size={18}/></Link></div>
         </div>
       </div>
     </section>
@@ -47,7 +47,7 @@ export default function HomePage() {
           <li><span>01</span><FileText/><h3>Share shipment details</h3><p>Tell us the route, contents, package count and approximate weight.</p></li>
           <li><ProcessPhoto action="review" sizes="(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"/><span>02</span><CircleCheck/><h3>Receive a reviewed quote</h3><p>Service details, inclusions and exclusions are confirmed for the enquiry.</p></li>
           <li><ProcessPhoto action="dispatch" sizes="(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"/><span>03</span><Box/><h3>Arrange dispatch</h3><p>An accepted quote becomes a booking ready for coordination.</p></li>
-          <li><ProcessPhoto action="scan" sizes="(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"/><span>04</span><MapPin/><h3>Follow verified updates</h3><p>Use your public code to see customer-safe shipment events.</p></li>
+          <li><ProcessPhoto action="scan" sizes="(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"/><span>04</span><MapPin/><h3>Follow verified updates</h3><p>Contact the team for customer-safe shipment updates.</p></li>
         </ol>
       </div>
     </section>
@@ -55,7 +55,6 @@ export default function HomePage() {
     <section className="action-entry section-white">
       <div className="shell action-entry-grid">
         <article><span className="action-number">01</span><Box/><p className="eyebrow">Start with the shipment</p><h2>Request a considered quote.</h2><p>Share the details once. Our team reviews each request before confirming service or charges.</p><Link href="/get-a-quote" className="button">Get a quote <ArrowRight size={17}/></Link></article>
-        <article><span className="action-number">02</span><Search/><p className="eyebrow">Already booked?</p><h2>View verified tracking.</h2><p>Enter the public tracking code issued for your shipment. No account or invented live location is required.</p><Link href="/track" className="button button-secondary">Track shipment <ArrowRight size={17}/></Link></article>
       </div>
     </section>
 

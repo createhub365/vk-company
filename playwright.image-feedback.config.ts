@@ -9,7 +9,7 @@ export default defineConfig({
   workers: 2,
   use: { baseURL: "http://127.0.0.1:3101", trace: "retain-on-failure" },
   webServer: {
-    command: "npm run start -- --hostname 127.0.0.1 --port 3101",
+    command: "node scripts/preview-static.mjs 3101",
     url: "http://127.0.0.1:3101",
     reuseExistingServer: false,
     env: { NEXT_PUBLIC_SUPABASE_URL: "", NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: "", SUPABASE_SERVICE_ROLE_KEY: "" },

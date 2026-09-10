@@ -24,21 +24,28 @@ for (const [label, component] of [["quote", EnquiryForm]] as const) {
       const form = container.querySelector("form")!;
       (form.elements.namedItem("name") as HTMLInputElement).value = "Customer Kept";
       (form.elements.namedItem("email") as HTMLInputElement).value = "customer@example.com";
+      for (const [name, value] of Object.entries({ phone: "+91 9876543210", originCountry: "India", originCity: "Mohali", originPostalCode: "140301", destinationCountry: "India", destinationCity: "Delhi", destinationPostalCode: "110001", contentsDescription: "Printed documents", approximateWeight: "1.5" })) {
+        (form.elements.namedItem(name) as HTMLInputElement).value = value;
+      }
       return form;
     }
     async function submit(form: HTMLFormElement) {
       await act(async () => { form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true })); });
     }
-    it.each(["not_configured", "rejected", "uncertain"])("retains inputs and submission key on %s", async status => {
-      fetchMock.mockResolvedValue({ ok: false, json: async () => ({ ok: false, notificationStatus: status, message: "Email sending could not be confirmed." }) });
+    it.each([false, "false", undefined])("retains inputs on provider success=%s", async success => {
+      fetchMock.mockResolvedValue({ status: 200, json: async () => ({ success }) });
       const form = await mount();
       await submit(form);
       expect((form.elements.namedItem("name") as HTMLInputElement).value).toBe("Customer Kept");
       expect((form.elements.namedItem("email") as HTMLInputElement).value).toBe("customer@example.com");
-      expect(container.querySelector('[role="status"]')?.textContent).toContain("could not be confirmed");
+      expect(container.querySelector('[role="status"]')?.textContent).toContain(success === undefined ? "may have been accepted" : "did not accept");
+      expect(fetchMock).toHaveBeenCalledTimes(1);
       await submit(form);
-      const keys = fetchMock.mock.calls.map(call => JSON.parse(call[1].body).idempotencyKey);
-      expect(keys[0]).toBe(keys[1]);
+      expect(fetchMock).toHaveBeenCalledTimes(2);
+      for (const [url, options] of fetchMock.mock.calls) {
+        expect(url).toBe("https://formsubmit.co/ajax/vkandcompanymohali@gmail.com");
+        expect(JSON.parse(options.body)).not.toHaveProperty("idempotencyKey");
+      }
     });
     it("retains inputs and gives an uncertain-status message after a lost response", async () => {
       fetchMock.mockRejectedValue(new Error("connection lost"));
@@ -59,7 +66,7 @@ for (const [label, component] of [["quote", EnquiryForm]] as const) {
       expect(fetchMock).toHaveBeenCalledTimes(1);
       expect(container.querySelector("button")?.disabled).toBe(true);
       expect((form.elements.namedItem("name") as HTMLInputElement).value).toBe("Customer Kept");
-      await act(async () => { resolve({ ok: true, json: async () => ({ ok: true, notificationStatus: "accepted", message: "Sending server accepted." }) }); });
+      await act(async () => { resolve({ status: 200, json: async () => ({ success: "true" }) }); });
       expect((form.elements.namedItem("name") as HTMLInputElement).value).toBe("");
       expect(container.querySelector("button")?.disabled).toBe(false);
     });

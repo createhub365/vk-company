@@ -1,6 +1,6 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
 
-const routes = ["/", "/services/domestic", "/services/international", "/about", "/contact", "/get-a-quote", "/track", "/faq", "/privacy", "/terms", "/admin/login"];
+const routes = ["/", "/services/domestic", "/services/international", "/about", "/contact", "/get-a-quote", "/faq", "/privacy", "/terms", "/track"];
 const countAnimations = (locator: Locator) => locator.evaluate(element => element.getAnimations({ subtree: true }).length);
 
 async function activate(page: Page, locator: Locator, touch: boolean) {
@@ -158,9 +158,6 @@ test("home pulse-enabled photos animate; hero keeps background, contrast overlay
   await expect(hero.locator(".image-feedback-layer")).toHaveCount(0);
   await page.locator("h1").click();
   await expect(hero.locator(".image-feedback-layer")).toHaveCount(0);
-  await hero.getByRole("link", { name: "Track shipment" }).click();
-  await expect(page).toHaveURL(/\/track$/);
-  await expect(page.locator(".image-feedback-layer")).toHaveCount(0);
 });
 
 test("logo pointer and keyboard navigation stays native and accessible", async ({ page, isMobile }) => {
@@ -223,25 +220,4 @@ test("drag, selected text, cancelled touch and scrolling do not activate feedbac
   const image = await photo.locator("img").elementHandle();
   await photo.evaluate(element => element.remove());
   await expect.poll(() => image!.evaluate(element => element.getAnimations().length)).toBe(0);
-});
-
-test("login background ripples without moving; unavailable routes stay gated", async ({ page, isMobile }) => {
-  await page.goto("/admin/login");
-  const backdrop = page.locator(".login-backdrop");
-  const bounds = await backdrop.boundingBox();
-  if (isMobile) await backdrop.tap({ position: { x: 4, y: 100 } });
-  else await backdrop.click({ position: { x: 4, y: 100 } });
-  await expect(backdrop.locator(".image-feedback-layer")).toHaveCount(1);
-  expect(await backdrop.boundingBox()).toEqual(bounds);
-  expect(await countAnimations(backdrop.locator("img"))).toBe(0);
-  for (const path of ["/admin", "/admin/content", "/admin/enquiries", "/admin/enquiries/test", "/admin/quotes", "/admin/bookings", "/admin/shipments", "/admin/support", "/admin/support/test", "/admin/settings", "/admin/audit"]) {
-    await page.goto(path);
-    await expect(page).toHaveURL(/\/admin\/login$/);
-  }
-  await page.goto(`/quote/${"image-feedback-test-".repeat(3)}`);
-  await expect(page.getByText("Quote review is not configured.")).toBeVisible();
-  await activate(page, page.locator('.footer-logo [data-image-feedback="logo"]'), isMobile);
-  await expect.poll(() => countAnimations(page.locator('.footer-logo [data-image-feedback="logo"]'))).toBe(1);
-  await page.goto("/image-feedback-missing-page");
-  await expect(page.getByRole("heading", { name: "This page is not available." })).toBeVisible();
 });

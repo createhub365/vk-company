@@ -64,7 +64,6 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
         <nav id="main-navigation" className={`nav ${open ? "open" : ""}`} aria-label="Main navigation">
           <Link ref={firstLink} href="/services/domestic" onClick={() => closeMenu(open)}>Domestic</Link>
           <Link href="/services/international" onClick={() => closeMenu(open)}>International</Link>
-          <Link href="/track" onClick={() => closeMenu(open)}>Track</Link>
           <Link href="/about" onClick={() => closeMenu(open)}>About</Link>
           <Link href="/contact" onClick={() => closeMenu(open)}>Contact</Link>
           <Link href="/get-a-quote" className="button button-small" onClick={() => closeMenu(open)}>Get a quote</Link>

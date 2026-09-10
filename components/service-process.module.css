@@ -1,0 +1,15 @@
+.section { padding: clamp(44px,6vw,88px) 0; background: #fff; }
+.inner { width: min(1180px,calc(100% - 56px)); margin-inline: auto; }
+.inner > h2 { margin-bottom: 30px; }
+.rows { display: grid; gap: 30px; }
+.row { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr); gap: clamp(24px,3vw,44px); align-items: start; }
+.row + .row { border-top: 1px solid var(--line); padding-top: 30px; }
+.image { border-radius: 12px; min-width: 0; }
+.copy { min-width: 0; padding-top: 4px; }
+.copy h3 { color: #102c48; font: 400 clamp(1.85rem,3vw,2.9rem)/1.16 Georgia,serif; letter-spacing: -.025em; margin: 0 0 24px; }
+.copy p { color: #53687e; line-height: 1.7; margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .inner { width: calc(100% - 32px); }
+  .row { grid-template-columns: minmax(0,1fr); gap: 22px; }
+  .copy h3 { margin-bottom: 16px; }
+}

@@ -8,7 +8,7 @@ let container: HTMLDivElement;
 let root: Root;
 let fetchMock: ReturnType<typeof vi.fn>;
 const values = { name: "Customer Name", phone: "+91 9876543210", email: "customer@example.com",
-  subject: "Shipment question", shipmentReference: "VKC-TEST123456", message: "Please explain the shipment route." };
+  subject: "Shipment Support", message: "Please explain the shipment route." };
 const endpoint = "https://formsubmit.co/ajax/vkandcompanymohali@gmail.com";
 beforeEach(() => {
   vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
@@ -28,7 +28,12 @@ async function mount(overrides: Record<string, string | undefined> = {}) {
   await act(async () => root.render(createElement(SupportForm)));
   const form = container.querySelector("form")!;
   for (const [name, value] of Object.entries({ ...values, ...overrides })) {
-    (form.elements.namedItem(name) as HTMLInputElement).value = value ?? "";
+    const field = form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement;
+    // Tampered select values still exercise the existing input validator.
+    if (field instanceof HTMLSelectElement && !Array.from(field.options).some(option => option.value === value)) {
+      field.add(new Option(value ?? "", value ?? ""));
+    }
+    field.value = value ?? "";
   }
   return form;
 }
@@ -40,14 +45,14 @@ function expectRetained(form: HTMLFormElement) {
 }
 
 describe("Contact FormSubmit AJAX (credentials unset; mocked requests only)", () => {
-  it("uses the fixed AJAX endpoint, subject, Reply-To and all original visible fields", async () => {
+  it("uses the fixed AJAX endpoint, subject, Reply-To and all reference-design fields", async () => {
     const form = await mount();
     await submit(form);
     expect(fetchMock).toHaveBeenCalledTimes(1);
     const [url, options] = fetchMock.mock.calls[0];
     expect(url).toBe(endpoint);
     expect(options).toMatchObject({ method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" } });
-    expect(JSON.parse(options.body)).toEqual({ ...values,
+    expect(JSON.parse(options.body)).toEqual({ ...values, shipmentReference: "",
       _subject: "VK AND COMPANY — New Contact Enquiry", _replyto: values.email, _honey: "" });
     expect(container.querySelector('[role="status"]')?.textContent).toContain("does not confirm inbox delivery");
     expect((form.elements.namedItem("name") as HTMLInputElement).value).toBe("");
@@ -74,7 +79,7 @@ describe("Contact FormSubmit AJAX (credentials unset; mocked requests only)", ()
   });
 
   it("treats a whitespace-only optional phone as empty when email is valid", async () => {
-    const form = await mount({ phone: "   ", shipmentReference: "   " });
+    const form = await mount({ phone: "   " });
     await submit(form);
     expect(fetchMock).toHaveBeenCalledTimes(1);
     const payload = JSON.parse(fetchMock.mock.calls[0][1].body);

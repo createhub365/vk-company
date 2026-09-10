@@ -9,5 +9,5 @@ const imagery: Partial<Record<SceneVariant, { src: string; alt: string }>> = {
 
 export function PageHero({ eyebrow, title, description, variant = "legal" }: { eyebrow: string; title: string; description: string; variant?: SceneVariant }) {
   const image = imagery[variant];
-  return <section className={`page-hero page-hero-${variant}`}><div className="shell page-hero-grid"><div className="page-hero-copy"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="lede">{description}</p></div>{image ? <div className="page-hero-image" data-image-feedback="photo"><Image src={image.src} alt={image.alt} fill sizes="(max-width: 900px) 100vw, 50vw"/><span>Illustrative courier environment</span></div> : <div className="page-hero-marker" aria-hidden="true"><span>VKC</span><i/></div>}</div></section>;
+  return <section className={`page-hero page-hero-${variant}`}><div className="shell page-hero-grid"><div className="page-hero-copy"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="lede">{description}</p></div>{image ? <div className="page-hero-image" data-image-feedback="photo"><Image src={image.src} alt={image.alt} fill sizes="(max-width: 900px) 100vw, 50vw"/><span>Illustrative courier environment</span></div> : <div className="page-hero-marker" aria-hidden="true"><span>VKC</span><i aria-hidden="true"/></div>}</div></section>;
 }

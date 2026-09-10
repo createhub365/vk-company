@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { contactFormSchema, zodErrors } from "@/lib/schemas";
 
 const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/vkandcompanymohali@gmail.com";
@@ -28,7 +29,7 @@ export function SupportForm() {
       setErrors(fields);
       setResult({ ok: false, message: fields.website || "Please check the highlighted fields." });
       const firstInvalid = Array.from(form.elements).find(element =>
-        (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement)
+        (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement || element instanceof HTMLSelectElement)
         && element.name !== "website" && fields[element.name]);
       if (firstInvalid instanceof HTMLElement) firstInvalid.focus();
       return;
@@ -84,11 +85,10 @@ export function SupportForm() {
       <div className="field"><label htmlFor="name">Name</label><input id="name" name="name" required minLength={2} maxLength={120} {...fieldProps("name")}/><FieldError name="name" errors={errors}/></div>
       <div className="field"><label htmlFor="phone">Phone</label><input id="phone" name="phone" type="tel" minLength={7} maxLength={32} {...fieldProps("phone")}/><FieldError name="phone" errors={errors}/></div>
       <div className="field field-full"><label htmlFor="email">Email</label><input id="email" name="email" type="email" maxLength={254} {...fieldProps("email")}/><small id="contact-details-hint">Provide an email or phone number so the team can respond.</small><FieldError name="email" errors={errors}/></div>
-      <div className="field field-full"><label htmlFor="subject">Subject</label><input id="subject" name="subject" required minLength={3} maxLength={160} {...fieldProps("subject")}/><FieldError name="subject" errors={errors}/></div>
-      <div className="field field-full"><label htmlFor="shipmentReference">Shipment reference <small>(optional)</small></label><input id="shipmentReference" name="shipmentReference" maxLength={64} {...fieldProps("shipmentReference")}/><FieldError name="shipmentReference" errors={errors}/></div>
-      <div className="field field-full"><label htmlFor="message">Message</label><textarea id="message" name="message" required minLength={10} maxLength={3000} {...fieldProps("message")}/><FieldError name="message" errors={errors}/></div>
+      <div className="field field-full"><label htmlFor="subject">Subject</label><select id="subject" name="subject" required defaultValue="General Enquiry" {...fieldProps("subject")}><option>General Enquiry</option><option>Quote Request</option><option>Shipment Support</option><option>Partnerships &amp; Other</option></select><FieldError name="subject" errors={errors}/></div>
+      <div className="field field-full"><label htmlFor="message">Message</label><textarea id="message" name="message" placeholder="Tell us how we can help…" required minLength={10} maxLength={3000} {...fieldProps("message")}/><FieldError name="message" errors={errors}/></div>
     </div>
     {result&&<div className={`form-status ${result.ok?"":"error"}`} role="status">{result.message}{result.reference&&<><br/><strong>Reference: {result.reference}</strong></>}</div>}
-    <button className="button" disabled={pending}>{pending?"Sending…":"Send message"}</button>
+    <button className="button" disabled={pending}>{pending?"Sending…":"Send message"}<ArrowRight size={18} aria-hidden="true"/></button>
   </form>;
 }
