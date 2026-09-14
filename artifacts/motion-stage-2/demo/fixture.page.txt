@@ -1,0 +1,22 @@
+import { DepthSection, RiseIn, ParallaxMedia } from "@/components/motion/primitives";
+import { Photograph } from "@/components/photograph";
+
+// Temporary verification fixture. Deleted before the final export and any commit.
+export default function MotionFoundationDemo() {
+  return <div className="shell" style={{ paddingBlock: 64 }}>
+    <h1>Stage 2 foundation demonstration</h1>
+    <p>Temporary local fixture. Real page content is untouched.</p>
+    <DepthSection id="demo-depth">
+      <RiseIn id="demo-rise" rise={999} rotate={999}><h2>Bounded rise and rotation</h2><p>Visible with JavaScript disabled and with reduced motion.</p></RiseIn>
+      <RiseIn id="demo-stagger" stagger={120} index={1}><p>Shared easing and configurable stagger.</p></RiseIn>
+    </DepthSection>
+    <div style={{ height: "85vh" }} aria-hidden="true"/>
+    <DepthSection>
+      <ParallaxMedia id="demo-media" style={{ maxWidth: 600 }}><Photograph name="details" alt="Existing illustrative parcel-measuring photograph" sizes="600px" eager/></ParallaxMedia>
+    </DepthSection>
+    <div style={{ height: "85vh" }} aria-hidden="true"/>
+    <DepthSection><RiseIn id="demo-late"><h2>Scroll reveal</h2><p>This content stays visible before its animation starts.</p></RiseIn></DepthSection>
+    <p><a href="#demo-depth">Return to the first demonstration</a></p>
+    <div style={{ height: "65vh" }} aria-hidden="true"/>
+  </div>;
+}

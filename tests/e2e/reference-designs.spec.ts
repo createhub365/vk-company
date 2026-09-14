@@ -21,20 +21,20 @@ for (const width of [1440, 390, 360]) {
         const frame = row.locator("[data-image-feedback]");
         const img = frame.locator("img");
         await frame.scrollIntoViewIfNeeded();
-        await expect.poll(() => img.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth === 1554)).toBe(true);
+        await expect.poll(() => img.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBe(true);
+        // These exact selected service images only exist as native 392px regions.
+        await expect(img).toHaveAttribute("srcset", /selected-(domestic|international)-[123]-392\.webp 392w/);
         const bounds = (await frame.boundingBox())!;
         const text = (await row.locator("h3").boundingBox())!;
         if (width < 641) expect(bounds.y + bounds.height).toBeLessThanOrEqual(text.y);
         else expect(bounds.x + bounds.width).toBeLessThanOrEqual(text.x);
         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
         else await frame.click({ position: { x: 40, y: 40 } });
-        await expect.poll(() => frame.evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(1);
-        await frame.evaluate(element => element.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = 200; }));
-        expect(await img.evaluate(element => getComputedStyle(element).transform)).toBe("none");
-        expect(await frame.boundingBox()).toEqual(bounds);
+        await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+
+        expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
         expect(await row.locator("h3").boundingBox()).toEqual(text);
-        await frame.screenshot({ path: info.outputPath(`row-${await row.locator("h3").textContent()}-active.png`) });
-        await frame.evaluate(element => element.getAnimations({ subtree: true }).forEach(animation => animation.play()));
+        await page.screenshot({ path: info.outputPath(`row-${await row.locator("h3").textContent()}-active.png`) });
         await expect(frame.locator(".image-feedback-layer")).toHaveCount(0);
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -51,9 +51,9 @@ for (const width of [1440, 390, 360]) {
   test(`Contact supplied design at ${width}px`, async ({ page, isMobile }, info) => {
     await page.setViewportSize({ width, height: width === 1440 ? 900 : 844 });
     await page.goto("/contact");
-    const frame = page.locator('main [data-image-feedback="background"]');
+    const frame = page.locator('main [data-image-feedback="photo"]');
     const img = frame.locator("img");
-    await expect.poll(() => img.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth === 1536)).toBe(true);
+    await expect.poll(() => img.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBe(true);
     await expect(page.locator("h1")).toHaveText("How can we help?");
     await expect(page.getByRole("list", { name: "Enquiry topics" }).locator("li")).toHaveCount(4);
     const details = page.getByRole("complementary", { name: "Company contact details" });
@@ -70,10 +70,8 @@ for (const width of [1440, 390, 360]) {
     await frame.scrollIntoViewIfNeeded();
     if (isMobile) await frame.tap({ position: { x: 80, y: 80 } });
     else await frame.click({ position: { x: 80, y: 80 } });
-    await expect.poll(() => frame.evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(1);
-    await frame.evaluate(element => element.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = 200; }));
-    await frame.screenshot({ path: info.outputPath("contact-artwork-active.png") });
-    await frame.evaluate(element => element.getAnimations({ subtree: true }).forEach(animation => animation.play()));
+    await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+    await page.screenshot({ path: info.outputPath("contact-artwork-active.png") });
     await expect(frame.locator(".image-feedback-layer")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.locator("main > section").screenshot({ path: `test-results/contact-approved-${width}-${info.project.name}.png` });

@@ -1,0 +1,914 @@
+[
+  {
+    "width": 1440,
+    "route": "/",
+    "entries": [
+      {
+        "frame": [
+          259,
+          173
+        ],
+        "image": [
+          259,
+          173
+        ],
+        "src": "/media/photos/details-768.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          768,
+          512
+        ]
+      },
+      {
+        "frame": [
+          258,
+          172
+        ],
+        "image": [
+          258,
+          172
+        ],
+        "src": "/media/photos/review-768.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          768,
+          512
+        ]
+      },
+      {
+        "frame": [
+          258,
+          172
+        ],
+        "image": [
+          258,
+          172
+        ],
+        "src": "/media/photos/dispatch-768.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          768,
+          512
+        ]
+      },
+      {
+        "frame": [
+          258,
+          172
+        ],
+        "image": [
+          258,
+          172
+        ],
+        "src": "/media/photos/scan-768.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          768,
+          512
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "DOMESTIC & INTERNATIONAL COURIER SERVICES\n\nAcross cities.\nAcross borders.\n\nWe keep your parcels moving.\n\nDomestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step.\n\nGet a quote\nILLUSTRATIVE ROUTE IMAGERY\n\n01 / DOMESTIC\n\nCOURIER SERVICES BETWEEN CITIES\n\nPlanned around your actual route.\n\nShare the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims.\n\nExplore domestic services\nILLUSTRATIVE INTERNATIONAL LOGISTICS\n\n02 / INTERNATIONAL\n\nACROSS BORDERS, DETAILS FIRST\n\nClear before it leaves the ground.\n\nAcceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged.\n\nExplore international services\n\nHOW SHIPPING WORKS\n\nFour steps.\nOne clear process.\n\nEvery status follows a real operational action. An enquiry is never presented as a confirmed booking or dispatch.\n\n01\nShare shipment details\n\nTell us the route, contents, package count and approximate weight.\n\n02\nReceive a reviewed quote\n\nService details, inclusions and exclusions are confirmed for the enquiry.\n\n03\nArrange dispatch\n\nAn accepted quote becomes a booking ready for coordination.\n\n04\nFollow verified updates\n\nContact the team for customer-safe shipment updates.\n\n01\n\nSTART WITH THE SHIPMENT\n\nRequest a considered quote.\n\nShare the details once. Our team reviews each request before confirming service or charges.\n\nGet a quote\nILLUSTRATIVE OPERATIONS ENVIRONMENT\n\n03 / COMPANY\n\nABOUT VK AND COMPANY\n\nBuilt around each shipment.\n\nOur customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates.\n\nMore about our process\n\nCOMMON QUESTIONS\n\nUseful answers,\nbefore you send.\nView all FAQs\nHow do I request a courier quote?\nDoes submitting the form confirm my booking?\nCan all international parcels be accepted?\nIs pickup automatically scheduled?\n\nCONTACT & SUPPORT\n\nNeed help with the next step?\n\nSend a secure general or shipment-related enquiry for the team to review.\n\nContact the team"
+  },
+  {
+    "width": 1440,
+    "route": "/services/domestic",
+    "entries": [
+      {
+        "frame": [
+          618,
+          412
+        ],
+        "image": [
+          618,
+          412
+        ],
+        "src": "/media/photos/domestic-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          625,
+          417
+        ],
+        "image": [
+          625,
+          417
+        ],
+        "src": "/media/photos/details-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          625,
+          417
+        ],
+        "image": [
+          625,
+          417
+        ],
+        "src": "/media/photos/review-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          625,
+          417
+        ],
+        "image": [
+          625,
+          417
+        ],
+        "src": "/media/photos/dispatch-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "DOMESTIC COURIER ENQUIRIES\n\nA considered route from one city to the next.\n\nTell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.\n\nILLUSTRATIVE COURIER ENVIRONMENT\nDOMESTIC PROCESS\nBegin with the real shipment details.\n\nProvide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step.\n\nReview before commitment.\n\nA submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance.\n\nWe move it with care.\n\nOnce confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required.\n\nSTART WITH THE SHIPMENT DETAILS\n\nLet’s work out the right next step for your parcel.\n\nNo instant estimates without an approved rate card. Our team reviews each request before making an offer.\n\nRequest a quote"
+  },
+  {
+    "width": 1440,
+    "route": "/services/international",
+    "entries": [
+      {
+        "frame": [
+          616,
+          411
+        ],
+        "image": [
+          616,
+          411
+        ],
+        "src": "/media/photos/aircraft-1440.webp",
+        "filter": "brightness(0.82) saturate(0.85)",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          625,
+          417
+        ],
+        "image": [
+          625,
+          417
+        ],
+        "src": "/media/photos/aircraft-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          625,
+          417
+        ],
+        "image": [
+          625,
+          417
+        ],
+        "src": "/media/photos/review-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          625,
+          417
+        ],
+        "image": [
+          625,
+          417
+        ],
+        "src": "/media/photos/details-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "INTERNATIONAL COURIER ENQUIRIES\n\nAcross borders, with the details checked first.\n\nInternational shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.\n\nILLUSTRATIVE COURIER ENVIRONMENT\nINTERNATIONAL PROCESS\nRoute and contents review.\n\nShare accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review.\n\nDocumentation is shipment-specific.\n\nRequired documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review.\n\nClear quotation boundaries.\n\nCharges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements.\n\nSTART WITH THE SHIPMENT DETAILS\n\nLet’s work out the right next step for your parcel.\n\nNo instant estimates without an approved rate card. Our team reviews each request before making an offer.\n\nRequest a quote"
+  },
+  {
+    "width": 768,
+    "route": "/",
+    "entries": [
+      {
+        "frame": [
+          328,
+          219
+        ],
+        "image": [
+          328,
+          219
+        ],
+        "src": "/media/photos/details-768.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          768,
+          512
+        ]
+      },
+      {
+        "frame": [
+          327,
+          218
+        ],
+        "image": [
+          327,
+          218
+        ],
+        "src": "/media/photos/review-768.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          768,
+          512
+        ]
+      },
+      {
+        "frame": [
+          328,
+          219
+        ],
+        "image": [
+          328,
+          219
+        ],
+        "src": "/media/photos/dispatch-768.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          768,
+          512
+        ]
+      },
+      {
+        "frame": [
+          327,
+          218
+        ],
+        "image": [
+          327,
+          218
+        ],
+        "src": "/media/photos/scan-768.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          768,
+          512
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "DOMESTIC & INTERNATIONAL COURIER SERVICES\n\nAcross cities.\nAcross borders.\n\nWe keep your parcels moving.\n\nDomestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step.\n\nGet a quote\nILLUSTRATIVE ROUTE IMAGERY\n\n01 / DOMESTIC\n\nCOURIER SERVICES BETWEEN CITIES\n\nPlanned around your actual route.\n\nShare the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims.\n\nExplore domestic services\nILLUSTRATIVE INTERNATIONAL LOGISTICS\n\n02 / INTERNATIONAL\n\nACROSS BORDERS, DETAILS FIRST\n\nClear before it leaves the ground.\n\nAcceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged.\n\nExplore international services\n\nHOW SHIPPING WORKS\n\nFour steps.\nOne clear process.\n\nEvery status follows a real operational action. An enquiry is never presented as a confirmed booking or dispatch.\n\n01\nShare shipment details\n\nTell us the route, contents, package count and approximate weight.\n\n02\nReceive a reviewed quote\n\nService details, inclusions and exclusions are confirmed for the enquiry.\n\n03\nArrange dispatch\n\nAn accepted quote becomes a booking ready for coordination.\n\n04\nFollow verified updates\n\nContact the team for customer-safe shipment updates.\n\n01\n\nSTART WITH THE SHIPMENT\n\nRequest a considered quote.\n\nShare the details once. Our team reviews each request before confirming service or charges.\n\nGet a quote\nILLUSTRATIVE OPERATIONS ENVIRONMENT\n\n03 / COMPANY\n\nABOUT VK AND COMPANY\n\nBuilt around each shipment.\n\nOur customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates.\n\nMore about our process\n\nCOMMON QUESTIONS\n\nUseful answers,\nbefore you send.\nView all FAQs\nHow do I request a courier quote?\nDoes submitting the form confirm my booking?\nCan all international parcels be accepted?\nIs pickup automatically scheduled?\n\nCONTACT & SUPPORT\n\nNeed help with the next step?\n\nSend a secure general or shipment-related enquiry for the team to review.\n\nContact the team"
+  },
+  {
+    "width": 768,
+    "route": "/services/domestic",
+    "entries": [
+      {
+        "frame": [
+          728,
+          485
+        ],
+        "image": [
+          728,
+          485
+        ],
+        "src": "/media/photos/domestic-1536.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "frame": [
+          378,
+          252
+        ],
+        "image": [
+          378,
+          252
+        ],
+        "src": "/media/photos/details-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          378,
+          252
+        ],
+        "image": [
+          378,
+          252
+        ],
+        "src": "/media/photos/review-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          378,
+          252
+        ],
+        "image": [
+          378,
+          252
+        ],
+        "src": "/media/photos/dispatch-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "DOMESTIC COURIER ENQUIRIES\n\nA considered route from one city to the next.\n\nTell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.\n\nILLUSTRATIVE COURIER ENVIRONMENT\nDOMESTIC PROCESS\nBegin with the real shipment details.\n\nProvide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step.\n\nReview before commitment.\n\nA submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance.\n\nWe move it with care.\n\nOnce confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required.\n\nSTART WITH THE SHIPMENT DETAILS\n\nLet’s work out the right next step for your parcel.\n\nNo instant estimates without an approved rate card. Our team reviews each request before making an offer.\n\nRequest a quote"
+  },
+  {
+    "width": 768,
+    "route": "/services/international",
+    "entries": [
+      {
+        "frame": [
+          726,
+          484
+        ],
+        "image": [
+          726,
+          484
+        ],
+        "src": "/media/photos/aircraft-1536.webp",
+        "filter": "brightness(0.82) saturate(0.85)",
+        "loaded": true,
+        "source": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "frame": [
+          378,
+          252
+        ],
+        "image": [
+          378,
+          252
+        ],
+        "src": "/media/photos/aircraft-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          378,
+          252
+        ],
+        "image": [
+          378,
+          252
+        ],
+        "src": "/media/photos/review-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          378,
+          252
+        ],
+        "image": [
+          378,
+          252
+        ],
+        "src": "/media/photos/details-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "INTERNATIONAL COURIER ENQUIRIES\n\nAcross borders, with the details checked first.\n\nInternational shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.\n\nILLUSTRATIVE COURIER ENVIRONMENT\nINTERNATIONAL PROCESS\nRoute and contents review.\n\nShare accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review.\n\nDocumentation is shipment-specific.\n\nRequired documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review.\n\nClear quotation boundaries.\n\nCharges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements.\n\nSTART WITH THE SHIPMENT DETAILS\n\nLet’s work out the right next step for your parcel.\n\nNo instant estimates without an approved rate card. Our team reviews each request before making an offer.\n\nRequest a quote"
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "entries": [
+      {
+        "frame": [
+          362,
+          241
+        ],
+        "image": [
+          362,
+          241
+        ],
+        "src": "/media/photos/details-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          362,
+          241
+        ],
+        "image": [
+          362,
+          241
+        ],
+        "src": "/media/photos/review-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          362,
+          241
+        ],
+        "image": [
+          362,
+          241
+        ],
+        "src": "/media/photos/dispatch-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          362,
+          241
+        ],
+        "image": [
+          362,
+          241
+        ],
+        "src": "/media/photos/scan-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "DOMESTIC & INTERNATIONAL COURIER SERVICES\n\nAcross cities.\nAcross borders.\n\nWe keep your parcels moving.\n\nDomestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step.\n\nGet a quote\nILLUSTRATIVE ROUTE IMAGERY\n\n01 / DOMESTIC\n\nCOURIER SERVICES BETWEEN CITIES\n\nPlanned around your actual route.\n\nShare the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims.\n\nExplore domestic services\nILLUSTRATIVE INTERNATIONAL LOGISTICS\n\n02 / INTERNATIONAL\n\nACROSS BORDERS, DETAILS FIRST\n\nClear before it leaves the ground.\n\nAcceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged.\n\nExplore international services\n\nHOW SHIPPING WORKS\n\nFour steps.\nOne clear process.\n\nEvery status follows a real operational action. An enquiry is never presented as a confirmed booking or dispatch.\n\n01\nShare shipment details\n\nTell us the route, contents, package count and approximate weight.\n\n02\nReceive a reviewed quote\n\nService details, inclusions and exclusions are confirmed for the enquiry.\n\n03\nArrange dispatch\n\nAn accepted quote becomes a booking ready for coordination.\n\n04\nFollow verified updates\n\nContact the team for customer-safe shipment updates.\n\n01\n\nSTART WITH THE SHIPMENT\n\nRequest a considered quote.\n\nShare the details once. Our team reviews each request before confirming service or charges.\n\nGet a quote\nILLUSTRATIVE OPERATIONS ENVIRONMENT\n\n03 / COMPANY\n\nABOUT VK AND COMPANY\n\nBuilt around each shipment.\n\nOur customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates.\n\nMore about our process\n\nCOMMON QUESTIONS\n\nUseful answers,\nbefore you send.\nView all FAQs\nHow do I request a courier quote?\nDoes submitting the form confirm my booking?\nCan all international parcels be accepted?\nIs pickup automatically scheduled?\n\nCONTACT & SUPPORT\n\nNeed help with the next step?\n\nSend a secure general or shipment-related enquiry for the team to review.\n\nContact the team"
+  },
+  {
+    "width": 390,
+    "route": "/services/domestic",
+    "entries": [
+      {
+        "frame": [
+          362,
+          241
+        ],
+        "image": [
+          362,
+          241
+        ],
+        "src": "/media/photos/domestic-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          358,
+          239
+        ],
+        "image": [
+          358,
+          239
+        ],
+        "src": "/media/photos/details-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          358,
+          239
+        ],
+        "image": [
+          358,
+          239
+        ],
+        "src": "/media/photos/review-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          358,
+          239
+        ],
+        "image": [
+          358,
+          239
+        ],
+        "src": "/media/photos/dispatch-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "DOMESTIC COURIER ENQUIRIES\n\nA considered route from one city to the next.\n\nTell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.\n\nILLUSTRATIVE COURIER ENVIRONMENT\nDOMESTIC PROCESS\nBegin with the real shipment details.\n\nProvide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step.\n\nReview before commitment.\n\nA submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance.\n\nWe move it with care.\n\nOnce confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required.\n\nSTART WITH THE SHIPMENT DETAILS\n\nLet’s work out the right next step for your parcel.\n\nNo instant estimates without an approved rate card. Our team reviews each request before making an offer.\n\nRequest a quote"
+  },
+  {
+    "width": 390,
+    "route": "/services/international",
+    "entries": [
+      {
+        "frame": [
+          360,
+          240
+        ],
+        "image": [
+          360,
+          240
+        ],
+        "src": "/media/photos/aircraft-1440.webp",
+        "filter": "brightness(0.82) saturate(0.85)",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          358,
+          239
+        ],
+        "image": [
+          358,
+          239
+        ],
+        "src": "/media/photos/aircraft-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          358,
+          239
+        ],
+        "image": [
+          358,
+          239
+        ],
+        "src": "/media/photos/review-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          358,
+          239
+        ],
+        "image": [
+          358,
+          239
+        ],
+        "src": "/media/photos/details-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "INTERNATIONAL COURIER ENQUIRIES\n\nAcross borders, with the details checked first.\n\nInternational shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.\n\nILLUSTRATIVE COURIER ENVIRONMENT\nINTERNATIONAL PROCESS\nRoute and contents review.\n\nShare accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review.\n\nDocumentation is shipment-specific.\n\nRequired documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review.\n\nClear quotation boundaries.\n\nCharges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements.\n\nSTART WITH THE SHIPMENT DETAILS\n\nLet’s work out the right next step for your parcel.\n\nNo instant estimates without an approved rate card. Our team reviews each request before making an offer.\n\nRequest a quote"
+  },
+  {
+    "width": 360,
+    "route": "/",
+    "entries": [
+      {
+        "frame": [
+          332,
+          221
+        ],
+        "image": [
+          332,
+          221
+        ],
+        "src": "/media/photos/details-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          332,
+          221
+        ],
+        "image": [
+          332,
+          221
+        ],
+        "src": "/media/photos/review-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          332,
+          221
+        ],
+        "image": [
+          332,
+          221
+        ],
+        "src": "/media/photos/dispatch-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          332,
+          221
+        ],
+        "image": [
+          332,
+          221
+        ],
+        "src": "/media/photos/scan-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "DOMESTIC & INTERNATIONAL COURIER SERVICES\n\nAcross cities.\nAcross borders.\n\nWe keep your parcels moving.\n\nDomestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step.\n\nGet a quote\nILLUSTRATIVE ROUTE IMAGERY\n\n01 / DOMESTIC\n\nCOURIER SERVICES BETWEEN CITIES\n\nPlanned around your actual route.\n\nShare the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims.\n\nExplore domestic services\nILLUSTRATIVE INTERNATIONAL LOGISTICS\n\n02 / INTERNATIONAL\n\nACROSS BORDERS, DETAILS FIRST\n\nClear before it leaves the ground.\n\nAcceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged.\n\nExplore international services\n\nHOW SHIPPING WORKS\n\nFour steps.\nOne clear process.\n\nEvery status follows a real operational action. An enquiry is never presented as a confirmed booking or dispatch.\n\n01\nShare shipment details\n\nTell us the route, contents, package count and approximate weight.\n\n02\nReceive a reviewed quote\n\nService details, inclusions and exclusions are confirmed for the enquiry.\n\n03\nArrange dispatch\n\nAn accepted quote becomes a booking ready for coordination.\n\n04\nFollow verified updates\n\nContact the team for customer-safe shipment updates.\n\n01\n\nSTART WITH THE SHIPMENT\n\nRequest a considered quote.\n\nShare the details once. Our team reviews each request before confirming service or charges.\n\nGet a quote\nILLUSTRATIVE OPERATIONS ENVIRONMENT\n\n03 / COMPANY\n\nABOUT VK AND COMPANY\n\nBuilt around each shipment.\n\nOur customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates.\n\nMore about our process\n\nCOMMON QUESTIONS\n\nUseful answers,\nbefore you send.\nView all FAQs\nHow do I request a courier quote?\nDoes submitting the form confirm my booking?\nCan all international parcels be accepted?\nIs pickup automatically scheduled?\n\nCONTACT & SUPPORT\n\nNeed help with the next step?\n\nSend a secure general or shipment-related enquiry for the team to review.\n\nContact the team"
+  },
+  {
+    "width": 360,
+    "route": "/services/domestic",
+    "entries": [
+      {
+        "frame": [
+          332,
+          221
+        ],
+        "image": [
+          332,
+          221
+        ],
+        "src": "/media/photos/domestic-1440.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          328,
+          219
+        ],
+        "image": [
+          328,
+          219
+        ],
+        "src": "/media/photos/details-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          328,
+          219
+        ],
+        "image": [
+          328,
+          219
+        ],
+        "src": "/media/photos/review-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          328,
+          219
+        ],
+        "image": [
+          328,
+          219
+        ],
+        "src": "/media/photos/dispatch-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "DOMESTIC COURIER ENQUIRIES\n\nA considered route from one city to the next.\n\nTell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.\n\nILLUSTRATIVE COURIER ENVIRONMENT\nDOMESTIC PROCESS\nBegin with the real shipment details.\n\nProvide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step.\n\nReview before commitment.\n\nA submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance.\n\nWe move it with care.\n\nOnce confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required.\n\nSTART WITH THE SHIPMENT DETAILS\n\nLet’s work out the right next step for your parcel.\n\nNo instant estimates without an approved rate card. Our team reviews each request before making an offer.\n\nRequest a quote"
+  },
+  {
+    "width": 360,
+    "route": "/services/international",
+    "entries": [
+      {
+        "frame": [
+          330,
+          220
+        ],
+        "image": [
+          330,
+          220
+        ],
+        "src": "/media/photos/aircraft-1440.webp",
+        "filter": "brightness(0.82) saturate(0.85)",
+        "loaded": true,
+        "source": [
+          1440,
+          960
+        ]
+      },
+      {
+        "frame": [
+          328,
+          219
+        ],
+        "image": [
+          328,
+          219
+        ],
+        "src": "/media/photos/aircraft-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          328,
+          219
+        ],
+        "image": [
+          328,
+          219
+        ],
+        "src": "/media/photos/review-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      },
+      {
+        "frame": [
+          328,
+          219
+        ],
+        "image": [
+          328,
+          219
+        ],
+        "src": "/media/photos/details-1024.webp",
+        "filter": "none",
+        "loaded": true,
+        "source": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "overflow": false,
+    "text": "INTERNATIONAL COURIER ENQUIRIES\n\nAcross borders, with the details checked first.\n\nInternational shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.\n\nILLUSTRATIVE COURIER ENVIRONMENT\nINTERNATIONAL PROCESS\nRoute and contents review.\n\nShare accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review.\n\nDocumentation is shipment-specific.\n\nRequired documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review.\n\nClear quotation boundaries.\n\nCharges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements.\n\nSTART WITH THE SHIPMENT DETAILS\n\nLet’s work out the right next step for your parcel.\n\nNo instant estimates without an approved rate card. Our team reviews each request before making an offer.\n\nRequest a quote"
+  }
+]

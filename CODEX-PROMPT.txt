@@ -1,0 +1,37 @@
+Implement ONLY the approved “What We Do” section on the VK AND COMPANY /about page. Make the changes in the existing project, not a separate demo.
+
+REFERENCE AND ASSETS
+The approved design reference is:
+design-references/vk-about-approved.png
+
+Use these supplied images, already extracted from the approved mockup:
+- /images/about/logistics-network.webp — large left illustration (642 × 595).
+- /images/about/customer-journey.webp — parcel preparation (277 × 215).
+- /images/about/service-confirmation.webp — courier truck (277 × 216).
+- /images/about/customer-support.webp — support representative (277 × 218).
+
+They are stored under public/images/about/. Inspect these files and the current About-page implementation first. Do not generate, search for, or substitute other images. If a required file is missing, report its exact path instead of inventing a replacement.
+
+DESKTOP LAYOUT
+Recreate the reference as real responsive components, NOT one full-page screenshot.
+- Use a spacious two-column section: approximately 40% for the left artwork and 60% for the right content, with a comfortable gap.
+- Left: keep “WHAT WE DO”; add “Connecting People & Possibilities” as real styled text; show logistics-network.webp below it. Display the full illustration without a heavy card, cropping, or distortion.
+- Recreate the small four-icon strip below the illustration using the existing icon library. Use these neutral labels: Shipment Details, Route Review, Booking Support, Shipment Updates. Do not introduce unverified promises about on-time delivery, worldwide coverage, or partners.
+- Right: create three vertically stacked rows. Each row has a rounded thumbnail on the left and its existing heading and paragraph on the right.
+- Row 1 uses customer-journey.webp with “A straightforward customer journey.”
+- Row 2 uses service-confirmation.webp with “Careful about what is confirmed.”
+- Row 3 uses customer-support.webp with “Prepared to connect.”
+- Preserve all three existing paragraphs verbatim. Do not infer new live-tracking or courier-integration capabilities from the imagery.
+- Use subtle divider lines, generous spacing, the existing navy serif headings, muted body text, teal accents, and the current light background.
+- Add the reference’s small “Delivered with Purpose” closing line as real text, using an existing suitable italic/script font.
+
+RESPONSIVE AND IMAGE BEHAVIOUR
+At tablet widths, stack the large illustration above the three rows. On narrow mobile screens, place each thumbnail above its own text. Preserve reading order, readable font sizes, and comfortable spacing; avoid clipping or horizontal scrolling at 200% zoom.
+Use the project’s existing image component, accurate intrinsic dimensions, responsive sizing, and descriptive alt text. These are thumbnail-sized crops: keep the small images around 200–277px wide on desktop and no more than about 320px on mobile; do not stretch them into banners. Treat the scenes as illustrative, not verified photographs of company-owned assets.
+Reuse the existing approved image click/tap feedback, if present, with its accessibility and reduced-motion handling. Do not add autoplay, parallax, WebGL, sliders, hover-only interactions, or new animation systems.
+
+STRICT SCOPE
+Do not modify the header, navigation, official logo, footer, other About-page sections, other routes, APIs, authentication, database, or business logic. Do not replace the official logo with a logo copied from the mockup. Keep headings, paragraphs, icons, and layout as real HTML/CSS, not rasterized webpage content. Reuse existing styling and components; avoid new dependencies and unrelated refactors.
+
+VERIFY
+Run the project’s available lint, type-check, and build commands. If browser testing is available, inspect /about at mobile, tablet, and desktop widths. Confirm all four images load and all existing paragraphs are unchanged. Report the files changed, checks actually run, and anything not verified. Do not claim checks passed unless they ran successfully.

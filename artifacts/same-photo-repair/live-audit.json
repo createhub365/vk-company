@@ -1,0 +1,505 @@
+[
+  {
+    "route": "/",
+    "images": [
+      {
+        "src": "/media/domestic-courier-road.png",
+        "currentSrc": "https://vkandcompany.com/media/domestic-courier-road.png",
+        "alt": "Teal and navy courier truck travelling on an intercity road",
+        "natural": [
+          1744,
+          902
+        ],
+        "box": {
+          "x": 0,
+          "y": -4051,
+          "width": 1440,
+          "height": 1000,
+          "top": -4051,
+          "right": 1440,
+          "bottom": -3051,
+          "left": 0
+        },
+        "fit": "cover",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/media/domestic-road.png",
+        "currentSrc": "https://vkandcompany.com/media/domestic-road.png",
+        "alt": "Illustrative unbranded delivery truck travelling on a modern intercity road",
+        "natural": [
+          1744,
+          902
+        ],
+        "box": {
+          "x": 130,
+          "y": -2907,
+          "width": 636.71875,
+          "height": 520,
+          "top": -2907,
+          "right": 766.71875,
+          "bottom": -2387,
+          "left": 130
+        },
+        "fit": "cover",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/media/homepage-international-cargo.jpg",
+        "currentSrc": "https://vkandcompany.com/media/homepage-international-cargo.jpg",
+        "alt": "Antonov An-124 cargo aircraft above Lviv airport, with nose, tail and both wingtips in frame",
+        "natural": [
+          2400,
+          1600
+        ],
+        "box": {
+          "x": 867.515625,
+          "y": -2038.78125,
+          "width": 442.46875,
+          "height": 294.96875,
+          "top": -2038.78125,
+          "right": 1309.984375,
+          "bottom": -1743.8125,
+          "left": 867.515625
+        },
+        "fit": "contain",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/media/process/review.jpg",
+        "currentSrc": "https://vkandcompany.com/media/process/review.jpg",
+        "alt": "A courier and customer reviewing delivery paperwork together on a clipboard",
+        "natural": [
+          1200,
+          800
+        ],
+        "box": {
+          "x": 444,
+          "y": -1150.578125,
+          "width": 258,
+          "height": 172,
+          "top": -1150.578125,
+          "right": 702,
+          "bottom": -978.578125,
+          "left": 444
+        },
+        "fit": "fill",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/media/process/dispatch.jpg",
+        "currentSrc": "https://vkandcompany.com/media/process/dispatch.jpg",
+        "alt": "Two delivery workers loading cardboard parcels into the back of a van",
+        "natural": [
+          1200,
+          800
+        ],
+        "box": {
+          "x": 739,
+          "y": -1150.578125,
+          "width": 258,
+          "height": 172,
+          "top": -1150.578125,
+          "right": 997,
+          "bottom": -978.578125,
+          "left": 739
+        },
+        "fit": "fill",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/media/process/scan.jpg",
+        "currentSrc": "https://vkandcompany.com/media/process/scan.jpg",
+        "alt": "A handheld barcode scanner reading the label on a cardboard parcel",
+        "natural": [
+          1080,
+          570
+        ],
+        "box": {
+          "x": 1034,
+          "y": -1150.578125,
+          "width": 258,
+          "height": 136.15625,
+          "top": -1150.578125,
+          "right": 1292,
+          "bottom": -1014.421875,
+          "left": 1034
+        },
+        "fit": "fill",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/media/dispatch-workspace.png",
+        "currentSrc": "https://vkandcompany.com/media/dispatch-workspace.png",
+        "alt": "Illustrative modern parcel dispatch workspace",
+        "natural": [
+          1717,
+          916
+        ],
+        "box": {
+          "x": 130,
+          "y": 239.875,
+          "width": 636.71875,
+          "height": 520,
+          "top": 239.875,
+          "right": 766.71875,
+          "bottom": 759.875,
+          "left": 130
+        },
+        "fit": "cover",
+        "filter": "none",
+        "transform": "none"
+      }
+    ],
+    "steps": [
+      {
+        "html": "<span>01</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-file-text\"><path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z\"></path><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"></path><path d=\"M10 9H8\"></path><path d=\"M16 13H8\"></path><path d=\"M16 17H8\"></path></svg><h3>Share shipment details</h3><p>Tell us the route, contents, package count and approximate weight.</p>",
+        "images": 0
+      },
+      {
+        "html": "<div class=\"process-photo\" data-image-feedback=\"background\"><img alt=\"A courier and customer reviewing delivery paperwork together on a clipboard\" loading=\"lazy\" width=\"1200\" height=\"800\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/media/process/review.jpg\"></div><span>02</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-circle-check\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"m9 12 2 2 4-4\"></path></svg><h3>Receive a reviewed quote</h3><p>Service details, inclusions and exclusions are confirmed for the enquiry.</p>",
+        "images": 1
+      },
+      {
+        "html": "<div class=\"process-photo\" data-image-feedback=\"background\"><img alt=\"Two delivery workers loading cardboard parcels into the back of a van\" loading=\"lazy\" width=\"1200\" height=\"800\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/media/process/dispatch.jpg\"></div><span>03</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-box\"><path d=\"M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z\"></path><path d=\"m3.3 7 8.7 5 8.7-5\"></path><path d=\"M12 22V12\"></path></svg><h3>Arrange dispatch</h3><p>An accepted quote becomes a booking ready for coordination.</p>",
+        "images": 1
+      },
+      {
+        "html": "<div class=\"process-photo\" data-image-feedback=\"background\"><img alt=\"A handheld barcode scanner reading the label on a cardboard parcel\" loading=\"lazy\" width=\"1080\" height=\"570\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/media/process/scan.jpg\"></div><span>04</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-map-pin\"><path d=\"M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg><h3>Follow verified updates</h3><p>Contact the team for customer-safe shipment updates.</p>",
+        "images": 1
+      }
+    ],
+    "failures": [
+      {
+        "url": "https://vkandcompany.com/",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/services/domestic",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/services/international",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/about",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/contact",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/get-a-quote",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/cdn-cgi/rum?",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/faq",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      }
+    ]
+  },
+  {
+    "route": "/services/domestic",
+    "images": [
+      {
+        "src": "/media/domestic-road.png",
+        "currentSrc": "https://vkandcompany.com/media/domestic-road.png",
+        "alt": "Illustrative delivery truck travelling on an intercity road",
+        "natural": [
+          1744,
+          902
+        ],
+        "box": {
+          "x": 691.796875,
+          "y": -890.125,
+          "width": 618.203125,
+          "height": 360,
+          "top": -890.125,
+          "right": 1310,
+          "bottom": -530.125,
+          "left": 691.796875
+        },
+        "fit": "cover",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "https://vkandcompany.com/_next/static/media/image.c01682b0.png",
+        "alt": "Illustration of a domestic shipment quotation form on a laptop beside a parcel",
+        "natural": [
+          1554,
+          1012
+        ],
+        "box": {
+          "x": 69.390625,
+          "y": -557.34375,
+          "width": 2478.59375,
+          "height": 1614.109375,
+          "top": -557.34375,
+          "right": 2547.984375,
+          "bottom": 1056.765625,
+          "left": 69.390625
+        },
+        "fit": "fill",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "https://vkandcompany.com/_next/static/media/image.c01682b0.png",
+        "alt": "Illustration of a courier and customer reviewing paperwork at a doorstep",
+        "natural": [
+          1554,
+          1012
+        ],
+        "box": {
+          "x": 69.390625,
+          "y": -560.15625,
+          "width": 2478.59375,
+          "height": 1614.109375,
+          "top": -560.15625,
+          "right": 2547.984375,
+          "bottom": 1053.953125,
+          "left": 69.390625
+        },
+        "fit": "fill",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "https://vkandcompany.com/_next/static/media/image.c01682b0.png",
+        "alt": "Illustration of a VK AND COMPANY delivery truck travelling through a city",
+        "natural": [
+          1554,
+          1012
+        ],
+        "box": {
+          "x": 69.390625,
+          "y": -559.765625,
+          "width": 2478.59375,
+          "height": 1614.109375,
+          "top": -559.765625,
+          "right": 2547.984375,
+          "bottom": 1054.34375,
+          "left": 69.390625
+        },
+        "fit": "fill",
+        "filter": "none",
+        "transform": "none"
+      }
+    ],
+    "steps": [],
+    "failures": [
+      {
+        "url": "https://vkandcompany.com/",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/services/domestic",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/services/international",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/about",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/contact",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/get-a-quote",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/cdn-cgi/rum?",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      }
+    ]
+  },
+  {
+    "route": "/services/international",
+    "images": [
+      {
+        "src": "/media/international-cargo-apron.png",
+        "currentSrc": "https://vkandcompany.com/media/international-cargo-apron.png",
+        "alt": "Illustrative cargo aircraft at an international logistics apron",
+        "natural": [
+          1802,
+          873
+        ],
+        "box": {
+          "x": 692.796875,
+          "y": -889.125,
+          "width": 616.203125,
+          "height": 358,
+          "top": -889.125,
+          "right": 1309,
+          "bottom": -531.125,
+          "left": 692.796875
+        },
+        "fit": "cover",
+        "filter": "brightness(0.82) saturate(0.85)",
+        "transform": "none"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "https://vkandcompany.com/_next/static/media/image.c01682b0.png",
+        "alt": "Illustration of aircraft cargo loading with a world map and the words From India to the World",
+        "natural": [
+          1554,
+          1012
+        ],
+        "box": {
+          "x": -1168.3125,
+          "y": -557.34375,
+          "width": 2478.59375,
+          "height": 1614.109375,
+          "top": -557.34375,
+          "right": 1310.28125,
+          "bottom": 1056.765625,
+          "left": -1168.3125
+        },
+        "fit": "fill",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "https://vkandcompany.com/_next/static/media/image.c01682b0.png",
+        "alt": "Illustrative export-document checklist beside a passport and globe; actual requirements depend on the shipment",
+        "natural": [
+          1554,
+          1012
+        ],
+        "box": {
+          "x": -1168.3125,
+          "y": -560.15625,
+          "width": 2478.59375,
+          "height": 1614.109375,
+          "top": -560.15625,
+          "right": 1310.28125,
+          "bottom": 1053.953125,
+          "left": -1168.3125
+        },
+        "fit": "fill",
+        "filter": "none",
+        "transform": "none"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "https://vkandcompany.com/_next/static/media/image.c01682b0.png",
+        "alt": "Illustration of a cargo ship, aircraft and delivery truck at an international port",
+        "natural": [
+          1554,
+          1012
+        ],
+        "box": {
+          "x": -1168.3125,
+          "y": -559.765625,
+          "width": 2478.59375,
+          "height": 1614.109375,
+          "top": -559.765625,
+          "right": 1310.28125,
+          "bottom": 1054.34375,
+          "left": -1168.3125
+        },
+        "fit": "fill",
+        "filter": "none",
+        "transform": "none"
+      }
+    ],
+    "steps": [],
+    "failures": [
+      {
+        "url": "https://vkandcompany.com/cdn-cgi/rum?",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/services/domestic",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/services/international",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/about",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/contact",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      },
+      {
+        "url": "https://vkandcompany.com/get-a-quote",
+        "error": {
+          "errorText": "net::ERR_FAILED"
+        }
+      }
+    ]
+  }
+]

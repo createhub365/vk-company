@@ -1,0 +1,19 @@
+[WebServer] (node:79801) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 2 workers
+
+(node:79803) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:79802) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [1440] › tests/e2e/image-feedback.spec.ts:60:1 › one genuine WebGL scene sleeps idle/offscreen and survives repeated taps (3.7s)
+  ✓  1 [768] › tests/e2e/image-feedback.spec.ts:60:1 › one genuine WebGL scene sleeps idle/offscreen and survives repeated taps (3.7s)
+(node:79820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:79821) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [390] › tests/e2e/image-feedback.spec.ts:60:1 › one genuine WebGL scene sleeps idle/offscreen and survives repeated taps (3.7s)
+  ✓  4 [360] › tests/e2e/image-feedback.spec.ts:60:1 › one genuine WebGL scene sleeps idle/offscreen and survives repeated taps (3.7s)
+
+  4 passed (8.3s)

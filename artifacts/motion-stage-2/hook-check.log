@@ -1,0 +1,1 @@
+PASS: pre-commit accepts matching content, rejects partial-staging concealment, rejects a fully staged content change. No commits created.

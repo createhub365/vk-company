@@ -1,0 +1,54 @@
+/* Homepage hero only. The original section remains the layout/scroll anchor. */
+.cinematic-hero.hero-motion { overflow: clip; }
+.cinematic-hero.hero-motion::before { content: none; }
+.hero-motion .hero-depth { position: relative; margin-top: -92px; --hero-depth-factor: 1; --hero-emphasis-z: calc(var(--hero-emphasis-base) * var(--hero-depth-factor)); }
+.hero-motion .hero-stage {
+  position: relative;
+  padding-top: 92px;
+  perspective: var(--perspective);
+  /* Project the inner planes once before the whole group recedes/fades. */
+  transform-style: flat;
+}
+.hero-motion .hero-back, .hero-motion .hero-mid { position: absolute; inset: 0; pointer-events: none; }
+.hero-motion .hero-back {
+  background: #0b2639;
+  transform: translate3d(var(--hero-pointer-x, 0px), var(--hero-pointer-y, 0px), var(--z-back)) scale(var(--hero-back-scale));
+}
+.hero-motion .hero-mid {
+  inset: calc(-1 * var(--hero-mid-overscan));
+  transform: translate3d(var(--hero-pointer-x, 0px), var(--hero-pointer-y, 0px), 0px);
+}
+/* Preserve the exact intentional hero contrast, now on the image's own plane. */
+.hero-motion .hero-mid::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(6,24,37,.94) 0%, rgba(9,36,53,.85) 32%, rgba(9,36,53,.48) 53%, rgba(8,31,46,.12) 78%, rgba(8,31,46,.2) 100%);
+}
+.hero-motion .cinematic-hero-content { z-index: auto; transform-style: preserve-3d; }
+.hero-motion .cinematic-copy {
+  transform-style: preserve-3d;
+  transform: translate3d(var(--hero-pointer-x, 0px), var(--hero-pointer-y, 0px), var(--z-front));
+}
+.hero-motion h1 { transform-style: preserve-3d; }
+.hero-motion .hero-line { display: inline-block; transform-style: preserve-3d; }
+.hero-motion .hero-line-borders { transform: translateZ(var(--hero-emphasis-z)); }
+/* Margins remain on the original paragraphs/action row, not on new motion wrappers. */
+.hero-motion .hero-follow { display: flow-root; }
+
+@media (max-width: 900px) {
+  .hero-motion .hero-mid::after { background: linear-gradient(180deg, rgba(6,24,37,.9) 0%, rgba(9,36,53,.84) 40%, rgba(9,36,53,.64) 70%, rgba(8,31,46,.3) 100%); }
+}
+@media (width < 768px) {
+  .hero-motion .hero-depth { --hero-depth-factor: 0.5; --hero-mid-overscan: 0px !important; }
+}
+@media (hover: none), (width < 768px) {
+  .hero-motion [data-hero-plane] { --hero-pointer-x: 0px !important; --hero-pointer-y: 0px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-motion .hero-stage { perspective: none !important; }
+  .hero-motion .hero-mid { inset: 0; }
+  .hero-motion [data-depth-motion] { transform: none !important; opacity: 1 !important; will-change: auto !important; }
+}
+
+/* A keyboard user never waits for an entrance before seeing the focused CTA. */
+.hero-motion .hero-follow:focus-within { opacity: 1 !important; transform: none !important; }
+.hero-motion .cinematic-copy:focus-within { --hero-pointer-x: 0px !important; --hero-pointer-y: 0px !important; }

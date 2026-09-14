@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Mail, Phone, Headphones, FileText, Package, Users, MoveDownLeft } from "lucide-react";
-import { ReferenceArtwork } from "@/components/reference-artwork";
+import { Photograph } from "@/components/photograph";
 import { SupportForm } from "@/components/forms/support-form";
 import { getPublicBusinessSettings } from "@/lib/business-settings";
 import styles from "./contact.module.css";
-import artwork from "./image.png";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -20,7 +19,7 @@ export default async function ContactPage() {
           <h1>How can we <br/>help?</h1>
           <p className={styles.description}>Send a general question or ask about a shipment. Your message will be saved for the team to review.</p>
           <p className={styles.tagline}>Here to Keep <br/>You Moving<MoveDownLeft aria-hidden="true"/></p>
-          <div className={styles.artwork}><ReferenceArtwork source={artwork} region={[0, 330, 760, 448]} alt="Illustration of a VK AND COMPANY courier handing a parcel to a customer, with a globe, aircraft, ship and delivery truck" priority/></div>
+          <div className={styles.artwork}><div className="service-photo" data-image-feedback="photo" data-photo-frame=""><Photograph name="support" alt="Illustrative Indian courier customer support representative" sizes="(max-width: 900px) calc(100vw - 32px), 50vw" eager/></div></div>
           <ul className={styles.channels} aria-label="Enquiry topics">
             <li><Headphones aria-hidden="true"/><span>General <br/>Enquiries</span></li>
             <li><FileText aria-hidden="true"/><span>Quote <br/>Requests</span></li>

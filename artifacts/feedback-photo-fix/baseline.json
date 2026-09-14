@@ -1,0 +1,1297 @@
+[
+  {
+    "base": "https://vkandcompany.com",
+    "headers": {
+      "access-control-allow-origin": "*",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "DYNAMIC",
+      "cf-ray": "a3ad29ccec9e751f-AMS",
+      "content-encoding": "br",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Mon, 14 Sep 2026 05:59:02 GMT",
+      "link": "</brand/vk-and-company-logo-transparent.png>; rel=\"preload\"; as=image, </media/domestic-courier-road.png>; rel=\"preload\"; as=image",
+      "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=h1pSLf9e3L1jp%2FKhLO42Zl7bcDYbi4my1qDq8XeNSOUTf8ARlvjQIRcfQ5%2BpB5kZ1a2gcCql%2FdE0%2FU8JOiJcJBRrVOrYkRLEFbTa5IQergympuIWAmcqshBmJB66TYMPFjn96nfl3K8uxf8D7mYN\"}]}",
+      "server": "cloudflare",
+      "server-timing": "cfCacheStatus;desc=\"DYNAMIC\", cfEdge;dur=11,cfOrigin;dur=81",
+      "vary": "accept-encoding",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY"
+    },
+    "scripts": [
+      "https://vkandcompany.com/_next/static/chunks/4bd1b696-92152b0f5947070d.js",
+      "https://vkandcompany.com/_next/static/chunks/794-d98395dee80b8e0c.js",
+      "https://vkandcompany.com/_next/static/chunks/main-app-07af05715322fcb6.js",
+      "https://vkandcompany.com/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "https://vkandcompany.com/_next/static/chunks/webpack-5bbf88069bde45e6.js",
+      "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+    ],
+    "errors": [
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failed": [
+      "https://vkandcompany.com/cdn-cgi/rum?",
+      "https://vkandcompany.com/",
+      "https://vkandcompany.com/services/domestic",
+      "https://vkandcompany.com/services/international",
+      "https://vkandcompany.com/about",
+      "https://vkandcompany.com/contact",
+      "https://vkandcompany.com/get-a-quote"
+    ],
+    "tests": [
+      {
+        "selector": "h1",
+        "animations": [
+          {
+            "duration": 720,
+            "keyframes": [
+              {
+                "offset": 0,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(-110%)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 1,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(350%)",
+                "computedOffset": 1
+              }
+            ]
+          }
+        ],
+        "layers": 0
+      },
+      {
+        "selector": ".cinematic-hero",
+        "animations": [
+          {
+            "duration": 720,
+            "keyframes": [
+              {
+                "offset": 0,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(-110%)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 1,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(350%)",
+                "computedOffset": 1
+              }
+            ]
+          },
+          {
+            "duration": 450,
+            "keyframes": [
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0.3",
+                "transform": "scale(0)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 0.4,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0.18",
+                "computedOffset": 0.4
+              },
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0",
+                "transform": "scale(1)",
+                "computedOffset": 1
+              }
+            ]
+          }
+        ],
+        "layers": 1
+      },
+      {
+        "selector": ".editorial-image",
+        "animations": [
+          {
+            "duration": 720,
+            "keyframes": [
+              {
+                "offset": 0,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(-110%)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 1,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(350%)",
+                "computedOffset": 1
+              }
+            ]
+          },
+          {
+            "duration": 450,
+            "keyframes": [
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "transform": "scale(1)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 0.45,
+                "easing": "linear",
+                "composite": "auto",
+                "transform": "scale(1.025)",
+                "computedOffset": 0.45
+              },
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "transform": "scale(1)",
+                "computedOffset": 1
+              }
+            ]
+          },
+          {
+            "duration": 450,
+            "keyframes": [
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0.3",
+                "transform": "scale(0)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 0.4,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0.18",
+                "computedOffset": 0.4
+              },
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0",
+                "transform": "scale(1)",
+                "computedOffset": 1
+              }
+            ]
+          }
+        ],
+        "layers": 1
+      }
+    ]
+  },
+  {
+    "base": "http://127.0.0.1:3102",
+    "headers": {
+      "connection": "keep-alive",
+      "content-type": "text/html",
+      "date": "Mon, 14 Sep 2026 05:59:09 GMT",
+      "keep-alive": "timeout=5",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "transfer-encoding": "chunked",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY"
+    },
+    "scripts": [
+      "http://127.0.0.1:3102/_next/static/chunks/4bd1b696-92152b0f5947070d.js",
+      "http://127.0.0.1:3102/_next/static/chunks/794-d98395dee80b8e0c.js",
+      "http://127.0.0.1:3102/_next/static/chunks/main-app-cc06d27a17051e75.js",
+      "http://127.0.0.1:3102/_next/static/chunks/app/layout-8c2236be95ca8a02.js",
+      "http://127.0.0.1:3102/_next/static/chunks/437-e644263190ac9a21.js",
+      "http://127.0.0.1:3102/_next/static/chunks/500-721f8650806d0f40.js",
+      "http://127.0.0.1:3102/_next/static/chunks/app/(site)/page-e5594cf8844ea63a.js",
+      "http://127.0.0.1:3102/_next/static/chunks/app/(site)/layout-8bc3d6a3a9eebed6.js",
+      "http://127.0.0.1:3102/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "http://127.0.0.1:3102/_next/static/chunks/webpack-5bbf88069bde45e6.js"
+    ],
+    "errors": [
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failed": [
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/faq",
+      "http://127.0.0.1:3102/privacy",
+      "http://127.0.0.1:3102/terms",
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/faq",
+      "http://127.0.0.1:3102/privacy",
+      "http://127.0.0.1:3102/terms",
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/faq",
+      "http://127.0.0.1:3102/privacy",
+      "http://127.0.0.1:3102/terms",
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/faq",
+      "http://127.0.0.1:3102/privacy",
+      "http://127.0.0.1:3102/terms",
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/faq",
+      "http://127.0.0.1:3102/privacy",
+      "http://127.0.0.1:3102/terms",
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/faq",
+      "http://127.0.0.1:3102/privacy",
+      "http://127.0.0.1:3102/terms",
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/faq",
+      "http://127.0.0.1:3102/privacy",
+      "http://127.0.0.1:3102/terms",
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/faq",
+      "http://127.0.0.1:3102/privacy",
+      "http://127.0.0.1:3102/terms",
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/faq",
+      "http://127.0.0.1:3102/privacy",
+      "http://127.0.0.1:3102/terms",
+      "http://127.0.0.1:3102/",
+      "http://127.0.0.1:3102/services/domestic",
+      "http://127.0.0.1:3102/services/international",
+      "http://127.0.0.1:3102/about",
+      "http://127.0.0.1:3102/contact",
+      "http://127.0.0.1:3102/get-a-quote",
+      "http://127.0.0.1:3102/faq",
+      "http://127.0.0.1:3102/privacy",
+      "http://127.0.0.1:3102/terms"
+    ],
+    "tests": [
+      {
+        "selector": "h1",
+        "animations": [
+          {
+            "duration": 720,
+            "keyframes": [
+              {
+                "offset": 0,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(-110%)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 1,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(350%)",
+                "computedOffset": 1
+              }
+            ]
+          }
+        ],
+        "layers": 0
+      },
+      {
+        "selector": ".cinematic-hero",
+        "animations": [
+          {
+            "duration": 720,
+            "keyframes": [
+              {
+                "offset": 0,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(-110%)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 1,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(350%)",
+                "computedOffset": 1
+              }
+            ]
+          },
+          {
+            "duration": 450,
+            "keyframes": [
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0.3",
+                "transform": "scale(0)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 0.4,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0.18",
+                "computedOffset": 0.4
+              },
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0",
+                "transform": "scale(1)",
+                "computedOffset": 1
+              }
+            ]
+          }
+        ],
+        "layers": 1
+      },
+      {
+        "selector": ".editorial-image",
+        "animations": [
+          {
+            "duration": 720,
+            "keyframes": [
+              {
+                "offset": 0,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(-110%)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 1,
+                "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+                "composite": "auto",
+                "transform": "translate(350%)",
+                "computedOffset": 1
+              }
+            ]
+          },
+          {
+            "duration": 450,
+            "keyframes": [
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "transform": "scale(1)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 0.45,
+                "easing": "linear",
+                "composite": "auto",
+                "transform": "scale(1.025)",
+                "computedOffset": 0.45
+              },
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "transform": "scale(1)",
+                "computedOffset": 1
+              }
+            ]
+          },
+          {
+            "duration": 450,
+            "keyframes": [
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0.3",
+                "transform": "scale(0)",
+                "computedOffset": 0
+              },
+              {
+                "offset": 0.4,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0.18",
+                "computedOffset": 0.4
+              },
+              {
+                "offset": null,
+                "easing": "linear",
+                "composite": "auto",
+                "opacity": "0",
+                "transform": "scale(1)",
+                "computedOffset": 1
+              }
+            ]
+          }
+        ],
+        "layers": 1
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          57.5,
+          57.5
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/media/domestic-courier-road.png",
+        "currentSrc": "http://127.0.0.1:3102/media/domestic-courier-road.png",
+        "natural": [
+          1744,
+          902
+        ],
+        "display": [
+          1440,
+          900
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      {
+        "src": "/media/domestic-road.png",
+        "currentSrc": "http://127.0.0.1:3102/media/domestic-road.png",
+        "natural": [
+          1744,
+          902
+        ],
+        "display": [
+          636.71875,
+          520
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      {
+        "src": "/media/homepage-international-cargo.jpg",
+        "currentSrc": "http://127.0.0.1:3102/media/homepage-international-cargo.jpg",
+        "natural": [
+          2400,
+          1600
+        ],
+        "display": [
+          442.46875,
+          294.96875
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/media/process/review.jpg",
+        "currentSrc": "http://127.0.0.1:3102/media/process/review.jpg",
+        "natural": [
+          1200,
+          800
+        ],
+        "display": [
+          258,
+          172
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/media/process/dispatch.jpg",
+        "currentSrc": "http://127.0.0.1:3102/media/process/dispatch.jpg",
+        "natural": [
+          1200,
+          800
+        ],
+        "display": [
+          258,
+          172
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/media/process/scan.jpg",
+        "currentSrc": "http://127.0.0.1:3102/media/process/scan.jpg",
+        "natural": [
+          1080,
+          570
+        ],
+        "display": [
+          258,
+          136.15625
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/media/dispatch-workspace.png",
+        "currentSrc": "http://127.0.0.1:3102/media/dispatch-workspace.png",
+        "natural": [
+          1717,
+          916
+        ],
+        "display": [
+          636.71875,
+          520
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          80,
+          80
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      }
+    ]
+  },
+  {
+    "route": "/services/domestic",
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          57.5,
+          57.5
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/media/domestic-road.png",
+        "currentSrc": "http://127.0.0.1:3102/media/domestic-road.png",
+        "natural": [
+          1744,
+          902
+        ],
+        "display": [
+          618.203125,
+          360
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "http://127.0.0.1:3102/_next/static/media/image.c01682b0.png",
+        "natural": [
+          1554,
+          1012
+        ],
+        "display": [
+          2478.59375,
+          1614.109375
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "http://127.0.0.1:3102/_next/static/media/image.c01682b0.png",
+        "natural": [
+          1554,
+          1012
+        ],
+        "display": [
+          2478.59375,
+          1614.109375
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "http://127.0.0.1:3102/_next/static/media/image.c01682b0.png",
+        "natural": [
+          1554,
+          1012
+        ],
+        "display": [
+          2478.59375,
+          1614.109375
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          80,
+          80
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      }
+    ]
+  },
+  {
+    "route": "/services/international",
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          57.5,
+          57.5
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/media/international-cargo-apron.png",
+        "currentSrc": "http://127.0.0.1:3102/media/international-cargo-apron.png",
+        "natural": [
+          1802,
+          873
+        ],
+        "display": [
+          616.203125,
+          358
+        ],
+        "filter": "brightness(0.82) saturate(0.85)",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "http://127.0.0.1:3102/_next/static/media/image.c01682b0.png",
+        "natural": [
+          1554,
+          1012
+        ],
+        "display": [
+          2478.59375,
+          1614.109375
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "http://127.0.0.1:3102/_next/static/media/image.c01682b0.png",
+        "natural": [
+          1554,
+          1012
+        ],
+        "display": [
+          2478.59375,
+          1614.109375
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/_next/static/media/image.c01682b0.png",
+        "currentSrc": "http://127.0.0.1:3102/_next/static/media/image.c01682b0.png",
+        "natural": [
+          1554,
+          1012
+        ],
+        "display": [
+          2478.59375,
+          1614.109375
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          80,
+          80
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      }
+    ]
+  },
+  {
+    "route": "/about",
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          57.5,
+          57.5
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/media/dispatch-workspace.png",
+        "currentSrc": "http://127.0.0.1:3102/media/dispatch-workspace.png",
+        "natural": [
+          1717,
+          916
+        ],
+        "display": [
+          618.203125,
+          360
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "cover"
+      },
+      {
+        "src": "/images/about/logistics-network.webp",
+        "currentSrc": "http://127.0.0.1:3102/images/about/logistics-network.webp",
+        "natural": [
+          642,
+          595
+        ],
+        "display": [
+          442.796875,
+          410.375
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/images/about/customer-journey.webp",
+        "currentSrc": "http://127.0.0.1:3102/images/about/customer-journey.webp",
+        "natural": [
+          277,
+          215
+        ],
+        "display": [
+          277,
+          215
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/images/about/service-confirmation.webp",
+        "currentSrc": "http://127.0.0.1:3102/images/about/service-confirmation.webp",
+        "natural": [
+          277,
+          216
+        ],
+        "display": [
+          277,
+          216
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/images/about/customer-support.webp",
+        "currentSrc": "http://127.0.0.1:3102/images/about/customer-support.webp",
+        "natural": [
+          277,
+          218
+        ],
+        "display": [
+          277,
+          218
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          80,
+          80
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      }
+    ]
+  },
+  {
+    "route": "/contact",
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          57.5,
+          57.5
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/_next/static/media/image.1885cb4c.png",
+        "currentSrc": "http://127.0.0.1:3102/_next/static/media/image.1885cb4c.png",
+        "natural": [
+          1536,
+          1024
+        ],
+        "display": [
+          1370.921875,
+          913.9375
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "fill"
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          80,
+          80
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      }
+    ]
+  },
+  {
+    "route": "/get-a-quote",
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          57.5,
+          57.5
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          80,
+          80
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      }
+    ]
+  },
+  {
+    "route": "/faq",
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          57.5,
+          57.5
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          80,
+          80
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      }
+    ]
+  },
+  {
+    "route": "/privacy",
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          57.5,
+          57.5
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          80,
+          80
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      }
+    ]
+  },
+  {
+    "route": "/terms",
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          57.5,
+          57.5
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          80,
+          80
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      }
+    ]
+  },
+  {
+    "route": "/track",
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          57.5,
+          57.5
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "currentSrc": "http://127.0.0.1:3102/brand/vk-and-company-logo-transparent.png",
+        "natural": [
+          500,
+          500
+        ],
+        "display": [
+          80,
+          80
+        ],
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none",
+        "objectFit": "contain"
+      }
+    ]
+  }
+]

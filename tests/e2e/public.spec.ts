@@ -5,7 +5,7 @@ test("homepage keeps its hero content with a static truck image", async ({ page 
   await expect(page.getByRole("heading", { name: /Across cities/i })).toBeVisible();
   await expect(page.getByText("We keep your parcels moving.", { exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: /Get a quote/i }).first()).toBeVisible();
-  const truckImage = page.getByRole("img", { name: /courier truck travelling/i });
+  const truckImage = page.getByRole("img", { name: /courier truck at an Indian/i });
   await expect(truckImage).toBeVisible();
   await expect(truckImage).toHaveJSProperty("complete", true);
   expect(await truckImage.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
@@ -31,7 +31,8 @@ test("all public routes preserve direct navigation without duplicate renderers",
   for (const route of ["/services/domestic", "/services/international", "/get-a-quote", "/about", "/contact", "/faq", "/privacy", "/terms"]) {
     await page.goto(route);
     await expect(page.locator("h1")).toBeVisible();
-    expect(await page.locator("canvas").count()).toBe(0);
+    if (route === "/get-a-quote") expect(await page.locator("canvas").count()).toBeLessThanOrEqual(1);
+    else expect(await page.locator("canvas").count()).toBe(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
   }
 });
@@ -50,7 +51,7 @@ test("history, resize and repeated route changes preserve one static hero visual
   await page.goto("/contact");
   await page.goto("/");
   await expect(page.locator(".cinematic-hero-background")).toHaveCount(1);
-  await expect(page.getByRole("img", { name: /courier truck travelling/i })).toBeVisible();
+  await expect(page.getByRole("img", { name: /courier truck at an Indian/i })).toBeVisible();
   expect(await page.locator("canvas").count()).toBe(0);
 });
 
@@ -78,4 +79,23 @@ test("tracking offers company contact without a lookup", async ({ page }) => {
   await expect(page.getByText(/Online shipment lookup is unavailable/)).toBeVisible();
   await expect(page.locator("form")).toHaveCount(0);
   expect((await page.request.get("/api/track?code=VKC-TEST")).status()).toBe(404);
+});
+
+test("all four shipping steps show equally sized, eagerly loaded photographs", async ({ page }) => {
+  await page.route("**/*", route => new URL(route.request().url()).hostname === "127.0.0.1" && route.request().method() === "GET" ? route.continue() : route.abort());
+  for (const width of [1440, 768, 390, 360]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/");
+    const images = page.locator(".process-list .process-photo img");
+    await expect(images).toHaveCount(4);
+    for (const image of await images.all()) {
+      await expect(image).toHaveAttribute("loading", "eager");
+      await expect.poll(() => image.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
+    }
+    const sizes = await images.evaluateAll(images => images.map(image => ({ width: image.clientWidth, height: image.clientHeight })));
+    for (const size of sizes) {
+      expect(size).toEqual(sizes[0]);
+      expect(Math.abs(size.width / size.height - 1.5)).toBeLessThan(.01);
+    }
+  }
 });

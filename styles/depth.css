@@ -1,0 +1,66 @@
+:root {
+  --perspective: 1200px;
+  --z-back: -80px;
+  --z-mid: 0;
+  --z-front: 40px;
+  --z-pop: 90px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --d-fast: 240ms;
+  --d-base: 600ms;
+  --d-slow: 900ms;
+  --d-reduced: 150ms;
+  --depth-rise: 40px;
+  --depth-rotate: 12deg;
+  --depth-parallax-from: -40px;
+  --depth-parallax-to: 20px;
+  --depth-scale-from: 1.04;
+  --depth-scale-to: 1;
+}
+
+@media (width < 768px) {
+  :root {
+    --z-back: -40px;
+    --z-mid: 0;
+    --z-front: 20px;
+    --z-pop: 45px;
+    --depth-parallax-from: -20px;
+    --depth-parallax-to: 10px;
+  }
+}
+
+/* Only the provider enables this. Native behavior returns when Lenis is destroyed. */
+html[data-depth-scroll="smooth"] { scroll-behavior: auto !important; }
+.depth-section, .parallax-media {
+  perspective: var(--perspective);
+  transform-style: preserve-3d;
+}
+[data-depth-motion] {
+  transform: none;
+  opacity: 1;
+  transform-style: preserve-3d;
+  animation-timing-function: var(--ease-out-expo);
+  transition-timing-function: var(--ease-out-expo);
+}
+
+/* Touch never opts into pointer transforms. Scroll depth is a separate layer. */
+@media (hover: none), (width < 768px) {
+  [data-depth-pointer] { transform: none !important; will-change: auto !important; }
+}
+
+/* Final state wins even before hydration or while an animation is being cancelled. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .depth-section, .parallax-media { perspective: none !important; transform-style: flat !important; }
+  [data-depth-motion], [data-depth-pointer] {
+    transform: none !important;
+    translate: none !important;
+    rotate: none !important;
+    scale: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+    transition-property: opacity !important;
+    transition-duration: var(--d-reduced) !important;
+    transition-delay: 0ms !important;
+    will-change: auto !important;
+  }
+}

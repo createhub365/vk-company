@@ -1,0 +1,14 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 900,
+    "duration": 13.8
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "duration": 7.16
+  }
+]

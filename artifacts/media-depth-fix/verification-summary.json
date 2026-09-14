@@ -1,0 +1,36 @@
+{
+  "combinations": 40,
+  "contentDifferences": [],
+  "issues": [],
+  "quoteGeometry": [
+    {
+      "width": 1440,
+      "headingUnchanged": true,
+      "formUnchanged": true
+    },
+    {
+      "width": 768,
+      "headingUnchanged": true,
+      "formUnchanged": true
+    },
+    {
+      "width": 390,
+      "headingUnchanged": true,
+      "formUnchanged": true
+    },
+    {
+      "width": 360,
+      "headingUnchanged": true,
+      "formUnchanged": true
+    }
+  ],
+  "densityShortfalls": [
+    {
+      "route": "/",
+      "width": 1440,
+      "asset": "/media/photos/hero-1536.webp",
+      "pixels": 1536,
+      "cssWidth": 1440
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { siteUrl } from "@/lib/config";
 import "./globals.css";
+import "@/styles/depth.css";
+import { MotionProvider } from "@/components/motion/provider";
 import { ImageFeedback } from "@/components/image-feedback";
 
 export const metadata: Metadata = {
@@ -10,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><ImageFeedback/>{children}</body></html>;
+  return <html lang="en"><body><MotionProvider><ImageFeedback/>{children}</MotionProvider></body></html>;
 }

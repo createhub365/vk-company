@@ -1,136 +1,138 @@
 "use client";
 
 import { useEffect } from "react";
+import { queueSharedPointer } from "@/lib/motion/shared-pointer";
+import { cancelFrame, frame as motionFrame } from "framer-motion";
+import { usePointerEffects } from "@/components/motion/use-reduced-motion";
 import { usePathname } from "next/navigation";
+import { pointerRouteAllowed } from "@/lib/motion/policy";
+import { MEDIA_INTERACTION, type MediaInteraction } from "@/lib/media-interaction";
 
-const surfaceSelector = "[data-image-feedback]";
-const controlSelector = "a[href], button, [role='button'], [role='link']";
+const photos = '[data-image-feedback="photo"]';
+const fields = "input, textarea, select, label, button, summary, [contenteditable]:not([contenteditable='false'])";
 
-// One delegated listener set covers server-rendered images and client navigation.
-// The attributes also support a positioned CSS-background surface without an img.
+// One passive recognizer owns photo hover and tap. Native activation/scroll/zoom
+// are never cancelled; the bounded Quote scene subscribes to its local events.
 export function ImageFeedback() {
+  const pointerEnabled = usePointerEffects();
   const pathname = usePathname();
-
   useEffect(() => {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const active = new Map<HTMLElement, () => void>();
-    let gesture: { surface: HTMLElement; id: number; x: number; y: number; at: number; valid: boolean } | null = null;
-
-    function surfaceFor(target: EventTarget | null, keyboard = false) {
-      if (!(target instanceof Element)) return null;
-      const control = target.closest(controlSelector);
-      const surface = target.closest<HTMLElement>(surfaceSelector)
-        ?? (keyboard ? control?.querySelector<HTMLElement>(surfaceSelector) : null);
-      if (!surface) return null;
-      if (surface.dataset.imageFeedback === "background" &&
-        target.closest("[data-image-feedback-foreground], a, button, input, textarea, select, label, p, h1, h2, h3, span")) return null;
-      return surface;
-    }
-
-    function play(surface: HTMLElement, clientX: number, clientY: number) {
-      active.get(surface)?.();
-      const image = surface instanceof HTMLImageElement ? surface : surface.querySelector("img");
-      const animations: Animation[] = [];
-      let layer: HTMLDivElement | undefined;
-      const clear = () => {
-        animations.forEach(animation => { animation.onfinish = null; animation.cancel(); });
-        layer?.remove();
-        active.delete(surface);
-      };
-      active.set(surface, clear);
-      const timing: KeyframeAnimationOptions = { duration: 450, easing: "ease-out" };
-
-      if (reducedMotion.matches || surface.dataset.imageFeedback === "logo") {
-        // A stationary inset highlight: no logo deformation or reduced-motion ripple.
-        const highlight = surface.dataset.imageFeedback === "logo" ? surface : (image ?? surface);
-        animations.push(highlight.animate([
-          { outline: "2px solid rgba(55, 169, 177, .55)", outlineOffset: "-3px" },
-          { outline: "2px solid rgba(55, 169, 177, .55)", outlineOffset: "-3px" },
-        ], timing));
-      } else {
-        const rect = surface.getBoundingClientRect();
-        const x = clientX - rect.left;
-        const y = clientY - rect.top;
-        const radius = Math.hypot(Math.max(x, rect.width - x), Math.max(y, rect.height - y));
-        layer = document.createElement("div");
-        layer.className = "image-feedback-layer";
-        layer.setAttribute("aria-hidden", "true");
-        const ripple = document.createElement("div");
-        ripple.className = "image-feedback-ripple";
-        Object.assign(ripple.style, { width: `${radius * 2}px`, height: `${radius * 2}px`, left: `${x - radius}px`, top: `${y - radius}px` });
-        layer.append(ripple);
-        surface.append(layer);
-        if (image && surface.dataset.imageFeedback === "photo") {
-          animations.push(image.animate([
-            { transform: "scale(1)" },
-            { transform: "scale(1.025)", offset: .45 },
-            { transform: "scale(1)" },
-          ], timing));
-        }
-        animations.push(ripple.animate([
-          { transform: "scale(0)", opacity: .3 },
-          { opacity: .18, offset: .4 },
-          { transform: "scale(1)", opacity: 0 },
-        ], timing));
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+    const pointers = new Set<number>();
+    let gesture: { target: Element; id: number; x: number; y: number; at: number; valid: boolean } | null = null;
+    let hovered: HTMLElement | null = null;
+    let cleanup: (() => void) | undefined;
+    let pending: { frame: HTMLElement; x: number; y: number } | null = null;
+    const publish = (frame: HTMLElement, detail: MediaInteraction) => frame.dispatchEvent(new CustomEvent(MEDIA_INTERACTION, { bubbles: true, detail }));
+    function cancel() { if (gesture) gesture.valid = false; }
+    function leave() {
+      cancelFrame(renderPointer); pending = null;
+      if (hovered) {
+        hovered.style.removeProperty("transform");
+        hovered.removeAttribute("data-photo-hover");
+        publish(hovered, { kind: "leave", x: 0, y: 0 });
+        hovered = null;
       }
-      animations[animations.length - 1].onfinish = clear;
     }
-
-    function cancelGesture() { if (gesture) gesture.valid = false; }
     function down(event: PointerEvent) {
-      if (!event.isPrimary) { cancelGesture(); return; }
-      const surface = surfaceFor(event.target);
-      gesture = event.button === 0 && surface
-        ? { surface, id: event.pointerId, x: event.clientX, y: event.clientY, at: performance.now(), valid: true }
-        : null;
+      pointers.add(event.pointerId);
+      if (!event.isPrimary || pointers.size > 1) { cancel(); leave(); return; }
+      gesture = event.button === 0 && event.target instanceof Element
+        ? { target: event.target, id: event.pointerId, x: event.clientX, y: event.clientY, at: performance.now(), valid: true } : null;
     }
     function move(event: PointerEvent) {
-      if (gesture && event.pointerId === gesture.id && Math.hypot(event.clientX - gesture.x, event.clientY - gesture.y) > 8) cancelGesture();
+      if (gesture?.id === event.pointerId && Math.hypot(event.clientX - gesture.x, event.clientY - gesture.y) > 8) cancel();
+      if (!pointerEnabled || event.pointerType === "touch" || reduced.matches || event.buttons || !(event.target instanceof Element)) return;
+      queueSharedPointer({ x: event.clientX, y: event.clientY, target: event.target });
+      const frame = !event.target.closest(fields) ? event.target.closest<HTMLElement>(photos) : null;
+      if (frame !== hovered) leave();
+      if (!frame) return;
+      hovered = frame;
+      const b = frame.getBoundingClientRect();
+      pending = { frame, x: Math.max(-1, Math.min(1, (event.clientX - b.left) / b.width * 2 - 1)), y: Math.max(-1, Math.min(1, (event.clientY - b.top) / b.height * 2 - 1)) };
+      motionFrame.render(renderPointer);
     }
+    function renderPointer() {
+      if (!pending) return;
+      const { frame, x, y } = pending;
+      frame.style.transform = `perspective(1000px) rotateX(${-y * 3.5}deg) rotateY(${x * 3.5}deg)`;
+      frame.style.setProperty("--photo-x", `${(x + 1) * 50}%`);
+      frame.style.setProperty("--photo-y", `${(y + 1) * 50}%`);
+      frame.dataset.photoHover = "";
+      publish(frame, { kind: "move", x, y });
+      pending = null;
+    }
+    function out(event: PointerEvent) {
+      if (!event.relatedTarget) queueSharedPointer(null);
+      if (hovered && (!(event.relatedTarget instanceof Node) || !hovered.contains(event.relatedTarget))) leave();
+    }
+    function up(event: PointerEvent) { pointers.delete(event.pointerId); }
+    function pointerCancel(event: PointerEvent) { up(event); cancel(); leave(); }
+    function clear() { cleanup?.(); }
     function click(event: MouseEvent) {
-      const keyboard = event.detail === 0;
-      const surface = surfaceFor(event.target, keyboard);
-      const previous = gesture;
-      gesture = null;
-      if (!surface || window.getSelection()?.toString()) return;
-      if (keyboard) {
-        if (!(event.target instanceof Element) || !event.target.closest(controlSelector)) return;
-        const rect = surface.getBoundingClientRect();
-        play(surface, rect.left + rect.width / 2, rect.top + rect.height / 2);
-      } else if (previous?.valid && previous.surface === surface && performance.now() - previous.at < 750 &&
-        Math.hypot(event.clientX - previous.x, event.clientY - previous.y) <= 8) {
-        play(surface, event.clientX, event.clientY);
+      const previous = gesture; gesture = null;
+      if (!pointerRouteAllowed(pathname)) return;
+      if (!(event.target instanceof Element) || getSelection()?.toString() || event.target.closest(fields)) return;
+      const frame = event.target.closest<HTMLElement>(photos) ?? (event.detail === 0 ? event.target.closest("a[href]")?.querySelector<HTMLElement>(photos) : null);
+      if (!frame) return;
+      if (event.detail !== 0 && (!previous?.valid || performance.now() - previous.at > 750 ||
+        Math.hypot(event.clientX - previous.x, event.clientY - previous.y) > 8 ||
+        !(event.target.contains(previous.target) || previous.target.contains(event.target)))) return;
+      clear(); leave();
+      // Resolve the resting box before locating the ripple, even mid-hover.
+      frame.style.transition = "none";
+      const b = frame.getBoundingClientRect();
+      frame.style.removeProperty("transition");
+      const x = event.detail === 0 ? b.width / 2 : event.clientX - b.left - frame.clientLeft;
+      const y = event.detail === 0 ? b.height / 2 : event.clientY - b.top - frame.clientTop;
+      const layer = document.createElement("i");
+      layer.className = "image-feedback-layer image-feedback-ripple";
+      layer.setAttribute("aria-hidden", "true");
+      Object.assign(layer.style, { left: `${x}px`, top: `${y}px` });
+      frame.append(layer);
+      const animations: Animation[] = [];
+      if (!reduced.matches) {
+        // The whole clipped frame moves; the inner photograph stays edge-to-edge.
+        animations.push(frame.animate([{ transform: "perspective(1000px) translateZ(0) scale(1)" },
+          { transform: "perspective(1000px) translateZ(-24px) scale(.985)", offset: .22 },
+          { transform: "perspective(1000px) translateZ(5px) scale(1.005)", offset: .57 },
+          { transform: "perspective(1000px) translateZ(0) scale(1)" }], { duration: 640, easing: "cubic-bezier(.2,.7,.25,1)" }));
       }
-      // Never preventDefault, capture pointers, or delay the native control action.
+      animations.push(layer.animate(reduced.matches ? [{ opacity: .95 }, { opacity: .95, offset: .7 }, { opacity: 0 }] : [
+        { transform: "translate(-50%,-50%) scale(.2)", opacity: 1 },
+        { transform: "translate(-50%,-50%) scale(1.2)", opacity: .9, offset: .5 },
+        { transform: "translate(-50%,-50%) scale(1.8)", opacity: 0 },
+      ], { duration: 640, easing: "ease-out" }));
+      publish(frame, { kind: "tap", x: x / b.width * 2 - 1, y: y / b.height * 2 - 1 });
+      const timer = window.setTimeout(clear, 680);
+      cleanup = () => { cleanup = undefined; clearTimeout(timer); animations.forEach(a => a.cancel()); layer.remove(); };
     }
-
+    function scroll() { cancel(); clear(); leave(); }
+    function blur() { scroll(); pointers.clear(); queueSharedPointer(null); }
     const passive = { capture: true, passive: true };
     document.addEventListener("pointerdown", down, passive);
     document.addEventListener("pointermove", move, passive);
+    document.addEventListener("pointerout", out, passive);
+    document.addEventListener("pointerup", up, passive);
+    document.addEventListener("pointercancel", pointerCancel, passive);
     document.addEventListener("click", click, passive);
-    document.addEventListener("pointercancel", cancelGesture, passive);
-    document.addEventListener("dragstart", cancelGesture, passive);
-    document.addEventListener("scroll", cancelGesture, passive);
-    window.addEventListener("blur", cancelGesture);
-    const clearEffects = () => active.forEach(clear => clear());
-    reducedMotion.addEventListener("change", clearEffects);
-    const observer = new MutationObserver(() => {
-      active.forEach((clear, surface) => { if (!surface.isConnected) clear(); });
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
+    document.addEventListener("dragstart", cancel, passive);
+    document.addEventListener("scroll", scroll, passive);
+    window.addEventListener("blur", blur);
+    reduced.addEventListener("change", blur);
     return () => {
       document.removeEventListener("pointerdown", down, true);
       document.removeEventListener("pointermove", move, true);
+      document.removeEventListener("pointerout", out, true);
+      document.removeEventListener("pointerup", up, true);
+      document.removeEventListener("pointercancel", pointerCancel, true);
       document.removeEventListener("click", click, true);
-      document.removeEventListener("pointercancel", cancelGesture, true);
-      document.removeEventListener("dragstart", cancelGesture, true);
-      document.removeEventListener("scroll", cancelGesture, true);
-      window.removeEventListener("blur", cancelGesture);
-      reducedMotion.removeEventListener("change", clearEffects);
-      observer.disconnect();
-      clearEffects();
+      document.removeEventListener("dragstart", cancel, true);
+      document.removeEventListener("scroll", scroll, true);
+      window.removeEventListener("blur", blur);
+      reduced.removeEventListener("change", blur);
+      blur();
     };
-  }, [pathname]);
-
+  }, [pointerEnabled, pathname]);
   return null;
 }

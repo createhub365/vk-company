@@ -1,0 +1,792 @@
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -1,6 +1,8 @@
+ import type { Metadata } from "next";
+ import { siteUrl } from "@/lib/config";
+ import "./globals.css";
++import "@/styles/depth.css";
++import { MotionProvider } from "@/components/motion/provider";
+ import { ImageFeedback } from "@/components/image-feedback";
+ 
+ export const metadata: Metadata = {
+@@ -10,5 +12,5 @@
+ };
+ 
+ export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+-  return <html lang="en"><body><ImageFeedback/>{children}</body></html>;
++  return <html lang="en"><body><MotionProvider><ImageFeedback/>{children}</MotionProvider></body></html>;
+ }
+--- a/components/image-feedback.tsx
++++ b/components/image-feedback.tsx
+@@ -1,6 +1,10 @@
+ "use client";
+ 
+ import { useEffect } from "react";
++import { cancelFrame, frame as motionFrame } from "framer-motion";
++import { usePointerEffects } from "@/components/motion/use-reduced-motion";
++import { usePathname } from "next/navigation";
++import { pointerRouteAllowed } from "@/lib/motion/policy";
+ import { MEDIA_INTERACTION, type MediaInteraction } from "@/lib/media-interaction";
+ 
+ const photos = '[data-image-feedback="photo"]';
+@@ -9,18 +13,19 @@
+ // One passive recognizer owns photo hover and tap. Native activation/scroll/zoom
+ // are never cancelled; the bounded Quote scene subscribes to its local events.
+ export function ImageFeedback() {
++  const pointerEnabled = usePointerEffects();
++  const pathname = usePathname();
+   useEffect(() => {
+     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+     const pointers = new Set<number>();
+     let gesture: { target: Element; id: number; x: number; y: number; at: number; valid: boolean } | null = null;
+     let hovered: HTMLElement | null = null;
+     let cleanup: (() => void) | undefined;
+-    let raf = 0;
+     let pending: { frame: HTMLElement; x: number; y: number } | null = null;
+     const publish = (frame: HTMLElement, detail: MediaInteraction) => frame.dispatchEvent(new CustomEvent(MEDIA_INTERACTION, { bubbles: true, detail }));
+     function cancel() { if (gesture) gesture.valid = false; }
+     function leave() {
+-      cancelAnimationFrame(raf); pending = null;
++      cancelFrame(renderPointer); pending = null;
+       if (hovered) {
+         hovered.style.removeProperty("transform");
+         hovered.removeAttribute("data-photo-hover");
+@@ -36,24 +41,24 @@
+     }
+     function move(event: PointerEvent) {
+       if (gesture?.id === event.pointerId && Math.hypot(event.clientX - gesture.x, event.clientY - gesture.y) > 8) cancel();
+-      if (event.pointerType === "touch" || reduced.matches || event.buttons || !(event.target instanceof Element)) return;
++      if (!pointerEnabled || event.pointerType === "touch" || reduced.matches || event.buttons || !(event.target instanceof Element)) return;
+       const frame = !event.target.closest(fields) ? event.target.closest<HTMLElement>(photos) : null;
+       if (frame !== hovered) leave();
+       if (!frame) return;
+       hovered = frame;
+       const b = frame.getBoundingClientRect();
+       pending = { frame, x: Math.max(-1, Math.min(1, (event.clientX - b.left) / b.width * 2 - 1)), y: Math.max(-1, Math.min(1, (event.clientY - b.top) / b.height * 2 - 1)) };
+-      cancelAnimationFrame(raf);
+-      raf = requestAnimationFrame(() => {
+-        if (!pending) return;
+-        const { frame, x, y } = pending;
+-        frame.style.transform = `perspective(1000px) rotateX(${-y * 3.5}deg) rotateY(${x * 3.5}deg)`;
+-        frame.style.setProperty("--photo-x", `${(x + 1) * 50}%`);
+-        frame.style.setProperty("--photo-y", `${(y + 1) * 50}%`);
+-        frame.dataset.photoHover = "";
+-        publish(frame, { kind: "move", x, y });
+-        pending = null;
+-      });
++      motionFrame.render(renderPointer);
++    }
++    function renderPointer() {
++      if (!pending) return;
++      const { frame, x, y } = pending;
++      frame.style.transform = `perspective(1000px) rotateX(${-y * 3.5}deg) rotateY(${x * 3.5}deg)`;
++      frame.style.setProperty("--photo-x", `${(x + 1) * 50}%`);
++      frame.style.setProperty("--photo-y", `${(y + 1) * 50}%`);
++      frame.dataset.photoHover = "";
++      publish(frame, { kind: "move", x, y });
++      pending = null;
+     }
+     function out(event: PointerEvent) {
+       if (hovered && (!(event.relatedTarget instanceof Node) || !hovered.contains(event.relatedTarget))) leave();
+@@ -63,6 +68,7 @@
+     function clear() { cleanup?.(); }
+     function click(event: MouseEvent) {
+       const previous = gesture; gesture = null;
++      if (!pointerRouteAllowed(pathname)) return;
+       if (!(event.target instanceof Element) || getSelection()?.toString() || event.target.closest(fields)) return;
+       const frame = event.target.closest<HTMLElement>(photos) ?? (event.detail === 0 ? event.target.closest("a[href]")?.querySelector<HTMLElement>(photos) : null);
+       if (!frame) return;
+@@ -124,6 +130,6 @@
+       reduced.removeEventListener("change", blur);
+       blur();
+     };
+-  }, []);
++  }, [pointerEnabled, pathname]);
+   return null;
+ }
+--- a/package.json
++++ b/package.json
+@@ -11,14 +11,18 @@
+     "typecheck": "tsc --noEmit",
+     "test": "vitest run",
+     "test:watch": "vitest",
+-    "test:e2e": "playwright test"
++    "test:e2e": "playwright test",
++    "verify:content": "node scripts/verify-content.mjs",
++    "hooks:install": "git config --local core.hooksPath .githooks"
+   },
+   "dependencies": {
+     "@react-three/drei": "10.7.8",
+     "@react-three/fiber": "9.7.0",
+     "@supabase/ssr": "0.12.6",
+     "@supabase/supabase-js": "2.115.0",
++    "framer-motion": "^13.2.0",
+     "gsap": "3.15.0",
++    "lenis": "^1.3.26",
+     "lucide-react": "^0.468.0",
+     "next": "16.3.4",
+     "nodemailer": "^10.0.1",
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -12,7 +12,9 @@
+         "@react-three/fiber": "9.7.0",
+         "@supabase/ssr": "0.12.6",
+         "@supabase/supabase-js": "2.115.0",
++        "framer-motion": "^13.2.0",
+         "gsap": "3.15.0",
++        "lenis": "^1.3.26",
+         "lucide-react": "^0.468.0",
+         "next": "16.3.4",
+         "nodemailer": "^10.0.1",
+@@ -4860,6 +4862,29 @@
+         "node": ">= 6"
+       }
+     },
++    "node_modules/framer-motion": {
++      "version": "13.2.0",
++      "resolved": "https://registry.npmjs.org/framer-motion/-/framer-motion-13.2.0.tgz",
++      "integrity": "sha512-9E33ebgMaO33w1nN/jEdW8z3/GO483fMi4rqbMG9rt83XgW9QLKRe4NcmJ8s+fQ3O34++UHrIQwlIWGIWTITjA==",
++      "license": "MIT",
++      "dependencies": {
++        "motion-dom": "^13.2.0",
++        "motion-utils": "^13.0.0",
++        "tslib": "^2.4.0"
++      },
++      "peerDependencies": {
++        "react": "^18.0.0 || ^19.0.0",
++        "react-dom": "^18.0.0 || ^19.0.0"
++      },
++      "peerDependenciesMeta": {
++        "react": {
++          "optional": true
++        },
++        "react-dom": {
++          "optional": true
++        }
++      }
++    },
+     "node_modules/fsevents": {
+       "version": "2.3.3",
+       "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz",
+@@ -6004,6 +6029,37 @@
+         "node": ">=0.10"
+       }
+     },
++    "node_modules/lenis": {
++      "version": "1.3.26",
++      "resolved": "https://registry.npmjs.org/lenis/-/lenis-1.3.26.tgz",
++      "integrity": "sha512-s/xTCZCxTFvHbAN1OzuhNaN5YPJH2ail0XAkctKW1b+RUAG4nUL5UHLXwNko1h8aEeT2jspBXegMgPJd8zcuag==",
++      "license": "MIT",
++      "workspaces": [
++        "packages/*",
++        "playground",
++        "playground/*"
++      ],
++      "funding": {
++        "type": "github",
++        "url": "https://github.com/sponsors/darkroomengineering"
++      },
++      "peerDependencies": {
++        "@nuxt/kit": ">=3.0.0",
++        "react": ">=17.0.0",
++        "vue": ">=3.0.0"
++      },
++      "peerDependenciesMeta": {
++        "@nuxt/kit": {
++          "optional": true
++        },
++        "react": {
++          "optional": true
++        },
++        "vue": {
++          "optional": true
++        }
++      }
++    },
+     "node_modules/levn": {
+       "version": "0.4.1",
+       "resolved": "https://registry.npmjs.org/levn/-/levn-0.4.1.tgz",
+@@ -6457,6 +6513,21 @@
+       "funding": {
+         "url": "https://github.com/sponsors/ljharb"
+       }
++    },
++    "node_modules/motion-dom": {
++      "version": "13.2.0",
++      "resolved": "https://registry.npmjs.org/motion-dom/-/motion-dom-13.2.0.tgz",
++      "integrity": "sha512-N6gdSoWRDk0Rh/fVtlqUtLs+fEN3ELFZI3cn3IQE9Mnf3E+Mh8wjO6MstzCOPFh4Yf0L1as5m2eUyYWj8ylVSQ==",
++      "license": "MIT",
++      "dependencies": {
++        "motion-utils": "^13.0.0"
++      }
++    },
++    "node_modules/motion-utils": {
++      "version": "13.0.0",
++      "resolved": "https://registry.npmjs.org/motion-utils/-/motion-utils-13.0.0.tgz",
++      "integrity": "sha512-7DnN7TmbLcYXcG4RVadXIihWlyuM9afoUww8Y5Agg431kGKiuL2/OMyP4mJ5wLz+pvN3t5ySClLOaVXJ+wekRQ==",
++      "license": "MIT"
+     },
+     "node_modules/ms": {
+       "version": "2.1.3",
+--- a/tests/e2e/image-feedback.spec.ts
++++ b/tests/e2e/image-feedback.spec.ts
+@@ -29,6 +29,12 @@
+     expect(Math.abs(fit.imageWidth/fit.imageHeight-(fit.processCard ? 1.5 : fit.ratio))).toBeLessThan(.015);
+     const h1 = await page.locator('h1').boundingBox();
+     await activate(frame,isMobile);
++    if (path === "/get-a-quote") {
++      await expect(layer(page)).toHaveCount(0);
++      expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe("none");
++      expect(await page.locator("h1").boundingBox()).toEqual(h1);
++      continue;
++    }
+     await expect(layer(page)).toHaveCount(1);
+     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+     expect(Math.abs(feedback.left-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top-40)).toBeLessThanOrEqual(1);
+@@ -45,7 +51,7 @@
+ 
+ test('hover tilts only the coherent frame and settles on leave',async({page,isMobile})=>{
+   test.skip(isMobile,'Touch has tap feedback without hover');
+-  await page.goto('/get-a-quote');const frame=page.locator('.quote-photo');
++  await page.goto('/services/domestic');const frame=page.locator('.page-hero-image');
+   const b=(await frame.boundingBox())!, heading=await page.locator('h1').boundingBox();
+   await page.mouse.move(b.x+b.width*.95,b.y+b.height*.1);
+   await expect(frame).toHaveAttribute('data-photo-hover','');
+@@ -57,7 +63,7 @@
+   await expect.poll(()=>frame.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
+ });
+ 
+-test('one genuine WebGL scene sleeps idle/offscreen and survives repeated taps',async({page,isMobile})=>{
++test('existing Quote WebGL scene stays idle through pointer-disabled taps and offscreen',async({page,isMobile})=>{
+   await page.goto('/get-a-quote');const host=page.locator('.quote-media'),frame=page.locator('.quote-photo'),canvas=host.locator('canvas');
+   await host.scrollIntoViewIfNeeded();await expect(host).toHaveAttribute('data-bubbles','webgl');
+   await expect(canvas).toHaveCount(1);
+@@ -70,7 +76,9 @@
+     else await page.mouse.click(box.x+box.width/2,box.y+box.height/2);
+     expect(await layer(page).count()).toBeLessThanOrEqual(1);
+   }
+-  expect(Number(await canvas.getAttribute('data-frames'))).toBeGreaterThan(Number(idle));
++  expect(await canvas.getAttribute('data-frames')).toBe(idle);
++  expect(await frame.getAttribute('data-photo-hover')).toBeNull();
++  expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
+   await expect(layer(page)).toHaveCount(0);await page.waitForTimeout(750);
+   const settled=await canvas.getAttribute('data-frames');await page.waitForTimeout(180);expect(await canvas.getAttribute('data-frames')).toBe(settled);
+   await page.locator('footer').scrollIntoViewIfNeeded();await page.waitForTimeout(100);
+--- /dev/null
++++ b/styles/depth.css
+@@ -0,0 +1,66 @@
++:root {
++  --perspective: 1200px;
++  --z-back: -80px;
++  --z-mid: 0;
++  --z-front: 40px;
++  --z-pop: 90px;
++  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
++  --d-fast: 240ms;
++  --d-base: 600ms;
++  --d-slow: 900ms;
++  --d-reduced: 150ms;
++  --depth-rise: 40px;
++  --depth-rotate: 12deg;
++  --depth-parallax-from: -40px;
++  --depth-parallax-to: 20px;
++  --depth-scale-from: 1.04;
++  --depth-scale-to: 1;
++}
++
++@media (width < 768px) {
++  :root {
++    --z-back: -40px;
++    --z-mid: 0;
++    --z-front: 20px;
++    --z-pop: 45px;
++    --depth-parallax-from: -20px;
++    --depth-parallax-to: 10px;
++  }
++}
++
++/* Only the provider enables this. Native behavior returns when Lenis is destroyed. */
++html[data-depth-scroll="smooth"] { scroll-behavior: auto !important; }
++.depth-section, .parallax-media {
++  perspective: var(--perspective);
++  transform-style: preserve-3d;
++}
++[data-depth-motion] {
++  transform: none;
++  opacity: 1;
++  transform-style: preserve-3d;
++  animation-timing-function: var(--ease-out-expo);
++  transition-timing-function: var(--ease-out-expo);
++}
++
++/* Touch never opts into pointer transforms. Scroll depth is a separate layer. */
++@media (hover: none), (width < 768px) {
++  [data-depth-pointer] { transform: none !important; will-change: auto !important; }
++}
++
++/* Final state wins even before hydration or while an animation is being cancelled. */
++@media (prefers-reduced-motion: reduce) {
++  html { scroll-behavior: auto !important; }
++  .depth-section, .parallax-media { perspective: none !important; transform-style: flat !important; }
++  [data-depth-motion], [data-depth-pointer] {
++    transform: none !important;
++    translate: none !important;
++    rotate: none !important;
++    scale: none !important;
++    opacity: 1 !important;
++    animation: none !important;
++    transition-property: opacity !important;
++    transition-duration: var(--d-reduced) !important;
++    transition-delay: 0ms !important;
++    will-change: auto !important;
++  }
++}
+--- /dev/null
++++ b/components/motion/provider.tsx
+@@ -0,0 +1,19 @@
++"use client";
++
++import dynamic from "next/dynamic";
++import { createContext, useContext, type ReactNode } from "react";
++import { useScroll } from "framer-motion";
++
++const ScrollRuntime = dynamic(() => import("./scroll-runtime"), { ssr: false });
++const MotionContext = createContext<ReturnType<typeof useScroll> | null>(null);
++
++export function MotionProvider({ children }: { children: ReactNode }) {
++  const scroll = useScroll({ trackContentSize: true });
++  // Context adds no DOM or delayed content boundary. Only the null-rendering runtime is lazy.
++  return <MotionContext.Provider value={scroll}><ScrollRuntime/>{children}</MotionContext.Provider>;
++}
++export function useDepthScroll() {
++  const context = useContext(MotionContext);
++  if (!context) throw new Error("Depth motion requires the shared MotionProvider.");
++  return context;
++}
+--- /dev/null
++++ b/components/motion/scroll-runtime.tsx
+@@ -0,0 +1,47 @@
++"use client";
++
++import { useEffect } from "react";
++import Lenis from "lenis";
++import { cancelFrame, frame, type FrameData } from "framer-motion";
++import { useReducedMotion } from "./use-reduced-motion";
++import { useDepthScroll } from "./provider";
++
++// Guard against accidental nested providers. Exactly one active Lenis owner.
++let owner: Lenis | undefined;
++export default function ScrollRuntime() {
++  const reduced = useReducedMotion();
++  const { scrollY, scrollYProgress } = useDepthScroll();
++  useEffect(() => {
++    if (reduced || owner) return;
++    let lenis: Lenis | undefined;
++    const sync = (instance: Lenis) => {
++      scrollY.set(instance.animatedScroll);
++      scrollYProgress.set(instance.progress);
++    };
++    const tick = ({ timestamp }: FrameData) => lenis?.raf(timestamp);
++    function stop() {
++      cancelFrame(tick);
++      if (lenis) { lenis.off("scroll", sync); lenis.destroy(); if (owner === lenis) owner = undefined; lenis = undefined; }
++      delete document.documentElement.dataset.depthScroll;
++    }
++    function start() {
++      if (document.hidden || lenis || owner) return;
++      lenis = new Lenis({ lerp: 0.08, autoRaf: false, syncTouch: false, smoothWheel: true, anchors: false,
++        // Preserve native form-control scrolling and browser zoom gestures.
++        prevent: node => node.matches("input, textarea, select, [contenteditable='true']"),
++        virtualScroll: ({ event }) => !(event instanceof WheelEvent && (event.ctrlKey || event.metaKey)),
++      });
++      owner = lenis;
++      document.documentElement.dataset.depthScroll = "smooth";
++      lenis.on("scroll", sync);
++      sync(lenis);
++      // Motion owns the single shared rAF scheduler; Lenis never creates its own loop.
++      frame.update(tick, true);
++    }
++    const visibility = () => document.hidden ? stop() : start();
++    start();
++    document.addEventListener("visibilitychange", visibility);
++    return () => { document.removeEventListener("visibilitychange", visibility); stop(); };
++  }, [reduced, scrollY, scrollYProgress]);
++  return null;
++}
+--- /dev/null
++++ b/components/motion/primitives.tsx
+@@ -0,0 +1,99 @@
++"use client";
++
++import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
++import { cancelFrame, frame } from "framer-motion";
++import { clamp, readDepthTokens } from "@/lib/motion/tokens";
++import { useDepthScroll } from "./provider";
++import { useMobileDepth, useReducedMotion } from "./use-reduced-motion";
++
++type PresentationStyle = Omit<CSSProperties, "transform" | "translate" | "rotate" | "scale" | "opacity" | "willChange" | "animation" | "transition">;
++type Props = { children: ReactNode; className?: string; id?: string; style?: PresentationStyle };
++
++export function DepthSection({ children, className = "", ...props }: Props) {
++  return <div {...props} className={`depth-section ${className}`}>{children}</div>;
++}
++
++export function RiseIn({ children, className = "", rise, rotate, stagger = 0, index = 0, ...props }: Props & {
++  rise?: number; rotate?: number; stagger?: number; index?: number;
++}) {
++  const ref = useRef<HTMLDivElement>(null);
++  const reduced = useReducedMotion();
++  const entered = useRef(false);
++  useEffect(() => {
++    const element = ref.current;
++    if (!element || reduced || entered.current) return;
++    const tokens = readDepthTokens(element);
++    const distance = clamp(rise ?? tokens.rise, 0, tokens.rise);
++    const rotation = clamp(rotate ?? tokens.rotation, 0, tokens.rotation);
++    // Stagger is in milliseconds, bounded by the shared base duration.
++    const delay = clamp(stagger * Math.max(0, Number.isFinite(index) ? index : 0), 0, tokens.duration);
++    let animation: Animation | undefined;
++    let timer: ReturnType<typeof setTimeout> | undefined;
++    const settle = () => { animation?.cancel(); element.style.removeProperty("will-change"); };
++    const observer = new IntersectionObserver(([entry]) => {
++      if (!entry.isIntersecting) return;
++      entered.current = true;
++      observer.disconnect();
++      timer = setTimeout(() => {
++        // A delayed element remains visible until its actual animation starts.
++        if (!element.isConnected || document.hidden) return;
++        element.style.willChange = "transform, opacity";
++        animation = element.animate([
++          { transform: `translateY(${distance}px) rotateX(${rotation}deg)`, opacity: 0 },
++          { transform: "none", opacity: 1 },
++        ], { duration: tokens.duration, easing: tokens.easing, fill: "none" });
++        animation.onfinish = settle;
++      }, delay);
++    });
++    observer.observe(element);
++    return () => { observer.disconnect(); clearTimeout(timer); settle(); };
++  }, [reduced, rise, rotate, stagger, index]);
++  return <div {...props} ref={ref} className={className} data-depth-motion="rise">{children}</div>;
++}
++
++export function ParallaxMedia({ children, className = "", ...props }: Props) {
++  const outer = useRef<HTMLDivElement>(null);
++  const inner = useRef<HTMLDivElement>(null);
++  const reduced = useReducedMotion();
++  const mobile = useMobileDepth();
++  const { scrollY } = useDepthScroll();
++  useEffect(() => {
++    const viewport = outer.current, element = inner.current;
++    if (!viewport || !element || reduced) return;
++    let visible = false;
++    let last = "";
++    let next = "";
++    let timer: ReturnType<typeof setTimeout> | undefined;
++    const tokens = readDepthTokens(element);
++    const rest = () => element.style.removeProperty("will-change");
++    const render = () => {
++      if (last === next) return;
++      element.style.willChange = "transform";
++      element.style.transform = next;
++      last = next;
++      clearTimeout(timer); timer = setTimeout(rest, tokens.rest);
++    };
++    const measure = () => {
++      if (!visible || document.hidden) return;
++      // Measure the stationary outer wrapper, never the transformed image plane.
++      const bounds = viewport.getBoundingClientRect();
++      const progress = clamp((innerHeight - bounds.top) / (innerHeight + bounds.height), 0, 1);
++      const eased = tokens.ease(progress);
++      const z = tokens.from + (tokens.to - tokens.from) * eased;
++      const scale = tokens.scaleFrom + (tokens.scaleTo - tokens.scaleFrom) * eased;
++      next = `translateZ(${z}px) scale(${scale})`;
++      frame.render(render);
++    };
++    const schedule = () => frame.read(measure);
++    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible) schedule(); else { cancelFrame(measure); cancelFrame(render); rest(); } });
++    observer.observe(viewport);
++    const resize = new ResizeObserver(schedule); resize.observe(viewport);
++    const unsubscribe = scrollY.on("change", schedule);
++    window.addEventListener("resize", schedule, { passive: true });
++    return () => {
++      unsubscribe(); observer.disconnect(); resize.disconnect(); window.removeEventListener("resize", schedule);
++      cancelFrame(measure); cancelFrame(render); clearTimeout(timer); rest(); element.style.removeProperty("transform");
++    };
++  }, [reduced, mobile, scrollY]);
++  return <div {...props} ref={outer} className={`parallax-media ${className}`}><div ref={inner} data-depth-motion="parallax">{children}</div></div>;
++}
+--- /dev/null
++++ b/components/motion/use-reduced-motion.ts
+@@ -0,0 +1,38 @@
++"use client";
++
++import { useSyncExternalStore } from "react";
++import { usePathname } from "next/navigation";
++import { MOBILE_QUERY, POINTER_QUERY, REDUCED_MOTION_QUERY, pointerRouteAllowed } from "@/lib/motion/policy";
++
++// One MediaQueryList subscription per query, shared by every consumer.
++function mediaStore(query: string, serverValue: boolean) {
++  let media: MediaQueryList | undefined;
++  const listeners = new Set<() => void>();
++  const getMedia = () => media ??= window.matchMedia(query);
++  const notify = () => listeners.forEach(listener => listener());
++  return {
++    subscribe(listener: () => void) {
++      if (!listeners.size) getMedia().addEventListener("change", notify);
++      listeners.add(listener);
++      return () => { listeners.delete(listener); if (!listeners.size) media?.removeEventListener("change", notify); };
++    },
++    snapshot: () => getMedia().matches,
++    serverSnapshot: () => serverValue,
++  };
++}
++const reduced = mediaStore(REDUCED_MOTION_QUERY, true);
++const pointer = mediaStore(POINTER_QUERY, false);
++const mobile = mediaStore(MOBILE_QUERY, true);
++export function useReducedMotion() {
++  // SSR and the hydration render are conservative: visible, stationary content.
++  return useSyncExternalStore(reduced.subscribe, reduced.snapshot, reduced.serverSnapshot);
++}
++export function usePointerEffects() {
++  const pathname = usePathname();
++  const reduce = useReducedMotion();
++  const capable = useSyncExternalStore(pointer.subscribe, pointer.snapshot, pointer.serverSnapshot);
++  return !reduce && capable && pointerRouteAllowed(pathname);
++}
++export function useMobileDepth() {
++  return useSyncExternalStore(mobile.subscribe, mobile.snapshot, mobile.serverSnapshot);
++}
+--- /dev/null
++++ b/lib/motion/policy.ts
+@@ -0,0 +1,8 @@
++// The existing Quote WebGL implementation is deliberately not part of this system.
++export const POINTER_EFFECTS_DISABLED_ROUTES = new Set(["/get-a-quote"]);
++export const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
++export const POINTER_QUERY = "(min-width: 768px) and (hover: hover) and (pointer: fine)";
++export const MOBILE_QUERY = "(max-width: 767px)";
++export function pointerRouteAllowed(pathname: string) {
++  return !POINTER_EFFECTS_DISABLED_ROUTES.has(pathname.replace(/\/$/, "") || "/");
++}
+--- /dev/null
++++ b/lib/motion/tokens.ts
+@@ -0,0 +1,24 @@
++import { cubicBezier } from "framer-motion";
++
++// Safety bounds remain enforced even if a consumer supplies invalid props/tokens.
++export const MAX_TRANSLATION = 40;
++export const MAX_ROTATION = 12;
++export const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, Number.isFinite(value) ? value : min));
++export function readDepthTokens(element: HTMLElement) {
++  const css = getComputedStyle(element);
++  const number = (name: string) => parseFloat(css.getPropertyValue(name));
++  const easing = css.getPropertyValue("--ease-out-expo").trim();
++  const points = easing.slice(easing.indexOf("(") + 1, -1).split(",").map(Number);
++  return {
++    easing,
++    ease: cubicBezier(points[0], points[1], points[2], points[3]),
++    duration: number("--d-base"),
++    rest: number("--d-fast"),
++    rise: clamp(number("--depth-rise"), 0, MAX_TRANSLATION),
++    rotation: clamp(number("--depth-rotate"), 0, MAX_ROTATION),
++    from: clamp(number("--depth-parallax-from"), -MAX_TRANSLATION, MAX_TRANSLATION),
++    to: clamp(number("--depth-parallax-to"), -MAX_TRANSLATION, MAX_TRANSLATION),
++    scaleFrom: number("--depth-scale-from"),
++    scaleTo: number("--depth-scale-to"),
++  };
++}
+--- /dev/null
++++ b/scripts/verify-content.mjs
+@@ -0,0 +1,16 @@
++// Always rebuild: an old out/ must never conceal a change in the source tree.
++import { spawnSync } from 'node:child_process';
++import { readFileSync } from 'node:fs';
++import { createHash } from 'node:crypto';
++
++const expectedBaseline = 'd8ffe93dda487660a81988b021e55b7c2786679a02760437bcbdf429d1614cda';
++const actualBaseline = createHash('sha256').update(readFileSync('artifacts/motion-audit/baseline.json')).digest('hex');
++if (actualBaseline !== expectedBaseline) {
++  console.error('Content contract changed. Restore the original Stage 1 baseline; do not recapture it.');
++  process.exit(1);
++}
++for (const [command, args] of [['npm', ['run', 'build']], [process.execPath, ['scripts/audit-motion-content.mjs']]]) {
++  const result = spawnSync(command, args, { stdio: 'inherit' });
++  if (result.error) { console.error(result.error.message); process.exit(1); }
++  if (result.status !== 0) process.exit(result.status || 1);
++}
+--- /dev/null
++++ b/scripts/verify-staged-motion.mjs
+@@ -0,0 +1,31 @@
++// The build runs against the working tree. Require its relevant inputs to match
++// the index exactly, so partial staging cannot make a bad commit look good.
++import { execFileSync } from 'node:child_process';
++import { readdirSync, readFileSync } from 'node:fs';
++const git = (...args) => execFileSync('git', args, { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
++const index = new Map(git('ls-files', '--stage', '-z').split('\0').filter(Boolean).map(line => {
++  const tab = line.indexOf('\t');
++  return [line.slice(tab + 1), line.slice(0, tab).split(' ')[1]];
++}));
++const roots = ['app', 'components', 'lib', 'styles', 'scripts', '.githooks'];
++const relevant = file => roots.some(root => file.startsWith(`${root}/`)) && /\.(?:tsx?|mjs|css|json)$/.test(file)
++  || file === '.githooks/pre-commit';
++function walk(path) {
++  return readdirSync(path, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? walk(`${path}/${entry.name}`) : [`${path}/${entry.name}`]);
++}
++const files = new Set([...index.keys()].filter(relevant));
++for (const root of roots) for (const file of walk(root).filter(relevant)) files.add(file);
++for (const file of ['package.json', 'package-lock.json', 'next.config.ts', 'tsconfig.json', 'postcss.config.mjs', 'public/_headers', 'MOTION_AUDIT.md', 'artifacts/motion-audit/baseline.json']) files.add(file);
++const baseline = JSON.parse(readFileSync('artifacts/motion-audit/baseline.json', 'utf8'));
++for (const image of Object.keys(baseline.images)) if (!image.startsWith('out/_next/')) files.add(image.replace(/^out\//, 'public/'));
++const mismatches = [];
++for (const file of files) {
++  let actual;
++  try { actual = git('hash-object', '--', file).trim(); } catch { actual = undefined; }
++  if (!index.has(file) || actual !== index.get(file)) mismatches.push(file);
++}
++if (mismatches.length) {
++  console.error('Commit blocked: stage the exact content/build inputs before verification. The hook will not verify different working-tree code on behalf of the index.\n' + mismatches.map(file => `  ${file}`).join('\n'));
++  process.exit(1);
++}
++console.log('Staged build inputs match the working tree.');
+--- /dev/null
++++ b/.githooks/pre-commit
+@@ -0,0 +1,5 @@
++#!/bin/sh
++set -eu
++cd "$(git rev-parse --show-toplevel)"
++node scripts/verify-staged-motion.mjs
++npm run verify:content
+--- /dev/null
++++ b/tests/motion-content-guard.test.ts
+@@ -0,0 +1,32 @@
++import { afterEach, describe, expect, it } from "vitest";
++import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, symlinkSync, unlinkSync, rmSync } from "node:fs";
++import { tmpdir } from "node:os";
++import { dirname, resolve } from "node:path";
++import { spawnSync } from "node:child_process";
++
++const repo = process.cwd();
++const baseline = JSON.parse(readFileSync("artifacts/motion-audit/baseline.json", "utf8"));
++const htmlFixtures = JSON.parse(readFileSync("artifacts/motion-stage-2/content-test-fixtures.json", "utf8"));
++const temporary: string[] = [];
++function fixture() {
++  const directory = mkdtempSync(resolve(tmpdir(), "vk-motion-contract-")); temporary.push(directory);
++  const write = (path: string, text: string) => { const full=resolve(directory,path);mkdirSync(dirname(full),{recursive:true});writeFileSync(full,text); };
++  write("artifacts/motion-audit/baseline.json",JSON.stringify(baseline));
++  for(const [file,source] of Object.entries(baseline.sources))write(file,source as string);
++  for(const [file,text] of Object.entries(baseline.extraExports))write(`out/${file}`,text as string);
++  for(const page of baseline.pages) {
++    const file=page.route==="/"?"index.html":page.route==="/404.html"?"404.html":`${page.route.slice(1)}.html`;
++    write(`out/${file}`,htmlFixtures[file]);
++  }
++  for(const file of Object.keys(baseline.images)) { const full=resolve(directory,file);mkdirSync(dirname(full),{recursive:true});symlinkSync(resolve(repo,file.replace(/^out\//,"public/")),full); }
++  const check=()=>spawnSync(process.execPath,[resolve(repo,"scripts/audit-motion-content.mjs")],{cwd:directory,encoding:"utf8"});
++  return {directory,write,check};
++}
++afterEach(()=>{for(const directory of temporary.splice(0))rmSync(directory,{recursive:true,force:true});});
++describe("motion content contract rejects regressions",()=>{
++  it("accepts the preserved static content",()=>{expect(fixture().check().status).toBe(0);});
++  it("rejects a changed headline",()=>{const f=fixture();const html=readFileSync(resolve(f.directory,"out/index.html"),"utf8");f.write("out/index.html",html.replace("Across cities.","Changed headline."));const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Content/semantics changed");});
++  it("rejects changed image bytes even with the same URL",()=>{const f=fixture();const image=Object.keys(baseline.images)[0];unlinkSync(resolve(f.directory,image));f.write(image,"altered image");const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Image bytes changed");});
++  it("rejects a dynamic form-message change even if exported HTML is unchanged",()=>{const f=fixture();const file="components/forms/enquiry-form.tsx";f.write(file,baseline.sources[file].replace("Submitting…","Sending now…"));const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Protected business source changed");});
++  it("rejects an added route",()=>{const f=fixture();f.write("app/unapproved/page.tsx","export default function Page(){return null;}");const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Route files changed");});
++});
+--- /dev/null
++++ b/MOTION_SYSTEM.md
+@@ -0,0 +1,81 @@
++# Motion system — Stage 2 foundation
++
++This stage adds infrastructure and three presentation primitives. No existing page uses those primitives yet. All real page modules, copy, forms, images, routes and metadata remain at the Stage 1 baseline. The root layout adds a context provider without extra DOM; shared photo feedback now observes the pointer policy and uses Motion's scheduler.
++
++## Tokens
++
++`styles/depth.css` is imported after the existing global CSS.
++
++| Token | Desktop | Below 768px |
++|---|---|---|
++| `--perspective` | 1200px | 1200px |
++| `--z-back` | -80px | -40px |
++| `--z-mid` | 0 | 0 |
++| `--z-front` | 40px | 20px |
++| `--z-pop` | 90px | 45px |
++| `--depth-parallax-from` / `--depth-parallax-to` | -40px / +20px | -20px / +10px |
++| `--depth-rise` / `--depth-rotate` | 40px / 12deg | 40px / 12deg |
++| `--depth-scale-from` / `--depth-scale-to` | 1.04 / 1 | 1.04 / 1 |
++
++`--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1)` is read from computed CSS for both entry and scroll interpolation. `--d-fast: 240ms`, `--d-base: 600ms`, `--d-slow: 900ms`; reduced opacity transitions are capped at `--d-reduced: 150ms`.
++
++The static Z layer tokens are available for future composition; Stage 2 does not apply the larger -80px/90px layer offsets. Primitive animated translations are clamped within ±40px of their resting plane and rotation within 12deg. Parallax follows the explicitly requested -40px → +20px endpoints (a 60px total range, with no offset exceeding 40px); on mobile those endpoints halve. There is no photo rotation or spring overshoot. Invalid/excessive RiseIn props are clamped.
++
++## Provider and shared scheduling
++
++`MotionProvider` wraps existing server-rendered content with context only. Its `useScroll` creates the shared scroll MotionValues. Only `ScrollRuntime`, which renders null, is dynamically imported with `ssr:false`. Content itself is never placed behind a client-only boundary.
++
++The runtime creates one Lenis instance (`lerp:0.08`, `autoRaf:false`, `syncTouch:false`). It registers a single persistent callback with Motion's shared `frame.update` scheduler. Lenis scroll events synchronize the same `scrollY` and `scrollYProgress` values returned by `useScroll`; native scrolling remains observed as well. Primitives and legacy photo hover schedule work on that existing Motion scheduler. None creates its own requestAnimationFrame loop.
++
++Lenis is destroyed when reduced motion is requested, the document becomes hidden, or the provider unmounts. The loop subscription is cancelled and the smooth-scroll attribute removed. Re-enabling recreates one instance; an ownership guard prevents an accidental second provider from creating a competing instance. Normal visible-page idle operation retains the one Lenis/Motion ticker; it does not continuously animate content.
++
++Touch scrolling is native, Ctrl/Meta-wheel is left to the browser, and form-control scrolling is excluded from smoothing. Native links/anchors, browser focus, selection and zoom are not intercepted. The CSS smooth-scroll override exists only while Lenis is active, avoiding double smoothing.
++
++## Reduced motion and pointer policy
++
++`useReducedMotion` uses a shared MediaQueryList subscription and `useSyncExternalStore`. Its server and hydration snapshot is conservative (`true`), so content starts visible and stationary. The CSS reduced-motion block independently forces the primitives to final opacity and removes transforms, perspective, animations and will-change. This also works before JavaScript loads. Existing static page styling is not indiscriminately reset.
++
++`usePointerEffects` requires all of: no reduced motion, width ≥768px, hover capability, fine pointer, and an allowed pathname. The CSS `(hover:none)`/mobile block is a second guard for future `[data-depth-pointer]` layers. Touch does not disable scroll-linked depth.
++
++`lib/motion/policy.ts` explicitly registers `/get-a-quote` as pointer-effects-disabled. Shared photo hover and tap effects do not run on that route, so they cannot send pointer impulses to the Quote scene. `components/quote-media.tsx` and `components/three/quote-bubbles.ts` are byte-for-byte unchanged from Stage 1. That retained WebGL code owns its pre-existing rendering lifecycle; it is not a new foundation rAF loop. The latest Stage 2 instruction to leave it untouched supersedes Stage 1's proposed retirement. Later Quote presentation may use scroll reveals only.
++
++## Exactly three primitives
++
++Import from `components/motion/primitives.tsx` beneath the shared provider.
++
++```tsx
++<DepthSection>
++  <RiseIn rise={24} rotate={12} stagger={120} index={0}>
++    {/* Existing content, unchanged */}
++  </RiseIn>
++  <ParallaxMedia>
++    {/* Existing complete media frame, including its photograph */}
++  </ParallaxMedia>
++</DepthSection>
++```
++
++- `DepthSection`: a wrapper with perspective and preserve-3d; no animation or automatic Z translation. It uses a div so adding it does not create a new semantic section.
++- `RiseIn`: IntersectionObserver-triggered, once-only transform/opacity animation. Defaults to 40px rise, 12deg rotateX, 600ms expo. `stagger` is milliseconds multiplied by `index`; the total delay is capped at the base-duration token. Content stays in final state while waiting and with JS disabled. A cancelled/reduced-motion reveal immediately restores final state. `will-change` exists only during the actual animation.
++- `ParallaxMedia`: stationary measuring wrapper and one transformed inner plane. It subscribes to the provider's scrollY, measures in Motion's read phase and writes in its render phase. Viewport-pass progress is eased with the shared expo curve. Offscreen work stops. A 240ms quiet period clears will-change; resize, unmount and reduced-motion transitions clean up subscriptions, observers, scheduled work and timers.
++
++Only transform and opacity are animated. Layout dimensions, borders, padding, text and image sources are never animated or changed. Wrap the complete photo frame rather than rotating or scaling an image independently inside its frame. Keep inputs and important notices outside delayed reveals. Presentation-style props intentionally omit transform, opacity, will-change and animation overrides; do not bypass those limits with custom CSS.
++
++## Content contract and pre-commit hook
++
++`npm run verify:content` pins the SHA-256 of the original Stage 1 baseline, performs a fresh production static export, then runs `scripts/audit-motion-content.mjs`. It fails for changed copy, headings, section counts, links, images/66 image-file hashes, controls, labels, native details, metadata, routes, protected form/business sources or static headers/metadata. It refuses a silently recaptured baseline. No output-cache shortcut is used.
++
++The repository-local hook is `.githooks/pre-commit`; it is activated with `npm run hooks:install` (`core.hooksPath=.githooks`). It first verifies that all relevant staged build inputs equal the working tree, then runs `npm run verify:content`. This blocks a staged content change hidden by a different unstaged version. Any nonzero check/build exit aborts the commit. It never stages files automatically or bypasses the check.
++
++The working tree includes older image repairs and the Stage 1 audit that are not committed. The hook correctly requires those baseline inputs to be staged consistently before any commit; a foundation-only partial stage cannot pretend that older deployed HEAD is the audited content. Stage 2's supplied diff isolates this stage from those pre-existing changes.
++
++## Stage 2 evidence
++
++The temporary `/motion-foundation-demo` route exercised all three primitives and was deleted before the final export. Its source survives only as a non-route text artifact. Browser evidence is under `artifacts/motion-stage-2/demo/`, with a desktop recording at `artifacts/motion-stage-2/demo.webm`.
++
++Browser profiles: 1440px/2×, 768px/2×, 390px/3× touch, 360px/3× touch, reduced motion, and JavaScript disabled. Checks cover actual entry keyframes, easing, clamp behavior, mobile token values, scrolling transforms, idle will-change cleanup, live reduced-motion toggling, no overflow/errors and Quote pointer exclusion. Desktop and mobile screenshots were inspected. Standalone Playwright was used after the in-app browser connection failed during bootstrap.
++
++The hook was exercised in an isolated temporary Git repository: preserved staged content passes; a staged bad headline concealed by a clean working copy fails; a fully staged bad headline fails the fresh-build content check. No test commits or enquiries were created. Unit regression tests additionally reject altered image bytes, dynamic form wording and an added route.
++
++No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 has not started.
++
++Implementation references: [Motion useScroll](https://motion.dev/docs/react-use-scroll), [Motion shared frame scheduler](https://motion.dev/docs/frame), [Lenis options and manual frame integration](https://github.com/darkroomengineering/lenis).
+--- /dev/null
++++ b/artifacts/motion-stage-2/content-test-fixtures.json
+@@ -0,0 +1,13 @@
++{
++  "index.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" imagesrcset=\"/media/photos/selected-home-hero-480.webp 480w, /media/photos/selected-home-hero-768.webp 768w, /media/photos/selected-home-hero-1024.webp 1024w, /media/photos/selected-home-hero-1440.webp 1440w, /media/photos/selected-home-hero-1744.webp 1744w\" imagesizes=\"100vw\" fetchpriority=\"high\"><link rel=\"preload\" as=\"image\" href=\"/brand/vk-and-company-logo-transparent.png\"><link rel=\"preload\" as=\"image\" imagesrcset=\"/media/photos/details-480.webp 480w, /media/photos/details-768.webp 768w, /media/photos/details-1024.webp 1024w, /media/photos/details-1440.webp 1440w, /media/photos/details-1536.webp 1536w\" imagesizes=\"(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw\"><link rel=\"preload\" as=\"image\" imagesrcset=\"/media/photos/process-review-480.webp 480w, /media/photos/process-review-768.webp 768w, /media/photos/process-review-1024.webp 1024w, /media/photos/process-review-1440.webp 1440w, /media/photos/process-review-2400.webp 2400w\" imagesizes=\"(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw\"><link rel=\"preload\" as=\"image\" imagesrcset=\"/media/photos/process-dispatch-480.webp 480w, /media/photos/process-dispatch-768.webp 768w, /media/photos/process-dispatch-1024.webp 1024w, /media/photos/process-dispatch-1440.webp 1440w, /media/photos/process-dispatch-2400.webp 2400w\" imagesizes=\"(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw\"><link rel=\"preload\" as=\"image\" imagesrcset=\"/media/photos/process-scan-480.webp 480w, /media/photos/process-scan-768.webp 768w, /media/photos/process-scan-1024.webp 1024w, /media/photos/process-scan-1080.webp 1080w\" imagesizes=\"(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><title>VK AND COMPANY | Courier Services</title><meta name=\"description\" content=\"Domestic and international courier enquiries and quotations from VK AND COMPANY.\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div class=\"route-transition\" aria-hidden=\"true\"><span></span></div><header class=\"site-header home-header\"><div class=\"shell header-inner\"><a class=\"brand\" aria-label=\"VK AND COMPANY home\" href=\"/\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span><span>VK AND COMPANY</span></a><button type=\"button\" class=\"menu-button\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"main-navigation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"></line><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"></line><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"></line></svg></button><nav id=\"main-navigation\" class=\"nav \" aria-label=\"Main navigation\"><a href=\"/services/domestic\">Domestic</a><a href=\"/services/international\">International</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a class=\"button button-small\" href=\"/get-a-quote\">Get a quote</a></nav></div></header><main><section class=\"cinematic-hero\" data-image-feedback=\"background\"><img src=\"/media/photos/selected-home-hero-1744.webp\" srcset=\"/media/photos/selected-home-hero-480.webp 480w, /media/photos/selected-home-hero-768.webp 768w, /media/photos/selected-home-hero-1024.webp 1024w, /media/photos/selected-home-hero-1440.webp 1440w, /media/photos/selected-home-hero-1744.webp 1744w\" sizes=\"100vw\" width=\"1744\" height=\"902\" alt=\"Illustrative navy and teal courier truck at an Indian delivery forecourt\" class=\"cinematic-hero-background\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" data-illustrative=\"true\"><div class=\"shell cinematic-hero-content\"><div class=\"cinematic-copy\" data-image-feedback-foreground=\"true\"><p class=\"eyebrow\">Domestic &amp; international courier services</p><h1>Across cities.<br><em>Across borders.</em></h1><p class=\"cinematic-support\">We keep your parcels moving.</p><p class=\"lede\">Domestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step.</p><div class=\"hero-actions\"><a class=\"button button-teal\" href=\"/get-a-quote\">Get a quote <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a></div></div></div></section><section class=\"editorial-section section-white\" id=\"domestic-services\"><div class=\"shell editorial-grid\"><div class=\"editorial-image\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/selected-domestic-1744.webp\" srcset=\"/media/photos/selected-domestic-480.webp 480w, /media/photos/selected-domestic-768.webp 768w, /media/photos/selected-domestic-1024.webp 1024w, /media/photos/selected-domestic-1440.webp 1440w, /media/photos/selected-domestic-1744.webp 1744w\" sizes=\"(max-width: 800px) 100vw, 58vw\" width=\"1744\" height=\"902\" alt=\"Illustrative delivery truck travelling on an intercity road\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"><span>Illustrative route imagery</span></div><div class=\"editorial-copy\"><p class=\"section-index\">01 / Domestic</p><p class=\"eyebrow\">Courier services between cities</p><h2>Planned around your actual route.</h2><p>Share the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims.</p><a class=\"text-link\" href=\"/services/domestic\">Explore domestic services <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a></div></div></section><section class=\"editorial-section international-feature\"><div class=\"shell editorial-grid editorial-grid-reverse\"><div class=\"editorial-image international-aircraft\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/existing-aircraft-2400.webp\" srcset=\"/media/photos/existing-aircraft-480.webp 480w, /media/photos/existing-aircraft-768.webp 768w, /media/photos/existing-aircraft-1024.webp 1024w, /media/photos/existing-aircraft-1440.webp 1440w, /media/photos/existing-aircraft-2400.webp 2400w\" sizes=\"(max-width: 900px) 100vw, 41vw\" width=\"2400\" height=\"1600\" alt=\"Antonov An-124 cargo aircraft above Lviv airport, with nose, tail and both wingtips in frame\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"><span>Illustrative international logistics</span></div><div class=\"editorial-copy\"><p class=\"section-index\">02 / International</p><p class=\"eyebrow\">Across borders, details first</p><h2>Clear before it leaves the ground.</h2><p>Acceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged.</p><a class=\"text-link\" href=\"/services/international\">Explore international services <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a></div></div></section><section class=\"process-flow\"><div class=\"shell\"><div class=\"section-head\"><div><p class=\"eyebrow\">How shipping works</p><h2>Four steps.<br>One clear process.</h2></div><p>Every status follows a real operational action. An enquiry is never presented as a confirmed booking or dispatch.</p></div><ol class=\"process-list\"><li><div class=\"process-photo process-photo-details\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/details-1536.webp\" srcset=\"/media/photos/details-480.webp 480w, /media/photos/details-768.webp 768w, /media/photos/details-1024.webp 1024w, /media/photos/details-1440.webp 1440w, /media/photos/details-1536.webp 1536w\" sizes=\"(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw\" width=\"1536\" height=\"1024\" alt=\"Illustrative parcel being weighed and measured\" loading=\"eager\" decoding=\"async\" data-illustrative=\"true\"></div><span>01</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-file-text\"><path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z\"></path><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"></path><path d=\"M10 9H8\"></path><path d=\"M16 13H8\"></path><path d=\"M16 17H8\"></path></svg><h3>Share shipment details</h3><p>Tell us the route, contents, package count and approximate weight.</p></li><li><div class=\"process-photo process-photo-review\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/process-review-2400.webp\" srcset=\"/media/photos/process-review-480.webp 480w, /media/photos/process-review-768.webp 768w, /media/photos/process-review-1024.webp 1024w, /media/photos/process-review-1440.webp 1440w, /media/photos/process-review-2400.webp 2400w\" sizes=\"(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw\" width=\"2400\" height=\"1600\" alt=\"A courier and customer reviewing delivery paperwork together on a clipboard\" loading=\"eager\" decoding=\"async\" data-illustrative=\"true\"></div><span>02</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-circle-check\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"m9 12 2 2 4-4\"></path></svg><h3>Receive a reviewed quote</h3><p>Service details, inclusions and exclusions are confirmed for the enquiry.</p></li><li><div class=\"process-photo process-photo-dispatch\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/process-dispatch-2400.webp\" srcset=\"/media/photos/process-dispatch-480.webp 480w, /media/photos/process-dispatch-768.webp 768w, /media/photos/process-dispatch-1024.webp 1024w, /media/photos/process-dispatch-1440.webp 1440w, /media/photos/process-dispatch-2400.webp 2400w\" sizes=\"(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw\" width=\"2400\" height=\"1600\" alt=\"Two delivery workers loading cardboard parcels into the back of a van\" loading=\"eager\" decoding=\"async\" data-illustrative=\"true\"></div><span>03</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-box\"><path d=\"M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z\"></path><path d=\"m3.3 7 8.7 5 8.7-5\"></path><path d=\"M12 22V12\"></path></svg><h3>Arrange dispatch</h3><p>An accepted quote becomes a booking ready for coordination.</p></li><li><div class=\"process-photo process-photo-scan\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/process-scan-1080.webp\" srcset=\"/media/photos/process-scan-480.webp 480w, /media/photos/process-scan-768.webp 768w, /media/photos/process-scan-1024.webp 1024w, /media/photos/process-scan-1080.webp 1080w\" sizes=\"(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw\" width=\"1080\" height=\"570\" alt=\"A handheld barcode scanner reading the label on a cardboard parcel\" loading=\"eager\" decoding=\"async\" data-illustrative=\"true\"></div><span>04</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-map-pin\"><path d=\"M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg><h3>Follow verified updates</h3><p>Contact the team for customer-safe shipment updates.</p></li></ol></div></section><section class=\"action-entry section-white\"><div class=\"shell action-entry-grid\"><article><span class=\"action-number\">01</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-box\"><path d=\"M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z\"></path><path d=\"m3.3 7 8.7 5 8.7-5\"></path><path d=\"M12 22V12\"></path></svg><p class=\"eyebrow\">Start with the shipment</p><h2>Request a considered quote.</h2><p>Share the details once. Our team reviews each request before confirming service or charges.</p><a class=\"button\" href=\"/get-a-quote\">Get a quote <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a></article></div></section><section class=\"editorial-section company-feature\"><div class=\"shell editorial-grid\"><div class=\"editorial-image\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/workspace-1717.webp\" srcset=\"/media/photos/workspace-480.webp 480w, /media/photos/workspace-768.webp 768w, /media/photos/workspace-1024.webp 1024w, /media/photos/workspace-1440.webp 1440w, /media/photos/workspace-1717.webp 1717w\" sizes=\"(max-width: 800px) 100vw, 58vw\" width=\"1717\" height=\"916\" alt=\"Illustrative modern parcel dispatch workspace\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"><span>Illustrative operations environment</span></div><div class=\"editorial-copy\"><p class=\"section-index\">03 / Company</p><p class=\"eyebrow\">About VK AND COMPANY</p><h2>Built around each shipment.</h2><p>Our customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates.</p><a class=\"text-link\" href=\"/about\">More about our process <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a></div></div></section><section class=\"homepage-faq section-white\"><div class=\"shell\"><div class=\"section-head\"><div><p class=\"eyebrow\">Common questions</p><h2>Useful answers,<br>before you send.</h2></div><a class=\"text-link\" href=\"/faq\">View all FAQs <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a></div><div class=\"faq-list\"><details class=\"faq-item\"><summary>How do I request a courier quote?</summary><p>Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer.</p></details><details class=\"faq-item\"><summary>Does submitting the form confirm my booking?</summary><p>No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted.</p></details><details class=\"faq-item\"><summary>Can all international parcels be accepted?</summary><p>Acceptance depends on the contents, documentation, route availability and applicable restrictions. These are confirmed for the specific shipment.</p></details><details class=\"faq-item\"><summary>Is pickup automatically scheduled?</summary><p>No. Pickup requests are currently unavailable. When enabled, a requested date will still need staff confirmation.</p></details></div></div></section><section class=\"contact-finale\"><div class=\"shell contact-finale-inner\"><div><p class=\"eyebrow\">Contact &amp; support</p><h2>Need help with the next step?</h2><p>Send a secure general or shipment-related enquiry for the team to review.</p></div><a class=\"button button-teal\" href=\"/contact\">Contact the team <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></a></div></section><!--$--><!--/$--></main><footer class=\"site-footer\"><div class=\"shell\"><div class=\"footer-grid\"><div class=\"footer-brand\"><div class=\"brand footer-logo\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" loading=\"lazy\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span> <span>VK AND COMPANY</span></div><p>Domestic and international courier services, arranged around the details of each shipment.</p></div><div class=\"footer-col\"><h3>Services</h3><a href=\"/services/domestic\">Domestic courier</a><a href=\"/services/international\">International courier</a><a href=\"/get-a-quote\">Request a quote</a></div><div class=\"footer-col\"><h3>Company</h3><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a href=\"/faq\">FAQs</a><a href=\"/privacy\">Privacy</a><a href=\"/terms\">Terms</a><a href=\"mailto:vkandcompanymohali@gmail.com\">Email us</a></div></div><div class=\"footer-bottom\"><span>© <!-- -->2026<!-- --> VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div></div></footer></body></html>",
++  "services/domestic.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" imagesrcset=\"/media/photos/selected-domestic-480.webp 480w, /media/photos/selected-domestic-768.webp 768w, /media/photos/selected-domestic-1024.webp 1024w, /media/photos/selected-domestic-1440.webp 1440w, /media/photos/selected-domestic-1744.webp 1744w\" imagesizes=\"(max-width: 900px) 100vw, 50vw\" fetchpriority=\"high\"><link rel=\"preload\" as=\"image\" href=\"/brand/vk-and-company-logo-transparent.png\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"stylesheet\" href=\"/_next/static/css/8d50a60e58c00f20.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><title>Domestic courier services | VK AND COMPANY</title><meta name=\"description\" content=\"Request a reviewed domestic courier quote from VK AND COMPANY.\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div class=\"route-transition\" aria-hidden=\"true\"><span></span></div><header class=\"site-header \"><div class=\"shell header-inner\"><a class=\"brand\" aria-label=\"VK AND COMPANY home\" href=\"/\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span><span>VK AND COMPANY</span></a><button type=\"button\" class=\"menu-button\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"main-navigation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"></line><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"></line><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"></line></svg></button><nav id=\"main-navigation\" class=\"nav \" aria-label=\"Main navigation\"><a href=\"/services/domestic\">Domestic</a><a href=\"/services/international\">International</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a class=\"button button-small\" href=\"/get-a-quote\">Get a quote</a></nav></div></header><main><section class=\"page-hero page-hero-domestic\"><div class=\"shell page-hero-grid\"><div class=\"page-hero-copy\"><p class=\"eyebrow\">Domestic courier enquiries</p><h1>A considered route from one city to the next.</h1><p class=\"lede\">Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.</p></div><div class=\"page-hero-image\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/selected-domestic-1744.webp\" srcset=\"/media/photos/selected-domestic-480.webp 480w, /media/photos/selected-domestic-768.webp 768w, /media/photos/selected-domestic-1024.webp 1024w, /media/photos/selected-domestic-1440.webp 1440w, /media/photos/selected-domestic-1744.webp 1744w\" sizes=\"(max-width: 900px) 100vw, 50vw\" width=\"1744\" height=\"902\" alt=\"Illustrative delivery truck travelling on an intercity road\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" data-illustrative=\"true\"><span>Illustrative courier environment</span></div></div></section><section class=\"service-process_section__v9JxB\" aria-labelledby=\"domestic-process\"><div class=\"service-process_inner__dA_2F\"><h2 class=\"eyebrow\" id=\"domestic-process\">domestic<!-- --> process</h2><div class=\"service-process_rows__vprkc\"><article class=\"service-process_row__lzfM6\"><div class=\"service-process_image__LEZwI\"><div class=\"service-photo\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/selected-domestic-1-392.webp\" srcset=\"/media/photos/selected-domestic-1-392.webp 392w\" sizes=\"(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px\" width=\"392\" height=\"248\" alt=\"Illustration of a domestic shipment quotation form on a laptop beside a parcel\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"></div></div><div class=\"service-process_copy__Fn7Nv\"><h3>Begin with the real shipment details.</h3><p>Provide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step.</p></div></article><article class=\"service-process_row__lzfM6\"><div class=\"service-process_image__LEZwI\"><div class=\"service-photo\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/selected-domestic-2-392.webp\" srcset=\"/media/photos/selected-domestic-2-392.webp 392w\" sizes=\"(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px\" width=\"392\" height=\"254\" alt=\"Illustration of a courier and customer reviewing paperwork at a doorstep\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"></div></div><div class=\"service-process_copy__Fn7Nv\"><h3>Review before commitment.</h3><p>A submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance.</p></div></article><article class=\"service-process_row__lzfM6\"><div class=\"service-process_image__LEZwI\"><div class=\"service-photo\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/selected-domestic-3-392.webp\" srcset=\"/media/photos/selected-domestic-3-392.webp 392w\" sizes=\"(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px\" width=\"392\" height=\"254\" alt=\"Illustration of a VK AND COMPANY delivery truck travelling through a city\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"></div></div><div class=\"service-process_copy__Fn7Nv\"><h3>We move it with care.</h3><p>Once confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required.</p></div></article></div></div></section><section class=\"section\"><div class=\"shell quote-band\"><div><p class=\"eyebrow\" style=\"color:#76c4d0\">Start with the shipment details</p><h2>Let’s work out the right next step for your parcel.</h2><p>No instant estimates without an approved rate card. Our team reviews each request before making an offer.</p></div><div class=\"band-action\"><a class=\"button\" href=\"/get-a-quote\">Request a quote <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a></div></div></section><!--$--><!--/$--></main><footer class=\"site-footer\"><div class=\"shell\"><div class=\"footer-grid\"><div class=\"footer-brand\"><div class=\"brand footer-logo\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" loading=\"lazy\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span> <span>VK AND COMPANY</span></div><p>Domestic and international courier services, arranged around the details of each shipment.</p></div><div class=\"footer-col\"><h3>Services</h3><a href=\"/services/domestic\">Domestic courier</a><a href=\"/services/international\">International courier</a><a href=\"/get-a-quote\">Request a quote</a></div><div class=\"footer-col\"><h3>Company</h3><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a href=\"/faq\">FAQs</a><a href=\"/privacy\">Privacy</a><a href=\"/terms\">Terms</a><a href=\"mailto:vkandcompanymohali@gmail.com\">Email us</a></div></div><div class=\"footer-bottom\"><span>© <!-- -->2026<!-- --> VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div></div></footer></body></html>",
++  "services/international.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" imagesrcset=\"/media/photos/selected-international-480.webp 480w, /media/photos/selected-international-768.webp 768w, /media/photos/selected-international-1024.webp 1024w, /media/photos/selected-international-1440.webp 1440w, /media/photos/selected-international-1802.webp 1802w\" imagesizes=\"(max-width: 900px) 100vw, 50vw\" fetchpriority=\"high\"><link rel=\"preload\" as=\"image\" href=\"/brand/vk-and-company-logo-transparent.png\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"stylesheet\" href=\"/_next/static/css/8d50a60e58c00f20.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><title>International courier services | VK AND COMPANY</title><meta name=\"description\" content=\"Discuss international courier acceptance, documentation and charges with VK AND COMPANY.\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div class=\"route-transition\" aria-hidden=\"true\"><span></span></div><header class=\"site-header \"><div class=\"shell header-inner\"><a class=\"brand\" aria-label=\"VK AND COMPANY home\" href=\"/\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span><span>VK AND COMPANY</span></a><button type=\"button\" class=\"menu-button\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"main-navigation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"></line><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"></line><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"></line></svg></button><nav id=\"main-navigation\" class=\"nav \" aria-label=\"Main navigation\"><a href=\"/services/domestic\">Domestic</a><a href=\"/services/international\">International</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a class=\"button button-small\" href=\"/get-a-quote\">Get a quote</a></nav></div></header><main><section class=\"page-hero page-hero-international\"><div class=\"shell page-hero-grid\"><div class=\"page-hero-copy\"><p class=\"eyebrow\">International courier enquiries</p><h1>Across borders, with the details checked first.</h1><p class=\"lede\">International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.</p></div><div class=\"page-hero-image\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/selected-international-1802.webp\" srcset=\"/media/photos/selected-international-480.webp 480w, /media/photos/selected-international-768.webp 768w, /media/photos/selected-international-1024.webp 1024w, /media/photos/selected-international-1440.webp 1440w, /media/photos/selected-international-1802.webp 1802w\" sizes=\"(max-width: 900px) 100vw, 50vw\" width=\"1802\" height=\"873\" alt=\"Illustrative cargo aircraft at an international logistics apron\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" data-illustrative=\"true\"><span>Illustrative courier environment</span></div></div></section><section class=\"service-process_section__v9JxB\" aria-labelledby=\"international-process\"><div class=\"service-process_inner__dA_2F\"><h2 class=\"eyebrow\" id=\"international-process\">international<!-- --> process</h2><div class=\"service-process_rows__vprkc\"><article class=\"service-process_row__lzfM6\"><div class=\"service-process_image__LEZwI\"><div class=\"service-photo\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/selected-international-1-392.webp\" srcset=\"/media/photos/selected-international-1-392.webp 392w\" sizes=\"(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px\" width=\"392\" height=\"248\" alt=\"Illustration of aircraft cargo loading with a world map and the words From India to the World\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"></div></div><div class=\"service-process_copy__Fn7Nv\"><h3>Route and contents review.</h3><p>Share accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review.</p></div></article><article class=\"service-process_row__lzfM6\"><div class=\"service-process_image__LEZwI\"><div class=\"service-photo\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/selected-international-2-392.webp\" srcset=\"/media/photos/selected-international-2-392.webp 392w\" sizes=\"(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px\" width=\"392\" height=\"254\" alt=\"Illustrative export-document checklist beside a passport and globe; actual requirements depend on the shipment\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"></div></div><div class=\"service-process_copy__Fn7Nv\"><h3>Documentation is shipment-specific.</h3><p>Required documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review.</p></div></article><article class=\"service-process_row__lzfM6\"><div class=\"service-process_image__LEZwI\"><div class=\"service-photo\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/selected-international-3-392.webp\" srcset=\"/media/photos/selected-international-3-392.webp 392w\" sizes=\"(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px\" width=\"392\" height=\"254\" alt=\"Illustration of a cargo ship, aircraft and delivery truck at an international port\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"></div></div><div class=\"service-process_copy__Fn7Nv\"><h3>Clear quotation boundaries.</h3><p>Charges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements.</p></div></article></div></div></section><section class=\"section\"><div class=\"shell quote-band\"><div><p class=\"eyebrow\" style=\"color:#76c4d0\">Start with the shipment details</p><h2>Let’s work out the right next step for your parcel.</h2><p>No instant estimates without an approved rate card. Our team reviews each request before making an offer.</p></div><div class=\"band-action\"><a class=\"button\" href=\"/get-a-quote\">Request a quote <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a></div></div></section><!--$--><!--/$--></main><footer class=\"site-footer\"><div class=\"shell\"><div class=\"footer-grid\"><div class=\"footer-brand\"><div class=\"brand footer-logo\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" loading=\"lazy\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span> <span>VK AND COMPANY</span></div><p>Domestic and international courier services, arranged around the details of each shipment.</p></div><div class=\"footer-col\"><h3>Services</h3><a href=\"/services/domestic\">Domestic courier</a><a href=\"/services/international\">International courier</a><a href=\"/get-a-quote\">Request a quote</a></div><div class=\"footer-col\"><h3>Company</h3><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a href=\"/faq\">FAQs</a><a href=\"/privacy\">Privacy</a><a href=\"/terms\">Terms</a><a href=\"mailto:vkandcompanymohali@gmail.com\">Email us</a></div></div><div class=\"footer-bottom\"><span>© <!-- -->2026<!-- --> VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div></div></footer></body></html>",
++  "about.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" imagesrcset=\"/media/photos/workspace-480.webp 480w, /media/photos/workspace-768.webp 768w, /media/photos/workspace-1024.webp 1024w, /media/photos/workspace-1440.webp 1440w, /media/photos/workspace-1717.webp 1717w\" imagesizes=\"(max-width: 900px) 100vw, 50vw\" fetchpriority=\"high\"><link rel=\"preload\" as=\"image\" href=\"/brand/vk-and-company-logo-transparent.png\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><title>About | VK AND COMPANY</title><meta name=\"description\" content=\"Learn about VK AND COMPANY's enquiry-led domestic and international courier service.\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div class=\"route-transition\" aria-hidden=\"true\"><span></span></div><header class=\"site-header \"><div class=\"shell header-inner\"><a class=\"brand\" aria-label=\"VK AND COMPANY home\" href=\"/\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span><span>VK AND COMPANY</span></a><button type=\"button\" class=\"menu-button\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"main-navigation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"></line><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"></line><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"></line></svg></button><nav id=\"main-navigation\" class=\"nav \" aria-label=\"Main navigation\"><a href=\"/services/domestic\">Domestic</a><a href=\"/services/international\">International</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a class=\"button button-small\" href=\"/get-a-quote\">Get a quote</a></nav></div></header><main><section class=\"page-hero page-hero-about\"><div class=\"shell page-hero-grid\"><div class=\"page-hero-copy\"><p class=\"eyebrow\">About VK AND COMPANY</p><h1>Courier arrangements built around each shipment.</h1><p class=\"lede\">VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process.</p></div><div class=\"page-hero-image\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/workspace-1717.webp\" srcset=\"/media/photos/workspace-480.webp 480w, /media/photos/workspace-768.webp 768w, /media/photos/workspace-1024.webp 1024w, /media/photos/workspace-1440.webp 1440w, /media/photos/workspace-1717.webp 1717w\" sizes=\"(max-width: 900px) 100vw, 50vw\" width=\"1717\" height=\"916\" alt=\"Illustrative parcel dispatch workspace\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" data-illustrative=\"true\"><span>Illustrative courier environment</span></div></div></section><section class=\"section section-white about-what-we-do\"><div class=\"shell about-what-grid\"><div class=\"about-what-visual\"><p class=\"eyebrow\">What we do</p><p class=\"about-what-tagline\">Connecting People &amp; Possibilities</p><div class=\"about-network-image\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/dispatch-1536.webp\" srcset=\"/media/photos/dispatch-480.webp 480w, /media/photos/dispatch-768.webp 768w, /media/photos/dispatch-1024.webp 1024w, /media/photos/dispatch-1440.webp 1440w, /media/photos/dispatch-1536.webp 1536w\" sizes=\"(max-width: 900px) 100vw, 40vw\" width=\"1536\" height=\"1024\" alt=\"Illustrative courier team loading parcels for dispatch\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"></div><ul class=\"about-service-strip\" aria-label=\"Service process\"><li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-file-text\" aria-hidden=\"true\"><path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z\"></path><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"></path><path d=\"M10 9H8\"></path><path d=\"M16 13H8\"></path><path d=\"M16 17H8\"></path></svg><span>Shipment Details</span></li><li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-route\" aria-hidden=\"true\"><circle cx=\"6\" cy=\"19\" r=\"3\"></circle><path d=\"M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15\"></path><circle cx=\"18\" cy=\"5\" r=\"3\"></circle></svg><span>Route Review</span></li><li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-calendar-check\" aria-hidden=\"true\"><path d=\"M8 2v4\"></path><path d=\"M16 2v4\"></path><rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\"></rect><path d=\"M3 10h18\"></path><path d=\"m9 16 2 2 4-4\"></path></svg><span>Booking Support</span></li><li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-package-check\" aria-hidden=\"true\"><path d=\"m16 16 2 2 4-4\"></path><path d=\"M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14\"></path><path d=\"m7.5 4.27 9 5.15\"></path><polyline points=\"3.29 7 12 12 20.71 7\"></polyline><line x1=\"12\" x2=\"12\" y1=\"22\" y2=\"12\"></line></svg><span>Shipment Updates</span></li></ul></div><div class=\"about-what-content\"><section class=\"about-what-row\"><div class=\"about-thumbnail\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/details-1536.webp\" srcset=\"/media/photos/details-480.webp 480w, /media/photos/details-768.webp 768w, /media/photos/details-1024.webp 1024w, /media/photos/details-1440.webp 1440w, /media/photos/details-1536.webp 1536w\" sizes=\"277px\" width=\"1536\" height=\"1024\" alt=\"Illustrative parcel being weighed and measured\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"></div><div class=\"prose\"><h2>A straightforward customer journey.</h2><p>Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise.</p></div></section><section class=\"about-what-row\"><div class=\"about-thumbnail\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/review-1536.webp\" srcset=\"/media/photos/review-480.webp 480w, /media/photos/review-768.webp 768w, /media/photos/review-1024.webp 1024w, /media/photos/review-1440.webp 1440w, /media/photos/review-1536.webp 1536w\" sizes=\"277px\" width=\"1536\" height=\"1024\" alt=\"Illustrative courier and customer reviewing shipment details\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"></div><div class=\"prose\"><h2>Careful about what is confirmed.</h2><p>We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided.</p></div></section><section class=\"about-what-row\"><div class=\"about-thumbnail\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/support-1536.webp\" srcset=\"/media/photos/support-480.webp 480w, /media/photos/support-768.webp 768w, /media/photos/support-1024.webp 1024w, /media/photos/support-1440.webp 1440w, /media/photos/support-1536.webp 1536w\" sizes=\"277px\" width=\"1536\" height=\"1024\" alt=\"Illustrative customer support representative wearing a headset\" loading=\"lazy\" decoding=\"async\" data-illustrative=\"true\"></div><div class=\"prose\"><h2>Prepared to connect.</h2><p>Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied.</p></div></section><p class=\"about-purpose\"><span aria-hidden=\"true\"></span>Delivered with Purpose</p></div></div></section><section class=\"section\"><div class=\"shell quote-band\"><div><p class=\"eyebrow\" style=\"color:#76c4d0\">Start with the shipment details</p><h2>Let’s work out the right next step for your parcel.</h2><p>No instant estimates without an approved rate card. Our team reviews each request before making an offer.</p></div><div class=\"band-action\"><a class=\"button\" href=\"/get-a-quote\">Request a quote <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a></div></div></section><!--$--><!--/$--></main><footer class=\"site-footer\"><div class=\"shell\"><div class=\"footer-grid\"><div class=\"footer-brand\"><div class=\"brand footer-logo\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" loading=\"lazy\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span> <span>VK AND COMPANY</span></div><p>Domestic and international courier services, arranged around the details of each shipment.</p></div><div class=\"footer-col\"><h3>Services</h3><a href=\"/services/domestic\">Domestic courier</a><a href=\"/services/international\">International courier</a><a href=\"/get-a-quote\">Request a quote</a></div><div class=\"footer-col\"><h3>Company</h3><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a href=\"/faq\">FAQs</a><a href=\"/privacy\">Privacy</a><a href=\"/terms\">Terms</a><a href=\"mailto:vkandcompanymohali@gmail.com\">Email us</a></div></div><div class=\"footer-bottom\"><span>© <!-- -->2026<!-- --> VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div></div></footer></body></html>",
++  "contact.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" imagesrcset=\"/media/photos/support-480.webp 480w, /media/photos/support-768.webp 768w, /media/photos/support-1024.webp 1024w, /media/photos/support-1440.webp 1440w, /media/photos/support-1536.webp 1536w\" imagesizes=\"(max-width: 900px) calc(100vw - 32px), 50vw\" fetchpriority=\"high\"><link rel=\"preload\" as=\"image\" href=\"/brand/vk-and-company-logo-transparent.png\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"stylesheet\" href=\"/_next/static/css/5050b1117bbb2383.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><title>Contact | VK AND COMPANY</title><meta name=\"description\" content=\"Send a courier or delivery support enquiry to VK AND COMPANY.\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div class=\"route-transition\" aria-hidden=\"true\"><span></span></div><header class=\"site-header \"><div class=\"shell header-inner\"><a class=\"brand\" aria-label=\"VK AND COMPANY home\" href=\"/\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span><span>VK AND COMPANY</span></a><button type=\"button\" class=\"menu-button\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"main-navigation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"></line><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"></line><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"></line></svg></button><nav id=\"main-navigation\" class=\"nav \" aria-label=\"Main navigation\"><a href=\"/services/domestic\">Domestic</a><a href=\"/services/international\">International</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a class=\"button button-small\" href=\"/get-a-quote\">Get a quote</a></nav></div></header><main><section class=\"contact_page__R_iMm\"><div class=\"contact_layout__bvJIX\"><div class=\"contact_introduction__qsORM\"><h1>How can we <br>help?</h1><p class=\"contact_description__UkoHO\">Send a general question or ask about a shipment. Your message will be saved for the team to review.</p><p class=\"contact_tagline__Xa8Hp\">Here to Keep <br>You Moving<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-move-down-left\" aria-hidden=\"true\"><path d=\"M11 19H5V13\"></path><path d=\"M19 5L5 19\"></path></svg></p><div class=\"contact_artwork__9_XFJ\"><div class=\"service-photo\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/support-1536.webp\" srcset=\"/media/photos/support-480.webp 480w, /media/photos/support-768.webp 768w, /media/photos/support-1024.webp 1024w, /media/photos/support-1440.webp 1440w, /media/photos/support-1536.webp 1536w\" sizes=\"(max-width: 900px) calc(100vw - 32px), 50vw\" width=\"1536\" height=\"1024\" alt=\"Illustrative Indian courier customer support representative\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" data-illustrative=\"true\"></div></div><ul class=\"contact_channels__PJ9n_\" aria-label=\"Enquiry topics\"><li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-headphones\" aria-hidden=\"true\"><path d=\"M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3\"></path></svg><span>General <br>Enquiries</span></li><li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-file-text\" aria-hidden=\"true\"><path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z\"></path><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"></path><path d=\"M10 9H8\"></path><path d=\"M16 13H8\"></path><path d=\"M16 17H8\"></path></svg><span>Quote <br>Requests</span></li><li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-package\" aria-hidden=\"true\"><path d=\"M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z\"></path><path d=\"M12 22V12\"></path><path d=\"m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7\"></path><path d=\"m7.5 4.27 9 5.15\"></path></svg><span>Shipment <br>Support</span></li><li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-users\" aria-hidden=\"true\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"></path><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"></path></svg><span>Partnerships <br>&amp; Other</span></li></ul><p class=\"contact_closing__7fM_k\">From <br>Your Place to the World</p></div><div class=\"contact_right__LNF_B\"><aside class=\"contact_details__3ZgEK\" aria-label=\"Company contact details\"><p class=\"eyebrow\">Contact channels</p><h2>Contact VK AND COMPANY.</h2><p><a class=\"text-link contact_link__R1wUw\" href=\"tel:+919317724056\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-phone contact_icon__INxgl\" aria-hidden=\"true\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"></path></svg><span class=\"contact_value__U1aOO\">+91 93177 24056</span></a></p><p><a class=\"text-link contact_link__R1wUw\" href=\"mailto:vkandcompanymohali@gmail.com\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-mail contact_icon__INxgl\" aria-hidden=\"true\"><rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"></rect><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"></path></svg><span class=\"contact_value__U1aOO\">vkandcompanymohali@gmail.com</span></a></p></aside><div class=\"contact_formArea__vHLrP\"><form class=\"form-panel\" novalidate=\"\"><div class=\"honeypot\" aria-hidden=\"true\"><label>Website<input tabindex=\"-1\" name=\"website\"></label></div><div class=\"form-grid\"><div class=\"field\"><label for=\"name\">Name</label><input id=\"name\" required=\"\" minlength=\"2\" maxlength=\"120\" aria-invalid=\"false\" name=\"name\"></div><div class=\"field\"><label for=\"phone\">Phone</label><input id=\"phone\" type=\"tel\" minlength=\"7\" maxlength=\"32\" aria-invalid=\"false\" name=\"phone\"></div><div class=\"field field-full\"><label for=\"email\">Email</label><input id=\"email\" type=\"email\" maxlength=\"254\" aria-invalid=\"false\" aria-describedby=\"contact-details-hint\" name=\"email\"><small id=\"contact-details-hint\">Provide an email or phone number so the team can respond.</small></div><div class=\"field field-full\"><label for=\"subject\">Subject</label><select id=\"subject\" name=\"subject\" required=\"\" aria-invalid=\"false\"><option selected=\"\">General Enquiry</option><option>Quote Request</option><option>Shipment Support</option><option>Partnerships &amp; Other</option></select></div><div class=\"field field-full\"><label for=\"message\">Message</label><textarea id=\"message\" name=\"message\" placeholder=\"Tell us how we can help…\" required=\"\" minlength=\"10\" maxlength=\"3000\" aria-invalid=\"false\"></textarea></div></div><button class=\"button\">Send message<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></button></form></div><p class=\"contact_responseTime__ZS_dC\">We usually respond within one business day.</p></div></div></section><!--$--><!--/$--></main><footer class=\"site-footer\"><div class=\"shell\"><div class=\"footer-grid\"><div class=\"footer-brand\"><div class=\"brand footer-logo\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" loading=\"lazy\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span> <span>VK AND COMPANY</span></div><p>Domestic and international courier services, arranged around the details of each shipment.</p></div><div class=\"footer-col\"><h3>Services</h3><a href=\"/services/domestic\">Domestic courier</a><a href=\"/services/international\">International courier</a><a href=\"/get-a-quote\">Request a quote</a></div><div class=\"footer-col\"><h3>Company</h3><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a href=\"/faq\">FAQs</a><a href=\"/privacy\">Privacy</a><a href=\"/terms\">Terms</a><a href=\"mailto:vkandcompanymohali@gmail.com\">Email us</a></div></div><div class=\"footer-bottom\"><span>© <!-- -->2026<!-- --> VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div></div></footer></body></html>",
++  "get-a-quote.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" href=\"/brand/vk-and-company-logo-transparent.png\"><link rel=\"preload\" as=\"image\" imagesrcset=\"/media/photos/details-480.webp 480w, /media/photos/details-768.webp 768w, /media/photos/details-1024.webp 1024w, /media/photos/details-1440.webp 1440w, /media/photos/details-1536.webp 1536w\" imagesizes=\"(max-width: 900px) 243px, 423px\" fetchpriority=\"high\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><title>Request a quote | VK AND COMPANY</title><meta name=\"description\" content=\"Share your route and parcel details with VK AND COMPANY for a reviewed courier quotation.\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div class=\"route-transition\" aria-hidden=\"true\"><span></span></div><header class=\"site-header \"><div class=\"shell header-inner\"><a class=\"brand\" aria-label=\"VK AND COMPANY home\" href=\"/\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span><span>VK AND COMPANY</span></a><button type=\"button\" class=\"menu-button\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"main-navigation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"></line><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"></line><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"></line></svg></button><nav id=\"main-navigation\" class=\"nav \" aria-label=\"Main navigation\"><a href=\"/services/domestic\">Domestic</a><a href=\"/services/international\">International</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a class=\"button button-small\" href=\"/get-a-quote\">Get a quote</a></nav></div></header><main><section class=\"page-hero page-hero-quote\"><div class=\"shell page-hero-grid\"><div class=\"page-hero-copy\"><p class=\"eyebrow\">Quotation request</p><h1>Tell us about your shipment.</h1><p class=\"lede\">Share the route and parcel details below. Our team will review the information before confirming service and charges.</p></div><div class=\"quote-media\" data-bubbles=\"fallback\"><div class=\"quote-photo\" data-image-feedback=\"photo\" data-photo-frame=\"\"><img src=\"/media/photos/details-1536.webp\" srcset=\"/media/photos/details-480.webp 480w, /media/photos/details-768.webp 768w, /media/photos/details-1024.webp 1024w, /media/photos/details-1440.webp 1440w, /media/photos/details-1536.webp 1536w\" sizes=\"(max-width: 900px) 243px, 423px\" width=\"1536\" height=\"1024\" alt=\"Illustrative Indian courier measuring a parcel on a weighing scale beside shipping paperwork; not actual company staff or premises\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" data-illustrative=\"true\"></div><div class=\"quote-bubble-fallback\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i></div></div></div></section><section class=\"section\"><div class=\"shell form-shell\"><aside class=\"side-note\"><p class=\"eyebrow\">Before you begin</p><h2>Details make the difference.</h2><p>Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment.</p><p>Pickup requests are not currently enabled.</p></aside><form class=\"form-panel\" novalidate=\"\"><div class=\"honeypot\" aria-hidden=\"true\"><label>Website<input tabindex=\"-1\" autocomplete=\"off\" name=\"website\"></label></div><fieldset class=\"form-section\"><legend>Your details</legend><div class=\"form-grid\"><div class=\"field\"><label for=\"name\">Name</label><input id=\"name\" autocomplete=\"name\" required=\"\" aria-invalid=\"false\" name=\"name\"></div><div class=\"field\"><label for=\"phone\">Phone number</label><input id=\"phone\" type=\"tel\" autocomplete=\"tel\" placeholder=\"Include country code\" required=\"\" aria-invalid=\"false\" name=\"phone\"></div><div class=\"field field-full\"><label for=\"email\">Email <small>(optional)</small></label><input id=\"email\" type=\"email\" autocomplete=\"email\" aria-invalid=\"false\" name=\"email\"></div></div></fieldset><fieldset class=\"form-section\"><legend>Route</legend><div class=\"form-grid\"><div class=\"field\"><label for=\"originCountry\">Origin country</label><input id=\"originCountry\" autocomplete=\"country-name\" required=\"\" aria-invalid=\"false\" name=\"originCountry\"></div><div class=\"field\"><label for=\"originCity\">Origin city</label><input id=\"originCity\" autocomplete=\"address-level2\" required=\"\" aria-invalid=\"false\" name=\"originCity\"></div><div class=\"field field-full\"><label for=\"originPostalCode\">Origin postal code</label><input id=\"originPostalCode\" autocomplete=\"postal-code\" required=\"\" aria-invalid=\"false\" name=\"originPostalCode\"></div><div class=\"field\"><label for=\"destinationCountry\">Destination country</label><input id=\"destinationCountry\" required=\"\" aria-invalid=\"false\" name=\"destinationCountry\"></div><div class=\"field\"><label for=\"destinationCity\">Destination city</label><input id=\"destinationCity\" required=\"\" aria-invalid=\"false\" name=\"destinationCity\"></div><div class=\"field field-full\"><label for=\"destinationPostalCode\">Destination postal code</label><input id=\"destinationPostalCode\" required=\"\" aria-invalid=\"false\" name=\"destinationPostalCode\"></div></div></fieldset><fieldset class=\"form-section\"><legend>Shipment</legend><div class=\"form-grid\"><div class=\"field field-full\"><label for=\"contentsDescription\">Contents description</label><textarea id=\"contentsDescription\" name=\"contentsDescription\" required=\"\" aria-invalid=\"false\"></textarea><small>Be clear about the actual contents; acceptance is confirmed after review.</small></div><div class=\"field\"><label for=\"packageCount\">Number of packages</label><input id=\"packageCount\" type=\"number\" min=\"1\" required=\"\" aria-invalid=\"false\" name=\"packageCount\" value=\"1\"></div><div class=\"field\"><label for=\"approximateWeight\">Approximate weight</label><div style=\"display:grid;grid-template-columns:1fr 85px;gap:8px\"><input id=\"approximateWeight\" type=\"number\" min=\"0.001\" step=\"0.001\" required=\"\" aria-invalid=\"false\" name=\"approximateWeight\"><select name=\"weightUnit\" aria-label=\"Weight unit\"><option value=\"kg\">kg</option><option value=\"lb\">lb</option></select></div></div><div class=\"field\"><label for=\"dimensions\">Dimensions <small>(when known)</small></label><input id=\"dimensions\" placeholder=\"L × W × H\" aria-invalid=\"false\" name=\"dimensions\"></div><div class=\"field\"><label for=\"dimensionUnit\">Dimension unit</label><select id=\"dimensionUnit\" name=\"dimensionUnit\"><option value=\"cm\">centimetres</option><option value=\"in\">inches</option></select></div><div class=\"field field-full\"><label for=\"preferredDispatchDate\">Preferred dispatch date <small>(not guaranteed)</small></label><input id=\"preferredDispatchDate\" type=\"date\" aria-invalid=\"false\" name=\"preferredDispatchDate\"></div><div class=\"field field-full\"><label for=\"instructions\">Additional instructions</label><textarea id=\"instructions\" name=\"instructions\" aria-invalid=\"false\"></textarea></div></div></fieldset><p class=\"notice\">Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch.</p><button class=\"button\" type=\"submit\">Send quote request <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-send\"><path d=\"M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z\"></path><path d=\"m21.854 2.147-10.94 10.939\"></path></svg></button></form></div></section><!--$--><!--/$--></main><footer class=\"site-footer\"><div class=\"shell\"><div class=\"footer-grid\"><div class=\"footer-brand\"><div class=\"brand footer-logo\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" loading=\"lazy\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span> <span>VK AND COMPANY</span></div><p>Domestic and international courier services, arranged around the details of each shipment.</p></div><div class=\"footer-col\"><h3>Services</h3><a href=\"/services/domestic\">Domestic courier</a><a href=\"/services/international\">International courier</a><a href=\"/get-a-quote\">Request a quote</a></div><div class=\"footer-col\"><h3>Company</h3><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a href=\"/faq\">FAQs</a><a href=\"/privacy\">Privacy</a><a href=\"/terms\">Terms</a><a href=\"mailto:vkandcompanymohali@gmail.com\">Email us</a></div></div><div class=\"footer-bottom\"><span>© <!-- -->2026<!-- --> VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div></div></footer></body></html>",
++  "faq.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" href=\"/brand/vk-and-company-logo-transparent.png\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><title>Frequently asked questions | VK AND COMPANY</title><meta name=\"description\" content=\"Answers about courier enquiries, quotations and booking with VK AND COMPANY.\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div class=\"route-transition\" aria-hidden=\"true\"><span></span></div><header class=\"site-header \"><div class=\"shell header-inner\"><a class=\"brand\" aria-label=\"VK AND COMPANY home\" href=\"/\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span><span>VK AND COMPANY</span></a><button type=\"button\" class=\"menu-button\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"main-navigation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"></line><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"></line><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"></line></svg></button><nav id=\"main-navigation\" class=\"nav \" aria-label=\"Main navigation\"><a href=\"/services/domestic\">Domestic</a><a href=\"/services/international\">International</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a class=\"button button-small\" href=\"/get-a-quote\">Get a quote</a></nav></div></header><main><section class=\"page-hero page-hero-faq\"><div class=\"shell page-hero-grid\"><div class=\"page-hero-copy\"><p class=\"eyebrow\">Frequently asked questions</p><h1>Answers before you send.</h1><p class=\"lede\">Useful guidance about our enquiry-led courier workflow.</p></div><div class=\"page-hero-marker\" aria-hidden=\"true\"><span>VKC</span><i aria-hidden=\"true\"></i></div></div></section><section class=\"section section-white\"><div class=\"shell\"><div class=\"faq-list\"><details class=\"faq-item\"><summary>How do I request a courier quote?</summary><p>Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer.</p></details><details class=\"faq-item\"><summary>Does submitting the form confirm my booking?</summary><p>No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted.</p></details><details class=\"faq-item\"><summary>Can all international parcels be accepted?</summary><p>Acceptance depends on the contents, documentation, route availability and applicable restrictions. These are confirmed for the specific shipment.</p></details><details class=\"faq-item\"><summary>Is pickup automatically scheduled?</summary><p>No. Pickup requests are currently unavailable. When enabled, a requested date will still need staff confirmation.</p></details></div></div></section><section class=\"section\"><div class=\"shell quote-band\"><div><p class=\"eyebrow\" style=\"color:#76c4d0\">Start with the shipment details</p><h2>Let’s work out the right next step for your parcel.</h2><p>No instant estimates without an approved rate card. Our team reviews each request before making an offer.</p></div><div class=\"band-action\"><a class=\"button\" href=\"/get-a-quote\">Request a quote <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a></div></div></section><!--$--><!--/$--></main><footer class=\"site-footer\"><div class=\"shell\"><div class=\"footer-grid\"><div class=\"footer-brand\"><div class=\"brand footer-logo\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" loading=\"lazy\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span> <span>VK AND COMPANY</span></div><p>Domestic and international courier services, arranged around the details of each shipment.</p></div><div class=\"footer-col\"><h3>Services</h3><a href=\"/services/domestic\">Domestic courier</a><a href=\"/services/international\">International courier</a><a href=\"/get-a-quote\">Request a quote</a></div><div class=\"footer-col\"><h3>Company</h3><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a href=\"/faq\">FAQs</a><a href=\"/privacy\">Privacy</a><a href=\"/terms\">Terms</a><a href=\"mailto:vkandcompanymohali@gmail.com\">Email us</a></div></div><div class=\"footer-bottom\"><span>© <!-- -->2026<!-- --> VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div></div></footer></body></html>",
++  "track.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" href=\"/brand/vk-and-company-logo-transparent.png\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><title>Shipment update enquiry | VK AND COMPANY</title><meta name=\"description\" content=\"Domestic and international courier enquiries and quotations from VK AND COMPANY.\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div class=\"route-transition\" aria-hidden=\"true\"><span></span></div><header class=\"site-header \"><div class=\"shell header-inner\"><a class=\"brand\" aria-label=\"VK AND COMPANY home\" href=\"/\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span><span>VK AND COMPANY</span></a><button type=\"button\" class=\"menu-button\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"main-navigation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"></line><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"></line><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"></line></svg></button><nav id=\"main-navigation\" class=\"nav \" aria-label=\"Main navigation\"><a href=\"/services/domestic\">Domestic</a><a href=\"/services/international\">International</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a class=\"button button-small\" href=\"/get-a-quote\">Get a quote</a></nav></div></header><main><section class=\"page-hero page-hero-legal\"><div class=\"shell page-hero-grid\"><div class=\"page-hero-copy\"><p class=\"eyebrow\">Shipment support</p><h1>Shipment update enquiry</h1><p class=\"lede\">Contact the company for an update on your shipment. Please include your shipment reference so the team can help.</p></div><div class=\"page-hero-marker\" aria-hidden=\"true\"><span>VKC</span><i aria-hidden=\"true\"></i></div></div></section><section class=\"section\"><div class=\"shell\"><div class=\"form-panel\"><h2>Ask about your shipment.</h2><p class=\"lede\">Online shipment lookup is unavailable. Contact VK AND COMPANY by phone or email, or use the Contact form. Include your shipment reference in your message.</p><p><a class=\"text-link\" href=\"tel:+919317724056\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-phone\" aria-hidden=\"true\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"></path></svg> +91 93177 24056</a></p><p><a class=\"text-link\" style=\"overflow-wrap:anywhere\" href=\"mailto:vkandcompanymohali@gmail.com\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-mail\" aria-hidden=\"true\"><rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"></rect><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"></path></svg> vkandcompanymohali@gmail.com</a></p><a class=\"button\" href=\"/contact\">Contact the team</a></div></div></section><!--$--><!--/$--></main><footer class=\"site-footer\"><div class=\"shell\"><div class=\"footer-grid\"><div class=\"footer-brand\"><div class=\"brand footer-logo\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" loading=\"lazy\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span> <span>VK AND COMPANY</span></div><p>Domestic and international courier services, arranged around the details of each shipment.</p></div><div class=\"footer-col\"><h3>Services</h3><a href=\"/services/domestic\">Domestic courier</a><a href=\"/services/international\">International courier</a><a href=\"/get-a-quote\">Request a quote</a></div><div class=\"footer-col\"><h3>Company</h3><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a href=\"/faq\">FAQs</a><a href=\"/privacy\">Privacy</a><a href=\"/terms\">Terms</a><a href=\"mailto:vkandcompanymohali@gmail.com\">Email us</a></div></div><div class=\"footer-bottom\"><span>© <!-- -->2026<!-- --> VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div></div></footer></body></html>",
++  "privacy.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" href=\"/brand/vk-and-company-logo-transparent.png\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><title>Privacy information | VK AND COMPANY</title><meta name=\"description\" content=\"Domestic and international courier enquiries and quotations from VK AND COMPANY.\"><meta name=\"robots\" content=\"noindex, nofollow\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div class=\"route-transition\" aria-hidden=\"true\"><span></span></div><header class=\"site-header \"><div class=\"shell header-inner\"><a class=\"brand\" aria-label=\"VK AND COMPANY home\" href=\"/\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span><span>VK AND COMPANY</span></a><button type=\"button\" class=\"menu-button\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"main-navigation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"></line><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"></line><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"></line></svg></button><nav id=\"main-navigation\" class=\"nav \" aria-label=\"Main navigation\"><a href=\"/services/domestic\">Domestic</a><a href=\"/services/international\">International</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a class=\"button button-small\" href=\"/get-a-quote\">Get a quote</a></nav></div></header><main><section class=\"page-hero page-hero-legal\"><div class=\"shell page-hero-grid\"><div class=\"page-hero-copy\"><p class=\"eyebrow\">Owner review required</p><h1>Privacy content is not yet approved.</h1><p class=\"lede\">This page is reserved for VK AND COMPANY's reviewed privacy information.</p></div><div class=\"page-hero-marker\" aria-hidden=\"true\"><span>VKC</span><i aria-hidden=\"true\"></i></div></div></section><section class=\"section\"><div class=\"shell prose\" style=\"max-width:760px\"><div class=\"notice\"><strong>Launch requirement:</strong> The business owner and an appropriate legal adviser must review and approve the final privacy notice before this page is published or indexed.</div><p>The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.</p></div></section><!--$--><!--/$--></main><footer class=\"site-footer\"><div class=\"shell\"><div class=\"footer-grid\"><div class=\"footer-brand\"><div class=\"brand footer-logo\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" loading=\"lazy\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span> <span>VK AND COMPANY</span></div><p>Domestic and international courier services, arranged around the details of each shipment.</p></div><div class=\"footer-col\"><h3>Services</h3><a href=\"/services/domestic\">Domestic courier</a><a href=\"/services/international\">International courier</a><a href=\"/get-a-quote\">Request a quote</a></div><div class=\"footer-col\"><h3>Company</h3><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a href=\"/faq\">FAQs</a><a href=\"/privacy\">Privacy</a><a href=\"/terms\">Terms</a><a href=\"mailto:vkandcompanymohali@gmail.com\">Email us</a></div></div><div class=\"footer-bottom\"><span>© <!-- -->2026<!-- --> VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div></div></footer></body></html>",
++  "terms.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" href=\"/brand/vk-and-company-logo-transparent.png\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><title>Service terms | VK AND COMPANY</title><meta name=\"description\" content=\"Domestic and international courier enquiries and quotations from VK AND COMPANY.\"><meta name=\"robots\" content=\"noindex, nofollow\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div class=\"route-transition\" aria-hidden=\"true\"><span></span></div><header class=\"site-header \"><div class=\"shell header-inner\"><a class=\"brand\" aria-label=\"VK AND COMPANY home\" href=\"/\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span><span>VK AND COMPANY</span></a><button type=\"button\" class=\"menu-button\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"main-navigation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"></line><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"></line><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"></line></svg></button><nav id=\"main-navigation\" class=\"nav \" aria-label=\"Main navigation\"><a href=\"/services/domestic\">Domestic</a><a href=\"/services/international\">International</a><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a class=\"button button-small\" href=\"/get-a-quote\">Get a quote</a></nav></div></header><main><section class=\"page-hero page-hero-legal\"><div class=\"shell page-hero-grid\"><div class=\"page-hero-copy\"><p class=\"eyebrow\">Owner review required</p><h1>Service terms are not yet approved.</h1><p class=\"lede\">This page is reserved for VK AND COMPANY's reviewed customer terms.</p></div><div class=\"page-hero-marker\" aria-hidden=\"true\"><span>VKC</span><i aria-hidden=\"true\"></i></div></div></section><section class=\"section\"><div class=\"shell prose\" style=\"max-width:760px\"><div class=\"notice\"><strong>Launch requirement:</strong> Approved terms must address the actual courier process, responsibilities, restrictions, charges, claims and applicable law before publication.</div><p>No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.</p></div></section><!--$--><!--/$--></main><footer class=\"site-footer\"><div class=\"shell\"><div class=\"footer-grid\"><div class=\"footer-brand\"><div class=\"brand footer-logo\"><span class=\"brand-logo \" data-image-feedback=\"logo\"><img alt=\"VK AND COMPANY\" loading=\"lazy\" width=\"500\" height=\"500\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent\" src=\"/brand/vk-and-company-logo-transparent.png\"></span> <span>VK AND COMPANY</span></div><p>Domestic and international courier services, arranged around the details of each shipment.</p></div><div class=\"footer-col\"><h3>Services</h3><a href=\"/services/domestic\">Domestic courier</a><a href=\"/services/international\">International courier</a><a href=\"/get-a-quote\">Request a quote</a></div><div class=\"footer-col\"><h3>Company</h3><a href=\"/about\">About</a><a href=\"/contact\">Contact</a><a href=\"/faq\">FAQs</a><a href=\"/privacy\">Privacy</a><a href=\"/terms\">Terms</a><a href=\"mailto:vkandcompanymohali@gmail.com\">Email us</a></div></div><div class=\"footer-bottom\"><span>© <!-- -->2026<!-- --> VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div></div></footer></body></html>",
++  "404.html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"stylesheet\" href=\"/_next/static/css/bfc457c0fa8ec32e.css\" data-precedence=\"next\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack-f15bedbc399a888c.js\"><meta name=\"robots\" content=\"noindex\"><title>VK AND COMPANY | Courier Services</title><meta name=\"description\" content=\"Domestic and international courier enquiries and quotations from VK AND COMPANY.\"></head><body><div hidden=\"\"><!--$--><!--/$--></div><!--$!--><template data-dgst=\"BAILOUT_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><main class=\"page-hero\" style=\"min-height:70vh\"><div class=\"shell\"><p class=\"eyebrow\">Not found</p><h1>This page is not available.</h1><p class=\"lede\">The link may be invalid, expired or no longer active.</p><a class=\"button\" style=\"margin-top:28px\" href=\"/\">Return home</a></div></main><!--$--><!--/$--></body></html>"
++}

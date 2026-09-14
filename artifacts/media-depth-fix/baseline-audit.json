@@ -1,0 +1,5450 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "content": {
+      "text": "DOMESTIC & INTERNATIONAL COURIER SERVICES Across cities. Across borders. We keep your parcels moving. Domestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step. Get a quote ILLUSTRATIVE ROUTE IMAGERY 01 / DOMESTIC COURIER SERVICES BETWEEN CITIES Planned around your actual route. Share the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims. Explore domestic services ILLUSTRATIVE INTERNATIONAL LOGISTICS 02 / INTERNATIONAL ACROSS BORDERS, DETAILS FIRST Clear before it leaves the ground. Acceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged. Explore international services HOW SHIPPING WORKS Four steps. One clear process. Every status follows a real operational action. An enquiry is never presented as a confirmed booking or dispatch. 01 Share shipment details Tell us the route, contents, package count and approximate weight. 02 Receive a reviewed quote Service details, inclusions and exclusions are confirmed for the enquiry. 03 Arrange dispatch An accepted quote becomes a booking ready for coordination. 04 Follow verified updates Contact the team for customer-safe shipment updates. 01 START WITH THE SHIPMENT Request a considered quote. Share the details once. Our team reviews each request before confirming service or charges. Get a quote ILLUSTRATIVE OPERATIONS ENVIRONMENT 03 / COMPANY ABOUT VK AND COMPANY Built around each shipment. Our customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates. More about our process COMMON QUESTIONS Useful answers, before you send. View all FAQs How do I request a courier quote? Does submitting the form confirm my booking? Can all international parcels be accepted? Is pickup automatically scheduled? CONTACT & SUPPORT Need help with the next step? Send a secure general or shipment-related enquiry for the team to review. Contact the team",
+      "links": [
+        [
+          "Get a quote ",
+          "/get-a-quote"
+        ],
+        [
+          "Explore domestic services ",
+          "/services/domestic"
+        ],
+        [
+          "Explore international services ",
+          "/services/international"
+        ],
+        [
+          "Get a quote ",
+          "/get-a-quote"
+        ],
+        [
+          "More about our process ",
+          "/about"
+        ],
+        [
+          "View all FAQs ",
+          "/faq"
+        ],
+        [
+          "Contact the team ",
+          "/contact"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      "h1": {
+        "x": 130,
+        "y": 310,
+        "width": 580,
+        "height": 149.375,
+        "top": 310,
+        "right": 710,
+        "bottom": 459.375,
+        "left": 130
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/hero-1536.webp",
+        "selected": "/media/photos/hero-1536.webp",
+        "img": {
+          "x": 0,
+          "y": -5586,
+          "width": 1440,
+          "height": 900,
+          "top": -5586,
+          "right": 1440,
+          "bottom": -4686,
+          "left": 0
+        },
+        "frame": {
+          "x": 0,
+          "y": -5586,
+          "width": 1440,
+          "height": 900,
+          "top": -5586,
+          "right": 1440,
+          "bottom": -4686,
+          "left": 0
+        },
+        "fit": "cover",
+        "padding": "92px 0px 0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "src": "/media/photos/domestic-1536.webp",
+        "selected": "/media/photos/domestic-1536.webp",
+        "img": {
+          "x": 130,
+          "y": -4542,
+          "width": 636.71875,
+          "height": 520,
+          "top": -4542,
+          "right": 766.71875,
+          "bottom": -4022,
+          "left": 130
+        },
+        "frame": {
+          "x": 130,
+          "y": -4542,
+          "width": 636.71875,
+          "height": 520,
+          "top": -4542,
+          "right": 766.71875,
+          "bottom": -4022,
+          "left": 130
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "src": "/media/photos/existing-aircraft-2400.webp",
+        "selected": "/media/photos/existing-aircraft-1440.webp",
+        "img": {
+          "x": 867.515625,
+          "y": -3673.78125,
+          "width": 442.46875,
+          "height": 294.96875,
+          "top": -3673.78125,
+          "right": 1309.984375,
+          "bottom": -3378.8125,
+          "left": 867.515625
+        },
+        "frame": {
+          "x": 867.515625,
+          "y": -3673.78125,
+          "width": 442.46875,
+          "height": 294.96875,
+          "top": -3673.78125,
+          "right": 1309.984375,
+          "bottom": -3378.8125,
+          "left": 867.515625
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-768.webp",
+        "img": {
+          "x": 148,
+          "y": -2785.578125,
+          "width": 259,
+          "height": 172.65625,
+          "top": -2785.578125,
+          "right": 407,
+          "bottom": -2612.921875,
+          "left": 148
+        },
+        "frame": {
+          "x": 148,
+          "y": -2785.578125,
+          "width": 259,
+          "height": 172.65625,
+          "top": -2785.578125,
+          "right": 407,
+          "bottom": -2612.921875,
+          "left": 148
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-768.webp",
+        "img": {
+          "x": 444,
+          "y": -2785.578125,
+          "width": 258,
+          "height": 172,
+          "top": -2785.578125,
+          "right": 702,
+          "bottom": -2613.578125,
+          "left": 444
+        },
+        "frame": {
+          "x": 444,
+          "y": -2785.578125,
+          "width": 258,
+          "height": 172,
+          "top": -2785.578125,
+          "right": 702,
+          "bottom": -2613.578125,
+          "left": 444
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-768.webp",
+        "img": {
+          "x": 739,
+          "y": -2785.578125,
+          "width": 258,
+          "height": 172,
+          "top": -2785.578125,
+          "right": 997,
+          "bottom": -2613.578125,
+          "left": 739
+        },
+        "frame": {
+          "x": 739,
+          "y": -2785.578125,
+          "width": 258,
+          "height": 172,
+          "top": -2785.578125,
+          "right": 997,
+          "bottom": -2613.578125,
+          "left": 739
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      },
+      {
+        "src": "/media/photos/scan-1536.webp",
+        "selected": "/media/photos/scan-768.webp",
+        "img": {
+          "x": 1034,
+          "y": -2785.578125,
+          "width": 258,
+          "height": 172,
+          "top": -2785.578125,
+          "right": 1292,
+          "bottom": -2613.578125,
+          "left": 1034
+        },
+        "frame": {
+          "x": 1034,
+          "y": -2785.578125,
+          "width": 258,
+          "height": 172,
+          "top": -2785.578125,
+          "right": 1292,
+          "bottom": -2613.578125,
+          "left": 1034
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      },
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "selected": "/media/photos/workspace-1717.webp",
+        "img": {
+          "x": 130,
+          "y": -1394.46875,
+          "width": 636.71875,
+          "height": 520,
+          "top": -1394.46875,
+          "right": 766.71875,
+          "bottom": -874.46875,
+          "left": 130
+        },
+        "frame": {
+          "x": 130,
+          "y": -1394.46875,
+          "width": 636.71875,
+          "height": 520,
+          "top": -1394.46875,
+          "right": 766.71875,
+          "bottom": -874.46875,
+          "left": 130
+        },
+        "fit": "cover",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1717,
+          916
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 1440,
+    "content": {
+      "text": "QUOTATION REQUEST Tell us about your shipment. Share the route and parcel details below. Our team will review the information before confirming service and charges. BEFORE YOU BEGIN Details make the difference. Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment. Pickup requests are not currently enabled. Website Your details Name Phone number Email (optional) Route Origin country Origin city Origin postal code Destination country Destination city Destination postal code Shipment Contents description Be clear about the actual contents; acceptance is confirmed after review. Number of packages Approximate weight kg lb Dimensions (when known) Dimension unit centimetres inches Preferred dispatch date (not guaranteed) Additional instructions Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch. Send quote request",
+      "links": [],
+      "fields": [
+        [
+          "INPUT",
+          "website",
+          null
+        ],
+        [
+          "INPUT",
+          "name",
+          null
+        ],
+        [
+          "INPUT",
+          "phone",
+          "tel"
+        ],
+        [
+          "INPUT",
+          "email",
+          "email"
+        ],
+        [
+          "INPUT",
+          "originCountry",
+          null
+        ],
+        [
+          "INPUT",
+          "originCity",
+          null
+        ],
+        [
+          "INPUT",
+          "originPostalCode",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationCountry",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationCity",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationPostalCode",
+          null
+        ],
+        [
+          "TEXTAREA",
+          "contentsDescription",
+          null
+        ],
+        [
+          "INPUT",
+          "packageCount",
+          "number"
+        ],
+        [
+          "INPUT",
+          "approximateWeight",
+          "number"
+        ],
+        [
+          "SELECT",
+          "weightUnit",
+          null
+        ],
+        [
+          "INPUT",
+          "dimensions",
+          null
+        ],
+        [
+          "SELECT",
+          "dimensionUnit",
+          null
+        ],
+        [
+          "INPUT",
+          "preferredDispatchDate",
+          "date"
+        ],
+        [
+          "TEXTAREA",
+          "instructions",
+          null
+        ]
+      ]
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 130,
+        "y": 161.125,
+        "width": 505.796875,
+        "height": 291.75,
+        "top": 161.125,
+        "right": 635.796875,
+        "bottom": 452.875,
+        "left": 130
+      },
+      "h1": {
+        "x": 130,
+        "y": 194.3125,
+        "width": 505.796875,
+        "height": 144,
+        "top": 194.3125,
+        "right": 635.796875,
+        "bottom": 338.3125,
+        "left": 130
+      },
+      ".page-hero .lede": {
+        "x": 130,
+        "y": 362.3125,
+        "width": 505.796875,
+        "height": 90.5625,
+        "top": 362.3125,
+        "right": 635.796875,
+        "bottom": 452.875,
+        "left": 130
+      },
+      ".form-shell": {
+        "x": 130,
+        "y": 674,
+        "width": 1180,
+        "height": 1769.875,
+        "top": 674,
+        "right": 1310,
+        "bottom": 2443.875,
+        "left": 130
+      },
+      ".page-hero-marker": {
+        "x": 691.796875,
+        "y": 142,
+        "width": 618.203125,
+        "height": 330,
+        "top": 142,
+        "right": 1310,
+        "bottom": 472,
+        "left": 691.796875
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/services/international",
+    "width": 1440,
+    "content": {
+      "text": "INTERNATIONAL COURIER ENQUIRIES Across borders, with the details checked first. International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged. ILLUSTRATIVE COURIER ENVIRONMENT INTERNATIONAL PROCESS Route and contents review. Share accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review. Documentation is shipment-specific. Required documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review. Clear quotation boundaries. Charges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements. START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 130,
+        "y": 142,
+        "width": 505.796875,
+        "height": 363.75,
+        "top": 142,
+        "right": 635.796875,
+        "bottom": 505.75,
+        "left": 130
+      },
+      "h1": {
+        "x": 130,
+        "y": 175.1875,
+        "width": 505.796875,
+        "height": 216,
+        "top": 175.1875,
+        "right": 635.796875,
+        "bottom": 391.1875,
+        "left": 130
+      },
+      ".page-hero .lede": {
+        "x": 130,
+        "y": 415.1875,
+        "width": 505.796875,
+        "height": 90.5625,
+        "top": 415.1875,
+        "right": 635.796875,
+        "bottom": 505.75,
+        "left": 130
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/aircraft-1536.webp",
+        "selected": "/media/photos/aircraft-1440.webp",
+        "img": {
+          "x": 692.796875,
+          "y": -2152.125,
+          "width": 616.203125,
+          "height": 358,
+          "top": -2152.125,
+          "right": 1309,
+          "bottom": -1794.125,
+          "left": 692.796875
+        },
+        "frame": {
+          "x": 691.796875,
+          "y": -2153.125,
+          "width": 618.203125,
+          "height": 360,
+          "top": -2153.125,
+          "right": 1310,
+          "bottom": -1793.125,
+          "left": 691.796875
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "brightness(0.82) saturate(0.85)",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/aircraft-1536.webp",
+        "selected": "/media/photos/aircraft-1440.webp",
+        "img": {
+          "x": 130,
+          "y": -1590.671875,
+          "width": 625.234375,
+          "height": 395.546875,
+          "top": -1590.671875,
+          "right": 755.234375,
+          "bottom": -1195.125,
+          "left": 130
+        },
+        "frame": {
+          "x": 130,
+          "y": -1590.671875,
+          "width": 625.234375,
+          "height": 395.546875,
+          "top": -1590.671875,
+          "right": 755.234375,
+          "bottom": -1195.125,
+          "left": 130
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 248",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1440.webp",
+        "img": {
+          "x": 130,
+          "y": -1134.125,
+          "width": 625.234375,
+          "height": 405.125,
+          "top": -1134.125,
+          "right": 755.234375,
+          "bottom": -729,
+          "left": 130
+        },
+        "frame": {
+          "x": 130,
+          "y": -1134.125,
+          "width": 625.234375,
+          "height": 405.125,
+          "top": -1134.125,
+          "right": 755.234375,
+          "bottom": -729,
+          "left": 130
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1440.webp",
+        "img": {
+          "x": 130,
+          "y": -668,
+          "width": 625.234375,
+          "height": 405.125,
+          "top": -668,
+          "right": 755.234375,
+          "bottom": -262.875,
+          "left": 130
+        },
+        "frame": {
+          "x": 130,
+          "y": -668,
+          "width": 625.234375,
+          "height": 405.125,
+          "top": -668,
+          "right": 755.234375,
+          "bottom": -262.875,
+          "left": 130
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/services/domestic",
+    "width": 1440,
+    "content": {
+      "text": "DOMESTIC COURIER ENQUIRIES A considered route from one city to the next. Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment. ILLUSTRATIVE COURIER ENVIRONMENT DOMESTIC PROCESS Begin with the real shipment details. Provide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step. Review before commitment. A submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance. We move it with care. Once confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required. START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 130,
+        "y": 142,
+        "width": 505.796875,
+        "height": 363.75,
+        "top": 142,
+        "right": 635.796875,
+        "bottom": 505.75,
+        "left": 130
+      },
+      "h1": {
+        "x": 130,
+        "y": 175.1875,
+        "width": 505.796875,
+        "height": 216,
+        "top": 175.1875,
+        "right": 635.796875,
+        "bottom": 391.1875,
+        "left": 130
+      },
+      ".page-hero .lede": {
+        "x": 130,
+        "y": 415.1875,
+        "width": 505.796875,
+        "height": 90.5625,
+        "top": 415.1875,
+        "right": 635.796875,
+        "bottom": 505.75,
+        "left": 130
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/domestic-1536.webp",
+        "selected": "/media/photos/domestic-1440.webp",
+        "img": {
+          "x": 691.796875,
+          "y": -2153.125,
+          "width": 618.203125,
+          "height": 360,
+          "top": -2153.125,
+          "right": 1310,
+          "bottom": -1793.125,
+          "left": 691.796875
+        },
+        "frame": {
+          "x": 691.796875,
+          "y": -2153.125,
+          "width": 618.203125,
+          "height": 360,
+          "top": -2153.125,
+          "right": 1310,
+          "bottom": -1793.125,
+          "left": 691.796875
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1440.webp",
+        "img": {
+          "x": 130,
+          "y": -1590.671875,
+          "width": 625.234375,
+          "height": 395.546875,
+          "top": -1590.671875,
+          "right": 755.234375,
+          "bottom": -1195.125,
+          "left": 130
+        },
+        "frame": {
+          "x": 130,
+          "y": -1590.671875,
+          "width": 625.234375,
+          "height": 395.546875,
+          "top": -1590.671875,
+          "right": 755.234375,
+          "bottom": -1195.125,
+          "left": 130
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 248",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1440.webp",
+        "img": {
+          "x": 130,
+          "y": -1134.125,
+          "width": 625.234375,
+          "height": 405.125,
+          "top": -1134.125,
+          "right": 755.234375,
+          "bottom": -729,
+          "left": 130
+        },
+        "frame": {
+          "x": 130,
+          "y": -1134.125,
+          "width": 625.234375,
+          "height": 405.125,
+          "top": -1134.125,
+          "right": 755.234375,
+          "bottom": -729,
+          "left": 130
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-1440.webp",
+        "img": {
+          "x": 130,
+          "y": -668,
+          "width": 625.234375,
+          "height": 405.125,
+          "top": -668,
+          "right": 755.234375,
+          "bottom": -262.875,
+          "left": 130
+        },
+        "frame": {
+          "x": 130,
+          "y": -668,
+          "width": 625.234375,
+          "height": 405.125,
+          "top": -668,
+          "right": 755.234375,
+          "bottom": -262.875,
+          "left": 130
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/about",
+    "width": 1440,
+    "content": {
+      "text": "ABOUT VK AND COMPANY Courier arrangements built around each shipment. VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process. ILLUSTRATIVE COURIER ENVIRONMENT WHAT WE DO Connecting People & Possibilities Shipment Details Route Review Booking Support Shipment Updates A straightforward customer journey. Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise. Careful about what is confirmed. We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided. Prepared to connect. Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied. Delivered with Purpose START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 130,
+        "y": 142,
+        "width": 505.796875,
+        "height": 435.75,
+        "top": 142,
+        "right": 635.796875,
+        "bottom": 577.75,
+        "left": 130
+      },
+      "h1": {
+        "x": 130,
+        "y": 175.1875,
+        "width": 505.796875,
+        "height": 288,
+        "top": 175.1875,
+        "right": 635.796875,
+        "bottom": 463.1875,
+        "left": 130
+      },
+      ".page-hero .lede": {
+        "x": 130,
+        "y": 487.1875,
+        "width": 505.796875,
+        "height": 90.5625,
+        "top": 487.1875,
+        "right": 635.796875,
+        "bottom": 577.75,
+        "left": 130
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "selected": "/media/photos/workspace-1440.webp",
+        "img": {
+          "x": 691.796875,
+          "y": -1743.125,
+          "width": 618.203125,
+          "height": 360,
+          "top": -1743.125,
+          "right": 1310,
+          "bottom": -1383.125,
+          "left": 691.796875
+        },
+        "frame": {
+          "x": 691.796875,
+          "y": -1743.125,
+          "width": 618.203125,
+          "height": 360,
+          "top": -1743.125,
+          "right": 1310,
+          "bottom": -1383.125,
+          "left": 691.796875
+        },
+        "fit": "cover",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          768
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-1440.webp",
+        "img": {
+          "x": 130,
+          "y": -996.3125,
+          "width": 442.796875,
+          "height": 410.375,
+          "top": -996.3125,
+          "right": 572.796875,
+          "bottom": -585.9375,
+          "left": 130
+        },
+        "frame": {
+          "x": 130,
+          "y": -996.3125,
+          "width": 442.796875,
+          "height": 410.375,
+          "top": -996.3125,
+          "right": 572.796875,
+          "bottom": -585.9375,
+          "left": 130
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-768.webp",
+        "img": {
+          "x": 672.796875,
+          "y": -1166.671875,
+          "width": 277,
+          "height": 215,
+          "top": -1166.671875,
+          "right": 949.796875,
+          "bottom": -951.671875,
+          "left": 672.796875
+        },
+        "frame": {
+          "x": 672.796875,
+          "y": -1166.671875,
+          "width": 277,
+          "height": 215,
+          "top": -1166.671875,
+          "right": 949.796875,
+          "bottom": -951.671875,
+          "left": 672.796875
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-768.webp",
+        "img": {
+          "x": 672.796875,
+          "y": -877.09375,
+          "width": 277,
+          "height": 216,
+          "top": -877.09375,
+          "right": 949.796875,
+          "bottom": -661.09375,
+          "left": 672.796875
+        },
+        "frame": {
+          "x": 672.796875,
+          "y": -877.09375,
+          "width": 277,
+          "height": 216,
+          "top": -877.09375,
+          "right": 949.796875,
+          "bottom": -661.09375,
+          "left": 672.796875
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "selected": "/media/photos/support-768.webp",
+        "img": {
+          "x": 672.796875,
+          "y": -588.015625,
+          "width": 277,
+          "height": 218,
+          "top": -588.015625,
+          "right": 949.796875,
+          "bottom": -370.015625,
+          "left": 672.796875
+        },
+        "frame": {
+          "x": 672.796875,
+          "y": -588.015625,
+          "width": 277,
+          "height": 218,
+          "top": -588.015625,
+          "right": 949.796875,
+          "bottom": -370.015625,
+          "left": 672.796875
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/contact",
+    "width": 1440,
+    "content": {
+      "text": "How can we help? Send a general question or ask about a shipment. Your message will be saved for the team to review. Here to Keep You Moving General Enquiries Quote Requests Shipment Support Partnerships & Other From Your Place to the World CONTACT CHANNELS Contact VK AND COMPANY. +91 93177 24056 vkandcompanymohali@gmail.com Website Name Phone Email Provide an email or phone number so the team can respond. Subject General Enquiry Quote Request Shipment Support Partnerships & Other Message Send message We usually respond within one business day.",
+      "links": [
+        [
+          "+91 93177 24056",
+          "tel:+919317724056"
+        ],
+        [
+          "vkandcompanymohali@gmail.com",
+          "mailto:vkandcompanymohali@gmail.com"
+        ]
+      ],
+      "fields": [
+        [
+          "INPUT",
+          "website",
+          null
+        ],
+        [
+          "INPUT",
+          "name",
+          null
+        ],
+        [
+          "INPUT",
+          "phone",
+          "tel"
+        ],
+        [
+          "INPUT",
+          "email",
+          "email"
+        ],
+        [
+          "SELECT",
+          "subject",
+          null
+        ],
+        [
+          "TEXTAREA",
+          "message",
+          null
+        ]
+      ]
+    },
+    "layout": {
+      "h1": {
+        "x": 78,
+        "y": 210,
+        "width": 630.328125,
+        "height": 153.96875,
+        "top": 210,
+        "right": 708.328125,
+        "bottom": 363.96875,
+        "left": 78
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/support-1536.webp",
+        "selected": "/media/photos/support-1440.webp",
+        "img": {
+          "x": 30,
+          "y": -283.9375,
+          "width": 678.328125,
+          "height": 399.84375,
+          "top": -283.9375,
+          "right": 708.328125,
+          "bottom": 115.90625,
+          "left": 30
+        },
+        "frame": {
+          "x": 30,
+          "y": -283.9375,
+          "width": 678.328125,
+          "height": 399.84375,
+          "top": -283.9375,
+          "right": 708.328125,
+          "bottom": 115.90625,
+          "left": 30
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "760 / 448",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/faq",
+    "width": 1440,
+    "content": {
+      "text": "FREQUENTLY ASKED QUESTIONS Answers before you send. Useful guidance about our enquiry-led courier workflow. How do I request a courier quote? Does submitting the form confirm my booking? Can all international parcels be accepted? Is pickup automatically scheduled? START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 130,
+        "y": 191.3125,
+        "width": 505.796875,
+        "height": 231.375,
+        "top": 191.3125,
+        "right": 635.796875,
+        "bottom": 422.6875,
+        "left": 130
+      },
+      "h1": {
+        "x": 130,
+        "y": 224.5,
+        "width": 505.796875,
+        "height": 144,
+        "top": 224.5,
+        "right": 635.796875,
+        "bottom": 368.5,
+        "left": 130
+      },
+      ".page-hero .lede": {
+        "x": 130,
+        "y": 392.5,
+        "width": 505.796875,
+        "height": 30.1875,
+        "top": 392.5,
+        "right": 635.796875,
+        "bottom": 422.6875,
+        "left": 130
+      },
+      ".page-hero-marker": {
+        "x": 691.796875,
+        "y": 142,
+        "width": 618.203125,
+        "height": 330,
+        "top": 142,
+        "right": 1310,
+        "bottom": 472,
+        "left": 691.796875
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/privacy",
+    "width": 1440,
+    "content": {
+      "text": "OWNER REVIEW REQUIRED Privacy content is not yet approved. This page is reserved for VK AND COMPANY's reviewed privacy information. Launch requirement: The business owner and an appropriate legal adviser must review and approve the final privacy notice before this page is published or indexed. The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.",
+      "links": [],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 130,
+        "y": 142,
+        "width": 505.796875,
+        "height": 333.5625,
+        "top": 142,
+        "right": 635.796875,
+        "bottom": 475.5625,
+        "left": 130
+      },
+      "h1": {
+        "x": 130,
+        "y": 175.1875,
+        "width": 505.796875,
+        "height": 216,
+        "top": 175.1875,
+        "right": 635.796875,
+        "bottom": 391.1875,
+        "left": 130
+      },
+      ".page-hero .lede": {
+        "x": 130,
+        "y": 415.1875,
+        "width": 505.796875,
+        "height": 60.375,
+        "top": 415.1875,
+        "right": 635.796875,
+        "bottom": 475.5625,
+        "left": 130
+      },
+      ".page-hero-marker": {
+        "x": 691.796875,
+        "y": 143.78125,
+        "width": 618.203125,
+        "height": 330,
+        "top": 143.78125,
+        "right": 1310,
+        "bottom": 473.78125,
+        "left": 691.796875
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/terms",
+    "width": 1440,
+    "content": {
+      "text": "OWNER REVIEW REQUIRED Service terms are not yet approved. This page is reserved for VK AND COMPANY's reviewed customer terms. Launch requirement: Approved terms must address the actual courier process, responsibilities, restrictions, charges, claims and applicable law before publication. No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.",
+      "links": [],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 130,
+        "y": 176.21875,
+        "width": 505.796875,
+        "height": 261.5625,
+        "top": 176.21875,
+        "right": 635.796875,
+        "bottom": 437.78125,
+        "left": 130
+      },
+      "h1": {
+        "x": 130,
+        "y": 209.40625,
+        "width": 505.796875,
+        "height": 144,
+        "top": 209.40625,
+        "right": 635.796875,
+        "bottom": 353.40625,
+        "left": 130
+      },
+      ".page-hero .lede": {
+        "x": 130,
+        "y": 377.40625,
+        "width": 505.796875,
+        "height": 60.375,
+        "top": 377.40625,
+        "right": 635.796875,
+        "bottom": 437.78125,
+        "left": 130
+      },
+      ".page-hero-marker": {
+        "x": 691.796875,
+        "y": 142,
+        "width": 618.203125,
+        "height": 330,
+        "top": 142,
+        "right": 1310,
+        "bottom": 472,
+        "left": 691.796875
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/track",
+    "width": 1440,
+    "content": {
+      "text": "SHIPMENT SUPPORT Shipment update enquiry Contact the company for an update on your shipment. Please include your shipment reference so the team can help. Ask about your shipment. Online shipment lookup is unavailable. Contact VK AND COMPANY by phone or email, or use the Contact form. Include your shipment reference in your message. +91 93177 24056 vkandcompanymohali@gmail.com Contact the team",
+      "links": [
+        [
+          " +91 93177 24056",
+          "tel:+919317724056"
+        ],
+        [
+          " vkandcompanymohali@gmail.com",
+          "mailto:vkandcompanymohali@gmail.com"
+        ],
+        [
+          "Contact the team",
+          "/contact"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 130,
+        "y": 161.125,
+        "width": 505.796875,
+        "height": 291.75,
+        "top": 161.125,
+        "right": 635.796875,
+        "bottom": 452.875,
+        "left": 130
+      },
+      "h1": {
+        "x": 130,
+        "y": 194.3125,
+        "width": 505.796875,
+        "height": 144,
+        "top": 194.3125,
+        "right": 635.796875,
+        "bottom": 338.3125,
+        "left": 130
+      },
+      ".page-hero .lede": {
+        "x": 130,
+        "y": 362.3125,
+        "width": 505.796875,
+        "height": 90.5625,
+        "top": 362.3125,
+        "right": 635.796875,
+        "bottom": 452.875,
+        "left": 130
+      },
+      ".page-hero-marker": {
+        "x": 691.796875,
+        "y": 142,
+        "width": 618.203125,
+        "height": 330,
+        "top": 142,
+        "right": 1310,
+        "bottom": 472,
+        "left": 691.796875
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "content": {
+      "text": "DOMESTIC & INTERNATIONAL COURIER SERVICES Across cities. Across borders. We keep your parcels moving. Domestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step. Get a quote ILLUSTRATIVE ROUTE IMAGERY 01 / DOMESTIC COURIER SERVICES BETWEEN CITIES Planned around your actual route. Share the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims. Explore domestic services ILLUSTRATIVE INTERNATIONAL LOGISTICS 02 / INTERNATIONAL ACROSS BORDERS, DETAILS FIRST Clear before it leaves the ground. Acceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged. Explore international services HOW SHIPPING WORKS Four steps. One clear process. Every status follows a real operational action. An enquiry is never presented as a confirmed booking or dispatch. 01 Share shipment details Tell us the route, contents, package count and approximate weight. 02 Receive a reviewed quote Service details, inclusions and exclusions are confirmed for the enquiry. 03 Arrange dispatch An accepted quote becomes a booking ready for coordination. 04 Follow verified updates Contact the team for customer-safe shipment updates. 01 START WITH THE SHIPMENT Request a considered quote. Share the details once. Our team reviews each request before confirming service or charges. Get a quote ILLUSTRATIVE OPERATIONS ENVIRONMENT 03 / COMPANY ABOUT VK AND COMPANY Built around each shipment. Our customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates. More about our process COMMON QUESTIONS Useful answers, before you send. View all FAQs How do I request a courier quote? Does submitting the form confirm my booking? Can all international parcels be accepted? Is pickup automatically scheduled? CONTACT & SUPPORT Need help with the next step? Send a secure general or shipment-related enquiry for the team to review. Contact the team",
+      "links": [
+        [
+          "Get a quote ",
+          "/get-a-quote"
+        ],
+        [
+          "Explore domestic services ",
+          "/services/domestic"
+        ],
+        [
+          "Explore international services ",
+          "/services/international"
+        ],
+        [
+          "Get a quote ",
+          "/get-a-quote"
+        ],
+        [
+          "More about our process ",
+          "/about"
+        ],
+        [
+          "View all FAQs ",
+          "/faq"
+        ],
+        [
+          "Contact the team ",
+          "/contact"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      "h1": {
+        "x": 20,
+        "y": 391.015625,
+        "width": 580,
+        "height": 111.8125,
+        "top": 391.015625,
+        "right": 600,
+        "bottom": 502.828125,
+        "left": 20
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/hero-1536.webp",
+        "selected": "/media/photos/hero-1536.webp",
+        "img": {
+          "x": 0,
+          "y": -6261,
+          "width": 768,
+          "height": 1024,
+          "top": -6261,
+          "right": 768,
+          "bottom": -5237,
+          "left": 0
+        },
+        "frame": {
+          "x": 0,
+          "y": -6261,
+          "width": 768,
+          "height": 1024,
+          "top": -6261,
+          "right": 768,
+          "bottom": -5237,
+          "left": 0
+        },
+        "fit": "contain",
+        "padding": "92px 0px 0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "src": "/media/photos/domestic-1536.webp",
+        "selected": "/media/photos/domestic-1536.webp",
+        "img": {
+          "x": 20,
+          "y": -5151,
+          "width": 728,
+          "height": 480,
+          "top": -5151,
+          "right": 748,
+          "bottom": -4671,
+          "left": 20
+        },
+        "frame": {
+          "x": 20,
+          "y": -5151,
+          "width": 728,
+          "height": 480,
+          "top": -5151,
+          "right": 748,
+          "bottom": -4671,
+          "left": 20
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "src": "/media/photos/existing-aircraft-2400.webp",
+        "selected": "/media/photos/existing-aircraft-2400.webp",
+        "img": {
+          "x": 20,
+          "y": -4207.03125,
+          "width": 728,
+          "height": 485.328125,
+          "top": -4207.03125,
+          "right": 748,
+          "bottom": -3721.703125,
+          "left": 20
+        },
+        "frame": {
+          "x": 20,
+          "y": -4207.03125,
+          "width": 728,
+          "height": 485.328125,
+          "top": -4207.03125,
+          "right": 748,
+          "bottom": -3721.703125,
+          "left": 20
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          2400,
+          1600
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-768.webp",
+        "img": {
+          "x": 38,
+          "y": -3034.328125,
+          "width": 328,
+          "height": 218.65625,
+          "top": -3034.328125,
+          "right": 366,
+          "bottom": -2815.671875,
+          "left": 38
+        },
+        "frame": {
+          "x": 38,
+          "y": -3034.328125,
+          "width": 328,
+          "height": 218.65625,
+          "top": -3034.328125,
+          "right": 366,
+          "bottom": -2815.671875,
+          "left": 38
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-768.webp",
+        "img": {
+          "x": 403,
+          "y": -3034.328125,
+          "width": 327,
+          "height": 218,
+          "top": -3034.328125,
+          "right": 730,
+          "bottom": -2816.328125,
+          "left": 403
+        },
+        "frame": {
+          "x": 403,
+          "y": -3034.328125,
+          "width": 327,
+          "height": 218,
+          "top": -3034.328125,
+          "right": 730,
+          "bottom": -2816.328125,
+          "left": 403
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-768.webp",
+        "img": {
+          "x": 38,
+          "y": -2577.40625,
+          "width": 328,
+          "height": 218.65625,
+          "top": -2577.40625,
+          "right": 366,
+          "bottom": -2358.75,
+          "left": 38
+        },
+        "frame": {
+          "x": 38,
+          "y": -2577.40625,
+          "width": 328,
+          "height": 218.65625,
+          "top": -2577.40625,
+          "right": 366,
+          "bottom": -2358.75,
+          "left": 38
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      },
+      {
+        "src": "/media/photos/scan-1536.webp",
+        "selected": "/media/photos/scan-768.webp",
+        "img": {
+          "x": 403,
+          "y": -2577.40625,
+          "width": 327,
+          "height": 218,
+          "top": -2577.40625,
+          "right": 730,
+          "bottom": -2359.40625,
+          "left": 403
+        },
+        "frame": {
+          "x": 403,
+          "y": -2577.40625,
+          "width": 327,
+          "height": 218,
+          "top": -2577.40625,
+          "right": 730,
+          "bottom": -2359.40625,
+          "left": 403
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          768,
+          512
+        ]
+      },
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "selected": "/media/photos/workspace-1717.webp",
+        "img": {
+          "x": 20,
+          "y": -1339.484375,
+          "width": 728,
+          "height": 480,
+          "top": -1339.484375,
+          "right": 748,
+          "bottom": -859.484375,
+          "left": 20
+        },
+        "frame": {
+          "x": 20,
+          "y": -1339.484375,
+          "width": 728,
+          "height": 480,
+          "top": -1339.484375,
+          "right": 748,
+          "bottom": -859.484375,
+          "left": 20
+        },
+        "fit": "cover",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1717,
+          916
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 768,
+    "content": {
+      "text": "QUOTATION REQUEST Tell us about your shipment. Share the route and parcel details below. Our team will review the information before confirming service and charges. BEFORE YOU BEGIN Details make the difference. Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment. Pickup requests are not currently enabled. Website Your details Name Phone number Email (optional) Route Origin country Origin city Origin postal code Destination country Destination city Destination postal code Shipment Contents description Be clear about the actual contents; acceptance is confirmed after review. Number of packages Approximate weight kg lb Dimensions (when known) Dimension unit centimetres inches Preferred dispatch date (not guaranteed) Additional instructions Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch. Send quote request",
+      "links": [],
+      "fields": [
+        [
+          "INPUT",
+          "website",
+          null
+        ],
+        [
+          "INPUT",
+          "name",
+          null
+        ],
+        [
+          "INPUT",
+          "phone",
+          "tel"
+        ],
+        [
+          "INPUT",
+          "email",
+          "email"
+        ],
+        [
+          "INPUT",
+          "originCountry",
+          null
+        ],
+        [
+          "INPUT",
+          "originCity",
+          null
+        ],
+        [
+          "INPUT",
+          "originPostalCode",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationCountry",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationCity",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationPostalCode",
+          null
+        ],
+        [
+          "TEXTAREA",
+          "contentsDescription",
+          null
+        ],
+        [
+          "INPUT",
+          "packageCount",
+          "number"
+        ],
+        [
+          "INPUT",
+          "approximateWeight",
+          "number"
+        ],
+        [
+          "SELECT",
+          "weightUnit",
+          null
+        ],
+        [
+          "INPUT",
+          "dimensions",
+          null
+        ],
+        [
+          "SELECT",
+          "dimensionUnit",
+          null
+        ],
+        [
+          "INPUT",
+          "preferredDispatchDate",
+          "date"
+        ],
+        [
+          "TEXTAREA",
+          "instructions",
+          null
+        ]
+      ]
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 151.578125,
+        "top": 120,
+        "right": 740,
+        "bottom": 271.578125,
+        "left": 20
+      },
+      "h1": {
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 43.203125,
+        "top": 153.1875,
+        "right": 670,
+        "bottom": 196.390625,
+        "left": 20
+      },
+      ".page-hero .lede": {
+        "x": 20,
+        "y": 220.390625,
+        "width": 720,
+        "height": 51.1875,
+        "top": 220.390625,
+        "right": 740,
+        "bottom": 271.578125,
+        "left": 20
+      },
+      ".form-shell": {
+        "x": 20,
+        "y": 686.578125,
+        "width": 728,
+        "height": 1986.15625,
+        "top": 686.578125,
+        "right": 748,
+        "bottom": 2672.734375,
+        "left": 20
+      },
+      ".page-hero-marker": {
+        "x": 20,
+        "y": 299.578125,
+        "width": 728,
+        "height": 210,
+        "top": 299.578125,
+        "right": 748,
+        "bottom": 509.578125,
+        "left": 20
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/services/international",
+    "width": 768,
+    "content": {
+      "text": "INTERNATIONAL COURIER ENQUIRIES Across borders, with the details checked first. International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged. ILLUSTRATIVE COURIER ENVIRONMENT INTERNATIONAL PROCESS Route and contents review. Share accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review. Documentation is shipment-specific. Required documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review. Clear quotation boundaries. Charges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements. START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 194.78125,
+        "top": 120,
+        "right": 740,
+        "bottom": 314.78125,
+        "left": 20
+      },
+      "h1": {
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 86.40625,
+        "top": 153.1875,
+        "right": 670,
+        "bottom": 239.59375,
+        "left": 20
+      },
+      ".page-hero .lede": {
+        "x": 20,
+        "y": 263.59375,
+        "width": 720,
+        "height": 51.1875,
+        "top": 263.59375,
+        "right": 740,
+        "bottom": 314.78125,
+        "left": 20
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/aircraft-1536.webp",
+        "selected": "/media/photos/aircraft-1536.webp",
+        "img": {
+          "x": 21,
+          "y": -1463.21875,
+          "width": 726,
+          "height": 388,
+          "top": -1463.21875,
+          "right": 747,
+          "bottom": -1075.21875,
+          "left": 21
+        },
+        "frame": {
+          "x": 20,
+          "y": -1464.21875,
+          "width": 728,
+          "height": 390,
+          "top": -1464.21875,
+          "right": 748,
+          "bottom": -1074.21875,
+          "left": 20
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "brightness(0.82) saturate(0.85)",
+        "pixels": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "src": "/media/photos/aircraft-1536.webp",
+        "selected": "/media/photos/aircraft-1024.webp",
+        "img": {
+          "x": 28,
+          "y": -913.953125,
+          "width": 378.390625,
+          "height": 239.375,
+          "top": -913.953125,
+          "right": 406.390625,
+          "bottom": -674.578125,
+          "left": 28
+        },
+        "frame": {
+          "x": 28,
+          "y": -913.953125,
+          "width": 378.390625,
+          "height": 239.375,
+          "top": -913.953125,
+          "right": 406.390625,
+          "bottom": -674.578125,
+          "left": 28
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 248",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1024.webp",
+        "img": {
+          "x": 28,
+          "y": -613.578125,
+          "width": 378.390625,
+          "height": 245.171875,
+          "top": -613.578125,
+          "right": 406.390625,
+          "bottom": -368.40625,
+          "left": 28
+        },
+        "frame": {
+          "x": 28,
+          "y": -613.578125,
+          "width": 378.390625,
+          "height": 245.171875,
+          "top": -613.578125,
+          "right": 406.390625,
+          "bottom": -368.40625,
+          "left": 28
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1024.webp",
+        "img": {
+          "x": 28,
+          "y": -307.40625,
+          "width": 378.390625,
+          "height": 245.171875,
+          "top": -307.40625,
+          "right": 406.390625,
+          "bottom": -62.234375,
+          "left": 28
+        },
+        "frame": {
+          "x": 28,
+          "y": -307.40625,
+          "width": 378.390625,
+          "height": 245.171875,
+          "top": -307.40625,
+          "right": 406.390625,
+          "bottom": -62.234375,
+          "left": 28
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/services/domestic",
+    "width": 768,
+    "content": {
+      "text": "DOMESTIC COURIER ENQUIRIES A considered route from one city to the next. Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment. ILLUSTRATIVE COURIER ENVIRONMENT DOMESTIC PROCESS Begin with the real shipment details. Provide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step. Review before commitment. A submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance. We move it with care. Once confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required. START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 194.78125,
+        "top": 120,
+        "right": 740,
+        "bottom": 314.78125,
+        "left": 20
+      },
+      "h1": {
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 86.40625,
+        "top": 153.1875,
+        "right": 670,
+        "bottom": 239.59375,
+        "left": 20
+      },
+      ".page-hero .lede": {
+        "x": 20,
+        "y": 263.59375,
+        "width": 720,
+        "height": 51.1875,
+        "top": 263.59375,
+        "right": 740,
+        "bottom": 314.78125,
+        "left": 20
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/domestic-1536.webp",
+        "selected": "/media/photos/domestic-1536.webp",
+        "img": {
+          "x": 20,
+          "y": -1449.21875,
+          "width": 728,
+          "height": 390,
+          "top": -1449.21875,
+          "right": 748,
+          "bottom": -1059.21875,
+          "left": 20
+        },
+        "frame": {
+          "x": 20,
+          "y": -1449.21875,
+          "width": 728,
+          "height": 390,
+          "top": -1449.21875,
+          "right": 748,
+          "bottom": -1059.21875,
+          "left": 20
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1024.webp",
+        "img": {
+          "x": 28,
+          "y": -898.953125,
+          "width": 378.390625,
+          "height": 239.375,
+          "top": -898.953125,
+          "right": 406.390625,
+          "bottom": -659.578125,
+          "left": 28
+        },
+        "frame": {
+          "x": 28,
+          "y": -898.953125,
+          "width": 378.390625,
+          "height": 239.375,
+          "top": -898.953125,
+          "right": 406.390625,
+          "bottom": -659.578125,
+          "left": 28
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 248",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1024.webp",
+        "img": {
+          "x": 28,
+          "y": -598.578125,
+          "width": 378.390625,
+          "height": 245.171875,
+          "top": -598.578125,
+          "right": 406.390625,
+          "bottom": -353.40625,
+          "left": 28
+        },
+        "frame": {
+          "x": 28,
+          "y": -598.578125,
+          "width": 378.390625,
+          "height": 245.171875,
+          "top": -598.578125,
+          "right": 406.390625,
+          "bottom": -353.40625,
+          "left": 28
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-1024.webp",
+        "img": {
+          "x": 28,
+          "y": -292.40625,
+          "width": 378.390625,
+          "height": 245.171875,
+          "top": -292.40625,
+          "right": 406.390625,
+          "bottom": -47.234375,
+          "left": 28
+        },
+        "frame": {
+          "x": 28,
+          "y": -292.40625,
+          "width": 378.390625,
+          "height": 245.171875,
+          "top": -292.40625,
+          "right": 406.390625,
+          "bottom": -47.234375,
+          "left": 28
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/about",
+    "width": 768,
+    "content": {
+      "text": "ABOUT VK AND COMPANY Courier arrangements built around each shipment. VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process. ILLUSTRATIVE COURIER ENVIRONMENT WHAT WE DO Connecting People & Possibilities Shipment Details Route Review Booking Support Shipment Updates A straightforward customer journey. Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise. Careful about what is confirmed. We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided. Prepared to connect. Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied. Delivered with Purpose START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 194.78125,
+        "top": 120,
+        "right": 740,
+        "bottom": 314.78125,
+        "left": 20
+      },
+      "h1": {
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 86.40625,
+        "top": 153.1875,
+        "right": 670,
+        "bottom": 239.59375,
+        "left": 20
+      },
+      ".page-hero .lede": {
+        "x": 20,
+        "y": 263.59375,
+        "width": 720,
+        "height": 51.1875,
+        "top": 263.59375,
+        "right": 740,
+        "bottom": 314.78125,
+        "left": 20
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "selected": "/media/photos/workspace-1717.webp",
+        "img": {
+          "x": 20,
+          "y": -2477.21875,
+          "width": 728,
+          "height": 390,
+          "top": -2477.21875,
+          "right": 748,
+          "bottom": -2087.21875,
+          "left": 20
+        },
+        "frame": {
+          "x": 20,
+          "y": -2477.21875,
+          "width": 728,
+          "height": 390,
+          "top": -2477.21875,
+          "right": 748,
+          "bottom": -2087.21875,
+          "left": 20
+        },
+        "fit": "cover",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1717,
+          916
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-1536.webp",
+        "img": {
+          "x": 20,
+          "y": -1771.1875,
+          "width": 680,
+          "height": 630.203125,
+          "top": -1771.1875,
+          "right": 700,
+          "bottom": -1140.984375,
+          "left": 20
+        },
+        "frame": {
+          "x": 20,
+          "y": -1771.1875,
+          "width": 680,
+          "height": 630.203125,
+          "top": -1771.1875,
+          "right": 700,
+          "bottom": -1140.984375,
+          "left": 20
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-480.webp",
+        "img": {
+          "x": 20,
+          "y": -989.59375,
+          "width": 277,
+          "height": 215,
+          "top": -989.59375,
+          "right": 297,
+          "bottom": -774.59375,
+          "left": 20
+        },
+        "frame": {
+          "x": 20,
+          "y": -989.59375,
+          "width": 277,
+          "height": 215,
+          "top": -989.59375,
+          "right": 297,
+          "bottom": -774.59375,
+          "left": 20
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          480,
+          320
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-480.webp",
+        "img": {
+          "x": 20,
+          "y": -701.59375,
+          "width": 277,
+          "height": 216,
+          "top": -701.59375,
+          "right": 297,
+          "bottom": -485.59375,
+          "left": 20
+        },
+        "frame": {
+          "x": 20,
+          "y": -701.59375,
+          "width": 277,
+          "height": 216,
+          "top": -701.59375,
+          "right": 297,
+          "bottom": -485.59375,
+          "left": 20
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          480,
+          320
+        ]
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "selected": "/media/photos/support-480.webp",
+        "img": {
+          "x": 20,
+          "y": -412.59375,
+          "width": 277,
+          "height": 218,
+          "top": -412.59375,
+          "right": 297,
+          "bottom": -194.59375,
+          "left": 20
+        },
+        "frame": {
+          "x": 20,
+          "y": -412.59375,
+          "width": 277,
+          "height": 218,
+          "top": -412.59375,
+          "right": 297,
+          "bottom": -194.59375,
+          "left": 20
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          480,
+          320
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/contact",
+    "width": 768,
+    "content": {
+      "text": "How can we help? Send a general question or ask about a shipment. Your message will be saved for the team to review. Here to Keep You Moving General Enquiries Quote Requests Shipment Support Partnerships & Other From Your Place to the World CONTACT CHANNELS Contact VK AND COMPANY. +91 93177 24056 vkandcompanymohali@gmail.com Website Name Phone Email Provide an email or phone number so the team can respond. Subject General Enquiry Quote Request Shipment Support Partnerships & Other Message Send message We usually respond within one business day.",
+      "links": [
+        [
+          "+91 93177 24056",
+          "tel:+919317724056"
+        ],
+        [
+          "vkandcompanymohali@gmail.com",
+          "mailto:vkandcompanymohali@gmail.com"
+        ]
+      ],
+      "fields": [
+        [
+          "INPUT",
+          "website",
+          null
+        ],
+        [
+          "INPUT",
+          "name",
+          null
+        ],
+        [
+          "INPUT",
+          "phone",
+          "tel"
+        ],
+        [
+          "INPUT",
+          "email",
+          "email"
+        ],
+        [
+          "SELECT",
+          "subject",
+          null
+        ],
+        [
+          "TEXTAREA",
+          "message",
+          null
+        ]
+      ]
+    },
+    "layout": {
+      "h1": {
+        "x": 16,
+        "y": 194,
+        "width": 736,
+        "height": 110.875,
+        "top": 194,
+        "right": 752,
+        "bottom": 304.875,
+        "left": 16
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/support-1536.webp",
+        "selected": "/media/photos/support-1440.webp",
+        "img": {
+          "x": 16,
+          "y": -1051.84375,
+          "width": 736,
+          "height": 433.84375,
+          "top": -1051.84375,
+          "right": 752,
+          "bottom": -618,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1051.84375,
+          "width": 736,
+          "height": 433.84375,
+          "top": -1051.84375,
+          "right": 752,
+          "bottom": -618,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "760 / 448",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/faq",
+    "width": 768,
+    "content": {
+      "text": "FREQUENTLY ASKED QUESTIONS Answers before you send. Useful guidance about our enquiry-led courier workflow. How do I request a courier quote? Does submitting the form confirm my booking? Can all international parcels be accepted? Is pickup automatically scheduled? START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 125.984375,
+        "top": 120,
+        "right": 740,
+        "bottom": 245.984375,
+        "left": 20
+      },
+      "h1": {
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 43.203125,
+        "top": 153.1875,
+        "right": 670,
+        "bottom": 196.390625,
+        "left": 20
+      },
+      ".page-hero .lede": {
+        "x": 20,
+        "y": 220.390625,
+        "width": 720,
+        "height": 25.59375,
+        "top": 220.390625,
+        "right": 740,
+        "bottom": 245.984375,
+        "left": 20
+      },
+      ".page-hero-marker": {
+        "x": 20,
+        "y": 273.984375,
+        "width": 728,
+        "height": 210,
+        "top": 273.984375,
+        "right": 748,
+        "bottom": 483.984375,
+        "left": 20
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/privacy",
+    "width": 768,
+    "content": {
+      "text": "OWNER REVIEW REQUIRED Privacy content is not yet approved. This page is reserved for VK AND COMPANY's reviewed privacy information. Launch requirement: The business owner and an appropriate legal adviser must review and approve the final privacy notice before this page is published or indexed. The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.",
+      "links": [],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 125.984375,
+        "top": 120,
+        "right": 740,
+        "bottom": 245.984375,
+        "left": 20
+      },
+      "h1": {
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 43.203125,
+        "top": 153.1875,
+        "right": 670,
+        "bottom": 196.390625,
+        "left": 20
+      },
+      ".page-hero .lede": {
+        "x": 20,
+        "y": 220.390625,
+        "width": 720,
+        "height": 25.59375,
+        "top": 220.390625,
+        "right": 740,
+        "bottom": 245.984375,
+        "left": 20
+      },
+      ".page-hero-marker": {
+        "x": 20,
+        "y": 273.984375,
+        "width": 728,
+        "height": 210,
+        "top": 273.984375,
+        "right": 748,
+        "bottom": 483.984375,
+        "left": 20
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/terms",
+    "width": 768,
+    "content": {
+      "text": "OWNER REVIEW REQUIRED Service terms are not yet approved. This page is reserved for VK AND COMPANY's reviewed customer terms. Launch requirement: Approved terms must address the actual courier process, responsibilities, restrictions, charges, claims and applicable law before publication. No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.",
+      "links": [],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 125.984375,
+        "top": 120,
+        "right": 740,
+        "bottom": 245.984375,
+        "left": 20
+      },
+      "h1": {
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 43.203125,
+        "top": 153.1875,
+        "right": 670,
+        "bottom": 196.390625,
+        "left": 20
+      },
+      ".page-hero .lede": {
+        "x": 20,
+        "y": 220.390625,
+        "width": 720,
+        "height": 25.59375,
+        "top": 220.390625,
+        "right": 740,
+        "bottom": 245.984375,
+        "left": 20
+      },
+      ".page-hero-marker": {
+        "x": 20,
+        "y": 273.984375,
+        "width": 728,
+        "height": 210,
+        "top": 273.984375,
+        "right": 748,
+        "bottom": 483.984375,
+        "left": 20
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/track",
+    "width": 768,
+    "content": {
+      "text": "SHIPMENT SUPPORT Shipment update enquiry Contact the company for an update on your shipment. Please include your shipment reference so the team can help. Ask about your shipment. Online shipment lookup is unavailable. Contact VK AND COMPANY by phone or email, or use the Contact form. Include your shipment reference in your message. +91 93177 24056 vkandcompanymohali@gmail.com Contact the team",
+      "links": [
+        [
+          " +91 93177 24056",
+          "tel:+919317724056"
+        ],
+        [
+          " vkandcompanymohali@gmail.com",
+          "mailto:vkandcompanymohali@gmail.com"
+        ],
+        [
+          "Contact the team",
+          "/contact"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 151.578125,
+        "top": 120,
+        "right": 740,
+        "bottom": 271.578125,
+        "left": 20
+      },
+      "h1": {
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 43.203125,
+        "top": 153.1875,
+        "right": 670,
+        "bottom": 196.390625,
+        "left": 20
+      },
+      ".page-hero .lede": {
+        "x": 20,
+        "y": 220.390625,
+        "width": 720,
+        "height": 51.1875,
+        "top": 220.390625,
+        "right": 740,
+        "bottom": 271.578125,
+        "left": 20
+      },
+      ".page-hero-marker": {
+        "x": 20,
+        "y": 299.578125,
+        "width": 728,
+        "height": 210,
+        "top": 299.578125,
+        "right": 748,
+        "bottom": 509.578125,
+        "left": 20
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "content": {
+      "text": "DOMESTIC & INTERNATIONAL COURIER SERVICES Across cities. Across borders. We keep your parcels moving. Domestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step. Get a quote ILLUSTRATIVE ROUTE IMAGERY 01 / DOMESTIC COURIER SERVICES BETWEEN CITIES Planned around your actual route. Share the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims. Explore domestic services ILLUSTRATIVE INTERNATIONAL LOGISTICS 02 / INTERNATIONAL ACROSS BORDERS, DETAILS FIRST Clear before it leaves the ground. Acceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged. Explore international services HOW SHIPPING WORKS Four steps. One clear process. Every status follows a real operational action. An enquiry is never presented as a confirmed booking or dispatch. 01 Share shipment details Tell us the route, contents, package count and approximate weight. 02 Receive a reviewed quote Service details, inclusions and exclusions are confirmed for the enquiry. 03 Arrange dispatch An accepted quote becomes a booking ready for coordination. 04 Follow verified updates Contact the team for customer-safe shipment updates. 01 START WITH THE SHIPMENT Request a considered quote. Share the details once. Our team reviews each request before confirming service or charges. Get a quote ILLUSTRATIVE OPERATIONS ENVIRONMENT 03 / COMPANY ABOUT VK AND COMPANY Built around each shipment. Our customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates. More about our process COMMON QUESTIONS Useful answers, before you send. View all FAQs How do I request a courier quote? Does submitting the form confirm my booking? Can all international parcels be accepted? Is pickup automatically scheduled? CONTACT & SUPPORT Need help with the next step? Send a secure general or shipment-related enquiry for the team to review. Contact the team",
+      "links": [
+        [
+          "Get a quote ",
+          "/get-a-quote"
+        ],
+        [
+          "Explore domestic services ",
+          "/services/domestic"
+        ],
+        [
+          "Explore international services ",
+          "/services/international"
+        ],
+        [
+          "Get a quote ",
+          "/get-a-quote"
+        ],
+        [
+          "More about our process ",
+          "/about"
+        ],
+        [
+          "View all FAQs ",
+          "/faq"
+        ],
+        [
+          "Contact the team ",
+          "/contact"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      "h1": {
+        "x": 24,
+        "y": 196.375,
+        "width": 342,
+        "height": 95.53125,
+        "top": 196.375,
+        "right": 366,
+        "bottom": 291.90625,
+        "left": 24
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/hero-1536.webp",
+        "selected": "/media/photos/hero-1440.webp",
+        "img": {
+          "x": 0,
+          "y": -7118,
+          "width": 390,
+          "height": 900,
+          "top": -7118,
+          "right": 390,
+          "bottom": -6218,
+          "left": 0
+        },
+        "frame": {
+          "x": 0,
+          "y": -7118,
+          "width": 390,
+          "height": 900,
+          "top": -7118,
+          "right": 390,
+          "bottom": -6218,
+          "left": 0
+        },
+        "fit": "contain",
+        "padding": "92px 0px 0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/domestic-1536.webp",
+        "selected": "/media/photos/domestic-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -6140,
+          "width": 362,
+          "height": 320,
+          "top": -6140,
+          "right": 376,
+          "bottom": -5820,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -6140,
+          "width": 362,
+          "height": 320,
+          "top": -6140,
+          "right": 376,
+          "bottom": -5820,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/existing-aircraft-2400.webp",
+        "selected": "/media/photos/existing-aircraft-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -5309.984375,
+          "width": 362,
+          "height": 241.328125,
+          "top": -5309.984375,
+          "right": 376,
+          "bottom": -5068.65625,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -5309.984375,
+          "width": 362,
+          "height": 241.328125,
+          "top": -5309.984375,
+          "right": 376,
+          "bottom": -5068.65625,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -4277.453125,
+          "width": 362,
+          "height": 241.328125,
+          "top": -4277.453125,
+          "right": 376,
+          "bottom": -4036.125,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -4277.453125,
+          "width": 362,
+          "height": 241.328125,
+          "top": -4277.453125,
+          "right": 376,
+          "bottom": -4036.125,
+          "left": 14
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -3789.859375,
+          "width": 362,
+          "height": 241.328125,
+          "top": -3789.859375,
+          "right": 376,
+          "bottom": -3548.53125,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -3789.859375,
+          "width": 362,
+          "height": 241.328125,
+          "top": -3789.859375,
+          "right": 376,
+          "bottom": -3548.53125,
+          "left": 14
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -3302.265625,
+          "width": 362,
+          "height": 241.328125,
+          "top": -3302.265625,
+          "right": 376,
+          "bottom": -3060.9375,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -3302.265625,
+          "width": 362,
+          "height": 241.328125,
+          "top": -3302.265625,
+          "right": 376,
+          "bottom": -3060.9375,
+          "left": 14
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/scan-1536.webp",
+        "selected": "/media/photos/scan-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -2814.671875,
+          "width": 362,
+          "height": 241.328125,
+          "top": -2814.671875,
+          "right": 376,
+          "bottom": -2573.34375,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -2814.671875,
+          "width": 362,
+          "height": 241.328125,
+          "top": -2814.671875,
+          "right": 376,
+          "bottom": -2573.34375,
+          "left": 14
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "selected": "/media/photos/workspace-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -1546.046875,
+          "width": 362,
+          "height": 320,
+          "top": -1546.046875,
+          "right": 376,
+          "bottom": -1226.046875,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -1546.046875,
+          "width": 362,
+          "height": 320,
+          "top": -1546.046875,
+          "right": 376,
+          "bottom": -1226.046875,
+          "left": 14
+        },
+        "fit": "cover",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          768
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 390,
+    "content": {
+      "text": "QUOTATION REQUEST Tell us about your shipment. Share the route and parcel details below. Our team will review the information before confirming service and charges. BEFORE YOU BEGIN Details make the difference. Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment. Pickup requests are not currently enabled. Website Your details Name Phone number Email (optional) Route Origin country Origin city Origin postal code Destination country Destination city Destination postal code Shipment Contents description Be clear about the actual contents; acceptance is confirmed after review. Number of packages Approximate weight kg lb Dimensions (when known) Dimension unit centimetres inches Preferred dispatch date (not guaranteed) Additional instructions Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch. Send quote request",
+      "links": [],
+      "fields": [
+        [
+          "INPUT",
+          "website",
+          null
+        ],
+        [
+          "INPUT",
+          "name",
+          null
+        ],
+        [
+          "INPUT",
+          "phone",
+          "tel"
+        ],
+        [
+          "INPUT",
+          "email",
+          "email"
+        ],
+        [
+          "INPUT",
+          "originCountry",
+          null
+        ],
+        [
+          "INPUT",
+          "originCity",
+          null
+        ],
+        [
+          "INPUT",
+          "originPostalCode",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationCountry",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationCity",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationPostalCode",
+          null
+        ],
+        [
+          "TEXTAREA",
+          "contentsDescription",
+          null
+        ],
+        [
+          "INPUT",
+          "packageCount",
+          "number"
+        ],
+        [
+          "INPUT",
+          "approximateWeight",
+          "number"
+        ],
+        [
+          "SELECT",
+          "weightUnit",
+          null
+        ],
+        [
+          "INPUT",
+          "dimensions",
+          null
+        ],
+        [
+          "SELECT",
+          "dimensionUnit",
+          null
+        ],
+        [
+          "INPUT",
+          "preferredDispatchDate",
+          "date"
+        ],
+        [
+          "TEXTAREA",
+          "instructions",
+          null
+        ]
+      ]
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 231.46875,
+        "top": 100,
+        "right": 376,
+        "bottom": 331.46875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 97.5,
+        "top": 133.1875,
+        "right": 376,
+        "bottom": 230.6875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 254.6875,
+        "width": 362,
+        "height": 76.78125,
+        "top": 254.6875,
+        "right": 376,
+        "bottom": 331.46875,
+        "left": 14
+      },
+      ".form-shell": {
+        "x": 14,
+        "y": 704.46875,
+        "width": 362,
+        "height": 2571,
+        "top": 704.46875,
+        "right": 376,
+        "bottom": 3275.46875,
+        "left": 14
+      },
+      ".page-hero-marker": {
+        "x": 14,
+        "y": 365.46875,
+        "width": 362,
+        "height": 210,
+        "top": 365.46875,
+        "right": 376,
+        "bottom": 575.46875,
+        "left": 14
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/services/international",
+    "width": 390,
+    "content": {
+      "text": "INTERNATIONAL COURIER ENQUIRIES Across borders, with the details checked first. International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged. ILLUSTRATIVE COURIER ENVIRONMENT INTERNATIONAL PROCESS Route and contents review. Share accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review. Documentation is shipment-specific. Required documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review. Clear quotation boundaries. Charges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements. START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 280.21875,
+        "top": 100,
+        "right": 376,
+        "bottom": 380.21875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 146.25,
+        "top": 133.1875,
+        "right": 376,
+        "bottom": 279.4375,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 303.4375,
+        "width": 362,
+        "height": 76.78125,
+        "top": 303.4375,
+        "right": 376,
+        "bottom": 380.21875,
+        "left": 14
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/aircraft-1536.webp",
+        "selected": "/media/photos/aircraft-1440.webp",
+        "img": {
+          "x": 15,
+          "y": -2033.78125,
+          "width": 360,
+          "height": 288,
+          "top": -2033.78125,
+          "right": 375,
+          "bottom": -1745.78125,
+          "left": 15
+        },
+        "frame": {
+          "x": 14,
+          "y": -2034.78125,
+          "width": 362,
+          "height": 290,
+          "top": -2034.78125,
+          "right": 376,
+          "bottom": -1744.78125,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "brightness(0.82) saturate(0.85)",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/aircraft-1536.webp",
+        "selected": "/media/photos/aircraft-1440.webp",
+        "img": {
+          "x": 16,
+          "y": -1598.59375,
+          "width": 358,
+          "height": 226.484375,
+          "top": -1598.59375,
+          "right": 374,
+          "bottom": -1372.109375,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1598.59375,
+          "width": 358,
+          "height": 226.484375,
+          "top": -1598.59375,
+          "right": 374,
+          "bottom": -1372.109375,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 248",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1440.webp",
+        "img": {
+          "x": 16,
+          "y": -1126.03125,
+          "width": 358,
+          "height": 231.96875,
+          "top": -1126.03125,
+          "right": 374,
+          "bottom": -894.0625,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1126.03125,
+          "width": 358,
+          "height": 231.96875,
+          "top": -1126.03125,
+          "right": 374,
+          "bottom": -894.0625,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1440.webp",
+        "img": {
+          "x": 16,
+          "y": -586.46875,
+          "width": 358,
+          "height": 231.96875,
+          "top": -586.46875,
+          "right": 374,
+          "bottom": -354.5,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -586.46875,
+          "width": 358,
+          "height": 231.96875,
+          "top": -586.46875,
+          "right": 374,
+          "bottom": -354.5,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/services/domestic",
+    "width": 390,
+    "content": {
+      "text": "DOMESTIC COURIER ENQUIRIES A considered route from one city to the next. Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment. ILLUSTRATIVE COURIER ENVIRONMENT DOMESTIC PROCESS Begin with the real shipment details. Provide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step. Review before commitment. A submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance. We move it with care. Once confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required. START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 280.21875,
+        "top": 100,
+        "right": 376,
+        "bottom": 380.21875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 146.25,
+        "top": 133.1875,
+        "right": 376,
+        "bottom": 279.4375,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 303.4375,
+        "width": 362,
+        "height": 76.78125,
+        "top": 303.4375,
+        "right": 376,
+        "bottom": 380.21875,
+        "left": 14
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/domestic-1536.webp",
+        "selected": "/media/photos/domestic-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -2007.78125,
+          "width": 362,
+          "height": 290,
+          "top": -2007.78125,
+          "right": 376,
+          "bottom": -1717.78125,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -2007.78125,
+          "width": 362,
+          "height": 290,
+          "top": -2007.78125,
+          "right": 376,
+          "bottom": -1717.78125,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1440.webp",
+        "img": {
+          "x": 16,
+          "y": -1571.59375,
+          "width": 358,
+          "height": 226.484375,
+          "top": -1571.59375,
+          "right": 374,
+          "bottom": -1345.109375,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1571.59375,
+          "width": 358,
+          "height": 226.484375,
+          "top": -1571.59375,
+          "right": 374,
+          "bottom": -1345.109375,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 248",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1440.webp",
+        "img": {
+          "x": 16,
+          "y": -1064.703125,
+          "width": 358,
+          "height": 231.96875,
+          "top": -1064.703125,
+          "right": 374,
+          "bottom": -832.734375,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1064.703125,
+          "width": 358,
+          "height": 231.96875,
+          "top": -1064.703125,
+          "right": 374,
+          "bottom": -832.734375,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-1440.webp",
+        "img": {
+          "x": 16,
+          "y": -559.46875,
+          "width": 358,
+          "height": 231.96875,
+          "top": -559.46875,
+          "right": 374,
+          "bottom": -327.5,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -559.46875,
+          "width": 358,
+          "height": 231.96875,
+          "top": -559.46875,
+          "right": 374,
+          "bottom": -327.5,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/about",
+    "width": 390,
+    "content": {
+      "text": "ABOUT VK AND COMPANY Courier arrangements built around each shipment. VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process. ILLUSTRATIVE COURIER ENVIRONMENT WHAT WE DO Connecting People & Possibilities Shipment Details Route Review Booking Support Shipment Updates A straightforward customer journey. Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise. Careful about what is confirmed. We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided. Prepared to connect. Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied. Delivered with Purpose START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 328.96875,
+        "top": 100,
+        "right": 376,
+        "bottom": 428.96875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 195,
+        "top": 133.1875,
+        "right": 376,
+        "bottom": 328.1875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 352.1875,
+        "width": 362,
+        "height": 76.78125,
+        "top": 352.1875,
+        "right": 376,
+        "bottom": 428.96875,
+        "left": 14
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "selected": "/media/photos/workspace-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -2747.03125,
+          "width": 362,
+          "height": 290,
+          "top": -2747.03125,
+          "right": 376,
+          "bottom": -2457.03125,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -2747.03125,
+          "width": 362,
+          "height": 290,
+          "top": -2747.03125,
+          "right": 376,
+          "bottom": -2457.03125,
+          "left": 14
+        },
+        "fit": "cover",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          768
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -2199,
+          "width": 362,
+          "height": 335.484375,
+          "top": -2199,
+          "right": 376,
+          "bottom": -1863.515625,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -2199,
+          "width": 362,
+          "height": 335.484375,
+          "top": -2199,
+          "right": 376,
+          "bottom": -1863.515625,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1024.webp",
+        "img": {
+          "x": 14,
+          "y": -1643.734375,
+          "width": 277,
+          "height": 215,
+          "top": -1643.734375,
+          "right": 291,
+          "bottom": -1428.734375,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -1643.734375,
+          "width": 277,
+          "height": 215,
+          "top": -1643.734375,
+          "right": 291,
+          "bottom": -1428.734375,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1024.webp",
+        "img": {
+          "x": 14,
+          "y": -1129.296875,
+          "width": 277,
+          "height": 216,
+          "top": -1129.296875,
+          "right": 291,
+          "bottom": -913.296875,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -1129.296875,
+          "width": 277,
+          "height": 216,
+          "top": -1129.296875,
+          "right": 291,
+          "bottom": -913.296875,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "selected": "/media/photos/support-1024.webp",
+        "img": {
+          "x": 14,
+          "y": -639.453125,
+          "width": 277,
+          "height": 218,
+          "top": -639.453125,
+          "right": 291,
+          "bottom": -421.453125,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -639.453125,
+          "width": 277,
+          "height": 218,
+          "top": -639.453125,
+          "right": 291,
+          "bottom": -421.453125,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/contact",
+    "width": 390,
+    "content": {
+      "text": "How can we help? Send a general question or ask about a shipment. Your message will be saved for the team to review. Here to Keep You Moving General Enquiries Quote Requests Shipment Support Partnerships & Other From Your Place to the World CONTACT CHANNELS Contact VK AND COMPANY. +91 93177 24056 vkandcompanymohali@gmail.com Website Name Phone Email Provide an email or phone number so the team can respond. Subject General Enquiry Quote Request Shipment Support Partnerships & Other Message Send message We usually respond within one business day.",
+      "links": [
+        [
+          "+91 93177 24056",
+          "tel:+919317724056"
+        ],
+        [
+          "vkandcompanymohali@gmail.com",
+          "mailto:vkandcompanymohali@gmail.com"
+        ]
+      ],
+      "fields": [
+        [
+          "INPUT",
+          "website",
+          null
+        ],
+        [
+          "INPUT",
+          "name",
+          null
+        ],
+        [
+          "INPUT",
+          "phone",
+          "tel"
+        ],
+        [
+          "INPUT",
+          "email",
+          "email"
+        ],
+        [
+          "SELECT",
+          "subject",
+          null
+        ],
+        [
+          "TEXTAREA",
+          "message",
+          null
+        ]
+      ]
+    },
+    "layout": {
+      "h1": {
+        "x": 16,
+        "y": 184,
+        "width": 358,
+        "height": 110.875,
+        "top": 184,
+        "right": 374,
+        "bottom": 294.875,
+        "left": 16
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/support-1536.webp",
+        "selected": "/media/photos/support-1440.webp",
+        "img": {
+          "x": 16,
+          "y": -1156.796875,
+          "width": 358,
+          "height": 211.03125,
+          "top": -1156.796875,
+          "right": 374,
+          "bottom": -945.765625,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1156.796875,
+          "width": 358,
+          "height": 211.03125,
+          "top": -1156.796875,
+          "right": 374,
+          "bottom": -945.765625,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "760 / 448",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/faq",
+    "width": 390,
+    "content": {
+      "text": "FREQUENTLY ASKED QUESTIONS Answers before you send. Useful guidance about our enquiry-led courier workflow. How do I request a courier quote? Does submitting the form confirm my booking? Can all international parcels be accepted? Is pickup automatically scheduled? START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 205.875,
+        "top": 100,
+        "right": 376,
+        "bottom": 305.875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 97.5,
+        "top": 133.1875,
+        "right": 376,
+        "bottom": 230.6875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 254.6875,
+        "width": 362,
+        "height": 51.1875,
+        "top": 254.6875,
+        "right": 376,
+        "bottom": 305.875,
+        "left": 14
+      },
+      ".page-hero-marker": {
+        "x": 14,
+        "y": 339.875,
+        "width": 362,
+        "height": 210,
+        "top": 339.875,
+        "right": 376,
+        "bottom": 549.875,
+        "left": 14
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/privacy",
+    "width": 390,
+    "content": {
+      "text": "OWNER REVIEW REQUIRED Privacy content is not yet approved. This page is reserved for VK AND COMPANY's reviewed privacy information. Launch requirement: The business owner and an appropriate legal adviser must review and approve the final privacy notice before this page is published or indexed. The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.",
+      "links": [],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 205.875,
+        "top": 100,
+        "right": 376,
+        "bottom": 305.875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 97.5,
+        "top": 133.1875,
+        "right": 376,
+        "bottom": 230.6875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 254.6875,
+        "width": 362,
+        "height": 51.1875,
+        "top": 254.6875,
+        "right": 376,
+        "bottom": 305.875,
+        "left": 14
+      },
+      ".page-hero-marker": {
+        "x": 14,
+        "y": 339.875,
+        "width": 362,
+        "height": 210,
+        "top": 339.875,
+        "right": 376,
+        "bottom": 549.875,
+        "left": 14
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/terms",
+    "width": 390,
+    "content": {
+      "text": "OWNER REVIEW REQUIRED Service terms are not yet approved. This page is reserved for VK AND COMPANY's reviewed customer terms. Launch requirement: Approved terms must address the actual courier process, responsibilities, restrictions, charges, claims and applicable law before publication. No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.",
+      "links": [],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 205.875,
+        "top": 100,
+        "right": 376,
+        "bottom": 305.875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 97.5,
+        "top": 133.1875,
+        "right": 376,
+        "bottom": 230.6875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 254.6875,
+        "width": 362,
+        "height": 51.1875,
+        "top": 254.6875,
+        "right": 376,
+        "bottom": 305.875,
+        "left": 14
+      },
+      ".page-hero-marker": {
+        "x": 14,
+        "y": 339.875,
+        "width": 362,
+        "height": 210,
+        "top": 339.875,
+        "right": 376,
+        "bottom": 549.875,
+        "left": 14
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/track",
+    "width": 390,
+    "content": {
+      "text": "SHIPMENT SUPPORT Shipment update enquiry Contact the company for an update on your shipment. Please include your shipment reference so the team can help. Ask about your shipment. Online shipment lookup is unavailable. Contact VK AND COMPANY by phone or email, or use the Contact form. Include your shipment reference in your message. +91 93177 24056 vkandcompanymohali@gmail.com Contact the team",
+      "links": [
+        [
+          " +91 93177 24056",
+          "tel:+919317724056"
+        ],
+        [
+          " vkandcompanymohali@gmail.com",
+          "mailto:vkandcompanymohali@gmail.com"
+        ],
+        [
+          "Contact the team",
+          "/contact"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 231.46875,
+        "top": 100,
+        "right": 376,
+        "bottom": 331.46875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 97.5,
+        "top": 133.1875,
+        "right": 376,
+        "bottom": 230.6875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 254.6875,
+        "width": 362,
+        "height": 76.78125,
+        "top": 254.6875,
+        "right": 376,
+        "bottom": 331.46875,
+        "left": 14
+      },
+      ".page-hero-marker": {
+        "x": 14,
+        "y": 365.46875,
+        "width": 362,
+        "height": 210,
+        "top": 365.46875,
+        "right": 376,
+        "bottom": 575.46875,
+        "left": 14
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 360,
+    "content": {
+      "text": "DOMESTIC & INTERNATIONAL COURIER SERVICES Across cities. Across borders. We keep your parcels moving. Domestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step. Get a quote ILLUSTRATIVE ROUTE IMAGERY 01 / DOMESTIC COURIER SERVICES BETWEEN CITIES Planned around your actual route. Share the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims. Explore domestic services ILLUSTRATIVE INTERNATIONAL LOGISTICS 02 / INTERNATIONAL ACROSS BORDERS, DETAILS FIRST Clear before it leaves the ground. Acceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged. Explore international services HOW SHIPPING WORKS Four steps. One clear process. Every status follows a real operational action. An enquiry is never presented as a confirmed booking or dispatch. 01 Share shipment details Tell us the route, contents, package count and approximate weight. 02 Receive a reviewed quote Service details, inclusions and exclusions are confirmed for the enquiry. 03 Arrange dispatch An accepted quote becomes a booking ready for coordination. 04 Follow verified updates Contact the team for customer-safe shipment updates. 01 START WITH THE SHIPMENT Request a considered quote. Share the details once. Our team reviews each request before confirming service or charges. Get a quote ILLUSTRATIVE OPERATIONS ENVIRONMENT 03 / COMPANY ABOUT VK AND COMPANY Built around each shipment. Our customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates. More about our process COMMON QUESTIONS Useful answers, before you send. View all FAQs How do I request a courier quote? Does submitting the form confirm my booking? Can all international parcels be accepted? Is pickup automatically scheduled? CONTACT & SUPPORT Need help with the next step? Send a secure general or shipment-related enquiry for the team to review. Contact the team",
+      "links": [
+        [
+          "Get a quote ",
+          "/get-a-quote"
+        ],
+        [
+          "Explore domestic services ",
+          "/services/domestic"
+        ],
+        [
+          "Explore international services ",
+          "/services/international"
+        ],
+        [
+          "Get a quote ",
+          "/get-a-quote"
+        ],
+        [
+          "More about our process ",
+          "/about"
+        ],
+        [
+          "View all FAQs ",
+          "/faq"
+        ],
+        [
+          "Contact the team ",
+          "/contact"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      "h1": {
+        "x": 24,
+        "y": 196.375,
+        "width": 312,
+        "height": 90.9375,
+        "top": 196.375,
+        "right": 336,
+        "bottom": 287.3125,
+        "left": 24
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/hero-1536.webp",
+        "selected": "/media/photos/hero-1440.webp",
+        "img": {
+          "x": 0,
+          "y": -7043,
+          "width": 360,
+          "height": 900,
+          "top": -7043,
+          "right": 360,
+          "bottom": -6143,
+          "left": 0
+        },
+        "frame": {
+          "x": 0,
+          "y": -7043,
+          "width": 360,
+          "height": 900,
+          "top": -7043,
+          "right": 360,
+          "bottom": -6143,
+          "left": 0
+        },
+        "fit": "contain",
+        "padding": "92px 0px 0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/domestic-1536.webp",
+        "selected": "/media/photos/domestic-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -6065,
+          "width": 332,
+          "height": 320,
+          "top": -6065,
+          "right": 346,
+          "bottom": -5745,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -6065,
+          "width": 332,
+          "height": 320,
+          "top": -6065,
+          "right": 346,
+          "bottom": -5745,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/existing-aircraft-2400.webp",
+        "selected": "/media/photos/existing-aircraft-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -5242.046875,
+          "width": 332,
+          "height": 221.328125,
+          "top": -5242.046875,
+          "right": 346,
+          "bottom": -5020.71875,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -5242.046875,
+          "width": 332,
+          "height": 221.328125,
+          "top": -5242.046875,
+          "right": 346,
+          "bottom": -5020.71875,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1024.webp",
+        "img": {
+          "x": 14,
+          "y": -4210.984375,
+          "width": 332,
+          "height": 221.4375,
+          "top": -4210.984375,
+          "right": 346,
+          "bottom": -3989.546875,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -4210.984375,
+          "width": 332,
+          "height": 221.4375,
+          "top": -4210.984375,
+          "right": 346,
+          "bottom": -3989.546875,
+          "left": 14
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1024.webp",
+        "img": {
+          "x": 14,
+          "y": -3743.28125,
+          "width": 332,
+          "height": 221.4375,
+          "top": -3743.28125,
+          "right": 346,
+          "bottom": -3521.84375,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -3743.28125,
+          "width": 332,
+          "height": 221.4375,
+          "top": -3743.28125,
+          "right": 346,
+          "bottom": -3521.84375,
+          "left": 14
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-1024.webp",
+        "img": {
+          "x": 14,
+          "y": -3275.578125,
+          "width": 332,
+          "height": 221.4375,
+          "top": -3275.578125,
+          "right": 346,
+          "bottom": -3054.140625,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -3275.578125,
+          "width": 332,
+          "height": 221.4375,
+          "top": -3275.578125,
+          "right": 346,
+          "bottom": -3054.140625,
+          "left": 14
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/scan-1536.webp",
+        "selected": "/media/photos/scan-1024.webp",
+        "img": {
+          "x": 14,
+          "y": -2807.875,
+          "width": 332,
+          "height": 221.4375,
+          "top": -2807.875,
+          "right": 346,
+          "bottom": -2586.4375,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -2807.875,
+          "width": 332,
+          "height": 221.4375,
+          "top": -2807.875,
+          "right": 346,
+          "bottom": -2586.4375,
+          "left": 14
+        },
+        "fit": "fill",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "selected": "/media/photos/workspace-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -1547.21875,
+          "width": 332,
+          "height": 320,
+          "top": -1547.21875,
+          "right": 346,
+          "bottom": -1227.21875,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -1547.21875,
+          "width": 332,
+          "height": 320,
+          "top": -1547.21875,
+          "right": 346,
+          "bottom": -1227.21875,
+          "left": 14
+        },
+        "fit": "cover",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          768
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 360,
+    "content": {
+      "text": "QUOTATION REQUEST Tell us about your shipment. Share the route and parcel details below. Our team will review the information before confirming service and charges. BEFORE YOU BEGIN Details make the difference. Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment. Pickup requests are not currently enabled. Website Your details Name Phone number Email (optional) Route Origin country Origin city Origin postal code Destination country Destination city Destination postal code Shipment Contents description Be clear about the actual contents; acceptance is confirmed after review. Number of packages Approximate weight kg lb Dimensions (when known) Dimension unit centimetres inches Preferred dispatch date (not guaranteed) Additional instructions Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch. Send quote request",
+      "links": [],
+      "fields": [
+        [
+          "INPUT",
+          "website",
+          null
+        ],
+        [
+          "INPUT",
+          "name",
+          null
+        ],
+        [
+          "INPUT",
+          "phone",
+          "tel"
+        ],
+        [
+          "INPUT",
+          "email",
+          "email"
+        ],
+        [
+          "INPUT",
+          "originCountry",
+          null
+        ],
+        [
+          "INPUT",
+          "originCity",
+          null
+        ],
+        [
+          "INPUT",
+          "originPostalCode",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationCountry",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationCity",
+          null
+        ],
+        [
+          "INPUT",
+          "destinationPostalCode",
+          null
+        ],
+        [
+          "TEXTAREA",
+          "contentsDescription",
+          null
+        ],
+        [
+          "INPUT",
+          "packageCount",
+          "number"
+        ],
+        [
+          "INPUT",
+          "approximateWeight",
+          "number"
+        ],
+        [
+          "SELECT",
+          "weightUnit",
+          null
+        ],
+        [
+          "INPUT",
+          "dimensions",
+          null
+        ],
+        [
+          "SELECT",
+          "dimensionUnit",
+          null
+        ],
+        [
+          "INPUT",
+          "preferredDispatchDate",
+          "date"
+        ],
+        [
+          "TEXTAREA",
+          "instructions",
+          null
+        ]
+      ]
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 223.96875,
+        "top": 100,
+        "right": 346,
+        "bottom": 323.96875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 90,
+        "top": 133.1875,
+        "right": 346,
+        "bottom": 223.1875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 247.1875,
+        "width": 332,
+        "height": 76.78125,
+        "top": 247.1875,
+        "right": 346,
+        "bottom": 323.96875,
+        "left": 14
+      },
+      ".form-shell": {
+        "x": 14,
+        "y": 696.96875,
+        "width": 332,
+        "height": 2596.59375,
+        "top": 696.96875,
+        "right": 346,
+        "bottom": 3293.5625,
+        "left": 14
+      },
+      ".page-hero-marker": {
+        "x": 14,
+        "y": 357.96875,
+        "width": 332,
+        "height": 210,
+        "top": 357.96875,
+        "right": 346,
+        "bottom": 567.96875,
+        "left": 14
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/services/international",
+    "width": 360,
+    "content": {
+      "text": "INTERNATIONAL COURIER ENQUIRIES Across borders, with the details checked first. International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged. ILLUSTRATIVE COURIER ENVIRONMENT INTERNATIONAL PROCESS Route and contents review. Share accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review. Documentation is shipment-specific. Required documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review. Clear quotation boundaries. Charges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements. START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 294.5625,
+        "top": 100,
+        "right": 346,
+        "bottom": 394.5625,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 135,
+        "top": 133.1875,
+        "right": 346,
+        "bottom": 268.1875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 292.1875,
+        "width": 332,
+        "height": 102.375,
+        "top": 292.1875,
+        "right": 346,
+        "bottom": 394.5625,
+        "left": 14
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/aircraft-1536.webp",
+        "selected": "/media/photos/aircraft-1440.webp",
+        "img": {
+          "x": 15,
+          "y": -2100.4375,
+          "width": 330,
+          "height": 288,
+          "top": -2100.4375,
+          "right": 345,
+          "bottom": -1812.4375,
+          "left": 15
+        },
+        "frame": {
+          "x": 14,
+          "y": -2101.4375,
+          "width": 332,
+          "height": 290,
+          "top": -2101.4375,
+          "right": 346,
+          "bottom": -1811.4375,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "brightness(0.82) saturate(0.85)",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/aircraft-1536.webp",
+        "selected": "/media/photos/aircraft-1024.webp",
+        "img": {
+          "x": 16,
+          "y": -1665.25,
+          "width": 328,
+          "height": 207.5,
+          "top": -1665.25,
+          "right": 344,
+          "bottom": -1457.75,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1665.25,
+          "width": 328,
+          "height": 207.5,
+          "top": -1665.25,
+          "right": 344,
+          "bottom": -1457.75,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 248",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1024.webp",
+        "img": {
+          "x": 16,
+          "y": -1177.34375,
+          "width": 328,
+          "height": 212.515625,
+          "top": -1177.34375,
+          "right": 344,
+          "bottom": -964.828125,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1177.34375,
+          "width": 328,
+          "height": 212.515625,
+          "top": -1177.34375,
+          "right": 344,
+          "bottom": -964.828125,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1024.webp",
+        "img": {
+          "x": 16,
+          "y": -657.234375,
+          "width": 328,
+          "height": 212.515625,
+          "top": -657.234375,
+          "right": 344,
+          "bottom": -444.71875,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -657.234375,
+          "width": 328,
+          "height": 212.515625,
+          "top": -657.234375,
+          "right": 344,
+          "bottom": -444.71875,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/services/domestic",
+    "width": 360,
+    "content": {
+      "text": "DOMESTIC COURIER ENQUIRIES A considered route from one city to the next. Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment. ILLUSTRATIVE COURIER ENVIRONMENT DOMESTIC PROCESS Begin with the real shipment details. Provide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step. Review before commitment. A submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance. We move it with care. Once confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required. START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 294.5625,
+        "top": 100,
+        "right": 346,
+        "bottom": 394.5625,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 135,
+        "top": 133.1875,
+        "right": 346,
+        "bottom": 268.1875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 292.1875,
+        "width": 332,
+        "height": 102.375,
+        "top": 292.1875,
+        "right": 346,
+        "bottom": 394.5625,
+        "left": 14
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/domestic-1536.webp",
+        "selected": "/media/photos/domestic-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -2040.4375,
+          "width": 332,
+          "height": 290,
+          "top": -2040.4375,
+          "right": 346,
+          "bottom": -1750.4375,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -2040.4375,
+          "width": 332,
+          "height": 290,
+          "top": -2040.4375,
+          "right": 346,
+          "bottom": -1750.4375,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1024.webp",
+        "img": {
+          "x": 16,
+          "y": -1604.25,
+          "width": 328,
+          "height": 207.5,
+          "top": -1604.25,
+          "right": 344,
+          "bottom": -1396.75,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1604.25,
+          "width": 328,
+          "height": 207.5,
+          "top": -1604.25,
+          "right": 344,
+          "bottom": -1396.75,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 248",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1024.webp",
+        "img": {
+          "x": 16,
+          "y": -1116.34375,
+          "width": 328,
+          "height": 212.515625,
+          "top": -1116.34375,
+          "right": 344,
+          "bottom": -903.828125,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1116.34375,
+          "width": 328,
+          "height": 212.515625,
+          "top": -1116.34375,
+          "right": 344,
+          "bottom": -903.828125,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-1024.webp",
+        "img": {
+          "x": 16,
+          "y": -596.234375,
+          "width": 328,
+          "height": 212.515625,
+          "top": -596.234375,
+          "right": 344,
+          "bottom": -383.71875,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -596.234375,
+          "width": 328,
+          "height": 212.515625,
+          "top": -596.234375,
+          "right": 344,
+          "bottom": -383.71875,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "392 / 254",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/about",
+    "width": 360,
+    "content": {
+      "text": "ABOUT VK AND COMPANY Courier arrangements built around each shipment. VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process. ILLUSTRATIVE COURIER ENVIRONMENT WHAT WE DO Connecting People & Possibilities Shipment Details Route Review Booking Support Shipment Updates A straightforward customer journey. Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise. Careful about what is confirmed. We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided. Prepared to connect. Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied. Delivered with Purpose START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 313.96875,
+        "top": 100,
+        "right": 346,
+        "bottom": 413.96875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 180,
+        "top": 133.1875,
+        "right": 346,
+        "bottom": 313.1875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 337.1875,
+        "width": 332,
+        "height": 76.78125,
+        "top": 337.1875,
+        "right": 346,
+        "bottom": 413.96875,
+        "left": 14
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "selected": "/media/photos/workspace-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -2775.03125,
+          "width": 332,
+          "height": 290,
+          "top": -2775.03125,
+          "right": 346,
+          "bottom": -2485.03125,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -2775.03125,
+          "width": 332,
+          "height": 290,
+          "top": -2775.03125,
+          "right": 346,
+          "bottom": -2485.03125,
+          "left": 14
+        },
+        "fit": "cover",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          768
+        ]
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "selected": "/media/photos/dispatch-1440.webp",
+        "img": {
+          "x": 14,
+          "y": -2227,
+          "width": 332,
+          "height": 307.6875,
+          "top": -2227,
+          "right": 346,
+          "bottom": -1919.3125,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -2227,
+          "width": 332,
+          "height": 307.6875,
+          "top": -2227,
+          "right": 346,
+          "bottom": -1919.3125,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1440,
+          960
+        ]
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "selected": "/media/photos/details-1024.webp",
+        "img": {
+          "x": 14,
+          "y": -1699.53125,
+          "width": 277,
+          "height": 215,
+          "top": -1699.53125,
+          "right": 291,
+          "bottom": -1484.53125,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -1699.53125,
+          "width": 277,
+          "height": 215,
+          "top": -1699.53125,
+          "right": 291,
+          "bottom": -1484.53125,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "selected": "/media/photos/review-1024.webp",
+        "img": {
+          "x": 14,
+          "y": -1185.09375,
+          "width": 277,
+          "height": 216,
+          "top": -1185.09375,
+          "right": 291,
+          "bottom": -969.09375,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -1185.09375,
+          "width": 277,
+          "height": 216,
+          "top": -1185.09375,
+          "right": 291,
+          "bottom": -969.09375,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "selected": "/media/photos/support-1024.webp",
+        "img": {
+          "x": 14,
+          "y": -695.25,
+          "width": 277,
+          "height": 218,
+          "top": -695.25,
+          "right": 291,
+          "bottom": -477.25,
+          "left": 14
+        },
+        "frame": {
+          "x": 14,
+          "y": -695.25,
+          "width": 277,
+          "height": 218,
+          "top": -695.25,
+          "right": 291,
+          "bottom": -477.25,
+          "left": 14
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "auto",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/contact",
+    "width": 360,
+    "content": {
+      "text": "How can we help? Send a general question or ask about a shipment. Your message will be saved for the team to review. Here to Keep You Moving General Enquiries Quote Requests Shipment Support Partnerships & Other From Your Place to the World CONTACT CHANNELS Contact VK AND COMPANY. +91 93177 24056 vkandcompanymohali@gmail.com Website Name Phone Email Provide an email or phone number so the team can respond. Subject General Enquiry Quote Request Shipment Support Partnerships & Other Message Send message We usually respond within one business day.",
+      "links": [
+        [
+          "+91 93177 24056",
+          "tel:+919317724056"
+        ],
+        [
+          "vkandcompanymohali@gmail.com",
+          "mailto:vkandcompanymohali@gmail.com"
+        ]
+      ],
+      "fields": [
+        [
+          "INPUT",
+          "website",
+          null
+        ],
+        [
+          "INPUT",
+          "name",
+          null
+        ],
+        [
+          "INPUT",
+          "phone",
+          "tel"
+        ],
+        [
+          "INPUT",
+          "email",
+          "email"
+        ],
+        [
+          "SELECT",
+          "subject",
+          null
+        ],
+        [
+          "TEXTAREA",
+          "message",
+          null
+        ]
+      ]
+    },
+    "layout": {
+      "h1": {
+        "x": 16,
+        "y": 184,
+        "width": 328,
+        "height": 110.875,
+        "top": 184,
+        "right": 344,
+        "bottom": 294.875,
+        "left": 16
+      }
+    },
+    "photos": [
+      {
+        "src": "/media/photos/support-1536.webp",
+        "selected": "/media/photos/support-1024.webp",
+        "img": {
+          "x": 16,
+          "y": -1138.796875,
+          "width": 328,
+          "height": 193.34375,
+          "top": -1138.796875,
+          "right": 344,
+          "bottom": -945.453125,
+          "left": 16
+        },
+        "frame": {
+          "x": 16,
+          "y": -1138.796875,
+          "width": 328,
+          "height": 193.34375,
+          "top": -1138.796875,
+          "right": 344,
+          "bottom": -945.453125,
+          "left": 16
+        },
+        "fit": "contain",
+        "padding": "0px",
+        "aspect": "760 / 448",
+        "filter": "none",
+        "pixels": [
+          1024,
+          683
+        ]
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/faq",
+    "width": 360,
+    "content": {
+      "text": "FREQUENTLY ASKED QUESTIONS Answers before you send. Useful guidance about our enquiry-led courier workflow. How do I request a courier quote? Does submitting the form confirm my booking? Can all international parcels be accepted? Is pickup automatically scheduled? START WITH THE SHIPMENT DETAILS Let’s work out the right next step for your parcel. No instant estimates without an approved rate card. Our team reviews each request before making an offer. Request a quote",
+      "links": [
+        [
+          "Request a quote ",
+          "/get-a-quote"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 198.375,
+        "top": 100,
+        "right": 346,
+        "bottom": 298.375,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 90,
+        "top": 133.1875,
+        "right": 346,
+        "bottom": 223.1875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 247.1875,
+        "width": 332,
+        "height": 51.1875,
+        "top": 247.1875,
+        "right": 346,
+        "bottom": 298.375,
+        "left": 14
+      },
+      ".page-hero-marker": {
+        "x": 14,
+        "y": 332.375,
+        "width": 332,
+        "height": 210,
+        "top": 332.375,
+        "right": 346,
+        "bottom": 542.375,
+        "left": 14
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/privacy",
+    "width": 360,
+    "content": {
+      "text": "OWNER REVIEW REQUIRED Privacy content is not yet approved. This page is reserved for VK AND COMPANY's reviewed privacy information. Launch requirement: The business owner and an appropriate legal adviser must review and approve the final privacy notice before this page is published or indexed. The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.",
+      "links": [],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 198.375,
+        "top": 100,
+        "right": 346,
+        "bottom": 298.375,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 90,
+        "top": 133.1875,
+        "right": 346,
+        "bottom": 223.1875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 247.1875,
+        "width": 332,
+        "height": 51.1875,
+        "top": 247.1875,
+        "right": 346,
+        "bottom": 298.375,
+        "left": 14
+      },
+      ".page-hero-marker": {
+        "x": 14,
+        "y": 332.375,
+        "width": 332,
+        "height": 210,
+        "top": 332.375,
+        "right": 346,
+        "bottom": 542.375,
+        "left": 14
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/terms",
+    "width": 360,
+    "content": {
+      "text": "OWNER REVIEW REQUIRED Service terms are not yet approved. This page is reserved for VK AND COMPANY's reviewed customer terms. Launch requirement: Approved terms must address the actual courier process, responsibilities, restrictions, charges, claims and applicable law before publication. No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.",
+      "links": [],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 198.375,
+        "top": 100,
+        "right": 346,
+        "bottom": 298.375,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 90,
+        "top": 133.1875,
+        "right": 346,
+        "bottom": 223.1875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 247.1875,
+        "width": 332,
+        "height": 51.1875,
+        "top": 247.1875,
+        "right": 346,
+        "bottom": 298.375,
+        "left": 14
+      },
+      ".page-hero-marker": {
+        "x": 14,
+        "y": 332.375,
+        "width": 332,
+        "height": 210,
+        "top": 332.375,
+        "right": 346,
+        "bottom": 542.375,
+        "left": 14
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "route": "/track",
+    "width": 360,
+    "content": {
+      "text": "SHIPMENT SUPPORT Shipment update enquiry Contact the company for an update on your shipment. Please include your shipment reference so the team can help. Ask about your shipment. Online shipment lookup is unavailable. Contact VK AND COMPANY by phone or email, or use the Contact form. Include your shipment reference in your message. +91 93177 24056 vkandcompanymohali@gmail.com Contact the team",
+      "links": [
+        [
+          " +91 93177 24056",
+          "tel:+919317724056"
+        ],
+        [
+          " vkandcompanymohali@gmail.com",
+          "mailto:vkandcompanymohali@gmail.com"
+        ],
+        [
+          "Contact the team",
+          "/contact"
+        ]
+      ],
+      "fields": []
+    },
+    "layout": {
+      ".page-hero-copy": {
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 223.96875,
+        "top": 100,
+        "right": 346,
+        "bottom": 323.96875,
+        "left": 14
+      },
+      "h1": {
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 90,
+        "top": 133.1875,
+        "right": 346,
+        "bottom": 223.1875,
+        "left": 14
+      },
+      ".page-hero .lede": {
+        "x": 14,
+        "y": 247.1875,
+        "width": 332,
+        "height": 76.78125,
+        "top": 247.1875,
+        "right": 346,
+        "bottom": 323.96875,
+        "left": 14
+      },
+      ".page-hero-marker": {
+        "x": 14,
+        "y": 357.96875,
+        "width": 332,
+        "height": 210,
+        "top": 357.96875,
+        "right": 346,
+        "bottom": 567.96875,
+        "left": 14
+      }
+    },
+    "photos": [],
+    "errors": [],
+    "overflow": false
+  }
+]

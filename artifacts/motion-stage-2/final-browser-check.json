@@ -1,0 +1,23 @@
+{
+  "pointerPolicies": [
+    {
+      "name": "wide-touch",
+      "width": 1024,
+      "touch": true,
+      "transform": "none",
+      "hover": false,
+      "hoverNone": true
+    },
+    {
+      "name": "narrow-mouse",
+      "width": 390,
+      "touch": false,
+      "transform": "none",
+      "hover": false,
+      "hoverNone": false
+    }
+  ],
+  "throwawayRouteStatus": 404,
+  "headersApplied": true,
+  "clientNavigationQuoteExclusion": true
+}

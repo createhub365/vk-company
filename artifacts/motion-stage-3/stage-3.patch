@@ -1,0 +1,459 @@
+--- a/app/(site)/page.tsx
++++ b/app/(site)/page.tsx
+@@ -1,3 +1,4 @@
++import { HeroMotion, HeroFollow } from "@/components/motion/hero";
+ import { Photograph } from "@/components/photograph";
+ import Link from "next/link";
+ import { ArrowRight, Box, CircleCheck, FileText, MapPin } from "lucide-react";
+@@ -6,23 +7,24 @@
+ 
+ export default function HomePage() {
+   return <>
+-    <section className="cinematic-hero" data-image-feedback="background">
+-      <Photograph
++    <section className="cinematic-hero hero-motion" data-image-feedback="background">
++      <HeroMotion image={<Photograph
+         className="cinematic-hero-background"
+         name="selected-home-hero"
+         sizes="100vw"
+         alt="Illustrative navy and teal courier truck at an Indian delivery forecourt"
+         eager
+-      />
++      />}>
+       <div className="shell cinematic-hero-content">
+-        <div className="cinematic-copy" data-image-feedback-foreground>
++        <div className="cinematic-copy" data-image-feedback-foreground data-hero-plane="front" data-depth-motion="hero-plane">
+           <p className="eyebrow">Domestic & international courier services</p>
+-          <h1>Across cities.<br/><em>Across borders.</em></h1>
+-          <p className="cinematic-support">We keep your parcels moving.</p>
++          <h1><span className="hero-line" data-hero-line="cities" data-depth-motion="hero-line">Across cities.</span><br/><em className="hero-line hero-line-borders" data-hero-line="borders" data-depth-motion="hero-line">Across borders.</em></h1>
++          <HeroFollow kind="support"><p className="cinematic-support">We keep your parcels moving.</p></HeroFollow>
+           <p className="lede">Domestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step.</p>
+-          <div className="hero-actions"><Link className="button button-teal" href="/get-a-quote">Get a quote <ArrowRight size={18}/></Link></div>
++          <HeroFollow kind="cta"><div className="hero-actions"><Link className="button button-teal" href="/get-a-quote">Get a quote <ArrowRight size={18}/></Link></div></HeroFollow>
+         </div>
+       </div>
++      </HeroMotion>
+     </section>
+ 
+     <section className="editorial-section section-white" id="domestic-services">
+--- a/components/motion/primitives.tsx
++++ b/components/motion/primitives.tsx
+@@ -13,20 +13,22 @@
+   return <div {...props} className={`depth-section ${className}`}>{children}</div>;
+ }
+ 
+-export function RiseIn({ children, className = "", rise, rotate, stagger = 0, index = 0, ...props }: Props & {
+-  rise?: number; rotate?: number; stagger?: number; index?: number;
++export function RiseIn({ children, className = "", rise, rotate, stagger = 0, index = 0, delay = 0, duration, enabled = true, timelineStart, ...props }: Props & {
++  rise?: number; rotate?: number; stagger?: number; index?: number; delay?: number; duration?: number; enabled?: boolean; timelineStart?: number;
+ }) {
+   const ref = useRef<HTMLDivElement>(null);
+   const reduced = useReducedMotion();
+   const entered = useRef(false);
+   useEffect(() => {
+     const element = ref.current;
+-    if (!element || reduced || entered.current) return;
++    if (!element || reduced || !enabled || entered.current) return;
+     const tokens = readDepthTokens(element);
+     const distance = clamp(rise ?? tokens.rise, 0, tokens.rise);
+     const rotation = clamp(rotate ?? tokens.rotation, 0, tokens.rotation);
+-    // Stagger is in milliseconds, bounded by the shared base duration.
+-    const delay = clamp(stagger * Math.max(0, Number.isFinite(index) ? index : 0), 0, tokens.duration);
++    // Stagger is in milliseconds; hero sequences can share a document-timeline clock.
++    const delayLimit = parseFloat(getComputedStyle(element).getPropertyValue("--d-slow"));
++    const startDelay = clamp(delay + stagger * Math.max(0, Number.isFinite(index) ? index : 0), 0, delayLimit);
++    const durationMs = duration === undefined ? tokens.duration : clamp(duration, 0, tokens.duration);
+     let animation: Animation | undefined;
+     let timer: ReturnType<typeof setTimeout> | undefined;
+     const settle = () => { animation?.cancel(); element.style.removeProperty("will-change"); };
+@@ -34,20 +36,28 @@
+       if (!entry.isIntersecting) return;
+       entered.current = true;
+       observer.disconnect();
+-      timer = setTimeout(() => {
+-        // A delayed element remains visible until its actual animation starts.
+-        if (!element.isConnected || document.hidden) return;
+-        element.style.willChange = "transform, opacity";
+-        animation = element.animate([
+-          { transform: `translateY(${distance}px) rotateX(${rotation}deg)`, opacity: 0 },
+-          { transform: "none", opacity: 1 },
+-        ], { duration: tokens.duration, easing: tokens.easing, fill: "none" });
++      const frames = [
++        { transform: `translateY(${distance}px) rotateX(${rotation}deg)`, opacity: 0 },
++        { transform: "none", opacity: 1 },
++      ];
++      if (timelineStart !== undefined) {
++        // Backwards fill is enabled only by a post-hydration sequence. SSR stays final.
++        animation = element.animate(frames, { duration: durationMs, delay: startDelay, easing: tokens.easing, fill: "backwards" });
++        animation.startTime = timelineStart;
+         animation.onfinish = settle;
+-      }, delay);
++        timer = setTimeout(() => { element.style.willChange = "transform, opacity"; }, Math.max(0, timelineStart + startDelay - Number(document.timeline.currentTime)));
++      } else {
++        timer = setTimeout(() => {
++          if (!element.isConnected || document.hidden) return;
++          element.style.willChange = "transform, opacity";
++          animation = element.animate(frames, { duration: durationMs, easing: tokens.easing, fill: "none" });
++          animation.onfinish = settle;
++        }, startDelay);
++      }
+     });
+     observer.observe(element);
+     return () => { observer.disconnect(); clearTimeout(timer); settle(); };
+-  }, [reduced, rise, rotate, stagger, index]);
++  }, [reduced, rise, rotate, stagger, index, delay, duration, enabled, timelineStart]);
+   return <div {...props} ref={ref} className={className} data-depth-motion="rise">{children}</div>;
+ }
+ 
+--- a/components/image-feedback.tsx
++++ b/components/image-feedback.tsx
+@@ -1,6 +1,7 @@
+ "use client";
+ 
+ import { useEffect } from "react";
++import { queueSharedPointer } from "@/lib/motion/shared-pointer";
+ import { cancelFrame, frame as motionFrame } from "framer-motion";
+ import { usePointerEffects } from "@/components/motion/use-reduced-motion";
+ import { usePathname } from "next/navigation";
+@@ -42,6 +43,7 @@
+     function move(event: PointerEvent) {
+       if (gesture?.id === event.pointerId && Math.hypot(event.clientX - gesture.x, event.clientY - gesture.y) > 8) cancel();
+       if (!pointerEnabled || event.pointerType === "touch" || reduced.matches || event.buttons || !(event.target instanceof Element)) return;
++      queueSharedPointer({ x: event.clientX, y: event.clientY, target: event.target });
+       const frame = !event.target.closest(fields) ? event.target.closest<HTMLElement>(photos) : null;
+       if (frame !== hovered) leave();
+       if (!frame) return;
+@@ -61,6 +63,7 @@
+       pending = null;
+     }
+     function out(event: PointerEvent) {
++      if (!event.relatedTarget) queueSharedPointer(null);
+       if (hovered && (!(event.relatedTarget instanceof Node) || !hovered.contains(event.relatedTarget))) leave();
+     }
+     function up(event: PointerEvent) { pointers.delete(event.pointerId); }
+@@ -105,7 +108,7 @@
+       cleanup = () => { cleanup = undefined; clearTimeout(timer); animations.forEach(a => a.cancel()); layer.remove(); };
+     }
+     function scroll() { cancel(); clear(); leave(); }
+-    function blur() { scroll(); pointers.clear(); }
++    function blur() { scroll(); pointers.clear(); queueSharedPointer(null); }
+     const passive = { capture: true, passive: true };
+     document.addEventListener("pointerdown", down, passive);
+     document.addEventListener("pointermove", move, passive);
+--- a/MOTION_SYSTEM.md
++++ b/MOTION_SYSTEM.md
+@@ -1,6 +1,6 @@
+-# Motion system — Stage 2 foundation
++# Motion system — foundation and Stage 3 hero
+ 
+-This stage adds infrastructure and three presentation primitives. No existing page uses those primitives yet. All real page modules, copy, forms, images, routes and metadata remain at the Stage 1 baseline. The root layout adds a context provider without extra DOM; shared photo feedback now observes the pointer policy and uses Motion's scheduler.
++Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them only to the homepage hero. Copy, forms, images, routes and metadata remain at the Stage 1 baseline; homepage markup after the hero is byte-for-byte unchanged from before Stage 3. The root layout adds a context provider without extra DOM; shared photo feedback now observes the pointer policy and uses Motion's scheduler.
+ 
+ ## Tokens
+ 
+@@ -55,7 +55,7 @@
+ ```
+ 
+ - `DepthSection`: a wrapper with perspective and preserve-3d; no animation or automatic Z translation. It uses a div so adding it does not create a new semantic section.
+-- `RiseIn`: IntersectionObserver-triggered, once-only transform/opacity animation. Defaults to 40px rise, 12deg rotateX, 600ms expo. `stagger` is milliseconds multiplied by `index`; the total delay is capped at the base-duration token. Content stays in final state while waiting and with JS disabled. A cancelled/reduced-motion reveal immediately restores final state. `will-change` exists only during the actual animation.
++- `RiseIn`: IntersectionObserver-triggered, once-only transform/opacity animation. Defaults to 40px rise, 12deg rotateX, 600ms expo. `stagger` is milliseconds multiplied by `index`; the total delay is capped at the slow-duration token (900ms). Optional `delay`, `duration`, `enabled` and `timelineStart` support coordinated sequences; duration is bounded by the base token. Content stays in final state before activation and with JS disabled. An explicitly enabled sequence uses backwards fill only after hydration to coordinate its entrance. A cancelled/reduced-motion reveal immediately restores final state. `will-change` exists only during the actual animation.
+ - `ParallaxMedia`: stationary measuring wrapper and one transformed inner plane. It subscribes to the provider's scrollY, measures in Motion's read phase and writes in its render phase. Viewport-pass progress is eased with the shared expo curve. Offscreen work stops. A 240ms quiet period clears will-change; resize, unmount and reduced-motion transitions clean up subscriptions, observers, scheduled work and timers.
+ 
+ Only transform and opacity are animated. Layout dimensions, borders, padding, text and image sources are never animated or changed. Wrap the complete photo frame rather than rotating or scaling an image independently inside its frame. Keep inputs and important notices outside delayed reveals. Presentation-style props intentionally omit transform, opacity, will-change and animation overrides; do not bypass those limits with custom CSS.
+@@ -76,6 +76,20 @@
+ 
+ The hook was exercised in an isolated temporary Git repository: preserved staged content passes; a staged bad headline concealed by a clean working copy fails; a fully staged bad headline fails the fresh-build content check. No test commits or enquiries were created. Unit regression tests additionally reject altered image bytes, dynamic form wording and an added route.
+ 
+-No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 has not started.
++No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 is ready for its first tuning review; Stage 4 has not started.
+ 
+ Implementation references: [Motion useScroll](https://motion.dev/docs/react-use-scroll), [Motion shared frame scheduler](https://motion.dev/docs/frame), [Lenis options and manual frame integration](https://github.com/darkroomengineering/lenis).
++
++## Stage 3: homepage hero
++
++The existing truck photograph remains the sole hero image. No aircraft image, copy, section or route was added. `HeroMotion` is a hero-specific composition around `DepthSection`, with a dynamically loaded null-rendering runtime. `HeroFollow` composes the existing `RiseIn`; there are still exactly three general-purpose primitives.
++
++Tune timing and physics in `lib/motion/hero-tuning.ts`. The back plane uses Z -80px and scale 1.08, the original image plane Z 0, and the original text/CTA plane Z 40px. The existing emphasized second line sits another 15px forward. Mobile halves Z distances. A nested perspective projects those planes once; the stage groups that projection with `transform-style: flat` before applying whole-hero recession. This avoids double projection and an opacity-induced flattening jump. The outer DepthSection retains perspective 1200px and preserve-3d.
++
++Desktop pointer targets are limited to ±10px and spring-damped at stiffness 120 / damping 20. Back, middle and front weights are -1, 0.55 and 1. The new shared-pointer broker reads coordinates already received by the existing photo feedback listener and schedules through Motion's shared frame scheduler. It adds no DOM listeners or independent rAF loops. Mobile, hover-none, reduced motion and the Quote route disable pointer effects. A 10px desktop-only image overscan prevents edge exposure; mobile overscan is zero.
++
++Headline entrances use the original line break: 24px rise, 12deg rotateX, 600ms expo. Their common timeline starts at 0ms and 210ms (90ms stagger plus 120ms emphasis delay). The support text begins at 810ms and CTA at 900ms, both through RiseIn with 16px rise, zero rotation and 400ms expo. There is no per-character splitting. These animations start only after hydration; server output is visible in its final state.
++
++Scroll progress maps directly to Z 0 → -60px and opacity 1 → 0.4 across the hero height, using actual scroll position in both directions. Mobile ends at -30px. Unlike pointer movement, scroll mapping has no spring or easing: the latest Stage 3 requirement takes precedence over generic eased parallax. Reduced motion removes transforms and restores opacity immediately. Keyboard focus inside the CTA wrapper also restores visibility immediately, preserving the original focus ring and native navigation.
++
++`will-change` is added during movement and removed after entry completion or the shared fast-token quiet period. Subscriptions, observers, scheduled callbacks and timers clean up on unmount. Hero CSS is scoped to `.hero-motion`; existing contrast gradients are preserved. See `artifacts/motion-stage-3/REPORT.md` for recordings, validation and the isolated patch.
+--- a/tests/e2e/image-feedback.spec.ts
++++ b/tests/e2e/image-feedback.spec.ts
+@@ -27,12 +27,15 @@
+     expect(Math.abs(fit.width-fit.imageWidth)).toBeLessThanOrEqual(1);
+     expect(Math.abs(fit.height-fit.imageHeight)).toBeLessThanOrEqual(1);
+     expect(Math.abs(fit.imageWidth/fit.imageHeight-(fit.processCard ? 1.5 : fit.ratio))).toBeLessThan(.015);
+-    const h1 = await page.locator('h1').boundingBox();
++    // The homepage hero now intentionally recedes with scroll. Photo taps must
++    // leave their own section heading stationary, including during hero hydration.
++    const heading = path === '/' ? frame.locator('xpath=ancestor::section[1]').locator('h1,h2,h3').first() : page.locator('h1');
++    const headingBox = await heading.boundingBox();
+     await activate(frame,isMobile);
+     if (path === "/get-a-quote") {
+       await expect(layer(page)).toHaveCount(0);
+       expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe("none");
+-      expect(await page.locator("h1").boundingBox()).toEqual(h1);
++      expect(await heading.boundingBox()).toEqual(headingBox);
+       continue;
+     }
+     await expect(layer(page)).toHaveCount(1);
+@@ -40,7 +43,7 @@
+     expect(Math.abs(feedback.left-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top-40)).toBeLessThanOrEqual(1);
+     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+     expect(await frame.locator('img').evaluate(el=>el.getAnimations().length)).toBe(0);
+-    expect(await page.locator('h1').boundingBox()).toEqual(h1);
++    expect(await heading.boundingBox()).toEqual(headingBox);
+     await page.screenshot({path:info.outputPath(`tap-${await frame.getAttribute('class')}.png`),scale:'css'});
+     await expect(layer(page)).toHaveCount(0);
+     expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
+--- /dev/null
++++ b/components/motion/hero.tsx
+@@ -0,0 +1,40 @@
++"use client";
++
++import dynamic from "next/dynamic";
++import { createContext, useContext, useRef, useState, type CSSProperties, type ReactNode } from "react";
++import { DepthSection, RiseIn } from "./primitives";
++import { HERO_TUNING } from "@/lib/motion/hero-tuning";
++import "@/styles/hero.css";
++
++const HeroRuntime = dynamic(() => import("./hero-runtime"), { ssr: false });
++const EntranceClock = createContext<number | null>(null);
++
++export function HeroMotion({ image, children }: { image: ReactNode; children: ReactNode }) {
++  const stage = useRef<HTMLDivElement>(null);
++  const [startedAt, setStartedAt] = useState<number | null>(null);
++  const style = {
++    "--hero-back-scale": HERO_TUNING.depth.backScale,
++    "--hero-emphasis-base": `${HERO_TUNING.depth.emphasis}px`,
++    "--hero-mid-overscan": `${HERO_TUNING.pointer.limit}px`,
++  } as CSSProperties;
++  return <EntranceClock.Provider value={startedAt}>
++    <DepthSection className="hero-depth" style={style}>
++      <div className="hero-stage" ref={stage} data-depth-motion="hero-stage">
++        <div className="hero-back" data-hero-plane="back" data-depth-motion="hero-plane" aria-hidden="true"/>
++        <div className="hero-mid" data-hero-plane="mid" data-depth-motion="hero-plane">{image}</div>
++        {children}
++      </div>
++      <HeroRuntime stageRef={stage} onEntranceStart={setStartedAt}/>
++    </DepthSection>
++  </EntranceClock.Provider>;
++}
++
++export function HeroFollow({ children, kind }: { children: ReactNode; kind: "support" | "cta" }) {
++  const startedAt = useContext(EntranceClock);
++  const afterHeadline = HERO_TUNING.headline.duration + HERO_TUNING.headline.stagger + HERO_TUNING.headline.emphasisDelay;
++  return <RiseIn className={`hero-follow hero-follow-${kind}`} enabled={startedAt !== null} timelineStart={startedAt ?? undefined}
++    rise={HERO_TUNING.follow.rise} rotate={HERO_TUNING.follow.rotation}
++    duration={HERO_TUNING.follow.duration} delay={afterHeadline + (kind === "cta" ? HERO_TUNING.follow.ctaDelay : 0)}>
++    {children}
++  </RiseIn>;
++}
+--- /dev/null
++++ b/components/motion/hero-runtime.tsx
+@@ -0,0 +1,112 @@
++"use client";
++
++import { useEffect, useRef, type RefObject } from "react";
++import { cancelFrame, frame, useSpring } from "framer-motion";
++import { HERO_TUNING as tuning } from "@/lib/motion/hero-tuning";
++import { subscribeSharedPointer } from "@/lib/motion/shared-pointer";
++import { clamp, readDepthTokens } from "@/lib/motion/tokens";
++import { useDepthScroll } from "./provider";
++import { useMobileDepth, usePointerEffects, useReducedMotion } from "./use-reduced-motion";
++
++type Props = { stageRef: RefObject<HTMLDivElement | null>; onEntranceStart: (time: number) => void };
++export default function HeroRuntime({ stageRef, onEntranceStart }: Props) {
++  const reduced = useReducedMotion();
++  const pointerEnabled = usePointerEffects();
++  const mobile = useMobileDepth();
++  const { scrollY } = useDepthScroll();
++  const x = useSpring(0, tuning.spring), y = useSpring(0, tuning.spring);
++  const entered = useRef(false);
++
++  useEffect(() => {
++    const stage = stageRef.current;
++    if (!stage || reduced) return;
++    if (entered.current) return;
++    entered.current = true;
++    const lines = [...stage.querySelectorAll<HTMLElement>("[data-hero-line]")];
++    const easing = readDepthTokens(stage).easing;
++    const emphasis = tuning.depth.emphasis * parseFloat(getComputedStyle(stage).getPropertyValue("--hero-depth-factor"));
++    const animations: Animation[] = [];
++    const timers: ReturnType<typeof setTimeout>[] = [];
++    const clock = Number(document.timeline.currentTime ?? performance.now());
++    onEntranceStart(clock);
++    // Exactly the two existing typographic lines. The <br> and original <em> stay intact.
++    lines.forEach((line, index) => {
++      const z = index === 1 ? emphasis : 0;
++      const delay = index * tuning.headline.stagger + (index === 1 ? tuning.headline.emphasisDelay : 0);
++      const animation = line.animate([
++        { transform: `translateY(${tuning.headline.rise}px) rotateX(${tuning.headline.rotation}deg) translateZ(${z}px)`, opacity: 0 },
++        { transform: `translateY(0px) rotateX(0deg) translateZ(${z}px)`, opacity: 1 },
++      ], { duration: tuning.headline.duration, delay, easing, fill: "backwards" });
++      animation.startTime = clock;
++      animations.push(animation);
++      timers.push(setTimeout(() => { line.style.willChange = "transform, opacity"; }, delay));
++      animation.onfinish = () => line.style.removeProperty("will-change");
++    });
++    return () => { timers.forEach(clearTimeout); animations.forEach(animation => animation.cancel()); lines.forEach(line => line.style.removeProperty("will-change")); };
++  }, [reduced, stageRef, onEntranceStart]);
++
++  useEffect(() => {
++    const stage = stageRef.current, section = stage?.closest<HTMLElement>(".cinematic-hero");
++    if (!stage || !section || reduced) return;
++    const planes = ["back", "mid", "front"].map(name => stage.querySelector<HTMLElement>(`[data-hero-plane="${name}"]`)!);
++    const weights = [tuning.pointer.backWeight, tuning.pointer.midWeight, tuning.pointer.frontWeight];
++    const mobileFactor = mobile ? 0.5 : 1;
++    const restDuration = readDepthTokens(stage).rest;
++    let progress = 0, lastProgress = -1, lastX = NaN, lastY = NaN;
++    let scrollRest: ReturnType<typeof setTimeout> | undefined;
++    let pointerRest: ReturnType<typeof setTimeout> | undefined;
++    const restPointer = () => planes.forEach(plane => plane.style.removeProperty("will-change"));
++    const restScroll = () => stage.style.removeProperty("will-change");
++    const render = () => {
++      if (progress !== lastProgress) {
++        stage.style.willChange = "transform, opacity";
++        // No spring, easing, or transition here: one-to-one with the actual scrollbar.
++        stage.style.transform = progress === 0 ? "none" : `translateZ(${tuning.depth.scrollEnd * mobileFactor * progress}px)`;
++        stage.style.opacity = String(1 + (tuning.depth.opacityEnd - 1) * progress);
++        stage.dataset.heroProgress = String(progress);
++        lastProgress = progress;
++        clearTimeout(scrollRest); scrollRest = setTimeout(restScroll, restDuration);
++      }
++      const px = pointerEnabled ? clamp(x.get(), -tuning.pointer.limit, tuning.pointer.limit) : 0;
++      const py = pointerEnabled ? clamp(y.get(), -tuning.pointer.limit, tuning.pointer.limit) : 0;
++      if (px !== lastX || py !== lastY) {
++        planes.forEach((plane, i) => {
++          if (px || py) plane.style.willChange = "transform";
++          plane.style.setProperty("--hero-pointer-x", `${px * weights[i]}px`);
++          plane.style.setProperty("--hero-pointer-y", `${py * weights[i]}px`);
++        });
++        lastX = px; lastY = py;
++        clearTimeout(pointerRest); pointerRest = setTimeout(restPointer, restDuration);
++      }
++    };
++    const renderPointer = () => frame.render(render);
++    const measure = () => {
++      const box = section.getBoundingClientRect();
++      const origin = Math.max(0, box.top + window.scrollY);
++      progress = clamp((window.scrollY - origin) / box.height, 0, 1);
++      if (box.bottom <= 0 || box.top >= innerHeight) { x.set(0); y.set(0); }
++      frame.render(render);
++    };
++    const schedule = () => frame.read(measure);
++    const unsubscribeScroll = scrollY.on("change", schedule);
++    const unsubscribeX = x.on("change", renderPointer), unsubscribeY = y.on("change", renderPointer);
++    const unsubscribePointer = subscribeSharedPointer(point => {
++      if (!pointerEnabled || !point || !section.contains(point.target)) { x.set(0); y.set(0); return; }
++      const box = section.getBoundingClientRect();
++      x.set(clamp((point.x - box.left) / box.width * 2 - 1, -1, 1) * tuning.pointer.limit);
++      y.set(clamp((point.y - box.top) / box.height * 2 - 1, -1, 1) * tuning.pointer.limit);
++    });
++    const resize = new ResizeObserver(schedule); resize.observe(section);
++    if (!pointerEnabled) { x.jump(0); y.jump(0); }
++    schedule();
++    return () => {
++      unsubscribeScroll(); unsubscribeX(); unsubscribeY(); unsubscribePointer(); resize.disconnect();
++      cancelFrame(measure); cancelFrame(render); clearTimeout(scrollRest); clearTimeout(pointerRest);
++      x.stop(); y.stop(); x.jump(0); y.jump(0);
++      restPointer(); restScroll();
++      stage.style.removeProperty("transform"); stage.style.removeProperty("opacity"); delete stage.dataset.heroProgress;
++      planes.forEach(plane => { plane.style.removeProperty("--hero-pointer-x"); plane.style.removeProperty("--hero-pointer-y"); });
++    };
++  }, [reduced, pointerEnabled, mobile, stageRef, scrollY, x, y]);
++  return null;
++}
+--- /dev/null
++++ b/lib/motion/hero-tuning.ts
+@@ -0,0 +1,8 @@
++// Stage 3 tuning surface. Pointer physics and scroll mapping are deliberately separate.
++export const HERO_TUNING = {
++  pointer: { limit: 10, backWeight: -1, midWeight: 0.55, frontWeight: 1 },
++  spring: { stiffness: 120, damping: 20, mass: 1, restDelta: 0.01, restSpeed: 0.05 },
++  headline: { rise: 24, rotation: 12, duration: 600, stagger: 90, emphasisDelay: 120 },
++  follow: { rise: 16, rotation: 0, duration: 400, ctaDelay: 90 },
++  depth: { backScale: 1.08, emphasis: 15, scrollEnd: -60, opacityEnd: 0.4 },
++} as const;
+--- /dev/null
++++ b/lib/motion/shared-pointer.ts
+@@ -0,0 +1,16 @@
++import { cancelFrame, frame } from "framer-motion";
++
++export type SharedPointer = { x: number; y: number; target: Element } | null;
++const subscribers = new Set<(point: SharedPointer) => void>();
++let pending: SharedPointer = null;
++function flush() { subscribers.forEach(subscriber => subscriber(pending)); }
++// The existing ImageFeedback recognizer is the sole DOM pointer-event owner.
++export function queueSharedPointer(point: SharedPointer) {
++  if (!subscribers.size) return;
++  pending = point;
++  frame.read(flush);
++}
++export function subscribeSharedPointer(subscriber: (point: SharedPointer) => void) {
++  subscribers.add(subscriber);
++  return () => { subscribers.delete(subscriber); if (!subscribers.size) { cancelFrame(flush); pending = null; } };
++}
+--- /dev/null
++++ b/styles/hero.css
+@@ -0,0 +1,54 @@
++/* Homepage hero only. The original section remains the layout/scroll anchor. */
++.cinematic-hero.hero-motion { overflow: clip; }
++.cinematic-hero.hero-motion::before { content: none; }
++.hero-motion .hero-depth { position: relative; margin-top: -92px; --hero-depth-factor: 1; --hero-emphasis-z: calc(var(--hero-emphasis-base) * var(--hero-depth-factor)); }
++.hero-motion .hero-stage {
++  position: relative;
++  padding-top: 92px;
++  perspective: var(--perspective);
++  /* Project the inner planes once before the whole group recedes/fades. */
++  transform-style: flat;
++}
++.hero-motion .hero-back, .hero-motion .hero-mid { position: absolute; inset: 0; pointer-events: none; }
++.hero-motion .hero-back {
++  background: #0b2639;
++  transform: translate3d(var(--hero-pointer-x, 0px), var(--hero-pointer-y, 0px), var(--z-back)) scale(var(--hero-back-scale));
++}
++.hero-motion .hero-mid {
++  inset: calc(-1 * var(--hero-mid-overscan));
++  transform: translate3d(var(--hero-pointer-x, 0px), var(--hero-pointer-y, 0px), 0px);
++}
++/* Preserve the exact intentional hero contrast, now on the image's own plane. */
++.hero-motion .hero-mid::after {
++  content: ""; position: absolute; inset: 0; pointer-events: none;
++  background: linear-gradient(90deg, rgba(6,24,37,.94) 0%, rgba(9,36,53,.85) 32%, rgba(9,36,53,.48) 53%, rgba(8,31,46,.12) 78%, rgba(8,31,46,.2) 100%);
++}
++.hero-motion .cinematic-hero-content { z-index: auto; transform-style: preserve-3d; }
++.hero-motion .cinematic-copy {
++  transform-style: preserve-3d;
++  transform: translate3d(var(--hero-pointer-x, 0px), var(--hero-pointer-y, 0px), var(--z-front));
++}
++.hero-motion h1 { transform-style: preserve-3d; }
++.hero-motion .hero-line { display: inline-block; transform-style: preserve-3d; }
++.hero-motion .hero-line-borders { transform: translateZ(var(--hero-emphasis-z)); }
++/* Margins remain on the original paragraphs/action row, not on new motion wrappers. */
++.hero-motion .hero-follow { display: flow-root; }
++
++@media (max-width: 900px) {
++  .hero-motion .hero-mid::after { background: linear-gradient(180deg, rgba(6,24,37,.9) 0%, rgba(9,36,53,.84) 40%, rgba(9,36,53,.64) 70%, rgba(8,31,46,.3) 100%); }
++}
++@media (width < 768px) {
++  .hero-motion .hero-depth { --hero-depth-factor: 0.5; --hero-mid-overscan: 0px !important; }
++}
++@media (hover: none), (width < 768px) {
++  .hero-motion [data-hero-plane] { --hero-pointer-x: 0px !important; --hero-pointer-y: 0px !important; }
++}
++@media (prefers-reduced-motion: reduce) {
++  .hero-motion .hero-stage { perspective: none !important; }
++  .hero-motion .hero-mid { inset: 0; }
++  .hero-motion [data-depth-motion] { transform: none !important; opacity: 1 !important; will-change: auto !important; }
++}
++
++/* A keyboard user never waits for an entrance before seeing the focused CTA. */
++.hero-motion .hero-follow:focus-within { opacity: 1 !important; transform: none !important; }
++.hero-motion .cinematic-copy:focus-within { --hero-pointer-x: 0px !important; --hero-pointer-y: 0px !important; }

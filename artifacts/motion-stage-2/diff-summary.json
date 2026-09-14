@@ -1,0 +1,109 @@
+[
+  {
+    "file": "app/layout.tsx",
+    "status": "modified",
+    "added": 3,
+    "removed": 1
+  },
+  {
+    "file": "components/image-feedback.tsx",
+    "status": "modified",
+    "added": 21,
+    "removed": 15
+  },
+  {
+    "file": "package.json",
+    "status": "modified",
+    "added": 5,
+    "removed": 1
+  },
+  {
+    "file": "package-lock.json",
+    "status": "modified",
+    "added": 71,
+    "removed": 0
+  },
+  {
+    "file": "tests/e2e/image-feedback.spec.ts",
+    "status": "modified",
+    "added": 11,
+    "removed": 3
+  },
+  {
+    "file": "styles/depth.css",
+    "status": "new",
+    "added": 66,
+    "removed": 0
+  },
+  {
+    "file": "components/motion/provider.tsx",
+    "status": "new",
+    "added": 19,
+    "removed": 0
+  },
+  {
+    "file": "components/motion/scroll-runtime.tsx",
+    "status": "new",
+    "added": 47,
+    "removed": 0
+  },
+  {
+    "file": "components/motion/primitives.tsx",
+    "status": "new",
+    "added": 99,
+    "removed": 0
+  },
+  {
+    "file": "components/motion/use-reduced-motion.ts",
+    "status": "new",
+    "added": 38,
+    "removed": 0
+  },
+  {
+    "file": "lib/motion/policy.ts",
+    "status": "new",
+    "added": 8,
+    "removed": 0
+  },
+  {
+    "file": "lib/motion/tokens.ts",
+    "status": "new",
+    "added": 24,
+    "removed": 0
+  },
+  {
+    "file": "scripts/verify-content.mjs",
+    "status": "new",
+    "added": 16,
+    "removed": 0
+  },
+  {
+    "file": "scripts/verify-staged-motion.mjs",
+    "status": "new",
+    "added": 31,
+    "removed": 0
+  },
+  {
+    "file": ".githooks/pre-commit",
+    "status": "new",
+    "added": 5,
+    "removed": 0
+  },
+  {
+    "file": "tests/motion-content-guard.test.ts",
+    "status": "new",
+    "added": 32,
+    "removed": 0
+  },
+  {
+    "file": "MOTION_SYSTEM.md",
+    "status": "new",
+    "added": 81,
+    "removed": 0
+  },
+  {
+    "file": "artifacts/motion-stage-2/content-test-fixtures.json",
+    "status": "new",
+    "purpose": "Build-independent non-executing HTML fixtures for contract regression tests"
+  }
+]

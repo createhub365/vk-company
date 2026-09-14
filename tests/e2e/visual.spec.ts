@@ -10,7 +10,7 @@ test("capture the responsive editorial site with its static delivery visual", as
     await page.goto("/", { waitUntil: "domcontentloaded" });
     await expect(page.getByRole("heading", { name: /Across cities/i })).toBeVisible();
 
-    const truckImage = page.getByRole("img", { name: /courier truck travelling/i });
+    const truckImage = page.getByRole("img", { name: /courier truck at an Indian/i });
     await expect(truckImage).toBeVisible();
     await expect(truckImage).toHaveJSProperty("complete", true);
     expect(await truckImage.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
@@ -32,14 +32,15 @@ test("capture the responsive editorial site with its static delivery visual", as
   for (const [slug, route] of routeShots) {
     await page.goto(route, { waitUntil: "domcontentloaded" });
     await expect(page.locator("h1")).toBeVisible();
-    expect(await page.locator("canvas").count()).toBe(0);
+    if (route === "/get-a-quote") expect(await page.locator("canvas").count()).toBeLessThanOrEqual(1);
+    else expect(await page.locator("canvas").count()).toBe(0);
     await page.screenshot({ path: `test-results/${slug}-${testInfo.project.name}.png`, fullPage: false, caret: "initial" });
   }
 
   await page.goto("/", { waitUntil: "domcontentloaded" });
   const domesticFeature = page.locator("#domestic-services");
   await domesticFeature.scrollIntoViewIfNeeded();
-  await expect(domesticFeature.getByRole("img", { name: "Illustrative unbranded delivery truck travelling on a modern intercity road" })).toBeVisible();
+  await expect(domesticFeature.getByRole("img", { name: "Illustrative delivery truck travelling on an intercity road" })).toBeVisible();
   await page.screenshot({ path: `test-results/domestic-feature-${testInfo.project.name}.png`, fullPage: false, caret: "initial" });
 
 

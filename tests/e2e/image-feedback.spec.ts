@@ -1,223 +1,151 @@
-import { expect, test, type Locator, type Page } from "@playwright/test";
+import { expect, test, type Page, type Locator } from "@playwright/test";
 
 const routes = ["/", "/services/domestic", "/services/international", "/about", "/contact", "/get-a-quote", "/faq", "/privacy", "/terms", "/track"];
-const countAnimations = (locator: Locator) => locator.evaluate(element => element.getAnimations({ subtree: true }).length);
-
-async function activate(page: Page, locator: Locator, touch: boolean) {
-  await locator.scrollIntoViewIfNeeded();
-  if (touch) await locator.tap({ position: { x: 20, y: 25 } });
-  else await locator.click({ position: { x: 20, y: 25 } });
+const layer = (page: Page) => page.locator(".image-feedback-layer");
+async function activate(target: Locator, touch: boolean) {
+  await target.scrollIntoViewIfNeeded();
+  if (touch) await target.tap({ position: { x: 40, y: 40 } });
+  else await target.click({ position: { x: 40, y: 40 } });
 }
 
-// Only local GETs: this suite cannot submit enquiries, call, or contact providers.
 test.beforeEach(async ({ context }) => {
-  await context.route("**/*", route => {
-    const request = route.request();
-    const url = new URL(request.url());
-    return ["localhost", "127.0.0.1"].includes(url.hostname) && request.method() === "GET"
-      ? route.continue() : route.abort();
-  });
+  await context.route("**/*", route => ["localhost", "127.0.0.1"].includes(new URL(route.request().url()).hostname) && ["GET", "HEAD"].includes(route.request().method()) ? route.continue() : route.abort());
 });
 
-for (const path of routes) {
-  test(`image coverage ${path}`, async ({ page, isMobile }, info) => {
-    await page.goto(path);
-    await expect(page.locator("h1")).toBeVisible();
-    // Let hydration attach the shared delegated listeners before interaction.
-    await page.waitForFunction(() => document.querySelectorAll("img").length > 0);
-    const images = page.locator("img");
-    expect(await images.count()).toBeGreaterThan(0);
-    for (const img of await images.all()) {
-      expect(await img.evaluate(element => !!element.closest("[data-image-feedback]"))).toBe(true);
+for (const path of routes) test(`edge-to-edge photos and bounded taps ${path}`, async ({ page, isMobile }, info) => {
+  const errors: string[] = []; page.on("pageerror", e => errors.push(e.message));
+  const response = await page.goto(path);
+  expect(response?.headers()["x-content-type-options"]).toBe("nosniff");
+  for (const frame of await page.locator('[data-photo-frame]').all()) {
+    await frame.scrollIntoViewIfNeeded();
+    await frame.locator('img').evaluate((el: HTMLImageElement) => el.decode());
+    const fit = await frame.evaluate(el => {
+      const img = el.querySelector('img')!;
+      return { width: el.clientWidth, height: el.clientHeight, imageWidth: img.clientWidth, imageHeight: img.clientHeight, ratio: img.naturalWidth / img.naturalHeight, padding: getComputedStyle(el).padding, processCard: Boolean(el.closest(".process-list")) };
+    });
+    expect(fit.padding).toBe('0px');
+    expect(Math.abs(fit.width-fit.imageWidth)).toBeLessThanOrEqual(1);
+    expect(Math.abs(fit.height-fit.imageHeight)).toBeLessThanOrEqual(1);
+    expect(Math.abs(fit.imageWidth/fit.imageHeight-(fit.processCard ? 1.5 : fit.ratio))).toBeLessThan(.015);
+    // The homepage hero now intentionally recedes with scroll. Photo taps must
+    // leave their own section heading stationary, including during hero hydration.
+    const heading = path === '/' ? frame.locator('xpath=ancestor::section[1]').locator('h1,h2,h3').first() : page.locator('h1');
+    const headingBox = await heading.boundingBox();
+    await activate(frame,isMobile);
+    if (path === "/get-a-quote") {
+      await expect(layer(page)).toHaveCount(0);
+      expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe("none");
+      expect(await heading.boundingBox()).toEqual(headingBox);
+      continue;
     }
-    const surface = page.locator('[data-image-feedback="photo"]').first();
-    const target = await surface.count() ? surface : page.locator('[data-image-feedback="logo"]').last();
-    await target.scrollIntoViewIfNeeded();
-    await page.waitForTimeout(100);
-    await target.hover();
-    expect(await countAnimations(target)).toBe(0);
-    const bounds = await target.boundingBox();
-    const text = page.locator("h1");
-    const textBounds = await text.boundingBox();
-    await activate(page, target, isMobile);
-    await expect.poll(() => countAnimations(target)).toBeGreaterThan(0);
-    const duration = await target.evaluate(element => element.getAnimations({ subtree: true })[0].effect?.getTiming().duration);
-    expect(duration).toBe(450);
-    if (await surface.count()) {
-      await page.waitForTimeout(90);
-      expect(await surface.locator("img").evaluate(element => new DOMMatrix(getComputedStyle(element).transform).a)).toBeGreaterThan(1);
-      expect(await target.boundingBox()).toEqual(bounds);
-      expect(await text.boundingBox()).toEqual(textBounds);
-      const origin = await surface.evaluate(element => {
-        const ripple = element.querySelector<HTMLElement>(".image-feedback-ripple")!;
-        return [parseFloat(ripple.style.left) + parseFloat(ripple.style.width) / 2, parseFloat(ripple.style.top) + parseFloat(ripple.style.height) / 2];
-      });
-      expect(Math.abs(origin[0] - 20)).toBeLessThan(1.5);
-      expect(Math.abs(origin[1] - 25)).toBeLessThan(1.5);
-    }
-    // Freeze an already-running effect for a reliable mid-animation visual artifact.
-    await target.evaluate(element => element.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = 200; }));
-    await page.screenshot({ path: info.outputPath("image-feedback-active.png") });
-    await target.evaluate(element => element.getAnimations({ subtree: true }).forEach(animation => animation.play()));
-    await expect.poll(() => countAnimations(target)).toBe(0);
-    await expect(page.locator(".image-feedback-layer")).toHaveCount(0);
-    for (let index = 0; index < 5; index++) await activate(page, target, isMobile);
-    expect(await target.locator(".image-feedback-layer").count()).toBeLessThanOrEqual(1);
-    expect(await countAnimations(target)).toBeLessThanOrEqual(2);
-    await expect.poll(() => countAnimations(target)).toBe(0);
-
-    await page.emulateMedia({ reducedMotion: "reduce" });
-    await activate(page, target, isMobile);
-    await expect.poll(() => countAnimations(target)).toBe(1);
-    await expect(page.locator(".image-feedback-layer")).toHaveCount(0);
-    expect(await target.evaluate(element => getComputedStyle(element.querySelector("img") ?? element).transform)).toBe("none");
-    expect(await target.boundingBox()).toEqual(bounds);
-    await expect.poll(() => countAnimations(target)).toBe(0);
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  });
-}
-
-test("homepage international aircraft keeps its full aspect ratio during ripple feedback", async ({ page, isMobile }, info) => {
-  await page.goto("/");
-  const section = page.locator(".international-feature");
-  const surface = section.locator(".international-aircraft");
-  const image = surface.locator("img");
-  await surface.scrollIntoViewIfNeeded();
-  await expect.poll(() => image.evaluate(img => img instanceof HTMLImageElement && img.complete && img.naturalWidth > 0)).toBe(true);
-  await expect(image).toHaveAttribute("src", /homepage-international-cargo/);
-  await expect(section.locator("h2")).toHaveText("Clear before it leaves the ground.");
-  const frame = await surface.boundingBox();
-  const photo = await image.boundingBox();
-  const copy = await section.locator(".editorial-copy").boundingBox();
-  expect(frame).not.toBeNull();
-  expect(photo).toEqual(frame);
-  expect(Math.abs(frame!.width / frame!.height - 1.5)).toBeLessThan(.005);
-  expect(await image.evaluate(img => getComputedStyle(img).objectFit)).toBe("contain");
-  if (isMobile) expect(frame!.y + frame!.height).toBeLessThan(copy!.y);
-  else expect(copy!.x + copy!.width).toBeLessThan(frame!.x);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await section.screenshot({ path: info.outputPath("aircraft-rest.png") });
-
-  await activate(page, surface, isMobile);
-  await expect.poll(() => countAnimations(surface)).toBe(1);
-  expect(await countAnimations(image)).toBe(0);
-  // Inspect a real pointer-triggered animation at its midpoint, not just after cleanup.
-  await surface.evaluate(element => element.getAnimations({ subtree: true }).forEach(animation => {
-    animation.pause(); animation.currentTime = 200;
-  }));
-  expect(await image.evaluate(img => getComputedStyle(img).transform)).toBe("none");
-  expect(await image.boundingBox()).toEqual(await surface.boundingBox());
-  await section.screenshot({ path: info.outputPath("aircraft-ripple.png") });
-  await surface.evaluate(element => element.getAnimations({ subtree: true }).forEach(animation => animation.play()));
-  await expect.poll(() => countAnimations(surface)).toBe(0);
-  await expect(surface.locator(".image-feedback-layer")).toHaveCount(0);
-
-  for (let i = 0; i < 4; i++) await activate(page, surface, isMobile);
-  expect(await surface.locator(".image-feedback-layer").count()).toBeLessThanOrEqual(1);
-  expect(await countAnimations(image)).toBe(0);
-  await expect.poll(() => countAnimations(surface)).toBe(0);
-  await page.emulateMedia({ reducedMotion: "reduce" });
-  await activate(page, surface, isMobile);
-  await expect.poll(() => countAnimations(surface)).toBe(1);
-  await expect(surface.locator(".image-feedback-layer")).toHaveCount(0);
-  expect(await image.evaluate(img => getComputedStyle(img).transform)).toBe("none");
-  await expect.poll(() => countAnimations(surface)).toBe(0);
-
-  const link = section.getByRole("link", { name: "Explore international services" });
-  await expect(link).toHaveAttribute("href", "/services/international");
-  await link.click();
-  await expect(page).toHaveURL(/\/services\/international$/);
-  await expect(page.locator("h1")).toBeVisible();
-  // The separate service-page photograph is deliberately unchanged.
-  await expect(page.locator('.page-hero img')).toHaveAttribute("src", /international-cargo-apron/);
-});
-
-test("home pulse-enabled photos animate; hero keeps background, contrast overlay and foreground still", async ({ page, isMobile }, info) => {
-  await page.goto("/");
-  for (const photo of await page.locator('[data-image-feedback="photo"]').all()) {
-    await activate(page, photo, isMobile);
-    await expect.poll(() => countAnimations(photo)).toBe(2);
-    await expect.poll(() => countAnimations(photo)).toBe(0);
+    await expect(layer(page)).toHaveCount(1);
+    const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+    expect(Math.abs(feedback.left-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top-40)).toBeLessThanOrEqual(1);
+    expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+    expect(await frame.locator('img').evaluate(el=>el.getAnimations().length)).toBe(0);
+    expect(await heading.boundingBox()).toEqual(headingBox);
+    await page.screenshot({path:info.outputPath(`tap-${await frame.getAttribute('class')}.png`),scale:'css'});
+    await expect(layer(page)).toHaveCount(0);
+    expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
   }
-  await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
-  const hero = page.locator(".cinematic-hero");
-  const background = hero.locator("img");
-  const original = await background.boundingBox();
-  const overlay = await hero.evaluate(element => getComputedStyle(element, "::before").backgroundImage);
-  // Exposed background at the right edge; never a foreground link or text.
-  const box = (await hero.boundingBox())!;
-  const position = { x: box.width - 4, y: 250 };
-  if (isMobile) await hero.tap({ position }); else await hero.click({ position });
-  await expect(hero.locator(".image-feedback-layer")).toHaveCount(1);
-  expect(await countAnimations(background)).toBe(0);
-  expect(await background.boundingBox()).toEqual(original);
-  expect(await hero.evaluate(element => getComputedStyle(element, "::before").backgroundImage)).toBe(overlay);
-  await hero.evaluate(element => element.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = 200; }));
-  await page.screenshot({ path: info.outputPath("hero-ripple-active.png") });
-  await hero.evaluate(element => element.getAnimations({ subtree: true }).forEach(animation => animation.play()));
-  await expect(hero.locator(".image-feedback-layer")).toHaveCount(0);
-  await page.locator("h1").click();
-  await expect(hero.locator(".image-feedback-layer")).toHaveCount(0);
+  expect(errors).toEqual([]);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
 
-test("logo pointer and keyboard navigation stays native and accessible", async ({ page, isMobile }) => {
-  await page.goto("/about");
-  const link = page.getByRole("link", { name: "VK AND COMPANY home", exact: true });
-  const logo = link.locator('[data-image-feedback="logo"]');
-  await activate(page, logo, isMobile);
-  await expect(page).toHaveURL(/\/$/);
-  await page.goto("/contact");
-  await link.focus();
-  await page.keyboard.press("Enter");
-  await expect(page).toHaveURL(/\/$/);
-  await expect(link).toHaveAccessibleName("VK AND COMPANY home");
-  await expect(page.locator('[data-image-feedback][tabindex], [data-image-feedback][role="button"], a a, button button')).toHaveCount(0);
-  // Same-route keyboard activation visibly highlights the logo without scaling it.
-  await link.focus();
-  await page.keyboard.press("Enter");
-  await expect.poll(() => countAnimations(logo)).toBe(1);
-  expect(await logo.evaluate(element => getComputedStyle(element).transform)).toBe("none");
+test('hover tilts only the coherent frame and settles on leave',async({page,isMobile})=>{
+  test.skip(isMobile,'Touch has tap feedback without hover');
+  await page.goto('/services/domestic');const frame=page.locator('.page-hero-image');
+  const b=(await frame.boundingBox())!, heading=await page.locator('h1').boundingBox();
+  await page.mouse.move(b.x+b.width*.95,b.y+b.height*.1);
+  await expect(frame).toHaveAttribute('data-photo-hover','');
+  await expect.poll(()=>frame.evaluate(el=>getComputedStyle(el).transform)).not.toBe('none');
+  expect(await frame.locator('img').evaluate(el=>getComputedStyle(el).transform)).toBe('none');
+  expect(await frame.evaluate(el=>getComputedStyle(el,'::after').backgroundImage)).toContain('radial-gradient');
+  expect(await page.locator('h1').boundingBox()).toEqual(heading);
+  await page.mouse.move(1,200);
+  await expect.poll(()=>frame.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
 });
 
-test("drag, selected text, cancelled touch and scrolling do not activate feedback", async ({ page, isMobile }) => {
-  await page.goto("/");
-  const photo = page.locator('[data-image-feedback="photo"]').first();
-  await photo.scrollIntoViewIfNeeded();
-  const box = (await photo.boundingBox())!;
-  if (isMobile) {
-    const cdp = await page.context().newCDPSession(page);
-    const x = box.x + 100, y = box.y + 160;
-    const before = await page.evaluate(() => scrollY);
-    await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x, y }] });
-    for (let distance = 20; distance <= 120; distance += 20) {
-      await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x, y: y - distance }] });
-    }
-    await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
-    await expect.poll(() => page.evaluate(() => scrollY)).not.toBe(before);
-    await expect(photo.locator(".image-feedback-layer")).toHaveCount(0);
-    await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x, y: 200 }] });
-    await cdp.send("Input.dispatchTouchEvent", { type: "touchCancel", touchPoints: [] });
-    await cdp.detach();
-  } else {
-    await page.mouse.move(box.x + 20, box.y + 30);
-    await page.mouse.down();
-    await page.mouse.move(box.x + 120, box.y + 80, { steps: 8 });
-    await page.mouse.up();
+test('existing Quote WebGL scene stays idle through pointer-disabled taps and offscreen',async({page,isMobile})=>{
+  await page.goto('/get-a-quote');const host=page.locator('.quote-media'),frame=page.locator('.quote-photo'),canvas=host.locator('canvas');
+  await host.scrollIntoViewIfNeeded();await expect(host).toHaveAttribute('data-bubbles','webgl');
+  await expect(canvas).toHaveCount(1);
+  expect(await canvas.evaluate(el=>Boolean((el as HTMLCanvasElement).getContext('webgl2')))).toBe(true);
+  await page.waitForTimeout(750);
+  const idle=await canvas.getAttribute('data-frames');await page.waitForTimeout(180);expect(await canvas.getAttribute('data-frames')).toBe(idle);
+  const box=(await frame.boundingBox())!;
+  for(let i=0;i<15;i++) {
+    if(isMobile) await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+    else await page.mouse.click(box.x+box.width/2,box.y+box.height/2);
+    expect(await layer(page).count()).toBeLessThanOrEqual(1);
   }
-  await expect(photo.locator(".image-feedback-layer")).toHaveCount(0);
-  await photo.locator("span").evaluate(element => {
-    const range = document.createRange(); range.selectNodeContents(element);
-    getSelection()?.removeAllRanges(); getSelection()?.addRange(range);
-  });
-  // A click during selection must not start an effect, even on an image caption.
-  await photo.locator("span").dispatchEvent("pointerdown", { isPrimary: true, button: 0, pointerId: 1, clientX: 10, clientY: 10 });
-  await photo.locator("span").dispatchEvent("click", { detail: 1, clientX: 10, clientY: 10 });
-  await expect(photo.locator(".image-feedback-layer")).toHaveCount(0);
-  await page.evaluate(() => getSelection()?.removeAllRanges());
-  await activate(page, photo, isMobile);
-  await expect(photo.locator(".image-feedback-layer")).toHaveCount(1);
-  // Simulates conditional component unmount and checks detached animations cancelled.
-  const image = await photo.locator("img").elementHandle();
-  await photo.evaluate(element => element.remove());
-  await expect.poll(() => image!.evaluate(element => element.getAnimations().length)).toBe(0);
+  expect(await canvas.getAttribute('data-frames')).toBe(idle);
+  expect(await frame.getAttribute('data-photo-hover')).toBeNull();
+  expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
+  await expect(layer(page)).toHaveCount(0);await page.waitForTimeout(750);
+  const settled=await canvas.getAttribute('data-frames');await page.waitForTimeout(180);expect(await canvas.getAttribute('data-frames')).toBe(settled);
+  await page.locator('footer').scrollIntoViewIfNeeded();await page.waitForTimeout(100);
+  const off=await canvas.getAttribute('data-frames');await page.waitForTimeout(180);expect(await canvas.getAttribute('data-frames')).toBe(off);
+});
+
+test('reduced motion and lost WebGL leave stationary feedback and essential content',async({page,isMobile})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/get-a-quote');
+  const frame=page.locator('.quote-photo');await activate(frame,isMobile);
+  expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
+  expect(await page.locator('canvas').count()).toBe(0);
+  await expect(page.locator('.quote-bubble-fallback')).toBeVisible();
+  await expect(layer(page)).toHaveCount(0);
+  await page.emulateMedia({reducedMotion:'no-preference'});
+  await expect(page.locator('.quote-media')).toHaveAttribute('data-bubbles','webgl');
+  await page.locator('canvas').evaluate(el=>(el as HTMLCanvasElement).getContext('webgl2')!.getExtension('WEBGL_lose_context')!.loseContext());
+  await expect(page.locator('.quote-media')).toHaveAttribute('data-bubbles','fallback');
+  await expect(page.locator('.quote-bubble-fallback')).toBeVisible();
+  await expect(frame.locator('img')).toBeVisible();
+  await page.getByLabel('Name',{exact:true}).fill('Local test');
+  await expect(page.getByLabel('Name',{exact:true})).toHaveValue('Local test');
+});
+
+test('WebGL unavailable from startup and JavaScript disabled preserve the photograph/form',async({page,context})=>{
+  await page.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(this:HTMLCanvasElement,type:string,...args:unknown[]){if(type.startsWith('webgl'))return null;return Reflect.apply(original,this,[type,...args]);} as typeof original;});
+  await page.goto('/get-a-quote');await expect(page.locator('.quote-photo img')).toBeVisible();
+  await expect(page.locator('.quote-bubble-fallback')).toBeVisible();
+  const noJS=await context.browser()!.newContext({javaScriptEnabled:false,viewport:page.viewportSize()!});
+  const staticPage=await noJS.newPage();await staticPage.goto('http://127.0.0.1:3101/get-a-quote');
+  await expect(staticPage.locator('.quote-photo img')).toBeVisible();await expect(staticPage.getByLabel('Name',{exact:true})).toBeVisible();
+  await noJS.close();
+});
+
+test('native keyboard links, forms and menus remain unaffected',async({page,isMobile})=>{
+  await page.goto('/about');
+  // Public photos are currently unlinked: exercise a native linked-photo fixture.
+  await page.locator('.about-thumbnail').first().evaluate(el=>{const a=document.createElement('a');a.href='/faq';el.replaceWith(a);a.append(el);});
+  const link=page.getByRole('link',{name:'Illustrative parcel being weighed and measured'});
+  await link.focus();await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/faq$/);
+  const faq=page.locator('summary').first();await faq.focus();await page.keyboard.press('Enter');await expect(faq.locator('..')).toHaveAttribute('open','');
+  await expect(layer(page)).toHaveCount(0);
+  const logo=page.getByRole('link',{name:'VK AND COMPANY home',exact:true});await logo.focus();await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/$/);
+  expect(await logo.locator('img').evaluate(el=>getComputedStyle(el).transform)).toBe('none');
+  await page.goto('/contact');const input=page.getByLabel('Name',{exact:true});await input.fill('Local test');await expect(input).toHaveValue('Local test');await expect(layer(page)).toHaveCount(0);
+  if(isMobile){const menu=page.getByRole('button',{name:'Open menu'});await menu.click();await expect(page.getByRole('button',{name:'Close menu'})).toHaveAttribute('aria-expanded','true');}
+});
+
+test('scroll, swipe, pinch, drag and selection do not create tap effects',async({page,isMobile})=>{
+  await page.goto('/');const target=page.locator('#domestic-services .editorial-image');await target.scrollIntoViewIfNeeded();
+  const b=(await target.boundingBox())!;
+  if(isMobile){
+    const cdp=await page.context().newCDPSession(page);const x=b.x+100,y=b.y+150;const before=await page.evaluate(()=>scrollY);
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});
+    for(let d=20;d<=120;d+=20)await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x,y:y-d}]});
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+    await expect.poll(()=>page.evaluate(()=>scrollY)).not.toBe(before);await expect(layer(page)).toHaveCount(0);
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:100,y:300},{x:200,y:300}]});
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:70,y:300},{x:230,y:300}]});
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await expect(layer(page)).toHaveCount(0);await cdp.detach();
+  }else{await page.mouse.move(b.x+30,b.y+40);await page.mouse.down();await page.mouse.move(b.x+130,b.y+100,{steps:8});await page.mouse.up();await expect(layer(page)).toHaveCount(0);await page.mouse.wheel(0,150);await expect(layer(page)).toHaveCount(0);}
+  await page.locator('h1').evaluate(el=>{const r=document.createRange();r.selectNodeContents(el);getSelection()?.removeAllRanges();getSelection()?.addRange(r);});
+  await target.dispatchEvent('pointerdown',{isPrimary:true,pointerId:1,button:0,clientX:25,clientY:25});
+  await target.dispatchEvent('click',{detail:1,clientX:25,clientY:25});await expect(layer(page)).toHaveCount(0);
+  await page.evaluate(()=>getSelection()?.removeAllRanges());
+  await page.goto('/');const hero=page.locator('.cinematic-hero-background');await page.mouse.move(300,300);await page.mouse.click(300,300);expect(await hero.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
+  expect(await page.locator('canvas').count()).toBe(0);
 });

@@ -1,0 +1,63 @@
+{
+  "headers": {
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a3ad351bc87c775d-AMS",
+    "content-encoding": "br",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 14 Sep 2026 06:06:45 GMT",
+    "link": "</brand/vk-and-company-logo-transparent.png>; rel=\"preload\"; as=image, </media/domestic-courier-road.png>; rel=\"preload\"; as=image",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=uSdV9XAUsAsnJ6Nr56FQSBvkdGa42C3mDsU6yc39FE0a5SQ0hWaDXvM1lsMsI%2BSLeED%2BH6aONqeS95eLthw8dpw6ghw5ngHw%2FGizQspZZBjseV0cJI8D394Xczl5nlE%2F6zkQ25mOU2j637CcXXv3\"}]}",
+    "server": "cloudflare",
+    "server-timing": "cfCacheStatus;desc=\"DYNAMIC\", cfEdge;dur=13,cfOrigin;dur=53",
+    "vary": "accept-encoding",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+  },
+  "errors": [],
+  "failed": [
+    {
+      "url": "https://vkandcompany.com/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://vkandcompany.com/services/domestic",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://vkandcompany.com/services/international",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://vkandcompany.com/about",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://vkandcompany.com/cdn-cgi/rum?",
+      "method": "POST"
+    },
+    {
+      "url": "https://vkandcompany.com/contact",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://vkandcompany.com/get-a-quote",
+      "method": "HEAD"
+    }
+  ],
+  "scripts": [
+    {
+      "url": "https://vkandcompany.com/_next/static/chunks/app/layout-ef9030f88a42f615.js",
+      "status": 200,
+      "hasSurfaceRestriction": true,
+      "hasForegroundExclusion": true,
+      "has450ms": true
+    }
+  ],
+  "motion": false
+}

@@ -1,0 +1,72 @@
+{
+  aircraft: {
+    width: 1536,
+    height: 1024,
+    widths: [ 480, 768, 1024, 1440, 1536 ],
+    original: 'assets/photographs/originals/aircraft.png',
+    illustrative: true
+  },
+  details: {
+    width: 1536,
+    height: 1024,
+    widths: [ 480, 768, 1024, 1440, 1536 ],
+    original: 'assets/photographs/originals/details.png',
+    illustrative: true
+  },
+  dispatch: {
+    width: 1536,
+    height: 1024,
+    widths: [ 480, 768, 1024, 1440, 1536 ],
+    original: 'assets/photographs/originals/dispatch.png',
+    illustrative: true
+  },
+  domestic: {
+    width: 1536,
+    height: 1024,
+    widths: [ 480, 768, 1024, 1440, 1536 ],
+    original: 'assets/photographs/originals/domestic.png',
+    illustrative: true
+  },
+  hero: {
+    width: 1536,
+    height: 1024,
+    widths: [ 480, 768, 1024, 1440, 1536 ],
+    original: 'assets/photographs/originals/hero.png',
+    illustrative: true
+  },
+  review: {
+    width: 1536,
+    height: 1024,
+    widths: [ 480, 768, 1024, 1440, 1536 ],
+    original: 'assets/photographs/originals/review.png',
+    illustrative: true
+  },
+  scan: {
+    width: 1536,
+    height: 1024,
+    widths: [ 480, 768, 1024, 1440, 1536 ],
+    original: 'assets/photographs/originals/scan.png',
+    illustrative: true
+  },
+  support: {
+    width: 1536,
+    height: 1024,
+    widths: [ 480, 768, 1024, 1440, 1536 ],
+    original: 'assets/photographs/originals/support.png',
+    illustrative: true
+  },
+  workspace: {
+    width: 1717,
+    height: 916,
+    widths: [ 480, 768, 1024, 1440, 1717 ],
+    original: 'public/media/dispatch-workspace.png',
+    illustrative: true
+  },
+  'existing-aircraft': {
+    width: 2400,
+    height: 1600,
+    widths: [ 480, 768, 1024, 1440, 2400 ],
+    original: 'public/media/homepage-international-cargo.jpg',
+    illustrative: true
+  }
+}

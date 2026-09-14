@@ -1,0 +1,122 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "photos": 7
+  },
+  {
+    "route": "/services/domestic",
+    "width": 1440,
+    "photos": 4
+  },
+  {
+    "route": "/services/international",
+    "width": 1440,
+    "photos": 4
+  },
+  {
+    "route": "/about",
+    "width": 1440,
+    "photos": 5
+  },
+  {
+    "route": "/contact",
+    "width": 1440,
+    "photos": 1
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 1440,
+    "photos": 1
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "photos": 7
+  },
+  {
+    "route": "/services/domestic",
+    "width": 768,
+    "photos": 4
+  },
+  {
+    "route": "/services/international",
+    "width": 768,
+    "photos": 4
+  },
+  {
+    "route": "/about",
+    "width": 768,
+    "photos": 5
+  },
+  {
+    "route": "/contact",
+    "width": 768,
+    "photos": 1
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 768,
+    "photos": 1
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "photos": 7
+  },
+  {
+    "route": "/services/domestic",
+    "width": 390,
+    "photos": 4
+  },
+  {
+    "route": "/services/international",
+    "width": 390,
+    "photos": 4
+  },
+  {
+    "route": "/about",
+    "width": 390,
+    "photos": 5
+  },
+  {
+    "route": "/contact",
+    "width": 390,
+    "photos": 1
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 390,
+    "photos": 1
+  },
+  {
+    "route": "/",
+    "width": 360,
+    "photos": 7
+  },
+  {
+    "route": "/services/domestic",
+    "width": 360,
+    "photos": 4
+  },
+  {
+    "route": "/services/international",
+    "width": 360,
+    "photos": 4
+  },
+  {
+    "route": "/about",
+    "width": 360,
+    "photos": 5
+  },
+  {
+    "route": "/contact",
+    "width": 360,
+    "photos": 1
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 360,
+    "photos": 1
+  }
+]

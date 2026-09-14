@@ -1,0 +1,44 @@
+[
+  {
+    "name": "aircraft",
+    "width": 1536,
+    "height": 1024,
+    "pixelsIdentical": true,
+    "bytes": 1466674
+  },
+  {
+    "name": "details",
+    "width": 1536,
+    "height": 1024,
+    "pixelsIdentical": true,
+    "bytes": 1525556
+  },
+  {
+    "name": "dispatch",
+    "width": 1536,
+    "height": 1024,
+    "pixelsIdentical": true,
+    "bytes": 1530864
+  },
+  {
+    "name": "domestic",
+    "width": 1536,
+    "height": 1024,
+    "pixelsIdentical": true,
+    "bytes": 1888244
+  },
+  {
+    "name": "review",
+    "width": 1536,
+    "height": 1024,
+    "pixelsIdentical": true,
+    "bytes": 1514730
+  },
+  {
+    "name": "scan",
+    "width": 1536,
+    "height": 1024,
+    "pixelsIdentical": true,
+    "bytes": 1461100
+  }
+]
