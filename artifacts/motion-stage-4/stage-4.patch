@@ -1,0 +1,658 @@
+--- a/components/site-header.tsx
++++ b/components/site-header.tsx
+@@ -5,6 +5,11 @@
+ import { Menu, X } from "lucide-react";
+ import { usePathname } from "next/navigation";
+ import { useEffect, useRef, useState } from "react";
++import { cancelFrame, frame } from "framer-motion";
++import { useDepthScroll } from "@/components/motion/provider";
++import { acquireScrollLock } from "@/lib/motion/scroll-lock";
++import { pointerRouteAllowed } from "@/lib/motion/policy";
++import "@/styles/navigation.css";
+ 
+ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
+   const pathname = usePathname();
+@@ -13,10 +18,26 @@
+   const header = useRef<HTMLElement>(null);
+   const menuButton = useRef<HTMLButtonElement>(null);
+   const firstLink = useRef<HTMLAnchorElement>(null);
++  const navigation = useRef<HTMLElement>(null);
++  const { scrollY } = useDepthScroll();
++  const [scrolled, setScrolled] = useState(false);
++
++  useEffect(() => {
++    let previous = false;
++    // Only threshold crossings update React; scroll frames never write nav styles.
++    const update = (value: number) => {
++      const next = value > 80;
++      if (next !== previous) { previous = next; setScrolled(next); }
++    };
++    const initialize = () => update(window.scrollY);
++    frame.read(initialize);
++    const unsubscribe = scrollY.on("change", update);
++    return () => { cancelFrame(initialize); unsubscribe(); };
++  }, [scrollY]);
+ 
+   function closeMenu(restoreFocus = false) {
+     setOpenPath(null);
+-    if (restoreFocus) menuButton.current?.focus();
++    if (restoreFocus) menuButton.current?.focus({ preventScroll: true });
+   }
+ 
+   useEffect(() => {
+@@ -31,28 +52,67 @@
+   }, []);
+ 
+   useEffect(() => {
+-    if (!open) return;
+-    firstLink.current?.focus();
++    if (!open) { navigation.current?.style.removeProperty("will-change"); return; }
++    const releaseScroll = acquireScrollLock();
++    const focusItem = (item: HTMLElement | null | undefined) => {
++      item?.focus({ preventScroll: true });
++      const panel = navigation.current;
++      if (!item || !panel?.contains(item)) return;
++      // Reveal a focused link inside short/zoomed menus without moving the body.
++      const linkBox = item.getBoundingClientRect(), panelBox = panel.getBoundingClientRect();
++      const margin = 8;
++      if (linkBox.bottom > panelBox.bottom - margin) panel.scrollTop += linkBox.bottom - panelBox.bottom + margin;
++      else if (linkBox.top < panelBox.top + margin) panel.scrollTop -= panelBox.top + margin - linkBox.top;
++    };
++    focusItem(firstLink.current);
++    const items = () => [menuButton.current, ...Array.from(navigation.current?.querySelectorAll<HTMLAnchorElement>("a[href]") ?? [])]
++      .filter((element): element is HTMLButtonElement | HTMLAnchorElement => !!element);
+     const close = (event: KeyboardEvent) => {
+       if (event.key === "Escape") {
++        event.preventDefault();
+         setOpenPath(null);
+-        menuButton.current?.focus();
++        menuButton.current?.focus({ preventScroll: true });
++      } else if (event.key === "Tab") {
++        const focusable = items();
++        const index = focusable.indexOf(document.activeElement as HTMLAnchorElement);
++        event.preventDefault();
++        focusItem(focusable[(index + (event.shiftKey ? -1 : 1) + focusable.length) % focusable.length]);
++      } else if (!event.ctrlKey && !event.metaKey && ["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", " "].includes(event.key)
++        && !(event.key === " " && document.activeElement === menuButton.current)) {
++        // Lenis handles wheel/touch. Keep keyboard scrolling within a short menu too.
++        event.preventDefault();
++        const panel = navigation.current;
++        if (panel) {
++          const direction = ["ArrowUp", "PageUp", "Home"].includes(event.key) || (event.key === " " && event.shiftKey) ? -1 : 1;
++          panel.scrollBy({ top: direction * (event.key.startsWith("Arrow") ? 40 : panel.clientHeight), behavior: "instant" });
++          if (event.key === "Home") panel.scrollTop = 0;
++          if (event.key === "End") panel.scrollTop = panel.scrollHeight;
++        }
+       }
+     };
+-    const outside = (event: PointerEvent) => {
+-      if (!header.current?.contains(event.target as Node)) setOpenPath(null);
++    const containFocus = (event: FocusEvent) => {
++      if (!items().includes(event.target as HTMLAnchorElement)) focusItem(firstLink.current);
++    };
++    const outside = (event: MouseEvent) => {
++      // The menu icon is replaced during this click; its original event path stays valid.
++      if (header.current && !event.composedPath().includes(header.current)) {
++        setOpenPath(null);
++        menuButton.current?.focus({ preventScroll: true });
++      }
+     };
+     window.addEventListener("keydown", close);
+-    window.addEventListener("pointerdown", outside);
++    window.addEventListener("click", outside);
++    document.addEventListener("focusin", containFocus);
+     return () => {
++      releaseScroll();
+       window.removeEventListener("keydown", close);
+-      window.removeEventListener("pointerdown", outside);
++      window.removeEventListener("click", outside);
++      document.removeEventListener("focusin", containFocus);
+     };
+   }, [open]);
+   return (
+-    <header ref={header} className={`site-header ${pathname === "/" ? "home-header" : ""}`} onBlur={(event) => {
+-      if (!event.currentTarget.contains(event.relatedTarget)) closeMenu();
+-    }}>
++    <header ref={header} className={`site-header nav-depth-shell ${pathname === "/" ? "home-header" : ""}`} data-nav-scrolled={scrolled} data-nav-pointer={pointerRouteAllowed(pathname)}>
++      <div className="nav-surface">
+       <div className="shell header-inner">
+         <Link href="/" className="brand" aria-label="VK AND COMPANY home" onClick={() => closeMenu()}>
+           {hasLogo && <CompanyLogo alt="VK AND COMPANY" priority />}
+@@ -61,7 +121,9 @@
+         <button ref={menuButton} type="button" className="menu-button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpenPath(open ? null : pathname)}>
+           {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+         </button>
+-        <nav id="main-navigation" className={`nav ${open ? "open" : ""}`} aria-label="Main navigation">
++        <nav ref={navigation} id="main-navigation" className={`nav ${open ? "open" : ""}`} aria-label="Main navigation" data-lenis-prevent
++          onAnimationStart={event => { if (event.target === event.currentTarget) event.currentTarget.style.willChange = event.animationName === "nav-fade-in" ? "opacity" : "transform, opacity"; }}
++          onAnimationEnd={event => { if (event.target === event.currentTarget) event.currentTarget.style.removeProperty("will-change"); }}>
+           <Link ref={firstLink} href="/services/domestic" onClick={() => closeMenu(open)}>Domestic</Link>
+           <Link href="/services/international" onClick={() => closeMenu(open)}>International</Link>
+           <Link href="/about" onClick={() => closeMenu(open)}>About</Link>
+@@ -69,6 +131,7 @@
+           <Link href="/get-a-quote" className="button button-small" onClick={() => closeMenu(open)}>Get a quote</Link>
+         </nav>
+       </div>
++      </div>
+     </header>
+   );
+ }
+--- a/components/motion/scroll-runtime.tsx
++++ b/components/motion/scroll-runtime.tsx
+@@ -5,6 +5,7 @@
+ import { cancelFrame, frame, type FrameData } from "framer-motion";
+ import { useReducedMotion } from "./use-reduced-motion";
+ import { useDepthScroll } from "./provider";
++import { isScrollLocked, subscribeScrollLock } from "@/lib/motion/scroll-lock";
+ 
+ // Guard against accidental nested providers. Exactly one active Lenis owner.
+ let owner: Lenis | undefined;
+@@ -12,7 +13,7 @@
+   const reduced = useReducedMotion();
+   const { scrollY, scrollYProgress } = useDepthScroll();
+   useEffect(() => {
+-    if (reduced || owner) return;
++    if (owner) return;
+     let lenis: Lenis | undefined;
+     const sync = (instance: Lenis) => {
+       scrollY.set(instance.animatedScroll);
+@@ -25,23 +26,38 @@
+       delete document.documentElement.dataset.depthScroll;
+     }
+     function start() {
+-      if (document.hidden || lenis || owner) return;
+-      lenis = new Lenis({ lerp: 0.08, autoRaf: false, syncTouch: false, smoothWheel: true, anchors: false,
++      if (document.hidden || lenis || owner || (reduced && !isScrollLocked())) return;
++      lenis = new Lenis({ lerp: 0.08, autoRaf: false, syncTouch: false, smoothWheel: !reduced, anchors: false,
+         // Preserve native form-control scrolling and browser zoom gestures.
+-        prevent: node => node.matches("input, textarea, select, [contenteditable='true']"),
+-        virtualScroll: ({ event }) => !(event instanceof WheelEvent && (event.ctrlKey || event.metaKey)),
++        prevent: node => !isScrollLocked() && node.matches("input, textarea, select, [contenteditable='true']"),
++        virtualScroll: ({ event }) => !(event instanceof WheelEvent && (event.ctrlKey || event.metaKey))
++          && !(typeof TouchEvent !== "undefined" && event instanceof TouchEvent && event.touches.length > 1),
+       });
+       owner = lenis;
+-      document.documentElement.dataset.depthScroll = "smooth";
++      if (!reduced) document.documentElement.dataset.depthScroll = "smooth";
+       lenis.on("scroll", sync);
+       sync(lenis);
+       // Motion owns the single shared rAF scheduler; Lenis never creates its own loop.
+-      frame.update(tick, true);
++      if (isScrollLocked()) lenis.stop();
++      else if (!reduced) frame.update(tick, true);
++    }
++    function updateLock() {
++      if (isScrollLocked()) {
++        start();
++        lenis?.stop();
++        cancelFrame(tick);
++      } else if (reduced) stop();
++      else {
++        start();
++        lenis?.start();
++        if (lenis) frame.update(tick, true);
++      }
+     }
+     const visibility = () => document.hidden ? stop() : start();
+     start();
++    const unsubscribeLock = subscribeScrollLock(updateLock);
+     document.addEventListener("visibilitychange", visibility);
+-    return () => { document.removeEventListener("visibilitychange", visibility); stop(); };
++    return () => { unsubscribeLock(); document.removeEventListener("visibilitychange", visibility); stop(); };
+   }, [reduced, scrollY, scrollYProgress]);
+   return null;
+ }
+--- a/MOTION_SYSTEM.md
++++ b/MOTION_SYSTEM.md
+@@ -1,6 +1,6 @@
+-# Motion system — foundation and Stage 3 hero
++# Motion system — foundation, hero and navigation
+ 
+-Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them only to the homepage hero. Copy, forms, images, routes and metadata remain at the Stage 1 baseline; homepage markup after the hero is byte-for-byte unchanged from before Stage 3. The root layout adds a context provider without extra DOM; shared photo feedback now observes the pointer policy and uses Motion's scheduler.
++Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them only to the homepage hero. Stage 4 adds depth and accessible menu interaction to the shared navigation. Copy, forms, images, routes and metadata remain at the Stage 1 baseline; homepage markup after the hero is byte-for-byte unchanged from before Stage 3. The root layout adds a context provider without extra DOM; shared photo feedback now observes the pointer policy and uses Motion's scheduler.
+ 
+ ## Tokens
+ 
+@@ -27,7 +27,7 @@
+ 
+ The runtime creates one Lenis instance (`lerp:0.08`, `autoRaf:false`, `syncTouch:false`). It registers a single persistent callback with Motion's shared `frame.update` scheduler. Lenis scroll events synchronize the same `scrollY` and `scrollYProgress` values returned by `useScroll`; native scrolling remains observed as well. Primitives and legacy photo hover schedule work on that existing Motion scheduler. None creates its own requestAnimationFrame loop.
+ 
+-Lenis is destroyed when reduced motion is requested, the document becomes hidden, or the provider unmounts. The loop subscription is cancelled and the smooth-scroll attribute removed. Re-enabling recreates one instance; an ownership guard prevents an accidental second provider from creating a competing instance. Normal visible-page idle operation retains the one Lenis/Motion ticker; it does not continuously animate content.
++Lenis smoothing is destroyed when reduced motion is requested, the document becomes hidden, or the provider unmounts. Stage 4 may retain one stopped, non-animating Lenis owner while the navigation menu is open under reduced motion; it is destroyed when that lock is released. The loop subscription is cancelled and the smooth-scroll attribute removed. Re-enabling recreates one instance; an ownership guard prevents an accidental second provider from creating a competing instance. Normal visible-page idle operation retains the one Lenis/Motion ticker; it does not continuously animate content.
+ 
+ Touch scrolling is native, Ctrl/Meta-wheel is left to the browser, and form-control scrolling is excluded from smoothing. Native links/anchors, browser focus, selection and zoom are not intercepted. The CSS smooth-scroll override exists only while Lenis is active, avoiding double smoothing.
+ 
+@@ -76,7 +76,7 @@
+ 
+ The hook was exercised in an isolated temporary Git repository: preserved staged content passes; a staged bad headline concealed by a clean working copy fails; a fully staged bad headline fails the fresh-build content check. No test commits or enquiries were created. Unit regression tests additionally reject altered image bytes, dynamic form wording and an added route.
+ 
+-No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 is ready for its first tuning review; Stage 4 has not started.
++No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 is ready for its first tuning review; Stage 4 navigation is implemented; later stages have not started.
+ 
+ Implementation references: [Motion useScroll](https://motion.dev/docs/react-use-scroll), [Motion shared frame scheduler](https://motion.dev/docs/frame), [Lenis options and manual frame integration](https://github.com/darkroomengineering/lenis).
+ 
+@@ -93,3 +93,17 @@
+ Scroll progress maps directly to Z 0 → -60px and opacity 1 → 0.4 across the hero height, using actual scroll position in both directions. Mobile ends at -30px. Unlike pointer movement, scroll mapping has no spring or easing: the latest Stage 3 requirement takes precedence over generic eased parallax. Reduced motion removes transforms and restores opacity immediately. Keyboard focus inside the CTA wrapper also restores visibility immediately, preserving the original focus ring and native navigation.
+ 
+ `will-change` is added during movement and removed after entry completion or the shared fast-token quiet period. Subscriptions, observers, scheduled callbacks and timers clean up on unmount. Hero CSS is scoped to `.hero-motion`; existing contrast gradients are preserved. See `artifacts/motion-stage-3/REPORT.md` for recordings, validation and the isolated patch.
++
++## Stage 4: navigation and mobile menu
++
++`components/site-header.tsx` retains every original label, href, order and accessible name. A presentation-only `.nav-surface` wrapper sits at Z 60px within the sticky header's 1200px perspective. Below 768px its depth halves to 30px. Inverse scale compensation (.95 / .975) prevents perspective from widening the header or shifting the existing page grid. The inner navigation has its own perspective and is grouped above the background plate, so a tilted button never intersects that plate. No page content or hero implementation changes in this stage.
++
++`styles/navigation.css` owns the scoped effects. The shared scroll MotionValue drives one `scrolled` boolean only when crossing 80px; it does not write per-frame nav styles. The backdrop blur transitions to 16px over 200ms. A pseudo-element with a static deeper shadow fades in over the same duration, avoiding animated box-shadow. Links lift -1px / Z 8px and reveal a scaleX underline over the existing 240ms expo token. The Quote CTA rotates X -8deg on desktop hover, has a radial teal pseudo-element glow, and presses to scale .97 / Z 0. The existing Quote route pointer policy suppresses hover tilt/depth on that route. Touch and sub-768px layouts also omit pointer hover transforms.
++
++The existing 64rem container breakpoint still chooses the mobile menu, including enlarged text. Its panel rotates Y -12deg from the right edge over 380ms using the shared expo easing; the angle respects the foundation's 12deg cap. Reduced motion removes nav transforms and replaces the door with a plain 150ms opacity fade. This scoped duration overrides the older global near-zero animation rule only for the requested menu fade. Closing hides the menu immediately and restores trigger focus. No content, metadata or native navigation is delayed.
++
++Open-menu keyboard behavior cycles the trigger and five links in both directions. Escape restores the trigger. A focusin guard keeps programmatic focus inside; short menus scroll their own panel to expose the full focus ring. Scroll keys remain inside the panel, while Space on the trigger retains native button activation. Focus outlines retain their original styling and sit above neighboring nav layers. Outside taps close the menu using the original click event path, so the replaced Menu/X icon cannot misclassify the opening click; background swipes do not dismiss it on pointerdown.
++
++`lib/motion/scroll-lock.ts` holds idempotent lock requests; `ScrollRuntime` applies them to its existing Lenis owner via stop()/start(). Pending locks survive lazy runtime loading. Open menus stop the shared Lenis ticker. Under reduced motion an owner exists only for the stopped menu lock and never starts a smoothing loop. Menu content has data-lenis-prevent for native internal scrolling, with overscroll containment. Body/html overflow is never set to hidden or clip; wheel and single-touch movement are stopped through Lenis. Ctrl/Meta wheel and multi-touch pinch remain excluded from interception. Escape, navigation, resize and unmount release locks and listeners. There is no second Lenis instance or new rAF loop.
++
++Door/fade will-change hints exist only while the corresponding animation runs and clear on completion or close. Hover transitions do not retain will-change hints. Stage 4 browser tests live in `tests/e2e/nav-motion.spec.ts` with `playwright.nav-motion.config.ts`; the lock ownership regression is in `tests/scroll-lock.test.ts`. Review evidence, screenshots and recordings are in `artifacts/motion-stage-4/`. Video files remain ignored by Git; patches, reports and screenshots remain eligible for tracking.
+--- /dev/null
++++ b/lib/motion/scroll-lock.ts
+@@ -0,0 +1,16 @@
++// Menu locks share the existing Lenis owner, including before its lazy runtime loads.
++const locks = new Set<symbol>();
++const listeners = new Set<() => void>();
++const notify = () => listeners.forEach(listener => listener());
++
++export const isScrollLocked = () => locks.size > 0;
++export function subscribeScrollLock(listener: () => void) {
++  listeners.add(listener);
++  return () => { listeners.delete(listener); };
++}
++export function acquireScrollLock() {
++  const key = Symbol("navigation");
++  locks.add(key);
++  notify();
++  return () => { if (locks.delete(key)) notify(); };
++}
+--- /dev/null
++++ b/styles/navigation.css
+@@ -0,0 +1,136 @@
++/* Stage 4 is confined to the existing navigation and its presentation wrapper. */
++.site-header.nav-depth-shell {
++  --nav-z: 60px;
++  --nav-plane-scale: .95; /* Compensate perspective magnification; retain the existing layout. */
++  --nav-label-z: 8px;
++  --nav-scroll-duration: 200ms;
++  --nav-door-duration: 380ms;
++  --nav-door-angle: -12deg;
++  --nav-background: rgba(247,246,241,.85);
++  --nav-border: rgba(255,255,255,.7);
++  --nav-shadow: 0 16px 50px rgba(14,42,60,.1);
++  --nav-scroll-shadow: 0 22px 55px rgba(14,42,60,.24);
++  perspective: var(--perspective);
++  perspective-origin: center top;
++  transform-style: preserve-3d;
++  overflow: visible;
++  background: transparent;
++  border-color: transparent;
++  box-shadow: none;
++  backdrop-filter: none;
++}
++.site-header.nav-depth-shell.home-header {
++  --nav-background: rgba(7,27,41,.82);
++  --nav-border: rgba(255,255,255,.11);
++  --nav-shadow: 0 16px 45px rgba(0,0,0,.18);
++  --nav-scroll-shadow: 0 24px 55px rgba(0,0,0,.32);
++}
++.nav-depth-shell .nav-surface {
++  position: relative;
++  border-radius: inherit;
++  transform-origin: center top;
++  transform: translateZ(var(--nav-z)) scale(var(--nav-plane-scale));
++  transform-style: preserve-3d;
++}
++.nav-depth-shell .nav-surface::before,
++.nav-depth-shell .nav-surface::after {
++  content: "";
++  position: absolute;
++  inset: -1px;
++  border-radius: inherit;
++  pointer-events: none;
++}
++.nav-depth-shell .nav-surface::before {
++  z-index: -1;
++  background: var(--nav-background);
++  border: 1px solid var(--nav-border);
++  box-shadow: var(--nav-shadow);
++  backdrop-filter: blur(0px);
++  transition: backdrop-filter var(--nav-scroll-duration) var(--ease-out-expo);
++}
++.nav-depth-shell .nav-surface::after {
++  z-index: -2;
++  box-shadow: var(--nav-scroll-shadow);
++  opacity: 0;
++  transition: opacity var(--nav-scroll-duration) var(--ease-out-expo);
++}
++.nav-depth-shell[data-nav-scrolled="true"] .nav-surface::before { backdrop-filter: blur(16px); }
++.nav-depth-shell[data-nav-scrolled="true"] .nav-surface::after { opacity: 1; }
++.nav-depth-shell .header-inner {
++  /* Project link/button depth locally, then group it above the bar's backplate.
++     A tilted button must never intersect that sibling background plane. */
++  perspective: var(--perspective);
++  perspective-origin: center top;
++  transform-style: flat;
++}
++.nav-depth-shell .nav { transform-style: preserve-3d; }
++.nav-depth-shell .brand,
++.nav-depth-shell .menu-button,
++.nav-depth-shell .nav > a { position: relative; }
++.nav-depth-shell :is(a, button):focus-visible { z-index: 100; }
++.nav-depth-shell .nav > a {
++  transform: none;
++  transition: transform var(--d-fast) var(--ease-out-expo);
++}
++.nav-depth-shell .nav > a:not(.button)::after {
++  right: 0;
++  transform: scaleX(0);
++  transform-origin: left center;
++  transition: transform var(--d-fast) var(--ease-out-expo);
++}
++.nav-depth-shell .nav > a:not(.button):focus-visible::after { transform: scaleX(1); }
++.nav-depth-shell .nav > .button { color: white; transform-style: preserve-3d; }
++.nav-depth-shell .nav > .button::before {
++  content: "";
++  position: absolute;
++  inset: -9px;
++  z-index: -1;
++  border-radius: inherit;
++  background: radial-gradient(ellipse, rgba(39,140,160,.45), rgba(39,140,160,0) 72%);
++  pointer-events: none;
++  opacity: 0;
++  transition: opacity var(--d-fast) var(--ease-out-expo);
++}
++@media (hover: hover) and (min-width: 768px) {
++  .nav-depth-shell[data-nav-pointer="true"] .nav > a:not(.button):hover { transform: translateY(-1px) translateZ(var(--nav-label-z)); }
++  .nav-depth-shell .nav > a:not(.button):hover::after { transform: scaleX(1); }
++  .nav-depth-shell[data-nav-pointer="true"] .nav > .button:hover { transform: rotateX(-8deg); }
++  .nav-depth-shell .nav > .button:hover::before { opacity: 1; }
++}
++.site-header.nav-depth-shell .nav > .button:active { transform: translateZ(0) scale(.97); }
++
++@container (max-width: 64rem) {
++  .nav-depth-shell .nav {
++    transform-origin: right top;
++    transform-style: flat;
++  }
++  .nav-depth-shell .nav.open { animation: nav-door-in var(--nav-door-duration) var(--ease-out-expo) both; }
++}
++@keyframes nav-door-in {
++  from { transform: rotateY(var(--nav-door-angle)); opacity: 0; }
++  to { transform: rotateY(0deg); opacity: 1; }
++}
++@keyframes nav-fade-in {
++  from { opacity: 0; }
++  to { opacity: 1; }
++}
++@media (width < 768px) {
++  .site-header.nav-depth-shell { --nav-z: 30px; --nav-plane-scale: .975; --nav-label-z: 4px; }
++}
++@media (prefers-reduced-motion: reduce) {
++  .site-header.nav-depth-shell { perspective: none; transform-style: flat; }
++  .nav-depth-shell .nav-surface,
++  .nav-depth-shell .nav,
++  .nav-depth-shell .header-inner { transform: none !important; transform-style: flat; perspective: none; }
++  .nav-depth-shell .nav > a,
++  .nav-depth-shell .nav > a::after { transform: none !important; transition: none; }
++  .nav-depth-shell .nav > a:not(.button)::after { opacity: 0; }
++  .nav-depth-shell .nav > a:not(.button):is(:hover, :focus-visible)::after { opacity: 1; }
++  .nav-depth-shell .nav-surface::before { transition: none; }
++  .nav-depth-shell .nav-surface::after,
++  .nav-depth-shell .nav > .button::before { transition-duration: var(--d-reduced); }
++  .nav-depth-shell .nav.open {
++    animation: nav-fade-in var(--d-reduced) var(--ease-out-expo) both;
++    animation-duration: var(--d-reduced) !important;
++  }
++}
+--- /dev/null
++++ b/tests/scroll-lock.test.ts
+@@ -0,0 +1,23 @@
++import { describe, expect, it } from "vitest";
++import { acquireScrollLock, isScrollLocked, subscribeScrollLock } from "@/lib/motion/scroll-lock";
++
++describe("shared menu scroll lock", () => {
++  it("keeps another owner locked and releases idempotently", () => {
++    const states: boolean[] = [];
++    const unsubscribe = subscribeScrollLock(() => states.push(isScrollLocked()));
++    const releaseFirst = acquireScrollLock(), releaseSecond = acquireScrollLock();
++    try {
++      releaseFirst();
++      expect(isScrollLocked()).toBe(true);
++      releaseFirst();
++      expect(states).toEqual([true, true, true]);
++      releaseSecond();
++      expect(isScrollLocked()).toBe(false);
++      expect(states).toEqual([true, true, true, false]);
++      unsubscribe();
++      const releaseLater = acquireScrollLock();
++      releaseLater();
++      expect(states).toHaveLength(4);
++    } finally { releaseFirst(); releaseSecond(); unsubscribe(); }
++  });
++});
+--- /dev/null
++++ b/tests/e2e/nav-motion.spec.ts
+@@ -0,0 +1,202 @@
++import { expect, test, type Page } from "@playwright/test";
++import { readFileSync } from "node:fs";
++
++const links = [
++  { text: "Domestic", href: "/services/domestic" },
++  { text: "International", href: "/services/international" },
++  { text: "About", href: "/about" },
++  { text: "Contact", href: "/contact" },
++  { text: "Get a quote", href: "/get-a-quote" },
++];
++const before = JSON.parse(readFileSync("artifacts/motion-stage-4/before/layout.json", "utf8"));
++
++test.beforeEach(async ({ page }) => {
++  await page.route("**/*", route => new URL(route.request().url()).hostname === "127.0.0.1" && route.request().method() === "GET" ? route.continue() : route.abort());
++});
++async function focusIsVisible(page: Page) {
++  const result = await page.evaluate(() => {
++    const el = document.activeElement as HTMLElement, style = getComputedStyle(el), box = el.getBoundingClientRect();
++    return { outline: style.outlineStyle, width: parseFloat(style.outlineWidth), keyboard: el.matches(":focus-visible"), z: Number(style.zIndex),
++      visible: box.width > 0 && box.height > 0 && box.top >= 0 && box.bottom <= innerHeight,
++      topmost: el.contains(document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2)) };
++  });
++  expect(result).toMatchObject({ outline: "solid", keyboard: true, visible: true, topmost: true });
++  expect(result.width).toBeGreaterThanOrEqual(2);
++  expect(result.z).toBeGreaterThanOrEqual(100);
++}
++async function keyboardOpen(page: Page) {
++  if (!(await page.getByRole("button", { name: "Open menu" }).isVisible())) await page.setViewportSize({ width: 390, height: 900 });
++  await page.locator("header .brand").focus();
++  await page.keyboard.press("Tab");
++  await expect(page.getByRole("button", { name: "Open menu" })).toBeFocused();
++  await focusIsVisible(page);
++  await page.keyboard.press("Enter");
++  await expect(page.locator("#main-navigation a").first()).toBeFocused();
++}
++
++test("frozen navigation and existing page geometry survive depth projection", async ({ page }) => {
++  const response = await page.goto("/");
++  expect(response?.headers()["x-content-type-options"]).toBe("nosniff");
++  expect(response?.headers()["x-frame-options"]).toBe("DENY");
++  await page.waitForTimeout(1400);
++  expect(await page.locator("#main-navigation a").evaluateAll(es => es.map(e => ({ text: e.textContent, href: e.getAttribute("href") })))).toEqual(links);
++  const width = page.viewportSize()!.width;
++  const geometry = await page.locator("header,main,footer").evaluateAll(es => es.map(e => { const r = e.getBoundingClientRect(); return { tag: e.tagName, x: r.x, y: r.y, width: r.width, height: r.height }; }));
++  for (const [index, rect] of geometry.entries()) for (const key of ["x", "y", "width", "height"] as const)
++    expect(Math.abs(rect[key] - before.find((item: { width: number }) => item.width === width).layout[index][key])).toBeLessThan(.1);
++  expect(await page.locator(".nav-surface").evaluate(e => new DOMMatrixReadOnly(getComputedStyle(e).transform).m43)).toBe(width < 768 ? 30 : 60);
++  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
++});
++
++test("closed nav has its original keyboard order and unobscured focus rings", async ({ page }) => {
++  await page.goto("/");
++  await page.keyboard.press("Tab");
++  await expect(page.locator("header .brand")).toBeFocused();
++  await focusIsVisible(page);
++  if (await page.getByRole("button", { name: "Open menu" }).isVisible()) {
++    await page.keyboard.press("Tab");
++    await expect(page.getByRole("button", { name: "Open menu" })).toBeFocused();
++    await focusIsVisible(page);
++  } else {
++    for (const link of links) {
++      await page.keyboard.press("Tab");
++      await expect(page.locator(`#main-navigation a[href="${link.href}"]`)).toBeFocused();
++      await focusIsVisible(page);
++    }
++  }
++  await page.keyboard.press("Tab");
++  expect(await page.evaluate(() => !!document.activeElement?.closest("main"))).toBe(true);
++});
++
++for (const reduced of [false, true]) {
++  test(`open menu traps both Tab directions, closes with Escape and restores focus (${reduced ? "reduced" : "motion"})`, async ({ page }, testInfo) => {
++    await page.emulateMedia({ reducedMotion: reduced ? "reduce" : "no-preference" });
++    await page.goto("/");
++    await keyboardOpen(page);
++    const animation = await page.locator("#main-navigation").evaluate(e => {
++      const style = getComputedStyle(e), frames = e.getAnimations().flatMap(a => (a.effect as KeyframeEffect).getKeyframes());
++      return { name: style.animationName, duration: style.animationDuration, frames };
++    });
++    expect(animation.name).toBe(reduced ? "nav-fade-in" : "nav-door-in");
++    expect(animation.duration).toBe(reduced ? "0.15s" : "0.38s");
++    if (reduced) expect(animation.frames.every(frame => !frame.transform || frame.transform === "none")).toBe(true);
++    await page.waitForTimeout(450);
++    for (const link of links) {
++      await expect(page.locator(`#main-navigation a[href="${link.href}"]`)).toBeFocused();
++      await focusIsVisible(page);
++      await page.screenshot({ path: `artifacts/motion-stage-4/focus-${testInfo.project.name}-${reduced ? "reduced" : "motion"}-${links.indexOf(link)}.png`, scale: "css" });
++      await page.keyboard.press("Tab");
++    }
++    await expect(page.getByRole("button", { name: "Close menu" })).toBeFocused();
++    await focusIsVisible(page);
++    await page.keyboard.press("Tab");
++    await expect(page.locator("#main-navigation a").first()).toBeFocused();
++    for (const link of [...links].reverse()) {
++      if (link === links.at(-1)) await page.keyboard.press("Shift+Tab"); // first link → trigger → last link
++      await page.keyboard.press("Shift+Tab");
++      await expect(page.locator(`#main-navigation a[href="${link.href}"]`)).toBeFocused();
++      await focusIsVisible(page);
++    }
++    await page.locator("main a").first().evaluate((e: HTMLAnchorElement) => e.focus());
++    await expect(page.locator("#main-navigation a").first()).toBeFocused();
++    await page.keyboard.press("Escape");
++    await expect(page.getByRole("button", { name: "Open menu" })).toBeFocused();
++    await expect(page.locator("#main-navigation")).not.toBeVisible();
++    await focusIsVisible(page);
++    await page.keyboard.press("Tab");
++    expect(await page.evaluate(() => !!document.activeElement?.closest("main"))).toBe(true);
++  });
++
++  test(`Lenis locks wheel, touch and keyboard without hiding body overflow (${reduced ? "reduced" : "motion"})`, async ({ page }) => {
++    await page.emulateMedia({ reducedMotion: reduced ? "reduce" : "no-preference" });
++    await page.goto("/");
++    await page.evaluate(() => scrollTo({ top: 300, behavior: "instant" }));
++    await keyboardOpen(page);
++    await expect(page.locator("html")).toHaveClass(/lenis-stopped/);
++    const initial = await page.evaluate(() => scrollY);
++    await page.mouse.move(250, 740); await page.mouse.wheel(0, 500); await page.waitForTimeout(350);
++    for (const key of ["ArrowDown", "PageDown", "End", " "]) await page.keyboard.press(key);
++    const cdp = await page.context().newCDPSession(page);
++    await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x: 220, y: 750 }] });
++    for (let i = 1; i <= 8; i++) await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: 220, y: 750 - i * 35 }] });
++    await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
++    await cdp.detach();
++    await page.waitForTimeout(300);
++    expect(await page.evaluate(() => scrollY)).toBe(initial);
++    expect(await page.evaluate(() => [document.body, document.documentElement].every(e => !["hidden", "clip"].includes(getComputedStyle(e).overflow)))).toBe(true);
++    await expect(page.getByRole("button", { name: "Close menu" })).toBeVisible();
++    await page.keyboard.press("Escape");
++    await expect(page.locator("html")).not.toHaveClass(/lenis-stopped/);
++    await page.mouse.wheel(0, 350);
++    await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(initial + 20);
++  });
++}
++
++test("scroll state changes only at the 80px boundary; hover uses transform and pseudo glow", async ({ page }) => {
++  await page.goto("/");
++  await page.waitForTimeout(500);
++  for (const [position, scrolled] of [[0, false], [80, false], [81, true], [200, true], [80, false]] as const) {
++    await page.evaluate(y => scrollTo({ top: y, behavior: "instant" }), position);
++    await expect(page.locator("header")).toHaveAttribute("data-nav-scrolled", String(scrolled));
++    await page.waitForTimeout(220);
++    const appearance = await page.locator(".nav-surface").evaluate(e => ({ blur: getComputedStyle(e, "::before").backdropFilter, shadow: getComputedStyle(e, "::after").opacity, duration: getComputedStyle(e, "::after").transitionDuration }));
++    expect(parseFloat(appearance.blur.replace("blur(", ""))).toBeCloseTo(scrolled ? 16 : 0, 1);
++    expect(Number(appearance.shadow)).toBeCloseTo(scrolled ? 1 : 0, 3);
++    expect(appearance.duration).toBe("0.2s");
++  }
++  if (page.viewportSize()!.width !== 1440) return;
++  const link = page.locator('#main-navigation a[href="/about"]');
++  await link.hover(); await page.waitForTimeout(260);
++  expect(await link.evaluate(e => { const m = new DOMMatrixReadOnly(getComputedStyle(e).transform); return [m.m42, m.m43]; })).toEqual([-1, 8]);
++  expect(await link.evaluate(e => getComputedStyle(e, "::after").transform)).toBe("matrix(1, 0, 0, 1, 0, 0)");
++  const quote = page.locator("#main-navigation .button");
++  await quote.hover(); await page.waitForTimeout(260);
++  expect(await quote.evaluate(e => getComputedStyle(e).color)).toBe("rgb(255, 255, 255)");
++  expect(await quote.evaluate(e => getComputedStyle(e, "::before").opacity)).toBe("1");
++  expect(await quote.evaluate(e => Math.round(Math.asin(new DOMMatrixReadOnly(getComputedStyle(e).transform).m23) * 180 / Math.PI))).toBe(-8);
++  await page.mouse.down(); await page.waitForTimeout(260);
++  expect(await quote.evaluate(e => new DOMMatrixReadOnly(getComputedStyle(e).transform).m11)).toBeCloseTo(.97);
++  await page.mouse.move(20, 400); await page.mouse.up();
++  await page.goto("/get-a-quote");
++  await page.locator("#main-navigation .button").hover();
++  await page.waitForTimeout(260);
++  expect(await page.locator("#main-navigation .button").evaluate(e => getComputedStyle(e).transform)).toBe("none");
++});
++
++test("repeat, live reduced motion, resize and navigation release the lock", async ({ page }) => {
++  await page.goto("/");
++  await page.setViewportSize({ width: 390, height: 900 });
++  for (let i = 0; i < 6; i++) {
++    await page.getByRole("button", { name: "Open menu" }).click();
++    await expect(page.locator("html")).toHaveClass(/lenis-stopped/);
++    await page.keyboard.press("Escape");
++    await expect(page.locator("html")).not.toHaveClass(/lenis-stopped/);
++  }
++  await keyboardOpen(page);
++  await page.emulateMedia({ reducedMotion: "reduce" });
++  await expect(page.locator("html")).toHaveClass(/lenis-stopped/);
++  await expect.poll(() => page.locator(".nav-surface, #main-navigation, #main-navigation a").evaluateAll(es => es.every(e => getComputedStyle(e).transform === "none"))).toBe(true);
++  await page.waitForTimeout(200);
++  expect(await page.locator("#main-navigation").evaluate(e => getComputedStyle(e).willChange)).toBe("auto");
++  await page.setViewportSize({ width: 1440, height: 900 });
++  await expect(page.locator(".menu-button")).not.toBeVisible();
++  await expect(page.locator("html")).not.toHaveClass(/lenis-stopped/);
++  await page.setViewportSize({ width: 390, height: 900 });
++  await keyboardOpen(page);
++  await page.keyboard.press("Enter");
++  await expect(page).toHaveURL(/\/services\/domestic$/);
++  await expect(page.locator("html")).not.toHaveClass(/lenis-stopped/);
++});
++
++test("short menus keep every keyboard focus ring inside the scrollable panel", async ({ page }) => {
++  await page.goto("/"); await page.setViewportSize({ width: 390, height: 360 });
++  await keyboardOpen(page); await page.waitForTimeout(450);
++  for (let i = 0; i < 5; i++) {
++    await focusIsVisible(page);
++    expect(await page.evaluate(() => {
++      const p = document.querySelector("#main-navigation")!.getBoundingClientRect(), a = document.activeElement!.getBoundingClientRect();
++      return a.top >= p.top + 4 && a.bottom <= p.bottom - 4;
++    })).toBe(true);
++    await page.keyboard.press("Tab");
++  }
++});
+--- /dev/null
++++ b/playwright.nav-motion.config.ts
+@@ -0,0 +1,15 @@
++import { defineConfig } from "@playwright/test";
++
++export default defineConfig({
++  testDir: "./tests/e2e",
++  testMatch: "nav-motion.spec.ts",
++  outputDir: "test-results/nav-motion",
++  timeout: 45_000,
++  workers: 2,
++  use: { baseURL: "http://127.0.0.1:3104", trace: "retain-on-failure" },
++  webServer: { command: "node scripts/preview-static.mjs 3104", url: "http://127.0.0.1:3104", reuseExistingServer: false },
++  projects: [1440, 768, 390, 360].map(width => ({
++    name: `nav-${width}`,
++    use: { browserName: "chromium", viewport: { width, height: 900 }, deviceScaleFactor: width < 768 ? 3 : 2, hasTouch: width < 1440, isMobile: width < 1440 },
++  })),
++});

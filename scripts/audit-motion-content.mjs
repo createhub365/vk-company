@@ -93,11 +93,27 @@ if(process.argv.includes('--capture')) {
   const baseline=JSON.parse(await readFile(baselinePath,'utf8'));const current=await capture();
   assert.deepEqual(current.pages.map(p=>p.route),baseline.pages.map(p=>p.route));
   for(const page of baseline.pages)assert.deepEqual(current.pages.find(p=>p.route===page.route).contract,page.contract,`Content/semantics changed: ${page.route}`);
+  // Stage 5 prose is checked without whitespace normalization against both the
+  // pinned snapshot and the exact text blocks in the human-readable contract.
+  const audit=await readFile('MOTION_AUDIT.md','utf8');
+  for(const index of [1,2]) {
+    const expected=baseline.pages.find(p=>p.route==='/').inventory[index];
+    const actual=current.pages.find(p=>p.route==='/').inventory[index];
+    const marker=`#### ${index+1}. ${expected.component}\n\n\`\`\`text\n`;
+    const start=audit.indexOf(marker);
+    assert(start>=0,`Editorial contract missing from MOTION_AUDIT.md: ${expected.component}`);
+    const end=audit.indexOf('\n```',start+marker.length);
+    assert(end>=0,`Editorial contract block is incomplete: ${expected.component}`);
+    const documented=audit.slice(start+marker.length,end);
+    assert.deepEqual(Buffer.from(documented,'utf8'),Buffer.from(expected.copy,'utf8'),`Editorial audit bytes changed: ${expected.component}`);
+    assert.deepEqual(Buffer.from(actual.copy,'utf8'),Buffer.from(documented,'utf8'),`Editorial prose bytes changed: ${expected.component}`);
+  }
   assert.deepEqual(current.images,baseline.images,'Image bytes changed');
   assert.deepEqual(current.extraExports,baseline.extraExports,'Static metadata/headers changed');
   for(const file of baseline.frozen)assert.equal(current.sources[file],baseline.sources[file],`Protected business source changed: ${file}`);
   const routeFiles=Object.keys(current.sources).filter(f=>f.startsWith('app/')&&/\/(page|route)\.tsx?$/.test(f));
   assert.deepEqual(routeFiles,Object.keys(baseline.sources).filter(f=>f.startsWith('app/')&&/\/(page|route)\.tsx?$/.test(f)),'Route files changed');
   console.log('PASS: 11 page outputs retain copy, sections, headings, links, images, controls, labels, form attributes, details and metadata; image bytes, business sources and static metadata/headers unchanged.');
+  console.log('PASS: Domestic and International editorial prose matches MOTION_AUDIT.md and the pinned baseline byte-for-byte (UTF-8).');
 }
 function imageFilesCount(baseline) { return Object.keys(baseline.images).length; }

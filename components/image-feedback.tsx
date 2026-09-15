@@ -55,7 +55,7 @@ export function ImageFeedback() {
     function renderPointer() {
       if (!pending) return;
       const { frame, x, y } = pending;
-      frame.style.transform = `perspective(1000px) rotateX(${-y * 3.5}deg) rotateY(${x * 3.5}deg)`;
+      if (frame.dataset.photoMotion !== "scroll") frame.style.transform = `perspective(1000px) rotateX(${-y * 3.5}deg) rotateY(${x * 3.5}deg)`;
       frame.style.setProperty("--photo-x", `${(x + 1) * 50}%`);
       frame.style.setProperty("--photo-y", `${(y + 1) * 50}%`);
       frame.dataset.photoHover = "";
@@ -83,8 +83,10 @@ export function ImageFeedback() {
       frame.style.transition = "none";
       const b = frame.getBoundingClientRect();
       frame.style.removeProperty("transition");
-      const x = event.detail === 0 ? b.width / 2 : event.clientX - b.left - frame.clientLeft;
-      const y = event.detail === 0 ? b.height / 2 : event.clientY - b.top - frame.clientTop;
+      // Parallax can scale an ancestor. Map the visible point back into the
+      // frame's local CSS pixels so its existing ripple remains under the tap.
+      const x = event.detail === 0 ? frame.clientWidth / 2 : (event.clientX - b.left) * frame.offsetWidth / b.width - frame.clientLeft;
+      const y = event.detail === 0 ? frame.clientHeight / 2 : (event.clientY - b.top) * frame.offsetHeight / b.height - frame.clientTop;
       const layer = document.createElement("i");
       layer.className = "image-feedback-layer image-feedback-ripple";
       layer.setAttribute("aria-hidden", "true");
@@ -103,7 +105,7 @@ export function ImageFeedback() {
         { transform: "translate(-50%,-50%) scale(1.2)", opacity: .9, offset: .5 },
         { transform: "translate(-50%,-50%) scale(1.8)", opacity: 0 },
       ], { duration: 640, easing: "ease-out" }));
-      publish(frame, { kind: "tap", x: x / b.width * 2 - 1, y: y / b.height * 2 - 1 });
+      publish(frame, { kind: "tap", x: x / frame.clientWidth * 2 - 1, y: y / frame.clientHeight * 2 - 1 });
       const timer = window.setTimeout(clear, 680);
       cleanup = () => { cleanup = undefined; clearTimeout(timer); animations.forEach(a => a.cancel()); layer.remove(); };
     }

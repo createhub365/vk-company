@@ -19,6 +19,22 @@ for (const path of routes) test(`edge-to-edge photos and bounded taps ${path}`, 
   for (const frame of await page.locator('[data-photo-frame]').all()) {
     await frame.scrollIntoViewIfNeeded();
     await frame.locator('img').evaluate((el: HTMLImageElement) => el.decode());
+    if (await frame.evaluate(el => Boolean(el.closest('.process-depth')))) {
+      // The process now changes projected scale on scroll. Settle the shared
+      // scroll update before measuring the resting tap target and heading.
+      await frame.evaluate(async el => {
+        el.scrollIntoView({ block: 'center', behavior: 'instant' });
+        await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+      });
+      await expect.poll(() => frame.evaluate(el => getComputedStyle(el.closest('li')!).willChange)).toBe('auto');
+    }
+    await frame.evaluate(async el => {
+      const section = el.closest('.editorial-motion');
+      if (!section) return;
+      // Wait for the intentional scroll entrance before testing tap isolation.
+      await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+      await Promise.allSettled(section.getAnimations({ subtree: true }).map(animation => animation.finished));
+    });
     const fit = await frame.evaluate(el => {
       const img = el.querySelector('img')!;
       return { width: el.clientWidth, height: el.clientHeight, imageWidth: img.clientWidth, imageHeight: img.clientHeight, ratio: img.naturalWidth / img.naturalHeight, padding: getComputedStyle(el).padding, processCard: Boolean(el.closest(".process-list")) };
@@ -31,6 +47,7 @@ for (const path of routes) test(`edge-to-edge photos and bounded taps ${path}`, 
     // leave their own section heading stationary, including during hero hydration.
     const heading = path === '/' ? frame.locator('xpath=ancestor::section[1]').locator('h1,h2,h3').first() : page.locator('h1');
     const headingBox = await heading.boundingBox();
+    const scale = await frame.evaluate(el => { const rect=el.getBoundingClientRect();return {x:rect.width/(el as HTMLElement).offsetWidth,y:rect.height/(el as HTMLElement).offsetHeight}; });
     await activate(frame,isMobile);
     if (path === "/get-a-quote") {
       await expect(layer(page)).toHaveCount(0);
@@ -40,7 +57,7 @@ for (const path of routes) test(`edge-to-edge photos and bounded taps ${path}`, 
     }
     await expect(layer(page)).toHaveCount(1);
     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
-    expect(Math.abs(feedback.left-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top-40)).toBeLessThanOrEqual(1);
+    expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
     expect(await frame.locator('img').evaluate(el=>el.getAnimations().length)).toBe(0);
     expect(await heading.boundingBox()).toEqual(headingBox);

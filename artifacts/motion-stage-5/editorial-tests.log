@@ -1,0 +1,136 @@
+[WebServer] (node:99613) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 2 workers
+
+(node:99614) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:99615) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [editorial-768] › tests/e2e/editorial-motion.spec.ts:24:1 › original section geometry, image fitting and alternating desktop order remain (4.2s)
+  ✓   1 [editorial-1440] › tests/e2e/editorial-motion.spec.ts:24:1 › original section geometry, image fitting and alternating desktop order remain (4.2s)
+  ✘   3 [editorial-768] › tests/e2e/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings (4.0s)
+  ✓   4 [editorial-1440] › tests/e2e/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings (4.3s)
+(node:99687) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [editorial-1440] › tests/e2e/editorial-motion.spec.ts:82:1 › parallax reverses with scroll; hovering and tapping never rotate a photograph (8.2s)
+  ✓   6 [editorial-768] › tests/e2e/editorial-motion.spec.ts:82:1 › parallax reverses with scroll; hovering and tapping never rotate a photograph (8.3s)
+  ✓   7 [editorial-1440] › tests/e2e/editorial-motion.spec.ts:110:1 › a paragraph in view before hydration stays immediately visible and never reveals (3.5s)
+  ✓   8 [editorial-768] › tests/e2e/editorial-motion.spec.ts:110:1 › a paragraph in view before hydration stays immediately visible and never reveals (3.6s)
+  ✓   9 [editorial-1440] › tests/e2e/editorial-motion.spec.ts:131:1 › reduced motion, no JavaScript, resize and native text links remain usable (2.1s)
+(node:99728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [editorial-768] › tests/e2e/editorial-motion.spec.ts:131:1 › reduced motion, no JavaScript, resize and native text links remain usable (2.2s)
+(node:99733) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [editorial-390] › tests/e2e/editorial-motion.spec.ts:24:1 › original section geometry, image fitting and alternating desktop order remain (4.1s)
+  ✓  12 [editorial-360] › tests/e2e/editorial-motion.spec.ts:24:1 › original section geometry, image fitting and alternating desktop order remain (4.2s)
+  ✘  13 [editorial-390] › tests/e2e/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings (3.7s)
+(node:99786) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  14 [editorial-360] › tests/e2e/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings (3.7s)
+(node:99791) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [editorial-390] › tests/e2e/editorial-motion.spec.ts:82:1 › parallax reverses with scroll; hovering and tapping never rotate a photograph (8.2s)
+  ✓  16 [editorial-360] › tests/e2e/editorial-motion.spec.ts:82:1 › parallax reverses with scroll; hovering and tapping never rotate a photograph (8.2s)
+  ✓  17 [editorial-390] › tests/e2e/editorial-motion.spec.ts:110:1 › a paragraph in view before hydration stays immediately visible and never reveals (3.5s)
+  ✓  18 [editorial-360] › tests/e2e/editorial-motion.spec.ts:110:1 › a paragraph in view before hydration stays immediately visible and never reveals (3.4s)
+  ✓  19 [editorial-390] › tests/e2e/editorial-motion.spec.ts:131:1 › reduced motion, no JavaScript, resize and native text links remain usable (1.9s)
+  ✓  20 [editorial-360] › tests/e2e/editorial-motion.spec.ts:131:1 › reduced motion, no JavaScript, resize and native text links remain usable (1.8s)
+
+
+  1) [editorial-768] › tests/e2e/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4
+    Received:    2
+
+      70 |   expect(prose.every(e => e.timing.duration === 400 && e.frames[0].transform === "translateY(16px) rotateX(0deg)")).toBe(true);
+      71 |   const lines = entries.filter(e => e.className === "editorial-heading-line");
+    > 72 |   expect(lines.length).toBeGreaterThanOrEqual(4);
+         |                        ^
+      73 |   expect(lines.every(e => e.frames[0].transform === "translateY(14.399999999999999px) rotateX(8deg)" || e.frames[0].transform === "translateY(14.4px) rotateX(8deg)")).toBe(true);
+      74 |   // IntersectionObserver callback delivery order is not the visual line order;
+      75 |   // the shared timeline and per-line delays define the actual entrance sequence.
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/editorial-motion.spec.ts:72:24
+
+    Error Context: test-results/editorial-motion/editorial-motion-opposite--0f448-ose-use-the-bounded-timings-editorial-768/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/editorial-motion/editorial-motion-opposite--0f448-ose-use-the-bounded-timings-editorial-768/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/editorial-motion/editorial-motion-opposite--0f448-ose-use-the-bounded-timings-editorial-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [editorial-390] › tests/e2e/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Array [
+    -   0,
+        90,
+    +   0,
+      ]
+
+      65 |   expect(columns.map(e => e.timing.delay)).toEqual([90, 0]);
+      66 |   const images = entries.filter(e => e.className === "editorial-image-enter");
+    > 67 |   expect(images.map(e => e.timing.delay)).toEqual([0, 90]);
+         |                                           ^
+      68 |   const prose = entries.filter(e => e.className === "editorial-prose");
+      69 |   expect(prose).toHaveLength(2);
+      70 |   expect(prose.every(e => e.timing.duration === 400 && e.frames[0].transform === "translateY(16px) rotateX(0deg)")).toBe(true);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/editorial-motion.spec.ts:67:43
+
+    Error Context: test-results/editorial-motion/editorial-motion-opposite--0f448-ose-use-the-bounded-timings-editorial-390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/editorial-motion/editorial-motion-opposite--0f448-ose-use-the-bounded-timings-editorial-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/editorial-motion/editorial-motion-opposite--0f448-ose-use-the-bounded-timings-editorial-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [editorial-360] › tests/e2e/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Array [
+    -   0,
+        90,
+    +   0,
+      ]
+
+      65 |   expect(columns.map(e => e.timing.delay)).toEqual([90, 0]);
+      66 |   const images = entries.filter(e => e.className === "editorial-image-enter");
+    > 67 |   expect(images.map(e => e.timing.delay)).toEqual([0, 90]);
+         |                                           ^
+      68 |   const prose = entries.filter(e => e.className === "editorial-prose");
+      69 |   expect(prose).toHaveLength(2);
+      70 |   expect(prose.every(e => e.timing.duration === 400 && e.frames[0].transform === "translateY(16px) rotateX(0deg)")).toBe(true);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/editorial-motion.spec.ts:67:43
+
+    Error Context: test-results/editorial-motion/editorial-motion-opposite--0f448-ose-use-the-bounded-timings-editorial-360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/editorial-motion/editorial-motion-opposite--0f448-ose-use-the-bounded-timings-editorial-360/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/editorial-motion/editorial-motion-opposite--0f448-ose-use-the-bounded-timings-editorial-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [editorial-768] › tests/e2e/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings 
+    [editorial-390] › tests/e2e/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings 
+    [editorial-360] › tests/e2e/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings 
+  17 passed (45.5s)

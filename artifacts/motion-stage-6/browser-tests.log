@@ -1,0 +1,31 @@
+[WebServer] (node:2439) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 16 tests using 2 workers
+
+(node:2440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2441) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [process-768] › tests/e2e/process-motion.spec.ts:31:1 › same ordered list, four decoded equal photo frames, horizontal desktop and vertical mobile (419ms)
+  ✓   1 [process-1440] › tests/e2e/process-motion.spec.ts:31:1 › same ordered list, four decoded equal photo frames, horizontal desktop and vertical mobile (448ms)
+  ✓   3 [process-768] › tests/e2e/process-motion.spec.ts:47:1 › continuous scroll drives exact depth, opacity, number glow and line, reversible without a timer (965ms)
+  ✓   4 [process-1440] › tests/e2e/process-motion.spec.ts:47:1 › continuous scroll drives exact depth, opacity, number glow and line, reversible without a timer (1.2s)
+  ✓   5 [process-768] › tests/e2e/process-motion.spec.ts:67:1 › tall viewport settles on a stable middle blend and survives resize (856ms)
+  ✓   6 [process-1440] › tests/e2e/process-motion.spec.ts:67:1 › tall viewport settles on a stable middle blend and survives resize (848ms)
+  ✓   7 [process-768] › tests/e2e/process-motion.spec.ts:79:1 › reduced motion and JavaScript failure keep every step fully visible and line drawn (667ms)
+(node:2467) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [process-1440] › tests/e2e/process-motion.spec.ts:79:1 › reduced motion and JavaScript failure keep every step fully visible and line drawn (698ms)
+(node:2472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [process-390] › tests/e2e/process-motion.spec.ts:31:1 › same ordered list, four decoded equal photo frames, horizontal desktop and vertical mobile (355ms)
+  ✓  10 [process-360] › tests/e2e/process-motion.spec.ts:31:1 › same ordered list, four decoded equal photo frames, horizontal desktop and vertical mobile (329ms)
+  ✓  11 [process-390] › tests/e2e/process-motion.spec.ts:47:1 › continuous scroll drives exact depth, opacity, number glow and line, reversible without a timer (1.2s)
+  ✓  12 [process-360] › tests/e2e/process-motion.spec.ts:47:1 › continuous scroll drives exact depth, opacity, number glow and line, reversible without a timer (1.2s)
+  ✓  13 [process-390] › tests/e2e/process-motion.spec.ts:67:1 › tall viewport settles on a stable middle blend and survives resize (919ms)
+  ✓  14 [process-360] › tests/e2e/process-motion.spec.ts:67:1 › tall viewport settles on a stable middle blend and survives resize (945ms)
+  ✓  15 [process-390] › tests/e2e/process-motion.spec.ts:79:1 › reduced motion and JavaScript failure keep every step fully visible and line drawn (693ms)
+  ✓  16 [process-360] › tests/e2e/process-motion.spec.ts:79:1 › reduced motion and JavaScript failure keep every step fully visible and line drawn (692ms)
+
+  16 passed (7.3s)

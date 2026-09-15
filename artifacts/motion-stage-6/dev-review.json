@@ -1,0 +1,16 @@
+{
+  "url": "http://localhost:3000/",
+  "status": 200,
+  "errors": [],
+  "desktopWheel": {
+    "before": 0.499973,
+    "after": 0.390704,
+    "advances": true
+  },
+  "steps": [
+    "Share shipment details",
+    "Receive a reviewed quote",
+    "Arrange dispatch",
+    "Follow verified updates"
+  ]
+}

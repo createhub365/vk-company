@@ -1,0 +1,302 @@
+[
+  {
+    "width": 1440,
+    "layout": [
+      {
+        "class": "site-header nav-depth-shell home-header",
+        "x": 100,
+        "y": 10,
+        "width": 1240,
+        "height": 72
+      },
+      {
+        "class": "cinematic-hero hero-motion",
+        "x": 0,
+        "y": -10,
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "class": "editorial-section section-white",
+        "x": 0,
+        "y": 890,
+        "width": 1440,
+        "height": 703.421875
+      },
+      {
+        "class": "editorial-section international-feature",
+        "x": 0,
+        "y": 1593.421875,
+        "width": 1440,
+        "height": 703.421875
+      },
+      {
+        "class": "process-flow",
+        "x": 0,
+        "y": 2296.84375,
+        "width": 1440,
+        "height": 916.265625
+      },
+      {
+        "class": "action-entry section-white",
+        "x": 0,
+        "y": 3213.109375,
+        "width": 1440,
+        "height": 719.1875
+      },
+      {
+        "class": "editorial-section company-feature",
+        "x": 0,
+        "y": 3932.296875,
+        "width": 1440,
+        "height": 638.515625
+      },
+      {
+        "class": "homepage-faq section-white",
+        "x": 0,
+        "y": 4570.8125,
+        "width": 1440,
+        "height": 906.375
+      },
+      {
+        "class": "contact-finale",
+        "x": 0,
+        "y": 5477.1875,
+        "width": 1440,
+        "height": 290.09375
+      },
+      {
+        "class": "site-footer",
+        "x": 0,
+        "y": 5767.28125,
+        "width": 1440,
+        "height": 434.21875
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "layout": [
+      {
+        "class": "site-header nav-depth-shell home-header",
+        "x": 12,
+        "y": 6,
+        "width": 744,
+        "height": 72
+      },
+      {
+        "class": "cinematic-hero hero-motion",
+        "x": 0,
+        "y": -14,
+        "width": 768,
+        "height": 900
+      },
+      {
+        "class": "editorial-section section-white",
+        "x": 0,
+        "y": 886,
+        "width": 768,
+        "height": 840.484375
+      },
+      {
+        "class": "editorial-section international-feature",
+        "x": 0,
+        "y": 1726.484375,
+        "width": 768,
+        "height": 949.296875
+      },
+      {
+        "class": "process-flow",
+        "x": 0,
+        "y": 2675.78125,
+        "width": 768,
+        "height": 1284.9375
+      },
+      {
+        "class": "action-entry section-white",
+        "x": 0,
+        "y": 3960.71875,
+        "width": 768,
+        "height": 632
+      },
+      {
+        "class": "editorial-section company-feature",
+        "x": 0,
+        "y": 4592.71875,
+        "width": 768,
+        "height": 852.34375
+      },
+      {
+        "class": "homepage-faq section-white",
+        "x": 0,
+        "y": 5445.0625,
+        "width": 768,
+        "height": 734.375
+      },
+      {
+        "class": "contact-finale",
+        "x": 0,
+        "y": 6179.4375,
+        "width": 768,
+        "height": 337
+      },
+      {
+        "class": "site-footer",
+        "x": 0,
+        "y": 6516.4375,
+        "width": 768,
+        "height": 434.21875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "layout": [
+      {
+        "class": "site-header nav-depth-shell home-header",
+        "x": 6,
+        "y": 6,
+        "width": 378,
+        "height": 62
+      },
+      {
+        "class": "cinematic-hero hero-motion",
+        "x": 0,
+        "y": -24,
+        "width": 390,
+        "height": 900
+      },
+      {
+        "class": "editorial-section section-white",
+        "x": 0,
+        "y": 876,
+        "width": 390,
+        "height": 697.296875
+      },
+      {
+        "class": "editorial-section international-feature",
+        "x": 0,
+        "y": 1573.296875,
+        "width": 390,
+        "height": 725.75
+      },
+      {
+        "class": "process-flow",
+        "x": 0,
+        "y": 2299.046875,
+        "width": 390,
+        "height": 2374.640625
+      },
+      {
+        "class": "action-entry section-white",
+        "x": 0,
+        "y": 4673.6875,
+        "width": 390,
+        "height": 663.546875
+      },
+      {
+        "class": "editorial-section company-feature",
+        "x": 0,
+        "y": 5337.234375,
+        "width": 390,
+        "height": 677.53125
+      },
+      {
+        "class": "homepage-faq section-white",
+        "x": 0,
+        "y": 6014.765625,
+        "width": 390,
+        "height": 808.65625
+      },
+      {
+        "class": "contact-finale",
+        "x": 0,
+        "y": 6823.421875,
+        "width": 390,
+        "height": 436.5
+      },
+      {
+        "class": "site-footer",
+        "x": 0,
+        "y": 7259.921875,
+        "width": 390,
+        "height": 474.1875
+      }
+    ]
+  },
+  {
+    "width": 360,
+    "layout": [
+      {
+        "class": "site-header nav-depth-shell home-header",
+        "x": 6,
+        "y": 6,
+        "width": 348,
+        "height": 62
+      },
+      {
+        "class": "cinematic-hero hero-motion",
+        "x": 0,
+        "y": -24,
+        "width": 360,
+        "height": 900
+      },
+      {
+        "class": "editorial-section section-white",
+        "x": 0,
+        "y": 876,
+        "width": 360,
+        "height": 674.703125
+      },
+      {
+        "class": "editorial-section international-feature",
+        "x": 0,
+        "y": 1550.703125,
+        "width": 360,
+        "height": 724.28125
+      },
+      {
+        "class": "process-flow",
+        "x": 0,
+        "y": 2274.984375,
+        "width": 360,
+        "height": 2317.15625
+      },
+      {
+        "class": "action-entry section-white",
+        "x": 0,
+        "y": 4592.140625,
+        "width": 360,
+        "height": 652.953125
+      },
+      {
+        "class": "editorial-section company-feature",
+        "x": 0,
+        "y": 5245.09375,
+        "width": 360,
+        "height": 654.46875
+      },
+      {
+        "class": "homepage-faq section-white",
+        "x": 0,
+        "y": 5899.5625,
+        "width": 360,
+        "height": 824
+      },
+      {
+        "class": "contact-finale",
+        "x": 0,
+        "y": 6723.5625,
+        "width": 360,
+        "height": 429.4375
+      },
+      {
+        "class": "site-footer",
+        "x": 0,
+        "y": 7153,
+        "width": 360,
+        "height": 474.1875
+      }
+    ]
+  }
+]

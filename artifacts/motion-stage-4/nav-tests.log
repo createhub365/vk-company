@@ -1,0 +1,51 @@
+[WebServer] (node:98145) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 36 tests using 2 workers
+
+(node:98146) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:98147) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [nav-768] › tests/e2e/nav-motion.spec.ts:37:1 › frozen navigation and existing page geometry survive depth projection (1.6s)
+  ✓   2 [nav-1440] › tests/e2e/nav-motion.spec.ts:37:1 › frozen navigation and existing page geometry survive depth projection (1.6s)
+  ✓   3 [nav-768] › tests/e2e/nav-motion.spec.ts:51:1 › closed nav has its original keyboard order and unobscured focus rings (174ms)
+  ✓   4 [nav-1440] › tests/e2e/nav-motion.spec.ts:51:1 › closed nav has its original keyboard order and unobscured focus rings (211ms)
+  ✓   6 [nav-1440] › tests/e2e/nav-motion.spec.ts:72:3 › open menu traps both Tab directions, closes with Escape and restores focus (motion) (961ms)
+  ✓   5 [nav-768] › tests/e2e/nav-motion.spec.ts:72:3 › open menu traps both Tab directions, closes with Escape and restores focus (motion) (1.2s)
+  ✓   7 [nav-1440] › tests/e2e/nav-motion.spec.ts:110:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (motion) (1.5s)
+  ✓   8 [nav-768] › tests/e2e/nav-motion.spec.ts:110:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (motion) (1.6s)
+  ✓   9 [nav-1440] › tests/e2e/nav-motion.spec.ts:72:3 › open menu traps both Tab directions, closes with Escape and restores focus (reduced) (841ms)
+  ✓  10 [nav-768] › tests/e2e/nav-motion.spec.ts:72:3 › open menu traps both Tab directions, closes with Escape and restores focus (reduced) (991ms)
+  ✓  11 [nav-1440] › tests/e2e/nav-motion.spec.ts:110:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (reduced) (1.5s)
+  ✓  12 [nav-768] › tests/e2e/nav-motion.spec.ts:110:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (reduced) (1.6s)
+  ✓  14 [nav-768] › tests/e2e/nav-motion.spec.ts:135:1 › scroll state changes only at the 80px boundary; hover uses transform and pseudo glow (1.8s)
+  ✓  15 [nav-768] › tests/e2e/nav-motion.spec.ts:166:1 › repeat, live reduced motion, resize and navigation release the lock (1.0s)
+  ✓  13 [nav-1440] › tests/e2e/nav-motion.spec.ts:135:1 › scroll state changes only at the 80px boundary; hover uses transform and pseudo glow (3.5s)
+  ✓  16 [nav-768] › tests/e2e/nav-motion.spec.ts:191:1 › short menus keep every keyboard focus ring inside the scrollable panel (624ms)
+(node:98193) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  17 [nav-1440] › tests/e2e/nav-motion.spec.ts:166:1 › repeat, live reduced motion, resize and navigation release the lock (986ms)
+  ✓  19 [nav-1440] › tests/e2e/nav-motion.spec.ts:191:1 › short menus keep every keyboard focus ring inside the scrollable panel (604ms)
+(node:98199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [nav-390] › tests/e2e/nav-motion.spec.ts:37:1 › frozen navigation and existing page geometry survive depth projection (1.6s)
+  ✓  21 [nav-390] › tests/e2e/nav-motion.spec.ts:51:1 › closed nav has its original keyboard order and unobscured focus rings (140ms)
+  ✓  20 [nav-360] › tests/e2e/nav-motion.spec.ts:37:1 › frozen navigation and existing page geometry survive depth projection (1.6s)
+  ✓  22 [nav-390] › tests/e2e/nav-motion.spec.ts:72:3 › open menu traps both Tab directions, closes with Escape and restores focus (motion) (931ms)
+  ✓  23 [nav-360] › tests/e2e/nav-motion.spec.ts:51:1 › closed nav has its original keyboard order and unobscured focus rings (176ms)
+  ✓  25 [nav-360] › tests/e2e/nav-motion.spec.ts:72:3 › open menu traps both Tab directions, closes with Escape and restores focus (motion) (857ms)
+  ✓  24 [nav-390] › tests/e2e/nav-motion.spec.ts:110:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (motion) (1.6s)
+  ✓  27 [nav-390] › tests/e2e/nav-motion.spec.ts:72:3 › open menu traps both Tab directions, closes with Escape and restores focus (reduced) (829ms)
+  ✓  26 [nav-360] › tests/e2e/nav-motion.spec.ts:110:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (motion) (1.6s)
+  ✓  29 [nav-360] › tests/e2e/nav-motion.spec.ts:72:3 › open menu traps both Tab directions, closes with Escape and restores focus (reduced) (836ms)
+  ✓  28 [nav-390] › tests/e2e/nav-motion.spec.ts:110:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (reduced) (1.6s)
+  ✓  30 [nav-360] › tests/e2e/nav-motion.spec.ts:110:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (reduced) (1.6s)
+  ✓  31 [nav-390] › tests/e2e/nav-motion.spec.ts:135:1 › scroll state changes only at the 80px boundary; hover uses transform and pseudo glow (1.8s)
+  ✓  32 [nav-360] › tests/e2e/nav-motion.spec.ts:135:1 › scroll state changes only at the 80px boundary; hover uses transform and pseudo glow (1.8s)
+  ✓  33 [nav-390] › tests/e2e/nav-motion.spec.ts:166:1 › repeat, live reduced motion, resize and navigation release the lock (1.1s)
+  ✓  35 [nav-390] › tests/e2e/nav-motion.spec.ts:191:1 › short menus keep every keyboard focus ring inside the scrollable panel (599ms)
+  ✓  34 [nav-360] › tests/e2e/nav-motion.spec.ts:166:1 › repeat, live reduced motion, resize and navigation release the lock (1.0s)
+  ✓  36 [nav-360] › tests/e2e/nav-motion.spec.ts:191:1 › short menus keep every keyboard focus ring inside the scrollable panel (615ms)
+
+  36 passed (22.6s)

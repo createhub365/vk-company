@@ -1,0 +1,29 @@
+[WebServer] (node:259) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 18 tests using 2 workers
+
+(node:261) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [mobile] › tests/e2e/public.spec.ts:3:1 › homepage keeps its hero content with a static truck image (167ms)
+  ✓   2 [desktop] › tests/e2e/public.spec.ts:3:1 › homepage keeps its hero content with a static truck image (179ms)
+  ✓   3 [mobile] › tests/e2e/public.spec.ts:17:1 › quote form explains that enquiries do not confirm bookings (121ms)
+  ✓   5 [mobile] › tests/e2e/public.spec.ts:23:1 › mobile navigation is keyboard and touch accessible (131ms)
+  ✓   4 [desktop] › tests/e2e/public.spec.ts:17:1 › quote form explains that enquiries do not confirm bookings (385ms)
+  ✓   7 [desktop] › tests/e2e/public.spec.ts:23:1 › mobile navigation is keyboard and touch accessible (223ms)
+  ✓   6 [mobile] › tests/e2e/public.spec.ts:30:1 › all public routes preserve direct navigation without duplicate renderers (416ms)
+  ✓   9 [mobile] › tests/e2e/public.spec.ts:40:1 › history, resize and repeated route changes preserve one static hero visual (397ms)
+  ✓  10 [mobile] › tests/e2e/public.spec.ts:58:1 › increased text size keeps key actions available (131ms)
+  ✓   8 [desktop] › tests/e2e/public.spec.ts:30:1 › all public routes preserve direct navigation without duplicate renderers (846ms)
+  ✓  12 [desktop] › tests/e2e/public.spec.ts:40:1 › history, resize and repeated route changes preserve one static hero visual (269ms)
+  ✓  11 [mobile] › tests/e2e/public.spec.ts:65:1 › quote fields keep their values through resize and menu changes (575ms)
+  ✓  13 [desktop] › tests/e2e/public.spec.ts:58:1 › increased text size keeps key actions available (118ms)
+  ✓  14 [mobile] › tests/e2e/public.spec.ts:75:1 › tracking offers company contact without a lookup (120ms)
+  ✓  16 [mobile] › tests/e2e/public.spec.ts:84:1 › all four shipping steps show equally sized, eagerly loaded photographs (436ms)
+  ✓  15 [desktop] › tests/e2e/public.spec.ts:65:1 › quote fields keep their values through resize and menu changes (477ms)
+  ✓  17 [desktop] › tests/e2e/public.spec.ts:75:1 › tracking offers company contact without a lookup (118ms)
+  ✓  18 [desktop] › tests/e2e/public.spec.ts:84:1 › all four shipping steps show equally sized, eagerly loaded photographs (331ms)
+
+  18 passed (3.5s)

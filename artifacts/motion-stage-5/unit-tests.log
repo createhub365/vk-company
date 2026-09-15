@@ -1,0 +1,13 @@
+
+> vk-and-company@1.0.0 test
+> vitest run
+
+
+ RUN  v5.0.0 /Users/pranshudhiman/Desktop/vk and company
+
+
+ Test Files  7 passed (7)
+      Tests  73 passed (73)
+   Start at  16:13:45
+   Duration  2.79s (tests 66%, environment 18%, import 11%, transform 5%)
+

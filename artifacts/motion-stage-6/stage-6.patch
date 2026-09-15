@@ -1,0 +1,388 @@
+--- a/app/(site)/page.tsx
++++ b/app/(site)/page.tsx
+@@ -1,3 +1,4 @@
++import { ProcessSequence } from "@/components/motion/process-sequence";
+ import { HeroMotion, HeroFollow } from "@/components/motion/hero";
+ import { DepthSection, ParallaxMedia, RiseIn } from "@/components/motion/primitives";
+ import { EditorialHeading } from "@/components/motion/editorial-heading";
+@@ -59,12 +60,12 @@
+ 
+     <section className="process-flow">
+       <div className="shell"><div className="section-head"><div><p className="eyebrow">How shipping works</p><h2>Four steps.<br/>One clear process.</h2></div><p>Every status follows a real operational action. An enquiry is never presented as a confirmed booking or dispatch.</p></div>
+-        <ol className="process-list">
++        <ProcessSequence>
+           <li><ProcessPhoto action="details" sizes="(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"/><span>01</span><FileText/><h3>Share shipment details</h3><p>Tell us the route, contents, package count and approximate weight.</p></li>
+           <li><ProcessPhoto action="review" sizes="(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"/><span>02</span><CircleCheck/><h3>Receive a reviewed quote</h3><p>Service details, inclusions and exclusions are confirmed for the enquiry.</p></li>
+           <li><ProcessPhoto action="dispatch" sizes="(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"/><span>03</span><Box/><h3>Arrange dispatch</h3><p>An accepted quote becomes a booking ready for coordination.</p></li>
+           <li><ProcessPhoto action="scan" sizes="(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"/><span>04</span><MapPin/><h3>Follow verified updates</h3><p>Contact the team for customer-safe shipment updates.</p></li>
+-        </ol>
++        </ProcessSequence>
+       </div>
+     </section>
+ 
+--- a/MOTION_SYSTEM.md
++++ b/MOTION_SYSTEM.md
+@@ -1,6 +1,6 @@
+ # Motion system — foundation, hero, navigation and editorial sections
+ 
+-Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them to the homepage hero. Stage 4 adds depth and accessible menu interaction to the shared navigation. Stage 5 applies alternating depth to the two existing homepage editorial sections. Copy, forms, images, routes and metadata remain at the Stage 1 baseline. The root layout adds a context provider without extra DOM; shared photo feedback observes the pointer policy and uses Motion's scheduler.
++Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them to the homepage hero. Stage 4 adds depth and accessible menu interaction to the shared navigation. Stage 5 applies alternating depth to the two existing homepage editorial sections. Stage 6 adds the scroll-linked four-step sequence. Copy, forms, images, routes and metadata remain at the Stage 1 baseline. The root layout adds a context provider without extra DOM; shared photo feedback observes the pointer policy and uses Motion's scheduler.
+ 
+ ## Tokens
+ 
+@@ -76,7 +76,7 @@
+ 
+ The hook was exercised in an isolated temporary Git repository: preserved staged content passes; a staged bad headline concealed by a clean working copy fails; a fully staged bad headline fails the fresh-build content check. No test commits or enquiries were created. Unit regression tests additionally reject altered image bytes, dynamic form wording and an added route.
+ 
+-No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 has its Round 1 tuning, Stage 4 navigation and Stage 5 editorial motion are implemented; later stages have not started.
++No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 has its Round 1 tuning, Stage 4 navigation, Stage 5 editorial motion and Stage 6 process motion are implemented; later stages have not started.
+ 
+ Implementation references: [Motion useScroll](https://motion.dev/docs/react-use-scroll), [Motion shared frame scheduler](https://motion.dev/docs/frame), [Lenis options and manual frame integration](https://github.com/darkroomengineering/lenis).
+ 
+@@ -123,3 +123,17 @@
+ The content verifier now additionally compares both complete editorial prose inventories as unnormalized UTF-8 bytes against both the pinned baseline and the exact text fences in `MOTION_AUDIT.md`. Regression tests reject internal whitespace changes and edits to that Markdown contract. The audit and baseline themselves are unchanged.
+ 
+ See `artifacts/motion-stage-5/REPORT.md` for exported-site tests, before/after screenshots, desktop/mobile recordings and a patch scoped against the pre-Stage-5 working tree. Hero, navigation, process, FAQ, forms, footer, service routes and image files are unchanged during this stage.
++
++## Stage 6: four-step process
++
++`ProcessSequence` wraps the existing ordered-list children without changing a word, image attribute or step order. At widths ≥768px the list is one horizontal row; below 768px the same list becomes one vertical sequence. This replaces the former intermediate two-column layout as requested. Original photo frames retain their intrinsic 3:2 dimensions and existing tap feedback.
++
++`styles/process-depth.css` defines active Z 60px, inactive Z -30px and inactive opacity .55. Mobile halves Z to 30px / -15px. Each step uses a local `perspective(var(--perspective)) translateZ(...)` transform so its projection grows around its own center, avoiding distant-origin drift along the mobile sequence. These Z endpoints are the explicit Stage 6 exception to the older foundation translation cap. No rotation is introduced.
++
++One normalized scroll value drives all four steps, the decorative connector's stroke-dashoffset, and opacity of each number's radial-gradient pseudo-element. A triangular weight around `progress * 3` blends adjacent steps continuously: an exact active position reaches Z 60 / opacity 1, all other steps reach Z -30 / opacity .55. Between positions, neighbors share emphasis. There is no active-state timer, intersection toggle, spring, or transition lag. Scroll up retraces the same states. The SVG uses native percentage endpoints without a scaled viewBox, so its normalized dash forms one continuous line rather than repeated dashes. Desktop/mobile line orientations are decorative and aria-hidden; they never announce a shipment status.
++
++Desktop progress is `(viewportHeight * .75 - wrapperTop) / (wrapperHeight + viewportHeight * .5)`, clamped to [0,1]. The positive sum avoids division by zero when the section equals or is shorter than the viewport. A centered, fully visible sequence gives progress .5: its middle steps share emphasis steadily, rather than flickering between discrete active indices. Mobile uses the untransformed first and last step centers crossing the viewport center; each successive step receives emphasis as the reader reaches it. Measurements use stationary wrapper bounds and layout offsets, never transformed rectangles.
++
++The component subscribes to the existing provider's scroll MotionValue and batches reads/writes on Motion's shared scheduler. No independent rAF loop or scroll listener is added. Identical/clamped progress performs no style writes. One resettable quiet-period timer clears will-change; it never advances motion. Resize, visibility changes, unmount and reduced-motion changes clean up their work. Reduced motion does not subscribe to scroll: all steps are flat/full-opacity, glow off, connector fully drawn. Those same final states render in SSR or with JavaScript disabled.
++
++Evidence is in `artifacts/motion-stage-6/REPORT.md`. No recordings are created in this or remaining stages; review is on the running dev server, with diff/report/content verification retained.
+--- a/tests/e2e/image-feedback.spec.ts
++++ b/tests/e2e/image-feedback.spec.ts
+@@ -19,6 +19,15 @@
+   for (const frame of await page.locator('[data-photo-frame]').all()) {
+     await frame.scrollIntoViewIfNeeded();
+     await frame.locator('img').evaluate((el: HTMLImageElement) => el.decode());
++    if (await frame.evaluate(el => Boolean(el.closest('.process-depth')))) {
++      // The process now changes projected scale on scroll. Settle the shared
++      // scroll update before measuring the resting tap target and heading.
++      await frame.evaluate(async el => {
++        el.scrollIntoView({ block: 'center', behavior: 'instant' });
++        await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
++      });
++      await expect.poll(() => frame.evaluate(el => getComputedStyle(el.closest('li')!).willChange)).toBe('auto');
++    }
+     await frame.evaluate(async el => {
+       const section = el.closest('.editorial-motion');
+       if (!section) return;
+--- /dev/null
++++ b/components/motion/process-sequence.tsx
+@@ -0,0 +1,82 @@
++"use client";
++
++import { useEffect, useRef, type ReactNode } from "react";
++import { cancelFrame, frame } from "framer-motion";
++import { clamp } from "@/lib/motion/tokens";
++import { processProgress, processStepWeight } from "@/lib/motion/process-progress";
++import { useDepthScroll } from "./provider";
++import { useMobileDepth, useReducedMotion } from "./use-reduced-motion";
++import "@/styles/process-depth.css";
++
++export function ProcessSequence({ children }: { children: ReactNode }) {
++  const root = useRef<HTMLDivElement>(null);
++  const list = useRef<HTMLOListElement>(null);
++  const line = useRef<SVGSVGElement>(null);
++  const { scrollY } = useDepthScroll();
++  const reduced = useReducedMotion();
++  const mobile = useMobileDepth();
++  useEffect(() => {
++    const container = root.current, element = list.current, connector = line.current;
++    if (!container || !element || !connector || reduced) return;
++    const paths = Array.from(connector.querySelectorAll("line"));
++    const steps = Array.from(element.children) as HTMLElement[];
++    const css = getComputedStyle(container);
++    const activeZ = parseFloat(css.getPropertyValue("--process-active-z"));
++    const inactiveZ = parseFloat(css.getPropertyValue("--process-inactive-z"));
++    const inactiveOpacity = parseFloat(css.getPropertyValue("--process-inactive-opacity"));
++    const restMs = parseFloat(css.getPropertyValue("--d-fast"));
++    let progress = 0, last = -1;
++    let timer: ReturnType<typeof setTimeout> | undefined;
++    const rest = () => steps.forEach(step => step.style.removeProperty("will-change"));
++    const render = () => {
++      if (progress === last) return;
++      last = progress;
++      steps.forEach((step, index) => {
++        const weight = processStepWeight(progress, index, steps.length);
++        step.style.willChange = "transform, opacity";
++        step.style.transform = `perspective(var(--perspective)) translateZ(${inactiveZ + (activeZ - inactiveZ) * weight}px)`;
++        step.style.opacity = String(inactiveOpacity + (1 - inactiveOpacity) * weight);
++        step.style.setProperty("--process-emphasis", String(weight));
++      });
++      paths.forEach(path => { path.style.strokeDashoffset = String(1 - progress); });
++      clearTimeout(timer); timer = setTimeout(rest, restMs);
++    };
++    const measure = () => {
++      if (document.hidden) return;
++      // The untransformed wrapper owns all measurements. Transformed step bounds
++      // must never feed back into progress or cause active-state flicker.
++      const bounds = container.getBoundingClientRect();
++      const vertical = getComputedStyle(element).gridTemplateColumns.split(" ").length === 1;
++      if (vertical && steps.length > 1) {
++        const first = steps[0], final = steps[steps.length - 1];
++        const firstCenter = first.offsetTop + first.offsetHeight / 2;
++        const lastCenter = final.offsetTop + final.offsetHeight / 2;
++        progress = clamp((innerHeight / 2 - bounds.top - firstCenter) / Math.max(1, lastCenter - firstCenter), 0, 1);
++      } else {
++        progress = processProgress(bounds.top, bounds.height, innerHeight);
++      }
++      frame.render(render);
++    };
++    const schedule = () => frame.read(measure);
++    const resize = new ResizeObserver(schedule); resize.observe(container);
++    const unsubscribe = scrollY.on("change", schedule);
++    window.addEventListener("resize", schedule, { passive: true });
++    document.addEventListener("visibilitychange", schedule);
++    schedule();
++    return () => {
++      unsubscribe(); resize.disconnect(); window.removeEventListener("resize", schedule);
++      document.removeEventListener("visibilitychange", schedule);
++      cancelFrame(measure); cancelFrame(render); clearTimeout(timer); rest();
++      steps.forEach(step => { step.style.removeProperty("transform"); step.style.removeProperty("opacity"); step.style.removeProperty("--process-emphasis"); });
++      paths.forEach(path => path.style.removeProperty("stroke-dashoffset"));
++    };
++  }, [scrollY, reduced, mobile]);
++
++  return <div ref={root} className="process-depth">
++    <svg ref={line} className="process-connector" aria-hidden="true" focusable="false">
++      <line className="process-line-horizontal" x1="0" y1="1" x2="100%" y2="1" pathLength="1"/>
++      <line className="process-line-vertical" x1="1" y1="0" x2="1" y2="100%" pathLength="1"/>
++    </svg>
++    <ol ref={list} className="process-list">{children}</ol>
++  </div>;
++}
+--- /dev/null
++++ b/lib/motion/process-progress.ts
+@@ -0,0 +1,10 @@
++import { clamp } from "./tokens";
++
++// Never divide by sectionHeight - viewportHeight: a fully visible section must
++// have a stable, reversible position, including when those dimensions are equal.
++export function processProgress(top: number, height: number, viewport: number) {
++  return clamp((viewport * .75 - top) / Math.max(1, height + viewport * .5), 0, 1);
++}
++export function processStepWeight(progress: number, index: number, count: number) {
++  return clamp(1 - Math.abs(clamp(progress, 0, 1) * Math.max(0, count - 1) - index), 0, 1);
++}
+--- /dev/null
++++ b/styles/process-depth.css
+@@ -0,0 +1,72 @@
++.process-depth {
++  --process-active-z: 60px;
++  --process-inactive-z: -30px;
++  --process-inactive-opacity: .55;
++  position: relative;
++  margin-top: 58px;
++}
++.process-depth .process-list {
++  margin-top: 0;
++  grid-template-columns: repeat(4, minmax(0, 1fr));
++  /* Each step has a local vanishing point: Z must not push end columns outside
++     the shell, or send a long mobile sequence toward a distant shared origin. */
++  transform-style: flat;
++}
++.process-depth .process-list > li {
++  transform-origin: center;
++  /* Local CSS perspective preserves the requested Z without lateral drift. */
++  transform: none;
++  opacity: 1;
++  --process-emphasis: 0;
++}
++.process-depth .process-list > li > span { position: relative; isolation: isolate; }
++.process-depth .process-list > li > span::before {
++  content: "";
++  position: absolute;
++  width: 44px;
++  height: 32px;
++  left: -14px;
++  top: 50%;
++  transform: translateY(-50%);
++  z-index: -1;
++  pointer-events: none;
++  background: radial-gradient(ellipse, rgb(36 158 169 / .32), transparent 70%);
++  opacity: var(--process-emphasis);
++}
++.process-connector {
++  position: absolute;
++  inset: 0 0 auto;
++  width: 100%;
++  height: 2px;
++  overflow: visible;
++  pointer-events: none;
++}
++.process-connector line {
++  fill: none;
++  stroke: var(--teal);
++  stroke-width: 2;
++  stroke-dasharray: 1;
++  stroke-dashoffset: 0;
++}
++.process-line-vertical { display: none; }
++@media (width >= 768px) {
++  .process-depth .process-list > li { border-top: 0; }
++  .process-depth .process-list > li + li { border-left-color: #d0d9db; }
++}
++@media (width < 768px) {
++  .process-depth .process-list { grid-template-columns: 1fr; }
++  .process-depth .process-list > li { border-left: 0; padding: 27px 0; min-height: 0; }
++  .process-depth .process-list > li + li { border-top: 1px solid #d0d9db; }
++  .process-depth .process-connector { inset: 0 auto 0 -8px; width: 2px; height: 100%; }
++  .process-depth .process-line-horizontal { display: none; }
++  .process-depth .process-line-vertical { display: initial; }
++}
++@media (width < 768px) {
++  .process-depth { --process-active-z: 30px; --process-inactive-z: -15px; }
++}
++@media (prefers-reduced-motion: reduce) {
++  .process-depth .process-list { perspective: none !important; }
++  .process-depth .process-list > li { transform: none !important; opacity: 1 !important; will-change: auto !important; }
++  .process-depth .process-list > li > span::before { opacity: 0 !important; }
++  .process-depth .process-connector line { stroke-dashoffset: 0 !important; }
++}
+--- /dev/null
++++ b/tests/process-progress.test.ts
+@@ -0,0 +1,25 @@
++import { describe, expect, it } from "vitest";
++import { processProgress, processStepWeight } from "@/lib/motion/process-progress";
++
++describe("process scroll sequence", () => {
++  it.each([300, 900, 1800])("stays monotonic and reversible with section height %i in a 900px viewport", height => {
++    const positions = [1500, 675, 400, 0, -400, -height, -2500];
++    const values = positions.map(top => processProgress(top, height, 900));
++    expect(values).toEqual([...values].sort((a, b) => a - b));
++    expect([...positions].reverse().map(top => processProgress(top, height, 900))).toEqual([...values].reverse());
++    expect(values.every(p => Number.isFinite(p) && p >= 0 && p <= 1)).toBe(true);
++  });
++  it("centers a completely visible section on a stable blend of the middle steps", () => {
++    const top = (1800 - 500) / 2;
++    expect(processProgress(top, 500, 1800)).toBe(.5);
++    expect([0, 1, 2, 3].map(i => processStepWeight(.5, i, 4))).toEqual([0, .5, .5, 0]);
++    expect(Math.abs(processProgress(top + .01, 500, 1800) - .5)).toBeLessThan(.00001);
++  });
++  it("reaches each exact active state without a discrete toggle", () => {
++    for (let active = 0; active < 4; active++) {
++      expect([0, 1, 2, 3].map(i => processStepWeight(active / 3, i, 4))).toEqual([0, 1, 2, 3].map(i => +(i === active)));
++    }
++    expect(processStepWeight(.4, 1, 4)).toBeCloseTo(.8);
++    expect(processStepWeight(.4, 2, 4)).toBeCloseTo(.2);
++  });
++});
+--- /dev/null
++++ b/tests/e2e/process-motion.spec.ts
+@@ -0,0 +1,93 @@
++import { expect, test, type Page } from "@playwright/test";
++
++async function ready(page: Page) {
++  await page.goto("/");
++  await expect(page.locator(".process-list > li").first()).toHaveAttribute("style", /translateZ/);
++  await page.locator(".process-list img").evaluateAll(images => Promise.all(images.map(image => (image as HTMLImageElement).decode())));
++}
++async function seek(page: Page, progress: number) {
++  await page.locator(".process-depth").evaluate((root, p) => {
++    const list = root.querySelector("ol")!, steps = Array.from(list.children) as HTMLElement[];
++    const rect = root.getBoundingClientRect(), absolute = rect.top + scrollY;
++    const vertical = getComputedStyle(list).gridTemplateColumns.split(" ").length === 1;
++    const first = steps[0], last = steps[3];
++    const firstCenter = first.offsetTop + first.offsetHeight / 2, lastCenter = last.offsetTop + last.offsetHeight / 2;
++    const target = vertical ? absolute + firstCenter + p * (lastCenter - firstCenter) - innerHeight / 2
++      : absolute - innerHeight * .75 + p * (rect.height + innerHeight * .5);
++    window.scrollTo({ top: target, behavior: "instant" });
++  }, progress);
++  await expect.poll(async () => parseFloat(await page.locator(".process-connector .process-line-horizontal").evaluate(p => getComputedStyle(p).strokeDashoffset))).toBeCloseTo(1 - progress, 2);
++}
++async function state(page: Page) {
++  return page.locator(".process-list > li").evaluateAll(steps => steps.map(step => {
++    const css = getComputedStyle(step), matrix = new DOMMatrix(css.transform);
++    return { z: matrix.m43, opacity: Number(css.opacity), glow: Number(getComputedStyle(step.querySelector("span")!, "::before").opacity), willChange: css.willChange };
++  }));
++}
++test.beforeEach(async ({ page }) => {
++  await page.route("**/*", route => new URL(route.request().url()).hostname === "127.0.0.1" && route.request().method() === "GET" ? route.continue() : route.abort());
++});
++
++test("same ordered list, four decoded equal photo frames, horizontal desktop and vertical mobile", async ({ page }) => {
++  const errors: string[] = []; page.on("pageerror", error => errors.push(error.message));
++  await ready(page); await seek(page, .5);
++  await expect(page.locator(".process-list h3")).toHaveText(["Share shipment details", "Receive a reviewed quote", "Arrange dispatch", "Follow verified updates"]);
++  const geometry = await page.locator(".process-list > li").evaluateAll(steps => steps.map(step => {
++    const item = step as HTMLElement, photo = step.querySelector<HTMLElement>(".process-photo")!, image = photo.querySelector("img")!;
++    return { x: item.offsetLeft, y: item.offsetTop, width: photo.clientWidth, height: photo.clientHeight, decoded: image.complete && image.naturalWidth > 0, fit: getComputedStyle(image).objectFit };
++  }));
++  for (const item of geometry) { expect(item.decoded).toBe(true); expect(item.fit).toBe("cover"); expect(Math.abs(item.width / item.height - 1.5)).toBeLessThan(.02); expect(item.width).toBe(geometry[0].width); }
++  if (page.viewportSize()!.width >= 768) expect(new Set(geometry.map(s => s.y)).size).toBe(1);
++  else { expect(new Set(geometry.map(s => s.x)).size).toBe(1); expect(geometry[3].y).toBeGreaterThan(geometry[0].y); }
++  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
++  expect(errors).toEqual([]);
++  await page.screenshot({ path: `artifacts/motion-stage-6/process-${page.viewportSize()!.width}.png`, scale: "css" });
++});
++
++test("continuous scroll drives exact depth, opacity, number glow and line, reversible without a timer", async ({ page }) => {
++  await ready(page);
++  const mobile = page.viewportSize()!.width < 768, active = mobile ? 30 : 60, inactive = mobile ? -15 : -30;
++  for (const p of [0, 1 / 3, .4, 2 / 3, 1, .4, 0]) {
++    await seek(page, p);
++    const values = await state(page);
++    values.forEach((value, index) => {
++      const weight = Math.max(0, 1 - Math.abs(p * 3 - index));
++      expect(value.z).toBeCloseTo(inactive + (active - inactive) * weight, 0);
++      expect(value.opacity).toBeCloseTo(.55 + .45 * weight, 2);
++      expect(value.glow).toBeCloseTo(weight, 2);
++    });
++  }
++  const resting = await state(page); await page.waitForTimeout(350);
++  const after = await state(page);
++  expect(after.map(({ z, opacity }) => ({ z, opacity }))).toEqual(resting.map(({ z, opacity }) => ({ z, opacity })));
++  expect(after.every(s => s.willChange === "auto")).toBe(true);
++  expect(await page.locator(".process-list").evaluate(e => e.getAnimations({ subtree: true }).filter(a => a.playState === "running").length)).toBe(0);
++});
++
++test("tall viewport settles on a stable middle blend and survives resize", async ({ page }) => {
++  await page.setViewportSize({ width: 1440, height: 2000 }); await ready(page); await seek(page, .5);
++  const bounds = await page.locator(".process-depth").boundingBox();
++  expect(bounds!.y).toBeGreaterThan(0); expect(bounds!.y + bounds!.height).toBeLessThan(2000);
++  const first = await state(page); await page.waitForTimeout(400); expect(await state(page)).toEqual(first.map(v => ({ ...v, willChange: "auto" })));
++  expect(first[1].z).toBeCloseTo(15, 0); expect(first[2].z).toBeCloseTo(15, 0);
++  await page.screenshot({ path: `artifacts/motion-stage-6/tall-${test.info().project.name}.png`, scale: "css" });
++  await page.setViewportSize({ width: 390, height: 900 }); await seek(page, 2 / 3);
++  expect((await state(page))[2].z).toBeCloseTo(30, 0);
++  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
++});
++
++test("reduced motion and JavaScript failure keep every step fully visible and line drawn", async ({ page, browser }) => {
++  await ready(page); await seek(page, .4); await page.emulateMedia({ reducedMotion: "reduce" });
++  const assertFinal = async (target: Page) => {
++    await expect.poll(async () => (await state(target)).every(s => s.z === 0 && s.opacity === 1 && s.willChange === "auto")).toBe(true);
++    expect(await target.locator(".process-connector .process-line-horizontal").evaluate(p => getComputedStyle(p).strokeDashoffset)).toBe("0px");
++  };
++  await assertFinal(page);
++  await page.mouse.wheel(0, 120); await page.waitForTimeout(100); await assertFinal(page);
++  await page.screenshot({ path: `artifacts/motion-stage-6/reduced-${page.viewportSize()!.width}.png`, scale: "css" });
++  const context = await browser.newContext({ javaScriptEnabled: false, viewport: page.viewportSize()! });
++  const staticPage = await context.newPage(); await staticPage.goto("http://127.0.0.1:3106/"); await assertFinal(staticPage);
++  await expect(staticPage.locator(".process-list li")).toHaveCount(4); await context.close();
++  await page.emulateMedia({ reducedMotion: "no-preference" }); await seek(page, 1 / 3);
++  expect((await state(page))[1].opacity).toBeCloseTo(1, 2);
++});
+--- /dev/null
++++ b/playwright.process-motion.config.ts
+@@ -0,0 +1,11 @@
++import { defineConfig } from "@playwright/test";
++export default defineConfig({
++  testDir: "./tests/e2e", testMatch: "process-motion.spec.ts", outputDir: "test-results/process-motion",
++  timeout: 35_000, workers: 2,
++  use: { baseURL: "http://127.0.0.1:3106", video: "off", trace: "off" },
++  webServer: { command: "node scripts/preview-static.mjs 3106", url: "http://127.0.0.1:3106", reuseExistingServer: false },
++  projects: [1440, 768, 390, 360].map(width => ({ name: `process-${width}`, use: {
++    browserName: "chromium", viewport: { width, height: 900 }, deviceScaleFactor: width < 768 ? 3 : 2,
++    hasTouch: width < 768, isMobile: width < 768,
++  } })),
++});

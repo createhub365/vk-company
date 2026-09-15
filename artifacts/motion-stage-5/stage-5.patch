@@ -1,0 +1,544 @@
+--- a/app/(site)/page.tsx
++++ b/app/(site)/page.tsx
+@@ -1,4 +1,7 @@
+ import { HeroMotion, HeroFollow } from "@/components/motion/hero";
++import { DepthSection, ParallaxMedia, RiseIn } from "@/components/motion/primitives";
++import { EditorialHeading } from "@/components/motion/editorial-heading";
++import "@/styles/editorial-depth.css";
+ import { Photograph } from "@/components/photograph";
+ import Link from "next/link";
+ import { ArrowRight, Box, CircleCheck, FileText, MapPin } from "lucide-react";
+@@ -27,19 +30,31 @@
+       </HeroMotion>
+     </section>
+ 
+-    <section className="editorial-section section-white" id="domestic-services">
+-      <div className="shell editorial-grid">
+-        <div className="editorial-image" data-image-feedback="photo" data-photo-frame=""><Photograph name="selected-domestic" sizes="(max-width: 800px) 100vw, 58vw" alt="Illustrative delivery truck travelling on an intercity road"/><span>Illustrative route imagery</span></div>
+-        <div className="editorial-copy"><p className="section-index">01 / Domestic</p><p className="eyebrow">Courier services between cities</p><h2>Planned around your actual route.</h2><p>Share the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims.</p><Link href="/services/domestic" className="text-link">Explore domestic services <ArrowRight size={16}/></Link></div>
+-      </div>
++    <section className="editorial-section section-white editorial-motion" id="domestic-services" data-editorial-lead="image">
++      <DepthSection className="shell editorial-grid">
++        <ParallaxMedia className="editorial-media"><RiseIn className="editorial-image-enter" rise={0} rotate={0} duration={400} immediateIfInView>
++          <div className="editorial-image" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll"><Photograph name="selected-domestic" sizes="(max-width: 800px) 100vw, 58vw" alt="Illustrative delivery truck travelling on an intercity road"/><span>Illustrative route imagery</span></div>
++        </RiseIn></ParallaxMedia>
++        <div className="editorial-copy editorial-text-plane"><RiseIn className="editorial-text-enter" fromX={12} rise={0} rotate={0} fade={false} duration={400} delay={90} immediateIfInView>
++          <p className="section-index">01 / Domestic</p><p className="eyebrow">Courier services between cities</p><EditorialHeading delay={90}>Planned around your actual route.</EditorialHeading>
++          <RiseIn className="editorial-prose" rise={16} rotate={0} duration={400} delay={90} immediateIfInView><p>Share the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims.</p></RiseIn>
++          <Link href="/services/domestic" className="text-link">Explore domestic services <ArrowRight size={16}/></Link>
++        </RiseIn></div>
++      </DepthSection>
+     </section>
+ 
+-    <section className="editorial-section international-feature">
+-      <div className="shell editorial-grid editorial-grid-reverse">
++    <section className="editorial-section international-feature editorial-motion" data-editorial-lead="text">
++      <DepthSection className="shell editorial-grid editorial-grid-reverse">
+         {/* The complete aircraft and its frame move together. */}
+-        <div className="editorial-image international-aircraft" data-image-feedback="photo" data-photo-frame=""><Photograph name="existing-aircraft" sizes="(max-width: 900px) 100vw, 41vw" alt="Antonov An-124 cargo aircraft above Lviv airport, with nose, tail and both wingtips in frame"/><span>Illustrative international logistics</span></div>
+-        <div className="editorial-copy"><p className="section-index">02 / International</p><p className="eyebrow">Across borders, details first</p><h2>Clear before it leaves the ground.</h2><p>Acceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged.</p><Link href="/services/international" className="text-link">Explore international services <ArrowRight size={16}/></Link></div>
+-      </div>
++        <ParallaxMedia className="editorial-media"><RiseIn className="editorial-image-enter" rise={0} rotate={0} duration={400} delay={90} immediateIfInView>
++          <div className="editorial-image international-aircraft" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll"><Photograph name="existing-aircraft" sizes="(max-width: 900px) 100vw, 41vw" alt="Antonov An-124 cargo aircraft above Lviv airport, with nose, tail and both wingtips in frame"/><span>Illustrative international logistics</span></div>
++        </RiseIn></ParallaxMedia>
++        <div className="editorial-copy editorial-text-plane"><RiseIn className="editorial-text-enter" fromX={-12} rise={0} rotate={0} fade={false} duration={400} immediateIfInView>
++          <p className="section-index">02 / International</p><p className="eyebrow">Across borders, details first</p><EditorialHeading>Clear before it leaves the ground.</EditorialHeading>
++          <RiseIn className="editorial-prose" rise={16} rotate={0} duration={400} immediateIfInView><p>Acceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged.</p></RiseIn>
++          <Link href="/services/international" className="text-link">Explore international services <ArrowRight size={16}/></Link>
++        </RiseIn></div>
++      </DepthSection>
+     </section>
+ 
+     <section className="process-flow">
+--- a/components/motion/primitives.tsx
++++ b/components/motion/primitives.tsx
+@@ -13,10 +13,11 @@
+   return <div {...props} className={`depth-section ${className}`}>{children}</div>;
+ }
+ 
+-export function RiseIn({ children, className = "", rise, rotate, stagger = 0, index = 0, delay = 0, duration, enabled = true, timelineStart, ...props }: Props & {
+-  rise?: number; rotate?: number; stagger?: number; index?: number; delay?: number; duration?: number; enabled?: boolean; timelineStart?: number;
++export function RiseIn({ children, className = "", as: Element = "div", rise, rotate, fromX = 0, fade = true, immediateIfInView = false, stagger = 0, index = 0, delay = 0, duration, enabled = true, timelineStart, ...props }: Props & {
++  as?: "div" | "span"; rise?: number; rotate?: number; fromX?: number; fade?: boolean; immediateIfInView?: boolean;
++  stagger?: number; index?: number; delay?: number; duration?: number; enabled?: boolean; timelineStart?: number;
+ }) {
+-  const ref = useRef<HTMLDivElement>(null);
++  const ref = useRef<HTMLElement | null>(null);
+   const reduced = useReducedMotion();
+   const entered = useRef(false);
+   useEffect(() => {
+@@ -25,19 +26,25 @@
+     const tokens = readDepthTokens(element);
+     const distance = clamp(rise ?? tokens.rise, 0, tokens.rise);
+     const rotation = clamp(rotate ?? tokens.rotation, 0, tokens.rotation);
++    const horizontal = clamp(fromX, -tokens.rise, tokens.rise);
+     // Stagger is in milliseconds; hero sequences can share a document-timeline clock.
+     const delayLimit = parseFloat(getComputedStyle(element).getPropertyValue("--d-slow"));
+     const startDelay = clamp(delay + stagger * Math.max(0, Number.isFinite(index) ? index : 0), 0, delayLimit);
+     const durationMs = duration === undefined ? tokens.duration : clamp(duration, 0, tokens.duration);
+     let animation: Animation | undefined;
+     let timer: ReturnType<typeof setTimeout> | undefined;
++    let firstObservation = true;
+     const settle = () => { animation?.cancel(); element.style.removeProperty("will-change"); };
+     const observer = new IntersectionObserver(([entry]) => {
++      const initial = firstObservation;
++      firstObservation = false;
+       if (!entry.isIntersecting) return;
+       entered.current = true;
+       observer.disconnect();
++      // Prose already visible at the initial observation is never hidden to reveal it.
++      if (initial && immediateIfInView) return;
+       const frames = [
+-        { transform: `translateY(${distance}px) rotateX(${rotation}deg)`, opacity: 0 },
++        { transform: `${horizontal ? `translateX(${horizontal}px) ` : ""}translateY(${distance}px) rotateX(${rotation}deg)`, opacity: fade ? 0 : 1 },
+         { transform: "none", opacity: 1 },
+       ];
+       if (timelineStart !== undefined) {
+@@ -46,6 +53,12 @@
+         animation.startTime = timelineStart;
+         animation.onfinish = settle;
+         timer = setTimeout(() => { element.style.willChange = "transform, opacity"; }, Math.max(0, timelineStart + startDelay - Number(document.timeline.currentTime)));
++      } else if (immediateIfInView) {
++        // Only an offscreen-to-onscreen entrance may use backwards fill. No visible
++        // delay followed by a flash to opacity zero; initial content stays final.
++        animation = element.animate(frames, { duration: durationMs, delay: startDelay, easing: tokens.easing, fill: "backwards" });
++        animation.onfinish = settle;
++        timer = setTimeout(() => { element.style.willChange = "transform, opacity"; }, startDelay);
+       } else {
+         timer = setTimeout(() => {
+           if (!element.isConnected || document.hidden) return;
+@@ -57,8 +70,8 @@
+     });
+     observer.observe(element);
+     return () => { observer.disconnect(); clearTimeout(timer); settle(); };
+-  }, [reduced, rise, rotate, stagger, index, delay, duration, enabled, timelineStart]);
+-  return <div {...props} ref={ref} className={className} data-depth-motion="rise">{children}</div>;
++  }, [reduced, rise, rotate, fromX, fade, immediateIfInView, stagger, index, delay, duration, enabled, timelineStart]);
++  return <Element {...props} ref={node => { ref.current = node; }} className={className} data-depth-motion="rise">{children}</Element>;
+ }
+ 
+ export function ParallaxMedia({ children, className = "", ...props }: Props) {
+--- a/components/image-feedback.tsx
++++ b/components/image-feedback.tsx
+@@ -55,7 +55,7 @@
+     function renderPointer() {
+       if (!pending) return;
+       const { frame, x, y } = pending;
+-      frame.style.transform = `perspective(1000px) rotateX(${-y * 3.5}deg) rotateY(${x * 3.5}deg)`;
++      if (frame.dataset.photoMotion !== "scroll") frame.style.transform = `perspective(1000px) rotateX(${-y * 3.5}deg) rotateY(${x * 3.5}deg)`;
+       frame.style.setProperty("--photo-x", `${(x + 1) * 50}%`);
+       frame.style.setProperty("--photo-y", `${(y + 1) * 50}%`);
+       frame.dataset.photoHover = "";
+@@ -83,8 +83,10 @@
+       frame.style.transition = "none";
+       const b = frame.getBoundingClientRect();
+       frame.style.removeProperty("transition");
+-      const x = event.detail === 0 ? b.width / 2 : event.clientX - b.left - frame.clientLeft;
+-      const y = event.detail === 0 ? b.height / 2 : event.clientY - b.top - frame.clientTop;
++      // Parallax can scale an ancestor. Map the visible point back into the
++      // frame's local CSS pixels so its existing ripple remains under the tap.
++      const x = event.detail === 0 ? frame.clientWidth / 2 : (event.clientX - b.left) * frame.offsetWidth / b.width - frame.clientLeft;
++      const y = event.detail === 0 ? frame.clientHeight / 2 : (event.clientY - b.top) * frame.offsetHeight / b.height - frame.clientTop;
+       const layer = document.createElement("i");
+       layer.className = "image-feedback-layer image-feedback-ripple";
+       layer.setAttribute("aria-hidden", "true");
+@@ -103,7 +105,7 @@
+         { transform: "translate(-50%,-50%) scale(1.2)", opacity: .9, offset: .5 },
+         { transform: "translate(-50%,-50%) scale(1.8)", opacity: 0 },
+       ], { duration: 640, easing: "ease-out" }));
+-      publish(frame, { kind: "tap", x: x / b.width * 2 - 1, y: y / b.height * 2 - 1 });
++      publish(frame, { kind: "tap", x: x / frame.clientWidth * 2 - 1, y: y / frame.clientHeight * 2 - 1 });
+       const timer = window.setTimeout(clear, 680);
+       cleanup = () => { cleanup = undefined; clearTimeout(timer); animations.forEach(a => a.cancel()); layer.remove(); };
+     }
+--- a/scripts/audit-motion-content.mjs
++++ b/scripts/audit-motion-content.mjs
+@@ -93,11 +93,27 @@
+   const baseline=JSON.parse(await readFile(baselinePath,'utf8'));const current=await capture();
+   assert.deepEqual(current.pages.map(p=>p.route),baseline.pages.map(p=>p.route));
+   for(const page of baseline.pages)assert.deepEqual(current.pages.find(p=>p.route===page.route).contract,page.contract,`Content/semantics changed: ${page.route}`);
++  // Stage 5 prose is checked without whitespace normalization against both the
++  // pinned snapshot and the exact text blocks in the human-readable contract.
++  const audit=await readFile('MOTION_AUDIT.md','utf8');
++  for(const index of [1,2]) {
++    const expected=baseline.pages.find(p=>p.route==='/').inventory[index];
++    const actual=current.pages.find(p=>p.route==='/').inventory[index];
++    const marker=`#### ${index+1}. ${expected.component}\n\n\`\`\`text\n`;
++    const start=audit.indexOf(marker);
++    assert(start>=0,`Editorial contract missing from MOTION_AUDIT.md: ${expected.component}`);
++    const end=audit.indexOf('\n```',start+marker.length);
++    assert(end>=0,`Editorial contract block is incomplete: ${expected.component}`);
++    const documented=audit.slice(start+marker.length,end);
++    assert.deepEqual(Buffer.from(documented,'utf8'),Buffer.from(expected.copy,'utf8'),`Editorial audit bytes changed: ${expected.component}`);
++    assert.deepEqual(Buffer.from(actual.copy,'utf8'),Buffer.from(documented,'utf8'),`Editorial prose bytes changed: ${expected.component}`);
++  }
+   assert.deepEqual(current.images,baseline.images,'Image bytes changed');
+   assert.deepEqual(current.extraExports,baseline.extraExports,'Static metadata/headers changed');
+   for(const file of baseline.frozen)assert.equal(current.sources[file],baseline.sources[file],`Protected business source changed: ${file}`);
+   const routeFiles=Object.keys(current.sources).filter(f=>f.startsWith('app/')&&/\/(page|route)\.tsx?$/.test(f));
+   assert.deepEqual(routeFiles,Object.keys(baseline.sources).filter(f=>f.startsWith('app/')&&/\/(page|route)\.tsx?$/.test(f)),'Route files changed');
+   console.log('PASS: 11 page outputs retain copy, sections, headings, links, images, controls, labels, form attributes, details and metadata; image bytes, business sources and static metadata/headers unchanged.');
++  console.log('PASS: Domestic and International editorial prose matches MOTION_AUDIT.md and the pinned baseline byte-for-byte (UTF-8).');
+ }
+ function imageFilesCount(baseline) { return Object.keys(baseline.images).length; }
+--- a/tests/motion-content-guard.test.ts
++++ b/tests/motion-content-guard.test.ts
+@@ -12,6 +12,7 @@
+   const directory = mkdtempSync(resolve(tmpdir(), "vk-motion-contract-")); temporary.push(directory);
+   const write = (path: string, text: string) => { const full=resolve(directory,path);mkdirSync(dirname(full),{recursive:true});writeFileSync(full,text); };
+   write("artifacts/motion-audit/baseline.json",JSON.stringify(baseline));
++  write("MOTION_AUDIT.md",readFileSync(resolve(repo,"MOTION_AUDIT.md"),"utf8"));
+   for(const [file,source] of Object.entries(baseline.sources))write(file,source as string);
+   for(const [file,text] of Object.entries(baseline.extraExports))write(`out/${file}`,text as string);
+   for(const page of baseline.pages) {
+@@ -26,6 +27,8 @@
+ describe("motion content contract rejects regressions",()=>{
+   it("accepts the preserved static content",()=>{expect(fixture().check().status).toBe(0);});
+   it("rejects a changed headline",()=>{const f=fixture();const html=readFileSync(resolve(f.directory,"out/index.html"),"utf8");f.write("out/index.html",html.replace("Across cities.","Changed headline."));const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Content/semantics changed");});
++  it("rejects an editorial whitespace byte change that normalized copy would conceal",()=>{const f=fixture();const html=readFileSync(resolve(f.directory,"out/index.html"),"utf8");f.write("out/index.html",html.replace("Share the origin, destination", "Share the origin,  destination"));const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Editorial prose bytes changed");});
++  it("rejects an edited editorial block in the Markdown contract",()=>{const f=fixture();const file="MOTION_AUDIT.md";const audit=readFileSync(resolve(f.directory,file),"utf8");f.write(file,audit.replace("Planned around your actual route.","Planned around your changed route."));const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Editorial audit bytes changed");});
+   it("rejects changed image bytes even with the same URL",()=>{const f=fixture();const image=Object.keys(baseline.images)[0];unlinkSync(resolve(f.directory,image));f.write(image,"altered image");const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Image bytes changed");});
+   it("rejects a dynamic form-message change even if exported HTML is unchanged",()=>{const f=fixture();const file="components/forms/enquiry-form.tsx";f.write(file,baseline.sources[file].replace("Submitting…","Sending now…"));const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Protected business source changed");});
+   it("rejects an added route",()=>{const f=fixture();f.write("app/unapproved/page.tsx","export default function Page(){return null;}");const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Route files changed");});
+--- a/MOTION_SYSTEM.md
++++ b/MOTION_SYSTEM.md
+@@ -1,6 +1,6 @@
+-# Motion system — foundation, hero and navigation
++# Motion system — foundation, hero, navigation and editorial sections
+ 
+-Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them only to the homepage hero. Stage 4 adds depth and accessible menu interaction to the shared navigation. Copy, forms, images, routes and metadata remain at the Stage 1 baseline; homepage markup after the hero is byte-for-byte unchanged from before Stage 3. The root layout adds a context provider without extra DOM; shared photo feedback now observes the pointer policy and uses Motion's scheduler.
++Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them to the homepage hero. Stage 4 adds depth and accessible menu interaction to the shared navigation. Stage 5 applies alternating depth to the two existing homepage editorial sections. Copy, forms, images, routes and metadata remain at the Stage 1 baseline. The root layout adds a context provider without extra DOM; shared photo feedback observes the pointer policy and uses Motion's scheduler.
+ 
+ ## Tokens
+ 
+@@ -76,7 +76,7 @@
+ 
+ The hook was exercised in an isolated temporary Git repository: preserved staged content passes; a staged bad headline concealed by a clean working copy fails; a fully staged bad headline fails the fresh-build content check. No test commits or enquiries were created. Unit regression tests additionally reject altered image bytes, dynamic form wording and an added route.
+ 
+-No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 is ready for its first tuning review; Stage 4 navigation is implemented; later stages have not started.
++No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 has its Round 1 tuning, Stage 4 navigation and Stage 5 editorial motion are implemented; later stages have not started.
+ 
+ Implementation references: [Motion useScroll](https://motion.dev/docs/react-use-scroll), [Motion shared frame scheduler](https://motion.dev/docs/frame), [Lenis options and manual frame integration](https://github.com/darkroomengineering/lenis).
+ 
+@@ -107,3 +107,19 @@
+ `lib/motion/scroll-lock.ts` holds idempotent lock requests; `ScrollRuntime` applies them to its existing Lenis owner via stop()/start(). Pending locks survive lazy runtime loading. Open menus stop the shared Lenis ticker. Under reduced motion an owner exists only for the stopped menu lock and never starts a smoothing loop. Menu content has data-lenis-prevent for native internal scrolling, with overscroll containment. Body/html overflow is never set to hidden or clip; wheel and single-touch movement are stopped through Lenis. Ctrl/Meta wheel and multi-touch pinch remain excluded from interception. Escape, navigation, resize and unmount release locks and listeners. There is no second Lenis instance or new rAF loop.
+ 
+ Door/fade will-change hints exist only while the corresponding animation runs and clear on completion or close. Hover transitions do not retain will-change hints. Stage 4 browser tests live in `tests/e2e/nav-motion.spec.ts` with `playwright.nav-motion.config.ts`; the lock ownership regression is in `tests/scroll-lock.test.ts`. Review evidence, screenshots and recordings are in `artifacts/motion-stage-4/`. Video files remain ignored by Git; patches, reports and screenshots remain eligible for tracking.
++
++## Stage 5: Domestic and International editorial prose
++
++Only the two existing homepage editorial blocks use this composition. Each existing column container becomes a `DepthSection`, retaining its grid classes. Images use `ParallaxMedia` around the complete original frame and caption: Z -40px → +20px, scale 1.04 → 1.00; mobile halves Z. No photograph rotates. The `data-photo-motion="scroll"` marker suppresses the existing pointer tilt on these two frames while retaining the shared highlight and tap response. Tap coordinates now account for the frame's projected scale, keeping the ripple at the actual interaction point.
++
++The first block leads with its image and delays text by 90ms; the second leads with text and delays its image by 90ms. These offsets apply when each column enters the viewport. They do not reorder the existing columns: desktop remains image/text then text/image, and mobile keeps its original image-above-text order. No card styling is added.
++
++Text sits at Z 12px (6px below 768px), entering from the opposite image side at X +12px / -12px. Its outer wrapper does not fade. The grouped prose receives one 16px rise, zero rotation and 400ms expo fade; paragraphs are not individually staggered. Combined horizontal/vertical travel stays within 20px. `immediateIfInView` skips entry entirely if the observer's first report finds content in view, including restored scroll positions and delayed hydration.
++
++`EditorialHeading` composes the existing `RiseIn` primitive. A DOM Range measures actual wrapped word lines only when an offscreen heading enters; exact original string slices animate as temporary spans. There are no character spans, inserted hard breaks or duplicate measuring copy. The Stage 3 tuning supplies 14.4px rise (60% of 24px), 8deg rotation, 600ms duration and 90ms line stagger. After settling, or immediately on width change, normal text wrapping resumes. SSR, JavaScript-disabled and initially visible headings retain plain text at final state.
++
++`RiseIn` adds optional `as="span"`, `fromX`, `fade` and `immediateIfInView` props, preserving existing defaults and the shared scheduler. Entry uses transform/opacity only, and will-change clears on completion, cancellation and reduced motion. Reduced motion removes editorial Z and all primitive transforms immediately. Keyboard focus restores the text entry wrapper's final state.
++
++The content verifier now additionally compares both complete editorial prose inventories as unnormalized UTF-8 bytes against both the pinned baseline and the exact text fences in `MOTION_AUDIT.md`. Regression tests reject internal whitespace changes and edits to that Markdown contract. The audit and baseline themselves are unchanged.
++
++See `artifacts/motion-stage-5/REPORT.md` for exported-site tests, before/after screenshots, desktop/mobile recordings and a patch scoped against the pre-Stage-5 working tree. Hero, navigation, process, FAQ, forms, footer, service routes and image files are unchanged during this stage.
+--- a/tests/e2e/image-feedback.spec.ts
++++ b/tests/e2e/image-feedback.spec.ts
+@@ -19,6 +19,13 @@
+   for (const frame of await page.locator('[data-photo-frame]').all()) {
+     await frame.scrollIntoViewIfNeeded();
+     await frame.locator('img').evaluate((el: HTMLImageElement) => el.decode());
++    await frame.evaluate(async el => {
++      const section = el.closest('.editorial-motion');
++      if (!section) return;
++      // Wait for the intentional scroll entrance before testing tap isolation.
++      await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
++      await Promise.allSettled(section.getAnimations({ subtree: true }).map(animation => animation.finished));
++    });
+     const fit = await frame.evaluate(el => {
+       const img = el.querySelector('img')!;
+       return { width: el.clientWidth, height: el.clientHeight, imageWidth: img.clientWidth, imageHeight: img.clientHeight, ratio: img.naturalWidth / img.naturalHeight, padding: getComputedStyle(el).padding, processCard: Boolean(el.closest(".process-list")) };
+@@ -31,6 +38,7 @@
+     // leave their own section heading stationary, including during hero hydration.
+     const heading = path === '/' ? frame.locator('xpath=ancestor::section[1]').locator('h1,h2,h3').first() : page.locator('h1');
+     const headingBox = await heading.boundingBox();
++    const scale = await frame.evaluate(el => { const rect=el.getBoundingClientRect();return {x:rect.width/(el as HTMLElement).offsetWidth,y:rect.height/(el as HTMLElement).offsetHeight}; });
+     await activate(frame,isMobile);
+     if (path === "/get-a-quote") {
+       await expect(layer(page)).toHaveCount(0);
+@@ -40,7 +48,7 @@
+     }
+     await expect(layer(page)).toHaveCount(1);
+     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+-    expect(Math.abs(feedback.left-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top-40)).toBeLessThanOrEqual(1);
++    expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+     expect(await frame.locator('img').evaluate(el=>el.getAnimations().length)).toBe(0);
+     expect(await heading.boundingBox()).toEqual(headingBox);
+--- /dev/null
++++ b/components/motion/editorial-heading.tsx
+@@ -0,0 +1,70 @@
++"use client";
++
++import { useEffect, useRef, useState } from "react";
++import { HERO_TUNING } from "@/lib/motion/hero-tuning";
++import { RiseIn } from "./primitives";
++import { useReducedMotion } from "./use-reduced-motion";
++
++// Find the existing visual lines without inserting hard breaks or changing a byte
++// of the heading. No duplicate measuring copy or character spans are rendered.
++function renderedLines(element: HTMLHeadingElement, text: string) {
++  const node = element.firstChild;
++  if (!node || node.nodeType !== Node.TEXT_NODE) return [text];
++  const range = document.createRange();
++  const starts = [0];
++  let top: number | undefined;
++  for (const word of text.matchAll(/\S+/gu)) {
++    range.setStart(node, word.index);
++    range.setEnd(node, word.index + word[0].length);
++    const bounds = range.getBoundingClientRect();
++    if (top !== undefined && Math.abs(bounds.top - top) > 1) starts.push(word.index);
++    top = bounds.top;
++  }
++  return starts.map((start, index) => text.slice(start, starts[index + 1]));
++}
++
++export function EditorialHeading({ children, delay = 0 }: { children: string; delay?: number }) {
++  const heading = useRef<HTMLHeadingElement>(null);
++  const entered = useRef(false);
++  const reduced = useReducedMotion();
++  const [reveal, setReveal] = useState<{ lines: string[]; clock: number } | null>(null);
++  useEffect(() => {
++    const element = heading.current;
++    if (!element || reduced || entered.current) return;
++    let firstObservation = true;
++    let timer: ReturnType<typeof setTimeout> | undefined;
++    const observer = new IntersectionObserver(([entry]) => {
++      const initial = firstObservation;
++      firstObservation = false;
++      if (!entry.isIntersecting) return;
++      entered.current = true;
++      observer.disconnect();
++      if (initial) return;
++      const lines = renderedLines(element, children);
++      setReveal({ lines, clock: Number(document.timeline.currentTime ?? performance.now()) });
++      timer = setTimeout(() => setReveal(null), delay + HERO_TUNING.headline.duration + (lines.length - 1) * HERO_TUNING.headline.stagger + 100);
++    });
++    observer.observe(element);
++    return () => { observer.disconnect(); clearTimeout(timer); };
++  }, [children, delay, reduced]);
++
++  useEffect(() => {
++    const element = heading.current;
++    if (!element) return;
++    let width = element.clientWidth;
++    const resize = new ResizeObserver(() => {
++      if (element.clientWidth === width) return;
++      width = element.clientWidth;
++      // Cancel a running reveal on reflow; normal text wrapping takes over at once.
++      setReveal(null);
++    });
++    resize.observe(element);
++    return () => resize.disconnect();
++  }, []);
++
++  return <h2 ref={heading}>{reveal ? reveal.lines.map((line, index) =>
++    <RiseIn key={index} as="span" className="editorial-heading-line" rise={HERO_TUNING.headline.rise * .6}
++      rotate={HERO_TUNING.headline.rotation} duration={HERO_TUNING.headline.duration}
++      delay={delay} stagger={HERO_TUNING.headline.stagger} index={index} timelineStart={reveal.clock}>{line}</RiseIn>
++  ) : children}</h2>;
++}
+--- /dev/null
++++ b/styles/editorial-depth.css
+@@ -0,0 +1,25 @@
++/* Existing editorial columns, spacing, image frames and responsive order remain. */
++.editorial-motion { --editorial-text-z: 12px; }
++.editorial-motion .editorial-media { min-width: 0; transform-style: flat; }
++.editorial-motion .editorial-grid-reverse > .editorial-media { order: 2; }
++.editorial-motion .editorial-text-plane {
++  transform: translateZ(var(--editorial-text-z));
++  transform-style: preserve-3d;
++}
++.editorial-motion .editorial-text-enter,
++.editorial-motion .editorial-prose { display: flow-root; }
++.editorial-motion .editorial-prose > p { color: var(--muted); font-size: 1rem; }
++.international-feature.editorial-motion .editorial-prose > p { color: #b7cbd3; }
++.editorial-motion .editorial-heading-line { display: block; }
++.editorial-motion h2 { perspective: var(--perspective); }
++.editorial-motion .editorial-text-enter:focus-within { transform: none !important; opacity: 1 !important; }
++@media (max-width: 900px) {
++  .editorial-motion .editorial-grid-reverse > .editorial-media { order: initial; }
++}
++@media (width < 768px) {
++  .editorial-motion { --editorial-text-z: 6px; }
++}
++@media (prefers-reduced-motion: reduce) {
++  .editorial-motion .editorial-text-plane { transform: none !important; transform-style: flat; }
++  .editorial-motion h2 { perspective: none; }
++}
+--- /dev/null
++++ b/playwright.editorial-motion.config.ts
+@@ -0,0 +1,12 @@
++import { defineConfig } from "@playwright/test";
++
++export default defineConfig({
++  testDir: "./tests/e2e", testMatch: "editorial-motion.spec.ts", outputDir: "test-results/editorial-motion",
++  timeout: 45_000, workers: 2,
++  use: { baseURL: "http://127.0.0.1:3105", trace: "retain-on-failure" },
++  webServer: { command: "node scripts/preview-static.mjs 3105", url: "http://127.0.0.1:3105", reuseExistingServer: false },
++  projects: [1440, 768, 390, 360].map(width => ({ name: `editorial-${width}`, use: {
++    browserName: "chromium", viewport: { width, height: 900 }, deviceScaleFactor: width < 768 ? 3 : 2,
++    hasTouch: width < 768, isMobile: width < 768,
++  } })),
++});
+--- /dev/null
++++ b/tests/e2e/editorial-motion.spec.ts
+@@ -0,0 +1,150 @@
++import { expect, test, type Page } from "@playwright/test";
++import { readFileSync } from "node:fs";
++
++const before = JSON.parse(readFileSync("artifacts/motion-stage-5/before/layout.json", "utf8"));
++const sections = ["#domestic-services", ".international-feature"];
++const headings = ["Planned around your actual route.", "Clear before it leaves the ground."];
++type Entry = { className: string; text: string; heading: string | null; section: string; frames: Keyframe[]; timing: { duration: number; delay: number }; };
++declare global { interface Window { editorialEntries: Entry[]; } }
++async function instrument(page: Page) {
++  await page.addInitScript(() => {
++    window.editorialEntries = [];
++    const animate = Element.prototype.animate;
++    Element.prototype.animate = function (frames, options) {
++      if (this.closest(".editorial-motion")) window.editorialEntries.push({ className: this.className, text: this.textContent ?? "", heading: this.closest("h2")?.textContent ?? null, section: this.closest<HTMLElement>(".editorial-motion")!.dataset.editorialLead!, frames: frames as Keyframe[], timing: options as Entry["timing"] });
++      return animate.call(this, frames, options);
++    };
++  });
++}
++test.beforeEach(async ({ page }) => {
++  await page.route("**/*", route => new URL(route.request().url()).hostname === "127.0.0.1" && route.request().method() === "GET" ? route.continue() : route.abort());
++  await instrument(page);
++});
++
++test("original section geometry, image fitting and alternating desktop order remain", async ({ page }) => {
++  await page.goto("/"); await page.waitForTimeout(1400);
++  const layout = await page.locator("header,main > section,footer").evaluateAll(es => es.map(e => { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y + scrollY, width: r.width, height: r.height }; }));
++  const baseline = before.find((r: { width: number }) => r.width === page.viewportSize()!.width).layout;
++  expect(layout).toHaveLength(baseline.length);
++  for (const [index, row] of layout.entries()) for (const key of ["x", "y", "width", "height"] as const) expect(Math.abs(row[key] - baseline[index][key])).toBeLessThan(1);
++  for (const [index, selector] of sections.entries()) {
++    const section = page.locator(selector); await section.scrollIntoViewIfNeeded(); await page.waitForTimeout(1200);
++    await expect(section.locator("h2")).toHaveText(headings[index]);
++    expect(await section.locator("h2").textContent()).toBe(headings[index]);
++    await expect(section.locator(":scope > .depth-section")).toHaveCount(1);
++    await expect(section.locator(".parallax-media")).toHaveCount(1);
++    const fit = await section.locator(".editorial-image").evaluate(e => {
++      const image = e.querySelector("img")!;
++      return { width: e.clientWidth, height: e.clientHeight, imageWidth: image.clientWidth, imageHeight: image.clientHeight,
++        natural: image.naturalWidth, objectFit: getComputedStyle(image).objectFit, padding: getComputedStyle(e).padding };
++    });
++    expect(fit.natural).toBeGreaterThan(0); expect(fit.padding).toBe("0px");
++    expect(Math.abs(fit.width - fit.imageWidth)).toBeLessThanOrEqual(1); expect(Math.abs(fit.height - fit.imageHeight)).toBeLessThanOrEqual(1);
++    expect(fit.objectFit).toBe("contain");
++    if (page.viewportSize()!.width > 900) {
++      const media = await section.locator(".editorial-media").boundingBox(), text = await section.locator(".editorial-copy").boundingBox();
++      expect(media!.x < text!.x).toBe(index === 0);
++    }
++  }
++  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
++});
++
++test("opposite-side text, per-line headings and grouped prose use the bounded timings", async ({ page }, info) => {
++  await page.goto("/"); await page.waitForTimeout(500);
++  for (const [index, selector] of sections.entries()) {
++    await page.locator(`${selector} .editorial-copy`).evaluate(e => scrollTo({ top: e.getBoundingClientRect().top + scrollY - 200, behavior: "instant" }));
++    await page.waitForTimeout(200);
++    const headingText = await page.locator(`${selector} h2`).textContent();
++    expect(headingText).toBe(headings[index]);
++    await page.screenshot({ path: `artifacts/motion-stage-5/entrance-${info.project.name}-${index}.png`, scale: "css" });
++    await page.waitForTimeout(1200);
++  }
++  const entries = await page.evaluate(() => window.editorialEntries);
++  const sectionOrder = (a: Entry, b: Entry) => Number(a.section === "text") - Number(b.section === "text");
++  const columns = entries.filter(e => e.className === "editorial-text-enter").sort(sectionOrder);
++  expect(columns.map(e => e.frames[0].transform)).toEqual(["translateX(12px) translateY(0px) rotateX(0deg)", "translateX(-12px) translateY(0px) rotateX(0deg)"]);
++  expect(columns.map(e => e.timing.delay)).toEqual([90, 0]);
++  const images = entries.filter(e => e.className === "editorial-image-enter").sort(sectionOrder);
++  expect(images.map(e => e.timing.delay)).toEqual([0, 90]);
++  const prose = entries.filter(e => e.className === "editorial-prose");
++  expect(prose).toHaveLength(2);
++  expect(prose.every(e => e.timing.duration === 400 && e.frames[0].transform === "translateY(16px) rotateX(0deg)")).toBe(true);
++  const lines = entries.filter(e => e.className === "editorial-heading-line");
++  expect(lines.length).toBeGreaterThanOrEqual(2);
++  expect(lines.every(e => e.frames[0].transform === "translateY(14.399999999999999px) rotateX(8deg)" || e.frames[0].transform === "translateY(14.4px) rotateX(8deg)")).toBe(true);
++  // IntersectionObserver callback delivery order is not the visual line order;
++  // the shared timeline and per-line delays define the actual entrance sequence.
++  for (const heading of headings) expect(lines.filter(e => e.heading === heading).sort((a, b) => a.timing.delay - b.timing.delay).map(e => e.text).join("")).toBe(heading);
++  expect(await page.locator(".editorial-motion .editorial-text-plane").evaluateAll(es => es.map(e => new DOMMatrixReadOnly(getComputedStyle(e).transform).m43))).toEqual(Array(2).fill(page.viewportSize()!.width < 768 ? 6 : 12));
++  await page.locator("#domestic-services").scrollIntoViewIfNeeded(); await page.waitForTimeout(400);
++  expect(await page.evaluate(() => window.editorialEntries.length)).toBe(entries.length);
++});
++
++test("parallax reverses with scroll; hovering and tapping never rotate a photograph", async ({ page }) => {
++  await page.goto("/"); await page.waitForTimeout(500);
++  for (const selector of sections) {
++    const values: { z: number; scale: number }[] = [];
++    for (const progress of [.1, .5, .9, .5, .1]) {
++      await page.locator(`${selector} .editorial-media`).evaluate((e, progress) => { const r = e.getBoundingClientRect(); scrollTo({ top: r.top + scrollY - innerHeight + (innerHeight + r.height) * progress, behavior: "instant" }); }, progress);
++      await page.waitForTimeout(200);
++      values.push(await page.locator(`${selector} [data-depth-motion="parallax"]`).evaluate(e => { const m = new DOMMatrixReadOnly(getComputedStyle(e).transform); return { z: m.m43, scale: m.m11 }; }));
++    }
++    expect(values[0].z).toBeLessThan(values[1].z); expect(values[1].z).toBeLessThan(values[2].z);
++    expect(values[0].scale).toBeGreaterThan(values[1].scale); expect(values[1].scale).toBeGreaterThan(values[2].scale);
++    const factor = page.viewportSize()!.width < 768 ? .5 : 1;
++    expect(values.every(v => v.z >= -40 * factor && v.z <= 20 * factor && v.scale >= 1 && v.scale <= 1.04)).toBe(true);
++    expect(values[1].z).toBeCloseTo(values[3].z, 2); expect(values[0].z).toBeCloseTo(values[4].z, 2);
++    const frame = page.locator(`${selector} [data-photo-frame]`); await frame.scrollIntoViewIfNeeded(); await page.waitForTimeout(1300);
++    await frame.hover({ position: { x: 70, y: 50 } }); await page.waitForTimeout(200);
++    expect(await frame.evaluate(e => getComputedStyle(e).transform)).toBe("none");
++    await frame.click({ position: { x: 70, y: 50 } });
++    await expect(frame.locator(".image-feedback-layer")).toHaveCount(1);
++    const matrix = await frame.evaluate(e => { const m = new DOMMatrixReadOnly(getComputedStyle(e).transform); return [m.m12, m.m13, m.m21, m.m23, m.m31, m.m32]; });
++    expect(matrix.every(v => v === 0)).toBe(true);
++    expect(await frame.locator("img").evaluate(e => getComputedStyle(e).transform)).toBe("none");
++    await expect(frame.locator(".image-feedback-layer")).toHaveCount(0);
++    await page.waitForTimeout(300);
++    expect(await page.locator(`${selector} [data-depth-motion]`).evaluateAll(es => es.every(e => getComputedStyle(e).willChange === "auto"))).toBe(true);
++  }
++});
++
++test("a paragraph in view before hydration stays immediately visible and never reveals", async ({ page }, info) => {
++  for (const [index, selector] of sections.entries()) {
++    let release!: () => void;
++    const gate = new Promise<void>(resolve => { release = resolve; });
++    await page.route("**/_next/**/*.js", async route => { await gate; await route.continue(); });
++    await page.goto("/", { waitUntil: "commit" });
++    const paragraph = page.locator(`${selector} .editorial-prose p`);
++    await expect(paragraph).toBeAttached();
++    await paragraph.evaluate(e => scrollTo({ top: e.getBoundingClientRect().top + scrollY - 200, behavior: "instant" }));
++    await page.waitForTimeout(200);
++    await expect(paragraph).toBeVisible();
++    expect(await paragraph.locator("..").evaluate(e => getComputedStyle(e).opacity)).toBe("1");
++    release(); await page.waitForTimeout(1400);
++    const text = await paragraph.textContent();
++    expect(await page.evaluate(text => window.editorialEntries.filter(e => e.className === "editorial-prose" && e.text === text), text)).toEqual([]);
++    expect(await paragraph.locator("..").evaluate(e => ({ opacity: getComputedStyle(e).opacity, transform: getComputedStyle(e).transform }))).toEqual({ opacity: "1", transform: "none" });
++    await page.screenshot({ path: `artifacts/motion-stage-5/initial-prose-${info.project.name}-${index}.png`, scale: "css" });
++    await page.unroute("**/_next/**/*.js");
++  }
++});
++
++test("reduced motion, no JavaScript, resize and native text links remain usable", async ({ page, browser }, info) => {
++  await page.emulateMedia({ reducedMotion: "reduce" }); await page.goto("/");
++  for (const [index, selector] of sections.entries()) {
++    await page.locator(selector).scrollIntoViewIfNeeded(); await page.waitForTimeout(300);
++    expect(await page.locator(`${selector} [data-depth-motion], ${selector} .editorial-text-plane`).evaluateAll(es => es.every(e => getComputedStyle(e).transform === "none" && getComputedStyle(e).opacity === "1"))).toBe(true);
++    await page.screenshot({ path: `artifacts/motion-stage-5/reduced-${info.project.name}-${index}.png`, scale: "css" });
++  }
++  const context = await browser.newContext({ javaScriptEnabled: false, viewport: page.viewportSize()! });
++  const staticPage = await context.newPage(); await staticPage.goto("http://127.0.0.1:3105/");
++  for (const [index, selector] of sections.entries()) { await staticPage.locator(selector).scrollIntoViewIfNeeded(); await expect(staticPage.locator(`${selector} .editorial-prose p`)).toBeVisible(); expect(await staticPage.locator(`${selector} h2`).textContent()).toBe(headings[index]); }
++  await context.close();
++  await page.emulateMedia({ reducedMotion: "no-preference" }); await page.goto("/"); await page.waitForTimeout(300);
++  await page.locator("#domestic-services").scrollIntoViewIfNeeded(); await page.waitForTimeout(120);
++  await page.setViewportSize({ width: 360, height: 900 }); await page.waitForTimeout(200);
++  expect(await page.locator("#domestic-services h2").textContent()).toBe(headings[0]);
++  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
++  const link = page.locator('#domestic-services a[href="/services/domestic"]'); await link.focus(); await page.keyboard.press("Enter");
++  await expect(page).toHaveURL(/\/services\/domestic$/);
++});

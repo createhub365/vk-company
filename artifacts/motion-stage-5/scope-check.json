@@ -1,0 +1,22 @@
+{
+  "changed_preexisting_files": [
+    "MOTION_SYSTEM.md",
+    "app/(site)/page.tsx",
+    "components/image-feedback.tsx",
+    "components/motion/primitives.tsx",
+    "scripts/audit-motion-content.mjs",
+    "tests/e2e/image-feedback.spec.ts",
+    "tests/motion-content-guard.test.ts"
+  ],
+  "new_implementation_and_test_files": [
+    "components/motion/editorial-heading.tsx",
+    "styles/editorial-depth.css",
+    "playwright.editorial-motion.config.ts",
+    "tests/e2e/editorial-motion.spec.ts"
+  ],
+  "unexpected_preexisting_changes": [],
+  "hero_unchanged": true,
+  "process_and_following_content_unchanged": true,
+  "audit_unchanged": true,
+  "prior_stage_4_implementation_unchanged": true
+}

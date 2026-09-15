@@ -1,0 +1,19 @@
+{
+  "changed_preexisting_files": [
+    "MOTION_SYSTEM.md",
+    "app/(site)/page.tsx",
+    "tests/e2e/image-feedback.spec.ts"
+  ],
+  "new_implementation_and_test_files": [
+    "components/motion/process-sequence.tsx",
+    "lib/motion/process-progress.ts",
+    "styles/process-depth.css",
+    "tests/process-progress.test.ts",
+    "tests/e2e/process-motion.spec.ts",
+    "playwright.process-motion.config.ts"
+  ],
+  "unexpected_preexisting_changes": [],
+  "homepage_unchanged_except_process_wrapper_and_import": true,
+  "audit_and_image_assets_unchanged": true,
+  "no_stage_6_video_files": true
+}

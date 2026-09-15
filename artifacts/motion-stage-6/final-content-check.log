@@ -1,0 +1,2 @@
+PASS: 11 page outputs retain copy, sections, headings, links, images, controls, labels, form attributes, details and metadata; image bytes, business sources and static metadata/headers unchanged.
+PASS: Domestic and International editorial prose matches MOTION_AUDIT.md and the pinned baseline byte-for-byte (UTF-8).

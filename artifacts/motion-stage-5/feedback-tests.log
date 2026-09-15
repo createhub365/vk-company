@@ -1,0 +1,215 @@
+[WebServer] (node:99651) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 64 tests using 2 workers
+
+(node:99652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:99653) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   2 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / (762ms)
+  ✘   1 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / (738ms)
+(node:99667) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:99666) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/domestic (4.4s)
+  ✓   4 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/domestic (4.5s)
+  ✓   5 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/international (4.2s)
+  ✓   6 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/international (4.3s)
+  ✓   7 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /about (5.0s)
+  ✓   8 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /about (5.1s)
+  ✓   9 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /contact (1.2s)
+  ✓  10 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /contact (1.2s)
+  ✓  11 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /get-a-quote (569ms)
+  ✓  13 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /faq (119ms)
+  ✓  14 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /privacy (173ms)
+  ✓  15 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /terms (130ms)
+  ✓  12 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /get-a-quote (654ms)
+  ✓  17 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /faq (140ms)
+  ✓  16 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /track (144ms)
+  ✓  18 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /privacy (171ms)
+  ✓  20 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /terms (180ms)
+  ✓  21 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /track (169ms)
+  ✓  19 [768] › tests/e2e/image-feedback.spec.ts:55:1 › hover tilts only the coherent frame and settles on leave (623ms)
+  ✓  22 [1440] › tests/e2e/image-feedback.spec.ts:55:1 › hover tilts only the coherent frame and settles on leave (709ms)
+  ✓  23 [768] › tests/e2e/image-feedback.spec.ts:69:1 › existing Quote WebGL scene stays idle through pointer-disabled taps and offscreen (2.7s)
+  ✓  25 [768] › tests/e2e/image-feedback.spec.ts:91:1 › reduced motion and lost WebGL leave stationary feedback and essential content (480ms)
+  ✓  24 [1440] › tests/e2e/image-feedback.spec.ts:69:1 › existing Quote WebGL scene stays idle through pointer-disabled taps and offscreen (2.6s)
+  ✓  26 [768] › tests/e2e/image-feedback.spec.ts:108:1 › WebGL unavailable from startup and JavaScript disabled preserve the photograph/form (274ms)
+  ✓  27 [1440] › tests/e2e/image-feedback.spec.ts:91:1 › reduced motion and lost WebGL leave stationary feedback and essential content (607ms)
+  ✓  28 [768] › tests/e2e/image-feedback.spec.ts:118:1 › native keyboard links, forms and menus remain unaffected (376ms)
+  ✓  29 [1440] › tests/e2e/image-feedback.spec.ts:108:1 › WebGL unavailable from startup and JavaScript disabled preserve the photograph/form (300ms)
+  ✓  30 [768] › tests/e2e/image-feedback.spec.ts:132:1 › scroll, swipe, pinch, drag and selection do not create tap effects (464ms)
+  ✓  31 [1440] › tests/e2e/image-feedback.spec.ts:118:1 › native keyboard links, forms and menus remain unaffected (464ms)
+(node:99751) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  32 [1440] › tests/e2e/image-feedback.spec.ts:132:1 › scroll, swipe, pinch, drag and selection do not create tap effects (430ms)
+(node:99758) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  33 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / (534ms)
+(node:99763) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  34 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / (486ms)
+(node:99770) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  35 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/domestic (4.0s)
+  ✓  36 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/domestic (3.9s)
+  ✓  37 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/international (3.9s)
+  ✓  38 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/international (3.9s)
+  ✓  39 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /about (4.8s)
+  ✓  40 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /about (4.8s)
+  ✓  41 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /contact (1.1s)
+  ✓  42 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /contact (1.1s)
+  ✓  43 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /get-a-quote (473ms)
+  ✓  45 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /faq (119ms)
+  ✓  46 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /privacy (102ms)
+  ✓  47 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /terms (121ms)
+  ✓  44 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /get-a-quote (524ms)
+  ✓  48 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /track (134ms)
+  -  50 [390] › tests/e2e/image-feedback.spec.ts:55:1 › hover tilts only the coherent frame and settles on leave
+  ✓  49 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /faq (141ms)
+  ✓  52 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /privacy (120ms)
+  ✓  53 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /terms (132ms)
+  ✓  54 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /track (128ms)
+  -  55 [360] › tests/e2e/image-feedback.spec.ts:55:1 › hover tilts only the coherent frame and settles on leave
+  ✓  51 [390] › tests/e2e/image-feedback.spec.ts:69:1 › existing Quote WebGL scene stays idle through pointer-disabled taps and offscreen (2.9s)
+  ✓  57 [390] › tests/e2e/image-feedback.spec.ts:91:1 › reduced motion and lost WebGL leave stationary feedback and essential content (409ms)
+  ✓  56 [360] › tests/e2e/image-feedback.spec.ts:69:1 › existing Quote WebGL scene stays idle through pointer-disabled taps and offscreen (2.8s)
+  ✓  58 [390] › tests/e2e/image-feedback.spec.ts:108:1 › WebGL unavailable from startup and JavaScript disabled preserve the photograph/form (234ms)
+  ✓  59 [360] › tests/e2e/image-feedback.spec.ts:91:1 › reduced motion and lost WebGL leave stationary feedback and essential content (501ms)
+  ✓  60 [390] › tests/e2e/image-feedback.spec.ts:118:1 › native keyboard links, forms and menus remain unaffected (375ms)
+  ✓  61 [360] › tests/e2e/image-feedback.spec.ts:108:1 › WebGL unavailable from startup and JavaScript disabled preserve the photograph/form (251ms)
+  ✓  63 [360] › tests/e2e/image-feedback.spec.ts:118:1 › native keyboard links, forms and menus remain unaffected (394ms)
+  ✓  62 [390] › tests/e2e/image-feedback.spec.ts:132:1 › scroll, swipe, pinch, drag and selection do not create tap effects (597ms)
+  ✓  64 [360] › tests/e2e/image-feedback.spec.ts:132:1 › scroll, swipe, pinch, drag and selection do not create tap effects (564ms)
+
+
+  1) [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ──────
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    1.3290999999999968
+
+      41 |     await expect(layer(page)).toHaveCount(1);
+      42 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+    > 43 |     expect(Math.abs(feedback.left-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top-40)).toBeLessThanOrEqual(1);
+         |                                        ^
+      44 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+      45 |     expect(await frame.locator('img').evaluate(el=>el.getAnimations().length)).toBe(0);
+      46 |     expect(await heading.boundingBox()).toEqual(headingBox);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:43:40
+
+    Error Context: test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--1440/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--1440/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ───────
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    1.5829000000000022
+
+      41 |     await expect(layer(page)).toHaveCount(1);
+      42 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+    > 43 |     expect(Math.abs(feedback.left-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top-40)).toBeLessThanOrEqual(1);
+         |                                        ^
+      44 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+      45 |     expect(await frame.locator('img').evaluate(el=>el.getAnimations().length)).toBe(0);
+      46 |     expect(await heading.boundingBox()).toEqual(headingBox);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:43:40
+
+    Error Context: test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--768/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--768/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ───────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+        "height": 92.17962646484375,
+    -   "width": 363.81909561157227,
+    -   "x": 25.150753021240234,
+    +   "width": 363.81910705566406,
+    +   "x": 17.351058959960938,
+        "y": 629.7649536132812,
+      }
+
+      44 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+      45 |     expect(await frame.locator('img').evaluate(el=>el.getAnimations().length)).toBe(0);
+    > 46 |     expect(await heading.boundingBox()).toEqual(headingBox);
+         |                                         ^
+      47 |     await page.screenshot({path:info.outputPath(`tap-${await frame.getAttribute('class')}.png`),scale:'css'});
+      48 |     await expect(layer(page)).toHaveCount(0);
+      49 |     expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:46:41
+
+    Error Context: test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ───────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+        "height": 85.0816650390625,
+        "width": 333.66833877563477,
+    -   "x": 13.165828704833984,
+    +   "x": 25.226131439208984,
+        "y": 600.21240234375,
+      }
+
+      44 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+      45 |     expect(await frame.locator('img').evaluate(el=>el.getAnimations().length)).toBe(0);
+    > 46 |     expect(await heading.boundingBox()).toEqual(headingBox);
+         |                                         ^
+      47 |     await page.screenshot({path:info.outputPath(`tap-${await frame.getAttribute('class')}.png`),scale:'css'});
+      48 |     await expect(layer(page)).toHaveCount(0);
+      49 |     expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:46:41
+
+    Error Context: test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--360/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/image-feedback-results/image-feedback-edge-to-edge-photos-and-bounded-taps--360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ───────
+    [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ────────
+    [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ────────
+    [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ────────
+  2 skipped
+  58 passed (44.1s)

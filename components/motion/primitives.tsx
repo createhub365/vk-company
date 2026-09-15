@@ -13,10 +13,11 @@ export function DepthSection({ children, className = "", ...props }: Props) {
   return <div {...props} className={`depth-section ${className}`}>{children}</div>;
 }
 
-export function RiseIn({ children, className = "", rise, rotate, stagger = 0, index = 0, delay = 0, duration, enabled = true, timelineStart, ...props }: Props & {
-  rise?: number; rotate?: number; stagger?: number; index?: number; delay?: number; duration?: number; enabled?: boolean; timelineStart?: number;
+export function RiseIn({ children, className = "", as: Element = "div", rise, rotate, fromX = 0, fade = true, immediateIfInView = false, stagger = 0, index = 0, delay = 0, duration, enabled = true, timelineStart, ...props }: Props & {
+  as?: "div" | "span"; rise?: number; rotate?: number; fromX?: number; fade?: boolean; immediateIfInView?: boolean;
+  stagger?: number; index?: number; delay?: number; duration?: number; enabled?: boolean; timelineStart?: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement | null>(null);
   const reduced = useReducedMotion();
   const entered = useRef(false);
   useEffect(() => {
@@ -25,19 +26,25 @@ export function RiseIn({ children, className = "", rise, rotate, stagger = 0, in
     const tokens = readDepthTokens(element);
     const distance = clamp(rise ?? tokens.rise, 0, tokens.rise);
     const rotation = clamp(rotate ?? tokens.rotation, 0, tokens.rotation);
+    const horizontal = clamp(fromX, -tokens.rise, tokens.rise);
     // Stagger is in milliseconds; hero sequences can share a document-timeline clock.
     const delayLimit = parseFloat(getComputedStyle(element).getPropertyValue("--d-slow"));
     const startDelay = clamp(delay + stagger * Math.max(0, Number.isFinite(index) ? index : 0), 0, delayLimit);
     const durationMs = duration === undefined ? tokens.duration : clamp(duration, 0, tokens.duration);
     let animation: Animation | undefined;
     let timer: ReturnType<typeof setTimeout> | undefined;
+    let firstObservation = true;
     const settle = () => { animation?.cancel(); element.style.removeProperty("will-change"); };
     const observer = new IntersectionObserver(([entry]) => {
+      const initial = firstObservation;
+      firstObservation = false;
       if (!entry.isIntersecting) return;
       entered.current = true;
       observer.disconnect();
+      // Prose already visible at the initial observation is never hidden to reveal it.
+      if (initial && immediateIfInView) return;
       const frames = [
-        { transform: `translateY(${distance}px) rotateX(${rotation}deg)`, opacity: 0 },
+        { transform: `${horizontal ? `translateX(${horizontal}px) ` : ""}translateY(${distance}px) rotateX(${rotation}deg)`, opacity: fade ? 0 : 1 },
         { transform: "none", opacity: 1 },
       ];
       if (timelineStart !== undefined) {
@@ -46,6 +53,12 @@ export function RiseIn({ children, className = "", rise, rotate, stagger = 0, in
         animation.startTime = timelineStart;
         animation.onfinish = settle;
         timer = setTimeout(() => { element.style.willChange = "transform, opacity"; }, Math.max(0, timelineStart + startDelay - Number(document.timeline.currentTime)));
+      } else if (immediateIfInView) {
+        // Only an offscreen-to-onscreen entrance may use backwards fill. No visible
+        // delay followed by a flash to opacity zero; initial content stays final.
+        animation = element.animate(frames, { duration: durationMs, delay: startDelay, easing: tokens.easing, fill: "backwards" });
+        animation.onfinish = settle;
+        timer = setTimeout(() => { element.style.willChange = "transform, opacity"; }, startDelay);
       } else {
         timer = setTimeout(() => {
           if (!element.isConnected || document.hidden) return;
@@ -57,8 +70,8 @@ export function RiseIn({ children, className = "", rise, rotate, stagger = 0, in
     });
     observer.observe(element);
     return () => { observer.disconnect(); clearTimeout(timer); settle(); };
-  }, [reduced, rise, rotate, stagger, index, delay, duration, enabled, timelineStart]);
-  return <div {...props} ref={ref} className={className} data-depth-motion="rise">{children}</div>;
+  }, [reduced, rise, rotate, fromX, fade, immediateIfInView, stagger, index, delay, duration, enabled, timelineStart]);
+  return <Element {...props} ref={node => { ref.current = node; }} className={className} data-depth-motion="rise">{children}</Element>;
 }
 
 export function ParallaxMedia({ children, className = "", ...props }: Props) {

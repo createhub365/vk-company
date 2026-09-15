@@ -1,0 +1,194 @@
+[
+  {
+    "width": 1440,
+    "layout": [
+      {
+        "tag": "HEADER",
+        "x": 100,
+        "y": 10,
+        "width": 1240,
+        "height": 72
+      },
+      {
+        "tag": "MAIN",
+        "x": 0,
+        "y": -10,
+        "width": 1440,
+        "height": 5777.28125
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 5767.28125,
+        "width": 1440,
+        "height": 434.21875
+      }
+    ],
+    "links": [
+      {
+        "text": "Domestic",
+        "href": "/services/domestic"
+      },
+      {
+        "text": "International",
+        "href": "/services/international"
+      },
+      {
+        "text": "About",
+        "href": "/about"
+      },
+      {
+        "text": "Contact",
+        "href": "/contact"
+      },
+      {
+        "text": "Get a quote",
+        "href": "/get-a-quote"
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "layout": [
+      {
+        "tag": "HEADER",
+        "x": 12,
+        "y": 6,
+        "width": 744,
+        "height": 72
+      },
+      {
+        "tag": "MAIN",
+        "x": 0,
+        "y": -14,
+        "width": 768,
+        "height": 6530.4375
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 6516.4375,
+        "width": 768,
+        "height": 434.21875
+      }
+    ],
+    "links": [
+      {
+        "text": "Domestic",
+        "href": "/services/domestic"
+      },
+      {
+        "text": "International",
+        "href": "/services/international"
+      },
+      {
+        "text": "About",
+        "href": "/about"
+      },
+      {
+        "text": "Contact",
+        "href": "/contact"
+      },
+      {
+        "text": "Get a quote",
+        "href": "/get-a-quote"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "layout": [
+      {
+        "tag": "HEADER",
+        "x": 6,
+        "y": 6,
+        "width": 378,
+        "height": 62
+      },
+      {
+        "tag": "MAIN",
+        "x": 0,
+        "y": -24,
+        "width": 390,
+        "height": 7283.921875
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 7259.921875,
+        "width": 390,
+        "height": 474.1875
+      }
+    ],
+    "links": [
+      {
+        "text": "Domestic",
+        "href": "/services/domestic"
+      },
+      {
+        "text": "International",
+        "href": "/services/international"
+      },
+      {
+        "text": "About",
+        "href": "/about"
+      },
+      {
+        "text": "Contact",
+        "href": "/contact"
+      },
+      {
+        "text": "Get a quote",
+        "href": "/get-a-quote"
+      }
+    ]
+  },
+  {
+    "width": 360,
+    "layout": [
+      {
+        "tag": "HEADER",
+        "x": 6,
+        "y": 6,
+        "width": 348,
+        "height": 62
+      },
+      {
+        "tag": "MAIN",
+        "x": 0,
+        "y": -24,
+        "width": 360,
+        "height": 7177
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 7153,
+        "width": 360,
+        "height": 474.1875
+      }
+    ],
+    "links": [
+      {
+        "text": "Domestic",
+        "href": "/services/domestic"
+      },
+      {
+        "text": "International",
+        "href": "/services/international"
+      },
+      {
+        "text": "About",
+        "href": "/about"
+      },
+      {
+        "text": "Contact",
+        "href": "/contact"
+      },
+      {
+        "text": "Get a quote",
+        "href": "/get-a-quote"
+      }
+    ]
+  }
+]

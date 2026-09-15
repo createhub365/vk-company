@@ -1,0 +1,19 @@
+[WebServer] (node:99968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 2 workers
+
+(node:99970) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:99969) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [768] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / (8.1s)
+(node:99986) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [1440] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / (8.4s)
+(node:99991) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [390] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / (7.9s)
+  ✓  4 [360] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / (7.8s)
+
+  4 passed (17.0s)

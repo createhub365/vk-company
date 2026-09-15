@@ -1,0 +1,25 @@
+/* Existing editorial columns, spacing, image frames and responsive order remain. */
+.editorial-motion { --editorial-text-z: 12px; }
+.editorial-motion .editorial-media { min-width: 0; transform-style: flat; }
+.editorial-motion .editorial-grid-reverse > .editorial-media { order: 2; }
+.editorial-motion .editorial-text-plane {
+  transform: translateZ(var(--editorial-text-z));
+  transform-style: preserve-3d;
+}
+.editorial-motion .editorial-text-enter,
+.editorial-motion .editorial-prose { display: flow-root; }
+.editorial-motion .editorial-prose > p { color: var(--muted); font-size: 1rem; }
+.international-feature.editorial-motion .editorial-prose > p { color: #b7cbd3; }
+.editorial-motion .editorial-heading-line { display: block; }
+.editorial-motion h2 { perspective: var(--perspective); }
+.editorial-motion .editorial-text-enter:focus-within { transform: none !important; opacity: 1 !important; }
+@media (max-width: 900px) {
+  .editorial-motion .editorial-grid-reverse > .editorial-media { order: initial; }
+}
+@media (width < 768px) {
+  .editorial-motion { --editorial-text-z: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .editorial-motion .editorial-text-plane { transform: none !important; transform-style: flat; }
+  .editorial-motion h2 { perspective: none; }
+}
