@@ -1,0 +1,100 @@
+[
+  {
+    "route": "/",
+    "changes": [
+      {
+        "kind": "delete",
+        "removed": "Illustrative route imagery",
+        "added": "",
+        "precedingContext": "and let our team help arrange the next step. Get a quote",
+        "followingContext": "01 / Domestic Courier services between cities Planned around your actual route."
+      },
+      {
+        "kind": "delete",
+        "removed": "Illustrative international logistics",
+        "added": "",
+        "precedingContext": "the specific shipment\u2014without making blanket coverage or timing claims. Explore domestic services",
+        "followingContext": "02 / International Across borders, details first Clear before it leaves the"
+      },
+      {
+        "kind": "delete",
+        "removed": "Illustrative operations environment",
+        "added": "",
+        "precedingContext": "team reviews each request before confirming service or charges. Get a quote",
+        "followingContext": "03 / Company About VK AND COMPANY Built around each shipment. Our"
+      }
+    ]
+  },
+  {
+    "route": "/about",
+    "changes": [
+      {
+        "kind": "delete",
+        "removed": "Illustrative courier environment",
+        "added": "",
+        "precedingContext": "and international courier services through a clear enquiry, quotation and booking process.",
+        "followingContext": "What we do Connecting People & Possibilities Shipment Details Route Review Booking"
+      }
+    ]
+  },
+  {
+    "route": "/contact",
+    "changes": []
+  },
+  {
+    "route": "/get-a-quote",
+    "changes": [
+      {
+        "kind": "delete",
+        "removed": "VKC",
+        "added": "",
+        "precedingContext": "below. Our team will review the information before confirming service and charges.",
+        "followingContext": "Before you begin Details make the difference. Approximate information is fine where"
+      }
+    ]
+  },
+  {
+    "route": "/faq",
+    "changes": []
+  },
+  {
+    "route": "/track",
+    "changes": []
+  },
+  {
+    "route": "/privacy",
+    "changes": []
+  },
+  {
+    "route": "/terms",
+    "changes": []
+  },
+  {
+    "route": "/404.html",
+    "changes": []
+  },
+  {
+    "route": "/services/domestic",
+    "changes": [
+      {
+        "kind": "delete",
+        "removed": "Illustrative courier environment",
+        "added": "",
+        "precedingContext": "Availability, service options, timing and charges are confirmed for the specific shipment.",
+        "followingContext": "domestic process Begin with the real shipment details. Provide the origin and"
+      }
+    ]
+  },
+  {
+    "route": "/services/international",
+    "changes": [
+      {
+        "kind": "delete",
+        "removed": "Illustrative courier environment",
+        "added": "",
+        "precedingContext": "and destination. We review each enquiry before confirming what can be arranged.",
+        "followingContext": "international process Route and contents review. Share accurate origin, destination, contents, package"
+      }
+    ]
+  }
+]

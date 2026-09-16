@@ -1,0 +1,16 @@
+{
+  "changed_preexisting_files": [
+    "MOTION_SYSTEM.md",
+    "app/(site)/contact/page.tsx",
+    "app/(site)/get-a-quote/page.tsx",
+    "components/faq-list.tsx",
+    "components/site-footer.tsx",
+    "next-env.d.ts"
+  ],
+  "unexpected_changes": [],
+  "generated_next_env_changed": true,
+  "image_files_unchanged": true,
+  "form_implementations_unchanged": true,
+  "hero_nav_process_editorials_unchanged": true,
+  "no_new_recordings": true
+}

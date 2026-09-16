@@ -17,7 +17,13 @@ function fixture() {
   for(const [file,text] of Object.entries(baseline.extraExports))write(`out/${file}`,text as string);
   for(const page of baseline.pages) {
     const file=page.route==="/"?"index.html":page.route==="/404.html"?"404.html":`${page.route.slice(1)}.html`;
-    write(`out/${file}`,htmlFixtures[file]);
+    // Historical Stage 2 fixtures predate the explicitly approved caption
+    // removals. Apply only that exact removal before exercising the guard.
+    let html = htmlFixtures[file] as string;
+    for (const caption of ["Illustrative courier environment", "Illustrative route imagery", "Illustrative international logistics", "Illustrative operations environment"]) {
+      html = html.replaceAll(`<span>${caption}</span>`, "");
+    }
+    write(`out/${file}`,html);
   }
   for(const file of Object.keys(baseline.images)) { const full=resolve(directory,file);mkdirSync(dirname(full),{recursive:true});symlinkSync(resolve(repo,file.replace(/^out\//,"public/")),full); }
   const check=()=>spawnSync(process.execPath,[resolve(repo,"scripts/audit-motion-content.mjs")],{cwd:directory,encoding:"utf8"});
@@ -27,6 +33,7 @@ afterEach(()=>{for(const directory of temporary.splice(0))rmSync(directory,{recu
 describe("motion content contract rejects regressions",()=>{
   it("accepts the preserved static content",()=>{expect(fixture().check().status).toBe(0);});
   it("rejects a changed headline",()=>{const f=fixture();const html=readFileSync(resolve(f.directory,"out/index.html"),"utf8");f.write("out/index.html",html.replace("Across cities.","Changed headline."));const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Content/semantics changed");});
+  it("rejects a photo disclaimer added back to the DOM",()=>{const f=fixture();const file="out/services/domestic.html";const html=readFileSync(resolve(f.directory,file),"utf8");f.write(file,html.replace("</main>","<span>Illustrative courier environment</span></main>"));const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Content/semantics changed");});
   it("rejects an editorial whitespace byte change that normalized copy would conceal",()=>{const f=fixture();const html=readFileSync(resolve(f.directory,"out/index.html"),"utf8");f.write("out/index.html",html.replace("Share the origin, destination", "Share the origin,  destination"));const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Editorial prose bytes changed");});
   it("rejects an edited editorial block in the Markdown contract",()=>{const f=fixture();const file="MOTION_AUDIT.md";const audit=readFileSync(resolve(f.directory,file),"utf8");f.write(file,audit.replace("Planned around your actual route.","Planned around your changed route."));const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Editorial audit bytes changed");});
   it("rejects changed image bytes even with the same URL",()=>{const f=fixture();const image=Object.keys(baseline.images)[0];unlinkSync(resolve(f.directory,image));f.write(image,"altered image");const r=f.check();expect(r.status).not.toBe(0);expect(r.stderr).toContain("Image bytes changed");});

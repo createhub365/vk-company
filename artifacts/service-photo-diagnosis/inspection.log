@@ -1,0 +1,482 @@
+[
+  {
+    "name": "selected-domestic",
+    "viewport": 1440,
+    "display": {
+      "width": 618.203125,
+      "height": 319.828125
+    },
+    "selectedPixels": [
+      1440,
+      745
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-domestic-1",
+    "viewport": 1440,
+    "display": {
+      "width": 625.234375,
+      "height": 395.546875
+    },
+    "selectedPixels": [
+      392,
+      248
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-domestic-2",
+    "viewport": 1440,
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-domestic-3",
+    "viewport": 1440,
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-international",
+    "viewport": 1440,
+    "display": {
+      "width": 616.203125,
+      "height": 298.671875
+    },
+    "selectedPixels": [
+      1440,
+      698
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-international-1",
+    "viewport": 1440,
+    "display": {
+      "width": 625.234375,
+      "height": 395.546875
+    },
+    "selectedPixels": [
+      392,
+      248
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-international-2",
+    "viewport": 1440,
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-international-3",
+    "viewport": 1440,
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-domestic",
+    "viewport": 768,
+    "display": {
+      "width": 728,
+      "height": 376.515625
+    },
+    "selectedPixels": [
+      1744,
+      902
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-domestic-1",
+    "viewport": 768,
+    "display": {
+      "width": 378.390625,
+      "height": 239.375
+    },
+    "selectedPixels": [
+      392,
+      248
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-domestic-2",
+    "viewport": 768,
+    "display": {
+      "width": 378.390625,
+      "height": 245.171875
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-domestic-3",
+    "viewport": 768,
+    "display": {
+      "width": 378.390625,
+      "height": 245.171875
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-international",
+    "viewport": 768,
+    "display": {
+      "width": 726,
+      "height": 351.71875
+    },
+    "selectedPixels": [
+      1802,
+      873
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-international-1",
+    "viewport": 768,
+    "display": {
+      "width": 378.390625,
+      "height": 239.375
+    },
+    "selectedPixels": [
+      392,
+      248
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-international-2",
+    "viewport": 768,
+    "display": {
+      "width": 378.390625,
+      "height": 245.171875
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-international-3",
+    "viewport": 768,
+    "display": {
+      "width": 378.390625,
+      "height": 245.171875
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-domestic",
+    "viewport": 390,
+    "display": {
+      "width": 362,
+      "height": 187.28125
+    },
+    "selectedPixels": [
+      1440,
+      745
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-domestic-1",
+    "viewport": 390,
+    "display": {
+      "width": 358,
+      "height": 226.484375
+    },
+    "selectedPixels": [
+      392,
+      248
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-domestic-2",
+    "viewport": 390,
+    "display": {
+      "width": 358,
+      "height": 231.96875
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-domestic-3",
+    "viewport": 390,
+    "display": {
+      "width": 358,
+      "height": 231.96875
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-international",
+    "viewport": 390,
+    "display": {
+      "width": 360,
+      "height": 174.5
+    },
+    "selectedPixels": [
+      1440,
+      698
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-international-1",
+    "viewport": 390,
+    "display": {
+      "width": 358,
+      "height": 226.484375
+    },
+    "selectedPixels": [
+      392,
+      248
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-international-2",
+    "viewport": 390,
+    "display": {
+      "width": 358,
+      "height": 231.96875
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-international-3",
+    "viewport": 390,
+    "display": {
+      "width": 358,
+      "height": 231.96875
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false,
+    "transformComparison": {
+      "sameDimensions": true,
+      "identicalPixels": true
+    }
+  },
+  {
+    "name": "selected-domestic",
+    "viewport": 360,
+    "display": {
+      "width": 332,
+      "height": 171.75
+    },
+    "selectedPixels": [
+      1440,
+      745
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-domestic-1",
+    "viewport": 360,
+    "display": {
+      "width": 328,
+      "height": 207.5
+    },
+    "selectedPixels": [
+      392,
+      248
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-domestic-2",
+    "viewport": 360,
+    "display": {
+      "width": 328,
+      "height": 212.515625
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-domestic-3",
+    "viewport": 360,
+    "display": {
+      "width": 328,
+      "height": 212.515625
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-international",
+    "viewport": 360,
+    "display": {
+      "width": 330,
+      "height": 159.953125
+    },
+    "selectedPixels": [
+      1440,
+      698
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-international-1",
+    "viewport": 360,
+    "display": {
+      "width": 328,
+      "height": 207.5
+    },
+    "selectedPixels": [
+      392,
+      248
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-international-2",
+    "viewport": 360,
+    "display": {
+      "width": 328,
+      "height": 212.515625
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false
+  },
+  {
+    "name": "selected-international-3",
+    "viewport": 360,
+    "display": {
+      "width": 328,
+      "height": 212.515625
+    },
+    "selectedPixels": [
+      392,
+      254
+    ],
+    "parallaxAncestor": false
+  }
+]

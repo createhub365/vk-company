@@ -1,0 +1,26 @@
+[
+  {
+    "reducedMotion": "no-preference",
+    "menuLockCycles": 3,
+    "touchScroll": true,
+    "nativeQuote": true,
+    "smoothResumesElsewhere": true,
+    "historyRestoration": true
+  },
+  {
+    "reducedMotion": "reduce",
+    "menuLockCycles": 3,
+    "touchScroll": true,
+    "nativeQuote": true,
+    "smoothResumesElsewhere": false,
+    "historyRestoration": true
+  },
+  {
+    "mode": "no-js",
+    "photoAndFormVisible": true
+  },
+  {
+    "mode": "no-webgl",
+    "photoAndFormVisible": true
+  }
+]

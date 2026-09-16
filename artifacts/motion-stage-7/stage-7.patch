@@ -1,0 +1,356 @@
+--- a/components/faq-list.tsx
++++ b/components/faq-list.tsx
+@@ -1,3 +1,5 @@
++import { FaqDepth } from "@/components/motion/utility-depth";
++
+ export const faqs = [
+   ["How do I request a courier quote?", "Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer."],
+   ["Does submitting the form confirm my booking?", "No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted."],
+@@ -6,5 +8,5 @@
+ ];
+ 
+ export function FaqList({ limit }: { limit?: number }) {
+-  return <div className="faq-list">{faqs.slice(0, limit).map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div>;
++  return <FaqDepth>{faqs.slice(0, limit).map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}</summary><p>{answer}</p></details>)}</FaqDepth>;
+ }
+--- a/components/site-footer.tsx
++++ b/components/site-footer.tsx
+@@ -1,3 +1,4 @@
++import { FooterDepth } from "@/components/motion/utility-depth";
+ import Link from "next/link";
+ import { CompanyLogo } from "@/components/company-logo";
+ import { getPublicBusinessSettings } from "@/lib/business-settings";
+@@ -6,7 +7,7 @@
+   const settings=await getPublicBusinessSettings();
+   return (
+     <footer className="site-footer">
+-      <div className="shell">
++      <FooterDepth>
+         <div className="footer-grid">
+           <div className="footer-brand">
+             <div className="brand footer-logo"><CompanyLogo alt="VK AND COMPANY"/> <span>VK AND COMPANY</span></div>
+@@ -16,7 +17,7 @@
+           <div className="footer-col"><h3>Company</h3><Link href="/about">About</Link><Link href="/contact">Contact</Link><Link href="/faq">FAQs</Link><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link>{settings.email && <a href={`mailto:${settings.email}`}>Email us</a>}</div>
+         </div>
+         <div className="footer-bottom"><span>© {new Date().getFullYear()} VK AND COMPANY</span><span>Courier information is confirmed for each shipment.</span></div>
+-      </div>
++      </FooterDepth>
+     </footer>
+   );
+ }
+--- a/app/(site)/contact/page.tsx
++++ b/app/(site)/contact/page.tsx
+@@ -1,3 +1,4 @@
++import { FormDepth } from "@/components/motion/utility-depth";
+ import type { Metadata } from "next";
+ import { Mail, Phone, Headphones, FileText, Package, Users, MoveDownLeft } from "lucide-react";
+ import { Photograph } from "@/components/photograph";
+@@ -38,7 +39,7 @@
+           {settings.address && <p>{settings.mapUrl ? <a className="text-link" href={settings.mapUrl} rel="noopener noreferrer">{settings.address}</a> : settings.address}</p>}
+           {settings.operatingHours && <p>{settings.operatingHours}</p>}
+         </aside>
+-        <div className={styles.formArea}><SupportForm/></div>
++        <div className={styles.formArea}><FormDepth><SupportForm/></FormDepth></div>
+         <p className={styles.responseTime}>We usually respond within one business day.</p>
+         </div>
+       </div>
+--- a/app/(site)/get-a-quote/page.tsx
++++ b/app/(site)/get-a-quote/page.tsx
+@@ -1,5 +1,6 @@
++import { FormDepth } from "@/components/motion/utility-depth";
+ import type { Metadata } from "next";
+ import { PageHero } from "@/components/page-hero";
+ import { EnquiryForm } from "@/components/forms/enquiry-form";
+ export const metadata:Metadata={title:"Request a quote",description:"Share your route and parcel details with VK AND COMPANY for a reviewed courier quotation."};
+-export default function QuotePage(){return <><PageHero variant="quote" eyebrow="Quotation request" title="Tell us about your shipment." description="Share the route and parcel details below. Our team will review the information before confirming service and charges."/><section className="section"><div className="shell form-shell"><aside className="side-note"><p className="eyebrow">Before you begin</p><h2>Details make the difference.</h2><p>Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment.</p><p>Pickup requests are not currently enabled.</p></aside><EnquiryForm/></div></section></>}
++export default function QuotePage(){return <><PageHero variant="quote" eyebrow="Quotation request" title="Tell us about your shipment." description="Share the route and parcel details below. Our team will review the information before confirming service and charges."/><section className="section"><div className="shell form-shell"><aside className="side-note"><p className="eyebrow">Before you begin</p><h2>Details make the difference.</h2><p>Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment.</p><p>Pickup requests are not currently enabled.</p></aside><FormDepth><EnquiryForm/></FormDepth></div></section></>}
+--- a/MOTION_SYSTEM.md
++++ b/MOTION_SYSTEM.md
+@@ -1,6 +1,6 @@
+ # Motion system — foundation, hero, navigation and editorial sections
+ 
+-Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them to the homepage hero. Stage 4 adds depth and accessible menu interaction to the shared navigation. Stage 5 applies alternating depth to the two existing homepage editorial sections. Stage 6 adds the scroll-linked four-step sequence. Copy, forms, images, routes and metadata remain at the Stage 1 baseline. The root layout adds a context provider without extra DOM; shared photo feedback observes the pointer policy and uses Motion's scheduler.
++Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them to the homepage hero. Stage 4 adds depth and accessible menu interaction to the shared navigation. Stage 5 applies alternating depth to the two existing homepage editorial sections. Stage 6 adds the scroll-linked four-step sequence. Stage 7 adds FAQ, form and footer presentation. Copy, forms, images, routes and metadata remain at the Stage 1 baseline. The root layout adds a context provider without extra DOM; shared photo feedback observes the pointer policy and uses Motion's scheduler.
+ 
+ ## Tokens
+ 
+@@ -76,7 +76,7 @@
+ 
+ The hook was exercised in an isolated temporary Git repository: preserved staged content passes; a staged bad headline concealed by a clean working copy fails; a fully staged bad headline fails the fresh-build content check. No test commits or enquiries were created. Unit regression tests additionally reject altered image bytes, dynamic form wording and an added route.
+ 
+-No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 has its Round 1 tuning, Stage 4 navigation, Stage 5 editorial motion and Stage 6 process motion are implemented; later stages have not started.
++No Lighthouse claim is made at this foundation stage. The full before/after performance pass is now Stage 9, after Stage 8 remaining-page work. Stage 3 has its Round 1 tuning, Stages 4–7 are implemented; Stage 8 remaining pages and Stage 9 performance/final verification have not started.
+ 
+ Implementation references: [Motion useScroll](https://motion.dev/docs/react-use-scroll), [Motion shared frame scheduler](https://motion.dev/docs/frame), [Lenis options and manual frame integration](https://github.com/darkroomengineering/lenis).
+ 
+@@ -137,3 +137,15 @@
+ The component subscribes to the existing provider's scroll MotionValue and batches reads/writes on Motion's shared scheduler. No independent rAF loop or scroll listener is added. Identical/clamped progress performs no style writes. One resettable quiet-period timer clears will-change; it never advances motion. Resize, visibility changes, unmount and reduced-motion changes clean up their work. Reduced motion does not subscribe to scroll: all steps are flat/full-opacity, glow off, connector fully drawn. Those same final states render in SSR or with JavaScript disabled.
+ 
+ Evidence is in `artifacts/motion-stage-6/REPORT.md`. No recordings are created in this or remaining stages; review is on the running dev server, with diff/report/content verification retained.
++
++## Stage 7: FAQ, forms and footer
++
++`components/motion/utility-depth.tsx` provides three section-specific presentation wrappers around the existing native DOM. They do not add new general-purpose motion primitives. `FaqDepth` replaces only the existing faq-list div; `FormDepth` wraps the unchanged frozen form components; `FooterDepth` replaces only the footer's shell div. None changes content, field names, endpoints, native details semantics, routes or images. A hydration marker enables presentation only after mount, while CSS and reduced-motion state provide flat readable fallbacks.
++
++FAQ uses the existing plus/minus indicator, rotating it 180° on the 240ms expo curve. Native details opens/closes its layout immediately; the answer hinges from rotateX(-6deg) with opacity over 240ms. There is deliberately no height interpolation, preserving the transform/opacity-only rule. The old entire-card sideways movement and animated shadow are removed within this scope. One capture listener on each FAQ wrapper observes native toggle events; it does not intercept keyboard activation or prevent default. Rapid toggles cancel the prior answer animation, and finish/reduced-motion/unmount clear will-change and listeners. Reduced motion is stationary, including focus outlines.
++
++Forms use a compensated local perspective plane at Z 30px (15px mobile), preserving their existing size, position, soft shadow and layout. Focused controls lift to Z 12px (6px mobile), keeping the existing teal outline/ring. Their existing separate labels move up 2px without becoming placeholders or obscuring values. Submit buttons use desktop rotateX(-8deg) hover with a pseudo-element glow and scale .97 / Z 0 on active; active wins over hover. The shared pointer policy disables hover tilt on Quote, touch and below 768px. Quote's WebGL files and both form implementation files remain unchanged. The enquiry-only notice has no opacity treatment, entry animation or delay.
++
++Footer content sits at local Z -20px (-10px mobile), with a 1px desktop link lift. Original links, focus rings, company data and logo remain. The footer's outer page footprint is unchanged. All Stage 7 transforms are disabled under reduced motion; optional opacity transitions are capped at 150ms. No persistent will-change, rAF loop, pointer listener or scroll subscription was introduced.
++
++The completed Task A image diagnosis and pixel-identical transform controls are in `artifacts/service-photo-diagnosis/REPORT.md`; the six native 392px service rows need larger same-image originals. Stage 7 does not modify their rendering. Review `artifacts/motion-stage-7/REPORT.md` and `stage-7.patch` on the running dev server. No recordings are made. Stage 8 (remaining pages) and Stage 9 (performance/final verification) await review.
+--- /dev/null
++++ b/components/motion/utility-depth.tsx
+@@ -0,0 +1,62 @@
++"use client";
++
++import { useEffect, useRef, type ReactNode } from "react";
++import { usePointerEffects, useReducedMotion } from "./use-reduced-motion";
++import "@/styles/utility-depth.css";
++
++function useReadySurface() {
++  const root = useRef<HTMLDivElement>(null);
++  useEffect(() => {
++    const element = root.current;
++    if (!element) return;
++    element.dataset.utilityReady = "";
++    return () => { delete element.dataset.utilityReady; };
++  }, []);
++  return root;
++}
++
++export function FaqDepth({ children }: { children: ReactNode }) {
++  const root = useReadySurface();
++  const reduced = useReducedMotion();
++  useEffect(() => {
++    const element = root.current;
++    if (!element || reduced) return;
++    const animations = new Map<HTMLElement, Animation>();
++    const cancel = (answer: HTMLElement) => {
++      animations.get(answer)?.cancel(); animations.delete(answer);
++      answer.style.removeProperty("will-change");
++    };
++    const toggle = (event: Event) => {
++      if (!(event.target instanceof HTMLDetailsElement)) return;
++      const answer = event.target.querySelector<HTMLElement>(":scope > p");
++      if (!answer) return;
++      cancel(answer);
++      if (!event.target.open) return;
++      const css = getComputedStyle(element);
++      answer.style.willChange = "transform, opacity";
++      const animation = answer.animate([
++        { transform: `perspective(${css.getPropertyValue("--perspective").trim()}) rotateX(${css.getPropertyValue("--faq-hinge").trim()})`, opacity: 0 },
++        { transform: "none", opacity: 1 },
++      ], { duration: parseFloat(css.getPropertyValue("--d-fast")), easing: css.getPropertyValue("--ease-out-expo").trim() });
++      animations.set(answer, animation);
++      animation.onfinish = () => cancel(answer);
++    };
++    // Native details owns expansion, focus and keyboard activation. Only the
++    // answer's transform/opacity animates; layout height is never interpolated.
++    element.addEventListener("toggle", toggle, true);
++    return () => { element.removeEventListener("toggle", toggle, true); for (const answer of animations.keys()) cancel(answer); };
++  }, [root, reduced]);
++  return <div ref={root} className="faq-list faq-depth">{children}</div>;
++}
++
++export function FormDepth({ children }: { children: ReactNode }) {
++  const root = useReadySurface();
++  const pointer = usePointerEffects();
++  return <div ref={root} className="form-depth" data-utility-pointer={pointer}>{children}</div>;
++}
++
++export function FooterDepth({ children }: { children: ReactNode }) {
++  const root = useReadySurface();
++  const pointer = usePointerEffects();
++  return <div ref={root} className="shell footer-depth" data-utility-pointer={pointer}>{children}</div>;
++}
+--- /dev/null
++++ b/styles/utility-depth.css
+@@ -0,0 +1,77 @@
++.faq-depth, .form-depth, .footer-depth {
++  --faq-hinge: -6deg;
++  --form-plane-z: 30px;
++  --form-plane-compensation: .975;
++  --field-z: 12px;
++  --footer-z: -20px;
++  --utility-label-rise: -2px;
++  --utility-link-rise: -1px;
++  --utility-press-angle: -8deg;
++  --utility-press-scale: .97;
++}
++/* Replace the legacy whole-card sideways jump and shadow transition. */
++.faq-depth .faq-item,
++.faq-depth .faq-item[open] { transform: none; transition: none; box-shadow: 0 12px 34px rgba(20,49,67,.07); }
++.faq-depth .faq-item > p { transform-origin: center top; }
++.faq-depth .faq-item > summary { position: relative; }
++.faq-depth .faq-item:focus-within { z-index: 1; }
++.faq-depth[data-utility-ready] summary::after { transition: transform var(--d-fast) var(--ease-out-expo); }
++.faq-depth[data-utility-ready] details[open] summary::after { transform: rotate(180deg); }
++
++.form-depth { min-width: 0; }
++.form-depth[data-utility-ready] > .form-panel {
++  /* Compensate the static plane's projection to preserve the existing form
++     width, field alignment and notice position. The original soft shadow stays. */
++  transform: perspective(var(--perspective)) translateZ(var(--form-plane-z)) scale(var(--form-plane-compensation));
++}
++.form-depth[data-utility-ready] .field { position: relative; }
++.form-depth[data-utility-ready] .field:focus-within { z-index: 2; }
++.form-depth[data-utility-ready] .field > :is(input, select, textarea),
++.form-depth[data-utility-ready] .field > label,
++.form-depth[data-utility-ready] .button {
++  transition: transform var(--d-fast) var(--ease-out-expo);
++}
++.form-depth[data-utility-ready] .field > :is(input, select, textarea):focus {
++  transform: perspective(var(--perspective)) translateZ(var(--field-z));
++}
++.form-depth[data-utility-ready] .field:focus-within > label { transform: translateY(var(--utility-label-rise)); }
++.form-depth[data-utility-ready] .button { position: relative; isolation: isolate; transform: none; }
++.form-depth .button::before {
++  content: "";
++  position: absolute;
++  inset: -9px;
++  z-index: -1;
++  border-radius: inherit;
++  pointer-events: none;
++  background: radial-gradient(ellipse, rgb(39 140 160 / .45), transparent 72%);
++  opacity: 0;
++  transition: opacity var(--d-fast) var(--ease-out-expo);
++}
++/* The enquiry notice has no reveal, delay or opacity treatment. */
++.footer-depth[data-utility-ready] { transform: perspective(var(--perspective)) translateZ(var(--footer-z)); }
++.footer-depth[data-utility-ready] .footer-col a { transition: transform var(--d-fast) var(--ease-out-expo); }
++.footer-depth .footer-col a:focus-visible { position: relative; z-index: 1; }
++@media (hover: hover) and (width >= 768px) {
++  .form-depth[data-utility-ready][data-utility-pointer="true"] .button:hover:not(:disabled) { transform: perspective(var(--perspective)) rotateX(var(--utility-press-angle)); }
++  .form-depth[data-utility-ready] .button:hover:not(:disabled)::before { opacity: 1; }
++  .footer-depth[data-utility-ready][data-utility-pointer="true"] .footer-col a:hover { transform: translateY(var(--utility-link-rise)); }
++}
++/* Active wins over hover, including when both apply. */
++.form-depth[data-utility-ready][data-utility-pointer] .button:active:not(:disabled) { transform: perspective(var(--perspective)) translateZ(0) scale(var(--utility-press-scale)); }
++@media (width < 768px) {
++  .form-depth, .footer-depth { --form-plane-z: 15px; --form-plane-compensation: .9875; --field-z: 6px; --footer-z: -10px; }
++}
++@media (prefers-reduced-motion: reduce) {
++  .faq-depth { perspective: none; }
++  .faq-depth .faq-item, .faq-depth .faq-item > p, .faq-depth summary, .faq-depth summary::after,
++  .form-depth > .form-panel, .form-depth .field > :is(input, select, textarea, label),
++  .form-depth .button, .footer-depth, .footer-depth .footer-col a {
++    transform: none !important;
++    animation: none !important;
++    opacity: 1 !important;
++    will-change: auto !important;
++    transition-property: opacity !important;
++    transition-duration: var(--d-reduced) !important;
++  }
++  .form-depth .button::before { transition-duration: var(--d-reduced); }
++}
+--- /dev/null
++++ b/playwright.utility-motion.config.ts
+@@ -0,0 +1,11 @@
++import { defineConfig } from "@playwright/test";
++export default defineConfig({
++  testDir: "./tests/e2e", testMatch: "utility-motion.spec.ts", outputDir: "test-results/utility-motion",
++  timeout: 35_000, workers: 2,
++  use: { baseURL: "http://127.0.0.1:3107", video: "off", trace: "off" },
++  webServer: { command: "node scripts/preview-static.mjs 3107", url: "http://127.0.0.1:3107", reuseExistingServer: false },
++  projects: [1440, 768, 390, 360].map(width => ({ name: `utility-${width}`, use: {
++    browserName: "chromium", viewport: { width, height: 900 }, deviceScaleFactor: width < 768 ? 3 : 2,
++    hasTouch: width < 768, isMobile: width < 768,
++  } })),
++});
+--- /dev/null
++++ b/tests/e2e/utility-motion.spec.ts
+@@ -0,0 +1,93 @@
++import { expect, test, type Page } from "@playwright/test";
++
++const notice = "Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch.";
++async function matrix(page: Page, selector: string) {
++  return page.locator(selector).evaluate(e => { const s = getComputedStyle(e), m = new DOMMatrix(s.transform); return { z:m.m43, scale:m.m11, rotation:m.m23, transform:s.transform, opacity:s.opacity, outline:s.outlineStyle, outlineWidth:s.outlineWidth }; });
++}
++test.beforeEach(async ({ page }) => {
++  await page.route("**/*", route => new URL(route.request().url()).hostname === "127.0.0.1" && route.request().method() === "GET" ? route.continue() : route.abort());
++});
++
++test("native FAQ keyboard, answer hinge, rapid toggles and cleanup", async ({ page }) => {
++  await page.goto("/faq"); const list=page.locator(".faq-depth"), details=list.locator("details").first(), summary=details.locator("summary"), answer=details.locator("p");
++  await expect(list).toHaveAttribute("data-utility-ready", "");
++  await answer.evaluate(e => {
++    const animate = e.animate;
++    e.animate = function(frames, options) {
++      e.dataset.testFrames = JSON.stringify({frames, duration: typeof options === "object" ? options.duration : options});
++      return animate.call(this, frames, options);
++    };
++  });
++  await summary.focus(); await page.keyboard.press("Enter"); await expect(details).toHaveAttribute("open", "");
++  // Native toggle is delivered asynchronously; retain its actual keyframes
++  // instead of racing a single sample against a 240ms animation's lifetime.
++  await expect(answer).toHaveAttribute("data-test-frames", /rotateX/);
++  const frames = JSON.parse((await answer.getAttribute("data-test-frames"))!);
++  expect(frames.duration).toBe(240); expect(frames.frames[0].transform).toContain("rotateX(-6deg)");
++  expect(await details.evaluate(e => getComputedStyle(e).transform)).toBe("none");
++  await page.screenshot({ path:`artifacts/motion-stage-7/faq-${page.viewportSize()!.width}.png`, scale:"css" });
++  await expect.poll(() => answer.evaluate(e => getComputedStyle(e).willChange)).toBe("auto");
++  for(let i=0;i<5;i++) { await page.keyboard.press("Space"); await page.keyboard.press("Enter"); }
++  await expect(summary).toBeFocused(); await expect(details).toHaveAttribute("open", "");
++  await page.waitForTimeout(300); expect(await answer.evaluate(e => e.getAnimations().length)).toBe(0);
++  await page.keyboard.press("Tab"); await expect(list.locator("summary").nth(1)).toBeFocused();
++  expect((await matrix(page,".faq-depth details:nth-child(2) summary")).outline).not.toBe("none");
++});
++
++for(const route of ["/contact","/get-a-quote"]) test(`form depth, keyboard focus, values, notice and press ${route}`, async ({ page }) => {
++  await page.goto(route); const mobile=page.viewportSize()!.width<768;
++  await expect(page.locator(".form-depth")).toHaveAttribute("data-utility-ready", "");
++  if(route==="/get-a-quote") { await expect(page.locator("form .notice")).toHaveText(notice); expect((await matrix(page,"form .notice")).opacity).toBe("1"); }
++  expect((await matrix(page,".form-panel")).z).toBeCloseTo(mobile?15:30,1);
++  await page.locator('input[name="name"]').fill("Motion review"); await page.waitForTimeout(280);
++  const input=await matrix(page,'input[name="name"]'); expect(input.z).toBeCloseTo(mobile?6:12,1); expect(input.outline).not.toBe("none");
++  await page.keyboard.press("Tab"); await expect(page.locator('input[name="phone"]')).toBeFocused();
++  await expect(page.locator('input[name="name"]')).toHaveValue("Motion review");
++  const label = await page.locator('label[for="phone"]').evaluate(e => {const m=new DOMMatrix(getComputedStyle(e).transform);return m.m42;});
++  // Wait for the shared expo transition to reach the existing label's raised state.
++  expect(label).toBeLessThanOrEqual(0);
++  await expect.poll(() => page.locator('label[for="phone"]').evaluate(e => new DOMMatrix(getComputedStyle(e).transform).m42)).toBeCloseTo(-2,1);
++  const button=page.locator("form .button"); await button.scrollIntoViewIfNeeded();
++  if(!mobile) {
++    await button.hover(); await page.waitForTimeout(280);
++    expect((await matrix(page,"form .button")).rotation).toBeCloseTo(route==="/get-a-quote"?0:-Math.sin(8*Math.PI/180),2);
++    const box=(await button.boundingBox())!;await page.mouse.move(box.x+box.width/2,box.y+box.height/2);await page.mouse.down();await page.waitForTimeout(280);
++    expect((await matrix(page,"form .button")).scale).toBeCloseTo(.97,2);
++    // Release outside the submit button: never create an enquiry.
++    await page.mouse.move(0,0);await page.mouse.up();
++  }
++  await page.screenshot({path:`artifacts/motion-stage-7/${route.slice(1)}-${page.viewportSize()!.width}.png`,scale:"css"});
++  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
++  if(route==="/get-a-quote") expect(await page.locator("form .notice").evaluate(e=>e.getAnimations({subtree:true}).length)).toBe(0);
++});
++
++test("footer depth and native keyboard links", async ({ page }) => {
++  await page.goto("/faq");const footer=page.locator(".footer-depth"); await expect(footer).toHaveAttribute("data-utility-ready", "");
++  expect((await matrix(page,".footer-depth")).z).toBeCloseTo(page.viewportSize()!.width<768?-10:-20,1);
++  const links=footer.locator(".footer-col a"); await links.first().focus();
++  for(let i=0;i<await links.count();i++) {
++    await expect(links.nth(i)).toBeFocused();
++    expect(await links.nth(i).evaluate(e=>getComputedStyle(e).outlineStyle)).not.toBe("none");
++    if(i+1<await links.count())await page.keyboard.press("Tab");
++  }
++  await footer.screenshot({path:`artifacts/motion-stage-7/footer-${page.viewportSize()!.width}.png`,scale:"css"});
++  await links.first().focus(); await page.keyboard.press("Enter"); await expect(page).toHaveURL(/\/services\/domestic$/);
++});
++
++test("reduced motion and no-JS preserve final readable content and native details", async ({ page, browser }) => {
++  await page.emulateMedia({reducedMotion:"reduce"});await page.goto("/faq");
++  const summary=page.locator(".faq-depth summary").first();await summary.focus();await page.keyboard.press("Enter");
++  expect((await matrix(page,".faq-depth details:first-child")).transform).toBe("none");
++  expect((await matrix(page,".faq-depth details:first-child p")).transform).toBe("none");
++  expect(await page.locator(".faq-depth").evaluate(e=>e.getAnimations({subtree:true}).length)).toBe(0);
++  for(const route of ["/contact","/get-a-quote"]){
++    await page.goto(route);await page.locator('input[name="name"]').focus();
++    for(const selector of ['.form-panel','input[name="name"]','.footer-depth'])expect((await matrix(page,selector)).transform).toBe("none");
++  }
++  const context=await browser.newContext({javaScriptEnabled:false,viewport:page.viewportSize()!});const staticPage=await context.newPage();
++  await staticPage.goto('http://127.0.0.1:3107/faq');await staticPage.locator('.faq-depth summary').first().click();
++  await expect(staticPage.locator('.faq-depth details').first()).toHaveAttribute('open','');
++  await staticPage.goto('http://127.0.0.1:3107/get-a-quote');await expect(staticPage.locator('form .notice')).toHaveText(notice);
++  expect((await matrix(staticPage,'.form-panel')).transform).toBe('none');expect((await matrix(staticPage,'.footer-depth')).transform).toBe('none');
++  await context.close();
++});

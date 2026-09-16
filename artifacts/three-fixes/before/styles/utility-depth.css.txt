@@ -1,0 +1,77 @@
+.faq-depth, .form-depth, .footer-depth {
+  --faq-hinge: -6deg;
+  --form-plane-z: 30px;
+  --form-plane-compensation: .975;
+  --field-z: 12px;
+  --footer-z: -20px;
+  --utility-label-rise: -2px;
+  --utility-link-rise: -1px;
+  --utility-press-angle: -8deg;
+  --utility-press-scale: .97;
+}
+/* Replace the legacy whole-card sideways jump and shadow transition. */
+.faq-depth .faq-item,
+.faq-depth .faq-item[open] { transform: none; transition: none; box-shadow: 0 12px 34px rgba(20,49,67,.07); }
+.faq-depth .faq-item > p { transform-origin: center top; }
+.faq-depth .faq-item > summary { position: relative; }
+.faq-depth .faq-item:focus-within { z-index: 1; }
+.faq-depth[data-utility-ready] summary::after { transition: transform var(--d-fast) var(--ease-out-expo); }
+.faq-depth[data-utility-ready] details[open] summary::after { transform: rotate(180deg); }
+
+.form-depth { min-width: 0; }
+.form-depth[data-utility-ready] > .form-panel {
+  /* Compensate the static plane's projection to preserve the existing form
+     width, field alignment and notice position. The original soft shadow stays. */
+  transform: perspective(var(--perspective)) translateZ(var(--form-plane-z)) scale(var(--form-plane-compensation));
+}
+.form-depth[data-utility-ready] .field { position: relative; }
+.form-depth[data-utility-ready] .field:focus-within { z-index: 2; }
+.form-depth[data-utility-ready] .field > :is(input, select, textarea),
+.form-depth[data-utility-ready] .field > label,
+.form-depth[data-utility-ready] .button {
+  transition: transform var(--d-fast) var(--ease-out-expo);
+}
+.form-depth[data-utility-ready] .field > :is(input, select, textarea):focus {
+  transform: perspective(var(--perspective)) translateZ(var(--field-z));
+}
+.form-depth[data-utility-ready] .field:focus-within > label { transform: translateY(var(--utility-label-rise)); }
+.form-depth[data-utility-ready] .button { position: relative; isolation: isolate; transform: none; }
+.form-depth .button::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(ellipse, rgb(39 140 160 / .45), transparent 72%);
+  opacity: 0;
+  transition: opacity var(--d-fast) var(--ease-out-expo);
+}
+/* The enquiry notice has no reveal, delay or opacity treatment. */
+.footer-depth[data-utility-ready] { transform: perspective(var(--perspective)) translateZ(var(--footer-z)); }
+.footer-depth[data-utility-ready] .footer-col a { transition: transform var(--d-fast) var(--ease-out-expo); }
+.footer-depth .footer-col a:focus-visible { position: relative; z-index: 1; }
+@media (hover: hover) and (width >= 768px) {
+  .form-depth[data-utility-ready][data-utility-pointer="true"] .button:hover:not(:disabled) { transform: perspective(var(--perspective)) rotateX(var(--utility-press-angle)); }
+  .form-depth[data-utility-ready] .button:hover:not(:disabled)::before { opacity: 1; }
+  .footer-depth[data-utility-ready][data-utility-pointer="true"] .footer-col a:hover { transform: translateY(var(--utility-link-rise)); }
+}
+/* Active wins over hover, including when both apply. */
+.form-depth[data-utility-ready][data-utility-pointer] .button:active:not(:disabled) { transform: perspective(var(--perspective)) translateZ(0) scale(var(--utility-press-scale)); }
+@media (width < 768px) {
+  .form-depth, .footer-depth { --form-plane-z: 15px; --form-plane-compensation: .9875; --field-z: 6px; --footer-z: -10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-depth { perspective: none; }
+  .faq-depth .faq-item, .faq-depth .faq-item > p, .faq-depth summary, .faq-depth summary::after,
+  .form-depth > .form-panel, .form-depth .field > :is(input, select, textarea, label),
+  .form-depth .button, .footer-depth, .footer-depth .footer-col a {
+    transform: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    will-change: auto !important;
+    transition-property: opacity !important;
+    transition-duration: var(--d-reduced) !important;
+  }
+  .form-depth .button::before { transition-duration: var(--d-reduced); }
+}

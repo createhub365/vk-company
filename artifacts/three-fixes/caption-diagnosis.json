@@ -1,0 +1,28 @@
+[
+  {
+    "route": "/",
+    "captions": [
+      "Illustrative route imagery",
+      "Illustrative international logistics",
+      "Illustrative operations environment"
+    ]
+  },
+  {
+    "route": "/services/domestic",
+    "captions": [
+      "Illustrative courier environment"
+    ]
+  },
+  {
+    "route": "/services/international",
+    "captions": [
+      "Illustrative courier environment"
+    ]
+  },
+  {
+    "route": "/about",
+    "captions": [
+      "Illustrative courier environment"
+    ]
+  }
+]

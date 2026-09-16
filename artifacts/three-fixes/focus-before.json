@@ -1,0 +1,456 @@
+[
+  {
+    "method": "mouse",
+    "label": "Domestic",
+    "active": {
+      "tag": "A",
+      "text": "Domestic",
+      "focusVisible": false,
+      "outline": "rgb(23, 103, 122) none 3px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": true,
+        "focusVisible": false,
+        "outline": "rgb(23, 103, 122) none 3px"
+      },
+      {
+        "text": "International",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "About",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "Contact",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(255, 255, 255) none 3px"
+      }
+    ]
+  },
+  {
+    "method": "mouse",
+    "label": "International",
+    "active": {
+      "tag": "A",
+      "text": "International",
+      "focusVisible": false,
+      "outline": "rgb(23, 103, 122) none 3px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "International",
+        "focus": true,
+        "focusVisible": false,
+        "outline": "rgb(23, 103, 122) none 3px"
+      },
+      {
+        "text": "About",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "Contact",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(255, 255, 255) none 3px"
+      }
+    ]
+  },
+  {
+    "method": "mouse",
+    "label": "Contact",
+    "active": {
+      "tag": "A",
+      "text": "Contact",
+      "focusVisible": false,
+      "outline": "rgb(23, 103, 122) none 3px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "International",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "About",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "Contact",
+        "focus": true,
+        "focusVisible": false,
+        "outline": "rgb(23, 103, 122) none 3px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(255, 255, 255) none 3px"
+      }
+    ]
+  },
+  {
+    "method": "keyboard",
+    "active": {
+      "tag": "A",
+      "text": "VK AND COMPANY",
+      "focusVisible": true,
+      "outline": "rgb(37, 159, 171) solid 2px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "International",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "About",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Contact",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(255, 255, 255) none 3px"
+      }
+    ]
+  },
+  {
+    "method": "keyboard",
+    "active": {
+      "tag": "A",
+      "text": "Domestic",
+      "focusVisible": true,
+      "outline": "rgb(37, 159, 171) solid 2px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": true,
+        "focusVisible": true,
+        "outline": "rgb(37, 159, 171) solid 2px"
+      },
+      {
+        "text": "International",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "About",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Contact",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(255, 255, 255) none 3px"
+      }
+    ]
+  },
+  {
+    "method": "keyboard",
+    "active": {
+      "tag": "A",
+      "text": "International",
+      "focusVisible": true,
+      "outline": "rgb(37, 159, 171) solid 2px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "International",
+        "focus": true,
+        "focusVisible": true,
+        "outline": "rgb(37, 159, 171) solid 2px"
+      },
+      {
+        "text": "About",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Contact",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(255, 255, 255) none 3px"
+      }
+    ]
+  },
+  {
+    "method": "keyboard",
+    "active": {
+      "tag": "A",
+      "text": "About",
+      "focusVisible": true,
+      "outline": "rgb(37, 159, 171) solid 2px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "International",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "About",
+        "focus": true,
+        "focusVisible": true,
+        "outline": "rgb(37, 159, 171) solid 2px"
+      },
+      {
+        "text": "Contact",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(255, 255, 255) none 3px"
+      }
+    ]
+  },
+  {
+    "method": "keyboard",
+    "active": {
+      "tag": "A",
+      "text": "Contact",
+      "focusVisible": true,
+      "outline": "rgb(37, 159, 171) solid 2px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "International",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "About",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Contact",
+        "focus": true,
+        "focusVisible": true,
+        "outline": "rgb(37, 159, 171) solid 2px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(255, 255, 255) none 3px"
+      }
+    ]
+  },
+  {
+    "method": "keyboard",
+    "active": {
+      "tag": "A",
+      "text": "Get a quote",
+      "focusVisible": true,
+      "outline": "rgb(37, 159, 171) solid 2px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "International",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "About",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Contact",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": true,
+        "focusVisible": true,
+        "outline": "rgb(37, 159, 171) solid 2px"
+      }
+    ]
+  },
+  {
+    "method": "keyboard",
+    "active": {
+      "tag": "A",
+      "text": "Get a quote ",
+      "focusVisible": true,
+      "outline": "rgb(37, 159, 171) solid 2px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "International",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "About",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Contact",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(245, 243, 237) none 3px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(255, 255, 255) none 3px"
+      }
+    ]
+  },
+  {
+    "method": "mouse-after-keyboard",
+    "active": {
+      "tag": "A",
+      "text": "Domestic",
+      "focusVisible": false,
+      "outline": "rgb(23, 103, 122) none 3px"
+    },
+    "links": [
+      {
+        "text": "Domestic",
+        "focus": true,
+        "focusVisible": false,
+        "outline": "rgb(23, 103, 122) none 3px"
+      },
+      {
+        "text": "International",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "About",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "Contact",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(64, 85, 99) none 3px"
+      },
+      {
+        "text": "Get a quote",
+        "focus": false,
+        "focusVisible": false,
+        "outline": "rgb(255, 255, 255) none 3px"
+      }
+    ]
+  }
+]

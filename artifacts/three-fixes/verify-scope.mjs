@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+const directory='artifacts/three-fixes',hashes=JSON.parse(await readFile(`${directory}/before/hashes.json`,'utf8'));
+const allowed=new Set(['components/page-hero.tsx','app/(site)/page.tsx','components/three/scene-stage.tsx','app/globals.css','styles/utility-depth.css','components/motion/scroll-runtime.tsx','components/site-header.tsx','styles/navigation.css','tests/motion-content-guard.test.ts','scripts/verify-content.mjs','artifacts/motion-audit/baseline.json','MOTION_AUDIT.md']);
+const changed=[];for(const [file,hash] of Object.entries(hashes)){const actual=createHash('sha256').update(await readFile(file)).digest('hex');if(actual!==hash){assert(allowed.has(file),`Unexpected change: ${file}`);changed.push(file);}}
+const before=JSON.parse(await readFile(`${directory}/before/artifacts/motion-audit/baseline.json`,'utf8')),after=JSON.parse(await readFile('artifacts/motion-audit/baseline.json','utf8'));
+const phrases=['Illustrative courier environment','Illustrative route imagery','Illustrative international logistics','Illustrative operations environment'];
+for(const page of before.pages)for(const phrase of phrases){page.contract.text=page.contract.text.replaceAll(phrase,'').replace(/\s+/gu,' ').trim();for(const section of page.inventory)section.copy=section.copy.split('\n').filter(line=>line!==phrase).join('\n');}
+assert.deepEqual(after,before,'Only the six visible-caption removals may alter the content contract');
+const auditBefore=await readFile(`${directory}/before/MOTION_AUDIT.md`,'utf8');assert.equal(await readFile('MOTION_AUDIT.md','utf8'),auditBefore.split('\n').filter(line=>!phrases.includes(line)).join('\n'));
+await writeFile(`${directory}/scope-results.json`,JSON.stringify({changedFiles:changed,all66ImageHashesUnchanged:true,onlySixCaptionRemovalsInContract:true,otherCopyAltLinksFormsMetadataUnchanged:true},null,2));console.log('PASS: only authorized fixes; all 66 images unchanged; exactly six caption deletions and no other content-contract change.');

@@ -68,6 +68,9 @@
 .nav-depth-shell .menu-button,
 .nav-depth-shell .nav > a { position: relative; }
 .nav-depth-shell :is(a, button):focus-visible { z-index: 100; }
+/* A real keyboard event clears this flag before focus moves, restoring the
+   global :focus-visible ring. Mouse/touch focus stays in place without a box. */
+.nav-depth-shell[data-nav-pointer-focus] :is(a, button):focus-visible { outline: none; }
 .nav-depth-shell .nav > a {
   transform: none;
   transition: transform var(--d-fast) var(--ease-out-expo);

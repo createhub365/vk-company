@@ -1,0 +1,128 @@
+[
+  {
+    "kind": "domestic",
+    "index": 1,
+    "source": "/Users/pranshudhiman/.codex/generated_images/01a09ead-2f78-7893-af03-9fc70a877088/exec-167a7c1f-a957-4cd2-8f33-854cf1ee723a.png",
+    "destination": "public/media/photos/selected-domestic-1-392.webp",
+    "original": "artifacts/generated-service-photos/originals/domestic-1.png",
+    "nativePixels": [
+      1577,
+      997
+    ],
+    "outputPixels": [
+      1568,
+      992
+    ],
+    "aspectRatio": "49:31",
+    "encoding": "WebP quality 94; downsample only; minimal aspect normalization; no sharpening",
+    "bytes": 216894,
+    "oldSha256": "15bc57b35558304d2d44d335b5a2e8b3824b3d679606df27d834a5c21d014e3e",
+    "newSha256": "240fef696414e0e2d000824b8f47def2d1c3f07ea7391450660e59dbd048fac8",
+    "provenance": "Built-in raster image generation and branding edit using the official transparent logo. Illustrative scenes, not photographs of actual company staff, premises, vehicles or operations."
+  },
+  {
+    "kind": "domestic",
+    "index": 2,
+    "source": "/Users/pranshudhiman/.codex/generated_images/01a09ead-2f78-7893-af03-9fc70a877088/exec-3a9079df-dad8-4489-8e21-17dfcf763fcf.png",
+    "destination": "public/media/photos/selected-domestic-2-392.webp",
+    "original": "artifacts/generated-service-photos/originals/domestic-2.png",
+    "nativePixels": [
+      1558,
+      1009
+    ],
+    "outputPixels": [
+      1372,
+      889
+    ],
+    "aspectRatio": "196:127",
+    "encoding": "WebP quality 94; downsample only; minimal aspect normalization; no sharpening",
+    "bytes": 232136,
+    "oldSha256": "9cc08fd117615584f4896e5b38e38e69546415b38dda35aed902aac66f908caa",
+    "newSha256": "ac5fb10fc847bb0677bbfa3b17aad4885897b5ecfca671ed64cbac91a29180d1",
+    "provenance": "Built-in raster image generation and branding edit using the official transparent logo. Illustrative scenes, not photographs of actual company staff, premises, vehicles or operations."
+  },
+  {
+    "kind": "domestic",
+    "index": 3,
+    "source": "/Users/pranshudhiman/.codex/generated_images/01a09ead-2f78-7893-af03-9fc70a877088/exec-74ba71ec-7aa8-4211-bccd-6aed3ed4419e.png",
+    "destination": "public/media/photos/selected-domestic-3-392.webp",
+    "original": "artifacts/generated-service-photos/originals/domestic-3.png",
+    "nativePixels": [
+      1556,
+      1011
+    ],
+    "outputPixels": [
+      1372,
+      889
+    ],
+    "aspectRatio": "196:127",
+    "encoding": "WebP quality 94; downsample only; minimal aspect normalization; no sharpening",
+    "bytes": 242588,
+    "oldSha256": "90bb4fc2a9a115b2caa0ff406bab5cc1ba4aa7077560bb36e212daf96fd2675c",
+    "newSha256": "37cc993fb3f34205a62ca782357dcb36218c7156768ab5fee86b418147a1b4e1",
+    "provenance": "Built-in raster image generation and branding edit using the official transparent logo. Illustrative scenes, not photographs of actual company staff, premises, vehicles or operations."
+  },
+  {
+    "kind": "international",
+    "index": 1,
+    "source": "/Users/pranshudhiman/.codex/generated_images/01a09ead-2f78-7893-af03-9fc70a877088/exec-7be5f7bf-1a76-4dec-9e52-0c2e54ee5fab.png",
+    "destination": "public/media/photos/selected-international-1-392.webp",
+    "original": "artifacts/generated-service-photos/originals/international-1.png",
+    "nativePixels": [
+      1575,
+      999
+    ],
+    "outputPixels": [
+      1568,
+      992
+    ],
+    "aspectRatio": "49:31",
+    "encoding": "WebP quality 94; downsample only; minimal aspect normalization; no sharpening",
+    "bytes": 314218,
+    "oldSha256": "6cc33a1ee45a9941d2f11edfc6c5a3d37b620c73f85dab1f6154185b7b9360b4",
+    "newSha256": "cf824ce5bf052c9b39de8125bafabeb57497703833815f28cdca4a5a86db9782",
+    "provenance": "Built-in raster image generation and branding edit using the official transparent logo. Illustrative scenes, not photographs of actual company staff, premises, vehicles or operations."
+  },
+  {
+    "kind": "international",
+    "index": 2,
+    "source": "/Users/pranshudhiman/.codex/generated_images/01a09ead-2f78-7893-af03-9fc70a877088/exec-bc42b1e0-5d2d-4b5f-baa0-b962afdca8b5.png",
+    "destination": "public/media/photos/selected-international-2-392.webp",
+    "original": "artifacts/generated-service-photos/originals/international-2.png",
+    "nativePixels": [
+      1558,
+      1009
+    ],
+    "outputPixels": [
+      1372,
+      889
+    ],
+    "aspectRatio": "196:127",
+    "encoding": "WebP quality 94; downsample only; minimal aspect normalization; no sharpening",
+    "bytes": 281362,
+    "oldSha256": "600438f1465b9ce490ce7499399a6a73d5ef76b54a23466c7c01790b4a883edc",
+    "newSha256": "288357679da7b76e9abc249129566ddd25dc17826f965a3fd5d7a6993a6f5d55",
+    "provenance": "Built-in raster image generation and branding edit using the official transparent logo. Illustrative scenes, not photographs of actual company staff, premises, vehicles or operations."
+  },
+  {
+    "kind": "international",
+    "index": 3,
+    "source": "/Users/pranshudhiman/.codex/generated_images/01a09ead-2f78-7893-af03-9fc70a877088/exec-b3109772-e194-4ef8-ac3c-af2e1a95925e.png",
+    "destination": "public/media/photos/selected-international-3-392.webp",
+    "original": "artifacts/generated-service-photos/originals/international-3.png",
+    "nativePixels": [
+      1557,
+      1010
+    ],
+    "outputPixels": [
+      1372,
+      889
+    ],
+    "aspectRatio": "196:127",
+    "encoding": "WebP quality 94; downsample only; minimal aspect normalization; no sharpening",
+    "bytes": 310798,
+    "oldSha256": "6aefc38c1776a71025499dc6b2eba5ddc2adfa6808e17dcfbaba1f9503bf4c4f",
+    "newSha256": "8dbecf371332c4a6021ed9ed8dbc1f364a4fe29fab6b8fa3fa8472a7fd425e99",
+    "provenance": "Built-in raster image generation and branding edit using the official transparent logo. Illustrative scenes, not photographs of actual company staff, premises, vehicles or operations."
+  }
+]

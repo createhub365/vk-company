@@ -1,3 +1,5 @@
+import { FaqDepth } from "@/components/motion/utility-depth";
+
 export const faqs = [
   ["How do I request a courier quote?", "Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer."],
   ["Does submitting the form confirm my booking?", "No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted."],
@@ -6,5 +8,5 @@ export const faqs = [
 ];
 
 export function FaqList({ limit }: { limit?: number }) {
-  return <div className="faq-list">{faqs.slice(0, limit).map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div>;
+  return <FaqDepth>{faqs.slice(0, limit).map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}</summary><p>{answer}</p></details>)}</FaqDepth>;
 }

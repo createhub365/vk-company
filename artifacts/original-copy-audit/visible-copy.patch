@@ -1,0 +1,64 @@
+--- c4e5357:/
++++ working-tree:/
+@@ -6,13 +6,11 @@
+ We keep your parcels moving.
+ Domestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step.
+ Get a quote
+-Illustrative route imagery
+ 01 / Domestic
+ Courier services between cities
+ Planned around your actual route.
+ Share the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims.
+ Explore domestic services
+-Illustrative international logistics
+ 02 / International
+ Across borders, details first
+ Clear before it leaves the ground.
+@@ -39,7 +37,6 @@
+ Request a considered quote.
+ Share the details once. Our team reviews each request before confirming service or charges.
+ Get a quote
+-Illustrative operations environment
+ 03 / Company
+ About VK AND COMPANY
+ Built around each shipment.
+--- c4e5357:/about
++++ working-tree:/about
+@@ -3,7 +3,6 @@
+ About VK AND COMPANY
+ Courier arrangements built around each shipment.
+ VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process.
+-Illustrative courier environment
+ What we do
+ Connecting People & Possibilities
+ Shipment Details
+--- c4e5357:/get-a-quote
++++ working-tree:/get-a-quote
+@@ -3,7 +3,6 @@
+ Quotation request
+ Tell us about your shipment.
+ Share the route and parcel details below. Our team will review the information before confirming service and charges.
+-VKC
+ Before you begin
+ Details make the difference.
+ Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment.
+--- c4e5357:/services/domestic
++++ working-tree:/services/domestic
+@@ -3,7 +3,6 @@
+ Domestic courier enquiries
+ A considered route from one city to the next.
+ Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.
+-Illustrative courier environment
+ domestic process
+ Begin with the real shipment details.
+ Provide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step.
+--- c4e5357:/services/international
++++ working-tree:/services/international
+@@ -3,7 +3,6 @@
+ International courier enquiries
+ Across borders, with the details checked first.
+ International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.
+-Illustrative courier environment
+ international process
+ Route and contents review.
+ Share accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review.

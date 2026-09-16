@@ -1,0 +1,26 @@
+[
+  {
+    "route": "/faq",
+    "status": 200,
+    "faq": 1,
+    "form": 0,
+    "footer": 1,
+    "errors": []
+  },
+  {
+    "route": "/contact",
+    "status": 200,
+    "faq": 0,
+    "form": 1,
+    "footer": 1,
+    "errors": []
+  },
+  {
+    "route": "/get-a-quote",
+    "status": 200,
+    "faq": 0,
+    "form": 1,
+    "footer": 1,
+    "errors": []
+  }
+]

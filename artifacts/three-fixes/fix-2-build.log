@@ -1,0 +1,38 @@
+
+> vk-and-company@1.0.0 build
+> next build --webpack
+
+▲ Next.js 16.3.4 (webpack)
+✓ Running next.config.ts took 9ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1731ms
+  Running TypeScript ...
+  Finished TypeScript in 1098ms ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/14) ...
+  Generating static pages using 9 workers (3/14) 
+  Generating static pages using 9 workers (6/14) 
+  Generating static pages using 9 workers (10/14) 
+✓ Generating static pages using 9 workers (14/14) in 165ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /faq
+├ ○ /get-a-quote
+├ ○ /privacy
+├ ○ /robots.txt
+├ ○ /services/domestic
+├ ○ /services/international
+├ ○ /sitemap.xml
+├ ○ /terms
+└ ○ /track
+
+
+○  (Static)  prerendered as static content
+

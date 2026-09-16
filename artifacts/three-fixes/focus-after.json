@@ -1,0 +1,562 @@
+[
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "VK AND COMPANY",
+    "label": "VK AND COMPANY home",
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Domestic",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "International",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "About",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Contact",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Get a quote",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 1440,
+    "reducedMotion": "no-preference",
+    "method": "mouse",
+    "label": "Domestic",
+    "state": [
+      {
+        "label": "Domestic",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "reducedMotion": "no-preference",
+    "method": "mouse",
+    "label": "International",
+    "state": [
+      {
+        "label": "International",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "reducedMotion": "no-preference",
+    "method": "mouse",
+    "label": "About",
+    "state": [
+      {
+        "label": "About",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "reducedMotion": "no-preference",
+    "method": "mouse",
+    "label": "Contact",
+    "state": [
+      {
+        "label": "Contact",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "reducedMotion": "no-preference",
+    "method": "mouse",
+    "label": "Get a quote",
+    "state": [
+      {
+        "label": "Get a quote",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 3,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "VK AND COMPANY",
+    "label": "VK AND COMPANY home",
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Domestic",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "International",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "About",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Contact",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Get a quote",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 1440,
+    "reducedMotion": "reduce",
+    "method": "mouse",
+    "label": "Domestic",
+    "state": [
+      {
+        "label": "Domestic",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "reducedMotion": "reduce",
+    "method": "mouse",
+    "label": "International",
+    "state": [
+      {
+        "label": "International",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "reducedMotion": "reduce",
+    "method": "mouse",
+    "label": "About",
+    "state": [
+      {
+        "label": "About",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "reducedMotion": "reduce",
+    "method": "mouse",
+    "label": "Contact",
+    "state": [
+      {
+        "label": "Contact",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "reducedMotion": "reduce",
+    "method": "mouse",
+    "label": "Get a quote",
+    "state": [
+      {
+        "label": "Get a quote",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Domestic",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "International",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "About",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Contact",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Get a quote",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "",
+    "label": "Close menu",
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Domestic",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "International",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "no-preference",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "About",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 390,
+    "reducedMotion": "no-preference",
+    "method": "mouse",
+    "label": "Domestic",
+    "state": [
+      {
+        "label": "Open menu",
+        "visible": true,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "reducedMotion": "no-preference",
+    "method": "mouse",
+    "label": "International",
+    "state": [
+      {
+        "label": "Open menu",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "reducedMotion": "no-preference",
+    "method": "mouse",
+    "label": "About",
+    "state": [
+      {
+        "label": "Open menu",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "reducedMotion": "no-preference",
+    "method": "mouse",
+    "label": "Contact",
+    "state": [
+      {
+        "label": "Open menu",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "reducedMotion": "no-preference",
+    "method": "mouse",
+    "label": "Get a quote",
+    "state": [
+      {
+        "label": "Open menu",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Domestic",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "International",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "About",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Contact",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Get a quote",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 3,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "",
+    "label": "Close menu",
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "Domestic",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "International",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 2,
+    "reducedMotion": "reduce",
+    "method": "keyboard",
+    "inHeader": true,
+    "text": "About",
+    "label": null,
+    "visible": true,
+    "style": "solid"
+  },
+  {
+    "width": 390,
+    "reducedMotion": "reduce",
+    "method": "mouse",
+    "label": "Domestic",
+    "state": [
+      {
+        "label": "Open menu",
+        "visible": true,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "reducedMotion": "reduce",
+    "method": "mouse",
+    "label": "International",
+    "state": [
+      {
+        "label": "Open menu",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "reducedMotion": "reduce",
+    "method": "mouse",
+    "label": "About",
+    "state": [
+      {
+        "label": "Open menu",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "reducedMotion": "reduce",
+    "method": "mouse",
+    "label": "Contact",
+    "state": [
+      {
+        "label": "Open menu",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "reducedMotion": "reduce",
+    "method": "mouse",
+    "label": "Get a quote",
+    "state": [
+      {
+        "label": "Open menu",
+        "visible": false,
+        "style": "none"
+      }
+    ]
+  }
+]

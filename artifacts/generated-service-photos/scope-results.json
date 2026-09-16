@@ -1,0 +1,23 @@
+{
+  "changedFiles": [
+    "artifacts/motion-audit/baseline.json",
+    "public/media/photos/selected-domestic-1-392.webp",
+    "public/media/photos/selected-domestic-2-392.webp",
+    "public/media/photos/selected-domestic-3-392.webp",
+    "public/media/photos/selected-international-1-392.webp",
+    "public/media/photos/selected-international-2-392.webp",
+    "public/media/photos/selected-international-3-392.webp",
+    "scripts/verify-content.mjs"
+  ],
+  "changedImageContractEntries": [
+    "out/media/photos/selected-domestic-1-392.webp",
+    "out/media/photos/selected-domestic-2-392.webp",
+    "out/media/photos/selected-domestic-3-392.webp",
+    "out/media/photos/selected-international-1-392.webp",
+    "out/media/photos/selected-international-2-392.webp",
+    "out/media/photos/selected-international-3-392.webp"
+  ],
+  "preservedImageEntries": 60,
+  "allOtherContractDataIdentical": true,
+  "preExistingStage7WorkUnchanged": true
+}

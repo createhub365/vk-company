@@ -1,6 +1,42 @@
-# MOTION AUDIT — Stage 1 pre-work contract
+# MOTION AUDIT — Stage 1 contract with approved baseline amendments
 
 Captured 14 September 2026, from the current local working tree and a fresh successful `npm run build`. No presentation code, dependencies, content, routes or images were changed to create this audit. The local image repairs from the previous task are part of this baseline. Existing uncommitted changes must not be mistaken for motion-retrofit changes or bundled indiscriminately into future commits.
+
+## Intentional baseline amendment — approved 16 September 2026
+
+The user explicitly approved the current caption removals and image alternative text as the new preservation baseline. The rendered-copy and image-attribute inventories below, and the pinned `artifacts/motion-audit/baseline.json`, already contain those values; this amendment records their approval and reasons without recapturing unrelated changes. The repository map, implementation observations, stage status and source snapshots remain historical Stage 1 records, not current progress claims.
+
+The independent [original-commit comparison](artifacts/original-copy-audit/REPORT.md) used `c4e53578c53d1497fe67044d453b0ad8ab80a89b`, the last commit before Stage 1. The captions existed in that original commit. The changed image descriptions were already present when the Stage 1 audit was captured; they are intentional image-repair changes, not proof of zero copy changes against original git. This amendment explicitly accepts those differences and retains the comparison as historical evidence.
+
+### Approved caption removals
+
+| Placement | Removed text | One-line reason |
+| --- | --- | --- |
+| Home Domestic editorial image | Illustrative route imagery | Removed at the user's explicit request to omit visible photo captions/disclaimers. |
+| Home International editorial image | Illustrative international logistics | Removed at the user's explicit request to omit visible photo captions/disclaimers. |
+| Home company editorial image | Illustrative operations environment | Removed at the user's explicit request to omit visible photo captions/disclaimers. |
+| Domestic page hero | Illustrative courier environment | Removed at the user's explicit request to omit visible photo captions/disclaimers. |
+| International page hero | Illustrative courier environment | Removed at the user's explicit request to omit visible photo captions/disclaimers. |
+| About page hero | Illustrative courier environment | Removed at the user's explicit request to omit visible photo captions/disclaimers. |
+
+### Approved image alternative text
+
+Each row records the exact original and accepted text at that placement. These descriptions remain accessibility text; they are not visible photo captions.
+
+| Placement | Original pre-Stage-1 text | Accepted baseline text | One-line reason |
+| --- | --- | --- | --- |
+| Home hero | Teal and navy courier truck travelling on an intercity road | Illustrative navy and teal courier truck at an Indian delivery forecourt | Describes the replacement photograph's forecourt setting. |
+| Home Domestic editorial image | Illustrative unbranded delivery truck travelling on a modern intercity road | Illustrative delivery truck travelling on an intercity road | Describes the selected truck photograph without the obsolete unbranded claim. |
+| Home first process image | No image description at this placement | Illustrative parcel being weighed and measured | Supplies an accessible description for the restored shipment-details photograph. |
+| About main image | Illustrative logistics network with an aircraft, cargo ship, delivery truck and parcels | Illustrative courier team loading parcels for dispatch | Describes the replacement parcel-loading photograph rather than the previous logistics montage. |
+| About shipment-details image | Illustrative parcel label being prepared for shipment | Illustrative parcel being weighed and measured | Describes the replacement weighing/measuring photograph. |
+| About reviewed-quote image | Illustrative courier vehicle travelling on a city route | Illustrative courier and customer reviewing shipment details | Describes the replacement courier/customer review photograph. |
+| Contact image | Illustration of a VK AND COMPANY courier handing a parcel to a customer, with a globe, aircraft, ship and delivery truck | Illustrative Indian courier customer support representative | Describes the replacement support photograph rather than the previous delivery illustration. |
+| Quote hero image | No image description at this placement | Illustrative Indian courier measuring a parcel on a weighing scale beside shipping paperwork; not actual company staff or premises | Describes the added parcel-preparation photograph and preserves its illustrative provenance in accessible text. |
+
+The original Quote hero's decorative, `aria-hidden` **VKC** text also remains absent: the user previously requested replacing that orbital placeholder with the parcel photograph. This is a recorded media replacement, not an unexplained wording deletion. Other occurrences of VKC remain unchanged. The six Domestic/International service-row alternative descriptions are unchanged from original git.
+
+Only these explicitly approved copy differences amend the original-commit comparison. Existing approved image-file hashes remain pinned. Headings, body prose, navigation, links, form wording and behavior, legal copy, metadata and routes remain protected. Future baseline amendments require explicit user authorization and their own reasoned record; a failing check alone is never a reason to recapture the baseline.
 
 ## Repository map
 
@@ -78,11 +114,10 @@ The user requested each stage be shown before moving on. Stage 1 introduces only
 After each later stage, rebuild and run:
 
 ```sh
-npm run build
-node scripts/audit-motion-content.mjs
+npm run verify:content
 ```
 
-The check rejects copy, section-count, heading, link, image, control, label, details, metadata, route-file, image-byte, protected business-source and static-header changes. Layout and focus must additionally be verified in a browser; source equality alone does not prove visual or accessibility equivalence. Do not recapture the baseline to make a failing change pass. The script refuses to overwrite an existing baseline.
+This command validates the pinned baseline hash, rebuilds the static export, and runs the content audit. The check rejects copy, section-count, heading, link, image, control, label, details, metadata, route-file, image-byte, protected business-source and static-header changes against the explicitly amended contract above. Layout and focus must additionally be verified in a browser; source equality alone does not prove visual or accessibility equivalence. Do not recapture the baseline to make a failing change pass. The script refuses to overwrite an existing baseline.
 
 
 ## Exact rendered copy, by route and existing section
@@ -173,7 +208,6 @@ Get a quote
 #### 2. HomePage: domestic editorial feature
 
 ```text
-Illustrative route imagery
 01 / Domestic
 Courier services between cities
 Planned around your actual route.
@@ -184,7 +218,6 @@ Explore domestic services
 #### 3. HomePage: international editorial feature
 
 ```text
-Illustrative international logistics
 02 / International
 Across borders, details first
 Clear before it leaves the ground.
@@ -226,7 +259,6 @@ Get a quote
 #### 6. HomePage: company editorial feature
 
 ```text
-Illustrative operations environment
 03 / Company
 About VK AND COMPANY
 Built around each shipment.
@@ -632,7 +664,6 @@ Metadata:
 Domestic courier enquiries
 A considered route from one city to the next.
 Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.
-Illustrative courier environment
 ```
 
 #### 2. ServiceProcess (domestic): three existing articles
@@ -940,7 +971,6 @@ Metadata:
 International courier enquiries
 Across borders, with the details checked first.
 International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.
-Illustrative courier environment
 ```
 
 #### 2. ServiceProcess (international): three existing articles
@@ -1248,7 +1278,6 @@ Metadata:
 About VK AND COMPANY
 Courier arrangements built around each shipment.
 VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process.
-Illustrative courier environment
 ```
 
 #### 2. AboutPage: what we do, four service labels, three nested journey sections, purpose caption

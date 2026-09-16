@@ -1,0 +1,812 @@
+[
+  {
+    "kind": "domestic",
+    "index": 1,
+    "viewport": 1440,
+    "dpr": 1,
+    "url": "/media/photos/selected-domestic-1-392.webp",
+    "src": "/media/photos/selected-domestic-1-392.webp",
+    "srcset": "/media/photos/selected-domestic-1-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a domestic shipment quotation form on a laptop beside a parcel",
+    "display": {
+      "width": 625.234375,
+      "height": 395.546875
+    },
+    "frame": {
+      "width": 625,
+      "height": 396
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1568,
+      992
+    ],
+    "pixelDensity": 2.5078595526677496
+  },
+  {
+    "kind": "domestic",
+    "index": 2,
+    "viewport": 1440,
+    "dpr": 1,
+    "url": "/media/photos/selected-domestic-2-392.webp",
+    "src": "/media/photos/selected-domestic-2-392.webp",
+    "srcset": "/media/photos/selected-domestic-2-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a courier and customer reviewing paperwork at a doorstep",
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "frame": {
+      "width": 625,
+      "height": 405
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 2.194377108584281
+  },
+  {
+    "kind": "domestic",
+    "index": 3,
+    "viewport": 1440,
+    "dpr": 1,
+    "url": "/media/photos/selected-domestic-3-392.webp",
+    "src": "/media/photos/selected-domestic-3-392.webp",
+    "srcset": "/media/photos/selected-domestic-3-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a VK AND COMPANY delivery truck travelling through a city",
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "frame": {
+      "width": 625,
+      "height": 405
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 2.194377108584281
+  },
+  {
+    "kind": "international",
+    "index": 1,
+    "viewport": 1440,
+    "dpr": 1,
+    "url": "/media/photos/selected-international-1-392.webp",
+    "src": "/media/photos/selected-international-1-392.webp",
+    "srcset": "/media/photos/selected-international-1-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of aircraft cargo loading with a world map and the words From India to the World",
+    "display": {
+      "width": 625.234375,
+      "height": 395.546875
+    },
+    "frame": {
+      "width": 625,
+      "height": 396
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1568,
+      992
+    ],
+    "pixelDensity": 2.5078595526677496
+  },
+  {
+    "kind": "international",
+    "index": 2,
+    "viewport": 1440,
+    "dpr": 1,
+    "url": "/media/photos/selected-international-2-392.webp",
+    "src": "/media/photos/selected-international-2-392.webp",
+    "srcset": "/media/photos/selected-international-2-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustrative export-document checklist beside a passport and globe; actual requirements depend on the shipment",
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "frame": {
+      "width": 625,
+      "height": 405
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 2.194377108584281
+  },
+  {
+    "kind": "international",
+    "index": 3,
+    "viewport": 1440,
+    "dpr": 1,
+    "url": "/media/photos/selected-international-3-392.webp",
+    "src": "/media/photos/selected-international-3-392.webp",
+    "srcset": "/media/photos/selected-international-3-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a cargo ship, aircraft and delivery truck at an international port",
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "frame": {
+      "width": 625,
+      "height": 405
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 2.194377108584281
+  },
+  {
+    "kind": "domestic",
+    "index": 1,
+    "viewport": 1440,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-1-392.webp",
+    "src": "/media/photos/selected-domestic-1-392.webp",
+    "srcset": "/media/photos/selected-domestic-1-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a domestic shipment quotation form on a laptop beside a parcel",
+    "display": {
+      "width": 625.234375,
+      "height": 395.546875
+    },
+    "frame": {
+      "width": 625,
+      "height": 396
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1568,
+      992
+    ],
+    "pixelDensity": 2.5078595526677496
+  },
+  {
+    "kind": "domestic",
+    "index": 2,
+    "viewport": 1440,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-2-392.webp",
+    "src": "/media/photos/selected-domestic-2-392.webp",
+    "srcset": "/media/photos/selected-domestic-2-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a courier and customer reviewing paperwork at a doorstep",
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "frame": {
+      "width": 625,
+      "height": 405
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 2.194377108584281
+  },
+  {
+    "kind": "domestic",
+    "index": 3,
+    "viewport": 1440,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-3-392.webp",
+    "src": "/media/photos/selected-domestic-3-392.webp",
+    "srcset": "/media/photos/selected-domestic-3-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a VK AND COMPANY delivery truck travelling through a city",
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "frame": {
+      "width": 625,
+      "height": 405
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 2.194377108584281
+  },
+  {
+    "kind": "international",
+    "index": 1,
+    "viewport": 1440,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-1-392.webp",
+    "src": "/media/photos/selected-international-1-392.webp",
+    "srcset": "/media/photos/selected-international-1-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of aircraft cargo loading with a world map and the words From India to the World",
+    "display": {
+      "width": 625.234375,
+      "height": 395.546875
+    },
+    "frame": {
+      "width": 625,
+      "height": 396
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1568,
+      992
+    ],
+    "pixelDensity": 2.5078595526677496
+  },
+  {
+    "kind": "international",
+    "index": 2,
+    "viewport": 1440,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-2-392.webp",
+    "src": "/media/photos/selected-international-2-392.webp",
+    "srcset": "/media/photos/selected-international-2-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustrative export-document checklist beside a passport and globe; actual requirements depend on the shipment",
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "frame": {
+      "width": 625,
+      "height": 405
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 2.194377108584281
+  },
+  {
+    "kind": "international",
+    "index": 3,
+    "viewport": 1440,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-3-392.webp",
+    "src": "/media/photos/selected-international-3-392.webp",
+    "srcset": "/media/photos/selected-international-3-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a cargo ship, aircraft and delivery truck at an international port",
+    "display": {
+      "width": 625.234375,
+      "height": 405.125
+    },
+    "frame": {
+      "width": 625,
+      "height": 405
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 2.194377108584281
+  },
+  {
+    "kind": "domestic",
+    "index": 1,
+    "viewport": 768,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-1-392.webp",
+    "src": "/media/photos/selected-domestic-1-392.webp",
+    "srcset": "/media/photos/selected-domestic-1-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a domestic shipment quotation form on a laptop beside a parcel",
+    "display": {
+      "width": 378.390625,
+      "height": 239.375
+    },
+    "frame": {
+      "width": 378,
+      "height": 239
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1568,
+      992
+    ],
+    "pixelDensity": 4.143865879340959
+  },
+  {
+    "kind": "domestic",
+    "index": 2,
+    "viewport": 768,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-2-392.webp",
+    "src": "/media/photos/selected-domestic-2-392.webp",
+    "srcset": "/media/photos/selected-domestic-2-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a courier and customer reviewing paperwork at a doorstep",
+    "display": {
+      "width": 378.390625,
+      "height": 245.171875
+    },
+    "frame": {
+      "width": 378,
+      "height": 245
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 3.625882644423339
+  },
+  {
+    "kind": "domestic",
+    "index": 3,
+    "viewport": 768,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-3-392.webp",
+    "src": "/media/photos/selected-domestic-3-392.webp",
+    "srcset": "/media/photos/selected-domestic-3-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a VK AND COMPANY delivery truck travelling through a city",
+    "display": {
+      "width": 378.390625,
+      "height": 245.171875
+    },
+    "frame": {
+      "width": 378,
+      "height": 245
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 3.625882644423339
+  },
+  {
+    "kind": "international",
+    "index": 1,
+    "viewport": 768,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-1-392.webp",
+    "src": "/media/photos/selected-international-1-392.webp",
+    "srcset": "/media/photos/selected-international-1-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of aircraft cargo loading with a world map and the words From India to the World",
+    "display": {
+      "width": 378.390625,
+      "height": 239.375
+    },
+    "frame": {
+      "width": 378,
+      "height": 239
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1568,
+      992
+    ],
+    "pixelDensity": 4.143865879340959
+  },
+  {
+    "kind": "international",
+    "index": 2,
+    "viewport": 768,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-2-392.webp",
+    "src": "/media/photos/selected-international-2-392.webp",
+    "srcset": "/media/photos/selected-international-2-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustrative export-document checklist beside a passport and globe; actual requirements depend on the shipment",
+    "display": {
+      "width": 378.390625,
+      "height": 245.171875
+    },
+    "frame": {
+      "width": 378,
+      "height": 245
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 3.625882644423339
+  },
+  {
+    "kind": "international",
+    "index": 3,
+    "viewport": 768,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-3-392.webp",
+    "src": "/media/photos/selected-international-3-392.webp",
+    "srcset": "/media/photos/selected-international-3-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a cargo ship, aircraft and delivery truck at an international port",
+    "display": {
+      "width": 378.390625,
+      "height": 245.171875
+    },
+    "frame": {
+      "width": 378,
+      "height": 245
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 3.625882644423339
+  },
+  {
+    "kind": "domestic",
+    "index": 1,
+    "viewport": 390,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-1-392.webp",
+    "src": "/media/photos/selected-domestic-1-392.webp",
+    "srcset": "/media/photos/selected-domestic-1-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a domestic shipment quotation form on a laptop beside a parcel",
+    "display": {
+      "width": 358,
+      "height": 226.484375
+    },
+    "frame": {
+      "width": 358,
+      "height": 226
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1568,
+      992
+    ],
+    "pixelDensity": 4.379888268156424
+  },
+  {
+    "kind": "domestic",
+    "index": 2,
+    "viewport": 390,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-2-392.webp",
+    "src": "/media/photos/selected-domestic-2-392.webp",
+    "srcset": "/media/photos/selected-domestic-2-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a courier and customer reviewing paperwork at a doorstep",
+    "display": {
+      "width": 358,
+      "height": 231.96875
+    },
+    "frame": {
+      "width": 358,
+      "height": 232
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 3.8324022346368714
+  },
+  {
+    "kind": "domestic",
+    "index": 3,
+    "viewport": 390,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-3-392.webp",
+    "src": "/media/photos/selected-domestic-3-392.webp",
+    "srcset": "/media/photos/selected-domestic-3-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a VK AND COMPANY delivery truck travelling through a city",
+    "display": {
+      "width": 358,
+      "height": 231.96875
+    },
+    "frame": {
+      "width": 358,
+      "height": 232
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 3.8324022346368714
+  },
+  {
+    "kind": "international",
+    "index": 1,
+    "viewport": 390,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-1-392.webp",
+    "src": "/media/photos/selected-international-1-392.webp",
+    "srcset": "/media/photos/selected-international-1-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of aircraft cargo loading with a world map and the words From India to the World",
+    "display": {
+      "width": 358,
+      "height": 226.484375
+    },
+    "frame": {
+      "width": 358,
+      "height": 226
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1568,
+      992
+    ],
+    "pixelDensity": 4.379888268156424
+  },
+  {
+    "kind": "international",
+    "index": 2,
+    "viewport": 390,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-2-392.webp",
+    "src": "/media/photos/selected-international-2-392.webp",
+    "srcset": "/media/photos/selected-international-2-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustrative export-document checklist beside a passport and globe; actual requirements depend on the shipment",
+    "display": {
+      "width": 358,
+      "height": 231.96875
+    },
+    "frame": {
+      "width": 358,
+      "height": 232
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 3.8324022346368714
+  },
+  {
+    "kind": "international",
+    "index": 3,
+    "viewport": 390,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-3-392.webp",
+    "src": "/media/photos/selected-international-3-392.webp",
+    "srcset": "/media/photos/selected-international-3-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a cargo ship, aircraft and delivery truck at an international port",
+    "display": {
+      "width": 358,
+      "height": 231.96875
+    },
+    "frame": {
+      "width": 358,
+      "height": 232
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 3.8324022346368714
+  },
+  {
+    "kind": "domestic",
+    "index": 1,
+    "viewport": 360,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-1-392.webp",
+    "src": "/media/photos/selected-domestic-1-392.webp",
+    "srcset": "/media/photos/selected-domestic-1-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a domestic shipment quotation form on a laptop beside a parcel",
+    "display": {
+      "width": 328,
+      "height": 207.5
+    },
+    "frame": {
+      "width": 328,
+      "height": 208
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1568,
+      992
+    ],
+    "pixelDensity": 4.780487804878049
+  },
+  {
+    "kind": "domestic",
+    "index": 2,
+    "viewport": 360,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-2-392.webp",
+    "src": "/media/photos/selected-domestic-2-392.webp",
+    "srcset": "/media/photos/selected-domestic-2-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a courier and customer reviewing paperwork at a doorstep",
+    "display": {
+      "width": 328,
+      "height": 212.515625
+    },
+    "frame": {
+      "width": 328,
+      "height": 213
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 4.182926829268292
+  },
+  {
+    "kind": "domestic",
+    "index": 3,
+    "viewport": 360,
+    "dpr": 2,
+    "url": "/media/photos/selected-domestic-3-392.webp",
+    "src": "/media/photos/selected-domestic-3-392.webp",
+    "srcset": "/media/photos/selected-domestic-3-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a VK AND COMPANY delivery truck travelling through a city",
+    "display": {
+      "width": 328,
+      "height": 212.515625
+    },
+    "frame": {
+      "width": 328,
+      "height": 213
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 4.182926829268292
+  },
+  {
+    "kind": "international",
+    "index": 1,
+    "viewport": 360,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-1-392.webp",
+    "src": "/media/photos/selected-international-1-392.webp",
+    "srcset": "/media/photos/selected-international-1-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of aircraft cargo loading with a world map and the words From India to the World",
+    "display": {
+      "width": 328,
+      "height": 207.5
+    },
+    "frame": {
+      "width": 328,
+      "height": 208
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1568,
+      992
+    ],
+    "pixelDensity": 4.780487804878049
+  },
+  {
+    "kind": "international",
+    "index": 2,
+    "viewport": 360,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-2-392.webp",
+    "src": "/media/photos/selected-international-2-392.webp",
+    "srcset": "/media/photos/selected-international-2-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustrative export-document checklist beside a passport and globe; actual requirements depend on the shipment",
+    "display": {
+      "width": 328,
+      "height": 212.515625
+    },
+    "frame": {
+      "width": 328,
+      "height": 213
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 4.182926829268292
+  },
+  {
+    "kind": "international",
+    "index": 3,
+    "viewport": 360,
+    "dpr": 2,
+    "url": "/media/photos/selected-international-3-392.webp",
+    "src": "/media/photos/selected-international-3-392.webp",
+    "srcset": "/media/photos/selected-international-3-392.webp 392w",
+    "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px",
+    "alt": "Illustration of a cargo ship, aircraft and delivery truck at an international port",
+    "display": {
+      "width": 328,
+      "height": 212.515625
+    },
+    "frame": {
+      "width": 328,
+      "height": 213
+    },
+    "complete": true,
+    "filter": "none",
+    "transform": "none",
+    "filePixels": [
+      1372,
+      889
+    ],
+    "pixelDensity": 4.182926829268292
+  }
+]

@@ -1,0 +1,19 @@
+[WebServer] (node:14340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 2 workers
+
+(node:14342) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14341) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [utility-768] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup (923ms)
+  ✓  1 [utility-1440] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup (947ms)
+(node:14384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14385) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 [utility-360] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup (903ms)
+  ✓  3 [utility-390] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup (920ms)
+
+  4 passed (2.6s)

@@ -34,7 +34,7 @@ export default function HomePage() {
     <section className="editorial-section section-white editorial-motion" id="domestic-services" data-editorial-lead="image">
       <DepthSection className="shell editorial-grid">
         <ParallaxMedia className="editorial-media"><RiseIn className="editorial-image-enter" rise={0} rotate={0} duration={400} immediateIfInView>
-          <div className="editorial-image" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll"><Photograph name="selected-domestic" sizes="(max-width: 800px) 100vw, 58vw" alt="Illustrative delivery truck travelling on an intercity road"/><span>Illustrative route imagery</span></div>
+          <div className="editorial-image" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll"><Photograph name="selected-domestic" sizes="(max-width: 800px) 100vw, 58vw" alt="Illustrative delivery truck travelling on an intercity road"/></div>
         </RiseIn></ParallaxMedia>
         <div className="editorial-copy editorial-text-plane"><RiseIn className="editorial-text-enter" fromX={12} rise={0} rotate={0} fade={false} duration={400} delay={90} immediateIfInView>
           <p className="section-index">01 / Domestic</p><p className="eyebrow">Courier services between cities</p><EditorialHeading delay={90}>Planned around your actual route.</EditorialHeading>
@@ -48,7 +48,7 @@ export default function HomePage() {
       <DepthSection className="shell editorial-grid editorial-grid-reverse">
         {/* The complete aircraft and its frame move together. */}
         <ParallaxMedia className="editorial-media"><RiseIn className="editorial-image-enter" rise={0} rotate={0} duration={400} delay={90} immediateIfInView>
-          <div className="editorial-image international-aircraft" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll"><Photograph name="existing-aircraft" sizes="(max-width: 900px) 100vw, 41vw" alt="Antonov An-124 cargo aircraft above Lviv airport, with nose, tail and both wingtips in frame"/><span>Illustrative international logistics</span></div>
+          <div className="editorial-image international-aircraft" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll"><Photograph name="existing-aircraft" sizes="(max-width: 900px) 100vw, 41vw" alt="Antonov An-124 cargo aircraft above Lviv airport, with nose, tail and both wingtips in frame"/></div>
         </RiseIn></ParallaxMedia>
         <div className="editorial-copy editorial-text-plane"><RiseIn className="editorial-text-enter" fromX={-12} rise={0} rotate={0} fade={false} duration={400} immediateIfInView>
           <p className="section-index">02 / International</p><p className="eyebrow">Across borders, details first</p><EditorialHeading>Clear before it leaves the ground.</EditorialHeading>
@@ -77,7 +77,7 @@ export default function HomePage() {
 
     <section className="editorial-section company-feature">
       <div className="shell editorial-grid">
-        <div className="editorial-image" data-image-feedback="photo" data-photo-frame=""><Photograph name="workspace" sizes="(max-width: 800px) 100vw, 58vw" alt="Illustrative modern parcel dispatch workspace"/><span>Illustrative operations environment</span></div>
+        <div className="editorial-image" data-image-feedback="photo" data-photo-frame=""><Photograph name="workspace" sizes="(max-width: 800px) 100vw, 58vw" alt="Illustrative modern parcel dispatch workspace"/></div>
         <div className="editorial-copy"><p className="section-index">03 / Company</p><p className="eyebrow">About VK AND COMPANY</p><h2>Built around each shipment.</h2><p>Our customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates.</p><Link href="/about" className="text-link">More about our process <ArrowRight size={16}/></Link></div>
       </div>
     </section>

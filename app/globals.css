@@ -24,6 +24,9 @@ a { color: inherit; text-decoration: none; }
 button, input, textarea, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 3px solid #4fb4c8; outline-offset: 3px; }
+/* Suppress browser click outlines only when its keyboard-focus heuristic is
+   inactive. The visible-focus rules above/below remain the keyboard fallback. */
+:focus:not(:focus-visible) { outline: none; }
 ::selection { color: white; background: var(--teal); }
 
 .shell { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
@@ -294,7 +297,7 @@ body { background: #f3f2ed; background-image: linear-gradient(rgba(32,58,85,.026
 .side-note .scene-stage { min-height: 300px; margin: 26px 0; }
 .form-panel { position: relative; border-color: rgba(32,58,85,.12); box-shadow: var(--deep-shadow); }
 .form-panel::before { content: ""; position: absolute; top: -1px; left: 28px; width: 84px; height: 3px; border-radius: 5px; background: linear-gradient(90deg, var(--navy), var(--teal)); }
-.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--teal); box-shadow: 0 0 0 4px rgba(34,125,145,.1); outline: 2px solid #188594; outline-offset: 3px; }
+.field input:focus-visible, .field textarea:focus-visible, .field select:focus-visible { border-color: var(--teal); box-shadow: 0 0 0 4px rgba(34,125,145,.1); outline: 2px solid #188594; outline-offset: 3px; }
 .faq-list { perspective: 1200px; }
 .faq-item { position: relative; margin: 12px 0; padding: 0 24px; border: 1px solid rgba(32,58,85,.11); border-radius: 14px; background: white; box-shadow: 0 12px 34px rgba(20,49,67,.07); transform-origin: top; transition: transform .25s ease, box-shadow .25s ease; }
 .faq-item::before { content: "VKC"; position: absolute; right: 66px; top: 21px; color: rgba(34,125,145,.28); font-size: .65rem; font-weight: 900; letter-spacing: .15em; }
@@ -438,7 +441,7 @@ body { background: #f3f2ed; background-image: linear-gradient(rgba(32,58,85,.026
 .editorial-grid-reverse .editorial-copy { order: 1; }
 .editorial-image { position: relative; overflow: hidden; border-radius: 6px; background: #d9e2e2; box-shadow: 0 28px 70px rgba(12,39,55,.17); }
 .editorial-image img { object-fit: cover; }
-:where(input, textarea, select):focus { outline: 2px solid #188594; outline-offset: 3px; border-color: #188594; }
+:where(input, textarea, select):focus-visible { outline: 2px solid #188594; outline-offset: 3px; border-color: #188594; }
 :where(a[href], button, summary):focus-visible { outline: 2px solid #259fab; outline-offset: 4px; }
 :where(a[href], button, summary):active { box-shadow: inset 0 0 0 2px rgba(67,184,188,.75); }
 .company-feature .editorial-image img, .page-hero-about .page-hero-image img { object-position: 78% center; }

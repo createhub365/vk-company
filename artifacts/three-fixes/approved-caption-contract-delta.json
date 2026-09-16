@@ -1,0 +1,18 @@
+[
+  {
+    "route": "/",
+    "phrases": 3
+  },
+  {
+    "route": "/services/domestic",
+    "phrases": 1
+  },
+  {
+    "route": "/services/international",
+    "phrases": 1
+  },
+  {
+    "route": "/about",
+    "phrases": 1
+  }
+]

@@ -1,0 +1,136 @@
+/* Stage 4 is confined to the existing navigation and its presentation wrapper. */
+.site-header.nav-depth-shell {
+  --nav-z: 60px;
+  --nav-plane-scale: .95; /* Compensate perspective magnification; retain the existing layout. */
+  --nav-label-z: 8px;
+  --nav-scroll-duration: 200ms;
+  --nav-door-duration: 380ms;
+  --nav-door-angle: -12deg;
+  --nav-background: rgba(247,246,241,.85);
+  --nav-border: rgba(255,255,255,.7);
+  --nav-shadow: 0 16px 50px rgba(14,42,60,.1);
+  --nav-scroll-shadow: 0 22px 55px rgba(14,42,60,.24);
+  perspective: var(--perspective);
+  perspective-origin: center top;
+  transform-style: preserve-3d;
+  overflow: visible;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.site-header.nav-depth-shell.home-header {
+  --nav-background: rgba(7,27,41,.82);
+  --nav-border: rgba(255,255,255,.11);
+  --nav-shadow: 0 16px 45px rgba(0,0,0,.18);
+  --nav-scroll-shadow: 0 24px 55px rgba(0,0,0,.32);
+}
+.nav-depth-shell .nav-surface {
+  position: relative;
+  border-radius: inherit;
+  transform-origin: center top;
+  transform: translateZ(var(--nav-z)) scale(var(--nav-plane-scale));
+  transform-style: preserve-3d;
+}
+.nav-depth-shell .nav-surface::before,
+.nav-depth-shell .nav-surface::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.nav-depth-shell .nav-surface::before {
+  z-index: -1;
+  background: var(--nav-background);
+  border: 1px solid var(--nav-border);
+  box-shadow: var(--nav-shadow);
+  backdrop-filter: blur(0px);
+  transition: backdrop-filter var(--nav-scroll-duration) var(--ease-out-expo);
+}
+.nav-depth-shell .nav-surface::after {
+  z-index: -2;
+  box-shadow: var(--nav-scroll-shadow);
+  opacity: 0;
+  transition: opacity var(--nav-scroll-duration) var(--ease-out-expo);
+}
+.nav-depth-shell[data-nav-scrolled="true"] .nav-surface::before { backdrop-filter: blur(16px); }
+.nav-depth-shell[data-nav-scrolled="true"] .nav-surface::after { opacity: 1; }
+.nav-depth-shell .header-inner {
+  /* Project link/button depth locally, then group it above the bar's backplate.
+     A tilted button must never intersect that sibling background plane. */
+  perspective: var(--perspective);
+  perspective-origin: center top;
+  transform-style: flat;
+}
+.nav-depth-shell .nav { transform-style: preserve-3d; }
+.nav-depth-shell .brand,
+.nav-depth-shell .menu-button,
+.nav-depth-shell .nav > a { position: relative; }
+.nav-depth-shell :is(a, button):focus-visible { z-index: 100; }
+.nav-depth-shell .nav > a {
+  transform: none;
+  transition: transform var(--d-fast) var(--ease-out-expo);
+}
+.nav-depth-shell .nav > a:not(.button)::after {
+  right: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--d-fast) var(--ease-out-expo);
+}
+.nav-depth-shell .nav > a:not(.button):focus-visible::after { transform: scaleX(1); }
+.nav-depth-shell .nav > .button { color: white; transform-style: preserve-3d; }
+.nav-depth-shell .nav > .button::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(ellipse, rgba(39,140,160,.45), rgba(39,140,160,0) 72%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--d-fast) var(--ease-out-expo);
+}
+@media (hover: hover) and (min-width: 768px) {
+  .nav-depth-shell[data-nav-pointer="true"] .nav > a:not(.button):hover { transform: translateY(-1px) translateZ(var(--nav-label-z)); }
+  .nav-depth-shell .nav > a:not(.button):hover::after { transform: scaleX(1); }
+  .nav-depth-shell[data-nav-pointer="true"] .nav > .button:hover { transform: rotateX(-8deg); }
+  .nav-depth-shell .nav > .button:hover::before { opacity: 1; }
+}
+.site-header.nav-depth-shell .nav > .button:active { transform: translateZ(0) scale(.97); }
+
+@container (max-width: 64rem) {
+  .nav-depth-shell .nav {
+    transform-origin: right top;
+    transform-style: flat;
+  }
+  .nav-depth-shell .nav.open { animation: nav-door-in var(--nav-door-duration) var(--ease-out-expo) both; }
+}
+@keyframes nav-door-in {
+  from { transform: rotateY(var(--nav-door-angle)); opacity: 0; }
+  to { transform: rotateY(0deg); opacity: 1; }
+}
+@keyframes nav-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (width < 768px) {
+  .site-header.nav-depth-shell { --nav-z: 30px; --nav-plane-scale: .975; --nav-label-z: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header.nav-depth-shell { perspective: none; transform-style: flat; }
+  .nav-depth-shell .nav-surface,
+  .nav-depth-shell .nav,
+  .nav-depth-shell .header-inner { transform: none !important; transform-style: flat; perspective: none; }
+  .nav-depth-shell .nav > a,
+  .nav-depth-shell .nav > a::after { transform: none !important; transition: none; }
+  .nav-depth-shell .nav > a:not(.button)::after { opacity: 0; }
+  .nav-depth-shell .nav > a:not(.button):is(:hover, :focus-visible)::after { opacity: 1; }
+  .nav-depth-shell .nav-surface::before { transition: none; }
+  .nav-depth-shell .nav-surface::after,
+  .nav-depth-shell .nav > .button::before { transition-duration: var(--d-reduced); }
+  .nav-depth-shell .nav.open {
+    animation: nav-fade-in var(--d-reduced) var(--ease-out-expo) both;
+    animation-duration: var(--d-reduced) !important;
+  }
+}

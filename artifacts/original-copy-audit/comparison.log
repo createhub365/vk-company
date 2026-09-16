@@ -1,0 +1,283 @@
+{
+  "changes": [
+    {
+      "route": "/",
+      "bodyEqual": false,
+      "imageAltDelta": {
+        "removed": [
+          "Teal and navy courier truck travelling on an intercity road",
+          "Illustrative unbranded delivery truck travelling on a modern intercity road"
+        ],
+        "added": [
+          "Illustrative navy and teal courier truck at an Indian delivery forecourt",
+          "Illustrative delivery truck travelling on an intercity road",
+          "Illustrative parcel being weighed and measured"
+        ]
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    },
+    {
+      "route": "/about",
+      "bodyEqual": false,
+      "imageAltDelta": {
+        "removed": [
+          "Illustrative logistics network with an aircraft, cargo ship, delivery truck and parcels",
+          "Illustrative parcel label being prepared for shipment",
+          "Illustrative courier vehicle travelling on a city route"
+        ],
+        "added": [
+          "Illustrative courier team loading parcels for dispatch",
+          "Illustrative parcel being weighed and measured",
+          "Illustrative courier and customer reviewing shipment details"
+        ]
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    },
+    {
+      "route": "/contact",
+      "bodyEqual": true,
+      "imageAltDelta": {
+        "removed": [
+          "Illustration of a VK AND COMPANY courier handing a parcel to a customer, with a globe, aircraft, ship and delivery truck"
+        ],
+        "added": [
+          "Illustrative Indian courier customer support representative"
+        ]
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    },
+    {
+      "route": "/get-a-quote",
+      "bodyEqual": false,
+      "imageAltDelta": {
+        "removed": [],
+        "added": [
+          "Illustrative Indian courier measuring a parcel on a weighing scale beside shipping paperwork; not actual company staff or premises"
+        ]
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    },
+    {
+      "route": "/faq",
+      "bodyEqual": true,
+      "imageAltDelta": {
+        "removed": [],
+        "added": []
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    },
+    {
+      "route": "/track",
+      "bodyEqual": true,
+      "imageAltDelta": {
+        "removed": [],
+        "added": []
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    },
+    {
+      "route": "/privacy",
+      "bodyEqual": true,
+      "imageAltDelta": {
+        "removed": [],
+        "added": []
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    },
+    {
+      "route": "/terms",
+      "bodyEqual": true,
+      "imageAltDelta": {
+        "removed": [],
+        "added": []
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    },
+    {
+      "route": "/404.html",
+      "bodyEqual": true,
+      "imageAltDelta": {
+        "removed": [],
+        "added": []
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    },
+    {
+      "route": "/services/domestic",
+      "bodyEqual": false,
+      "imageAltDelta": {
+        "removed": [],
+        "added": []
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    },
+    {
+      "route": "/services/international",
+      "bodyEqual": false,
+      "imageAltDelta": {
+        "removed": [],
+        "added": []
+      },
+      "accessibilityLabelDelta": {
+        "removed": [],
+        "added": []
+      },
+      "placeholderDelta": {
+        "removed": [],
+        "added": []
+      },
+      "headingsEqual": true,
+      "controlsEqual": true,
+      "metadataEqual": true,
+      "linksEqual": true
+    }
+  ],
+  "dynamic": [
+    {
+      "file": "components/forms/enquiry-form.tsx",
+      "identical": true,
+      "oldSha256": "bdc77e9f692b5834d5aa884718fd587a622bbf40ee806fc4dc8f7c56607ea45f",
+      "currentSha256": "bdc77e9f692b5834d5aa884718fd587a622bbf40ee806fc4dc8f7c56607ea45f"
+    },
+    {
+      "file": "components/forms/support-form.tsx",
+      "identical": true,
+      "oldSha256": "a0f4141beeb54ff0bc357809f88a52735b2defe4e055f43cb18b834bf26c2f80",
+      "currentSha256": "a0f4141beeb54ff0bc357809f88a52735b2defe4e055f43cb18b834bf26c2f80"
+    },
+    {
+      "file": "lib/schemas.ts",
+      "identical": true,
+      "oldSha256": "2e8611c73b37d5528da3d5dbf57c6d910be37e3ce0deb515a5916d252309f33a",
+      "currentSha256": "2e8611c73b37d5528da3d5dbf57c6d910be37e3ce0deb515a5916d252309f33a"
+    },
+    {
+      "file": "lib/quote-formsubmit.ts",
+      "identical": true,
+      "oldSha256": "b036fa487c35dee7efd2ecedf5e8db72d0a0f90198c5511107ad402b0661e57a",
+      "currentSha256": "b036fa487c35dee7efd2ecedf5e8db72d0a0f90198c5511107ad402b0661e57a"
+    },
+    {
+      "file": "lib/business-settings.ts",
+      "identical": true,
+      "oldSha256": "7a86cf16a63186ec7bd1d836a2ec8abdaeb8d486844bdabeb90d38854e18e891",
+      "currentSha256": "7a86cf16a63186ec7bd1d836a2ec8abdaeb8d486844bdabeb90d38854e18e891"
+    },
+    {
+      "file": "lib/config.ts",
+      "identical": true,
+      "oldSha256": "9ab2d19c08761921718205877604fb8be043bedad136bddc9e44acbe30b9ff59",
+      "currentSha256": "9ab2d19c08761921718205877604fb8be043bedad136bddc9e44acbe30b9ff59"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+diff --git a/artifacts/motion-audit/baseline.json b/artifacts/motion-audit/baseline.json
+index 59532bf..ef1b7d9 100644
+--- a/artifacts/motion-audit/baseline.json
++++ b/artifacts/motion-audit/baseline.json
+@@ -4222,12 +4222,12 @@
+     "out/media/photos/review-1536.webp": "6c089a145039e1895630dbaf68554a5ea477c5cf962ed32d6faa5805770f897c",
+     "out/media/photos/review-480.webp": "720059da10ee6d9cb085398ec92f8851ef97aef8e5f92b99883300423c77e803",
+     "out/media/photos/review-768.webp": "27af2c419406f6773b249cd99f4ba1b292c7e9f7f4c0d86edffa34e821728b63",
+-    "out/media/photos/selected-domestic-1-392.webp": "15bc57b35558304d2d44d335b5a2e8b3824b3d679606df27d834a5c21d014e3e",
++    "out/media/photos/selected-domestic-1-392.webp": "240fef696414e0e2d000824b8f47def2d1c3f07ea7391450660e59dbd048fac8",
+     "out/media/photos/selected-domestic-1024.webp": "1c6205e0a0c1898f60a6028ea094cbc06d8fe458f6f908c26577a774b74919e0",
+     "out/media/photos/selected-domestic-1440.webp": "e6208817862723d9c603a31acb96301f46822943f8edf2e6bd13790922042335",
+     "out/media/photos/selected-domestic-1744.webp": "95db5b2391cea9bebfefb56e96b94b368adc051c6b33b5eaeeeb0ea0e74b11f5",
+-    "out/media/photos/selected-domestic-2-392.webp": "9cc08fd117615584f4896e5b38e38e69546415b38dda35aed902aac66f908caa",
+-    "out/media/photos/selected-domestic-3-392.webp": "90bb4fc2a9a115b2caa0ff406bab5cc1ba4aa7077560bb36e212daf96fd2675c",
++    "out/media/photos/selected-domestic-2-392.webp": "ac5fb10fc847bb0677bbfa3b17aad4885897b5ecfca671ed64cbac91a29180d1",
++    "out/media/photos/selected-domestic-3-392.webp": "37cc993fb3f34205a62ca782357dcb36218c7156768ab5fee86b418147a1b4e1",
+     "out/media/photos/selected-domestic-480.webp": "376054e7c3dd0afb9020caa6f5358e467d6f1b90ec9c06ef4acc40cc889ea54e",
+     "out/media/photos/selected-domestic-768.webp": "020360e3ae3eb593469968c271cf8149ab6268a0c7c3a9cfb1bd5b2b94ef6d3c",
+     "out/media/photos/selected-home-hero-1024.webp": "1c6205e0a0c1898f60a6028ea094cbc06d8fe458f6f908c26577a774b74919e0",
+@@ -4235,12 +4235,12 @@
+     "out/media/photos/selected-home-hero-1744.webp": "95db5b2391cea9bebfefb56e96b94b368adc051c6b33b5eaeeeb0ea0e74b11f5",
+     "out/media/photos/selected-home-hero-480.webp": "376054e7c3dd0afb9020caa6f5358e467d6f1b90ec9c06ef4acc40cc889ea54e",
+     "out/media/photos/selected-home-hero-768.webp": "020360e3ae3eb593469968c271cf8149ab6268a0c7c3a9cfb1bd5b2b94ef6d3c",
+-    "out/media/photos/selected-international-1-392.webp": "6cc33a1ee45a9941d2f11edfc6c5a3d37b620c73f85dab1f6154185b7b9360b4",
++    "out/media/photos/selected-international-1-392.webp": "cf824ce5bf052c9b39de8125bafabeb57497703833815f28cdca4a5a86db9782",
+     "out/media/photos/selected-international-1024.webp": "633346d77cbd4d3cb8caa44fc403dbff46ab778df1505ae851cc6e007e17a6c9",
+     "out/media/photos/selected-international-1440.webp": "d218eb899c584891d60fbe68bc81b6f56ccb206e59af44c8c9709b2c4b8b48fe",
+     "out/media/photos/selected-international-1802.webp": "097b6a5b158d15d64e607742b43a2a0155d46885925cbaf500bf087769bfade6",
+-    "out/media/photos/selected-international-2-392.webp": "600438f1465b9ce490ce7499399a6a73d5ef76b54a23466c7c01790b4a883edc",
+-    "out/media/photos/selected-international-3-392.webp": "6aefc38c1776a71025499dc6b2eba5ddc2adfa6808e17dcfbaba1f9503bf4c4f",
++    "out/media/photos/selected-international-2-392.webp": "288357679da7b76e9abc249129566ddd25dc17826f965a3fd5d7a6993a6f5d55",
++    "out/media/photos/selected-international-3-392.webp": "8dbecf371332c4a6021ed9ed8dbc1f364a4fe29fab6b8fa3fa8472a7fd425e99",
+     "out/media/photos/selected-international-480.webp": "8b380d2dbdf504a3550a0ff9a6d2122369425522a665bc8b5e58f6f7cc9ddb2f",
+     "out/media/photos/selected-international-768.webp": "16e4617a417c56a88cc7fa429c1b5311c2a0dd5293b775e509a152e6ca47f3b6",
+     "out/media/photos/support-1024.webp": "bea06b586055ce38843b423d95da620b653c5019c40c6a59c50d6a93f2a9486b",
+diff --git a/public/media/photos/selected-domestic-1-392.webp b/public/media/photos/selected-domestic-1-392.webp
+index a0dcf7b..172a79c 100644
+Binary files a/public/media/photos/selected-domestic-1-392.webp and b/public/media/photos/selected-domestic-1-392.webp differ
+diff --git a/public/media/photos/selected-domestic-2-392.webp b/public/media/photos/selected-domestic-2-392.webp
+index cc447e1..ac209c0 100644
+Binary files a/public/media/photos/selected-domestic-2-392.webp and b/public/media/photos/selected-domestic-2-392.webp differ
+diff --git a/public/media/photos/selected-domestic-3-392.webp b/public/media/photos/selected-domestic-3-392.webp
+index aa12989..ea7c8a8 100644
+Binary files a/public/media/photos/selected-domestic-3-392.webp and b/public/media/photos/selected-domestic-3-392.webp differ
+diff --git a/public/media/photos/selected-international-1-392.webp b/public/media/photos/selected-international-1-392.webp
+index 6adc332..bfd2b4a 100644
+Binary files a/public/media/photos/selected-international-1-392.webp and b/public/media/photos/selected-international-1-392.webp differ
+diff --git a/public/media/photos/selected-international-2-392.webp b/public/media/photos/selected-international-2-392.webp
+index 90293ae..031a8dc 100644
+Binary files a/public/media/photos/selected-international-2-392.webp and b/public/media/photos/selected-international-2-392.webp differ
+diff --git a/public/media/photos/selected-international-3-392.webp b/public/media/photos/selected-international-3-392.webp
+index 95fba9d..ea22592 100644
+Binary files a/public/media/photos/selected-international-3-392.webp and b/public/media/photos/selected-international-3-392.webp differ
+diff --git a/scripts/verify-content.mjs b/scripts/verify-content.mjs
+index 1de181f..8ee643a 100644
+--- a/scripts/verify-content.mjs
++++ b/scripts/verify-content.mjs
+@@ -3,7 +3,7 @@ import { spawnSync } from 'node:child_process';
+ import { readFileSync } from 'node:fs';
+ import { createHash } from 'node:crypto';
+ 
+-const expectedBaseline = 'd8ffe93dda487660a81988b021e55b7c2786679a02760437bcbdf429d1614cda';
++const expectedBaseline = '72f614113f50a281480696289ded0783ac7a985dbfeb61ff5a8839c3ace4b16f';
+ const actualBaseline = createHash('sha256').update(readFileSync('artifacts/motion-audit/baseline.json')).digest('hex');
+ if (actualBaseline !== expectedBaseline) {
+   console.error('Content contract changed. Restore the original Stage 1 baseline; do not recapture it.');

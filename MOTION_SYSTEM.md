@@ -1,6 +1,6 @@
 # Motion system — foundation, hero, navigation and editorial sections
 
-Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them to the homepage hero. Stage 4 adds depth and accessible menu interaction to the shared navigation. Stage 5 applies alternating depth to the two existing homepage editorial sections. Stage 6 adds the scroll-linked four-step sequence. Copy, forms, images, routes and metadata remain at the Stage 1 baseline. The root layout adds a context provider without extra DOM; shared photo feedback observes the pointer policy and uses Motion's scheduler.
+Stage 2 added infrastructure and three presentation primitives. Stage 3 applies them to the homepage hero. Stage 4 adds depth and accessible menu interaction to the shared navigation. Stage 5 applies alternating depth to the two existing homepage editorial sections. Stage 6 adds the scroll-linked four-step sequence. Stage 7 adds FAQ, form and footer presentation. Copy, forms, images, routes and metadata remain at the Stage 1 baseline. The root layout adds a context provider without extra DOM; shared photo feedback observes the pointer policy and uses Motion's scheduler.
 
 ## Tokens
 
@@ -76,7 +76,7 @@ Browser profiles: 1440px/2×, 768px/2×, 390px/3× touch, 360px/3× touch, reduc
 
 The hook was exercised in an isolated temporary Git repository: preserved staged content passes; a staged bad headline concealed by a clean working copy fails; a fully staged bad headline fails the fresh-build content check. No test commits or enquiries were created. Unit regression tests additionally reject altered image bytes, dynamic form wording and an added route.
 
-No Lighthouse claim is made at this foundation stage. The full before/after performance pass remains Stage 8. Stage 3 has its Round 1 tuning, Stage 4 navigation, Stage 5 editorial motion and Stage 6 process motion are implemented; later stages have not started.
+No Lighthouse claim is made at this foundation stage. The full before/after performance pass is now Stage 9, after Stage 8 remaining-page work. Stage 3 has its Round 1 tuning, Stages 4–7 are implemented; Stage 8 remaining pages and Stage 9 performance/final verification have not started.
 
 Implementation references: [Motion useScroll](https://motion.dev/docs/react-use-scroll), [Motion shared frame scheduler](https://motion.dev/docs/frame), [Lenis options and manual frame integration](https://github.com/darkroomengineering/lenis).
 
@@ -137,3 +137,15 @@ Desktop progress is `(viewportHeight * .75 - wrapperTop) / (wrapperHeight + view
 The component subscribes to the existing provider's scroll MotionValue and batches reads/writes on Motion's shared scheduler. No independent rAF loop or scroll listener is added. Identical/clamped progress performs no style writes. One resettable quiet-period timer clears will-change; it never advances motion. Resize, visibility changes, unmount and reduced-motion changes clean up their work. Reduced motion does not subscribe to scroll: all steps are flat/full-opacity, glow off, connector fully drawn. Those same final states render in SSR or with JavaScript disabled.
 
 Evidence is in `artifacts/motion-stage-6/REPORT.md`. No recordings are created in this or remaining stages; review is on the running dev server, with diff/report/content verification retained.
+
+## Stage 7: FAQ, forms and footer
+
+`components/motion/utility-depth.tsx` provides three section-specific presentation wrappers around the existing native DOM. They do not add new general-purpose motion primitives. `FaqDepth` replaces only the existing faq-list div; `FormDepth` wraps the unchanged frozen form components; `FooterDepth` replaces only the footer's shell div. None changes content, field names, endpoints, native details semantics, routes or images. A hydration marker enables presentation only after mount, while CSS and reduced-motion state provide flat readable fallbacks.
+
+FAQ uses the existing plus/minus indicator, rotating it 180° on the 240ms expo curve. Native details opens/closes its layout immediately; the answer hinges from rotateX(-6deg) with opacity over 240ms. There is deliberately no height interpolation, preserving the transform/opacity-only rule. The old entire-card sideways movement and animated shadow are removed within this scope. One capture listener on each FAQ wrapper observes native toggle events; it does not intercept keyboard activation or prevent default. Rapid toggles cancel the prior answer animation, and finish/reduced-motion/unmount clear will-change and listeners. Reduced motion is stationary, including focus outlines.
+
+Forms use a compensated local perspective plane at Z 30px (15px mobile), preserving their existing size, position, soft shadow and layout. Focused controls lift to Z 12px (6px mobile), keeping the existing teal outline/ring. Their existing separate labels move up 2px without becoming placeholders or obscuring values. Submit buttons use desktop rotateX(-8deg) hover with a pseudo-element glow and scale .97 / Z 0 on active; active wins over hover. The shared pointer policy disables hover tilt on Quote, touch and below 768px. Quote's WebGL files and both form implementation files remain unchanged. The enquiry-only notice has no opacity treatment, entry animation or delay.
+
+Footer content sits at local Z -20px (-10px mobile), with a 1px desktop link lift. Original links, focus rings, company data and logo remain. The footer's outer page footprint is unchanged. All Stage 7 transforms are disabled under reduced motion; optional opacity transitions are capped at 150ms. No persistent will-change, rAF loop, pointer listener or scroll subscription was introduced.
+
+The completed Task A image diagnosis and pixel-identical transform controls are in `artifacts/service-photo-diagnosis/REPORT.md`; the six native 392px service rows need larger same-image originals. Stage 7 does not modify their rendering. Review `artifacts/motion-stage-7/REPORT.md` and `stage-7.patch` on the running dev server. No recordings are made. Stage 8 (remaining pages) and Stage 9 (performance/final verification) await review.

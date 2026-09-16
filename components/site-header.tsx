@@ -23,6 +23,16 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    // Browsers can retain :focus-visible when a mouse-opened menu restores
+    // focus after keyboard use. Preserve focus, but reset its visual modality.
+    const keyboard = (event: KeyboardEvent) => {
+      if (!event.metaKey && !event.ctrlKey && !event.altKey) delete header.current?.dataset.navPointerFocus;
+    };
+    document.addEventListener("keydown", keyboard, true);
+    return () => document.removeEventListener("keydown", keyboard, true);
+  }, []);
+
+  useEffect(() => {
     let previous = false;
     // Only threshold crossings update React; scroll frames never write nav styles.
     const update = (value: number) => {
@@ -111,7 +121,7 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
     };
   }, [open]);
   return (
-    <header ref={header} className={`site-header nav-depth-shell ${pathname === "/" ? "home-header" : ""}`} data-nav-scrolled={scrolled} data-nav-pointer={pointerRouteAllowed(pathname)}>
+    <header ref={header} className={`site-header nav-depth-shell ${pathname === "/" ? "home-header" : ""}`} data-nav-scrolled={scrolled} data-nav-pointer={pointerRouteAllowed(pathname)} onPointerDownCapture={event => { event.currentTarget.dataset.navPointerFocus = ""; }}>
       <div className="nav-surface">
       <div className="shell header-inner">
         <Link href="/" className="brand" aria-label="VK AND COMPANY home" onClick={() => closeMenu()}>

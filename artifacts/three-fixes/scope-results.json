@@ -1,0 +1,19 @@
+{
+  "changedFiles": [
+    "styles/utility-depth.css",
+    "MOTION_AUDIT.md",
+    "app/(site)/page.tsx",
+    "app/globals.css",
+    "artifacts/motion-audit/baseline.json",
+    "components/motion/scroll-runtime.tsx",
+    "components/page-hero.tsx",
+    "components/site-header.tsx",
+    "components/three/scene-stage.tsx",
+    "scripts/verify-content.mjs",
+    "styles/navigation.css",
+    "tests/motion-content-guard.test.ts"
+  ],
+  "all66ImageHashesUnchanged": true,
+  "onlySixCaptionRemovalsInContract": true,
+  "otherCopyAltLinksFormsMetadataUnchanged": true
+}

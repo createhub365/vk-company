@@ -1,0 +1,81 @@
+[WebServer] (node:14215) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 2 workers
+
+(node:14217) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [utility-768] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup (1.0s)
+  ✓   2 [utility-1440] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup (1.0s)
+  ✓   4 [utility-1440] › tests/e2e/utility-motion.spec.ts:27:49 › form depth, keyboard focus, values, notice and press /contact (1.5s)
+  ✓   3 [utility-768] › tests/e2e/utility-motion.spec.ts:27:49 › form depth, keyboard focus, values, notice and press /contact (1.6s)
+  ✓   6 [utility-768] › tests/e2e/utility-motion.spec.ts:27:49 › form depth, keyboard focus, values, notice and press /get-a-quote (1.8s)
+  ✓   5 [utility-1440] › tests/e2e/utility-motion.spec.ts:27:49 › form depth, keyboard focus, values, notice and press /get-a-quote (1.8s)
+  ✓   7 [utility-768] › tests/e2e/utility-motion.spec.ts:54:1 › footer depth and native keyboard links (1.2s)
+  ✓   8 [utility-1440] › tests/e2e/utility-motion.spec.ts:54:1 › footer depth and native keyboard links (1.1s)
+  ✓   9 [utility-768] › tests/e2e/utility-motion.spec.ts:67:1 › reduced motion and no-JS preserve final readable content and native details (397ms)
+  ✓  10 [utility-1440] › tests/e2e/utility-motion.spec.ts:67:1 › reduced motion and no-JS preserve final readable content and native details (392ms)
+(node:14255) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14254) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  11 [utility-390] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup (153ms)
+  ✘  12 [utility-360] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup (151ms)
+(node:14264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14265) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [utility-390] › tests/e2e/utility-motion.spec.ts:27:49 › form depth, keyboard focus, values, notice and press /contact (900ms)
+  ✓  14 [utility-360] › tests/e2e/utility-motion.spec.ts:27:49 › form depth, keyboard focus, values, notice and press /contact (901ms)
+  ✓  15 [utility-390] › tests/e2e/utility-motion.spec.ts:27:49 › form depth, keyboard focus, values, notice and press /get-a-quote (1.1s)
+  ✓  16 [utility-360] › tests/e2e/utility-motion.spec.ts:27:49 › form depth, keyboard focus, values, notice and press /get-a-quote (1.0s)
+  ✓  17 [utility-360] › tests/e2e/utility-motion.spec.ts:54:1 › footer depth and native keyboard links (1.1s)
+  ✓  18 [utility-390] › tests/e2e/utility-motion.spec.ts:54:1 › footer depth and native keyboard links (1.2s)
+  ✓  20 [utility-390] › tests/e2e/utility-motion.spec.ts:67:1 › reduced motion and no-JS preserve final readable content and native details (360ms)
+  ✓  19 [utility-360] › tests/e2e/utility-motion.spec.ts:67:1 › reduced motion and no-JS preserve final readable content and native details (366ms)
+
+
+  1) [utility-390] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      14 |   await summary.focus(); await page.keyboard.press("Enter"); await expect(details).toHaveAttribute("open", "");
+      15 |   const frames = await answer.evaluate(e => e.getAnimations().map(a => ({ frames:(a.effect as KeyframeEffect).getKeyframes(), duration:a.effect?.getTiming().duration })));
+    > 16 |   expect(frames).toHaveLength(1); expect(frames[0].duration).toBe(240); expect(frames[0].frames[0].transform).toContain("rotateX(-6deg)");
+         |                  ^
+      17 |   expect(await details.evaluate(e => getComputedStyle(e).transform)).toBe("none");
+      18 |   await page.screenshot({ path:`artifacts/motion-stage-7/faq-${page.viewportSize()!.width}.png`, scale:"css" });
+      19 |   await expect.poll(() => answer.evaluate(e => getComputedStyle(e).willChange)).toBe("auto");
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/utility-motion.spec.ts:16:18
+
+    Error Context: test-results/utility-motion/utility-motion-native-FAQ--2d819-e-rapid-toggles-and-cleanup-utility-390/error-context.md
+
+  2) [utility-360] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      14 |   await summary.focus(); await page.keyboard.press("Enter"); await expect(details).toHaveAttribute("open", "");
+      15 |   const frames = await answer.evaluate(e => e.getAnimations().map(a => ({ frames:(a.effect as KeyframeEffect).getKeyframes(), duration:a.effect?.getTiming().duration })));
+    > 16 |   expect(frames).toHaveLength(1); expect(frames[0].duration).toBe(240); expect(frames[0].frames[0].transform).toContain("rotateX(-6deg)");
+         |                  ^
+      17 |   expect(await details.evaluate(e => getComputedStyle(e).transform)).toBe("none");
+      18 |   await page.screenshot({ path:`artifacts/motion-stage-7/faq-${page.viewportSize()!.width}.png`, scale:"css" });
+      19 |   await expect.poll(() => answer.evaluate(e => getComputedStyle(e).willChange)).toBe("auto");
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/utility-motion.spec.ts:16:18
+
+    Error Context: test-results/utility-motion/utility-motion-native-FAQ--2d819-e-rapid-toggles-and-cleanup-utility-360/error-context.md
+
+  2 failed
+    [utility-390] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup 
+    [utility-360] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup 
+  18 passed (10.6s)

@@ -1,3 +1,4 @@
+import { FormDepth } from "@/components/motion/utility-depth";
 import type { Metadata } from "next";
 import { Mail, Phone, Headphones, FileText, Package, Users, MoveDownLeft } from "lucide-react";
 import { Photograph } from "@/components/photograph";
@@ -38,7 +39,7 @@ export default async function ContactPage() {
           {settings.address && <p>{settings.mapUrl ? <a className="text-link" href={settings.mapUrl} rel="noopener noreferrer">{settings.address}</a> : settings.address}</p>}
           {settings.operatingHours && <p>{settings.operatingHours}</p>}
         </aside>
-        <div className={styles.formArea}><SupportForm/></div>
+        <div className={styles.formArea}><FormDepth><SupportForm/></FormDepth></div>
         <p className={styles.responseTime}>We usually respond within one business day.</p>
         </div>
       </div>

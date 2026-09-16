@@ -91,7 +91,6 @@ export function SceneStage({ variant, className = "", label, compact = false }: 
       <SceneErrorBoundary fallback={fallback}>
         {visible && !failed ? <CourierCanvas variant={variant} reduced={reduced} active={visible} progress={progress} /> : fallback}
       </SceneErrorBoundary>
-      <div className="scene-caption" aria-hidden="true">Illustrative logistics environment</div>
     </div>
   );
 }

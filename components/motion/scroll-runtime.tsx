@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { cancelFrame, frame, type FrameData } from "framer-motion";
 import { useReducedMotion } from "./use-reduced-motion";
@@ -11,6 +12,10 @@ import { isScrollLocked, subscribeScrollLock } from "@/lib/motion/scroll-lock";
 let owner: Lenis | undefined;
 export default function ScrollRuntime() {
   const reduced = useReducedMotion();
+  const pathname = usePathname();
+  // The Quote form should track native wheel/trackpad input immediately. Its
+  // measured delay came from Lenis easing, not the demand-rendered WebGL scene.
+  const smooth = !reduced && pathname.replace(/\/$/, "") !== "/get-a-quote";
   const { scrollY, scrollYProgress } = useDepthScroll();
   useEffect(() => {
     if (owner) return;
@@ -26,27 +31,27 @@ export default function ScrollRuntime() {
       delete document.documentElement.dataset.depthScroll;
     }
     function start() {
-      if (document.hidden || lenis || owner || (reduced && !isScrollLocked())) return;
-      lenis = new Lenis({ lerp: 0.08, autoRaf: false, syncTouch: false, smoothWheel: !reduced, anchors: false,
+      if (document.hidden || lenis || owner || (!smooth && !isScrollLocked())) return;
+      lenis = new Lenis({ lerp: 0.08, autoRaf: false, syncTouch: false, smoothWheel: smooth, anchors: false,
         // Preserve native form-control scrolling and browser zoom gestures.
         prevent: node => !isScrollLocked() && node.matches("input, textarea, select, [contenteditable='true']"),
         virtualScroll: ({ event }) => !(event instanceof WheelEvent && (event.ctrlKey || event.metaKey))
           && !(typeof TouchEvent !== "undefined" && event instanceof TouchEvent && event.touches.length > 1),
       });
       owner = lenis;
-      if (!reduced) document.documentElement.dataset.depthScroll = "smooth";
+      if (smooth) document.documentElement.dataset.depthScroll = "smooth";
       lenis.on("scroll", sync);
       sync(lenis);
       // Motion owns the single shared rAF scheduler; Lenis never creates its own loop.
       if (isScrollLocked()) lenis.stop();
-      else if (!reduced) frame.update(tick, true);
+      else if (smooth) frame.update(tick, true);
     }
     function updateLock() {
       if (isScrollLocked()) {
         start();
         lenis?.stop();
         cancelFrame(tick);
-      } else if (reduced) stop();
+      } else if (!smooth) stop();
       else {
         start();
         lenis?.start();
@@ -58,6 +63,6 @@ export default function ScrollRuntime() {
     const unsubscribeLock = subscribeScrollLock(updateLock);
     document.addEventListener("visibilitychange", visibility);
     return () => { unsubscribeLock(); document.removeEventListener("visibilitychange", visibility); stop(); };
-  }, [reduced, scrollY, scrollYProgress]);
+  }, [smooth, scrollY, scrollYProgress]);
   return null;
 }
