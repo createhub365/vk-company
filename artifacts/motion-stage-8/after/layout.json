@@ -1,0 +1,6154 @@
+[
+  {
+    "route": "/services/domestic",
+    "width": 1440,
+    "height": 3197,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-1744.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-1-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-2-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-3-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Domestic courier enquiries",
+        "x": 130,
+        "y": 142,
+        "width": 505.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "A considered route from one city to the next.",
+        "x": 130,
+        "y": 175.1875,
+        "width": 505.796875,
+        "height": 216
+      },
+      {
+        "tag": "P",
+        "key": "Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.",
+        "x": 130,
+        "y": 415.1875,
+        "width": 505.796875,
+        "height": 90.5625
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-1744.webp",
+        "x": 691.796875,
+        "y": 163.953125,
+        "width": 618.203125,
+        "height": 319.828125
+      },
+      {
+        "tag": "H2",
+        "key": "domestic process",
+        "x": 130,
+        "y": 657.140625,
+        "width": 1180,
+        "height": 19.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-1-392.webp",
+        "x": 130,
+        "y": 706.328125,
+        "width": 625.234375,
+        "height": 395.546875
+      },
+      {
+        "tag": "H3",
+        "key": "Begin with the real shipment details.",
+        "x": 798.421875,
+        "y": 710.328125,
+        "width": 511.578125,
+        "height": 100.21875
+      },
+      {
+        "tag": "P",
+        "key": "Provide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step.",
+        "x": 798.421875,
+        "y": 834.546875,
+        "width": 511.578125,
+        "height": 81.5625
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-2-392.webp",
+        "x": 130,
+        "y": 1162.875,
+        "width": 625.234375,
+        "height": 405.125
+      },
+      {
+        "tag": "H3",
+        "key": "Review before commitment.",
+        "x": 798.421875,
+        "y": 1166.875,
+        "width": 511.578125,
+        "height": 50.109375
+      },
+      {
+        "tag": "P",
+        "key": "A submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance.",
+        "x": 798.421875,
+        "y": 1240.984375,
+        "width": 511.578125,
+        "height": 81.5625
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-3-392.webp",
+        "x": 130,
+        "y": 1629,
+        "width": 625.234375,
+        "height": 405.125
+      },
+      {
+        "tag": "H3",
+        "key": "We move it with care.",
+        "x": 798.421875,
+        "y": 1633,
+        "width": 511.578125,
+        "height": 50.109375
+      },
+      {
+        "tag": "P",
+        "key": "Once confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required.",
+        "x": 798.421875,
+        "y": 1707.109375,
+        "width": 511.578125,
+        "height": 81.5625
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 201,
+        "y": 2303.515625,
+        "width": 604.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 201,
+        "y": 2336.703125,
+        "width": 604.796875,
+        "height": 192
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 201,
+        "y": 2528.703125,
+        "width": 604.796875,
+        "height": 51.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/services/international",
+    "width": 1440,
+    "height": 3197,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-1802.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-1-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-2-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-3-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "International courier enquiries",
+        "x": 130,
+        "y": 142,
+        "width": 505.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Across borders, with the details checked first.",
+        "x": 130,
+        "y": 175.1875,
+        "width": 505.796875,
+        "height": 216
+      },
+      {
+        "tag": "P",
+        "key": "International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.",
+        "x": 130,
+        "y": 415.1875,
+        "width": 505.796875,
+        "height": 90.5625
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-1802.webp",
+        "x": 692.796875,
+        "y": 174.53125,
+        "width": 616.203125,
+        "height": 298.671875
+      },
+      {
+        "tag": "H2",
+        "key": "international process",
+        "x": 130,
+        "y": 657.140625,
+        "width": 1180,
+        "height": 19.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-1-392.webp",
+        "x": 130,
+        "y": 706.328125,
+        "width": 625.234375,
+        "height": 395.546875
+      },
+      {
+        "tag": "H3",
+        "key": "Route and contents review.",
+        "x": 798.421875,
+        "y": 710.328125,
+        "width": 511.578125,
+        "height": 50.109375
+      },
+      {
+        "tag": "P",
+        "key": "Share accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review.",
+        "x": 798.421875,
+        "y": 784.4375,
+        "width": 511.578125,
+        "height": 81.5625
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-2-392.webp",
+        "x": 130,
+        "y": 1162.875,
+        "width": 625.234375,
+        "height": 405.125
+      },
+      {
+        "tag": "H3",
+        "key": "Documentation is shipment-specific.",
+        "x": 798.421875,
+        "y": 1166.875,
+        "width": 511.578125,
+        "height": 100.21875
+      },
+      {
+        "tag": "P",
+        "key": "Required documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review.",
+        "x": 798.421875,
+        "y": 1291.09375,
+        "width": 511.578125,
+        "height": 81.5625
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-3-392.webp",
+        "x": 130,
+        "y": 1629,
+        "width": 625.234375,
+        "height": 405.125
+      },
+      {
+        "tag": "H3",
+        "key": "Clear quotation boundaries.",
+        "x": 798.421875,
+        "y": 1633,
+        "width": 511.578125,
+        "height": 50.109375
+      },
+      {
+        "tag": "P",
+        "key": "Charges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements.",
+        "x": 798.421875,
+        "y": 1707.109375,
+        "width": 511.578125,
+        "height": 81.5625
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 201,
+        "y": 2303.515625,
+        "width": 604.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 201,
+        "y": 2336.703125,
+        "width": 604.796875,
+        "height": 192
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 201,
+        "y": 2528.703125,
+        "width": 604.796875,
+        "height": 51.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/about",
+    "width": 1440,
+    "height": 2800,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "About VK AND COMPANY",
+        "x": 130,
+        "y": 142,
+        "width": 505.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Courier arrangements built around each shipment.",
+        "x": 130,
+        "y": 175.1875,
+        "width": 505.796875,
+        "height": 288
+      },
+      {
+        "tag": "P",
+        "key": "VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process.",
+        "x": 130,
+        "y": 487.1875,
+        "width": 505.796875,
+        "height": 90.5625
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/workspace-1717.webp",
+        "x": 691.796875,
+        "y": 195.015625,
+        "width": 618.203125,
+        "height": 329.703125
+      },
+      {
+        "tag": "P",
+        "key": "What we do",
+        "x": 130,
+        "y": 754.75,
+        "width": 442.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "P",
+        "key": "Connecting People & Possibilities",
+        "x": 130,
+        "y": 811.9375,
+        "width": 360,
+        "height": 96.75
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/dispatch-1536.webp",
+        "x": 130,
+        "y": 926.6875,
+        "width": 442.796875,
+        "height": 295.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/details-1536.webp",
+        "x": 672.796875,
+        "y": 771.5,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "A straightforward customer journey.",
+        "x": 999.796875,
+        "y": 754.75,
+        "width": 310.1875,
+        "height": 76.1875
+      },
+      {
+        "tag": "P",
+        "key": "Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise.",
+        "x": 999.796875,
+        "y": 844.9375,
+        "width": 310.1875,
+        "height": 127.96875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/review-1536.webp",
+        "x": 672.796875,
+        "y": 1049.859375,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "Careful about what is confirmed.",
+        "x": 999.796875,
+        "y": 1045.90625,
+        "width": 310.1875,
+        "height": 76.1875
+      },
+      {
+        "tag": "P",
+        "key": "We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided.",
+        "x": 999.796875,
+        "y": 1136.09375,
+        "width": 310.1875,
+        "height": 102.375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/support-1536.webp",
+        "x": 672.796875,
+        "y": 1328.21875,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "Prepared to connect.",
+        "x": 999.796875,
+        "y": 1311.46875,
+        "width": 310.1875,
+        "height": 76.1875
+      },
+      {
+        "tag": "P",
+        "key": "Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied.",
+        "x": 999.796875,
+        "y": 1401.65625,
+        "width": 310.1875,
+        "height": 127.96875
+      },
+      {
+        "tag": "P",
+        "key": "Delivered with Purpose",
+        "x": 672.796875,
+        "y": 1571.625,
+        "width": 637.1875,
+        "height": 39.671875
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 201,
+        "y": 1906.296875,
+        "width": 604.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 201,
+        "y": 1939.484375,
+        "width": 604.796875,
+        "height": 192
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 201,
+        "y": 2131.484375,
+        "width": 604.796875,
+        "height": 51.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/contact",
+    "width": 1440,
+    "height": 1636,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "H1",
+        "key": "How can we help?",
+        "x": 78,
+        "y": 210,
+        "width": 630.328125,
+        "height": 153.96875
+      },
+      {
+        "tag": "P",
+        "key": "Send a general question or ask about a shipment. Your message will be saved for the team to review.",
+        "x": 78,
+        "y": 383.96875,
+        "width": 460,
+        "height": 56.09375
+      },
+      {
+        "tag": "P",
+        "key": "Here to Keep You Moving",
+        "x": 572.9759521484375,
+        "y": 287.50054931640625,
+        "width": 141.626220703125,
+        "height": 116.1864013671875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/support-1536.webp",
+        "x": 30,
+        "y": 452.0625,
+        "width": 678.328125,
+        "height": 452.21875
+      },
+      {
+        "tag": "P",
+        "key": "From Your Place to the World",
+        "x": 249.79745483398438,
+        "y": 1001.6725463867188,
+        "width": 258.73321533203125,
+        "height": 100.46734619140625
+      },
+      {
+        "tag": "P",
+        "key": "Contact channels",
+        "x": 822.921875,
+        "y": 240,
+        "width": 539.078125,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Contact VK AND COMPANY.",
+        "x": 822.921875,
+        "y": 274.1875,
+        "width": 539.078125,
+        "height": 112.3125
+      },
+      {
+        "tag": "P",
+        "key": "+91 93177 24056",
+        "x": 822.921875,
+        "y": 410.5,
+        "width": 539.078125,
+        "height": 29.78125
+      },
+      {
+        "tag": "P",
+        "key": "vkandcompanymohali@gmail.com",
+        "x": 822.921875,
+        "y": 450.28125,
+        "width": 539.078125,
+        "height": 29.78125
+      },
+      {
+        "tag": "INPUT",
+        "key": "website",
+        "x": -9204.078125,
+        "y": 582.65625,
+        "width": 166,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "name",
+        "x": 823.921875,
+        "y": 585.5625,
+        "width": 258.53125,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "phone",
+        "x": 1102.453125,
+        "y": 585.5625,
+        "width": 258.546875,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "email",
+        "x": 823.921875,
+        "y": 685.65625,
+        "width": 537.078125,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "subject",
+        "x": 823.921875,
+        "y": 813.21875,
+        "width": 537.078125,
+        "height": 50
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "message",
+        "x": 823.921875,
+        "y": 911.71875,
+        "width": 537.078125,
+        "height": 112
+      },
+      {
+        "tag": "P",
+        "key": "We usually respond within one business day.",
+        "x": 794.921875,
+        "y": 1136.71875,
+        "width": 595.078125,
+        "height": 19.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 1440,
+    "height": 2990,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Quotation request",
+        "x": 130,
+        "y": 161.125,
+        "width": 505.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Tell us about your shipment.",
+        "x": 130,
+        "y": 194.3125,
+        "width": 505.796875,
+        "height": 144
+      },
+      {
+        "tag": "P",
+        "key": "Share the route and parcel details below. Our team will review the information before confirming service and charges.",
+        "x": 130,
+        "y": 362.3125,
+        "width": 505.796875,
+        "height": 90.5625
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/details-1536.webp",
+        "x": 789.390625,
+        "y": 165.9375,
+        "width": 423,
+        "height": 282.125
+      },
+      {
+        "tag": "P",
+        "key": "Before you begin",
+        "x": 130,
+        "y": 674,
+        "width": 392,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Details make the difference.",
+        "x": 130,
+        "y": 707.1875,
+        "width": 392,
+        "height": 112.625
+      },
+      {
+        "tag": "P",
+        "key": "Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment.",
+        "x": 130,
+        "y": 834.8125,
+        "width": 392,
+        "height": 76.78125
+      },
+      {
+        "tag": "P",
+        "key": "Pickup requests are not currently enabled.",
+        "x": 130,
+        "y": 911.59375,
+        "width": 392,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "website",
+        "x": -9417,
+        "y": 740.59375,
+        "width": 166,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "name",
+        "x": 623,
+        "y": 800.625,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "phone",
+        "x": 955,
+        "y": 800.625,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "email",
+        "x": 623,
+        "y": 898.71875,
+        "width": 646,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originCountry",
+        "x": 623,
+        "y": 1100.9375,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originCity",
+        "x": 955,
+        "y": 1100.9375,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originPostalCode",
+        "x": 623,
+        "y": 1199.03125,
+        "width": 646,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationCountry",
+        "x": 623,
+        "y": 1297.125,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationCity",
+        "x": 955,
+        "y": 1297.125,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationPostalCode",
+        "x": 623,
+        "y": 1395.21875,
+        "width": 646,
+        "height": 51.59375
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "contentsDescription",
+        "x": 623,
+        "y": 1597.4375,
+        "width": 646,
+        "height": 118
+      },
+      {
+        "tag": "INPUT",
+        "key": "packageCount",
+        "x": 623,
+        "y": 1789.40625,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "approximateWeight",
+        "x": 955,
+        "y": 1789.40625,
+        "width": 221,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "weightUnit",
+        "x": 1184,
+        "y": 1789.40625,
+        "width": 85,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "dimensions",
+        "x": 623,
+        "y": 1887.5,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "dimensionUnit",
+        "x": 955,
+        "y": 1887.5,
+        "width": 314,
+        "height": 50
+      },
+      {
+        "tag": "INPUT",
+        "key": "preferredDispatchDate",
+        "x": 623,
+        "y": 1985.59375,
+        "width": 646,
+        "height": 51.59375
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "instructions",
+        "x": 623,
+        "y": 2083.6875,
+        "width": 646,
+        "height": 118
+      },
+      {
+        "tag": "P",
+        "key": "Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch.",
+        "x": 623,
+        "y": 2265.6875,
+        "width": 646,
+        "height": 89.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/faq",
+    "width": 1440,
+    "height": 2275,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Frequently asked questions",
+        "x": 130,
+        "y": 191.3125,
+        "width": 505.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Answers before you send.",
+        "x": 130,
+        "y": 224.5,
+        "width": 505.796875,
+        "height": 144
+      },
+      {
+        "tag": "P",
+        "key": "Useful guidance about our enquiry-led courier workflow.",
+        "x": 130,
+        "y": 392.5,
+        "width": 505.796875,
+        "height": 30.1875
+      },
+      {
+        "tag": "DETAILS",
+        "key": "How do I request a courier quote?Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer.",
+        "x": 130,
+        "y": 687,
+        "width": 1180,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer.",
+        "x": 155,
+        "y": 766.84375,
+        "width": 780,
+        "height": 51.1875
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Does submitting the form confirm my booking?No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted.",
+        "x": 130,
+        "y": 786.84375,
+        "width": 1180,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted.",
+        "x": 155,
+        "y": 866.6875,
+        "width": 780,
+        "height": 25.59375
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Can all international parcels be accepted?Acceptance depends on the contents, documentation, route availability and applicable restrictions. These are confirmed for the specific shipment.",
+        "x": 130,
+        "y": 886.6875,
+        "width": 1180,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "Acceptance depends on the contents, documentation, route availability and applicable restrictions. These are confirmed for the specific shipment.",
+        "x": 155,
+        "y": 966.53125,
+        "width": 780,
+        "height": 51.1875
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Is pickup automatically scheduled?No. Pickup requests are currently unavailable. When enabled, a requested date will still need staff confirmation.",
+        "x": 130,
+        "y": 986.53125,
+        "width": 1180,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "No. Pickup requests are currently unavailable. When enabled, a requested date will still need staff confirmation.",
+        "x": 155,
+        "y": 1066.375,
+        "width": 780,
+        "height": 51.1875
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 201,
+        "y": 1381.375,
+        "width": 604.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 201,
+        "y": 1414.5625,
+        "width": 604.796875,
+        "height": 192
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 201,
+        "y": 1606.5625,
+        "width": 604.796875,
+        "height": 51.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/track",
+    "width": 1440,
+    "height": 1550,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Shipment support",
+        "x": 130,
+        "y": 161.125,
+        "width": 505.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Shipment update enquiry",
+        "x": 130,
+        "y": 194.3125,
+        "width": 505.796875,
+        "height": 144
+      },
+      {
+        "tag": "P",
+        "key": "Contact the company for an update on your shipment. Please include your shipment reference so the team can help.",
+        "x": 130,
+        "y": 362.3125,
+        "width": 505.796875,
+        "height": 90.5625
+      },
+      {
+        "tag": "H2",
+        "key": "Ask about your shipment.",
+        "x": 171,
+        "y": 715,
+        "width": 1098,
+        "height": 25.59375
+      },
+      {
+        "tag": "P",
+        "key": "Online shipment lookup is unavailable. Contact VK AND COMPANY by phone or email, or use the Contact form. Include your shipment reference in your message.",
+        "x": 171,
+        "y": 764.59375,
+        "width": 620,
+        "height": 90.5625
+      },
+      {
+        "tag": "P",
+        "key": "+91 93177 24056",
+        "x": 171,
+        "y": 855.15625,
+        "width": 1098,
+        "height": 29.890625
+      },
+      {
+        "tag": "P",
+        "key": "vkandcompanymohali@gmail.com",
+        "x": 171,
+        "y": 885.046875,
+        "width": 1098,
+        "height": 29.890625
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/privacy",
+    "width": 1440,
+    "height": 1386,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Owner review required",
+        "x": 130,
+        "y": 142,
+        "width": 505.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Privacy content is not yet approved.",
+        "x": 130,
+        "y": 175.1875,
+        "width": 505.796875,
+        "height": 216
+      },
+      {
+        "tag": "P",
+        "key": "This page is reserved for VK AND COMPANY's reviewed privacy information.",
+        "x": 130,
+        "y": 415.1875,
+        "width": 505.796875,
+        "height": 60.375
+      },
+      {
+        "tag": "P",
+        "key": "The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.",
+        "x": 340,
+        "y": 763.1875,
+        "width": 760,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/terms",
+    "width": 1440,
+    "height": 1361,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Owner review required",
+        "x": 130,
+        "y": 176.21875,
+        "width": 505.796875,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Service terms are not yet approved.",
+        "x": 130,
+        "y": 209.40625,
+        "width": 505.796875,
+        "height": 144
+      },
+      {
+        "tag": "P",
+        "key": "This page is reserved for VK AND COMPANY's reviewed customer terms.",
+        "x": 130,
+        "y": 377.40625,
+        "width": 505.796875,
+        "height": 60.375
+      },
+      {
+        "tag": "P",
+        "key": "No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.",
+        "x": 340,
+        "y": 763.1875,
+        "width": 760,
+        "height": 51.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/404.html",
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "images": [],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Not found",
+        "x": 130,
+        "y": 60,
+        "width": 1180,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "This page is not available.",
+        "x": 130,
+        "y": 93.1875,
+        "width": 650,
+        "height": 144
+      },
+      {
+        "tag": "P",
+        "key": "The link may be invalid, expired or no longer active.",
+        "x": 130,
+        "y": 261.1875,
+        "width": 720,
+        "height": 30.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/services/domestic",
+    "width": 768,
+    "height": 2803,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-1744.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-1-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-2-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-3-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Domestic courier enquiries",
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "A considered route from one city to the next.",
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 86.40625
+      },
+      {
+        "tag": "P",
+        "key": "Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.",
+        "x": 20,
+        "y": 263.59375,
+        "width": 720,
+        "height": 51.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-1744.webp",
+        "x": 20,
+        "y": 342.78125,
+        "width": 728,
+        "height": 376.515625
+      },
+      {
+        "tag": "H2",
+        "key": "domestic process",
+        "x": 28,
+        "y": 830.375,
+        "width": 712,
+        "height": 19.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-1-392.webp",
+        "x": 28,
+        "y": 879.5625,
+        "width": 378.390625,
+        "height": 239.375
+      },
+      {
+        "tag": "H3",
+        "key": "Begin with the real shipment details.",
+        "x": 430.390625,
+        "y": 883.5625,
+        "width": 309.609375,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "Provide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step.",
+        "x": 430.390625,
+        "y": 976.21875,
+        "width": 309.609375,
+        "height": 108.75
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-2-392.webp",
+        "x": 28,
+        "y": 1179.9375,
+        "width": 378.390625,
+        "height": 245.171875
+      },
+      {
+        "tag": "H3",
+        "key": "Review before commitment.",
+        "x": 430.390625,
+        "y": 1183.9375,
+        "width": 309.609375,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "A submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance.",
+        "x": 430.390625,
+        "y": 1276.59375,
+        "width": 309.609375,
+        "height": 135.9375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-3-392.webp",
+        "x": 28,
+        "y": 1486.109375,
+        "width": 378.390625,
+        "height": 245.171875
+      },
+      {
+        "tag": "H3",
+        "key": "We move it with care.",
+        "x": 430.390625,
+        "y": 1490.109375,
+        "width": 309.609375,
+        "height": 34.328125
+      },
+      {
+        "tag": "P",
+        "key": "Once confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required.",
+        "x": 430.390625,
+        "y": 1548.4375,
+        "width": 309.609375,
+        "height": 108.75
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 91,
+        "y": 1960.359375,
+        "width": 333.59375,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 91,
+        "y": 1993.546875,
+        "width": 333.59375,
+        "height": 115.21875
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 91,
+        "y": 2108.765625,
+        "width": 333.59375,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/services/international",
+    "width": 768,
+    "height": 2795,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-1802.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-1-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-2-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-3-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "International courier enquiries",
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Across borders, with the details checked first.",
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 86.40625
+      },
+      {
+        "tag": "P",
+        "key": "International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.",
+        "x": 20,
+        "y": 263.59375,
+        "width": 720,
+        "height": 51.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-1802.webp",
+        "x": 21,
+        "y": 343.78125,
+        "width": 726,
+        "height": 351.71875
+      },
+      {
+        "tag": "H2",
+        "key": "international process",
+        "x": 28,
+        "y": 807.578125,
+        "width": 712,
+        "height": 19.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-1-392.webp",
+        "x": 28,
+        "y": 856.765625,
+        "width": 378.390625,
+        "height": 239.375
+      },
+      {
+        "tag": "H3",
+        "key": "Route and contents review.",
+        "x": 430.390625,
+        "y": 860.765625,
+        "width": 309.609375,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "Share accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review.",
+        "x": 430.390625,
+        "y": 953.421875,
+        "width": 309.609375,
+        "height": 108.75
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-2-392.webp",
+        "x": 28,
+        "y": 1157.140625,
+        "width": 378.390625,
+        "height": 245.171875
+      },
+      {
+        "tag": "H3",
+        "key": "Documentation is shipment-specific.",
+        "x": 430.390625,
+        "y": 1161.140625,
+        "width": 309.609375,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "Required documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review.",
+        "x": 430.390625,
+        "y": 1253.796875,
+        "width": 309.609375,
+        "height": 135.9375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-3-392.webp",
+        "x": 28,
+        "y": 1463.3125,
+        "width": 378.390625,
+        "height": 245.171875
+      },
+      {
+        "tag": "H3",
+        "key": "Clear quotation boundaries.",
+        "x": 430.390625,
+        "y": 1467.3125,
+        "width": 309.609375,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "Charges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements.",
+        "x": 430.390625,
+        "y": 1559.96875,
+        "width": 309.609375,
+        "height": 163.125
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 91,
+        "y": 1952.171875,
+        "width": 333.59375,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 91,
+        "y": 1985.359375,
+        "width": 333.59375,
+        "height": 115.21875
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 91,
+        "y": 2100.578125,
+        "width": 333.59375,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/about",
+    "width": 768,
+    "height": 3571,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "About VK AND COMPANY",
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Courier arrangements built around each shipment.",
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 86.40625
+      },
+      {
+        "tag": "P",
+        "key": "VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process.",
+        "x": 20,
+        "y": 263.59375,
+        "width": 720,
+        "height": 51.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/workspace-1717.webp",
+        "x": 20,
+        "y": 342.78125,
+        "width": 728,
+        "height": 388.375
+      },
+      {
+        "tag": "P",
+        "key": "What we do",
+        "x": 20,
+        "y": 908.15625,
+        "width": 680,
+        "height": 19.1875
+      },
+      {
+        "tag": "P",
+        "key": "Connecting People & Possibilities",
+        "x": 20,
+        "y": 965.34375,
+        "width": 360,
+        "height": 63.84375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/dispatch-1536.webp",
+        "x": 20,
+        "y": 1047.1875,
+        "width": 680,
+        "height": 453.328125
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/details-1536.webp",
+        "x": 20,
+        "y": 1651.90625,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "A straightforward customer journey.",
+        "x": 327.71875,
+        "y": 1655.8125,
+        "width": 420.28125,
+        "height": 60.46875
+      },
+      {
+        "tag": "P",
+        "key": "Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise.",
+        "x": 327.71875,
+        "y": 1730.28125,
+        "width": 420.28125,
+        "height": 102.375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/review-1536.webp",
+        "x": 20,
+        "y": 1909.5625,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "Careful about what is confirmed.",
+        "x": 327.71875,
+        "y": 1941.375,
+        "width": 420.28125,
+        "height": 30.234375
+      },
+      {
+        "tag": "P",
+        "key": "We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided.",
+        "x": 327.71875,
+        "y": 1985.609375,
+        "width": 420.28125,
+        "height": 76.78125
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/support-1536.webp",
+        "x": 20,
+        "y": 2167.21875,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "Prepared to connect.",
+        "x": 327.71875,
+        "y": 2186.234375,
+        "width": 420.28125,
+        "height": 30.234375
+      },
+      {
+        "tag": "P",
+        "key": "Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied.",
+        "x": 327.71875,
+        "y": 2230.46875,
+        "width": 420.28125,
+        "height": 102.375
+      },
+      {
+        "tag": "P",
+        "key": "Delivered with Purpose",
+        "x": 20,
+        "y": 2393.875,
+        "width": 728,
+        "height": 39.671875
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 91,
+        "y": 2728.546875,
+        "width": 333.59375,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 91,
+        "y": 2761.734375,
+        "width": 333.59375,
+        "height": 115.21875
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 91,
+        "y": 2876.953125,
+        "width": 333.59375,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/contact",
+    "width": 768,
+    "height": 2617,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "H1",
+        "key": "How can we help?",
+        "x": 16,
+        "y": 194,
+        "width": 736,
+        "height": 110.875
+      },
+      {
+        "tag": "P",
+        "key": "Send a general question or ask about a shipment. Your message will be saved for the team to review.",
+        "x": 16,
+        "y": 324.875,
+        "width": 480,
+        "height": 56.09375
+      },
+      {
+        "tag": "P",
+        "key": "Here to Keep You Moving",
+        "x": 592.6478271484375,
+        "y": 384.46929931640625,
+        "width": 141.626220703125,
+        "height": 116.1864013671875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/support-1536.webp",
+        "x": 16,
+        "y": 484.15625,
+        "width": 736,
+        "height": 490.65625
+      },
+      {
+        "tag": "P",
+        "key": "From Your Place to the World",
+        "x": 254.62557983398438,
+        "y": 1128.578857421875,
+        "width": 258.7331848144531,
+        "height": 100.46728515625
+      },
+      {
+        "tag": "P",
+        "key": "Contact channels",
+        "x": 24,
+        "y": 1303.0625,
+        "width": 720,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Contact VK AND COMPANY.",
+        "x": 24,
+        "y": 1337.25,
+        "width": 720,
+        "height": 43.671875
+      },
+      {
+        "tag": "P",
+        "key": "+91 93177 24056",
+        "x": 24,
+        "y": 1404.921875,
+        "width": 720,
+        "height": 29.78125
+      },
+      {
+        "tag": "P",
+        "key": "vkandcompanymohali@gmail.com",
+        "x": 24,
+        "y": 1444.703125,
+        "width": 720,
+        "height": 29.78125
+      },
+      {
+        "tag": "INPUT",
+        "key": "website",
+        "x": -9983,
+        "y": 1567.078125,
+        "width": 166,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "name",
+        "x": 37,
+        "y": 1569.984375,
+        "width": 337,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "phone",
+        "x": 394,
+        "y": 1569.984375,
+        "width": 337,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "email",
+        "x": 37,
+        "y": 1670.078125,
+        "width": 694,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "subject",
+        "x": 37,
+        "y": 1797.640625,
+        "width": 694,
+        "height": 50
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "message",
+        "x": 37,
+        "y": 1896.140625,
+        "width": 694,
+        "height": 112
+      },
+      {
+        "tag": "P",
+        "key": "We usually respond within one business day.",
+        "x": 16,
+        "y": 2117.140625,
+        "width": 736,
+        "height": 19.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 768,
+    "height": 3219,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Quotation request",
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Tell us about your shipment.",
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 43.203125
+      },
+      {
+        "tag": "P",
+        "key": "Share the route and parcel details below. Our team will review the information before confirming service and charges.",
+        "x": 20,
+        "y": 220.390625,
+        "width": 720,
+        "height": 51.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/details-1536.webp",
+        "x": 262.5,
+        "y": 323.578125,
+        "width": 243,
+        "height": 162
+      },
+      {
+        "tag": "P",
+        "key": "Before you begin",
+        "x": 20,
+        "y": 686.578125,
+        "width": 728,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Details make the difference.",
+        "x": 20,
+        "y": 719.765625,
+        "width": 728,
+        "height": 56.3125
+      },
+      {
+        "tag": "P",
+        "key": "Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment.",
+        "x": 20,
+        "y": 791.078125,
+        "width": 728,
+        "height": 51.1875
+      },
+      {
+        "tag": "P",
+        "key": "Pickup requests are not currently enabled.",
+        "x": 20,
+        "y": 842.265625,
+        "width": 728,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "website",
+        "x": -9979,
+        "y": 969.453125,
+        "width": 166,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "name",
+        "x": 61,
+        "y": 1029.484375,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "phone",
+        "x": 393,
+        "y": 1029.484375,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "email",
+        "x": 61,
+        "y": 1127.578125,
+        "width": 646,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originCountry",
+        "x": 61,
+        "y": 1329.796875,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originCity",
+        "x": 393,
+        "y": 1329.796875,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originPostalCode",
+        "x": 61,
+        "y": 1427.890625,
+        "width": 646,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationCountry",
+        "x": 61,
+        "y": 1525.984375,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationCity",
+        "x": 393,
+        "y": 1525.984375,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationPostalCode",
+        "x": 61,
+        "y": 1624.078125,
+        "width": 646,
+        "height": 51.59375
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "contentsDescription",
+        "x": 61,
+        "y": 1826.296875,
+        "width": 646,
+        "height": 118
+      },
+      {
+        "tag": "INPUT",
+        "key": "packageCount",
+        "x": 61,
+        "y": 2018.265625,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "approximateWeight",
+        "x": 393,
+        "y": 2018.265625,
+        "width": 221,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "weightUnit",
+        "x": 622,
+        "y": 2018.265625,
+        "width": 85,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "dimensions",
+        "x": 61,
+        "y": 2116.359375,
+        "width": 314,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "dimensionUnit",
+        "x": 393,
+        "y": 2116.359375,
+        "width": 314,
+        "height": 50
+      },
+      {
+        "tag": "INPUT",
+        "key": "preferredDispatchDate",
+        "x": 61,
+        "y": 2214.453125,
+        "width": 646,
+        "height": 51.59375
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "instructions",
+        "x": 61,
+        "y": 2312.546875,
+        "width": 646,
+        "height": 118
+      },
+      {
+        "tag": "P",
+        "key": "Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch.",
+        "x": 61,
+        "y": 2494.546875,
+        "width": 646,
+        "height": 89.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/faq",
+    "width": 768,
+    "height": 2220,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Frequently asked questions",
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Answers before you send.",
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 43.203125
+      },
+      {
+        "tag": "P",
+        "key": "Useful guidance about our enquiry-led courier workflow.",
+        "x": 20,
+        "y": 220.390625,
+        "width": 720,
+        "height": 25.59375
+      },
+      {
+        "tag": "DETAILS",
+        "key": "How do I request a courier quote?Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer.",
+        "x": 20,
+        "y": 683,
+        "width": 728,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer.",
+        "x": 45,
+        "y": 762.84375,
+        "width": 678,
+        "height": 51.1875
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Does submitting the form confirm my booking?No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted.",
+        "x": 20,
+        "y": 782.84375,
+        "width": 728,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted.",
+        "x": 45,
+        "y": 862.6875,
+        "width": 678,
+        "height": 51.1875
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Can all international parcels be accepted?Acceptance depends on the contents, documentation, route availability and applicable restrictions. These are confirmed for the specific shipment.",
+        "x": 20,
+        "y": 882.6875,
+        "width": 728,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "Acceptance depends on the contents, documentation, route availability and applicable restrictions. These are confirmed for the specific shipment.",
+        "x": 45,
+        "y": 962.53125,
+        "width": 678,
+        "height": 51.1875
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Is pickup automatically scheduled?No. Pickup requests are currently unavailable. When enabled, a requested date will still need staff confirmation.",
+        "x": 20,
+        "y": 982.53125,
+        "width": 728,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "No. Pickup requests are currently unavailable. When enabled, a requested date will still need staff confirmation.",
+        "x": 45,
+        "y": 1062.375,
+        "width": 678,
+        "height": 51.1875
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 91,
+        "y": 1377.375,
+        "width": 333.59375,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 91,
+        "y": 1410.5625,
+        "width": 333.59375,
+        "height": 115.21875
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 91,
+        "y": 1525.78125,
+        "width": 333.59375,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/track",
+    "width": 768,
+    "height": 1523,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Shipment support",
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Shipment update enquiry",
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 43.203125
+      },
+      {
+        "tag": "P",
+        "key": "Contact the company for an update on your shipment. Please include your shipment reference so the team can help.",
+        "x": 20,
+        "y": 220.390625,
+        "width": 720,
+        "height": 51.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Ask about your shipment.",
+        "x": 61,
+        "y": 727.578125,
+        "width": 646,
+        "height": 25.59375
+      },
+      {
+        "tag": "P",
+        "key": "Online shipment lookup is unavailable. Contact VK AND COMPANY by phone or email, or use the Contact form. Include your shipment reference in your message.",
+        "x": 61,
+        "y": 777.171875,
+        "width": 620,
+        "height": 51.1875
+      },
+      {
+        "tag": "P",
+        "key": "+91 93177 24056",
+        "x": 61,
+        "y": 828.359375,
+        "width": 646,
+        "height": 29.890625
+      },
+      {
+        "tag": "P",
+        "key": "vkandcompanymohali@gmail.com",
+        "x": 61,
+        "y": 858.25,
+        "width": 646,
+        "height": 29.890625
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/privacy",
+    "width": 768,
+    "height": 1382,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Owner review required",
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Privacy content is not yet approved.",
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 43.203125
+      },
+      {
+        "tag": "P",
+        "key": "This page is reserved for VK AND COMPANY's reviewed privacy information.",
+        "x": 20,
+        "y": 220.390625,
+        "width": 720,
+        "height": 25.59375
+      },
+      {
+        "tag": "P",
+        "key": "The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.",
+        "x": 20,
+        "y": 759.1875,
+        "width": 728,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/terms",
+    "width": 768,
+    "height": 1357,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Owner review required",
+        "x": 20,
+        "y": 120,
+        "width": 720,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Service terms are not yet approved.",
+        "x": 20,
+        "y": 153.1875,
+        "width": 650,
+        "height": 43.203125
+      },
+      {
+        "tag": "P",
+        "key": "This page is reserved for VK AND COMPANY's reviewed customer terms.",
+        "x": 20,
+        "y": 220.390625,
+        "width": 720,
+        "height": 25.59375
+      },
+      {
+        "tag": "P",
+        "key": "No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.",
+        "x": 20,
+        "y": 759.1875,
+        "width": 728,
+        "height": 51.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/404.html",
+    "width": 768,
+    "height": 900,
+    "overflow": false,
+    "images": [],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Not found",
+        "x": 20,
+        "y": 42,
+        "width": 728,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "This page is not available.",
+        "x": 20,
+        "y": 75.1875,
+        "width": 650,
+        "height": 43.203125
+      },
+      {
+        "tag": "P",
+        "key": "The link may be invalid, expired or no longer active.",
+        "x": 20,
+        "y": 142.390625,
+        "width": 720,
+        "height": 25.59375
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/services/domestic",
+    "width": 390,
+    "height": 3219,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-1744.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-1-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-2-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-3-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Domestic courier enquiries",
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "A considered route from one city to the next.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 146.25
+      },
+      {
+        "tag": "P",
+        "key": "Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.",
+        "x": 14,
+        "y": 303.4375,
+        "width": 362,
+        "height": 76.78125
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-1744.webp",
+        "x": 14,
+        "y": 414.21875,
+        "width": 362,
+        "height": 187.359375
+      },
+      {
+        "tag": "H2",
+        "key": "domestic process",
+        "x": 16,
+        "y": 698.578125,
+        "width": 358,
+        "height": 19.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-1-392.webp",
+        "x": 16,
+        "y": 747.765625,
+        "width": 358,
+        "height": 226.484375
+      },
+      {
+        "tag": "H3",
+        "key": "Begin with the real shipment details.",
+        "x": 16,
+        "y": 1000.25,
+        "width": 358,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "Provide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step.",
+        "x": 16,
+        "y": 1084.90625,
+        "width": 358,
+        "height": 108.75
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-2-392.webp",
+        "x": 16,
+        "y": 1254.65625,
+        "width": 358,
+        "height": 231.96875
+      },
+      {
+        "tag": "H3",
+        "key": "Review before commitment.",
+        "x": 16,
+        "y": 1512.625,
+        "width": 358,
+        "height": 34.328125
+      },
+      {
+        "tag": "P",
+        "key": "A submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance.",
+        "x": 16,
+        "y": 1562.953125,
+        "width": 358,
+        "height": 135.9375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-3-392.webp",
+        "x": 16,
+        "y": 1759.890625,
+        "width": 358,
+        "height": 231.96875
+      },
+      {
+        "tag": "H3",
+        "key": "We move it with care.",
+        "x": 16,
+        "y": 2017.859375,
+        "width": 358,
+        "height": 34.328125
+      },
+      {
+        "tag": "P",
+        "key": "Once confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required.",
+        "x": 16,
+        "y": 2068.1875,
+        "width": 358,
+        "height": 108.75
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 41,
+        "y": 2333.9375,
+        "width": 308,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 41,
+        "y": 2367.125,
+        "width": 308,
+        "height": 110.390625
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 41,
+        "y": 2477.515625,
+        "width": 308,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/services/international",
+    "width": 390,
+    "height": 3236,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-1802.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-1-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-2-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-3-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "International courier enquiries",
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Across borders, with the details checked first.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 146.25
+      },
+      {
+        "tag": "P",
+        "key": "International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.",
+        "x": 14,
+        "y": 303.4375,
+        "width": 362,
+        "height": 76.78125
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-1802.webp",
+        "x": 15,
+        "y": 415.21875,
+        "width": 360,
+        "height": 174.375
+      },
+      {
+        "tag": "H2",
+        "key": "international process",
+        "x": 16,
+        "y": 687.59375,
+        "width": 358,
+        "height": 19.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-1-392.webp",
+        "x": 16,
+        "y": 736.78125,
+        "width": 358,
+        "height": 226.484375
+      },
+      {
+        "tag": "H3",
+        "key": "Route and contents review.",
+        "x": 16,
+        "y": 989.265625,
+        "width": 358,
+        "height": 34.328125
+      },
+      {
+        "tag": "P",
+        "key": "Share accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review.",
+        "x": 16,
+        "y": 1039.59375,
+        "width": 358,
+        "height": 108.75
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-2-392.webp",
+        "x": 16,
+        "y": 1209.34375,
+        "width": 358,
+        "height": 231.96875
+      },
+      {
+        "tag": "H3",
+        "key": "Documentation is shipment-specific.",
+        "x": 16,
+        "y": 1467.3125,
+        "width": 358,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "Required documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review.",
+        "x": 16,
+        "y": 1551.96875,
+        "width": 358,
+        "height": 135.9375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-3-392.webp",
+        "x": 16,
+        "y": 1748.90625,
+        "width": 358,
+        "height": 231.96875
+      },
+      {
+        "tag": "H3",
+        "key": "Clear quotation boundaries.",
+        "x": 16,
+        "y": 2006.875,
+        "width": 358,
+        "height": 34.328125
+      },
+      {
+        "tag": "P",
+        "key": "Charges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements.",
+        "x": 16,
+        "y": 2057.203125,
+        "width": 358,
+        "height": 135.9375
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 41,
+        "y": 2350.140625,
+        "width": 308,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 41,
+        "y": 2383.328125,
+        "width": 308,
+        "height": 110.390625
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 41,
+        "y": 2493.71875,
+        "width": 308,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/about",
+    "width": 390,
+    "height": 3824,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "About VK AND COMPANY",
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Courier arrangements built around each shipment.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 195
+      },
+      {
+        "tag": "P",
+        "key": "VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process.",
+        "x": 14,
+        "y": 352.1875,
+        "width": 362,
+        "height": 76.78125
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/workspace-1717.webp",
+        "x": 14,
+        "y": 462.96875,
+        "width": 362,
+        "height": 193.015625
+      },
+      {
+        "tag": "P",
+        "key": "What we do",
+        "x": 14,
+        "y": 784.984375,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "P",
+        "key": "Connecting People & Possibilities",
+        "x": 14,
+        "y": 832.171875,
+        "width": 360,
+        "height": 63.84375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/dispatch-1536.webp",
+        "x": 14,
+        "y": 914.015625,
+        "width": 362,
+        "height": 241.4375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/details-1536.webp",
+        "x": 14,
+        "y": 1375.234375,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "A straightforward customer journey.",
+        "x": 14,
+        "y": 1583.890625,
+        "width": 362,
+        "height": 60.46875
+      },
+      {
+        "tag": "P",
+        "key": "Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise.",
+        "x": 14,
+        "y": 1658.359375,
+        "width": 362,
+        "height": 127.96875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/review-1536.webp",
+        "x": 14,
+        "y": 1859.328125,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "Careful about what is confirmed.",
+        "x": 14,
+        "y": 2067.984375,
+        "width": 362,
+        "height": 60.46875
+      },
+      {
+        "tag": "P",
+        "key": "We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided.",
+        "x": 14,
+        "y": 2142.453125,
+        "width": 362,
+        "height": 102.375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/support-1536.webp",
+        "x": 14,
+        "y": 2317.828125,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "Prepared to connect.",
+        "x": 14,
+        "y": 2526.484375,
+        "width": 362,
+        "height": 30.234375
+      },
+      {
+        "tag": "P",
+        "key": "Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied.",
+        "x": 14,
+        "y": 2570.71875,
+        "width": 362,
+        "height": 102.375
+      },
+      {
+        "tag": "P",
+        "key": "Delivered with Purpose",
+        "x": 14,
+        "y": 2715.09375,
+        "width": 362,
+        "height": 34.546875
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 41,
+        "y": 2938.640625,
+        "width": 308,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 41,
+        "y": 2971.828125,
+        "width": 308,
+        "height": 110.390625
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 41,
+        "y": 3082.21875,
+        "width": 308,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/contact",
+    "width": 390,
+    "height": 2587,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "H1",
+        "key": "How can we help?",
+        "x": 16,
+        "y": 184,
+        "width": 358,
+        "height": 110.875
+      },
+      {
+        "tag": "P",
+        "key": "Send a general question or ask about a shipment. Your message will be saved for the team to review.",
+        "x": 16,
+        "y": 314.875,
+        "width": 358,
+        "height": 84.140625
+      },
+      {
+        "tag": "P",
+        "key": "Here to Keep You Moving",
+        "x": 214.64784240722656,
+        "y": 402.51617431640625,
+        "width": 141.6261749267578,
+        "height": 116.1864013671875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/support-1536.webp",
+        "x": 16,
+        "y": 502.203125,
+        "width": 358,
+        "height": 238.65625
+      },
+      {
+        "tag": "P",
+        "key": "From Your Place to the World",
+        "x": 65.62557983398438,
+        "y": 894.6256713867188,
+        "width": 258.73321533203125,
+        "height": 100.4674072265625
+      },
+      {
+        "tag": "P",
+        "key": "Contact channels",
+        "x": 24,
+        "y": 1069.109375,
+        "width": 342,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Contact VK AND COMPANY.",
+        "x": 24,
+        "y": 1103.296875,
+        "width": 342,
+        "height": 87.34375
+      },
+      {
+        "tag": "P",
+        "key": "+91 93177 24056",
+        "x": 24,
+        "y": 1214.640625,
+        "width": 342,
+        "height": 29.78125
+      },
+      {
+        "tag": "P",
+        "key": "vkandcompanymohali@gmail.com",
+        "x": 24,
+        "y": 1254.421875,
+        "width": 342,
+        "height": 29.78125
+      },
+      {
+        "tag": "INPUT",
+        "key": "website",
+        "x": -9983,
+        "y": 1376.796875,
+        "width": 166,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "name",
+        "x": 37,
+        "y": 1379.703125,
+        "width": 316,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "phone",
+        "x": 37,
+        "y": 1479.796875,
+        "width": 316,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "email",
+        "x": 37,
+        "y": 1579.890625,
+        "width": 316,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "subject",
+        "x": 37,
+        "y": 1727.921875,
+        "width": 316,
+        "height": 50
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "message",
+        "x": 37,
+        "y": 1826.421875,
+        "width": 316,
+        "height": 112
+      },
+      {
+        "tag": "P",
+        "key": "We usually respond within one business day.",
+        "x": 16,
+        "y": 2047.421875,
+        "width": 358,
+        "height": 19.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 390,
+    "height": 3826,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Quotation request",
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Tell us about your shipment.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 97.5
+      },
+      {
+        "tag": "P",
+        "key": "Share the route and parcel details below. Our team will review the information before confirming service and charges.",
+        "x": 14,
+        "y": 254.6875,
+        "width": 362,
+        "height": 76.78125
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/details-1536.webp",
+        "x": 73.5,
+        "y": 389.46875,
+        "width": 243,
+        "height": 162
+      },
+      {
+        "tag": "P",
+        "key": "Before you begin",
+        "x": 14,
+        "y": 704.46875,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Details make the difference.",
+        "x": 14,
+        "y": 737.65625,
+        "width": 362,
+        "height": 112.625
+      },
+      {
+        "tag": "P",
+        "key": "Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment.",
+        "x": 14,
+        "y": 865.28125,
+        "width": 362,
+        "height": 76.78125
+      },
+      {
+        "tag": "P",
+        "key": "Pickup requests are not currently enabled.",
+        "x": 14,
+        "y": 942.0625,
+        "width": 362,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "website",
+        "x": -9985,
+        "y": 1053.25,
+        "width": 166,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "name",
+        "x": 33,
+        "y": 1113.28125,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "phone",
+        "x": 33,
+        "y": 1211.375,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "email",
+        "x": 33,
+        "y": 1309.46875,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originCountry",
+        "x": 33,
+        "y": 1511.6875,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originCity",
+        "x": 33,
+        "y": 1609.78125,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originPostalCode",
+        "x": 33,
+        "y": 1707.875,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationCountry",
+        "x": 33,
+        "y": 1805.96875,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationCity",
+        "x": 33,
+        "y": 1904.0625,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationPostalCode",
+        "x": 33,
+        "y": 2002.15625,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "contentsDescription",
+        "x": 33,
+        "y": 2204.375,
+        "width": 324,
+        "height": 118
+      },
+      {
+        "tag": "INPUT",
+        "key": "packageCount",
+        "x": 33,
+        "y": 2416.8125,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "approximateWeight",
+        "x": 33,
+        "y": 2514.90625,
+        "width": 231,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "weightUnit",
+        "x": 272,
+        "y": 2514.90625,
+        "width": 85,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "dimensions",
+        "x": 33,
+        "y": 2613,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "dimensionUnit",
+        "x": 33,
+        "y": 2711.09375,
+        "width": 324,
+        "height": 50
+      },
+      {
+        "tag": "INPUT",
+        "key": "preferredDispatchDate",
+        "x": 33,
+        "y": 2807.59375,
+        "width": 324,
+        "height": 51.59375
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "instructions",
+        "x": 33,
+        "y": 2905.6875,
+        "width": 324,
+        "height": 118
+      },
+      {
+        "tag": "P",
+        "key": "Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch.",
+        "x": 33,
+        "y": 3087.6875,
+        "width": 324,
+        "height": 114.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/faq",
+    "width": 390,
+    "height": 2196,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Frequently asked questions",
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Answers before you send.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 97.5
+      },
+      {
+        "tag": "P",
+        "key": "Useful guidance about our enquiry-led courier workflow.",
+        "x": 14,
+        "y": 254.6875,
+        "width": 362,
+        "height": 51.1875
+      },
+      {
+        "tag": "DETAILS",
+        "key": "How do I request a courier quote?Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer.",
+        "x": 14,
+        "y": 691.875,
+        "width": 362,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer.",
+        "x": 32,
+        "y": 771.71875,
+        "width": 326,
+        "height": 102.375
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Does submitting the form confirm my booking?No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted.",
+        "x": 14,
+        "y": 791.71875,
+        "width": 362,
+        "height": 103.1875
+      },
+      {
+        "tag": "P",
+        "key": "No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted.",
+        "x": 32,
+        "y": 886.90625,
+        "width": 326,
+        "height": 76.78125
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Can all international parcels be accepted?Acceptance depends on the contents, documentation, route availability and applicable restrictions. These are confirmed for the specific shipment.",
+        "x": 14,
+        "y": 906.90625,
+        "width": 362,
+        "height": 103.1875
+      },
+      {
+        "tag": "P",
+        "key": "Acceptance depends on the contents, documentation, route availability and applicable restrictions. These are confirmed for the specific shipment.",
+        "x": 32,
+        "y": 1002.09375,
+        "width": 326,
+        "height": 102.375
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Is pickup automatically scheduled?No. Pickup requests are currently unavailable. When enabled, a requested date will still need staff confirmation.",
+        "x": 14,
+        "y": 1022.09375,
+        "width": 362,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "No. Pickup requests are currently unavailable. When enabled, a requested date will still need staff confirmation.",
+        "x": 32,
+        "y": 1101.9375,
+        "width": 326,
+        "height": 76.78125
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 41,
+        "y": 1310.9375,
+        "width": 308,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 41,
+        "y": 1344.125,
+        "width": 308,
+        "height": 110.390625
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 41,
+        "y": 1454.515625,
+        "width": 308,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/track",
+    "width": 390,
+    "height": 1564,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Shipment support",
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Shipment update enquiry",
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 97.5
+      },
+      {
+        "tag": "P",
+        "key": "Contact the company for an update on your shipment. Please include your shipment reference so the team can help.",
+        "x": 14,
+        "y": 254.6875,
+        "width": 362,
+        "height": 76.78125
+      },
+      {
+        "tag": "H2",
+        "key": "Ask about your shipment.",
+        "x": 33,
+        "y": 729.46875,
+        "width": 324,
+        "height": 25.59375
+      },
+      {
+        "tag": "P",
+        "key": "Online shipment lookup is unavailable. Contact VK AND COMPANY by phone or email, or use the Contact form. Include your shipment reference in your message.",
+        "x": 33,
+        "y": 779.0625,
+        "width": 324,
+        "height": 102.375
+      },
+      {
+        "tag": "P",
+        "key": "+91 93177 24056",
+        "x": 33,
+        "y": 881.4375,
+        "width": 324,
+        "height": 29.890625
+      },
+      {
+        "tag": "P",
+        "key": "vkandcompanymohali@gmail.com",
+        "x": 33,
+        "y": 911.328125,
+        "width": 324,
+        "height": 29.890625
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/privacy",
+    "width": 390,
+    "height": 1549,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Owner review required",
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Privacy content is not yet approved.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 97.5
+      },
+      {
+        "tag": "P",
+        "key": "This page is reserved for VK AND COMPANY's reviewed privacy information.",
+        "x": 14,
+        "y": 254.6875,
+        "width": 362,
+        "height": 51.1875
+      },
+      {
+        "tag": "P",
+        "key": "The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.",
+        "x": 14,
+        "y": 819.25,
+        "width": 362,
+        "height": 179.15625
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/terms",
+    "width": 390,
+    "height": 1472,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Owner review required",
+        "x": 14,
+        "y": 100,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Service terms are not yet approved.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 362,
+        "height": 97.5
+      },
+      {
+        "tag": "P",
+        "key": "This page is reserved for VK AND COMPANY's reviewed customer terms.",
+        "x": 14,
+        "y": 254.6875,
+        "width": 362,
+        "height": 51.1875
+      },
+      {
+        "tag": "P",
+        "key": "No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.",
+        "x": 14,
+        "y": 819.25,
+        "width": 362,
+        "height": 102.375
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/404.html",
+    "width": 390,
+    "height": 900,
+    "overflow": false,
+    "images": [],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Not found",
+        "x": 14,
+        "y": 32,
+        "width": 362,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "This page is not available.",
+        "x": 14,
+        "y": 65.1875,
+        "width": 362,
+        "height": 97.5
+      },
+      {
+        "tag": "P",
+        "key": "The link may be invalid, expired or no longer active.",
+        "x": 14,
+        "y": 186.6875,
+        "width": 362,
+        "height": 51.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/services/domestic",
+    "width": 360,
+    "height": 3251,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-1744.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-1-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-2-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-domestic-3-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Domestic courier enquiries",
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "A considered route from one city to the next.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 135
+      },
+      {
+        "tag": "P",
+        "key": "Tell us where your parcel is going and what it contains. Availability, service options, timing and charges are confirmed for the specific shipment.",
+        "x": 14,
+        "y": 292.1875,
+        "width": 332,
+        "height": 102.375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-1744.webp",
+        "x": 14,
+        "y": 428.5625,
+        "width": 332,
+        "height": 171.609375
+      },
+      {
+        "tag": "H2",
+        "key": "domestic process",
+        "x": 16,
+        "y": 697.171875,
+        "width": 328,
+        "height": 19.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-1-392.webp",
+        "x": 16,
+        "y": 746.359375,
+        "width": 328,
+        "height": 207.5
+      },
+      {
+        "tag": "H3",
+        "key": "Begin with the real shipment details.",
+        "x": 16,
+        "y": 979.859375,
+        "width": 328,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "Provide the origin and destination, package count, approximate weight, contents and preferred dispatch date. We use those details to assess the available next step.",
+        "x": 16,
+        "y": 1064.515625,
+        "width": 328,
+        "height": 108.75
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-2-392.webp",
+        "x": 16,
+        "y": 1234.265625,
+        "width": 328,
+        "height": 212.515625
+      },
+      {
+        "tag": "H3",
+        "key": "Review before commitment.",
+        "x": 16,
+        "y": 1472.78125,
+        "width": 328,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "A submitted enquiry is not a booking. The team will prepare a quote with relevant service details, estimates, inclusions, exclusions, currency and validity date. Your booking is created only after acceptance.",
+        "x": 16,
+        "y": 1557.4375,
+        "width": 328,
+        "height": 135.9375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-domestic-3-392.webp",
+        "x": 16,
+        "y": 1754.375,
+        "width": 328,
+        "height": 212.515625
+      },
+      {
+        "tag": "H3",
+        "key": "We move it with care.",
+        "x": 16,
+        "y": 1992.890625,
+        "width": 328,
+        "height": 34.328125
+      },
+      {
+        "tag": "P",
+        "key": "Once confirmed, your shipment is handed over to our operational team and moves through our domestic network. You can reach out for updates whenever required.",
+        "x": 16,
+        "y": 2043.21875,
+        "width": 328,
+        "height": 108.75
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 41,
+        "y": 2308.96875,
+        "width": 278,
+        "height": 38.375
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 41,
+        "y": 2361.34375,
+        "width": 278,
+        "height": 147.1875
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 41,
+        "y": 2508.53125,
+        "width": 278,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/services/international",
+    "width": 360,
+    "height": 3302,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-1802.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-1-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-2-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/selected-international-3-392.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "International courier enquiries",
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Across borders, with the details checked first.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 135
+      },
+      {
+        "tag": "P",
+        "key": "International shipment requirements vary by contents, origin and destination. We review each enquiry before confirming what can be arranged.",
+        "x": 14,
+        "y": 292.1875,
+        "width": 332,
+        "height": 102.375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-1802.webp",
+        "x": 15,
+        "y": 429.5625,
+        "width": 330,
+        "height": 159.84375
+      },
+      {
+        "tag": "H2",
+        "key": "international process",
+        "x": 16,
+        "y": 687.40625,
+        "width": 328,
+        "height": 19.1875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-1-392.webp",
+        "x": 16,
+        "y": 736.59375,
+        "width": 328,
+        "height": 207.5
+      },
+      {
+        "tag": "H3",
+        "key": "Route and contents review.",
+        "x": 16,
+        "y": 970.09375,
+        "width": 328,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "Share accurate origin, destination, contents, package count, weight and dimensions where known. This supports an initial acceptance and availability review.",
+        "x": 16,
+        "y": 1054.75,
+        "width": 328,
+        "height": 108.75
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-2-392.webp",
+        "x": 16,
+        "y": 1224.5,
+        "width": 328,
+        "height": 212.515625
+      },
+      {
+        "tag": "H3",
+        "key": "Documentation is shipment-specific.",
+        "x": 16,
+        "y": 1463.015625,
+        "width": 328,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "Required documentation and restrictions depend on the route and parcel. The team will explain confirmed requirements for your shipment; this website does not substitute generic claims for that review.",
+        "x": 16,
+        "y": 1547.671875,
+        "width": 328,
+        "height": 135.9375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/selected-international-3-392.webp",
+        "x": 16,
+        "y": 1744.609375,
+        "width": 328,
+        "height": 212.515625
+      },
+      {
+        "tag": "H3",
+        "key": "Clear quotation boundaries.",
+        "x": 16,
+        "y": 1983.125,
+        "width": 328,
+        "height": 68.65625
+      },
+      {
+        "tag": "P",
+        "key": "Charges, estimates, inclusions and exclusions appear in the quote for the reviewed route. Times, routes and partner handling are subject to change based on operational factors and destination requirements.",
+        "x": 16,
+        "y": 2067.78125,
+        "width": 328,
+        "height": 135.9375
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 41,
+        "y": 2360.71875,
+        "width": 278,
+        "height": 38.375
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 41,
+        "y": 2413.09375,
+        "width": 278,
+        "height": 147.1875
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 41,
+        "y": 2560.28125,
+        "width": 278,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/about",
+    "width": 360,
+    "height": 3829,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/workspace-1717.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/dispatch-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/review-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "About VK AND COMPANY",
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Courier arrangements built around each shipment.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 180
+      },
+      {
+        "tag": "P",
+        "key": "VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process.",
+        "x": 14,
+        "y": 337.1875,
+        "width": 332,
+        "height": 76.78125
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/workspace-1717.webp",
+        "x": 14,
+        "y": 447.96875,
+        "width": 332,
+        "height": 177.234375
+      },
+      {
+        "tag": "P",
+        "key": "What we do",
+        "x": 14,
+        "y": 754.203125,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "P",
+        "key": "Connecting People & Possibilities",
+        "x": 14,
+        "y": 801.390625,
+        "width": 332,
+        "height": 63.84375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/dispatch-1536.webp",
+        "x": 14,
+        "y": 883.234375,
+        "width": 332,
+        "height": 221.328125
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/details-1536.webp",
+        "x": 14,
+        "y": 1324.34375,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "A straightforward customer journey.",
+        "x": 14,
+        "y": 1533,
+        "width": 332,
+        "height": 60.46875
+      },
+      {
+        "tag": "P",
+        "key": "Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise.",
+        "x": 14,
+        "y": 1607.46875,
+        "width": 332,
+        "height": 127.96875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/review-1536.webp",
+        "x": 14,
+        "y": 1808.4375,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "Careful about what is confirmed.",
+        "x": 14,
+        "y": 2017.09375,
+        "width": 332,
+        "height": 60.46875
+      },
+      {
+        "tag": "P",
+        "key": "We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided.",
+        "x": 14,
+        "y": 2091.5625,
+        "width": 332,
+        "height": 102.375
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/support-1536.webp",
+        "x": 14,
+        "y": 2266.9375,
+        "width": 277,
+        "height": 184.65625
+      },
+      {
+        "tag": "H2",
+        "key": "Prepared to connect.",
+        "x": 14,
+        "y": 2475.59375,
+        "width": 332,
+        "height": 30.234375
+      },
+      {
+        "tag": "P",
+        "key": "Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied.",
+        "x": 14,
+        "y": 2519.828125,
+        "width": 332,
+        "height": 102.375
+      },
+      {
+        "tag": "P",
+        "key": "Delivered with Purpose",
+        "x": 14,
+        "y": 2664.203125,
+        "width": 332,
+        "height": 34.546875
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 41,
+        "y": 2887.75,
+        "width": 278,
+        "height": 38.375
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 41,
+        "y": 2940.125,
+        "width": 278,
+        "height": 147.1875
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 41,
+        "y": 3087.3125,
+        "width": 278,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/contact",
+    "width": 360,
+    "height": 2567,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/support-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "H1",
+        "key": "How can we help?",
+        "x": 16,
+        "y": 184,
+        "width": 328,
+        "height": 110.875
+      },
+      {
+        "tag": "P",
+        "key": "Send a general question or ask about a shipment. Your message will be saved for the team to review.",
+        "x": 16,
+        "y": 314.875,
+        "width": 328,
+        "height": 84.140625
+      },
+      {
+        "tag": "P",
+        "key": "Here to Keep You Moving",
+        "x": 184.64784240722656,
+        "y": 402.51617431640625,
+        "width": 141.6261749267578,
+        "height": 116.1864013671875
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/support-1536.webp",
+        "x": 16,
+        "y": 502.203125,
+        "width": 328,
+        "height": 218.65625
+      },
+      {
+        "tag": "P",
+        "key": "From Your Place to the World",
+        "x": 50.625579833984375,
+        "y": 874.6256713867188,
+        "width": 258.73321533203125,
+        "height": 100.4674072265625
+      },
+      {
+        "tag": "P",
+        "key": "Contact channels",
+        "x": 24,
+        "y": 1049.109375,
+        "width": 312,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Contact VK AND COMPANY.",
+        "x": 24,
+        "y": 1083.296875,
+        "width": 312,
+        "height": 87.34375
+      },
+      {
+        "tag": "P",
+        "key": "+91 93177 24056",
+        "x": 24,
+        "y": 1194.640625,
+        "width": 312,
+        "height": 29.78125
+      },
+      {
+        "tag": "P",
+        "key": "vkandcompanymohali@gmail.com",
+        "x": 24,
+        "y": 1234.421875,
+        "width": 312,
+        "height": 29.78125
+      },
+      {
+        "tag": "INPUT",
+        "key": "website",
+        "x": -9983,
+        "y": 1356.796875,
+        "width": 166,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "name",
+        "x": 37,
+        "y": 1359.703125,
+        "width": 286,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "phone",
+        "x": 37,
+        "y": 1459.796875,
+        "width": 286,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "email",
+        "x": 37,
+        "y": 1559.890625,
+        "width": 286,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "subject",
+        "x": 37,
+        "y": 1707.921875,
+        "width": 286,
+        "height": 50
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "message",
+        "x": 37,
+        "y": 1806.421875,
+        "width": 286,
+        "height": 112
+      },
+      {
+        "tag": "P",
+        "key": "We usually respond within one business day.",
+        "x": 16,
+        "y": 2027.421875,
+        "width": 328,
+        "height": 19.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/get-a-quote",
+    "width": 360,
+    "height": 3844,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/media/photos/details-1536.webp",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Quotation request",
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Tell us about your shipment.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 90
+      },
+      {
+        "tag": "P",
+        "key": "Share the route and parcel details below. Our team will review the information before confirming service and charges.",
+        "x": 14,
+        "y": 247.1875,
+        "width": 332,
+        "height": 76.78125
+      },
+      {
+        "tag": "IMG",
+        "key": "/media/photos/details-1536.webp",
+        "x": 58.5,
+        "y": 381.96875,
+        "width": 243,
+        "height": 162
+      },
+      {
+        "tag": "P",
+        "key": "Before you begin",
+        "x": 14,
+        "y": 696.96875,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "H2",
+        "key": "Details make the difference.",
+        "x": 14,
+        "y": 730.15625,
+        "width": 332,
+        "height": 112.625
+      },
+      {
+        "tag": "P",
+        "key": "Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment.",
+        "x": 14,
+        "y": 857.78125,
+        "width": 332,
+        "height": 102.375
+      },
+      {
+        "tag": "P",
+        "key": "Pickup requests are not currently enabled.",
+        "x": 14,
+        "y": 960.15625,
+        "width": 332,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "website",
+        "x": -9985,
+        "y": 1071.34375,
+        "width": 166,
+        "height": 25.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "name",
+        "x": 33,
+        "y": 1131.375,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "phone",
+        "x": 33,
+        "y": 1229.46875,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "email",
+        "x": 33,
+        "y": 1327.5625,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originCountry",
+        "x": 33,
+        "y": 1529.78125,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originCity",
+        "x": 33,
+        "y": 1627.875,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "originPostalCode",
+        "x": 33,
+        "y": 1725.96875,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationCountry",
+        "x": 33,
+        "y": 1824.0625,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationCity",
+        "x": 33,
+        "y": 1922.15625,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "destinationPostalCode",
+        "x": 33,
+        "y": 2020.25,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "contentsDescription",
+        "x": 33,
+        "y": 2222.46875,
+        "width": 294,
+        "height": 118
+      },
+      {
+        "tag": "INPUT",
+        "key": "packageCount",
+        "x": 33,
+        "y": 2434.90625,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "approximateWeight",
+        "x": 33,
+        "y": 2533,
+        "width": 201,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "weightUnit",
+        "x": 242,
+        "y": 2533,
+        "width": 85,
+        "height": 51.59375
+      },
+      {
+        "tag": "INPUT",
+        "key": "dimensions",
+        "x": 33,
+        "y": 2631.09375,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "SELECT",
+        "key": "dimensionUnit",
+        "x": 33,
+        "y": 2729.1875,
+        "width": 294,
+        "height": 50
+      },
+      {
+        "tag": "INPUT",
+        "key": "preferredDispatchDate",
+        "x": 33,
+        "y": 2825.6875,
+        "width": 294,
+        "height": 51.59375
+      },
+      {
+        "tag": "TEXTAREA",
+        "key": "instructions",
+        "x": 33,
+        "y": 2923.78125,
+        "width": 294,
+        "height": 118
+      },
+      {
+        "tag": "P",
+        "key": "Submitting this form creates an enquiry. It does not confirm a quote, booking, pickup or dispatch.",
+        "x": 33,
+        "y": 3105.78125,
+        "width": 294,
+        "height": 114.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/faq",
+    "width": 360,
+    "height": 2260,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Frequently asked questions",
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Answers before you send.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 90
+      },
+      {
+        "tag": "P",
+        "key": "Useful guidance about our enquiry-led courier workflow.",
+        "x": 14,
+        "y": 247.1875,
+        "width": 332,
+        "height": 51.1875
+      },
+      {
+        "tag": "DETAILS",
+        "key": "How do I request a courier quote?Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer.",
+        "x": 14,
+        "y": 684.375,
+        "width": 332,
+        "height": 87.84375
+      },
+      {
+        "tag": "P",
+        "key": "Share your contact, route and parcel details in the quotation form. The team will review your request and contact you with a confirmed offer.",
+        "x": 32,
+        "y": 764.21875,
+        "width": 296,
+        "height": 102.375
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Does submitting the form confirm my booking?No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted.",
+        "x": 14,
+        "y": 784.21875,
+        "width": 332,
+        "height": 103.1875
+      },
+      {
+        "tag": "P",
+        "key": "No. It creates an enquiry only. A booking is created after a quote has been prepared and accepted.",
+        "x": 32,
+        "y": 879.40625,
+        "width": 296,
+        "height": 76.78125
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Can all international parcels be accepted?Acceptance depends on the contents, documentation, route availability and applicable restrictions. These are confirmed for the specific shipment.",
+        "x": 14,
+        "y": 899.40625,
+        "width": 332,
+        "height": 103.1875
+      },
+      {
+        "tag": "P",
+        "key": "Acceptance depends on the contents, documentation, route availability and applicable restrictions. These are confirmed for the specific shipment.",
+        "x": 32,
+        "y": 994.59375,
+        "width": 296,
+        "height": 102.375
+      },
+      {
+        "tag": "DETAILS",
+        "key": "Is pickup automatically scheduled?No. Pickup requests are currently unavailable. When enabled, a requested date will still need staff confirmation.",
+        "x": 14,
+        "y": 1014.59375,
+        "width": 332,
+        "height": 103.1875
+      },
+      {
+        "tag": "P",
+        "key": "No. Pickup requests are currently unavailable. When enabled, a requested date will still need staff confirmation.",
+        "x": 32,
+        "y": 1109.78125,
+        "width": 296,
+        "height": 76.78125
+      },
+      {
+        "tag": "P",
+        "key": "Start with the shipment details",
+        "x": 41,
+        "y": 1318.78125,
+        "width": 278,
+        "height": 38.375
+      },
+      {
+        "tag": "H2",
+        "key": "Let’s work out the right next step for your parcel.",
+        "x": 41,
+        "y": 1371.15625,
+        "width": 278,
+        "height": 147.1875
+      },
+      {
+        "tag": "P",
+        "key": "No instant estimates without an approved rate card. Our team reviews each request before making an offer.",
+        "x": 41,
+        "y": 1518.34375,
+        "width": 278,
+        "height": 76.78125
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/track",
+    "width": 360,
+    "height": 1583,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Shipment support",
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Shipment update enquiry",
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 90
+      },
+      {
+        "tag": "P",
+        "key": "Contact the company for an update on your shipment. Please include your shipment reference so the team can help.",
+        "x": 14,
+        "y": 247.1875,
+        "width": 332,
+        "height": 76.78125
+      },
+      {
+        "tag": "H2",
+        "key": "Ask about your shipment.",
+        "x": 33,
+        "y": 721.96875,
+        "width": 294,
+        "height": 25.59375
+      },
+      {
+        "tag": "P",
+        "key": "Online shipment lookup is unavailable. Contact VK AND COMPANY by phone or email, or use the Contact form. Include your shipment reference in your message.",
+        "x": 33,
+        "y": 771.5625,
+        "width": 294,
+        "height": 127.96875
+      },
+      {
+        "tag": "P",
+        "key": "+91 93177 24056",
+        "x": 33,
+        "y": 899.53125,
+        "width": 294,
+        "height": 29.890625
+      },
+      {
+        "tag": "P",
+        "key": "vkandcompanymohali@gmail.com",
+        "x": 33,
+        "y": 929.421875,
+        "width": 294,
+        "height": 29.890625
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/privacy",
+    "width": 360,
+    "height": 1567,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Owner review required",
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Privacy content is not yet approved.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 90
+      },
+      {
+        "tag": "P",
+        "key": "This page is reserved for VK AND COMPANY's reviewed privacy information.",
+        "x": 14,
+        "y": 247.1875,
+        "width": 332,
+        "height": 51.1875
+      },
+      {
+        "tag": "P",
+        "key": "The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.",
+        "x": 14,
+        "y": 837.34375,
+        "width": 332,
+        "height": 179.15625
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/terms",
+    "width": 360,
+    "height": 1490,
+    "overflow": false,
+    "images": [
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      },
+      {
+        "src": "/brand/vk-and-company-logo-transparent.png",
+        "loaded": true
+      }
+    ],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Owner review required",
+        "x": 14,
+        "y": 100,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "Service terms are not yet approved.",
+        "x": 14,
+        "y": 133.1875,
+        "width": 332,
+        "height": 90
+      },
+      {
+        "tag": "P",
+        "key": "This page is reserved for VK AND COMPANY's reviewed customer terms.",
+        "x": 14,
+        "y": 247.1875,
+        "width": 332,
+        "height": 51.1875
+      },
+      {
+        "tag": "P",
+        "key": "No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.",
+        "x": 14,
+        "y": 837.34375,
+        "width": 332,
+        "height": 102.375
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      },
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  },
+  {
+    "route": "/404.html",
+    "width": 360,
+    "height": 900,
+    "overflow": false,
+    "images": [],
+    "boxes": [
+      {
+        "tag": "P",
+        "key": "Not found",
+        "x": 14,
+        "y": 32,
+        "width": 332,
+        "height": 19.1875
+      },
+      {
+        "tag": "H1",
+        "key": "This page is not available.",
+        "x": 14,
+        "y": 65.1875,
+        "width": 332,
+        "height": 90
+      },
+      {
+        "tag": "P",
+        "key": "The link may be invalid, expired or no longer active.",
+        "x": 14,
+        "y": 179.1875,
+        "width": 332,
+        "height": 51.1875
+      }
+    ],
+    "primitives": [
+      {
+        "transform": "none",
+        "opacity": "1",
+        "willChange": "auto"
+      }
+    ]
+  }
+]

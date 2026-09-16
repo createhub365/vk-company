@@ -1,0 +1,136 @@
+[
+  {
+    "label": "before-first-validation",
+    "hit": "<button class=\"button\" type=\"submit\">Send quote request <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-",
+    "hitTag": "BUTTON",
+    "hitClass": "button",
+    "buttonIsOnTop": true,
+    "box": {
+      "x": 60.99999237060547,
+      "y": 425.734375,
+      "width": 217.359375,
+      "height": 48,
+      "top": 425.734375,
+      "right": 278.35936737060547,
+      "bottom": 473.734375,
+      "left": 60.99999237060547
+    },
+    "formTransform": "matrix3d(0.975, 0, 0, 0, 0, 0.975, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 30, 0.975)",
+    "tokens": {
+      "--z-back": "-80px",
+      "--z-front": "40px",
+      "--z-pop": "90px",
+      "--depth-rise": "40px",
+      "--depth-parallax-from": "-40px",
+      "--depth-parallax-to": "20px"
+    }
+  },
+  {
+    "label": "after-email-error",
+    "hit": "<form class=\"form-panel\" novalidate=\"\"><div class=\"honeypot\" aria-hidden=\"true\"><label>Website<input tabindex=\"-1\" autocomplete=\"off\" name=\"website\"></label></div><fieldset class=\"form-section\"><legend>Your details</lege",
+    "hitTag": "FORM",
+    "hitClass": "form-panel",
+    "buttonIsOnTop": false,
+    "box": {
+      "x": 60.99999237060547,
+      "y": 646.296875,
+      "width": 217.359375,
+      "height": 48,
+      "top": 646.296875,
+      "right": 278.35936737060547,
+      "bottom": 694.296875,
+      "left": 60.99999237060547
+    },
+    "formTransform": "matrix3d(0.975, 0, 0, 0, 0, 0.975, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 30, 0.975)",
+    "tokens": {
+      "--z-back": "-80px",
+      "--z-front": "40px",
+      "--z-pop": "90px",
+      "--depth-rise": "40px",
+      "--depth-parallax-from": "-40px",
+      "--depth-parallax-to": "20px"
+    }
+  },
+  {
+    "failedClick": "after-email-error",
+    "error": "locator.click: Timeout 2500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Send quote request', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"submit\" class=\"button\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <form novalidate=\"\" class=\"form-panel\">…</form> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    4 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <form novalidate=\"\" class=\"form-panel\">…</form> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n"
+  },
+  {
+    "label": "after-validation-errors",
+    "hit": "<form class=\"form-panel\" novalidate=\"\"><div class=\"honeypot\" aria-hidden=\"true\"><label>Website<input tabindex=\"-1\" autocomplete=\"off\" name=\"website\"></label></div><fieldset class=\"form-section\"><legend>Your details</lege",
+    "hitTag": "FORM",
+    "hitClass": "form-panel",
+    "buttonIsOnTop": false,
+    "box": {
+      "x": 60.99999237060547,
+      "y": 264.296875,
+      "width": 217.359375,
+      "height": 48,
+      "top": 264.296875,
+      "right": 278.35936737060547,
+      "bottom": 312.296875,
+      "left": 60.99999237060547
+    },
+    "formTransform": "matrix3d(0.975, 0, 0, 0, 0, 0.975, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 30, 0.975)",
+    "tokens": {
+      "--z-back": "-80px",
+      "--z-front": "40px",
+      "--z-pop": "90px",
+      "--depth-rise": "40px",
+      "--depth-parallax-from": "-40px",
+      "--depth-parallax-to": "20px"
+    }
+  },
+  {
+    "label": "flatten-form",
+    "hit": "<button class=\"button\" type=\"submit\">Send quote request <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-",
+    "hitTag": "BUTTON",
+    "hitClass": "button",
+    "buttonIsOnTop": true,
+    "box": {
+      "x": 61,
+      "y": 264.296875,
+      "width": 217.359375,
+      "height": 48,
+      "top": 264.296875,
+      "right": 278.359375,
+      "bottom": 312.296875,
+      "left": 61
+    },
+    "formTransform": "none",
+    "tokens": {
+      "--z-back": "-80px",
+      "--z-front": "40px",
+      "--z-pop": "90px",
+      "--depth-rise": "40px",
+      "--depth-parallax-from": "-40px",
+      "--depth-parallax-to": "20px"
+    }
+  },
+  {
+    "label": "isolate-form",
+    "hit": "<button class=\"button\" type=\"submit\">Send quote request <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-",
+    "hitTag": "BUTTON",
+    "hitClass": "button",
+    "buttonIsOnTop": true,
+    "box": {
+      "x": 60.99999237060547,
+      "y": 264.296875,
+      "width": 217.359375,
+      "height": 48,
+      "top": 264.296875,
+      "right": 278.35936737060547,
+      "bottom": 312.296875,
+      "left": 60.99999237060547
+    },
+    "formTransform": "matrix3d(0.975, 0, 0, 0, 0, 0.975, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 30, 0.975)",
+    "tokens": {
+      "--z-back": "-80px",
+      "--z-front": "40px",
+      "--z-pop": "90px",
+      "--depth-rise": "40px",
+      "--depth-parallax-from": "-40px",
+      "--depth-parallax-to": "20px"
+    }
+  }
+]

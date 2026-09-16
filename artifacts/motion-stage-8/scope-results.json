@@ -1,0 +1,18 @@
+{
+  "onlyAllowedPresentationFiles": true,
+  "noNewTransformOrTimingValues": true,
+  "noNewComponentDefinitions": true,
+  "changedFiles": [
+    "app/(site)/about/page.tsx",
+    "app/(site)/contact/page.tsx",
+    "app/(site)/faq/page.tsx",
+    "app/(site)/get-a-quote/page.tsx",
+    "app/(site)/privacy/page.tsx",
+    "app/(site)/terms/page.tsx",
+    "app/(site)/track/page.tsx",
+    "app/not-found.tsx",
+    "components/page-hero.tsx",
+    "components/quote-band.tsx",
+    "components/service-process.tsx"
+  ]
+}

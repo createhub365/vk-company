@@ -1,0 +1,34 @@
+Reachable public source files 68
+Application native rAF calls reachable from public routes: []
+Unreachable legacy native rAF / R3F sites: [
+  {
+    file: 'components/motion-control.tsx',
+    line: 16,
+    mountedImportGraph: false,
+    text: 'const frame = requestAnimationFrame(() => {'
+  },
+  {
+    file: 'components/three/courier-canvas.tsx',
+    line: 282,
+    mountedImportGraph: false,
+    text: 'frameloop={active && !reduced ? "always" : "demand"}'
+  },
+  {
+    file: 'components/three/delivery-canvas.tsx',
+    line: 87,
+    mountedImportGraph: false,
+    text: 'return <Canvas shadows frameloop={playing && !reduced ? "always" : "demand"} dpr={[1,1.5]} camera={{position:[8.4,4.7,13],fov:38,near:.1,far:60}} gl={{antialias:true,alpha:true,powerPreference:"high-performance"}}>'
+  },
+  {
+    file: 'components/three/dispatch-canvas.tsx',
+    line: 112,
+    mountedImportGraph: false,
+    text: 'return <Canvas shadows frameloop="demand" dpr={[1,1.5]} camera={{ position: [-7,6,11], fov: 39 }} gl={{ antialias: true, powerPreference: "high-performance" }} fallback={<div className="scene-fallback"><StaticDispatchArt /></div>}>'
+  },
+  {
+    file: 'components/three/scene-stage.tsx',
+    line: 70,
+    mountedImportGraph: false,
+    text: 'raf = requestAnimationFrame(() => {'
+  }
+]

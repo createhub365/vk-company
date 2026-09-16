@@ -1,3 +1,4 @@
+import { cancelFrame, frame, type FrameData } from "framer-motion";
 import * as THREE from "three";
 import { MEDIA_INTERACTION, type MediaInteraction } from "@/lib/media-interaction";
 
@@ -20,12 +21,12 @@ export function createQuoteBubbles(host: HTMLElement, onFailure: () => void) {
   const materials = [0x62b8b4, 0xd4e3e6].map(color => new THREE.MeshPhysicalMaterial({ color, transparent: true, opacity: .63, metalness: .38, roughness: .17, clearcoat: 1, clearcoatRoughness: .08, depthWrite: false }));
   const anchors = [[-.84,.53,.18,.29],[.84,.62,-.1,.22],[-.82,-.66,-.15,.17],[.83,-.57,.24,.32]];
   const spheres = anchors.map(([, , , radius], i) => { const mesh = new THREE.Mesh(geometry, materials[i % 2]); mesh.scale.setScalar(radius); scene.add(mesh); return mesh; });
-  let active = false, disposed = false, broken = false, raf = 0, last = 0, tap = -Infinity, frames = 0;
+  let active = false, disposed = false, broken = false, queued = false, last = 0, tap = -Infinity, frames = 0;
   let width = 1, height = 1;
   const pointer = new THREE.Vector2(), current = new THREE.Vector2();
-  function request() { if (active && !disposed && !broken && !raf) raf = requestAnimationFrame(render); }
-  function render(now: number) {
-    raf = 0;
+  function request() { if (active && !disposed && !broken && !queued) { queued = true; frame.render(render); } }
+  function render({ timestamp: now }: FrameData) {
+    queued = false;
     if (!active || disposed || broken) return;
     const dt = Math.min((now - last) / 1000 || .016, .04); last = now;
     current.lerp(pointer, 1 - Math.exp(-dt * 13));
@@ -53,7 +54,7 @@ export function createQuoteBubbles(host: HTMLElement, onFailure: () => void) {
     else pointer.set(kind === "leave" ? 0 : x, kind === "leave" ? 0 : y);
     request();
   }
-  function fail() { broken = true; cancelAnimationFrame(raf); raf = 0; renderer.domElement.style.display = "none"; onFailure(); }
+  function fail() { broken = true; cancelFrame(render); queued = false; renderer.domElement.style.display = "none"; onFailure(); }
   const observer = new ResizeObserver(resize); observer.observe(host);
   host.addEventListener(MEDIA_INTERACTION, interaction);
   renderer.domElement.addEventListener("webglcontextlost", fail);
@@ -62,10 +63,10 @@ export function createQuoteBubbles(host: HTMLElement, onFailure: () => void) {
     setActive(value: boolean) {
       active = value;
       if (active) { last = performance.now(); request(); }
-      else { cancelAnimationFrame(raf); raf = 0; pointer.set(0,0); current.set(0,0); tap = -Infinity; }
+      else { cancelFrame(render); queued = false; pointer.set(0,0); current.set(0,0); tap = -Infinity; }
     },
     dispose() {
-      disposed = true; cancelAnimationFrame(raf); observer.disconnect();
+      disposed = true; cancelFrame(render); queued = false; observer.disconnect();
       host.removeEventListener(MEDIA_INTERACTION, interaction); renderer.domElement.removeEventListener("webglcontextlost", fail);
       geometry.dispose(); materials.forEach(material => material.dispose()); renderer.dispose(); renderer.domElement.remove();
     },

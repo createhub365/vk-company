@@ -81,7 +81,7 @@ test("tracking offers company contact without a lookup", async ({ page }) => {
   expect((await page.request.get("/api/track?code=VKC-TEST")).status()).toBe(404);
 });
 
-test("all four shipping steps show equally sized, eagerly loaded photographs", async ({ page }) => {
+test("all four shipping steps load on approach and keep equal photo frames", async ({ page }) => {
   await page.route("**/*", route => new URL(route.request().url()).hostname === "127.0.0.1" && route.request().method() === "GET" ? route.continue() : route.abort());
   for (const width of [1440, 768, 390, 360]) {
     await page.setViewportSize({ width, height: 900 });
@@ -89,7 +89,8 @@ test("all four shipping steps show equally sized, eagerly loaded photographs", a
     const images = page.locator(".process-list .process-photo img");
     await expect(images).toHaveCount(4);
     for (const image of await images.all()) {
-      await expect(image).toHaveAttribute("loading", "eager");
+      await expect(image).toHaveAttribute("loading", "lazy");
+      await image.scrollIntoViewIfNeeded();
       await expect.poll(() => image.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
     }
     const sizes = await images.evaluateAll(images => images.map(image => ({ width: image.clientWidth, height: image.clientHeight })));

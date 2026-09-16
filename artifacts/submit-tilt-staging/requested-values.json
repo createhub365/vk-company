@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "pointer": 6,
+    "rotation": 8,
+    "opacityFloor": 0.55
+  },
+  "depth": {
+    "back": -80,
+    "front": 40,
+    "pop": 90,
+    "rise": 40,
+    "parallaxFrom": -40,
+    "parallaxTo": 20
+  },
+  "changedForIntensityRequest": false,
+  "reason": "These values were already present before the request; no local intensity bump had been applied."
+}

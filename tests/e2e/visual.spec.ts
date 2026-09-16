@@ -18,11 +18,11 @@ test("capture the responsive editorial site with its static delivery visual", as
     expect(await page.locator("canvas, video, .delivery-truck, .delivery-parcel").count()).toBe(0);
 
     if (index === 0) {
-      await page.screenshot({ path: `test-results/delivery-static-${testInfo.project.name}.png`, fullPage: false, caret: "initial" });
+      await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/delivery-static-${testInfo.project.name}.png`, fullPage: false, caret: "initial" });
     }
 
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
-    await page.screenshot({ path: `test-results/home-${testInfo.project.name}-${width}.png`, fullPage: true, caret: "initial" });
+    await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/home-${testInfo.project.name}-${width}.png`, fullPage: true, caret: "initial" });
   }
 
   await page.setViewportSize(testInfo.project.name === "desktop" ? { width: 1440, height: 900 } : { width: 390, height: 844 });
@@ -34,14 +34,14 @@ test("capture the responsive editorial site with its static delivery visual", as
     await expect(page.locator("h1")).toBeVisible();
     if (route === "/get-a-quote") expect(await page.locator("canvas").count()).toBeLessThanOrEqual(1);
     else expect(await page.locator("canvas").count()).toBe(0);
-    await page.screenshot({ path: `test-results/${slug}-${testInfo.project.name}.png`, fullPage: false, caret: "initial" });
+    await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/${slug}-${testInfo.project.name}.png`, fullPage: false, caret: "initial" });
   }
 
   await page.goto("/", { waitUntil: "domcontentloaded" });
   const domesticFeature = page.locator("#domestic-services");
   await domesticFeature.scrollIntoViewIfNeeded();
   await expect(domesticFeature.getByRole("img", { name: "Illustrative delivery truck travelling on an intercity road" })).toBeVisible();
-  await page.screenshot({ path: `test-results/domestic-feature-${testInfo.project.name}.png`, fullPage: false, caret: "initial" });
+  await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/domestic-feature-${testInfo.project.name}.png`, fullPage: false, caret: "initial" });
 
 
 });
@@ -90,7 +90,7 @@ test("about what-we-do section matches the approved responsive structure", async
       }
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await section.screenshot({ path: `test-results/about-what-we-do-${viewport.width}.png`, caret: "initial" });
+    await section.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/about-what-we-do-${viewport.width}.png`, caret: "initial" });
   }
 
   await page.setViewportSize({ width: 390, height: 844 });

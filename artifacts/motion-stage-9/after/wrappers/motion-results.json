@@ -1,0 +1,7399 @@
+{
+  "results": [
+    {
+      "route": "/services/domestic",
+      "width": 1440,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "A considered route from one city to the next."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.3,
+              "scale": 1.00047,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": -1.27238,
+              "scale": 1.01418,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.9732,
+              "scale": 1.00002,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 15.8526,
+              "scale": 1.00276,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -29.9423,
+              "scale": 1.03329,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.3571,
+              "scale": 1.00043,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 10.1208,
+              "scale": 1.00659,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9706,
+              "scale": 1.00002,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 18.1387,
+              "scale": 1.00124,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -4.31248,
+              "scale": 1.01621,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.7909,
+              "scale": 1.00014,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 15.2156,
+              "scale": 1.00319,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.999,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 19.2154,
+              "scale": 1.00052,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9532,
+              "scale": 1.00003,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 2297,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Review before commitment.A submitted enquiry is not a booking. The team will prepare a quote with re"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "We move it with care.Once confirmed, your shipment is handed over to our operational team and moves "
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/services/international",
+      "width": 1440,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Across borders, with the details checked first."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.309,
+              "scale": 1.00046,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": -1.27238,
+              "scale": 1.01418,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.9762,
+              "scale": 1.00002,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 15.8526,
+              "scale": 1.00276,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -29.9423,
+              "scale": 1.03329,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.3571,
+              "scale": 1.00043,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 10.1208,
+              "scale": 1.00659,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9706,
+              "scale": 1.00002,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 18.1387,
+              "scale": 1.00124,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -4.31248,
+              "scale": 1.01621,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.7909,
+              "scale": 1.00014,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 15.2156,
+              "scale": 1.00319,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.999,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 19.2154,
+              "scale": 1.00052,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9532,
+              "scale": 1.00003,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 2297,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Documentation is shipment-specific.Required documentation and restrictions depend on the route and p"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Clear quotation boundaries.Charges, estimates, inclusions and exclusions appear in the quote for the"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/about",
+      "width": 1440,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Courier arrangements built around each shipment."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.0816,
+              "scale": 1.00061,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": -6.59423,
+              "scale": 1.01773,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.9502,
+              "scale": 1.00003,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 7.85447,
+              "scale": 1.0081,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 16.2535,
+              "scale": 1.0025,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -3.03604,
+              "scale": 1.01536,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 18.0146,
+              "scale": 1.00132,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 19.6448,
+              "scale": 1.00024,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 16.7675,
+              "scale": 1.00216,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0.0212835,
+              "scale": 1.01332,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.8216,
+              "scale": 1.00012,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 19.999,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 19.7144,
+              "scale": 1.00019,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 17.2095,
+              "scale": 1.00186,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9998,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 19.7743,
+              "scale": 1.00015,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Careful about what is confirmed.We do not publish invented coverage, courier partners, guarantees or"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Prepared to connect.Shipment updates are maintained manually by the team. The application has a defi"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Delivered with Purpose"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "How can we help?"
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 14.0773,
+              "scale": 1.00395,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 18.9093,
+              "scale": 1.00073,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.9016,
+              "scale": 1.00007,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 736,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.985500000000002,
+              "scale": 1.00001,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "From Your Place to the World"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/get-a-quote",
+      "width": 1440,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Tell us about your shipment."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2090,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": false,
+        "scrollMode": "native"
+      },
+      "errors": []
+    },
+    {
+      "route": "/faq",
+      "width": 1440,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Answers before you send."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1375,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/track",
+      "width": 1440,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Shipment update enquiry"
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 650,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/privacy",
+      "width": 1440,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Privacy content is not yet approved."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 486,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/terms",
+      "width": 1440,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Service terms are not yet approved."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 461,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/404.html",
+      "width": 1440,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "This page is not available."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/services/domestic",
+      "width": 768,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "A considered route from one city to the next."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 17.2435,
+              "scale": 1.00184,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": -33.5244,
+              "scale": 1.03568,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.6448,
+              "scale": 1.00024,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 11.5982,
+              "scale": 1.0056,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -33.6875,
+              "scale": 1.03579,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.9941,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 18.822,
+              "scale": 1.00079,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 11.4791,
+              "scale": 1.00568,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -35.5865,
+              "scale": 1.03706,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.942,
+              "scale": 1.00004,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 18.7962,
+              "scale": 1.0008,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 11.1643,
+              "scale": 1.00589,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9367,
+              "scale": 1.00004,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 18.7368,
+              "scale": 1.00084,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9311,
+              "scale": 1.00005,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1903,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Review before commitment.A submitted enquiry is not a booking. The team will prepare a quote with re"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "We move it with care.Once confirmed, your shipment is handed over to our operational team and moves "
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/services/international",
+      "width": 768,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Across borders, with the details checked first."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 17.3983,
+              "scale": 1.00173,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": -26.821,
+              "scale": 1.03121,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.6888,
+              "scale": 1.00021,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 12.6852,
+              "scale": 1.00488,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -26.9702,
+              "scale": 1.03131,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.9967,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 19.0093,
+              "scale": 1.00066,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 12.5984,
+              "scale": 1.00493,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -28.7083,
+              "scale": 1.03247,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9589,
+              "scale": 1.00003,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 18.9806,
+              "scale": 1.00068,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 12.3117,
+              "scale": 1.00513,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9554,
+              "scale": 1.00003,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 18.9334,
+              "scale": 1.00071,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9509,
+              "scale": 1.00003,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1895,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Documentation is shipment-specific.Required documentation and restrictions depend on the route and p"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Clear quotation boundaries.Charges, estimates, inclusions and exclusions appear in the quote for the"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/about",
+      "width": 768,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Courier arrangements built around each shipment."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 17.1523,
+              "scale": 1.0019,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.6212,
+              "scale": 1.00025,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -7.68169,
+              "scale": 1.01845,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.9923,
+              "scale": 1.00001,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 14.2262,
+              "scale": 1.00385,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 18.9334,
+              "scale": 1.00071,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -3.36257,
+              "scale": 1.01558,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9064,
+              "scale": 1.00006,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 16.7171,
+              "scale": 1.00219,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 2.3326700000000002,
+              "scale": 1.01178,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 19.7094,
+              "scale": 1.00019,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 17.5473,
+              "scale": 1.00164,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 6.5693,
+              "scale": 1.00895,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.9997,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 19.8161,
+              "scale": 1.00012,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 18.1818,
+              "scale": 1.00121,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 19.8915,
+              "scale": 1.00007,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2400,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 2671,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Connecting People & Possibilities"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "What we do"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "A straightforward customer journey.Customers share their shipment details, receive a reviewed offer,"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Careful about what is confirmed.We do not publish invented coverage, courier partners, guarantees or"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Delivered with Purpose"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Prepared to connect.Shipment updates are maintained manually by the team. The application has a defi"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/contact",
+      "width": 768,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "How can we help?"
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 12.5766,
+              "scale": 1.00495,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 18.495,
+              "scale": 1.001,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.8198,
+              "scale": 1.00012,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 19.9989,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1717,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 20,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "From Your Place to the World"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Contact VK AND COMPANY."
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/get-a-quote",
+      "width": 768,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Tell us about your shipment."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2319,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": false,
+        "scrollMode": "native"
+      },
+      "errors": []
+    },
+    {
+      "route": "/faq",
+      "width": 768,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Answers before you send."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1320,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/track",
+      "width": 768,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Shipment update enquiry"
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 623,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/privacy",
+      "width": 768,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Privacy content is not yet approved."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 482,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/terms",
+      "width": 768,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Service terms are not yet approved."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 457,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/404.html",
+      "width": 768,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "This page is not available."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/services/domestic",
+      "width": 390,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "A considered route from one city to the next."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 8.72074,
+              "scale": 1.00171,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": -1.79884,
+              "scale": 1.01573,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.9014,
+              "scale": 1.00013,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 8.20851,
+              "scale": 1.00239,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 9.81509,
+              "scale": 1.00025,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 3.39742,
+              "scale": 1.0088,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.99902,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 9.02083,
+              "scale": 1.00131,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -13.8226,
+              "scale": 1.03176,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.92697,
+              "scale": 1.0001,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 6.3318,
+              "scale": 1.00489,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.50751,
+              "scale": 1.00066,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.98047,
+              "scale": 1.00003,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 2319,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Begin with the real shipment details.Provide the origin and destination, package count, approximate "
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Review before commitment.A submitted enquiry is not a booking. The team will prepare a quote with re"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "We move it with care.Once confirmed, your shipment is handed over to our operational team and moves "
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/services/international",
+      "width": 390,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Across borders, with the details checked first."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 8.76317,
+              "scale": 1.00165,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": -0.992307,
+              "scale": 1.01466,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.90988,
+              "scale": 1.00012,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 8.33307,
+              "scale": 1.00222,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.83364,
+              "scale": 1.00022,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 5.00742,
+              "scale": 1.00666,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.9994,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 9.28818,
+              "scale": 1.00095,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -12.3108,
+              "scale": 1.02975,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.95888,
+              "scale": 1.00005,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 6.56485,
+              "scale": 1.00458,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.54888,
+              "scale": 1.0006,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.98388,
+              "scale": 1.00002,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 2336,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Route and contents review.Share accurate origin, destination, contents, package count, weight and di"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Documentation is shipment-specific.Required documentation and restrictions depend on the route and p"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Clear quotation boundaries.Charges, estimates, inclusions and exclusions appear in the quote for the"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/about",
+      "width": 390,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Courier arrangements built around each shipment."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 8.18829,
+              "scale": 1.00242,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.82807,
+              "scale": 1.00023,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 4.79165,
+              "scale": 1.00694,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.99955,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 9.23996,
+              "scale": 1.00101,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -3.63199,
+              "scale": 1.01818,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.95202,
+              "scale": 1.00006,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 8.07789,
+              "scale": 1.00256,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.81509,
+              "scale": 1.00025,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 3.6348000000000003,
+              "scale": 1.00849,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.9994,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 9.1412,
+              "scale": 1.00115,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -8.00469,
+              "scale": 1.02401,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.95081,
+              "scale": 1.00007,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 7.44975,
+              "scale": 1.0034,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.72522,
+              "scale": 1.00037,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2400,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.99696,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2700,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 2924,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "A straightforward customer journey.Customers share their shipment details, receive a reviewed offer,"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Careful about what is confirmed.We do not publish invented coverage, courier partners, guarantees or"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Prepared to connect.Shipment updates are maintained manually by the team. The application has a defi"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Delivered with Purpose"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "How can we help?"
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 7.39843,
+              "scale": 1.00347,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.678560000000001,
+              "scale": 1.00043,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.99293,
+              "scale": 1.00001,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1687,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Contact VK AND COMPANY."
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/get-a-quote",
+      "width": 390,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Tell us about your shipment."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2400,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2700,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2926,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": false,
+        "scrollMode": "native"
+      },
+      "errors": []
+    },
+    {
+      "route": "/faq",
+      "width": 390,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Answers before you send."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1296,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/track",
+      "width": 390,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Shipment update enquiry"
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 664,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/privacy",
+      "width": 390,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Privacy content is not yet approved."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 649,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/terms",
+      "width": 390,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Service terms are not yet approved."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 572,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/404.html",
+      "width": 390,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "This page is not available."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/services/domestic",
+      "width": 360,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "A considered route from one city to the next."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 8.65528,
+              "scale": 1.00179,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": -1.49482,
+              "scale": 1.01533,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.89746,
+              "scale": 1.00014,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 8.3138,
+              "scale": 1.00225,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 9.83908,
+              "scale": 1.00021,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 4.34164,
+              "scale": 1.00754,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.999600000000001,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 9.20923,
+              "scale": 1.00105,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -12.9296,
+              "scale": 1.03057,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.95321,
+              "scale": 1.00006,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 6.58553,
+              "scale": 1.00455,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.56736,
+              "scale": 1.00058,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.98687,
+              "scale": 1.00002,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 2351,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Begin with the real shipment details.Provide the origin and destination, package count, approximate "
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Review before commitment.A submitted enquiry is not a booking. The team will prepare a quote with re"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "We move it with care.Once confirmed, your shipment is handed over to our operational team and moves "
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/services/international",
+      "width": 360,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Across borders, with the details checked first."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 8.69373,
+              "scale": 1.00174,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": -0.791029,
+              "scale": 1.01439,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.90523,
+              "scale": 1.00013,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 8.42106,
+              "scale": 1.00211,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.85345,
+              "scale": 1.0002,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 4.68147,
+              "scale": 1.00709,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.99978,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 9.26248,
+              "scale": 1.00098,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -11.5971,
+              "scale": 1.0288,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.95888,
+              "scale": 1.00005,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 6.78782,
+              "scale": 1.00428,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.60033,
+              "scale": 1.00053,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.98924,
+              "scale": 1.00001,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 2400,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 2402,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Route and contents review.Share accurate origin, destination, contents, package count, weight and di"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Documentation is shipment-specific.Required documentation and restrictions depend on the route and p"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Clear quotation boundaries.Charges, estimates, inclusions and exclusions appear in the quote for the"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/about",
+      "width": 360,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Courier arrangements built around each shipment."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 8.43337,
+              "scale": 1.00209,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": -17.2951,
+              "scale": 1.03639,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.86693,
+              "scale": 1.00018,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 5.83454,
+              "scale": 1.00555,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.99995,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 9.4393,
+              "scale": 1.00075,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0.261847,
+              "scale": 1.01298,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.97547,
+              "scale": 1.00003,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 8.63858,
+              "scale": 1.00182,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.89136,
+              "scale": 1.00014,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 5.40835,
+              "scale": 1.00612,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 0,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 9.41736,
+              "scale": 1.00078,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": -2.89254,
+              "scale": 1.01719,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.97734,
+              "scale": 1.00003,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            },
+            {
+              "z": 8.18152,
+              "scale": 1.00242,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.83087,
+              "scale": 1.00023,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2400,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 9.99963,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 2700,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 2929,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            },
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "A straightforward customer journey.Customers share their shipment details, receive a reviewed offer,"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Careful about what is confirmed.We do not publish invented coverage, courier partners, guarantees or"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Delivered with Purpose"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Prepared to connect.Shipment updates are maintained manually by the team. The application has a defi"
+          },
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/contact",
+      "width": 360,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "How can we help?"
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 7.50876,
+              "scale": 1.00332,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.71153,
+              "scale": 1.00038,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 9.99529,
+              "scale": 1.00001,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "transform"
+            }
+          ]
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        },
+        {
+          "y": 1667,
+          "overflow": false,
+          "planes": [
+            {
+              "z": 10,
+              "scale": 1,
+              "rotationX": 0,
+              "rotationY": 0,
+              "willChange": "auto"
+            }
+          ]
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Contact VK AND COMPANY."
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/get-a-quote",
+      "width": 360,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Tell us about your shipment."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1500,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1800,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2100,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2400,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2700,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 2944,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": false,
+        "scrollMode": "native"
+      },
+      "errors": []
+    },
+    {
+      "route": "/faq",
+      "width": 360,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Answers before you send."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 900,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1200,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 1360,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [
+          {
+            "frames": [
+              {
+                "transform": "translateY(40px) rotateX(12deg)",
+                "opacity": 0
+              },
+              {
+                "transform": "none",
+                "opacity": 1
+              }
+            ],
+            "options": {
+              "duration": 600,
+              "delay": 0,
+              "easing": "cubic-bezier(0.16,1,0.3,1)",
+              "fill": "backwards"
+            },
+            "text": "Start with the shipment detailsLet’s work out the right next step for your parcel.No instant estimat"
+          }
+        ],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/track",
+      "width": 360,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Shipment update enquiry"
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 683,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/privacy",
+      "width": 360,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Privacy content is not yet approved."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 600,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 667,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/terms",
+      "width": 360,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "Service terms are not yet approved."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 300,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 590,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/404.html",
+      "width": 360,
+      "mode": "motion",
+      "initial": {
+        "opacity": 1,
+        "text": "This page is not available."
+      },
+      "samples": [
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        },
+        {
+          "y": 0,
+          "overflow": false,
+          "planes": []
+        }
+      ],
+      "settled": {
+        "rise": [],
+        "hints": 0,
+        "images": true,
+        "quoteParallax": true,
+        "scrollMode": "smooth"
+      },
+      "errors": []
+    },
+    {
+      "route": "/services/domestic",
+      "width": 1440,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/services/international",
+      "width": 1440,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/about",
+      "width": 1440,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/get-a-quote",
+      "width": 1440,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/faq",
+      "width": 1440,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/track",
+      "width": 1440,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/privacy",
+      "width": 1440,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/terms",
+      "width": 1440,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/404.html",
+      "width": 1440,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/services/domestic",
+      "width": 390,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/services/international",
+      "width": 390,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/about",
+      "width": 390,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/get-a-quote",
+      "width": 390,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/faq",
+      "width": 390,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/track",
+      "width": 390,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/privacy",
+      "width": 390,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/terms",
+      "width": 390,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "route": "/404.html",
+      "width": 390,
+      "mode": "no-js",
+      "overflow": false,
+      "primitives": [
+        {
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    }
+  ],
+  "blockedSubmissions": 0
+}

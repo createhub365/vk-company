@@ -4,8 +4,16 @@
 .rows { display: grid; gap: 30px; }
 .row { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr); gap: clamp(24px,3vw,44px); align-items: start; }
 .row + .row { border-top: 1px solid var(--line); padding-top: 30px; }
-.image { border-radius: 12px; min-width: 0; }
-.copy { min-width: 0; padding-top: 4px; }
+.media { position: relative; z-index: 0; isolation: isolate; transform-style: flat; }
+.image { border-radius: 12px; min-width: 0; contain: paint; isolation: isolate; }
+/* Rotate the complete photo face. Its paint/hit region stays inside the media
+   boundary, below neighboring prose and controls; no parent ignores input. */
+.image > [data-service-tilt] { transition: none; }
+.image > [data-service-tilt]::after { background: radial-gradient(ellipse at var(--photo-x,50%) var(--photo-y,50%),rgba(198,255,250,.15),transparent 62%); }
+.copy { position: relative; z-index: 1; min-width: 0; padding-top: 4px; }
+@media (hover: none), (width < 768px), (prefers-reduced-motion: reduce) {
+  .image > [data-service-tilt] { transform: none !important; }
+}
 .copy h3 { color: #102c48; font: 400 clamp(1.85rem,3vw,2.9rem)/1.16 Georgia,serif; letter-spacing: -.025em; margin: 0 0 24px; }
 .copy p { color: #53687e; line-height: 1.7; margin: 0; overflow-wrap: anywhere; }
 @media (max-width: 640px) {

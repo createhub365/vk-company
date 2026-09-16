@@ -1,0 +1,48 @@
+
+Running 1 test using 1 worker
+
+(node:26788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [width-768] › artifacts/motion-stage-9/regression/quote-formsubmit.spec.ts:59:1 › invalid inputs and honeypot never reach a network request (45.0s)
+
+
+  1) [width-768] › artifacts/motion-stage-9/regression/quote-formsubmit.spec.ts:59:1 › invalid inputs and honeypot never reach a network request 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.click: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Send quote request', exact: true })
+        - locator resolved to <button type="submit" class="button">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not stable
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not stable
+        - retrying click action
+          - waiting 100ms
+        81 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <form novalidate="" class="form-panel">…</form> intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+
+
+      35 |   await expect(page.getByLabel("Dimension unit")).toHaveValue("in");
+      36 | }
+    > 37 | const submit = (page: Page) => page.getByRole("button", { name: "Send quote request", exact: true }).click();
+         |                                                                                                      ^
+      38 |
+      39 | test("Quote goes only to FormSubmit with every detail and validated Reply-To", async ({ page }) => {
+      40 |   const { requests } = await setup(page);
+        at submit (/Users/pranshudhiman/Desktop/vk and company/artifacts/motion-stage-9/regression/quote-formsubmit.spec.ts:37:102)
+        at /Users/pranshudhiman/Desktop/vk and company/artifacts/motion-stage-9/regression/quote-formsubmit.spec.ts:67:9
+
+    Error Context: artifacts/motion-stage-9/regression/results/quote-formsubmit-invalid-i-71558-ver-reach-a-network-request-width-768/error-context.md
+
+  1 failed
+    [width-768] › artifacts/motion-stage-9/regression/quote-formsubmit.spec.ts:59:1 › invalid inputs and honeypot never reach a network request 

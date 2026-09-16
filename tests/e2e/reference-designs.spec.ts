@@ -13,6 +13,7 @@ for (const width of [1440, 390, 360]) {
     test(`${kind} supplied design at ${width}px`, async ({ page, isMobile }, info) => {
       await page.setViewportSize({ width, height: width === 1440 ? 900 : 844 });
       await page.goto(`/services/${kind}`);
+      await expect(page.locator("html")).toHaveAttribute("data-photo-feedback-ready", "true");
       const section = page.locator(`section[aria-labelledby="${kind}-process"]`);
       const rows = section.locator("article");
       await expect(rows).toHaveCount(3);
@@ -22,8 +23,14 @@ for (const width of [1440, 390, 360]) {
         const img = frame.locator("img");
         await frame.scrollIntoViewIfNeeded();
         await expect.poll(() => img.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBe(true);
-        // These exact selected service images only exist as native 392px regions.
+        // Approved replacements retain the original filenames and descriptors;
+        // their larger raster bytes are protected by verify:content.
         await expect(img).toHaveAttribute("srcset", /selected-(domestic|international)-[123]-392\.webp 392w/);
+        await frame.evaluate(async e => {
+          e.scrollIntoView({ block: 'center', behavior: 'instant' });
+          await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+          await Promise.allSettled(e.closest('article')!.getAnimations({ subtree: true }).map(animation => animation.finished));
+        });
         const bounds = (await frame.boundingBox())!;
         const text = (await row.locator("h3").boundingBox())!;
         if (width < 641) expect(bounds.y + bounds.height).toBeLessThanOrEqual(text.y);
@@ -40,7 +47,7 @@ for (const width of [1440, 390, 360]) {
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       // Omit the fixed header only from the tall section artifact, where it
       // otherwise appears midway through the stitched capture.
-      await section.screenshot({ path: `test-results/${kind}-approved-${width}-${info.project.name}.png`, style: "header, nextjs-portal { visibility: hidden; }" });
+      await section.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/${kind}-approved-${width}-${info.project.name}.png`, style: "header, nextjs-portal { visibility: hidden; }" });
       const quoteLink = page.getByRole("main").getByRole("link", { name: "Request a quote", exact: true });
       await expect(quoteLink).toHaveAttribute("href", "/get-a-quote");
       await quoteLink.click();
@@ -51,6 +58,7 @@ for (const width of [1440, 390, 360]) {
   test(`Contact supplied design at ${width}px`, async ({ page, isMobile }, info) => {
     await page.setViewportSize({ width, height: width === 1440 ? 900 : 844 });
     await page.goto("/contact");
+    await expect(page.locator("html")).toHaveAttribute("data-photo-feedback-ready", "true");
     const frame = page.locator('main [data-image-feedback="photo"]');
     const img = frame.locator("img");
     await expect.poll(() => img.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBe(true);
@@ -74,6 +82,6 @@ for (const width of [1440, 390, 360]) {
     await page.screenshot({ path: info.outputPath("contact-artwork-active.png") });
     await expect(frame.locator(".image-feedback-layer")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await page.locator("main > section").screenshot({ path: `test-results/contact-approved-${width}-${info.project.name}.png` });
+    await page.locator("main > section").screenshot({ path: `artifacts/submit-tilt-staging/screenshots/contact-approved-${width}-${info.project.name}.png` });
   });
 }

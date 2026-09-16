@@ -1,7 +1,8 @@
 import { expect, test, type Page } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
-const before = JSON.parse(readFileSync("artifacts/motion-stage-5/before/layout.json", "utf8"));
+// The older Stage 5 snapshot predates approved captions/process-layout changes.
+const before = JSON.parse(readFileSync("artifacts/submit-tilt-staging/before-layout.json", "utf8"));
 const sections = ["#domestic-services", ".international-feature"];
 const headings = ["Planned around your actual route.", "Clear before it leaves the ground."];
 type Entry = { className: string; text: string; heading: string | null; section: string; frames: Keyframe[]; timing: { duration: number; delay: number }; };
@@ -24,7 +25,7 @@ test.beforeEach(async ({ page }) => {
 test("original section geometry, image fitting and alternating desktop order remain", async ({ page }) => {
   await page.goto("/"); await page.waitForTimeout(1400);
   const layout = await page.locator("header,main > section,footer").evaluateAll(es => es.map(e => { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y + scrollY, width: r.width, height: r.height }; }));
-  const baseline = before.find((r: { width: number }) => r.width === page.viewportSize()!.width).layout;
+  const baseline = before.find((r: { width: number }) => r.width === page.viewportSize()!.width).editorial;
   expect(layout).toHaveLength(baseline.length);
   for (const [index, row] of layout.entries()) for (const key of ["x", "y", "width", "height"] as const) expect(Math.abs(row[key] - baseline[index][key])).toBeLessThan(1);
   for (const [index, selector] of sections.entries()) {
@@ -56,7 +57,7 @@ test("opposite-side text, per-line headings and grouped prose use the bounded ti
     await page.waitForTimeout(200);
     const headingText = await page.locator(`${selector} h2`).textContent();
     expect(headingText).toBe(headings[index]);
-    await page.screenshot({ path: `artifacts/motion-stage-5/entrance-${info.project.name}-${index}.png`, scale: "css" });
+    await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/stage-5/entrance-${info.project.name}-${index}.png`, scale: "css" });
     await page.waitForTimeout(1200);
   }
   const entries = await page.evaluate(() => window.editorialEntries);
@@ -124,7 +125,7 @@ test("a paragraph in view before hydration stays immediately visible and never r
     const text = await paragraph.textContent();
     expect(await page.evaluate(text => window.editorialEntries.filter(e => e.className === "editorial-prose" && e.text === text), text)).toEqual([]);
     expect(await paragraph.locator("..").evaluate(e => ({ opacity: getComputedStyle(e).opacity, transform: getComputedStyle(e).transform }))).toEqual({ opacity: "1", transform: "none" });
-    await page.screenshot({ path: `artifacts/motion-stage-5/initial-prose-${info.project.name}-${index}.png`, scale: "css" });
+    await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/stage-5/initial-prose-${info.project.name}-${index}.png`, scale: "css" });
     await page.unroute("**/_next/**/*.js");
   }
 });
@@ -134,10 +135,10 @@ test("reduced motion, no JavaScript, resize and native text links remain usable"
   for (const [index, selector] of sections.entries()) {
     await page.locator(selector).scrollIntoViewIfNeeded(); await page.waitForTimeout(300);
     expect(await page.locator(`${selector} [data-depth-motion], ${selector} .editorial-text-plane`).evaluateAll(es => es.every(e => getComputedStyle(e).transform === "none" && getComputedStyle(e).opacity === "1"))).toBe(true);
-    await page.screenshot({ path: `artifacts/motion-stage-5/reduced-${info.project.name}-${index}.png`, scale: "css" });
+    await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/stage-5/reduced-${info.project.name}-${index}.png`, scale: "css" });
   }
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: page.viewportSize()! });
-  const staticPage = await context.newPage(); await staticPage.goto("http://127.0.0.1:3105/");
+  const staticPage = await context.newPage(); await staticPage.goto(new URL("/", page.url()).href);
   for (const [index, selector] of sections.entries()) { await staticPage.locator(selector).scrollIntoViewIfNeeded(); await expect(staticPage.locator(`${selector} .editorial-prose p`)).toBeVisible(); expect(await staticPage.locator(`${selector} h2`).textContent()).toBe(headings[index]); }
   await context.close();
   await page.emulateMedia({ reducedMotion: "no-preference" }); await page.goto("/"); await page.waitForTimeout(300);

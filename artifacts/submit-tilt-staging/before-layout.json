@@ -1,0 +1,402 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "source": "Saved Stage 9 before export (approved Stage 8 layout)",
+    "nav": [
+      {
+        "tag": "HEADER",
+        "x": 100,
+        "y": 10,
+        "width": 1240,
+        "height": 72
+      },
+      {
+        "tag": "MAIN",
+        "x": 0,
+        "y": -10,
+        "width": 1440,
+        "height": 5777.28125
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 5767.28125,
+        "width": 1440,
+        "height": 434.21875
+      }
+    ],
+    "editorial": [
+      {
+        "tag": "HEADER",
+        "x": 100,
+        "y": 10,
+        "width": 1240,
+        "height": 72
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": -10,
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 890,
+        "width": 1440,
+        "height": 703.421875
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 1593.421875,
+        "width": 1440,
+        "height": 703.421875
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 2296.84375,
+        "width": 1440,
+        "height": 916.265625
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 3213.109375,
+        "width": 1440,
+        "height": 719.1875
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 3932.296875,
+        "width": 1440,
+        "height": 638.515625
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 4570.8125,
+        "width": 1440,
+        "height": 906.375
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 5477.1875,
+        "width": 1440,
+        "height": 290.09375
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 5767.28125,
+        "width": 1440,
+        "height": 434.21875
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "height": 900,
+    "source": "Saved Stage 9 before export (approved Stage 8 layout)",
+    "nav": [
+      {
+        "tag": "HEADER",
+        "x": 12,
+        "y": 6,
+        "width": 744,
+        "height": 72
+      },
+      {
+        "tag": "MAIN",
+        "x": 0,
+        "y": -14,
+        "width": 768,
+        "height": 6046.46875
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 6032.46875,
+        "width": 768,
+        "height": 434.21875
+      }
+    ],
+    "editorial": [
+      {
+        "tag": "HEADER",
+        "x": 12,
+        "y": 6,
+        "width": 744,
+        "height": 72
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": -14,
+        "width": 768,
+        "height": 900
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 886,
+        "width": 768,
+        "height": 840.484375
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 1726.484375,
+        "width": 768,
+        "height": 949.296875
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 2675.78125,
+        "width": 768,
+        "height": 800.96875
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 3476.75,
+        "width": 768,
+        "height": 632
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 4108.75,
+        "width": 768,
+        "height": 852.34375
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 4961.09375,
+        "width": 768,
+        "height": 734.375
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 5695.46875,
+        "width": 768,
+        "height": 337
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 6032.46875,
+        "width": 768,
+        "height": 434.21875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 900,
+    "source": "Saved Stage 9 before export (approved Stage 8 layout)",
+    "nav": [
+      {
+        "tag": "HEADER",
+        "x": 6,
+        "y": 6,
+        "width": 378,
+        "height": 62
+      },
+      {
+        "tag": "MAIN",
+        "x": 0,
+        "y": -24,
+        "width": 390,
+        "height": 7284.109375
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 7260.109375,
+        "width": 390,
+        "height": 474.1875
+      }
+    ],
+    "editorial": [
+      {
+        "tag": "HEADER",
+        "x": 6,
+        "y": 6,
+        "width": 378,
+        "height": 62
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": -24,
+        "width": 390,
+        "height": 900
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 876,
+        "width": 390,
+        "height": 697.375
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 1573.375,
+        "width": 390,
+        "height": 725.859375
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 2299.234375,
+        "width": 390,
+        "height": 2374.640625
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 4673.875,
+        "width": 390,
+        "height": 663.546875
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 5337.421875,
+        "width": 390,
+        "height": 677.53125
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 6014.953125,
+        "width": 390,
+        "height": 808.65625
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 6823.609375,
+        "width": 390,
+        "height": 436.5
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 7260.109375,
+        "width": 390,
+        "height": 474.1875
+      }
+    ]
+  },
+  {
+    "width": 360,
+    "height": 900,
+    "source": "Saved Stage 9 before export (approved Stage 8 layout)",
+    "nav": [
+      {
+        "tag": "HEADER",
+        "x": 6,
+        "y": 6,
+        "width": 348,
+        "height": 62
+      },
+      {
+        "tag": "MAIN",
+        "x": 0,
+        "y": -24,
+        "width": 360,
+        "height": 7176.859375
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 7152.859375,
+        "width": 360,
+        "height": 474.1875
+      }
+    ],
+    "editorial": [
+      {
+        "tag": "HEADER",
+        "x": 6,
+        "y": 6,
+        "width": 348,
+        "height": 62
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": -24,
+        "width": 360,
+        "height": 900
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 876,
+        "width": 360,
+        "height": 674.5625
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 1550.5625,
+        "width": 360,
+        "height": 724.28125
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 2274.84375,
+        "width": 360,
+        "height": 2317.15625
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 4592,
+        "width": 360,
+        "height": 652.953125
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 5244.953125,
+        "width": 360,
+        "height": 654.46875
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 5899.421875,
+        "width": 360,
+        "height": 824
+      },
+      {
+        "tag": "SECTION",
+        "x": 0,
+        "y": 6723.421875,
+        "width": 360,
+        "height": 429.4375
+      },
+      {
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 7152.859375,
+        "width": 360,
+        "height": 474.1875
+      }
+    ]
+  }
+]

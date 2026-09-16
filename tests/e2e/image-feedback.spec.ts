@@ -2,7 +2,9 @@ import { expect, test, type Page, type Locator } from "@playwright/test";
 
 const routes = ["/", "/services/domestic", "/services/international", "/about", "/contact", "/get-a-quote", "/faq", "/privacy", "/terms", "/track"];
 const layer = (page: Page) => page.locator(".image-feedback-layer");
+declare global { interface Window { photoTestPoint?: { x: number; y: number }; } }
 async function activate(target: Locator, touch: boolean) {
+  await expect(target.page().locator("html")).toHaveAttribute("data-photo-feedback-ready", "true");
   await target.scrollIntoViewIfNeeded();
   if (touch) await target.tap({ position: { x: 40, y: 40 } });
   else await target.click({ position: { x: 40, y: 40 } });
@@ -10,6 +12,7 @@ async function activate(target: Locator, touch: boolean) {
 
 test.beforeEach(async ({ context }) => {
   await context.route("**/*", route => ["localhost", "127.0.0.1"].includes(new URL(route.request().url()).hostname) && ["GET", "HEAD"].includes(route.request().method()) ? route.continue() : route.abort());
+  await context.addInitScript(() => document.addEventListener("click", event => { window.photoTestPoint = { x: event.clientX, y: event.clientY }; }, true));
 });
 
 for (const path of routes) test(`edge-to-edge photos and bounded taps ${path}`, async ({ page, isMobile }, info) => {
@@ -18,7 +21,13 @@ for (const path of routes) test(`edge-to-edge photos and bounded taps ${path}`, 
   expect(response?.headers()["x-content-type-options"]).toBe("nosniff");
   for (const frame of await page.locator('[data-photo-frame]').all()) {
     await frame.scrollIntoViewIfNeeded();
+    await expect(page.locator("html")).toHaveAttribute("data-photo-feedback-ready", "true");
     await frame.locator('img').evaluate((el: HTMLImageElement) => el.decode());
+    await frame.evaluate(async el => {
+      el.scrollIntoView({ block: 'center', behavior: 'instant' });
+      await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+      await Promise.allSettled(el.closest('section')!.getAnimations({ subtree: true }).map(animation => animation.finished));
+    });
     if (await frame.evaluate(el => Boolean(el.closest('.process-depth')))) {
       // The process now changes projected scale on scroll. Settle the shared
       // scroll update before measuring the resting tap target and heading.
@@ -47,7 +56,6 @@ for (const path of routes) test(`edge-to-edge photos and bounded taps ${path}`, 
     // leave their own section heading stationary, including during hero hydration.
     const heading = path === '/' ? frame.locator('xpath=ancestor::section[1]').locator('h1,h2,h3').first() : page.locator('h1');
     const headingBox = await heading.boundingBox();
-    const scale = await frame.evaluate(el => { const rect=el.getBoundingClientRect();return {x:rect.width/(el as HTMLElement).offsetWidth,y:rect.height/(el as HTMLElement).offsetHeight}; });
     await activate(frame,isMobile);
     if (path === "/get-a-quote") {
       await expect(layer(page)).toHaveCount(0);
@@ -56,11 +64,19 @@ for (const path of routes) test(`edge-to-edge photos and bounded taps ${path}`, 
       continue;
     }
     await expect(layer(page)).toHaveCount(1);
+    // The locator's 40px offset is local to a projected/tilted target, not a
+    // viewport distance. Check against the actual click point at the start of
+    // feedback instead of comparing it with an obsolete unprojected offset.
+    await frame.evaluate(el => el.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = 0; }));
+    const ripple = (await layer(page).boundingBox())!;
+    const point = (await page.evaluate(() => window.photoTestPoint))!;
+    expect(Math.abs(ripple.x + ripple.width / 2 - point.x)).toBeLessThanOrEqual(1);
+    expect(Math.abs(ripple.y + ripple.height / 2 - point.y)).toBeLessThanOrEqual(1);
     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
-    expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
     expect(await frame.locator('img').evaluate(el=>el.getAnimations().length)).toBe(0);
     expect(await heading.boundingBox()).toEqual(headingBox);
+    await frame.evaluate(el => el.getAnimations({ subtree: true }).forEach(animation => animation.play()));
     await page.screenshot({path:info.outputPath(`tap-${await frame.getAttribute('class')}.png`),scale:'css'});
     await expect(layer(page)).toHaveCount(0);
     expect(await frame.evaluate(el=>getComputedStyle(el).transform)).toBe('none');
@@ -71,7 +87,8 @@ for (const path of routes) test(`edge-to-edge photos and bounded taps ${path}`, 
 
 test('hover tilts only the coherent frame and settles on leave',async({page,isMobile})=>{
   test.skip(isMobile,'Touch has tap feedback without hover');
-  await page.goto('/services/domestic');const frame=page.locator('.page-hero-image');
+  await page.goto('/services/domestic');const frame=page.locator('[data-service-tilt]').first();
+  await frame.scrollIntoViewIfNeeded();await page.waitForTimeout(900);
   const b=(await frame.boundingBox())!, heading=await page.locator('h1').boundingBox();
   await page.mouse.move(b.x+b.width*.95,b.y+b.height*.1);
   await expect(frame).toHaveAttribute('data-photo-hover','');
@@ -127,7 +144,7 @@ test('WebGL unavailable from startup and JavaScript disabled preserve the photog
   await page.goto('/get-a-quote');await expect(page.locator('.quote-photo img')).toBeVisible();
   await expect(page.locator('.quote-bubble-fallback')).toBeVisible();
   const noJS=await context.browser()!.newContext({javaScriptEnabled:false,viewport:page.viewportSize()!});
-  const staticPage=await noJS.newPage();await staticPage.goto('http://127.0.0.1:3101/get-a-quote');
+  const staticPage=await noJS.newPage();await staticPage.goto(new URL("/get-a-quote", page.url()).href);
   await expect(staticPage.locator('.quote-photo img')).toBeVisible();await expect(staticPage.getByLabel('Name',{exact:true})).toBeVisible();
   await noJS.close();
 });

@@ -18,7 +18,13 @@
 .faq-depth[data-utility-ready] summary::after { transition: transform var(--d-fast) var(--ease-out-expo); }
 .faq-depth[data-utility-ready] details[open] summary::after { transform: rotate(180deg); }
 
-.form-depth { min-width: 0; }
+.form-depth {
+  min-width: 0;
+  /* Flatten the form into its own stacking context before the surrounding
+     section projects it. Otherwise validation reflow can put the form's
+     background in front of its submit button during 3D hit testing. */
+  isolation: isolate;
+}
 .form-depth[data-utility-ready] > .form-panel {
   /* Compensate the static plane's projection to preserve the existing form
      width, field alignment and notice position. The original soft shadow stays. */

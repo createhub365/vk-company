@@ -25,7 +25,7 @@ test("native FAQ keyboard, answer hinge, rapid toggles and cleanup", async ({ pa
   const frames = JSON.parse((await answer.getAttribute("data-test-frames"))!);
   expect(frames.duration).toBe(240); expect(frames.frames[0].transform).toContain("rotateX(-6deg)");
   expect(await details.evaluate(e => getComputedStyle(e).transform)).toBe("none");
-  await page.screenshot({ path:`artifacts/motion-stage-7/faq-${page.viewportSize()!.width}.png`, scale:"css" });
+  await page.screenshot({ path:`artifacts/submit-tilt-staging/screenshots/stage-7/faq-${page.viewportSize()!.width}.png`, scale:"css" });
   await expect.poll(() => answer.evaluate(e => getComputedStyle(e).willChange)).toBe("auto");
   for(let i=0;i<5;i++) { await page.keyboard.press("Space"); await page.keyboard.press("Enter"); }
   await expect(summary).toBeFocused(); await expect(details).toHaveAttribute("open", "");
@@ -56,7 +56,7 @@ for(const route of ["/contact","/get-a-quote"]) test(`form depth, keyboard focus
     // Release outside the submit button: never create an enquiry.
     await page.mouse.move(0,0);await page.mouse.up();
   }
-  await page.screenshot({path:`artifacts/motion-stage-7/${route.slice(1)}-${page.viewportSize()!.width}.png`,scale:"css"});
+  await page.screenshot({path:`artifacts/submit-tilt-staging/screenshots/stage-7/${route.slice(1)}-${page.viewportSize()!.width}.png`,scale:"css"});
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   if(route==="/get-a-quote") expect(await page.locator("form .notice").evaluate(e=>e.getAnimations({subtree:true}).length)).toBe(0);
 });
@@ -70,7 +70,7 @@ test("footer depth and native keyboard links", async ({ page }) => {
     expect(await links.nth(i).evaluate(e=>getComputedStyle(e).outlineStyle)).not.toBe("none");
     if(i+1<await links.count())await page.keyboard.press("Tab");
   }
-  await footer.screenshot({path:`artifacts/motion-stage-7/footer-${page.viewportSize()!.width}.png`,scale:"css"});
+  await footer.screenshot({path:`artifacts/submit-tilt-staging/screenshots/stage-7/footer-${page.viewportSize()!.width}.png`,scale:"css"});
   await links.first().focus(); await page.keyboard.press("Enter"); await expect(page).toHaveURL(/\/services\/domestic$/);
 });
 
@@ -85,9 +85,9 @@ test("reduced motion and no-JS preserve final readable content and native detail
     for(const selector of ['.form-panel','input[name="name"]','.footer-depth'])expect((await matrix(page,selector)).transform).toBe("none");
   }
   const context=await browser.newContext({javaScriptEnabled:false,viewport:page.viewportSize()!});const staticPage=await context.newPage();
-  await staticPage.goto('http://127.0.0.1:3107/faq');await staticPage.locator('.faq-depth summary').first().click();
+  await staticPage.goto(new URL("/faq", page.url()).href);await staticPage.locator('.faq-depth summary').first().click();
   await expect(staticPage.locator('.faq-depth details').first()).toHaveAttribute('open','');
-  await staticPage.goto('http://127.0.0.1:3107/get-a-quote');await expect(staticPage.locator('form .notice')).toHaveText(notice);
+  await staticPage.goto(new URL("/get-a-quote", page.url()).href);await expect(staticPage.locator('form .notice')).toHaveText(notice);
   expect((await matrix(staticPage,'.form-panel')).transform).toBe('none');expect((await matrix(staticPage,'.footer-depth')).transform).toBe('none');
   await context.close();
 });

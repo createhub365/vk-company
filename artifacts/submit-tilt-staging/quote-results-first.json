@@ -1,0 +1,468 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/pranshudhiman/Desktop/vk and company/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "artifacts/submit-tilt-staging/playwright.quote.config.ts"
+    ],
+    "configFile": "/Users/pranshudhiman/Desktop/vk and company/artifacts/submit-tilt-staging/playwright.quote.config.ts",
+    "rootDir": "/Users/pranshudhiman/Desktop/vk and company/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/pranshudhiman/Desktop/vk and company/artifacts/submit-tilt-staging/quote-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/pranshudhiman/Desktop/vk and company/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "quote-hit-testing.spec.ts"
+        ],
+        "timeout": 40000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/submit-tilt-staging/quote-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "quote-hit-testing.spec.ts",
+      "file": "quote-hit-testing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Quote submit hit testing at 360px",
+          "file": "quote-hit-testing.spec.ts",
+          "line": 23,
+          "column": 8,
+          "specs": [
+            {
+              "title": "clickable without validation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2037,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:44:17.695Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "30e8d29ac20f36625374-cd40580f997b6d954124",
+              "file": "quote-hit-testing.spec.ts",
+              "line": 25,
+              "column": 45
+            },
+            {
+              "title": "clickable after repeated validation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1527,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:44:19.927Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "30e8d29ac20f36625374-643257cc10c30fe7002f",
+              "file": "quote-hit-testing.spec.ts",
+              "line": 25,
+              "column": 45
+            }
+          ]
+        },
+        {
+          "title": "Quote submit hit testing at 390px",
+          "file": "quote-hit-testing.spec.ts",
+          "line": 23,
+          "column": 8,
+          "specs": [
+            {
+              "title": "clickable without validation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1786,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:44:21.459Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "30e8d29ac20f36625374-5cdcbae68c18f1e7e1b0",
+              "file": "quote-hit-testing.spec.ts",
+              "line": 25,
+              "column": 45
+            },
+            {
+              "title": "clickable after repeated validation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1886,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:44:23.250Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "30e8d29ac20f36625374-50ed9ecd8cd91c118608",
+              "file": "quote-hit-testing.spec.ts",
+              "line": 25,
+              "column": 45
+            }
+          ]
+        },
+        {
+          "title": "Quote submit hit testing at 768px",
+          "file": "quote-hit-testing.spec.ts",
+          "line": 23,
+          "column": 8,
+          "specs": [
+            {
+              "title": "clickable without validation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1858,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:44:25.140Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "30e8d29ac20f36625374-464d8b741ce29773d029",
+              "file": "quote-hit-testing.spec.ts",
+              "line": 25,
+              "column": 45
+            },
+            {
+              "title": "clickable after repeated validation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1668,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:44:27.003Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "30e8d29ac20f36625374-e2e1d4370f5256e36c83",
+              "file": "quote-hit-testing.spec.ts",
+              "line": 25,
+              "column": 45
+            }
+          ]
+        },
+        {
+          "title": "Quote submit hit testing at 1024px",
+          "file": "quote-hit-testing.spec.ts",
+          "line": 23,
+          "column": 8,
+          "specs": [
+            {
+              "title": "clickable without validation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1852,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:44:28.675Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "30e8d29ac20f36625374-e04b6ea0bcc330f0807c",
+              "file": "quote-hit-testing.spec.ts",
+              "line": 25,
+              "column": 45
+            },
+            {
+              "title": "clickable after repeated validation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1385,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:44:30.531Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "30e8d29ac20f36625374-d8b4fc2fbf7f881075ab",
+              "file": "quote-hit-testing.spec.ts",
+              "line": 25,
+              "column": 45
+            }
+          ]
+        },
+        {
+          "title": "Quote submit hit testing at 1440px",
+          "file": "quote-hit-testing.spec.ts",
+          "line": 23,
+          "column": 8,
+          "specs": [
+            {
+              "title": "clickable without validation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1800,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:44:31.919Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "30e8d29ac20f36625374-1f6a890d4b13c0461e27",
+              "file": "quote-hit-testing.spec.ts",
+              "line": 25,
+              "column": 45
+            },
+            {
+              "title": "clickable after repeated validation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1364,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:44:33.723Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "30e8d29ac20f36625374-c0dd7cceac00d33e85a0",
+              "file": "quote-hit-testing.spec.ts",
+              "line": 25,
+              "column": 45
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-16T13:44:17.510Z",
+    "duration": 17603.872,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

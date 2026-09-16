@@ -1,0 +1,11 @@
+17	16	app/(site)/about/page.tsx
+9	8	app/(site)/contact/page.tsx
+2	1	app/(site)/faq/page.tsx
+2	1	app/(site)/get-a-quote/page.tsx
+2	1	app/(site)/privacy/page.tsx
+2	1	app/(site)/terms/page.tsx
+3	2	app/(site)/track/page.tsx
+2	1	app/not-found.tsx
+2	1	components/page-hero.tsx
+2	1	components/quote-band.tsx
+6	5	components/service-process.tsx

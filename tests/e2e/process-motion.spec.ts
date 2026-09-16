@@ -3,7 +3,12 @@ import { expect, test, type Page } from "@playwright/test";
 async function ready(page: Page) {
   await page.goto("/");
   await expect(page.locator(".process-list > li").first()).toHaveAttribute("style", /translateZ/);
-  await page.locator(".process-list img").evaluateAll(images => Promise.all(images.map(image => (image as HTMLImageElement).decode())));
+  // Below-fold photos are deliberately lazy. Decode after each enters view;
+  // awaiting offscreen decode on mobile would deadlock the test itself.
+  for (const image of await page.locator(".process-list img").all()) {
+    await image.scrollIntoViewIfNeeded();
+    await image.evaluate((element: HTMLImageElement) => element.decode());
+  }
 }
 async function seek(page: Page, progress: number) {
   await page.locator(".process-depth").evaluate((root, p) => {
@@ -41,7 +46,7 @@ test("same ordered list, four decoded equal photo frames, horizontal desktop and
   else { expect(new Set(geometry.map(s => s.x)).size).toBe(1); expect(geometry[3].y).toBeGreaterThan(geometry[0].y); }
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   expect(errors).toEqual([]);
-  await page.screenshot({ path: `artifacts/motion-stage-6/process-${page.viewportSize()!.width}.png`, scale: "css" });
+  await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/stage-6/process-${page.viewportSize()!.width}.png`, scale: "css" });
 });
 
 test("continuous scroll drives exact depth, opacity, number glow and line, reversible without a timer", async ({ page }) => {
@@ -70,7 +75,7 @@ test("tall viewport settles on a stable middle blend and survives resize", async
   expect(bounds!.y).toBeGreaterThan(0); expect(bounds!.y + bounds!.height).toBeLessThan(2000);
   const first = await state(page); await page.waitForTimeout(400); expect(await state(page)).toEqual(first.map(v => ({ ...v, willChange: "auto" })));
   expect(first[1].z).toBeCloseTo(15, 0); expect(first[2].z).toBeCloseTo(15, 0);
-  await page.screenshot({ path: `artifacts/motion-stage-6/tall-${test.info().project.name}.png`, scale: "css" });
+  await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/stage-6/tall-${test.info().project.name}.png`, scale: "css" });
   await page.setViewportSize({ width: 390, height: 900 }); await seek(page, 2 / 3);
   expect((await state(page))[2].z).toBeCloseTo(30, 0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -84,9 +89,9 @@ test("reduced motion and JavaScript failure keep every step fully visible and li
   };
   await assertFinal(page);
   await page.mouse.wheel(0, 120); await page.waitForTimeout(100); await assertFinal(page);
-  await page.screenshot({ path: `artifacts/motion-stage-6/reduced-${page.viewportSize()!.width}.png`, scale: "css" });
+  await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/stage-6/reduced-${page.viewportSize()!.width}.png`, scale: "css" });
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: page.viewportSize()! });
-  const staticPage = await context.newPage(); await staticPage.goto("http://127.0.0.1:3106/"); await assertFinal(staticPage);
+  const staticPage = await context.newPage(); await staticPage.goto(new URL("/", page.url()).href); await assertFinal(staticPage);
   await expect(staticPage.locator(".process-list li")).toHaveCount(4); await context.close();
   await page.emulateMedia({ reducedMotion: "no-preference" }); await seek(page, 1 / 3);
   expect((await state(page))[1].opacity).toBeCloseTo(1, 2);

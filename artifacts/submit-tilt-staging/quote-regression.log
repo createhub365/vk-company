@@ -1,0 +1,17 @@
+
+Running 10 tests using 1 worker
+
+(node:27472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 360px › clickable without validation errors (2.0s)
+  ✓   2 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 360px › clickable after repeated validation errors (1.5s)
+  ✓   3 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 390px › clickable without validation errors (1.8s)
+  ✓   4 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 390px › clickable after repeated validation errors (1.9s)
+  ✓   5 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 768px › clickable without validation errors (1.9s)
+  ✓   6 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 768px › clickable after repeated validation errors (1.7s)
+  ✓   7 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1024px › clickable without validation errors (1.9s)
+  ✓   8 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1024px › clickable after repeated validation errors (1.4s)
+  ✓   9 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1440px › clickable without validation errors (1.8s)
+  ✓  10 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1440px › clickable after repeated validation errors (1.4s)
+
+  10 passed (17.6s)

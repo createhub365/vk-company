@@ -1,0 +1,60 @@
+motion 1440 /services/domestic PASS 3 reveals
+motion 1440 /services/international PASS 3 reveals
+motion 1440 /about PASS 4 reveals
+motion 1440 /contact PASS 1 reveals
+motion 1440 /get-a-quote PASS 0 reveals
+motion 1440 /faq PASS 1 reveals
+motion 1440 /track PASS 0 reveals
+motion 1440 /privacy PASS 0 reveals
+motion 1440 /terms PASS 0 reveals
+motion 1440 /404.html PASS 0 reveals
+motion 768 /services/domestic PASS 3 reveals
+motion 768 /services/international PASS 3 reveals
+motion 768 /about PASS 7 reveals
+motion 768 /contact PASS 2 reveals
+motion 768 /get-a-quote PASS 0 reveals
+motion 768 /faq PASS 1 reveals
+motion 768 /track PASS 0 reveals
+motion 768 /privacy PASS 0 reveals
+motion 768 /terms PASS 0 reveals
+motion 768 /404.html PASS 0 reveals
+motion 390 /services/domestic PASS 4 reveals
+motion 390 /services/international PASS 4 reveals
+motion 390 /about PASS 5 reveals
+motion 390 /contact PASS 1 reveals
+motion 390 /get-a-quote PASS 0 reveals
+motion 390 /faq PASS 1 reveals
+motion 390 /track PASS 0 reveals
+motion 390 /privacy PASS 0 reveals
+motion 390 /terms PASS 0 reveals
+motion 390 /404.html PASS 0 reveals
+motion 360 /services/domestic PASS 4 reveals
+motion 360 /services/international PASS 4 reveals
+motion 360 /about PASS 5 reveals
+motion 360 /contact PASS 1 reveals
+motion 360 /get-a-quote PASS 0 reveals
+motion 360 /faq PASS 1 reveals
+motion 360 /track PASS 0 reveals
+motion 360 /privacy PASS 0 reveals
+motion 360 /terms PASS 0 reveals
+motion 360 /404.html PASS 0 reveals
+no-js 1440 /services/domestic PASS
+no-js 1440 /services/international PASS
+no-js 1440 /about PASS
+no-js 1440 /contact PASS
+no-js 1440 /get-a-quote PASS
+no-js 1440 /faq PASS
+no-js 1440 /track PASS
+no-js 1440 /privacy PASS
+no-js 1440 /terms PASS
+no-js 1440 /404.html PASS
+no-js 390 /services/domestic PASS
+no-js 390 /services/international PASS
+no-js 390 /about PASS
+no-js 390 /contact PASS
+no-js 390 /get-a-quote PASS
+no-js 390 /faq PASS
+no-js 390 /track PASS
+no-js 390 /privacy PASS
+no-js 390 /terms PASS
+no-js 390 /404.html PASS

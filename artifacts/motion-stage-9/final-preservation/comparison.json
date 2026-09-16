@@ -1,0 +1,1216 @@
+{
+  "originalCommit": "c4e53578c53d1497fe67044d453b0ad8ab80a89b",
+  "approvedBaselineSha256": "7d2c54683a246080b8fd6c6557901bf8f3870cac5a3385e01f098febcde3e541",
+  "pages": [
+    {
+      "route": "/",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [
+        "Illustrative route imagery",
+        "Illustrative international logistics",
+        "Illustrative operations environment"
+      ],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 8,
+      "originalImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/media/domestic-courier-road.png",
+          "alt": "Teal and navy courier truck travelling on an intercity road",
+          "srcset": null,
+          "width": null,
+          "height": null,
+          "sizes": null
+        },
+        {
+          "src": "/media/domestic-road.png",
+          "alt": "Illustrative unbranded delivery truck travelling on a modern intercity road",
+          "srcset": null,
+          "width": null,
+          "height": null,
+          "sizes": null
+        },
+        {
+          "src": "/media/homepage-international-cargo.jpg",
+          "alt": "Antonov An-124 cargo aircraft above Lviv airport, with nose, tail and both wingtips in frame",
+          "srcset": null,
+          "width": "2400",
+          "height": "1600",
+          "sizes": null
+        },
+        {
+          "src": "/media/process/review.jpg",
+          "alt": "A courier and customer reviewing delivery paperwork together on a clipboard",
+          "srcset": null,
+          "width": "1200",
+          "height": "800",
+          "sizes": null
+        },
+        {
+          "src": "/media/process/dispatch.jpg",
+          "alt": "Two delivery workers loading cardboard parcels into the back of a van",
+          "srcset": null,
+          "width": "1200",
+          "height": "800",
+          "sizes": null
+        },
+        {
+          "src": "/media/process/scan.jpg",
+          "alt": "A handheld barcode scanner reading the label on a cardboard parcel",
+          "srcset": null,
+          "width": "1080",
+          "height": "570",
+          "sizes": null
+        },
+        {
+          "src": "/media/dispatch-workspace.png",
+          "alt": "Illustrative modern parcel dispatch workspace",
+          "srcset": null,
+          "width": null,
+          "height": null,
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ],
+      "approvedCurrentImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/media/photos/selected-home-hero-1744.webp",
+          "alt": "Illustrative navy and teal courier truck at an Indian delivery forecourt",
+          "srcset": "/media/photos/selected-home-hero-480.webp 480w, /media/photos/selected-home-hero-768.webp 768w, /media/photos/selected-home-hero-1024.webp 1024w, /media/photos/selected-home-hero-1440.webp 1440w, /media/photos/selected-home-hero-1744.webp 1744w",
+          "width": "1744",
+          "height": "902",
+          "sizes": "100vw"
+        },
+        {
+          "src": "/media/photos/selected-domestic-1744.webp",
+          "alt": "Illustrative delivery truck travelling on an intercity road",
+          "srcset": "/media/photos/selected-domestic-480.webp 480w, /media/photos/selected-domestic-768.webp 768w, /media/photos/selected-domestic-1024.webp 1024w, /media/photos/selected-domestic-1440.webp 1440w, /media/photos/selected-domestic-1744.webp 1744w",
+          "width": "1744",
+          "height": "902",
+          "sizes": "(max-width: 800px) 100vw, 58vw"
+        },
+        {
+          "src": "/media/photos/existing-aircraft-2400.webp",
+          "alt": "Antonov An-124 cargo aircraft above Lviv airport, with nose, tail and both wingtips in frame",
+          "srcset": "/media/photos/existing-aircraft-480.webp 480w, /media/photos/existing-aircraft-768.webp 768w, /media/photos/existing-aircraft-1024.webp 1024w, /media/photos/existing-aircraft-1440.webp 1440w, /media/photos/existing-aircraft-2400.webp 2400w",
+          "width": "2400",
+          "height": "1600",
+          "sizes": "(max-width: 900px) 100vw, 41vw"
+        },
+        {
+          "src": "/media/photos/details-1536.webp",
+          "alt": "Illustrative parcel being weighed and measured",
+          "srcset": "/media/photos/details-480.webp 480w, /media/photos/details-768.webp 768w, /media/photos/details-1024.webp 1024w, /media/photos/details-1440.webp 1440w, /media/photos/details-1536.webp 1536w",
+          "width": "1536",
+          "height": "1024",
+          "sizes": "(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"
+        },
+        {
+          "src": "/media/photos/process-review-2400.webp",
+          "alt": "A courier and customer reviewing delivery paperwork together on a clipboard",
+          "srcset": "/media/photos/process-review-480.webp 480w, /media/photos/process-review-768.webp 768w, /media/photos/process-review-1024.webp 1024w, /media/photos/process-review-1440.webp 1440w, /media/photos/process-review-2400.webp 2400w",
+          "width": "2400",
+          "height": "1600",
+          "sizes": "(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"
+        },
+        {
+          "src": "/media/photos/process-dispatch-2400.webp",
+          "alt": "Two delivery workers loading cardboard parcels into the back of a van",
+          "srcset": "/media/photos/process-dispatch-480.webp 480w, /media/photos/process-dispatch-768.webp 768w, /media/photos/process-dispatch-1024.webp 1024w, /media/photos/process-dispatch-1440.webp 1440w, /media/photos/process-dispatch-2400.webp 2400w",
+          "width": "2400",
+          "height": "1600",
+          "sizes": "(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"
+        },
+        {
+          "src": "/media/photos/process-scan-1080.webp",
+          "alt": "A handheld barcode scanner reading the label on a cardboard parcel",
+          "srcset": "/media/photos/process-scan-480.webp 480w, /media/photos/process-scan-768.webp 768w, /media/photos/process-scan-1024.webp 1024w, /media/photos/process-scan-1080.webp 1080w",
+          "width": "1080",
+          "height": "570",
+          "sizes": "(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw"
+        },
+        {
+          "src": "/media/photos/workspace-1717.webp",
+          "alt": "Illustrative modern parcel dispatch workspace",
+          "srcset": "/media/photos/workspace-480.webp 480w, /media/photos/workspace-768.webp 768w, /media/photos/workspace-1024.webp 1024w, /media/photos/workspace-1440.webp 1440w, /media/photos/workspace-1717.webp 1717w",
+          "width": "1717",
+          "height": "916",
+          "sizes": "(max-width: 800px) 100vw, 58vw"
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ]
+    },
+    {
+      "route": "/services/domestic",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [
+        "Illustrative courier environment"
+      ],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 3,
+      "originalImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/media/domestic-road.png",
+          "alt": "Illustrative delivery truck travelling on an intercity road",
+          "srcset": null,
+          "width": null,
+          "height": null,
+          "sizes": null
+        },
+        {
+          "src": "/_next/static/media/image.c01682b0.png",
+          "alt": "Illustration of a domestic shipment quotation form on a laptop beside a parcel",
+          "srcset": null,
+          "width": "1554",
+          "height": "1012",
+          "sizes": null
+        },
+        {
+          "src": "/_next/static/media/image.c01682b0.png",
+          "alt": "Illustration of a courier and customer reviewing paperwork at a doorstep",
+          "srcset": null,
+          "width": "1554",
+          "height": "1012",
+          "sizes": null
+        },
+        {
+          "src": "/_next/static/media/image.c01682b0.png",
+          "alt": "Illustration of a VK AND COMPANY delivery truck travelling through a city",
+          "srcset": null,
+          "width": "1554",
+          "height": "1012",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ],
+      "approvedCurrentImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/media/photos/selected-domestic-1744.webp",
+          "alt": "Illustrative delivery truck travelling on an intercity road",
+          "srcset": "/media/photos/selected-domestic-480.webp 480w, /media/photos/selected-domestic-768.webp 768w, /media/photos/selected-domestic-1024.webp 1024w, /media/photos/selected-domestic-1440.webp 1440w, /media/photos/selected-domestic-1744.webp 1744w",
+          "width": "1744",
+          "height": "902",
+          "sizes": "(max-width: 900px) 100vw, 50vw"
+        },
+        {
+          "src": "/media/photos/selected-domestic-1-392.webp",
+          "alt": "Illustration of a domestic shipment quotation form on a laptop beside a parcel",
+          "srcset": "/media/photos/selected-domestic-1-392.webp 392w",
+          "width": "392",
+          "height": "248",
+          "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px"
+        },
+        {
+          "src": "/media/photos/selected-domestic-2-392.webp",
+          "alt": "Illustration of a courier and customer reviewing paperwork at a doorstep",
+          "srcset": "/media/photos/selected-domestic-2-392.webp 392w",
+          "width": "392",
+          "height": "254",
+          "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px"
+        },
+        {
+          "src": "/media/photos/selected-domestic-3-392.webp",
+          "alt": "Illustration of a VK AND COMPANY delivery truck travelling through a city",
+          "srcset": "/media/photos/selected-domestic-3-392.webp 392w",
+          "width": "392",
+          "height": "254",
+          "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px"
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ]
+    },
+    {
+      "route": "/services/international",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [
+        "Illustrative courier environment"
+      ],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 3,
+      "originalImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/media/international-cargo-apron.png",
+          "alt": "Illustrative cargo aircraft at an international logistics apron",
+          "srcset": null,
+          "width": null,
+          "height": null,
+          "sizes": null
+        },
+        {
+          "src": "/_next/static/media/image.c01682b0.png",
+          "alt": "Illustration of aircraft cargo loading with a world map and the words From India to the World",
+          "srcset": null,
+          "width": "1554",
+          "height": "1012",
+          "sizes": null
+        },
+        {
+          "src": "/_next/static/media/image.c01682b0.png",
+          "alt": "Illustrative export-document checklist beside a passport and globe; actual requirements depend on the shipment",
+          "srcset": null,
+          "width": "1554",
+          "height": "1012",
+          "sizes": null
+        },
+        {
+          "src": "/_next/static/media/image.c01682b0.png",
+          "alt": "Illustration of a cargo ship, aircraft and delivery truck at an international port",
+          "srcset": null,
+          "width": "1554",
+          "height": "1012",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ],
+      "approvedCurrentImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/media/photos/selected-international-1802.webp",
+          "alt": "Illustrative cargo aircraft at an international logistics apron",
+          "srcset": "/media/photos/selected-international-480.webp 480w, /media/photos/selected-international-768.webp 768w, /media/photos/selected-international-1024.webp 1024w, /media/photos/selected-international-1440.webp 1440w, /media/photos/selected-international-1802.webp 1802w",
+          "width": "1802",
+          "height": "873",
+          "sizes": "(max-width: 900px) 100vw, 50vw"
+        },
+        {
+          "src": "/media/photos/selected-international-1-392.webp",
+          "alt": "Illustration of aircraft cargo loading with a world map and the words From India to the World",
+          "srcset": "/media/photos/selected-international-1-392.webp 392w",
+          "width": "392",
+          "height": "248",
+          "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px"
+        },
+        {
+          "src": "/media/photos/selected-international-2-392.webp",
+          "alt": "Illustrative export-document checklist beside a passport and globe; actual requirements depend on the shipment",
+          "srcset": "/media/photos/selected-international-2-392.webp 392w",
+          "width": "392",
+          "height": "254",
+          "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px"
+        },
+        {
+          "src": "/media/photos/selected-international-3-392.webp",
+          "alt": "Illustration of a cargo ship, aircraft and delivery truck at an international port",
+          "srcset": "/media/photos/selected-international-3-392.webp 392w",
+          "width": "392",
+          "height": "254",
+          "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px"
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ]
+    },
+    {
+      "route": "/about",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [
+        "Illustrative courier environment"
+      ],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 6,
+      "originalImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/media/dispatch-workspace.png",
+          "alt": "Illustrative parcel dispatch workspace",
+          "srcset": null,
+          "width": null,
+          "height": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/about/logistics-network.webp",
+          "alt": "Illustrative logistics network with an aircraft, cargo ship, delivery truck and parcels",
+          "srcset": null,
+          "width": "642",
+          "height": "595",
+          "sizes": null
+        },
+        {
+          "src": "/images/about/customer-journey.webp",
+          "alt": "Illustrative parcel label being prepared for shipment",
+          "srcset": null,
+          "width": "277",
+          "height": "215",
+          "sizes": null
+        },
+        {
+          "src": "/images/about/service-confirmation.webp",
+          "alt": "Illustrative courier vehicle travelling on a city route",
+          "srcset": null,
+          "width": "277",
+          "height": "216",
+          "sizes": null
+        },
+        {
+          "src": "/images/about/customer-support.webp",
+          "alt": "Illustrative customer support representative wearing a headset",
+          "srcset": null,
+          "width": "277",
+          "height": "218",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ],
+      "approvedCurrentImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/media/photos/workspace-1717.webp",
+          "alt": "Illustrative parcel dispatch workspace",
+          "srcset": "/media/photos/workspace-480.webp 480w, /media/photos/workspace-768.webp 768w, /media/photos/workspace-1024.webp 1024w, /media/photos/workspace-1440.webp 1440w, /media/photos/workspace-1717.webp 1717w",
+          "width": "1717",
+          "height": "916",
+          "sizes": "(max-width: 900px) 100vw, 50vw"
+        },
+        {
+          "src": "/media/photos/dispatch-1536.webp",
+          "alt": "Illustrative courier team loading parcels for dispatch",
+          "srcset": "/media/photos/dispatch-480.webp 480w, /media/photos/dispatch-768.webp 768w, /media/photos/dispatch-1024.webp 1024w, /media/photos/dispatch-1440.webp 1440w, /media/photos/dispatch-1536.webp 1536w",
+          "width": "1536",
+          "height": "1024",
+          "sizes": "(max-width: 900px) 100vw, 40vw"
+        },
+        {
+          "src": "/media/photos/details-1536.webp",
+          "alt": "Illustrative parcel being weighed and measured",
+          "srcset": "/media/photos/details-480.webp 480w, /media/photos/details-768.webp 768w, /media/photos/details-1024.webp 1024w, /media/photos/details-1440.webp 1440w, /media/photos/details-1536.webp 1536w",
+          "width": "1536",
+          "height": "1024",
+          "sizes": "277px"
+        },
+        {
+          "src": "/media/photos/review-1536.webp",
+          "alt": "Illustrative courier and customer reviewing shipment details",
+          "srcset": "/media/photos/review-480.webp 480w, /media/photos/review-768.webp 768w, /media/photos/review-1024.webp 1024w, /media/photos/review-1440.webp 1440w, /media/photos/review-1536.webp 1536w",
+          "width": "1536",
+          "height": "1024",
+          "sizes": "277px"
+        },
+        {
+          "src": "/media/photos/support-1536.webp",
+          "alt": "Illustrative customer support representative wearing a headset",
+          "srcset": "/media/photos/support-480.webp 480w, /media/photos/support-768.webp 768w, /media/photos/support-1024.webp 1024w, /media/photos/support-1440.webp 1440w, /media/photos/support-1536.webp 1536w",
+          "width": "1536",
+          "height": "1024",
+          "sizes": "277px"
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ]
+    },
+    {
+      "route": "/contact",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 1,
+      "originalImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/_next/static/media/image.1885cb4c.png",
+          "alt": "Illustration of a VK AND COMPANY courier handing a parcel to a customer, with a globe, aircraft, ship and delivery truck",
+          "srcset": null,
+          "width": "1536",
+          "height": "1024",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ],
+      "approvedCurrentImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/media/photos/support-1536.webp",
+          "alt": "Illustrative Indian courier customer support representative",
+          "srcset": "/media/photos/support-480.webp 480w, /media/photos/support-768.webp 768w, /media/photos/support-1024.webp 1024w, /media/photos/support-1440.webp 1440w, /media/photos/support-1536.webp 1536w",
+          "width": "1536",
+          "height": "1024",
+          "sizes": "(max-width: 900px) calc(100vw - 32px), 50vw"
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ]
+    },
+    {
+      "route": "/get-a-quote",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [
+        "VKC"
+      ],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 2,
+      "originalImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ],
+      "approvedCurrentImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/media/photos/details-1536.webp",
+          "alt": "Illustrative Indian courier measuring a parcel on a weighing scale beside shipping paperwork; not actual company staff or premises",
+          "srcset": "/media/photos/details-480.webp 480w, /media/photos/details-768.webp 768w, /media/photos/details-1024.webp 1024w, /media/photos/details-1440.webp 1440w, /media/photos/details-1536.webp 1536w",
+          "width": "1536",
+          "height": "1024",
+          "sizes": "(max-width: 900px) 243px, 423px"
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ]
+    },
+    {
+      "route": "/faq",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 3,
+      "originalImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ],
+      "approvedCurrentImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ]
+    },
+    {
+      "route": "/track",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 2,
+      "originalImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ],
+      "approvedCurrentImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ]
+    },
+    {
+      "route": "/privacy",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 2,
+      "originalImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ],
+      "approvedCurrentImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ]
+    },
+    {
+      "route": "/terms",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 2,
+      "originalImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ],
+      "approvedCurrentImages": [
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        },
+        {
+          "src": "/brand/vk-and-company-logo-transparent.png",
+          "alt": "VK AND COMPANY",
+          "srcset": null,
+          "width": "500",
+          "height": "500",
+          "sizes": null
+        }
+      ]
+    },
+    {
+      "route": "/404.html",
+      "unapprovedTextChanges": 0,
+      "approvedRemovedText": [],
+      "semantic": {
+        "h1,h2,h3,h4,h5,h6": "identical",
+        "a": "identical",
+        "input,select,textarea,option,button": "identical",
+        "label,legend": "identical",
+        "details": "identical",
+        "title,meta[name],meta[property],link[rel=\"canonical\"],script[type=\"application/ld+json\"]": "identical"
+      },
+      "sections": 0,
+      "originalImages": [],
+      "approvedCurrentImages": []
+    }
+  ],
+  "protectedSources": [
+    {
+      "file": "components/forms/enquiry-form.tsx",
+      "unchangedSinceOriginal": true,
+      "sha256": "bdc77e9f692b5834d5aa884718fd587a622bbf40ee806fc4dc8f7c56607ea45f"
+    },
+    {
+      "file": "components/forms/support-form.tsx",
+      "unchangedSinceOriginal": true,
+      "sha256": "a0f4141beeb54ff0bc357809f88a52735b2defe4e055f43cb18b834bf26c2f80"
+    },
+    {
+      "file": "lib/schemas.ts",
+      "unchangedSinceOriginal": true,
+      "sha256": "2e8611c73b37d5528da3d5dbf57c6d910be37e3ce0deb515a5916d252309f33a"
+    },
+    {
+      "file": "lib/quote-formsubmit.ts",
+      "unchangedSinceOriginal": true,
+      "sha256": "b036fa487c35dee7efd2ecedf5e8db72d0a0f90198c5511107ad402b0661e57a"
+    },
+    {
+      "file": "lib/config.ts",
+      "unchangedSinceOriginal": true,
+      "sha256": "9ab2d19c08761921718205877604fb8be043bedad136bddc9e44acbe30b9ff59"
+    },
+    {
+      "file": "lib/business-settings.ts",
+      "unchangedSinceOriginal": true,
+      "sha256": "7a86cf16a63186ec7bd1d836a2ec8abdaeb8d486844bdabeb90d38854e18e891"
+    },
+    {
+      "file": "app/sitemap.ts",
+      "unchangedSinceOriginal": true,
+      "sha256": "db99b48b39c413dfb1609036f92d709e0a1a4c6e4c1a8a4cfaf2b64acc3ea57c"
+    },
+    {
+      "file": "app/robots.ts",
+      "unchangedSinceOriginal": true,
+      "sha256": "dc347ae803c2e1435a544bcfa1c3e4724d06da2572b0d5112064c4b5be3b0ae1"
+    },
+    {
+      "file": "next.config.ts",
+      "unchangedSinceOriginal": true,
+      "sha256": "20413b8ceda166ec2346a301f3bf3d3fe301348a6c1d7451ee967a01aea0deb0"
+    },
+    {
+      "file": "public/_headers",
+      "unchangedSinceOriginal": true,
+      "sha256": "90a41244d89222b20555268caff3b4a737741297d4bce83b387343c31d006328"
+    }
+  ],
+  "routeFiles": [
+    "app/(site)/about/page.tsx",
+    "app/(site)/contact/page.tsx",
+    "app/(site)/faq/page.tsx",
+    "app/(site)/get-a-quote/page.tsx",
+    "app/(site)/page.tsx",
+    "app/(site)/privacy/page.tsx",
+    "app/(site)/services/domestic/page.tsx",
+    "app/(site)/services/international/page.tsx",
+    "app/(site)/terms/page.tsx",
+    "app/(site)/track/page.tsx"
+  ],
+  "verifiedImages": [
+    {
+      "file": "out/brand/vk-and-company-logo-transparent.png",
+      "sha256": "43b85469c2efefdc827499ac57c60258aaf6eccc64ee1d2125a0ec94cc0ae024"
+    },
+    {
+      "file": "out/media/photos/details-1024.webp",
+      "sha256": "3842658b901602659cda7332f6a1978bba8436a8f991143da7105631f441462a"
+    },
+    {
+      "file": "out/media/photos/details-1440.webp",
+      "sha256": "c655f6b73abb6c8cde1eceed291e2424c0f6e2588154a888ed3c0ddd0ae42ee1"
+    },
+    {
+      "file": "out/media/photos/details-1536.webp",
+      "sha256": "643919ed70e82b75433f2739f24587fa2356a6ed40422319c2108db26f6e48b2"
+    },
+    {
+      "file": "out/media/photos/details-480.webp",
+      "sha256": "bef3207e29d7c9439933ae35d99090e5986d1cc97f6cc6912af4090443322160"
+    },
+    {
+      "file": "out/media/photos/details-768.webp",
+      "sha256": "e4a49aae30c1b5d781fcc467bbc3bb86438a2f1766a50c756da2165abfbb31fd"
+    },
+    {
+      "file": "out/media/photos/dispatch-1024.webp",
+      "sha256": "e5390ab0bbb4e04124f7d48fc839ec99008d6aa339ef1f486545aafde9b96b39"
+    },
+    {
+      "file": "out/media/photos/dispatch-1440.webp",
+      "sha256": "c4eced720969590d55f995b9964c2882e7a7e567624eb392d7874cead8356c8c"
+    },
+    {
+      "file": "out/media/photos/dispatch-1536.webp",
+      "sha256": "86cf33a590ca8bcb870ee248510f011c4082233adabf719ab0648dd1fd986d01"
+    },
+    {
+      "file": "out/media/photos/dispatch-480.webp",
+      "sha256": "53b4a4f2fc6041b5963b654f3ece58b8a9c3b97351ea6140a54f0571e1f5e418"
+    },
+    {
+      "file": "out/media/photos/dispatch-768.webp",
+      "sha256": "7609ae85f0061cfec5f0d19bc17df42fee0e941dc34701a80e4732d415a6c5a2"
+    },
+    {
+      "file": "out/media/photos/existing-aircraft-1024.webp",
+      "sha256": "08618b96babd3233c95d5be5e57c2680756b675b1df764a3b93b156f9d7ab0a8"
+    },
+    {
+      "file": "out/media/photos/existing-aircraft-1440.webp",
+      "sha256": "c7d990d9378257b57fb76f1c930ff100c870a04dfc041eb39a06f89471b3826f"
+    },
+    {
+      "file": "out/media/photos/existing-aircraft-2400.webp",
+      "sha256": "c08358bb18ca594da33ebc601b90d3dc21206cbcc324b3d0b1a2612d77be8fe6"
+    },
+    {
+      "file": "out/media/photos/existing-aircraft-480.webp",
+      "sha256": "1880eacb04bbb660efb15b670be5dc2fe27391dbddb6bdc910235023838893f1"
+    },
+    {
+      "file": "out/media/photos/existing-aircraft-768.webp",
+      "sha256": "cf48c0e0d7f9fb3bb28dd18baaa788b6ae9d6b9bd93b646ef56dcffc2f12b95f"
+    },
+    {
+      "file": "out/media/photos/process-dispatch-1024.webp",
+      "sha256": "64251f06aa75bfd6cca3f1909b76a84512bcc3a42ad2ea0a09b7b06a9ba5a770"
+    },
+    {
+      "file": "out/media/photos/process-dispatch-1440.webp",
+      "sha256": "38927730b20130e6bb3042443ffa9cf52ff73e86309c0dee873bda113c773843"
+    },
+    {
+      "file": "out/media/photos/process-dispatch-2400.webp",
+      "sha256": "73a7986627f7dc49304bd909675a18769858af869dc92ecf09f2c1f91835fa0e"
+    },
+    {
+      "file": "out/media/photos/process-dispatch-480.webp",
+      "sha256": "046de57e33353c172af5f6292e9b2be7564cfc7a8b1a5634700bd4d882e3d113"
+    },
+    {
+      "file": "out/media/photos/process-dispatch-768.webp",
+      "sha256": "a2d6aa32ace10a1c715c4db79aa7490ab3bc1fd1f55543c4b4e91a3994d40e0a"
+    },
+    {
+      "file": "out/media/photos/process-review-1024.webp",
+      "sha256": "02fcc77fb4d967156f35f9173de81ae522bce4986a909e228a1088666785e802"
+    },
+    {
+      "file": "out/media/photos/process-review-1440.webp",
+      "sha256": "184f9b4131287288a11654fcf62cbf58436d48fa2ffd8ab308ca1eb45621cd00"
+    },
+    {
+      "file": "out/media/photos/process-review-2400.webp",
+      "sha256": "bd0e01805f577e5d10b9b1a9081d810a21a32e79e616094bede80c2cd69bede3"
+    },
+    {
+      "file": "out/media/photos/process-review-480.webp",
+      "sha256": "e0b82e1b6020a7fb0786b1da72c9e4fb5cd6d82f9b7bda41308ebd9142336f94"
+    },
+    {
+      "file": "out/media/photos/process-review-768.webp",
+      "sha256": "818129538c4cd135d298f5fad83c4dab0d96ea848f50704169333035924a5675"
+    },
+    {
+      "file": "out/media/photos/process-scan-1024.webp",
+      "sha256": "19beb79d1d93b68e1bcd663c99326b530a000a51070f1d4cd260ccdbdaa55ae8"
+    },
+    {
+      "file": "out/media/photos/process-scan-1080.webp",
+      "sha256": "e5a4734efa16c2358d6473c9de0c9f7aee61534fc9a5dec9157d90b7271b898d"
+    },
+    {
+      "file": "out/media/photos/process-scan-480.webp",
+      "sha256": "75c08b40a303be1da979cb4a4379c1c1e3db116a5726df23a8b913195aef8e19"
+    },
+    {
+      "file": "out/media/photos/process-scan-768.webp",
+      "sha256": "42bd2ecc492806480f31db3987d1a0841a73026acbd8f2d8237dd4ec33ae5ba0"
+    },
+    {
+      "file": "out/media/photos/review-1024.webp",
+      "sha256": "a6627647e63d8ad2bcf9d9477ccc0103d11dfe90d19a495ebb71b29fefcf7596"
+    },
+    {
+      "file": "out/media/photos/review-1440.webp",
+      "sha256": "523e9cd8a4aec9361f3d1fdab01f85bc36e12509d9db8f5f61b4d9e9de908d71"
+    },
+    {
+      "file": "out/media/photos/review-1536.webp",
+      "sha256": "6c089a145039e1895630dbaf68554a5ea477c5cf962ed32d6faa5805770f897c"
+    },
+    {
+      "file": "out/media/photos/review-480.webp",
+      "sha256": "720059da10ee6d9cb085398ec92f8851ef97aef8e5f92b99883300423c77e803"
+    },
+    {
+      "file": "out/media/photos/review-768.webp",
+      "sha256": "27af2c419406f6773b249cd99f4ba1b292c7e9f7f4c0d86edffa34e821728b63"
+    },
+    {
+      "file": "out/media/photos/selected-domestic-1-392.webp",
+      "sha256": "240fef696414e0e2d000824b8f47def2d1c3f07ea7391450660e59dbd048fac8"
+    },
+    {
+      "file": "out/media/photos/selected-domestic-1024.webp",
+      "sha256": "1c6205e0a0c1898f60a6028ea094cbc06d8fe458f6f908c26577a774b74919e0"
+    },
+    {
+      "file": "out/media/photos/selected-domestic-1440.webp",
+      "sha256": "e6208817862723d9c603a31acb96301f46822943f8edf2e6bd13790922042335"
+    },
+    {
+      "file": "out/media/photos/selected-domestic-1744.webp",
+      "sha256": "95db5b2391cea9bebfefb56e96b94b368adc051c6b33b5eaeeeb0ea0e74b11f5"
+    },
+    {
+      "file": "out/media/photos/selected-domestic-2-392.webp",
+      "sha256": "ac5fb10fc847bb0677bbfa3b17aad4885897b5ecfca671ed64cbac91a29180d1"
+    },
+    {
+      "file": "out/media/photos/selected-domestic-3-392.webp",
+      "sha256": "37cc993fb3f34205a62ca782357dcb36218c7156768ab5fee86b418147a1b4e1"
+    },
+    {
+      "file": "out/media/photos/selected-domestic-480.webp",
+      "sha256": "376054e7c3dd0afb9020caa6f5358e467d6f1b90ec9c06ef4acc40cc889ea54e"
+    },
+    {
+      "file": "out/media/photos/selected-domestic-768.webp",
+      "sha256": "020360e3ae3eb593469968c271cf8149ab6268a0c7c3a9cfb1bd5b2b94ef6d3c"
+    },
+    {
+      "file": "out/media/photos/selected-home-hero-1024.webp",
+      "sha256": "1c6205e0a0c1898f60a6028ea094cbc06d8fe458f6f908c26577a774b74919e0"
+    },
+    {
+      "file": "out/media/photos/selected-home-hero-1440.webp",
+      "sha256": "e6208817862723d9c603a31acb96301f46822943f8edf2e6bd13790922042335"
+    },
+    {
+      "file": "out/media/photos/selected-home-hero-1744.webp",
+      "sha256": "95db5b2391cea9bebfefb56e96b94b368adc051c6b33b5eaeeeb0ea0e74b11f5"
+    },
+    {
+      "file": "out/media/photos/selected-home-hero-480.webp",
+      "sha256": "376054e7c3dd0afb9020caa6f5358e467d6f1b90ec9c06ef4acc40cc889ea54e"
+    },
+    {
+      "file": "out/media/photos/selected-home-hero-768.webp",
+      "sha256": "020360e3ae3eb593469968c271cf8149ab6268a0c7c3a9cfb1bd5b2b94ef6d3c"
+    },
+    {
+      "file": "out/media/photos/selected-international-1-392.webp",
+      "sha256": "cf824ce5bf052c9b39de8125bafabeb57497703833815f28cdca4a5a86db9782"
+    },
+    {
+      "file": "out/media/photos/selected-international-1024.webp",
+      "sha256": "633346d77cbd4d3cb8caa44fc403dbff46ab778df1505ae851cc6e007e17a6c9"
+    },
+    {
+      "file": "out/media/photos/selected-international-1440.webp",
+      "sha256": "d218eb899c584891d60fbe68bc81b6f56ccb206e59af44c8c9709b2c4b8b48fe"
+    },
+    {
+      "file": "out/media/photos/selected-international-1802.webp",
+      "sha256": "097b6a5b158d15d64e607742b43a2a0155d46885925cbaf500bf087769bfade6"
+    },
+    {
+      "file": "out/media/photos/selected-international-2-392.webp",
+      "sha256": "288357679da7b76e9abc249129566ddd25dc17826f965a3fd5d7a6993a6f5d55"
+    },
+    {
+      "file": "out/media/photos/selected-international-3-392.webp",
+      "sha256": "8dbecf371332c4a6021ed9ed8dbc1f364a4fe29fab6b8fa3fa8472a7fd425e99"
+    },
+    {
+      "file": "out/media/photos/selected-international-480.webp",
+      "sha256": "8b380d2dbdf504a3550a0ff9a6d2122369425522a665bc8b5e58f6f7cc9ddb2f"
+    },
+    {
+      "file": "out/media/photos/selected-international-768.webp",
+      "sha256": "16e4617a417c56a88cc7fa429c1b5311c2a0dd5293b775e509a152e6ca47f3b6"
+    },
+    {
+      "file": "out/media/photos/support-1024.webp",
+      "sha256": "bea06b586055ce38843b423d95da620b653c5019c40c6a59c50d6a93f2a9486b"
+    },
+    {
+      "file": "out/media/photos/support-1440.webp",
+      "sha256": "f0690677490e69b85d05298b43d48af4dba112df6031d45c63fa227300f181b1"
+    },
+    {
+      "file": "out/media/photos/support-1536.webp",
+      "sha256": "d32b33aca61e5efb95768039afc921828a9573820529912b9824de5c26bf5919"
+    },
+    {
+      "file": "out/media/photos/support-480.webp",
+      "sha256": "8e4bf7d5001542bcacd36e26d891cd6f1eb8cb736277311f235d355f507934a6"
+    },
+    {
+      "file": "out/media/photos/support-768.webp",
+      "sha256": "8a301ace667c95e355e7f77225a7529712371339a00440605b3b74c3076eadd6"
+    },
+    {
+      "file": "out/media/photos/workspace-1024.webp",
+      "sha256": "ab5936f33f33bca66d8a26f0390a2e38e61aceadb1f77b9ed329f28cae062c05"
+    },
+    {
+      "file": "out/media/photos/workspace-1440.webp",
+      "sha256": "b6100fa406d0f65a1d47995420e697e832dbca53cfc058432bea2ef7bc0a1642"
+    },
+    {
+      "file": "out/media/photos/workspace-1717.webp",
+      "sha256": "070df83c07a6157ce5668cbba633a83c4709066150e04ab0290b9072635655de"
+    },
+    {
+      "file": "out/media/photos/workspace-480.webp",
+      "sha256": "d5fbe6a5c8e76297f210c8b35430c0a8d894c872e2f58e7072e47f3827b8bb41"
+    },
+    {
+      "file": "out/media/photos/workspace-768.webp",
+      "sha256": "4ff717cfc574f4830fc0b7e7b82fffecf307d29e3fa1539652277089e7285b86"
+    }
+  ]
+}

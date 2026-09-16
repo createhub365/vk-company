@@ -1,0 +1,17 @@
+
+Running 10 tests using 1 worker
+
+(node:28240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/e2e/service-tilt.spec.ts:13:53 › service tilt 768px › domestic: all three images spring within bounds and leave controls clickable (12.2s)
+  ✓   2 tests/e2e/service-tilt.spec.ts:13:53 › service tilt 768px › international: all three images spring within bounds and leave controls clickable (12.1s)
+  ✓   3 tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1024px › domestic: all three images spring within bounds and leave controls clickable (11.9s)
+  ✓   4 tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1024px › international: all three images spring within bounds and leave controls clickable (12.5s)
+  ✓   5 tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1440px › domestic: all three images spring within bounds and leave controls clickable (12.6s)
+  ✓   6 tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1440px › international: all three images spring within bounds and leave controls clickable (12.0s)
+  ✓   7 tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":360,"touch":false,"reduced":false} › all six service photos stay flat (2.6s)
+  ✓   8 tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":390,"touch":true,"reduced":false} › all six service photos stay flat (2.6s)
+  ✓   9 tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":1024,"touch":true,"reduced":false} › all six service photos stay flat (2.6s)
+  ✓  10 tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":1440,"touch":false,"reduced":true} › all six service photos stay flat (2.5s)
+
+  10 passed (1.4m)

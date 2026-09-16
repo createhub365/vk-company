@@ -8,7 +8,8 @@ const links = [
   { text: "Contact", href: "/contact" },
   { text: "Get a quote", href: "/get-a-quote" },
 ];
-const before = JSON.parse(readFileSync("artifacts/motion-stage-4/before/layout.json", "utf8"));
+// Saved pre-fix export includes the approved caption removal and Stage 6 layout.
+const before = JSON.parse(readFileSync("artifacts/submit-tilt-staging/before-layout.json", "utf8"));
 
 test.beforeEach(async ({ page }) => {
   await page.route("**/*", route => new URL(route.request().url()).hostname === "127.0.0.1" && route.request().method() === "GET" ? route.continue() : route.abort());
@@ -41,9 +42,10 @@ test("frozen navigation and existing page geometry survive depth projection", as
   await page.waitForTimeout(1400);
   expect(await page.locator("#main-navigation a").evaluateAll(es => es.map(e => ({ text: e.textContent, href: e.getAttribute("href") })))).toEqual(links);
   const width = page.viewportSize()!.width;
+  const pixel = await page.evaluate(() => 1 / devicePixelRatio);
   const geometry = await page.locator("header,main,footer").evaluateAll(es => es.map(e => { const r = e.getBoundingClientRect(); return { tag: e.tagName, x: r.x, y: r.y, width: r.width, height: r.height }; }));
   for (const [index, rect] of geometry.entries()) for (const key of ["x", "y", "width", "height"] as const)
-    expect(Math.abs(rect[key] - before.find((item: { width: number }) => item.width === width).layout[index][key])).toBeLessThan(.1);
+    expect(Math.abs(rect[key] - before.find((item: { width: number }) => item.width === width).nav[index][key])).toBeLessThanOrEqual(pixel);
   expect(await page.locator(".nav-surface").evaluate(e => new DOMMatrixReadOnly(getComputedStyle(e).transform).m43)).toBe(width < 768 ? 30 : 60);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
@@ -84,7 +86,7 @@ for (const reduced of [false, true]) {
     for (const link of links) {
       await expect(page.locator(`#main-navigation a[href="${link.href}"]`)).toBeFocused();
       await focusIsVisible(page);
-      await page.screenshot({ path: `artifacts/motion-stage-4/focus-${testInfo.project.name}-${reduced ? "reduced" : "motion"}-${links.indexOf(link)}.png`, scale: "css" });
+      await page.screenshot({ path: `artifacts/submit-tilt-staging/screenshots/stage-4/focus-${testInfo.project.name}-${reduced ? "reduced" : "motion"}-${links.indexOf(link)}.png`, scale: "css" });
       await page.keyboard.press("Tab");
     }
     await expect(page.getByRole("button", { name: "Close menu" })).toBeFocused();

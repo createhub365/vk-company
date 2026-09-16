@@ -25,7 +25,7 @@ export default function HomePage() {
           <h1><span className="hero-line" data-hero-line="cities" data-depth-motion="hero-line">Across cities.</span><br/><em className="hero-line hero-line-borders" data-hero-line="borders" data-depth-motion="hero-line">Across borders.</em></h1>
           <HeroFollow kind="support"><p className="cinematic-support">We keep your parcels moving.</p></HeroFollow>
           <p className="lede">Domestic and international courier services from VK AND COMPANY. Share your shipment details and let our team help arrange the next step.</p>
-          <HeroFollow kind="cta"><div className="hero-actions"><Link className="button button-teal" href="/get-a-quote">Get a quote <ArrowRight size={18}/></Link></div></HeroFollow>
+          <HeroFollow kind="cta"><div className="hero-actions"><Link prefetch={false} className="button button-teal" href="/get-a-quote">Get a quote <ArrowRight size={18}/></Link></div></HeroFollow>
         </div>
       </div>
       </HeroMotion>
@@ -39,7 +39,7 @@ export default function HomePage() {
         <div className="editorial-copy editorial-text-plane"><RiseIn className="editorial-text-enter" fromX={12} rise={0} rotate={0} fade={false} duration={400} delay={90} immediateIfInView>
           <p className="section-index">01 / Domestic</p><p className="eyebrow">Courier services between cities</p><EditorialHeading delay={90}>Planned around your actual route.</EditorialHeading>
           <RiseIn className="editorial-prose" rise={16} rotate={0} duration={400} delay={90} immediateIfInView><p>Share the origin, destination and parcel details. We review availability and prepare an offer for the specific shipment—without making blanket coverage or timing claims.</p></RiseIn>
-          <Link href="/services/domestic" className="text-link">Explore domestic services <ArrowRight size={16}/></Link>
+          <Link prefetch={false} href="/services/domestic" className="text-link">Explore domestic services <ArrowRight size={16}/></Link>
         </RiseIn></div>
       </DepthSection>
     </section>
@@ -53,7 +53,7 @@ export default function HomePage() {
         <div className="editorial-copy editorial-text-plane"><RiseIn className="editorial-text-enter" fromX={-12} rise={0} rotate={0} fade={false} duration={400} immediateIfInView>
           <p className="section-index">02 / International</p><p className="eyebrow">Across borders, details first</p><EditorialHeading>Clear before it leaves the ground.</EditorialHeading>
           <RiseIn className="editorial-prose" rise={16} rotate={0} duration={400} immediateIfInView><p>Acceptance, documentation, availability and charges depend on the route and parcel. Our team confirms what applies before anything is arranged.</p></RiseIn>
-          <Link href="/services/international" className="text-link">Explore international services <ArrowRight size={16}/></Link>
+          <Link prefetch={false} href="/services/international" className="text-link">Explore international services <ArrowRight size={16}/></Link>
         </RiseIn></div>
       </DepthSection>
     </section>
@@ -71,19 +71,19 @@ export default function HomePage() {
 
     <section className="action-entry section-white">
       <div className="shell action-entry-grid">
-        <article><span className="action-number">01</span><Box/><p className="eyebrow">Start with the shipment</p><h2>Request a considered quote.</h2><p>Share the details once. Our team reviews each request before confirming service or charges.</p><Link href="/get-a-quote" className="button">Get a quote <ArrowRight size={17}/></Link></article>
+        <article><span className="action-number">01</span><Box/><p className="eyebrow">Start with the shipment</p><h2>Request a considered quote.</h2><p>Share the details once. Our team reviews each request before confirming service or charges.</p><Link prefetch={false} href="/get-a-quote" className="button">Get a quote <ArrowRight size={17}/></Link></article>
       </div>
     </section>
 
     <section className="editorial-section company-feature">
       <div className="shell editorial-grid">
         <div className="editorial-image" data-image-feedback="photo" data-photo-frame=""><Photograph name="workspace" sizes="(max-width: 800px) 100vw, 58vw" alt="Illustrative modern parcel dispatch workspace"/></div>
-        <div className="editorial-copy"><p className="section-index">03 / Company</p><p className="eyebrow">About VK AND COMPANY</p><h2>Built around each shipment.</h2><p>Our customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates.</p><Link href="/about" className="text-link">More about our process <ArrowRight size={16}/></Link></div>
+        <div className="editorial-copy"><p className="section-index">03 / Company</p><p className="eyebrow">About VK AND COMPANY</p><h2>Built around each shipment.</h2><p>Our customer journey is straightforward: share the details, receive a reviewed offer, arrange a booking and follow genuine updates.</p><Link prefetch={false} href="/about" className="text-link">More about our process <ArrowRight size={16}/></Link></div>
       </div>
     </section>
 
-    <section className="homepage-faq section-white"><div className="shell"><div className="section-head"><div><p className="eyebrow">Common questions</p><h2>Useful answers,<br/>before you send.</h2></div><Link href="/faq" className="text-link">View all FAQs <ArrowRight size={16}/></Link></div><FaqList limit={4}/></div></section>
+    <section className="homepage-faq section-white"><div className="shell"><div className="section-head"><div><p className="eyebrow">Common questions</p><h2>Useful answers,<br/>before you send.</h2></div><Link prefetch={false} href="/faq" className="text-link">View all FAQs <ArrowRight size={16}/></Link></div><FaqList limit={4}/></div></section>
 
-    <section className="contact-finale"><div className="shell contact-finale-inner"><div><p className="eyebrow">Contact & support</p><h2>Need help with the next step?</h2><p>Send a secure general or shipment-related enquiry for the team to review.</p></div><Link href="/contact" className="button button-teal">Contact the team <ArrowRight size={17}/></Link></div></section>
+    <section className="contact-finale"><div className="shell contact-finale-inner"><div><p className="eyebrow">Contact & support</p><h2>Need help with the next step?</h2><p>Send a secure general or shipment-related enquiry for the team to review.</p></div><Link prefetch={false} href="/contact" className="button button-teal">Contact the team <ArrowRight size={17}/></Link></div></section>
   </>;
 }

@@ -1,0 +1,156 @@
+ MOTION_SYSTEM.md                                   | 122 +++++++
+ app/(site)/about/page.tsx                          |  43 +--
+ app/(site)/contact/page.tsx                        |  23 +-
+ app/(site)/faq/page.tsx                            |   3 +-
+ app/(site)/get-a-quote/page.tsx                    |   4 +-
+ app/(site)/page.tsx                                |  81 +++--
+ app/(site)/privacy/page.tsx                        |   3 +-
+ app/(site)/services/domestic/image.png             | Bin 0 -> 1719186 bytes
+ app/(site)/terms/page.tsx                          |   3 +-
+ app/(site)/track/page.tsx                          |   7 +-
+ app/globals.css                                    |  74 ++++-
+ app/layout.tsx                                     |   4 +-
+ app/not-found.tsx                                  |   3 +-
+ components/faq-list.tsx                            |   4 +-
+ components/image-feedback.tsx                      | 137 +-------
+ components/motion/editorial-heading.tsx            |  18 +
+ components/motion/hero-runtime.tsx                 | 112 +++++++
+ components/motion/hero.tsx                         |  40 +++
+ components/motion/primitives.tsx                   |  34 ++
+ components/motion/process-sequence.tsx             |  21 ++
+ components/motion/provider.tsx                     |  19 ++
+ components/motion/scroll-runtime.tsx               |  68 ++++
+ components/motion/use-reduced-motion.ts            |  38 +++
+ components/motion/utility-depth.tsx                |  19 ++
+ components/page-hero.tsx                           |  14 +-
+ components/photograph.tsx                          |  19 ++
+ components/process-photo.tsx                       |  51 +--
+ components/quote-band.tsx                          |   3 +-
+ components/quote-media.tsx                         |  17 +
+ components/service-process.module.css              |  12 +-
+ components/service-process.tsx                     |  26 +-
+ components/site-footer.tsx                         |   9 +-
+ components/site-header.tsx                         |  95 +++++-
+ components/three/quote-bubbles.ts                  |  74 +++++
+ components/three/scene-stage.tsx                   |   1 -
+ eslint.config.mjs                                  |   2 +-
+ lib/media-interaction.ts                           |   4 +
+ lib/motion/hero-tuning.ts                          |   8 +
+ lib/motion/policy.ts                               |   8 +
+ lib/motion/process-progress.ts                     |  10 +
+ lib/motion/scroll-lock.ts                          |  16 +
+ lib/motion/shared-pointer.ts                       |  16 +
+ lib/motion/tokens.ts                               |  24 ++
+ lib/photographs.json                               | 263 +++++++++++++++
+ playwright.config.ts                               |   3 +-
+ public/brand/vk-about-approved.png                 | Bin 0 -> 1669996 bytes
+ public/media/photos/aircraft-1024.webp             | Bin 0 -> 677910 bytes
+ public/media/photos/aircraft-1440.webp             | Bin 0 -> 1321574 bytes
+ public/media/photos/aircraft-1536.webp             | Bin 0 -> 1466674 bytes
+ public/media/photos/aircraft-480.webp              | Bin 0 -> 144078 bytes
+ public/media/photos/aircraft-768.webp              | Bin 0 -> 376904 bytes
+ public/media/photos/details-1024.webp              | Bin 0 -> 723032 bytes
+ public/media/photos/details-1440.webp              | Bin 0 -> 1388930 bytes
+ public/media/photos/details-1536.webp              | Bin 0 -> 1525556 bytes
+ public/media/photos/details-480.webp               | Bin 0 -> 168934 bytes
+ public/media/photos/details-768.webp               | Bin 0 -> 413278 bytes
+ public/media/photos/dispatch-1024.webp             | Bin 0 -> 737366 bytes
+ public/media/photos/dispatch-1440.webp             | Bin 0 -> 1399034 bytes
+ public/media/photos/dispatch-1536.webp             | Bin 0 -> 1530864 bytes
+ public/media/photos/dispatch-480.webp              | Bin 0 -> 178604 bytes
+ public/media/photos/dispatch-768.webp              | Bin 0 -> 429838 bytes
+ public/media/photos/domestic-1024.webp             | Bin 0 -> 919400 bytes
+ public/media/photos/domestic-1440.webp             | Bin 0 -> 1708526 bytes
+ public/media/photos/domestic-1536.webp             | Bin 0 -> 1888244 bytes
+ public/media/photos/domestic-480.webp              | Bin 0 -> 223924 bytes
+ public/media/photos/domestic-768.webp              | Bin 0 -> 539080 bytes
+ public/media/photos/existing-aircraft-1024.webp    | Bin 0 -> 52898 bytes
+ public/media/photos/existing-aircraft-1440.webp    | Bin 0 -> 91902 bytes
+ public/media/photos/existing-aircraft-2400.webp    | Bin 0 -> 230486 bytes
+ public/media/photos/existing-aircraft-480.webp     | Bin 0 -> 14950 bytes
+ public/media/photos/existing-aircraft-768.webp     | Bin 0 -> 32534 bytes
+ public/media/photos/hero-1024.webp                 | Bin 0 -> 111924 bytes
+ public/media/photos/hero-1440.webp                 | Bin 0 -> 193340 bytes
+ public/media/photos/hero-1536.webp                 | Bin 0 -> 222276 bytes
+ public/media/photos/hero-480.webp                  | Bin 0 -> 29760 bytes
+ public/media/photos/hero-768.webp                  | Bin 0 -> 68164 bytes
+ public/media/photos/process-dispatch-1024.webp     | Bin 0 -> 197678 bytes
+ public/media/photos/process-dispatch-1440.webp     | Bin 0 -> 332832 bytes
+ public/media/photos/process-dispatch-2400.webp     | Bin 0 -> 823822 bytes
+ public/media/photos/process-dispatch-480.webp      | Bin 0 -> 54978 bytes
+ public/media/photos/process-dispatch-768.webp      | Bin 0 -> 121718 bytes
+ public/media/photos/process-review-1024.webp       | Bin 0 -> 95282 bytes
+ public/media/photos/process-review-1440.webp       | Bin 0 -> 176526 bytes
+ public/media/photos/process-review-2400.webp       | Bin 0 -> 669724 bytes
+ public/media/photos/process-review-480.webp        | Bin 0 -> 27418 bytes
+ public/media/photos/process-review-768.webp        | Bin 0 -> 59062 bytes
+ public/media/photos/process-scan-1024.webp         | Bin 0 -> 45444 bytes
+ public/media/photos/process-scan-1080.webp         | Bin 0 -> 47882 bytes
+ public/media/photos/process-scan-480.webp          | Bin 0 -> 15438 bytes
+ public/media/photos/process-scan-768.webp          | Bin 0 -> 30846 bytes
+ public/media/photos/review-1024.webp               | Bin 0 -> 742812 bytes
+ public/media/photos/review-1440.webp               | Bin 0 -> 1392246 bytes
+ public/media/photos/review-1536.webp               | Bin 0 -> 1514730 bytes
+ public/media/photos/review-480.webp                | Bin 0 -> 184624 bytes
+ public/media/photos/review-768.webp                | Bin 0 -> 436362 bytes
+ public/media/photos/scan-1024.webp                 | Bin 0 -> 709996 bytes
+ public/media/photos/scan-1440.webp                 | Bin 0 -> 1346136 bytes
+ public/media/photos/scan-1536.webp                 | Bin 0 -> 1461100 bytes
+ public/media/photos/scan-480.webp                  | Bin 0 -> 169538 bytes
+ public/media/photos/scan-768.webp                  | Bin 0 -> 410574 bytes
+ public/media/photos/selected-domestic-1-392.webp   | Bin 0 -> 216894 bytes
+ public/media/photos/selected-domestic-1024.webp    | Bin 0 -> 65856 bytes
+ public/media/photos/selected-domestic-1440.webp    | Bin 0 -> 102976 bytes
+ public/media/photos/selected-domestic-1744.webp    | Bin 0 -> 136214 bytes
+ public/media/photos/selected-domestic-2-392.webp   | Bin 0 -> 232136 bytes
+ public/media/photos/selected-domestic-3-392.webp   | Bin 0 -> 242588 bytes
+ public/media/photos/selected-domestic-480.webp     | Bin 0 -> 19904 bytes
+ public/media/photos/selected-domestic-768.webp     | Bin 0 -> 43066 bytes
+ public/media/photos/selected-home-hero-1024.webp   | Bin 0 -> 65856 bytes
+ public/media/photos/selected-home-hero-1440.webp   | Bin 0 -> 102976 bytes
+ public/media/photos/selected-home-hero-1744.webp   | Bin 0 -> 136214 bytes
+ public/media/photos/selected-home-hero-480.webp    | Bin 0 -> 19904 bytes
+ public/media/photos/selected-home-hero-768.webp    | Bin 0 -> 43066 bytes
+ .../media/photos/selected-international-1-392.webp | Bin 0 -> 314218 bytes
+ .../media/photos/selected-international-1024.webp  | Bin 0 -> 74556 bytes
+ .../media/photos/selected-international-1440.webp  | Bin 0 -> 128312 bytes
+ .../media/photos/selected-international-1802.webp  | Bin 0 -> 179980 bytes
+ .../media/photos/selected-international-2-392.webp | Bin 0 -> 281362 bytes
+ .../media/photos/selected-international-3-392.webp | Bin 0 -> 310798 bytes
+ .../media/photos/selected-international-480.webp   | Bin 0 -> 22766 bytes
+ .../media/photos/selected-international-768.webp   | Bin 0 -> 47158 bytes
+ public/media/photos/support-1024.webp              | Bin 0 -> 100844 bytes
+ public/media/photos/support-1440.webp              | Bin 0 -> 156384 bytes
+ public/media/photos/support-1536.webp              | Bin 0 -> 171774 bytes
+ public/media/photos/support-480.webp               | Bin 0 -> 36830 bytes
+ public/media/photos/support-768.webp               | Bin 0 -> 67666 bytes
+ public/media/photos/workspace-1024.webp            | Bin 0 -> 66392 bytes
+ public/media/photos/workspace-1440.webp            | Bin 0 -> 106440 bytes
+ public/media/photos/workspace-1717.webp            | Bin 0 -> 135996 bytes
+ public/media/photos/workspace-480.webp             | Bin 0 -> 20894 bytes
+ public/media/photos/workspace-768.webp             | Bin 0 -> 44052 bytes
+ public/media/vk-about-website-assets.zip           | Bin 0 -> 1813598 bytes
+ scripts/audit-motion-content.mjs                   | 119 +++++++
+ scripts/prepare-photographs.mjs                    |  21 ++
+ scripts/prepare-selected-photographs.mjs           |  36 ++
+ scripts/preview-static.mjs                         |  21 +-
+ scripts/verify-content.mjs                         |  16 +
+ scripts/verify-staged-motion.mjs                   |  31 ++
+ styles/depth.css                                   |  66 ++++
+ styles/editorial-depth.css                         |  25 ++
+ styles/hero.css                                    |  54 +++
+ styles/navigation.css                              | 139 ++++++++
+ styles/process-depth.css                           |  72 ++++
+ styles/utility-depth.css                           |  83 +++++
+ tests/e2e/editorial-motion.spec.ts                 | 151 +++++++++
+ tests/e2e/image-feedback.spec.ts                   | 370 +++++++++------------
+ tests/e2e/nav-motion.spec.ts                       | 204 ++++++++++++
+ tests/e2e/process-motion.spec.ts                   |  98 ++++++
+ tests/e2e/public.spec.ts                           |  27 +-
+ tests/e2e/reference-designs.spec.ts                |  36 +-
+ tests/e2e/utility-motion.spec.ts                   |  93 ++++++
+ tests/e2e/visual.spec.ts                           |  17 +-
+ tests/motion-content-guard.test.ts                 |  42 +++
+ tests/process-progress.test.ts                     |  25 ++
+ tests/scroll-lock.test.ts                          |  23 ++
+ 155 files changed, 2779 insertions(+), 545 deletions(-)

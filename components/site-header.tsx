@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { cancelFrame, frame } from "framer-motion";
-import { useDepthScroll } from "@/components/motion/provider";
+import dynamic from "next/dynamic";
+const NavigationRuntime = dynamic(() => import("./motion/navigation-runtime"), { ssr: false });
 import { acquireScrollLock } from "@/lib/motion/scroll-lock";
 import { pointerRouteAllowed } from "@/lib/motion/policy";
 import "@/styles/navigation.css";
@@ -19,7 +19,6 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
   const menuButton = useRef<HTMLButtonElement>(null);
   const firstLink = useRef<HTMLAnchorElement>(null);
   const navigation = useRef<HTMLElement>(null);
-  const { scrollY } = useDepthScroll();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -32,18 +31,6 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
     return () => document.removeEventListener("keydown", keyboard, true);
   }, []);
 
-  useEffect(() => {
-    let previous = false;
-    // Only threshold crossings update React; scroll frames never write nav styles.
-    const update = (value: number) => {
-      const next = value > 80;
-      if (next !== previous) { previous = next; setScrolled(next); }
-    };
-    const initialize = () => update(window.scrollY);
-    frame.read(initialize);
-    const unsubscribe = scrollY.on("change", update);
-    return () => { cancelFrame(initialize); unsubscribe(); };
-  }, [scrollY]);
 
   function closeMenu(restoreFocus = false) {
     setOpenPath(null);
@@ -124,24 +111,23 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
     <header ref={header} className={`site-header nav-depth-shell ${pathname === "/" ? "home-header" : ""}`} data-nav-scrolled={scrolled} data-nav-pointer={pointerRouteAllowed(pathname)} onPointerDownCapture={event => { event.currentTarget.dataset.navPointerFocus = ""; }}>
       <div className="nav-surface">
       <div className="shell header-inner">
-        <Link href="/" className="brand" aria-label="VK AND COMPANY home" onClick={() => closeMenu()}>
+        <Link prefetch={false} href="/" className="brand" aria-label="VK AND COMPANY home" onClick={() => closeMenu()}>
           {hasLogo && <CompanyLogo alt="VK AND COMPANY" priority />}
           <span>VK AND COMPANY</span>
         </Link>
         <button ref={menuButton} type="button" className="menu-button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpenPath(open ? null : pathname)}>
           {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
         </button>
-        <nav ref={navigation} id="main-navigation" className={`nav ${open ? "open" : ""}`} aria-label="Main navigation" data-lenis-prevent
-          onAnimationStart={event => { if (event.target === event.currentTarget) event.currentTarget.style.willChange = event.animationName === "nav-fade-in" ? "opacity" : "transform, opacity"; }}
-          onAnimationEnd={event => { if (event.target === event.currentTarget) event.currentTarget.style.removeProperty("will-change"); }}>
-          <Link ref={firstLink} href="/services/domestic" onClick={() => closeMenu(open)}>Domestic</Link>
-          <Link href="/services/international" onClick={() => closeMenu(open)}>International</Link>
-          <Link href="/about" onClick={() => closeMenu(open)}>About</Link>
-          <Link href="/contact" onClick={() => closeMenu(open)}>Contact</Link>
-          <Link href="/get-a-quote" className="button button-small" onClick={() => closeMenu(open)}>Get a quote</Link>
+        <nav ref={navigation} id="main-navigation" className={`nav ${open ? "open" : ""}`} aria-label="Main navigation" data-lenis-prevent>
+          <Link prefetch={false} ref={firstLink} href="/services/domestic" onClick={() => closeMenu(open)}>Domestic</Link>
+          <Link prefetch={false} href="/services/international" onClick={() => closeMenu(open)}>International</Link>
+          <Link prefetch={false} href="/about" onClick={() => closeMenu(open)}>About</Link>
+          <Link prefetch={false} href="/contact" onClick={() => closeMenu(open)}>Contact</Link>
+          <Link prefetch={false} href="/get-a-quote" className="button button-small" onClick={() => closeMenu(open)}>Get a quote</Link>
         </nav>
       </div>
       </div>
+      <NavigationRuntime navigation={navigation} open={open} onScrolledChange={setScrolled}/>
     </header>
   );
 }

@@ -1,0 +1,27 @@
+
+Running 14 tests using 2 workers
+
+(node:26588) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:26587) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [width-1440] › artifacts/motion-stage-9/extra/quote-scene.spec.ts:13:1 › existing Quote WebGL scene stays idle through pointer-disabled taps and offscreen (2.8s)
+  ✓   3 [width-1440] › artifacts/motion-stage-9/extra/quote-scene.spec.ts:35:1 › reduced motion and lost WebGL leave stationary feedback and essential content (536ms)
+  ✓   4 [width-1440] › artifacts/motion-stage-9/extra/quote-scene.spec.ts:52:1 › WebGL unavailable from startup and JavaScript disabled preserve the photograph/form (157ms)
+(node:26614) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [width-1440] › artifacts/motion-stage-9/extra/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings (4.1s)
+  ✓   5 [width-390] › artifacts/motion-stage-9/extra/editorial-motion.spec.ts:52:1 › opposite-side text, per-line headings and grouped prose use the bounded timings (3.9s)
+  ✓   6 [width-1440] › artifacts/motion-stage-9/extra/editorial-motion.spec.ts:83:1 › parallax reverses with scroll; hovering and tapping never rotate a photograph (8.1s)
+  ✓   8 [width-1440] › artifacts/motion-stage-9/extra/editorial-motion.spec.ts:111:1 › a paragraph in view before hydration stays immediately visible and never reveals (3.5s)
+  ✓   7 [width-390] › artifacts/motion-stage-9/extra/editorial-motion.spec.ts:83:1 › parallax reverses with scroll; hovering and tapping never rotate a photograph (8.1s)
+  ✓   9 [width-1440] › artifacts/motion-stage-9/extra/editorial-motion.spec.ts:132:1 › reduced motion, no JavaScript, resize and native text links remain usable (1.8s)
+(node:26671) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [width-390] › artifacts/motion-stage-9/extra/editorial-motion.spec.ts:111:1 › a paragraph in view before hydration stays immediately visible and never reveals (3.4s)
+  ✓  11 [width-390] › artifacts/motion-stage-9/extra/quote-scene.spec.ts:13:1 › existing Quote WebGL scene stays idle through pointer-disabled taps and offscreen (3.0s)
+  ✓  12 [width-390] › artifacts/motion-stage-9/extra/editorial-motion.spec.ts:132:1 › reduced motion, no JavaScript, resize and native text links remain usable (1.7s)
+  ✓  13 [width-390] › artifacts/motion-stage-9/extra/quote-scene.spec.ts:35:1 › reduced motion and lost WebGL leave stationary feedback and essential content (518ms)
+  ✓  14 [width-390] › artifacts/motion-stage-9/extra/quote-scene.spec.ts:52:1 › WebGL unavailable from startup and JavaScript disabled preserve the photograph/form (152ms)
+
+  14 passed (21.9s)

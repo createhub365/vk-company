@@ -1,0 +1,248 @@
+diff --git a/app/(site)/about/page.tsx b/app/(site)/about/page.tsx
+index 809c929..3bfa7a8 100644
+--- a/app/(site)/about/page.tsx
++++ b/app/(site)/about/page.tsx
+@@ -1,3 +1,4 @@
++import { DepthSection, RiseIn, ParallaxMedia } from "@/components/motion/primitives";
+ import type { Metadata } from "next";
+ import { Photograph } from "@/components/photograph";
+ import { CalendarCheck, FileText, PackageCheck, Route } from "lucide-react";
+@@ -20,13 +21,13 @@ export default function AboutPage() {
+   return <>
+     <PageHero variant="about" eyebrow="About VK AND COMPANY" title="Courier arrangements built around each shipment." description="VK AND COMPANY provides domestic and international courier services through a clear enquiry, quotation and booking process."/>
+     <section className="section section-white about-what-we-do">
+-      <div className="shell about-what-grid">
++      <DepthSection className="shell about-what-grid">
+         <div className="about-what-visual">
+-          <p className="eyebrow">What we do</p>
+-          <p className="about-what-tagline">Connecting People &amp; Possibilities</p>
+-          <div className="about-network-image" data-image-feedback="photo" data-photo-frame="">
++          <p className="eyebrow"><RiseIn as="span" style={{ display: "block" }} immediateIfInView>What we do</RiseIn></p>
++          <p className="about-what-tagline"><RiseIn as="span" style={{ display: "block" }} immediateIfInView>Connecting People &amp; Possibilities</RiseIn></p>
++          <ParallaxMedia><div className="about-network-image" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll">
+             <Photograph name="dispatch" sizes="(max-width: 900px) 100vw, 40vw" alt="Illustrative courier team loading parcels for dispatch"/>
+-          </div>
++          </div></ParallaxMedia>
+           <ul className="about-service-strip" aria-label="Service process">
+             {services.map(({ label, Icon }) => <li key={label}><Icon aria-hidden="true"/><span>{label}</span></li>)}
+           </ul>
+@@ -34,26 +35,26 @@ export default function AboutPage() {
+ 
+         <div className="about-what-content">
+           <section className="about-what-row">
+-            <div className="about-thumbnail" data-image-feedback="photo" data-photo-frame="">
++            <ParallaxMedia><div className="about-thumbnail" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll">
+               <Photograph name="details" sizes="277px" alt="Illustrative parcel being weighed and measured"/>
+-            </div>
+-            <div className="prose"><h2>A straightforward customer journey.</h2><p>Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise.</p></div>
++            </div></ParallaxMedia>
++            <RiseIn className="prose" immediateIfInView><h2>A straightforward customer journey.</h2><p>Customers share their shipment details, receive a reviewed offer, arrange a booking and follow genuine shipment updates. Support requests remain connected to the operational team when questions arise.</p></RiseIn>
+           </section>
+           <section className="about-what-row">
+-            <div className="about-thumbnail" data-image-feedback="photo" data-photo-frame="">
++            <ParallaxMedia><div className="about-thumbnail" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll">
+               <Photograph name="review" sizes="277px" alt="Illustrative courier and customer reviewing shipment details"/>
+-            </div>
+-            <div className="prose"><h2>Careful about what is confirmed.</h2><p>We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided.</p></div>
++            </div></ParallaxMedia>
++            <RiseIn className="prose" immediateIfInView><h2>Careful about what is confirmed.</h2><p>We do not publish invented coverage, courier partners, guarantees or rate cards. Service facts are confirmed for the route and shipment details provided.</p></RiseIn>
+           </section>
+           <section className="about-what-row">
+-            <div className="about-thumbnail" data-image-feedback="photo" data-photo-frame="">
++            <ParallaxMedia><div className="about-thumbnail" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll">
+               <Photograph name="support" sizes="277px" alt="Illustrative customer support representative wearing a headset"/>
+-            </div>
+-            <div className="prose"><h2>Prepared to connect.</h2><p>Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied.</p></div>
++            </div></ParallaxMedia>
++            <RiseIn className="prose" immediateIfInView><h2>Prepared to connect.</h2><p>Shipment updates are maintained manually by the team. The application has a defined boundary for approved courier integrations when partners and credentials are supplied.</p></RiseIn>
+           </section>
+-          <p className="about-purpose"><span aria-hidden="true"/>Delivered with Purpose</p>
++          <RiseIn immediateIfInView><p className="about-purpose"><span aria-hidden="true"/>Delivered with Purpose</p></RiseIn>
+         </div>
+-      </div>
++      </DepthSection>
+     </section>
+     <QuoteBand/>
+   </>;
+diff --git a/app/(site)/contact/page.tsx b/app/(site)/contact/page.tsx
+index 6637325..dd58531 100644
+--- a/app/(site)/contact/page.tsx
++++ b/app/(site)/contact/page.tsx
+@@ -1,3 +1,4 @@
++import { DepthSection, RiseIn, ParallaxMedia } from "@/components/motion/primitives";
+ import { FormDepth } from "@/components/motion/utility-depth";
+ import type { Metadata } from "next";
+ import { Mail, Phone, Headphones, FileText, Package, Users, MoveDownLeft } from "lucide-react";
+@@ -15,24 +16,24 @@ export default async function ContactPage() {
+   const settings = await getPublicBusinessSettings();
+   const whatsappDigits = settings.whatsapp?.replace(/\D/g, "");
+   return <section className={styles.page}>
+-      <div className={styles.layout}>
++      <DepthSection className={styles.layout}>
+         <div className={styles.introduction}>
+-          <h1>How can we <br/>help?</h1>
+-          <p className={styles.description}>Send a general question or ask about a shipment. Your message will be saved for the team to review.</p>
+-          <p className={styles.tagline}>Here to Keep <br/>You Moving<MoveDownLeft aria-hidden="true"/></p>
+-          <div className={styles.artwork}><div className="service-photo" data-image-feedback="photo" data-photo-frame=""><Photograph name="support" alt="Illustrative Indian courier customer support representative" sizes="(max-width: 900px) calc(100vw - 32px), 50vw" eager/></div></div>
++          <h1><RiseIn as="span" style={{ display: "block" }} immediateIfInView>How can we <br/>help?</RiseIn></h1>
++          <p className={styles.description}><RiseIn as="span" style={{ display: "block" }} immediateIfInView>Send a general question or ask about a shipment. Your message will be saved for the team to review.</RiseIn></p>
++          <p className={styles.tagline}><RiseIn as="span" style={{ display: "block" }} immediateIfInView>Here to Keep <br/>You Moving<MoveDownLeft aria-hidden="true"/></RiseIn></p>
++          <ParallaxMedia className={styles.artwork}><div className="service-photo" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll"><Photograph name="support" alt="Illustrative Indian courier customer support representative" sizes="(max-width: 900px) calc(100vw - 32px), 50vw" eager/></div></ParallaxMedia>
+           <ul className={styles.channels} aria-label="Enquiry topics">
+             <li><Headphones aria-hidden="true"/><span>General <br/>Enquiries</span></li>
+             <li><FileText aria-hidden="true"/><span>Quote <br/>Requests</span></li>
+             <li><Package aria-hidden="true"/><span>Shipment <br/>Support</span></li>
+             <li><Users aria-hidden="true"/><span>Partnerships <br/>&amp; Other</span></li>
+           </ul>
+-          <p className={styles.closing}>From <br/>Your Place to the World</p>
++          <p className={styles.closing}><RiseIn as="span" style={{ display: "block" }} immediateIfInView>From <br/>Your Place to the World</RiseIn></p>
+         </div>
+         <div className={styles.right}>
+         <aside className={styles.details} aria-label="Company contact details">
+           <p className="eyebrow">Contact channels</p>
+-          <h2>Contact VK AND COMPANY.</h2>
++          <h2><RiseIn as="span" style={{ display: "block" }} immediateIfInView>Contact VK AND COMPANY.</RiseIn></h2>
+           <p><a className={`text-link ${styles.link}`} href="tel:+919317724056"><Phone size={19} className={styles.icon} aria-hidden="true"/><span className={styles.value}>+91 93177 24056</span></a></p>
+           <p><a className={`text-link ${styles.link}`} href="mailto:vkandcompanymohali@gmail.com"><Mail size={19} className={styles.icon} aria-hidden="true"/><span className={styles.value}>vkandcompanymohali@gmail.com</span></a></p>
+           {whatsappDigits && <p><a className="text-link" href={`https://wa.me/${whatsappDigits}`} rel="noopener noreferrer">WhatsApp</a></p>}
+@@ -42,6 +43,6 @@ export default async function ContactPage() {
+         <div className={styles.formArea}><FormDepth><SupportForm/></FormDepth></div>
+         <p className={styles.responseTime}>We usually respond within one business day.</p>
+         </div>
+-      </div>
++      </DepthSection>
+     </section>;
+ }
+diff --git a/app/(site)/faq/page.tsx b/app/(site)/faq/page.tsx
+index f98f6f0..e3c247c 100644
+--- a/app/(site)/faq/page.tsx
++++ b/app/(site)/faq/page.tsx
+@@ -1,3 +1,4 @@
++import { DepthSection, RiseIn } from "@/components/motion/primitives";
+ import type { Metadata } from "next";import { PageHero } from "@/components/page-hero";import { FaqList } from "@/components/faq-list";import { QuoteBand } from "@/components/quote-band";
+ export const metadata:Metadata={title:"Frequently asked questions",description:"Answers about courier enquiries, quotations and booking with VK AND COMPANY."};
+-export default function FaqPage(){return <><PageHero variant="faq" eyebrow="Frequently asked questions" title="Answers before you send." description="Useful guidance about our enquiry-led courier workflow."/><section className="section section-white"><div className="shell"><FaqList/></div></section><QuoteBand/></>}
++export default function FaqPage(){return <><PageHero variant="faq" eyebrow="Frequently asked questions" title="Answers before you send." description="Useful guidance about our enquiry-led courier workflow."/><section className="section section-white"><DepthSection className="shell"><RiseIn immediateIfInView><FaqList/></RiseIn></DepthSection></section><QuoteBand/></>}
+diff --git a/app/(site)/get-a-quote/page.tsx b/app/(site)/get-a-quote/page.tsx
+index 1498014..6b8219a 100644
+--- a/app/(site)/get-a-quote/page.tsx
++++ b/app/(site)/get-a-quote/page.tsx
+@@ -1,6 +1,7 @@
++import { DepthSection, RiseIn } from "@/components/motion/primitives";
+ import { FormDepth } from "@/components/motion/utility-depth";
+ import type { Metadata } from "next";
+ import { PageHero } from "@/components/page-hero";
+ import { EnquiryForm } from "@/components/forms/enquiry-form";
+ export const metadata:Metadata={title:"Request a quote",description:"Share your route and parcel details with VK AND COMPANY for a reviewed courier quotation."};
+-export default function QuotePage(){return <><PageHero variant="quote" eyebrow="Quotation request" title="Tell us about your shipment." description="Share the route and parcel details below. Our team will review the information before confirming service and charges."/><section className="section"><div className="shell form-shell"><aside className="side-note"><p className="eyebrow">Before you begin</p><h2>Details make the difference.</h2><p>Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment.</p><p>Pickup requests are not currently enabled.</p></aside><FormDepth><EnquiryForm/></FormDepth></div></section></>}
++export default function QuotePage(){return <><PageHero variant="quote" eyebrow="Quotation request" title="Tell us about your shipment." description="Share the route and parcel details below. Our team will review the information before confirming service and charges."/><section className="section"><DepthSection className="shell form-shell"><aside className="side-note"><RiseIn immediateIfInView><p className="eyebrow">Before you begin</p><h2>Details make the difference.</h2><p>Approximate information is fine where requested. Accurate contents, weight and route details help the team assess the shipment.</p><p>Pickup requests are not currently enabled.</p></RiseIn></aside><FormDepth><EnquiryForm/></FormDepth></DepthSection></section></>}
+diff --git a/app/(site)/privacy/page.tsx b/app/(site)/privacy/page.tsx
+index fc71791..a8f2f64 100644
+--- a/app/(site)/privacy/page.tsx
++++ b/app/(site)/privacy/page.tsx
+@@ -1,3 +1,4 @@
++import { DepthSection, RiseIn } from "@/components/motion/primitives";
+ import type { Metadata } from "next";import { PageHero } from "@/components/page-hero";
+ export const metadata:Metadata={title:"Privacy information",robots:{index:false,follow:false}};
+-export default function PrivacyPage(){return <><PageHero eyebrow="Owner review required" title="Privacy content is not yet approved." description="This page is reserved for VK AND COMPANY's reviewed privacy information."/><section className="section"><div className="shell prose" style={{maxWidth:760}}><div className="notice"><strong>Launch requirement:</strong> The business owner and an appropriate legal adviser must review and approve the final privacy notice before this page is published or indexed.</div><p>The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.</p></div></section></>}
++export default function PrivacyPage(){return <><PageHero eyebrow="Owner review required" title="Privacy content is not yet approved." description="This page is reserved for VK AND COMPANY's reviewed privacy information."/><section className="section"><DepthSection className="shell prose" style={{maxWidth:760}}><div className="notice"><strong>Launch requirement:</strong> The business owner and an appropriate legal adviser must review and approve the final privacy notice before this page is published or indexed.</div><p><RiseIn as="span" style={{ display: "block" }} immediateIfInView>The application collects contact, route and shipment information when a person intentionally submits a quotation or support request. Final disclosures—including purposes, retention, rights, processors and contact details—depend on confirmed business practices and must not be invented.</RiseIn></p></DepthSection></section></>}
+diff --git a/app/(site)/terms/page.tsx b/app/(site)/terms/page.tsx
+index 6fd8ef6..a089b94 100644
+--- a/app/(site)/terms/page.tsx
++++ b/app/(site)/terms/page.tsx
+@@ -1,3 +1,4 @@
++import { DepthSection, RiseIn } from "@/components/motion/primitives";
+ import type { Metadata } from "next";import { PageHero } from "@/components/page-hero";
+ export const metadata:Metadata={title:"Service terms",robots:{index:false,follow:false}};
+-export default function TermsPage(){return <><PageHero eyebrow="Owner review required" title="Service terms are not yet approved." description="This page is reserved for VK AND COMPANY's reviewed customer terms."/><section className="section"><div className="shell prose" style={{maxWidth:760}}><div className="notice"><strong>Launch requirement:</strong> Approved terms must address the actual courier process, responsibilities, restrictions, charges, claims and applicable law before publication.</div><p>No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.</p></div></section></>}
++export default function TermsPage(){return <><PageHero eyebrow="Owner review required" title="Service terms are not yet approved." description="This page is reserved for VK AND COMPANY's reviewed customer terms."/><section className="section"><DepthSection className="shell prose" style={{maxWidth:760}}><div className="notice"><strong>Launch requirement:</strong> Approved terms must address the actual courier process, responsibilities, restrictions, charges, claims and applicable law before publication.</div><p><RiseIn as="span" style={{ display: "block" }} immediateIfInView>No unreviewed boilerplate is presented as company policy. Quotes include shipment-specific service details, estimates, inclusions, exclusions, currency and validity.</RiseIn></p></DepthSection></section></>}
+diff --git a/app/(site)/track/page.tsx b/app/(site)/track/page.tsx
+index 5046b9a..9eaa12e 100644
+--- a/app/(site)/track/page.tsx
++++ b/app/(site)/track/page.tsx
+@@ -1,3 +1,4 @@
++import { DepthSection, RiseIn } from "@/components/motion/primitives";
+ import type { Metadata } from "next";
+ import Link from "next/link";
+ import { PageHero } from "@/components/page-hero";
+@@ -8,12 +9,12 @@ export const metadata: Metadata = { title: "Shipment update enquiry" };
+ export default function ShipmentUpdatePage() {
+   return <>
+     <PageHero eyebrow="Shipment support" title="Shipment update enquiry" description="Contact the company for an update on your shipment. Please include your shipment reference so the team can help."/>
+-    <section className="section"><div className="shell"><div className="form-panel">
++    <section className="section"><DepthSection className="shell"><RiseIn className="form-panel" immediateIfInView>
+       <h2>Ask about your shipment.</h2>
+       <p className="lede">Online shipment lookup is unavailable. Contact VK AND COMPANY by phone or email, or use the Contact form. Include your shipment reference in your message.</p>
+       <p><a className="text-link" href="tel:+919317724056"><Phone size={19} aria-hidden="true"/> +91 93177 24056</a></p>
+       <p><a className="text-link" style={{ overflowWrap: "anywhere" }} href="mailto:vkandcompanymohali@gmail.com"><Mail size={19} aria-hidden="true"/> vkandcompanymohali@gmail.com</a></p>
+       <Link className="button" href="/contact">Contact the team</Link>
+-    </div></div></section>
++    </RiseIn></DepthSection></section>
+   </>;
+ }
+diff --git a/app/not-found.tsx b/app/not-found.tsx
+index fe15e17..658102a 100644
+--- a/app/not-found.tsx
++++ b/app/not-found.tsx
+@@ -1 +1,2 @@
+-import Link from"next/link";export default function NotFound(){return <main className="page-hero" style={{minHeight:"70vh"}}><div className="shell"><p className="eyebrow">Not found</p><h1>This page is not available.</h1><p className="lede">The link may be invalid, expired or no longer active.</p><Link href="/" className="button" style={{marginTop:28}}>Return home</Link></div></main>}
++import { DepthSection, RiseIn } from "@/components/motion/primitives";
++import Link from"next/link";export default function NotFound(){return <main className="page-hero" style={{minHeight:"70vh"}}><DepthSection className="shell"><RiseIn immediateIfInView><p className="eyebrow">Not found</p><h1>This page is not available.</h1><p className="lede">The link may be invalid, expired or no longer active.</p><Link href="/" className="button" style={{marginTop:28}}>Return home</Link></RiseIn></DepthSection></main>}
+diff --git a/components/page-hero.tsx b/components/page-hero.tsx
+index 21f843d..acc49f7 100644
+--- a/components/page-hero.tsx
++++ b/components/page-hero.tsx
+@@ -1,3 +1,4 @@
++import { DepthSection, RiseIn, ParallaxMedia } from "@/components/motion/primitives";
+ import { Photograph, type PhotoName } from "./photograph";
+ import { QuoteMedia } from "./quote-media";
+ import type { SceneVariant } from "@/components/three/scene-types";
+@@ -10,5 +11,5 @@ const imagery: Partial<Record<SceneVariant, { name: PhotoName; alt: string }>> =
+ 
+ export function PageHero({ eyebrow, title, description, variant = "legal" }: { eyebrow: string; title: string; description: string; variant?: SceneVariant }) {
+   const image = imagery[variant];
+-  return <section className={`page-hero page-hero-${variant}`}><div className="shell page-hero-grid"><div className="page-hero-copy"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="lede">{description}</p></div>{variant === "quote" ? <QuoteMedia/> : image ? <div className="page-hero-image" data-image-feedback="photo" data-photo-frame=""><Photograph name={image.name} alt={image.alt}  sizes="(max-width: 900px) 100vw, 50vw" eager/></div> : <div className="page-hero-marker" aria-hidden="true"><span>VKC</span><i aria-hidden="true"/></div>}</div></section>;
++  return <section className={`page-hero page-hero-${variant}`}><DepthSection className="shell page-hero-grid"><RiseIn className="page-hero-copy" immediateIfInView><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="lede">{description}</p></RiseIn>{variant === "quote" ? <QuoteMedia/> : image ? <ParallaxMedia><div className="page-hero-image" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll"><Photograph name={image.name} alt={image.alt}  sizes="(max-width: 900px) 100vw, 50vw" eager/></div></ParallaxMedia> : <div className="page-hero-marker" aria-hidden="true"><span>VKC</span><i aria-hidden="true"/></div>}</DepthSection></section>;
+ }
+diff --git a/components/quote-band.tsx b/components/quote-band.tsx
+index 09c282b..ec03e57 100644
+--- a/components/quote-band.tsx
++++ b/components/quote-band.tsx
+@@ -1,6 +1,7 @@
++import { DepthSection, RiseIn } from "@/components/motion/primitives";
+ import Link from "next/link";
+ import { ArrowUpRight } from "lucide-react";
+ 
+ export function QuoteBand() {
+-  return <section className="section"><div className="shell quote-band"><div><p className="eyebrow" style={{ color: "#76c4d0" }}>Start with the shipment details</p><h2>Let’s work out the right next step for your parcel.</h2><p>No instant estimates without an approved rate card. Our team reviews each request before making an offer.</p></div><div className="band-action"><Link href="/get-a-quote" className="button">Request a quote <ArrowUpRight size={18} /></Link></div></div></section>;
++  return <section className="section"><DepthSection className="shell quote-band"><RiseIn immediateIfInView><p className="eyebrow" style={{ color: "#76c4d0" }}>Start with the shipment details</p><h2>Let’s work out the right next step for your parcel.</h2><p>No instant estimates without an approved rate card. Our team reviews each request before making an offer.</p></RiseIn><div className="band-action"><Link href="/get-a-quote" className="button">Request a quote <ArrowUpRight size={18} /></Link></div></DepthSection></section>;
+ }
+diff --git a/components/service-process.tsx b/components/service-process.tsx
+index e6a9f44..e0c31ab 100644
+--- a/components/service-process.tsx
++++ b/components/service-process.tsx
+@@ -1,3 +1,4 @@
++import { DepthSection, RiseIn, ParallaxMedia } from "@/components/motion/primitives";
+ import { Photograph } from "./photograph";
+ import styles from "./service-process.module.css";
+ 
+@@ -16,14 +17,14 @@ const processes = {
+ 
+ export function ServiceProcess({ kind }: { kind: keyof typeof processes }) {
+   return <section className={styles.section} aria-labelledby={`${kind}-process`}>
+-    <div className={styles.inner}>
+-      <h2 className="eyebrow" id={`${kind}-process`}>{kind} process</h2>
++    <DepthSection className={styles.inner}>
++      <h2 className="eyebrow" id={`${kind}-process`}><RiseIn as="span" style={{ display: "block" }} immediateIfInView>{kind} process</RiseIn></h2>
+       <div className={styles.rows}>
+         {processes[kind].map(row => <article key={row.title} className={styles.row}>
+-          <div className={styles.image}><div className="service-photo" data-image-feedback="photo" data-photo-frame=""><Photograph name={row.photo} alt={row.alt} sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px"/></div></div>
+-          <div className={styles.copy}><h3>{row.title}</h3><p>{row.text}</p></div>
++          <ParallaxMedia><div className={styles.image}><div className="service-photo" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll"><Photograph name={row.photo} alt={row.alt} sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px"/></div></div></ParallaxMedia>
++          <RiseIn className={styles.copy} immediateIfInView><h3>{row.title}</h3><p>{row.text}</p></RiseIn>
+         </article>)}
+       </div>
+-    </div>
++    </DepthSection>
+   </section>;
+ }

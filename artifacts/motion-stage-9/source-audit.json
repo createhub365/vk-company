@@ -1,0 +1,860 @@
+{
+  "reachableFiles": [
+    "app/(site)/about/page.tsx",
+    "app/(site)/contact/contact.module.css",
+    "app/(site)/contact/page.tsx",
+    "app/(site)/faq/page.tsx",
+    "app/(site)/get-a-quote/page.tsx",
+    "app/(site)/layout.tsx",
+    "app/(site)/page.tsx",
+    "app/(site)/privacy/page.tsx",
+    "app/(site)/services/domestic/page.tsx",
+    "app/(site)/services/international/page.tsx",
+    "app/(site)/terms/page.tsx",
+    "app/(site)/track/page.tsx",
+    "app/globals.css",
+    "app/layout.tsx",
+    "app/not-found.tsx",
+    "app/robots.ts",
+    "app/sitemap.ts",
+    "components/company-logo.tsx",
+    "components/faq-list.tsx",
+    "components/forms/enquiry-form.tsx",
+    "components/forms/support-form.tsx",
+    "components/image-feedback.tsx",
+    "components/motion/editorial-heading-runtime.tsx",
+    "components/motion/editorial-heading.tsx",
+    "components/motion/hero-runtime.tsx",
+    "components/motion/hero.tsx",
+    "components/motion/image-feedback-runtime.tsx",
+    "components/motion/navigation-runtime.tsx",
+    "components/motion/primitives-runtime.tsx",
+    "components/motion/primitives.tsx",
+    "components/motion/process-runtime.tsx",
+    "components/motion/process-sequence.tsx",
+    "components/motion/provider.tsx",
+    "components/motion/quote-media-runtime.tsx",
+    "components/motion/scroll-runtime.tsx",
+    "components/motion/use-reduced-motion.ts",
+    "components/motion/utility-depth.tsx",
+    "components/motion/utility-runtime.tsx",
+    "components/page-hero.tsx",
+    "components/photograph.tsx",
+    "components/process-photo.tsx",
+    "components/quote-band.tsx",
+    "components/quote-media.tsx",
+    "components/route-transition.tsx",
+    "components/service-process.module.css",
+    "components/service-process.tsx",
+    "components/site-footer.tsx",
+    "components/site-header.tsx",
+    "components/three/quote-bubbles.ts",
+    "components/three/scene-types.ts",
+    "lib/business-settings.ts",
+    "lib/config.ts",
+    "lib/media-interaction.ts",
+    "lib/motion/hero-tuning.ts",
+    "lib/motion/policy.ts",
+    "lib/motion/process-progress.ts",
+    "lib/motion/scroll-lock.ts",
+    "lib/motion/service-tilt.ts",
+    "lib/motion/shared-pointer.ts",
+    "lib/motion/tokens.ts",
+    "lib/quote-formsubmit.ts",
+    "lib/schemas.ts",
+    "styles/depth.css",
+    "styles/editorial-depth.css",
+    "styles/hero.css",
+    "styles/navigation.css",
+    "styles/process-depth.css",
+    "styles/utility-depth.css"
+  ],
+  "edges": [
+    [
+      "app/(site)/about/page.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "components/motion/primitives.tsx",
+      "components/motion/primitives-runtime.tsx"
+    ],
+    [
+      "components/motion/primitives-runtime.tsx",
+      "lib/motion/tokens.ts"
+    ],
+    [
+      "components/motion/primitives-runtime.tsx",
+      "components/motion/provider.tsx"
+    ],
+    [
+      "components/motion/provider.tsx",
+      "components/motion/scroll-runtime.tsx"
+    ],
+    [
+      "components/motion/scroll-runtime.tsx",
+      "components/motion/use-reduced-motion.ts"
+    ],
+    [
+      "components/motion/use-reduced-motion.ts",
+      "lib/motion/policy.ts"
+    ],
+    [
+      "components/motion/scroll-runtime.tsx",
+      "components/motion/provider.tsx"
+    ],
+    [
+      "components/motion/scroll-runtime.tsx",
+      "lib/motion/scroll-lock.ts"
+    ],
+    [
+      "components/motion/primitives-runtime.tsx",
+      "components/motion/use-reduced-motion.ts"
+    ],
+    [
+      "components/motion/primitives-runtime.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "components/motion/primitives.tsx",
+      "components/motion/primitives-runtime.tsx"
+    ],
+    [
+      "app/(site)/about/page.tsx",
+      "components/photograph.tsx"
+    ],
+    [
+      "components/photograph.tsx",
+      "lib/photographs.json"
+    ],
+    [
+      "app/(site)/about/page.tsx",
+      "components/page-hero.tsx"
+    ],
+    [
+      "components/page-hero.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "components/page-hero.tsx",
+      "components/photograph.tsx"
+    ],
+    [
+      "components/page-hero.tsx",
+      "components/quote-media.tsx"
+    ],
+    [
+      "components/quote-media.tsx",
+      "components/motion/quote-media-runtime.tsx"
+    ],
+    [
+      "components/motion/quote-media-runtime.tsx",
+      "components/three/quote-bubbles.ts"
+    ],
+    [
+      "components/three/quote-bubbles.ts",
+      "lib/media-interaction.ts"
+    ],
+    [
+      "components/quote-media.tsx",
+      "components/photograph.tsx"
+    ],
+    [
+      "components/page-hero.tsx",
+      "components/three/scene-types.ts"
+    ],
+    [
+      "app/(site)/about/page.tsx",
+      "components/quote-band.tsx"
+    ],
+    [
+      "components/quote-band.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "app/(site)/contact/page.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "app/(site)/contact/page.tsx",
+      "components/motion/utility-depth.tsx"
+    ],
+    [
+      "components/motion/utility-depth.tsx",
+      "styles/utility-depth.css"
+    ],
+    [
+      "components/motion/utility-depth.tsx",
+      "components/motion/utility-runtime.tsx"
+    ],
+    [
+      "components/motion/utility-runtime.tsx",
+      "components/motion/use-reduced-motion.ts"
+    ],
+    [
+      "app/(site)/contact/page.tsx",
+      "components/photograph.tsx"
+    ],
+    [
+      "app/(site)/contact/page.tsx",
+      "components/forms/support-form.tsx"
+    ],
+    [
+      "components/forms/support-form.tsx",
+      "lib/schemas.ts"
+    ],
+    [
+      "app/(site)/contact/page.tsx",
+      "lib/business-settings.ts"
+    ],
+    [
+      "lib/business-settings.ts",
+      "lib/config.ts"
+    ],
+    [
+      "app/(site)/contact/page.tsx",
+      "app/(site)/contact/contact.module.css"
+    ],
+    [
+      "app/(site)/faq/page.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "app/(site)/faq/page.tsx",
+      "components/page-hero.tsx"
+    ],
+    [
+      "app/(site)/faq/page.tsx",
+      "components/faq-list.tsx"
+    ],
+    [
+      "components/faq-list.tsx",
+      "components/motion/utility-depth.tsx"
+    ],
+    [
+      "app/(site)/faq/page.tsx",
+      "components/quote-band.tsx"
+    ],
+    [
+      "app/(site)/get-a-quote/page.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "app/(site)/get-a-quote/page.tsx",
+      "components/motion/utility-depth.tsx"
+    ],
+    [
+      "app/(site)/get-a-quote/page.tsx",
+      "components/page-hero.tsx"
+    ],
+    [
+      "app/(site)/get-a-quote/page.tsx",
+      "components/forms/enquiry-form.tsx"
+    ],
+    [
+      "components/forms/enquiry-form.tsx",
+      "lib/schemas.ts"
+    ],
+    [
+      "components/forms/enquiry-form.tsx",
+      "lib/quote-formsubmit.ts"
+    ],
+    [
+      "lib/quote-formsubmit.ts",
+      "lib/schemas.ts"
+    ],
+    [
+      "lib/quote-formsubmit.ts",
+      "lib/schemas.ts"
+    ],
+    [
+      "app/(site)/layout.tsx",
+      "components/site-header.tsx"
+    ],
+    [
+      "components/site-header.tsx",
+      "components/company-logo.tsx"
+    ],
+    [
+      "components/company-logo.tsx",
+      "lib/config.ts"
+    ],
+    [
+      "components/site-header.tsx",
+      "components/motion/navigation-runtime.tsx"
+    ],
+    [
+      "components/motion/navigation-runtime.tsx",
+      "components/motion/provider.tsx"
+    ],
+    [
+      "components/motion/navigation-runtime.tsx",
+      "components/motion/use-reduced-motion.ts"
+    ],
+    [
+      "components/site-header.tsx",
+      "lib/motion/scroll-lock.ts"
+    ],
+    [
+      "components/site-header.tsx",
+      "lib/motion/policy.ts"
+    ],
+    [
+      "components/site-header.tsx",
+      "styles/navigation.css"
+    ],
+    [
+      "app/(site)/layout.tsx",
+      "components/site-footer.tsx"
+    ],
+    [
+      "components/site-footer.tsx",
+      "components/motion/utility-depth.tsx"
+    ],
+    [
+      "components/site-footer.tsx",
+      "components/company-logo.tsx"
+    ],
+    [
+      "components/site-footer.tsx",
+      "lib/business-settings.ts"
+    ],
+    [
+      "app/(site)/layout.tsx",
+      "components/route-transition.tsx"
+    ],
+    [
+      "app/(site)/page.tsx",
+      "components/motion/process-sequence.tsx"
+    ],
+    [
+      "components/motion/process-sequence.tsx",
+      "components/motion/process-runtime.tsx"
+    ],
+    [
+      "components/motion/process-runtime.tsx",
+      "lib/motion/tokens.ts"
+    ],
+    [
+      "components/motion/process-runtime.tsx",
+      "lib/motion/process-progress.ts"
+    ],
+    [
+      "lib/motion/process-progress.ts",
+      "lib/motion/tokens.ts"
+    ],
+    [
+      "components/motion/process-runtime.tsx",
+      "components/motion/provider.tsx"
+    ],
+    [
+      "components/motion/process-runtime.tsx",
+      "components/motion/use-reduced-motion.ts"
+    ],
+    [
+      "components/motion/process-sequence.tsx",
+      "styles/process-depth.css"
+    ],
+    [
+      "app/(site)/page.tsx",
+      "components/motion/hero.tsx"
+    ],
+    [
+      "components/motion/hero.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "components/motion/hero.tsx",
+      "lib/motion/hero-tuning.ts"
+    ],
+    [
+      "components/motion/hero.tsx",
+      "styles/hero.css"
+    ],
+    [
+      "components/motion/hero.tsx",
+      "components/motion/hero-runtime.tsx"
+    ],
+    [
+      "components/motion/hero-runtime.tsx",
+      "lib/motion/hero-tuning.ts"
+    ],
+    [
+      "components/motion/hero-runtime.tsx",
+      "lib/motion/shared-pointer.ts"
+    ],
+    [
+      "components/motion/hero-runtime.tsx",
+      "lib/motion/tokens.ts"
+    ],
+    [
+      "components/motion/hero-runtime.tsx",
+      "components/motion/provider.tsx"
+    ],
+    [
+      "components/motion/hero-runtime.tsx",
+      "components/motion/use-reduced-motion.ts"
+    ],
+    [
+      "app/(site)/page.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "app/(site)/page.tsx",
+      "components/motion/editorial-heading.tsx"
+    ],
+    [
+      "components/motion/editorial-heading.tsx",
+      "lib/motion/hero-tuning.ts"
+    ],
+    [
+      "components/motion/editorial-heading.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "components/motion/editorial-heading.tsx",
+      "components/motion/editorial-heading-runtime.tsx"
+    ],
+    [
+      "components/motion/editorial-heading-runtime.tsx",
+      "lib/motion/hero-tuning.ts"
+    ],
+    [
+      "components/motion/editorial-heading-runtime.tsx",
+      "components/motion/use-reduced-motion.ts"
+    ],
+    [
+      "components/motion/editorial-heading-runtime.tsx",
+      "components/motion/editorial-heading.tsx"
+    ],
+    [
+      "app/(site)/page.tsx",
+      "styles/editorial-depth.css"
+    ],
+    [
+      "app/(site)/page.tsx",
+      "components/photograph.tsx"
+    ],
+    [
+      "app/(site)/page.tsx",
+      "components/faq-list.tsx"
+    ],
+    [
+      "app/(site)/page.tsx",
+      "components/process-photo.tsx"
+    ],
+    [
+      "components/process-photo.tsx",
+      "components/photograph.tsx"
+    ],
+    [
+      "app/(site)/privacy/page.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "app/(site)/privacy/page.tsx",
+      "components/page-hero.tsx"
+    ],
+    [
+      "app/(site)/services/domestic/page.tsx",
+      "components/page-hero.tsx"
+    ],
+    [
+      "app/(site)/services/domestic/page.tsx",
+      "components/quote-band.tsx"
+    ],
+    [
+      "app/(site)/services/domestic/page.tsx",
+      "components/service-process.tsx"
+    ],
+    [
+      "components/service-process.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "components/service-process.tsx",
+      "components/photograph.tsx"
+    ],
+    [
+      "components/service-process.tsx",
+      "components/service-process.module.css"
+    ],
+    [
+      "app/(site)/services/international/page.tsx",
+      "components/page-hero.tsx"
+    ],
+    [
+      "app/(site)/services/international/page.tsx",
+      "components/service-process.tsx"
+    ],
+    [
+      "app/(site)/services/international/page.tsx",
+      "components/quote-band.tsx"
+    ],
+    [
+      "app/(site)/terms/page.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "app/(site)/terms/page.tsx",
+      "components/page-hero.tsx"
+    ],
+    [
+      "app/(site)/track/page.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "app/(site)/track/page.tsx",
+      "components/page-hero.tsx"
+    ],
+    [
+      "app/layout.tsx",
+      "lib/config.ts"
+    ],
+    [
+      "app/layout.tsx",
+      "app/globals.css"
+    ],
+    [
+      "app/layout.tsx",
+      "styles/depth.css"
+    ],
+    [
+      "app/layout.tsx",
+      "components/motion/provider.tsx"
+    ],
+    [
+      "app/layout.tsx",
+      "components/image-feedback.tsx"
+    ],
+    [
+      "components/image-feedback.tsx",
+      "components/motion/image-feedback-runtime.tsx"
+    ],
+    [
+      "components/motion/image-feedback-runtime.tsx",
+      "lib/motion/shared-pointer.ts"
+    ],
+    [
+      "components/motion/image-feedback-runtime.tsx",
+      "components/motion/use-reduced-motion.ts"
+    ],
+    [
+      "components/motion/image-feedback-runtime.tsx",
+      "lib/motion/policy.ts"
+    ],
+    [
+      "components/motion/image-feedback-runtime.tsx",
+      "lib/media-interaction.ts"
+    ],
+    [
+      "components/motion/image-feedback-runtime.tsx",
+      "lib/motion/service-tilt.ts"
+    ],
+    [
+      "lib/motion/service-tilt.ts",
+      "lib/motion/hero-tuning.ts"
+    ],
+    [
+      "app/not-found.tsx",
+      "components/motion/primitives.tsx"
+    ],
+    [
+      "app/robots.ts",
+      "lib/config.ts"
+    ],
+    [
+      "app/sitemap.ts",
+      "lib/config.ts"
+    ]
+  ],
+  "hits": [
+    {
+      "file": "components/image-feedback.tsx",
+      "line": 4,
+      "mountedImportGraph": true,
+      "text": "const ImageFeedbackRuntime = dynamic(() => import(\"./motion/image-feedback-runtime\"), { ssr: false });"
+    },
+    {
+      "file": "components/motion/editorial-heading.tsx",
+      "line": 7,
+      "mountedImportGraph": true,
+      "text": "const EditorialHeadingRuntime = dynamic(() => import(\"./editorial-heading-runtime\"), { ssr: false });"
+    },
+    {
+      "file": "components/motion/hero-runtime.tsx",
+      "line": 42,
+      "mountedImportGraph": true,
+      "text": "timers.push(setTimeout(() => { line.style.willChange = \"transform, opacity\"; }, delay));"
+    },
+    {
+      "file": "components/motion/hero-runtime.tsx",
+      "line": 43,
+      "mountedImportGraph": true,
+      "text": "animation.onfinish = () => line.style.removeProperty(\"will-change\");"
+    },
+    {
+      "file": "components/motion/hero-runtime.tsx",
+      "line": 45,
+      "mountedImportGraph": true,
+      "text": "return () => { timers.forEach(clearTimeout); animations.forEach(animation => animation.cancel()); lines.forEach(line => line.style.removeProperty(\"will-change\")); };"
+    },
+    {
+      "file": "components/motion/hero-runtime.tsx",
+      "line": 58,
+      "mountedImportGraph": true,
+      "text": "const restPointer = () => planes.forEach(plane => plane.style.removeProperty(\"will-change\"));"
+    },
+    {
+      "file": "components/motion/hero-runtime.tsx",
+      "line": 59,
+      "mountedImportGraph": true,
+      "text": "const restScroll = () => stage.style.removeProperty(\"will-change\");"
+    },
+    {
+      "file": "components/motion/hero-runtime.tsx",
+      "line": 62,
+      "mountedImportGraph": true,
+      "text": "stage.style.willChange = \"transform, opacity\";"
+    },
+    {
+      "file": "components/motion/hero-runtime.tsx",
+      "line": 74,
+      "mountedImportGraph": true,
+      "text": "if (px || py) plane.style.willChange = \"transform\";"
+    },
+    {
+      "file": "components/motion/hero.tsx",
+      "line": 9,
+      "mountedImportGraph": true,
+      "text": "const HeroRuntime = dynamic(() => import(\"./hero-runtime\"), { ssr: false });"
+    },
+    {
+      "file": "components/motion/navigation-runtime.tsx",
+      "line": 28,
+      "mountedImportGraph": true,
+      "text": "const rest = () => element.style.removeProperty(\"will-change\");"
+    },
+    {
+      "file": "components/motion/navigation-runtime.tsx",
+      "line": 32,
+      "mountedImportGraph": true,
+      "text": "if (event.target === element) element.style.willChange = event.animationName === \"nav-fade-in\" ? \"opacity\" : \"transform, opacity\";"
+    },
+    {
+      "file": "components/motion/primitives-runtime.tsx",
+      "line": 28,
+      "mountedImportGraph": true,
+      "text": "const settle = () => { clearTimeout(timer); animation?.cancel(); element.style.removeProperty(\"will-change\"); };"
+    },
+    {
+      "file": "components/motion/primitives-runtime.tsx",
+      "line": 46,
+      "mountedImportGraph": true,
+      "text": "timer = setTimeout(() => { if (animation?.playState === \"running\") element.style.willChange = \"transform, opacity\"; }, Math.max(0, timelineStart + startDelay - Number(document.timeline.currentTime)));"
+    },
+    {
+      "file": "components/motion/primitives-runtime.tsx",
+      "line": 52,
+      "mountedImportGraph": true,
+      "text": "timer = setTimeout(() => { if (animation?.playState === \"running\") element.style.willChange = \"transform, opacity\"; }, startDelay);"
+    },
+    {
+      "file": "components/motion/primitives-runtime.tsx",
+      "line": 56,
+      "mountedImportGraph": true,
+      "text": "element.style.willChange = \"transform, opacity\";"
+    },
+    {
+      "file": "components/motion/primitives-runtime.tsx",
+      "line": 80,
+      "mountedImportGraph": true,
+      "text": "const rest = () => element.style.removeProperty(\"will-change\");"
+    },
+    {
+      "file": "components/motion/primitives-runtime.tsx",
+      "line": 83,
+      "mountedImportGraph": true,
+      "text": "element.style.willChange = \"transform\";"
+    },
+    {
+      "file": "components/motion/primitives.tsx",
+      "line": 6,
+      "mountedImportGraph": true,
+      "text": "const RiseRuntime = dynamic(() => import(\"./primitives-runtime\").then(module => module.RiseRuntime), { ssr: false });"
+    },
+    {
+      "file": "components/motion/primitives.tsx",
+      "line": 7,
+      "mountedImportGraph": true,
+      "text": "const ParallaxRuntime = dynamic(() => import(\"./primitives-runtime\").then(module => module.ParallaxRuntime), { ssr: false });"
+    },
+    {
+      "file": "components/motion/primitives.tsx",
+      "line": 8,
+      "mountedImportGraph": true,
+      "text": "type PresentationStyle = Omit<CSSProperties, \"transform\" | \"translate\" | \"rotate\" | \"scale\" | \"opacity\" | \"willChange\" | \"animation\" | \"transition\">;"
+    },
+    {
+      "file": "components/motion/process-runtime.tsx",
+      "line": 28,
+      "mountedImportGraph": true,
+      "text": "const rest = () => steps.forEach(step => step.style.removeProperty(\"will-change\"));"
+    },
+    {
+      "file": "components/motion/process-runtime.tsx",
+      "line": 34,
+      "mountedImportGraph": true,
+      "text": "step.style.willChange = \"transform, opacity\";"
+    },
+    {
+      "file": "components/motion/process-sequence.tsx",
+      "line": 5,
+      "mountedImportGraph": true,
+      "text": "const ProcessRuntime = dynamic(() => import(\"./process-runtime\"), { ssr: false });"
+    },
+    {
+      "file": "components/motion/provider.tsx",
+      "line": 7,
+      "mountedImportGraph": true,
+      "text": "const ScrollRuntime = dynamic(() => import(\"./scroll-runtime\"), { ssr: false });"
+    },
+    {
+      "file": "components/motion/scroll-runtime.tsx",
+      "line": 35,
+      "mountedImportGraph": true,
+      "text": "lenis = new Lenis({ lerp: 0.08, autoRaf: false, syncTouch: false, smoothWheel: smooth, anchors: false,"
+    },
+    {
+      "file": "components/motion/utility-depth.tsx",
+      "line": 6,
+      "mountedImportGraph": true,
+      "text": "const UtilityRuntime = dynamic(() => import(\"./utility-runtime\"), { ssr: false });"
+    },
+    {
+      "file": "components/motion/utility-runtime.tsx",
+      "line": 24,
+      "mountedImportGraph": true,
+      "text": "answer.style.removeProperty(\"will-change\");"
+    },
+    {
+      "file": "components/motion/utility-runtime.tsx",
+      "line": 33,
+      "mountedImportGraph": true,
+      "text": "answer.style.willChange = \"transform, opacity\";"
+    },
+    {
+      "file": "components/motion-control.tsx",
+      "line": 16,
+      "mountedImportGraph": false,
+      "text": "const frame = requestAnimationFrame(() => {"
+    },
+    {
+      "file": "components/quote-media.tsx",
+      "line": 5,
+      "mountedImportGraph": true,
+      "text": "const QuoteMediaRuntime = dynamic(() => import(\"./motion/quote-media-runtime\"), { ssr: false });"
+    },
+    {
+      "file": "components/site-header.tsx",
+      "line": 9,
+      "mountedImportGraph": true,
+      "text": "const NavigationRuntime = dynamic(() => import(\"./motion/navigation-runtime\"), { ssr: false });"
+    },
+    {
+      "file": "components/site-header.tsx",
+      "line": 52,
+      "mountedImportGraph": true,
+      "text": "if (!open) { navigation.current?.style.removeProperty(\"will-change\"); return; }"
+    },
+    {
+      "file": "components/three/courier-canvas.tsx",
+      "line": 282,
+      "mountedImportGraph": false,
+      "text": "frameloop={active && !reduced ? \"always\" : \"demand\"}"
+    },
+    {
+      "file": "components/three/delivery-canvas.tsx",
+      "line": 87,
+      "mountedImportGraph": false,
+      "text": "return <Canvas shadows frameloop={playing && !reduced ? \"always\" : \"demand\"} dpr={[1,1.5]} camera={{position:[8.4,4.7,13],fov:38,near:.1,far:60}} gl={{antialias:true,alpha:true,powerPreference:\"high-performance\"}}>"
+    },
+    {
+      "file": "components/three/dispatch-canvas.tsx",
+      "line": 112,
+      "mountedImportGraph": false,
+      "text": "return <Canvas shadows frameloop=\"demand\" dpr={[1,1.5]} camera={{ position: [-7,6,11], fov: 39 }} gl={{ antialias: true, powerPreference: \"high-performance\" }} fallback={<div className=\"scene-fallback\"><StaticDispatchArt /></div>}>"
+    },
+    {
+      "file": "components/three/dispatch-experience.tsx",
+      "line": 8,
+      "mountedImportGraph": false,
+      "text": "const DispatchCanvas = dynamic(() => import(\"./dispatch-canvas\"), { ssr: false, loading: () => <div className=\"scene-fallback\"><StaticDispatchArt /></div> });"
+    },
+    {
+      "file": "components/three/scene-stage.tsx",
+      "line": 9,
+      "mountedImportGraph": false,
+      "text": "ssr: false,"
+    },
+    {
+      "file": "components/three/scene-stage.tsx",
+      "line": 70,
+      "mountedImportGraph": false,
+      "text": "raf = requestAnimationFrame(() => {"
+    },
+    {
+      "file": "styles/depth.css",
+      "line": 47,
+      "mountedImportGraph": true,
+      "text": "[data-depth-pointer] { transform: none !important; will-change: auto !important; }"
+    },
+    {
+      "file": "styles/depth.css",
+      "line": 64,
+      "mountedImportGraph": true,
+      "text": "will-change: auto !important;"
+    },
+    {
+      "file": "styles/hero.css",
+      "line": 49,
+      "mountedImportGraph": true,
+      "text": ".hero-motion [data-depth-motion] { transform: none !important; opacity: 1 !important; will-change: auto !important; }"
+    },
+    {
+      "file": "styles/process-depth.css",
+      "line": 69,
+      "mountedImportGraph": true,
+      "text": ".process-depth .process-list > li { transform: none !important; opacity: 1 !important; will-change: auto !important; }"
+    },
+    {
+      "file": "styles/utility-depth.css",
+      "line": 78,
+      "mountedImportGraph": true,
+      "text": "will-change: auto !important;"
+    },
+    {
+      "file": "lib/motion/service-tilt.ts",
+      "line": 20,
+      "mountedImportGraph": true,
+      "text": "element.style.removeProperty(\"will-change\");"
+    },
+    {
+      "file": "lib/motion/service-tilt.ts",
+      "line": 32,
+      "mountedImportGraph": true,
+      "text": "if (resting) element.style.removeProperty(\"will-change\");"
+    },
+    {
+      "file": "lib/motion/service-tilt.ts",
+      "line": 33,
+      "mountedImportGraph": true,
+      "text": "else { element.style.willChange = \"transform\"; moving = true; }"
+    }
+  ],
+  "recurringNativeOwners": [
+    {
+      "file": "node_modules/motion-dom/dist/es/frameloop/frame.mjs",
+      "description": "Motion shared frame batcher; one native recurring requestAnimationFrame owner."
+    }
+  ]
+}

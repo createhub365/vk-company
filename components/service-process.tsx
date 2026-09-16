@@ -1,3 +1,4 @@
+import { DepthSection, RiseIn, ParallaxMedia } from "@/components/motion/primitives";
 import { Photograph } from "./photograph";
 import styles from "./service-process.module.css";
 
@@ -16,14 +17,14 @@ const processes = {
 
 export function ServiceProcess({ kind }: { kind: keyof typeof processes }) {
   return <section className={styles.section} aria-labelledby={`${kind}-process`}>
-    <div className={styles.inner}>
-      <h2 className="eyebrow" id={`${kind}-process`}>{kind} process</h2>
+    <DepthSection className={styles.inner}>
+      <h2 className="eyebrow" id={`${kind}-process`}><RiseIn as="span" style={{ display: "block" }} immediateIfInView>{kind} process</RiseIn></h2>
       <div className={styles.rows}>
         {processes[kind].map(row => <article key={row.title} className={styles.row}>
-          <div className={styles.image}><div className="service-photo" data-image-feedback="photo" data-photo-frame=""><Photograph name={row.photo} alt={row.alt} sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px"/></div></div>
-          <div className={styles.copy}><h3>{row.title}</h3><p>{row.text}</p></div>
+          <ParallaxMedia className={styles.media}><div className={styles.image} data-service-tilt-boundary=""><div className="service-photo" data-image-feedback="photo" data-photo-frame="" data-photo-motion="scroll" data-service-tilt=""><Photograph name={row.photo} alt={row.alt} sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1236px) 52vw, 625px"/></div></div></ParallaxMedia>
+          <RiseIn className={styles.copy} immediateIfInView><h3>{row.title}</h3><p>{row.text}</p></RiseIn>
         </article>)}
       </div>
-    </div>
+    </DepthSection>
   </section>;
 }

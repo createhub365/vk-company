@@ -1,0 +1,1021 @@
+[WebServer] (node:28731) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 190 tests using 2 workers
+
+(node:28733) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    2 [desktop] › tests/e2e/contact-validation.spec.ts:27:1 › blank optional Phone with spaces reaches only the mocked FormSubmit endpoint (1.1s)
+  ✓    3 [desktop] › tests/e2e/contact-validation.spec.ts:38:1 › invalid Email gets its own error and focus without any submission request (147ms)
+  ✓    4 [desktop] › tests/e2e/contact-validation.spec.ts:50:1 › Subject and Message minimum errors focus the first invalid field and retain text (376ms)
+  ✓    5 [desktop] › tests/e2e/contact-validation.spec.ts:65:1 › optional Email stays optional when Phone is valid (229ms)
+  ✓    6 [desktop] › tests/e2e/contact-validation.spec.ts:76:1 › failed provider request remains separate from field errors and preserves inputs (245ms)
+  ✓    1 [desktop] › tests/e2e/editorial-motion.spec.ts:25:1 › original section geometry, image fitting and alternating desktop order remain (4.1s)
+  ✘    7 [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / (5.3s)
+(node:28765) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    8 [desktop] › tests/e2e/editorial-motion.spec.ts:53:1 › opposite-side text, per-line headings and grouped prose use the bounded timings (4.0s)
+  ✘    9 [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/domestic (5.3s)
+(node:28786) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   10 [desktop] › tests/e2e/editorial-motion.spec.ts:84:1 › parallax reverses with scroll; hovering and tapping never rotate a photograph (8.1s)
+  ✘   11 [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/international (5.2s)
+(node:28804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   12 [desktop] › tests/e2e/editorial-motion.spec.ts:112:1 › a paragraph in view before hydration stays immediately visible and never reveals (3.5s)
+  ✓   14 [desktop] › tests/e2e/editorial-motion.spec.ts:133:1 › reduced motion, no JavaScript, resize and native text links remain usable (1.8s)
+  ✓   15 [desktop] › tests/e2e/nav-motion.spec.ts:38:1 › frozen navigation and existing page geometry survive depth projection (1.5s)
+  ✓   16 [desktop] › tests/e2e/nav-motion.spec.ts:52:1 › closed nav has its original keyboard order and unobscured focus rings (118ms)
+  ✘   13 [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /about (5.2s)
+  ✓   17 [desktop] › tests/e2e/nav-motion.spec.ts:73:3 › open menu traps both Tab directions, closes with Escape and restores focus (motion) (805ms)
+(node:28824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   18 [desktop] › tests/e2e/nav-motion.spec.ts:111:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (motion) (2.0s)
+  ✓   20 [desktop] › tests/e2e/nav-motion.spec.ts:73:3 › open menu traps both Tab directions, closes with Escape and restores focus (reduced) (780ms)
+  ✓   21 [desktop] › tests/e2e/nav-motion.spec.ts:111:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (reduced) (2.1s)
+  ✘   19 [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /contact (5.2s)
+(node:28850) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   23 [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /get-a-quote (241ms)
+  ✓   24 [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /faq (91ms)
+  ✓   25 [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /privacy (94ms)
+  ✓   26 [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /terms (90ms)
+  ✓   27 [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /track (93ms)
+  ✓   22 [desktop] › tests/e2e/nav-motion.spec.ts:136:1 › scroll state changes only at the 80px boundary; hover uses transform and pseudo glow (3.2s)
+  ✓   28 [desktop] › tests/e2e/image-feedback.spec.ts:72:1 › hover tilts only the coherent frame and settles on leave (3.0s)
+  ✓   29 [desktop] › tests/e2e/nav-motion.spec.ts:167:1 › repeat, live reduced motion, resize and navigation release the lock (1.5s)
+  ✓   31 [desktop] › tests/e2e/nav-motion.spec.ts:192:1 › short menus keep every keyboard focus ring inside the scrollable panel (570ms)
+  ✓   32 [desktop] › tests/e2e/process-motion.spec.ts:36:1 › same ordered list, four decoded equal photo frames, horizontal desktop and vertical mobile (689ms)
+  ✓   30 [desktop] › tests/e2e/image-feedback.spec.ts:87:1 › existing Quote WebGL scene stays idle through pointer-disabled taps and offscreen (2.7s)
+  ✓   33 [desktop] › tests/e2e/process-motion.spec.ts:52:1 › continuous scroll drives exact depth, opacity, number glow and line, reversible without a timer (1.6s)
+  ✓   34 [desktop] › tests/e2e/image-feedback.spec.ts:109:1 › reduced motion and lost WebGL leave stationary feedback and essential content (554ms)
+  ✓   36 [desktop] › tests/e2e/image-feedback.spec.ts:126:1 › WebGL unavailable from startup and JavaScript disabled preserve the photograph/form (162ms)
+  ✓   37 [desktop] › tests/e2e/image-feedback.spec.ts:136:1 › native keyboard links, forms and menus remain unaffected (251ms)
+  ✓   38 [desktop] › tests/e2e/image-feedback.spec.ts:150:1 › scroll, swipe, pinch, drag and selection do not create tap effects (271ms)
+  ✓   39 [desktop] › tests/e2e/public.spec.ts:3:1 › homepage keeps its hero content with a static truck image (111ms)
+  ✓   40 [desktop] › tests/e2e/public.spec.ts:17:1 › quote form explains that enquiries do not confirm bookings (94ms)
+  ✓   41 [desktop] › tests/e2e/public.spec.ts:23:1 › mobile navigation is keyboard and touch accessible (124ms)
+  ✓   35 [desktop] › tests/e2e/process-motion.spec.ts:72:1 › tall viewport settles on a stable middle blend and survives resize (1.2s)
+  ✓   42 [desktop] › tests/e2e/public.spec.ts:30:1 › all public routes preserve direct navigation without duplicate renderers (370ms)
+  ✓   44 [desktop] › tests/e2e/public.spec.ts:40:1 › history, resize and repeated route changes preserve one static hero visual (279ms)
+  ✓   45 [desktop] › tests/e2e/public.spec.ts:58:1 › increased text size keeps key actions available (97ms)
+  ✓   46 [desktop] › tests/e2e/public.spec.ts:65:1 › quote fields keep their values through resize and menu changes (121ms)
+  ✓   47 [desktop] › tests/e2e/public.spec.ts:75:1 › tracking offers company contact without a lookup (102ms)
+  ✓   43 [desktop] › tests/e2e/process-motion.spec.ts:84:1 › reduced motion and JavaScript failure keep every step fully visible and line drawn (1.1s)
+  ✓   49 [desktop] › tests/e2e/quote-formsubmit.spec.ts:39:1 › Quote goes only to FormSubmit with every detail and validated Reply-To (188ms)
+  ✓   50 [desktop] › tests/e2e/quote-formsubmit.spec.ts:59:1 › invalid inputs and honeypot never reach a network request (593ms)
+  ✓   51 [desktop] › tests/e2e/quote-formsubmit.spec.ts:76:1 › empty optional fields omit Reply-To without dropping units or false (247ms)
+  ✓   52 [desktop] › tests/e2e/quote-formsubmit.spec.ts:88:3 › rejected: preserves values, releases loading and never retries automatically (446ms)
+  ✓   53 [desktop] › tests/e2e/quote-formsubmit.spec.ts:88:3 › malformed: preserves values, releases loading and never retries automatically (1.8s)
+  ✘   48 [desktop] › tests/e2e/public.spec.ts:84:1 › all four shipping steps show equally sized, eagerly loaded photographs (5.1s)
+  ✓   54 [desktop] › tests/e2e/quote-formsubmit.spec.ts:88:3 › network: preserves values, releases loading and never retries automatically (1.8s)
+(node:28917) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   55 [desktop] › tests/e2e/quote-formsubmit.spec.ts:88:3 › timeout: preserves values, releases loading and never retries automatically (376ms)
+  ✓   56 [desktop] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 360px › clickable without validation errors (1.0s)
+  ✓   57 [desktop] › tests/e2e/quote-formsubmit.spec.ts:88:3 › contradictory: preserves values, releases loading and never retries automatically (1.8s)
+  ✓   58 [desktop] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 360px › clickable after repeated validation errors (1.8s)
+  ✓   59 [desktop] › tests/e2e/quote-formsubmit.spec.ts:113:1 › session attempt limit remains eight attempts per fifteen minutes (1.0s)
+  ✓   60 [desktop] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 390px › clickable without validation errors (1.8s)
+  ✓   62 [desktop] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 390px › clickable after repeated validation errors (1.5s)
+  ✓   63 [desktop] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 768px › clickable without validation errors (1.8s)
+  ✘   61 [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 1440px (5.1s)
+(node:28945) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   64 [desktop] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 768px › clickable after repeated validation errors (1.7s)
+  ✓   66 [desktop] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1024px › clickable without validation errors (1.9s)
+  ✓   67 [desktop] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1024px › clickable after repeated validation errors (1.4s)
+  ✘   65 [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 1440px (5.1s)
+(node:28964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   68 [desktop] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1440px › clickable without validation errors (1.8s)
+  ✓   70 [desktop] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1440px › clickable after repeated validation errors (1.3s)
+  ✘   69 [desktop] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 1440px (5.1s)
+(node:28979) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   72 [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 390px (5.1s)
+(node:28991) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   71 [desktop] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 768px › domestic: all three images spring within bounds and leave controls clickable (12.5s)
+  ✘   73 [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 390px (5.1s)
+(node:29004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   75 [desktop] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 390px (5.1s)
+(node:29019) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   76 [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 360px (5.1s)
+(node:29031) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   74 [desktop] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 768px › international: all three images spring within bounds and leave controls clickable (12.0s)
+  ✘   77 [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 360px (5.1s)
+(node:29048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   79 [desktop] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 360px (5.1s)
+(node:29060) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   78 [desktop] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1024px › domestic: all three images spring within bounds and leave controls clickable (12.4s)
+  ✓   80 [desktop] › tests/e2e/static-export.spec.ts:5:1 › exported URLs refresh, load assets and link only to public destinations (9.1s)
+  ✓   82 [desktop] › tests/e2e/static-export.spec.ts:31:1 › retired routes and private paths are real 404s; Pages headers are preserved (208ms)
+  ✓   83 [desktop] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup (1.2s)
+  ✓   84 [desktop] › tests/e2e/utility-motion.spec.ts:37:49 › form depth, keyboard focus, values, notice and press /contact (1.8s)
+  ✓   81 [desktop] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1024px › international: all three images spring within bounds and leave controls clickable (12.1s)
+  ✓   85 [desktop] › tests/e2e/utility-motion.spec.ts:37:49 › form depth, keyboard focus, values, notice and press /get-a-quote (1.9s)
+  ✓   87 [desktop] › tests/e2e/utility-motion.spec.ts:64:1 › footer depth and native keyboard links (525ms)
+  ✓   88 [desktop] › tests/e2e/utility-motion.spec.ts:77:1 › reduced motion and no-JS preserve final readable content and native details (339ms)
+  ✓   89 [desktop] › tests/e2e/visual.spec.ts:3:1 › capture the responsive editorial site with its static delivery visual (2.5s)
+  ✓   90 [desktop] › tests/e2e/visual.spec.ts:49:1 › about what-we-do section matches the approved responsive structure (874ms)
+(node:29130) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   91 [mobile] › tests/e2e/contact-validation.spec.ts:27:1 › blank optional Phone with spaces reaches only the mocked FormSubmit endpoint (1.1s)
+  ✓   92 [mobile] › tests/e2e/contact-validation.spec.ts:38:1 › invalid Email gets its own error and focus without any submission request (149ms)
+  ✓   93 [mobile] › tests/e2e/contact-validation.spec.ts:50:1 › Subject and Message minimum errors focus the first invalid field and retain text (1.1s)
+  ✓   94 [mobile] › tests/e2e/contact-validation.spec.ts:65:1 › optional Email stays optional when Phone is valid (232ms)
+  ✓   95 [mobile] › tests/e2e/contact-validation.spec.ts:76:1 › failed provider request remains separate from field errors and preserves inputs (228ms)
+  ✓   86 [desktop] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1440px › domestic: all three images spring within bounds and leave controls clickable (11.4s)
+  ✓   96 [mobile] › tests/e2e/editorial-motion.spec.ts:25:1 › original section geometry, image fitting and alternating desktop order remain (4.0s)
+  ✓   98 [mobile] › tests/e2e/editorial-motion.spec.ts:53:1 › opposite-side text, per-line headings and grouped prose use the bounded timings (3.9s)
+  ✓   97 [desktop] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1440px › international: all three images spring within bounds and leave controls clickable (12.0s)
+  ✓   99 [mobile] › tests/e2e/editorial-motion.spec.ts:84:1 › parallax reverses with scroll; hovering and tapping never rotate a photograph (8.1s)
+  ✓  100 [desktop] › tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":360,"touch":false,"reduced":false} › all six service photos stay flat (2.6s)
+  ✓  101 [mobile] › tests/e2e/editorial-motion.spec.ts:112:1 › a paragraph in view before hydration stays immediately visible and never reveals (3.4s)
+  ✓  102 [desktop] › tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":390,"touch":true,"reduced":false} › all six service photos stay flat (2.6s)
+  ✓  103 [mobile] › tests/e2e/editorial-motion.spec.ts:133:1 › reduced motion, no JavaScript, resize and native text links remain usable (1.7s)
+  ✓  104 [desktop] › tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":1024,"touch":true,"reduced":false} › all six service photos stay flat (2.6s)
+  ✓  106 [desktop] › tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":1440,"touch":false,"reduced":true} › all six service photos stay flat (2.6s)
+(node:29194) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  105 [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / (5.3s)
+(node:29203) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  107 [mobile] › tests/e2e/nav-motion.spec.ts:38:1 › frozen navigation and existing page geometry survive depth projection (1.5s)
+(node:29211) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  109 [mobile] › tests/e2e/nav-motion.spec.ts:52:1 › closed nav has its original keyboard order and unobscured focus rings (127ms)
+  ✓  110 [mobile] › tests/e2e/nav-motion.spec.ts:73:3 › open menu traps both Tab directions, closes with Escape and restores focus (motion) (802ms)
+  ✓  111 [mobile] › tests/e2e/nav-motion.spec.ts:111:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (motion) (2.1s)
+  ✘  108 [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/domestic (5.2s)
+  ✓  112 [mobile] › tests/e2e/nav-motion.spec.ts:73:3 › open menu traps both Tab directions, closes with Escape and restores focus (reduced) (806ms)
+(node:29230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  113 [mobile] › tests/e2e/nav-motion.spec.ts:111:3 › Lenis locks wheel, touch and keyboard without hiding body overflow (reduced) (2.1s)
+  ✓  115 [mobile] › tests/e2e/nav-motion.spec.ts:136:1 › scroll state changes only at the 80px boundary; hover uses transform and pseudo glow (1.8s)
+  ✓  116 [mobile] › tests/e2e/nav-motion.spec.ts:167:1 › repeat, live reduced motion, resize and navigation release the lock (1.5s)
+  ✘  114 [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/international (5.3s)
+(node:29247) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  117 [mobile] › tests/e2e/nav-motion.spec.ts:192:1 › short menus keep every keyboard focus ring inside the scrollable panel (572ms)
+  ✓  119 [mobile] › tests/e2e/process-motion.spec.ts:36:1 › same ordered list, four decoded equal photo frames, horizontal desktop and vertical mobile (737ms)
+  ✓  120 [mobile] › tests/e2e/process-motion.spec.ts:52:1 › continuous scroll drives exact depth, opacity, number glow and line, reversible without a timer (1.6s)
+  ✓  121 [mobile] › tests/e2e/process-motion.spec.ts:72:1 › tall viewport settles on a stable middle blend and survives resize (1.3s)
+  ✓  122 [mobile] › tests/e2e/process-motion.spec.ts:84:1 › reduced motion and JavaScript failure keep every step fully visible and line drawn (1.1s)
+  ✓  123 [mobile] › tests/e2e/public.spec.ts:3:1 › homepage keeps its hero content with a static truck image (102ms)
+  ✓  124 [mobile] › tests/e2e/public.spec.ts:17:1 › quote form explains that enquiries do not confirm bookings (90ms)
+  ✘  118 [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /about (5.3s)
+  ✓  125 [mobile] › tests/e2e/public.spec.ts:23:1 › mobile navigation is keyboard and touch accessible (122ms)
+(node:29271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  126 [mobile] › tests/e2e/public.spec.ts:30:1 › all public routes preserve direct navigation without duplicate renderers (368ms)
+  ✓  128 [mobile] › tests/e2e/public.spec.ts:40:1 › history, resize and repeated route changes preserve one static hero visual (264ms)
+  ✓  129 [mobile] › tests/e2e/public.spec.ts:58:1 › increased text size keeps key actions available (99ms)
+  ✓  130 [mobile] › tests/e2e/public.spec.ts:65:1 › quote fields keep their values through resize and menu changes (121ms)
+  ✓  131 [mobile] › tests/e2e/public.spec.ts:75:1 › tracking offers company contact without a lookup (91ms)
+  ✘  127 [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /contact (5.3s)
+(node:29290) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  133 [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /get-a-quote (238ms)
+  ✘  132 [mobile] › tests/e2e/public.spec.ts:84:1 › all four shipping steps show equally sized, eagerly loaded photographs (5.1s)
+  ✓  134 [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /faq (90ms)
+  ✓  135 [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /privacy (89ms)
+(node:29296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  136 [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /terms (86ms)
+  ✓  137 [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /track (98ms)
+  -  139 [mobile] › tests/e2e/image-feedback.spec.ts:72:1 › hover tilts only the coherent frame and settles on leave
+  ✓  138 [mobile] › tests/e2e/quote-formsubmit.spec.ts:39:1 › Quote goes only to FormSubmit with every detail and validated Reply-To (1.7s)
+  ✓  141 [mobile] › tests/e2e/quote-formsubmit.spec.ts:59:1 › invalid inputs and honeypot never reach a network request (637ms)
+  ✓  142 [mobile] › tests/e2e/quote-formsubmit.spec.ts:76:1 › empty optional fields omit Reply-To without dropping units or false (253ms)
+  ✓  140 [mobile] › tests/e2e/image-feedback.spec.ts:87:1 › existing Quote WebGL scene stays idle through pointer-disabled taps and offscreen (3.0s)
+  ✓  144 [mobile] › tests/e2e/image-feedback.spec.ts:109:1 › reduced motion and lost WebGL leave stationary feedback and essential content (528ms)
+  ✓  145 [mobile] › tests/e2e/image-feedback.spec.ts:126:1 › WebGL unavailable from startup and JavaScript disabled preserve the photograph/form (151ms)
+  ✓  146 [mobile] › tests/e2e/image-feedback.spec.ts:136:1 › native keyboard links, forms and menus remain unaffected (255ms)
+  ✓  147 [mobile] › tests/e2e/image-feedback.spec.ts:150:1 › scroll, swipe, pinch, drag and selection do not create tap effects (483ms)
+  ✓  143 [mobile] › tests/e2e/quote-formsubmit.spec.ts:88:3 › rejected: preserves values, releases loading and never retries automatically (2.3s)
+  ✓  148 [mobile] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 360px › clickable without validation errors (1.0s)
+  ✓  149 [mobile] › tests/e2e/quote-formsubmit.spec.ts:88:3 › malformed: preserves values, releases loading and never retries automatically (756ms)
+  ✓  150 [mobile] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 360px › clickable after repeated validation errors (1.9s)
+  ✓  151 [mobile] › tests/e2e/quote-formsubmit.spec.ts:88:3 › network: preserves values, releases loading and never retries automatically (2.1s)
+  ✓  153 [mobile] › tests/e2e/quote-formsubmit.spec.ts:88:3 › timeout: preserves values, releases loading and never retries automatically (667ms)
+  ✓  152 [mobile] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 390px › clickable without validation errors (1.8s)
+  ✓  154 [mobile] › tests/e2e/quote-formsubmit.spec.ts:88:3 › contradictory: preserves values, releases loading and never retries automatically (2.1s)
+  ✓  155 [mobile] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 390px › clickable after repeated validation errors (1.8s)
+  ✓  157 [mobile] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 768px › clickable without validation errors (1.9s)
+  ✓  156 [mobile] › tests/e2e/quote-formsubmit.spec.ts:113:1 › session attempt limit remains eight attempts per fifteen minutes (2.5s)
+  ✓  158 [mobile] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 768px › clickable after repeated validation errors (1.7s)
+  ✓  160 [mobile] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1024px › clickable without validation errors (1.9s)
+  ✓  161 [mobile] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1024px › clickable after repeated validation errors (1.4s)
+  ✘  159 [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 1440px (5.1s)
+(node:29361) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  162 [mobile] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1440px › clickable without validation errors (1.9s)
+  ✓  164 [mobile] › tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1440px › clickable after repeated validation errors (1.4s)
+  ✘  163 [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 1440px (5.1s)
+(node:29377) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  166 [mobile] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 1440px (5.1s)
+(node:29390) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  165 [mobile] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 768px › domestic: all three images spring within bounds and leave controls clickable (12.0s)
+  ✘  167 [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 390px (5.1s)
+(node:29427) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  169 [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 390px (5.1s)
+(node:29441) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  170 [mobile] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 390px (5.1s)
+(node:29456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  168 [mobile] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 768px › international: all three images spring within bounds and leave controls clickable (12.0s)
+  ✘  171 [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 360px (5.1s)
+(node:29471) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  173 [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 360px (5.1s)
+(node:29483) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  172 [mobile] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1024px › domestic: all three images spring within bounds and leave controls clickable (12.0s)
+  ✘  174 [mobile] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 360px (5.1s)
+(node:29499) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  175 [mobile] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1024px › international: all three images spring within bounds and leave controls clickable (12.0s)
+  ✓  176 [mobile] › tests/e2e/static-export.spec.ts:5:1 › exported URLs refresh, load assets and link only to public destinations (10.1s)
+  ✓  178 [mobile] › tests/e2e/static-export.spec.ts:31:1 › retired routes and private paths are real 404s; Pages headers are preserved (211ms)
+  ✓  179 [mobile] › tests/e2e/utility-motion.spec.ts:11:1 › native FAQ keyboard, answer hinge, rapid toggles and cleanup (1.1s)
+  ✓  180 [mobile] › tests/e2e/utility-motion.spec.ts:37:49 › form depth, keyboard focus, values, notice and press /contact (1.1s)
+  ✓  181 [mobile] › tests/e2e/utility-motion.spec.ts:37:49 › form depth, keyboard focus, values, notice and press /get-a-quote (1.3s)
+  ✓  182 [mobile] › tests/e2e/utility-motion.spec.ts:64:1 › footer depth and native keyboard links (526ms)
+  ✓  183 [mobile] › tests/e2e/utility-motion.spec.ts:77:1 › reduced motion and no-JS preserve final readable content and native details (339ms)
+  ✓  184 [mobile] › tests/e2e/visual.spec.ts:3:1 › capture the responsive editorial site with its static delivery visual (3.3s)
+  -  185 [mobile] › tests/e2e/visual.spec.ts:49:1 › about what-we-do section matches the approved responsive structure
+  ✓  177 [mobile] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1440px › domestic: all three images spring within bounds and leave controls clickable (11.5s)
+  ✓  186 [mobile] › tests/e2e/service-tilt.spec.ts:13:53 › service tilt 1440px › international: all three images spring within bounds and leave controls clickable (12.1s)
+  ✓  187 [mobile] › tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":360,"touch":false,"reduced":false} › all six service photos stay flat (2.6s)
+  ✓  188 [mobile] › tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":390,"touch":true,"reduced":false} › all six service photos stay flat (2.6s)
+  ✓  189 [mobile] › tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":1024,"touch":true,"reduced":false} › all six service photos stay flat (2.6s)
+  ✓  190 [mobile] › tests/e2e/service-tilt.spec.ts:74:5 › tilt disabled {"width":1440,"touch":false,"reduced":true} › all six service photos stay flat (2.5s)
+
+
+  1) [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ───
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.image-feedback-layer')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.image-feedback-layer') with timeout 5000ms
+      - waiting for locator('.image-feedback-layer')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      56 |       continue;
+      57 |     }
+    > 58 |     await expect(layer(page)).toHaveCount(1);
+         |                               ^
+      59 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+      60 |     expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+      61 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:58:31
+
+    Error Context: artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--desktop/error-context.md
+
+  2) [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/domestic 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.image-feedback-layer')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.image-feedback-layer') with timeout 5000ms
+      - waiting for locator('.image-feedback-layer')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      56 |       continue;
+      57 |     }
+    > 58 |     await expect(layer(page)).toHaveCount(1);
+         |                               ^
+      59 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+      60 |     expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+      61 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:58:31
+
+    Error Context: artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-0e8f9-nded-taps-services-domestic-desktop/error-context.md
+
+  3) [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/international 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.image-feedback-layer')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.image-feedback-layer') with timeout 5000ms
+      - waiting for locator('.image-feedback-layer')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      56 |       continue;
+      57 |     }
+    > 58 |     await expect(layer(page)).toHaveCount(1);
+         |                               ^
+      59 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+      60 |     expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+      61 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:58:31
+
+    Error Context: artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-897cf-taps-services-international-desktop/error-context.md
+
+  4) [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /about 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.image-feedback-layer')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.image-feedback-layer') with timeout 5000ms
+      - waiting for locator('.image-feedback-layer')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      56 |       continue;
+      57 |     }
+    > 58 |     await expect(layer(page)).toHaveCount(1);
+         |                               ^
+      59 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+      60 |     expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+      61 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:58:31
+
+    Error Context: artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-about-desktop/error-context.md
+
+  5) [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /contact 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.image-feedback-layer')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.image-feedback-layer') with timeout 5000ms
+      - waiting for locator('.image-feedback-layer')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      56 |       continue;
+      57 |     }
+    > 58 |     await expect(layer(page)).toHaveCount(1);
+         |                               ^
+      59 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+      60 |     expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+      61 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:58:31
+
+    Error Context: artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-contact-desktop/error-context.md
+
+  6) [desktop] › tests/e2e/public.spec.ts:84:1 › all four shipping steps show equally sized, eagerly loaded photographs 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  locator('.process-list .process-photo img').first()
+    Expected: "eager"
+    Received: "lazy"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" locator('.process-list .process-photo img').first() with timeout 5000ms
+      - waiting for locator('.process-list .process-photo img').first()
+        14 × locator resolved to <img width="1536" height="1024" loading="lazy" decoding="async" data-illustrative="true" src="/media/photos/details-1536.webp" alt="Illustrative parcel being weighed and measured" sizes="(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw" srcset="/media/photos/details-480.webp 480w, /media/photos/details-768.webp 768w, /media/photos/details-1024.webp 1024w, /media/photos/details-1440.webp 1440w, /media/photos/details-1536.webp 1536w"/>
+           - unexpected value "lazy"
+
+
+      90 |     await expect(images).toHaveCount(4);
+      91 |     for (const image of await images.all()) {
+    > 92 |       await expect(image).toHaveAttribute("loading", "eager");
+         |                           ^
+      93 |       await expect.poll(() => image.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
+      94 |     }
+      95 |     const sizes = await images.evaluateAll(images => images.map(image => ({ width: image.clientWidth, height: image.clientHeight })));
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/public.spec.ts:92:27
+
+    Error Context: artifacts/submit-tilt-staging/full-results/public-all-four-shipping-s-8b08b--eagerly-loaded-photographs-desktop/error-context.md
+
+  7) [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 1440px ─────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+      34 |         else await frame.click({ position: { x: 40, y: 40 } });
+    > 35 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                                ^
+      36 |
+      37 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+      38 |         expect(await row.locator("h3").boundingBox()).toEqual(text);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-1440px-desktop/error-context.md
+
+  8) [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 1440px 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+      34 |         else await frame.click({ position: { x: 40, y: 40 } });
+    > 35 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                                ^
+      36 |
+      37 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+      38 |         expect(await row.locator("h3").boundingBox()).toEqual(text);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-1440px-desktop/error-context.md
+
+  9) [desktop] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 1440px ──────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      73 |     if (isMobile) await frame.tap({ position: { x: 80, y: 80 } });
+      74 |     else await frame.click({ position: { x: 80, y: 80 } });
+    > 75 |     await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                            ^
+      76 |     await page.screenshot({ path: info.outputPath("contact-artwork-active.png") });
+      77 |     await expect(frame.locator(".image-feedback-layer")).toHaveCount(0);
+      78 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:75:76
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-1440px-desktop/error-context.md
+
+  10) [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 390px ─────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+      34 |         else await frame.click({ position: { x: 40, y: 40 } });
+    > 35 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                                ^
+      36 |
+      37 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+      38 |         expect(await row.locator("h3").boundingBox()).toEqual(text);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-390px-desktop/error-context.md
+
+  11) [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 390px 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+      34 |         else await frame.click({ position: { x: 40, y: 40 } });
+    > 35 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                                ^
+      36 |
+      37 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+      38 |         expect(await row.locator("h3").boundingBox()).toEqual(text);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-390px-desktop/error-context.md
+
+  12) [desktop] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 390px ──────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      73 |     if (isMobile) await frame.tap({ position: { x: 80, y: 80 } });
+      74 |     else await frame.click({ position: { x: 80, y: 80 } });
+    > 75 |     await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                            ^
+      76 |     await page.screenshot({ path: info.outputPath("contact-artwork-active.png") });
+      77 |     await expect(frame.locator(".image-feedback-layer")).toHaveCount(0);
+      78 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:75:76
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-390px-desktop/error-context.md
+
+  13) [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 360px ─────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+      34 |         else await frame.click({ position: { x: 40, y: 40 } });
+    > 35 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                                ^
+      36 |
+      37 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+      38 |         expect(await row.locator("h3").boundingBox()).toEqual(text);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-360px-desktop/error-context.md
+
+  14) [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 360px 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+      34 |         else await frame.click({ position: { x: 40, y: 40 } });
+    > 35 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                                ^
+      36 |
+      37 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+      38 |         expect(await row.locator("h3").boundingBox()).toEqual(text);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-360px-desktop/error-context.md
+
+  15) [desktop] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 360px ──────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      73 |     if (isMobile) await frame.tap({ position: { x: 80, y: 80 } });
+      74 |     else await frame.click({ position: { x: 80, y: 80 } });
+    > 75 |     await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                            ^
+      76 |     await page.screenshot({ path: info.outputPath("contact-artwork-active.png") });
+      77 |     await expect(frame.locator(".image-feedback-layer")).toHaveCount(0);
+      78 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:75:76
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-360px-desktop/error-context.md
+
+  16) [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ───
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.image-feedback-layer')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.image-feedback-layer') with timeout 5000ms
+      - waiting for locator('.image-feedback-layer')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      56 |       continue;
+      57 |     }
+    > 58 |     await expect(layer(page)).toHaveCount(1);
+         |                               ^
+      59 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+      60 |     expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+      61 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:58:31
+
+    Error Context: artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--mobile/error-context.md
+
+  17) [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/domestic 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.image-feedback-layer')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.image-feedback-layer') with timeout 5000ms
+      - waiting for locator('.image-feedback-layer')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      56 |       continue;
+      57 |     }
+    > 58 |     await expect(layer(page)).toHaveCount(1);
+         |                               ^
+      59 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+      60 |     expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+      61 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:58:31
+
+    Error Context: artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-0e8f9-nded-taps-services-domestic-mobile/error-context.md
+
+  18) [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/international 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.image-feedback-layer')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.image-feedback-layer') with timeout 5000ms
+      - waiting for locator('.image-feedback-layer')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      56 |       continue;
+      57 |     }
+    > 58 |     await expect(layer(page)).toHaveCount(1);
+         |                               ^
+      59 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+      60 |     expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+      61 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:58:31
+
+    Error Context: artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-897cf-taps-services-international-mobile/error-context.md
+
+  19) [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /about 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.image-feedback-layer')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.image-feedback-layer') with timeout 5000ms
+      - waiting for locator('.image-feedback-layer')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      56 |       continue;
+      57 |     }
+    > 58 |     await expect(layer(page)).toHaveCount(1);
+         |                               ^
+      59 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+      60 |     expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+      61 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:58:31
+
+    Error Context: artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-about-mobile/error-context.md
+
+  20) [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /contact 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.image-feedback-layer')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.image-feedback-layer') with timeout 5000ms
+      - waiting for locator('.image-feedback-layer')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      56 |       continue;
+      57 |     }
+    > 58 |     await expect(layer(page)).toHaveCount(1);
+         |                               ^
+      59 |     const feedback=await layer(page).evaluate(el=>({left:parseFloat((el as HTMLElement).style.left),top:parseFloat((el as HTMLElement).style.top),opacity:Number(getComputedStyle(el).opacity),position:getComputedStyle(el).position}));
+      60 |     expect(Math.abs(feedback.left*scale.x-40)).toBeLessThanOrEqual(1); expect(Math.abs(feedback.top*scale.y-40)).toBeLessThanOrEqual(1);
+      61 |     expect(feedback.opacity).toBeGreaterThan(.1);expect(feedback.position).toBe('absolute');
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/image-feedback.spec.ts:58:31
+
+    Error Context: artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-contact-mobile/error-context.md
+
+  21) [mobile] › tests/e2e/nav-motion.spec.ts:38:1 › frozen navigation and existing page geometry survive depth projection 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 0.1
+    Received:   0.1875
+
+      45 |   const geometry = await page.locator("header,main,footer").evaluateAll(es => es.map(e => { const r = e.getBoundingClientRect(); return { tag: e.tagName, x: r.x, y: r.y, width: r.width, height: r.height }; }));
+      46 |   for (const [index, rect] of geometry.entries()) for (const key of ["x", "y", "width", "height"] as const)
+    > 47 |     expect(Math.abs(rect[key] - before.find((item: { width: number }) => item.width === width).nav[index][key])).toBeLessThan(.1);
+         |                                                                                                                  ^
+      48 |   expect(await page.locator(".nav-surface").evaluate(e => new DOMMatrixReadOnly(getComputedStyle(e).transform).m43)).toBe(width < 768 ? 30 : 60);
+      49 |   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+      50 | });
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/nav-motion.spec.ts:47:114
+
+    Error Context: artifacts/submit-tilt-staging/full-results/nav-motion-frozen-navigati-a5381-ry-survive-depth-projection-mobile/error-context.md
+
+  22) [mobile] › tests/e2e/public.spec.ts:84:1 › all four shipping steps show equally sized, eagerly loaded photographs 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  locator('.process-list .process-photo img').first()
+    Expected: "eager"
+    Received: "lazy"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" locator('.process-list .process-photo img').first() with timeout 5000ms
+      - waiting for locator('.process-list .process-photo img').first()
+        14 × locator resolved to <img width="1536" height="1024" loading="lazy" decoding="async" data-illustrative="true" src="/media/photos/details-1536.webp" alt="Illustrative parcel being weighed and measured" sizes="(max-width: 640px) 90vw, (max-width: 900px) 43vw, 21vw" srcset="/media/photos/details-480.webp 480w, /media/photos/details-768.webp 768w, /media/photos/details-1024.webp 1024w, /media/photos/details-1440.webp 1440w, /media/photos/details-1536.webp 1536w"/>
+           - unexpected value "lazy"
+
+
+      90 |     await expect(images).toHaveCount(4);
+      91 |     for (const image of await images.all()) {
+    > 92 |       await expect(image).toHaveAttribute("loading", "eager");
+         |                           ^
+      93 |       await expect.poll(() => image.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
+      94 |     }
+      95 |     const sizes = await images.evaluateAll(images => images.map(image => ({ width: image.clientWidth, height: image.clientHeight })));
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/public.spec.ts:92:27
+
+    Error Context: artifacts/submit-tilt-staging/full-results/public-all-four-shipping-s-8b08b--eagerly-loaded-photographs-mobile/error-context.md
+
+  23) [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 1440px ─────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+      34 |         else await frame.click({ position: { x: 40, y: 40 } });
+    > 35 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                                ^
+      36 |
+      37 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+      38 |         expect(await row.locator("h3").boundingBox()).toEqual(text);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-1440px-mobile/error-context.md
+
+  24) [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 1440px 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+      34 |         else await frame.click({ position: { x: 40, y: 40 } });
+    > 35 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                                ^
+      36 |
+      37 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+      38 |         expect(await row.locator("h3").boundingBox()).toEqual(text);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-1440px-mobile/error-context.md
+
+  25) [mobile] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 1440px ──────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      73 |     if (isMobile) await frame.tap({ position: { x: 80, y: 80 } });
+      74 |     else await frame.click({ position: { x: 80, y: 80 } });
+    > 75 |     await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+         |                                                                            ^
+      76 |     await page.screenshot({ path: info.outputPath("contact-artwork-active.png") });
+      77 |     await expect(frame.locator(".image-feedback-layer")).toHaveCount(0);
+      78 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:75:76
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-1440px-mobile/error-context.md
+
+  26) [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 390px ──────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         else expect(bounds.x + bounds.width).toBeLessThanOrEqual(text.x);
+      34 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+    > 35 |         else await frame.click({ position: { x: 40, y: 40 } });
+         |                                                                ^
+      36 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+      37 |
+      38 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-390px-mobile/error-context.md
+
+  27) [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 390px ─
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         else expect(bounds.x + bounds.width).toBeLessThanOrEqual(text.x);
+      34 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+    > 35 |         else await frame.click({ position: { x: 40, y: 40 } });
+         |                                                                ^
+      36 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+      37 |
+      38 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-390px-mobile/error-context.md
+
+  28) [mobile] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 390px ───────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      73 |     else expect(frameBounds.y + frameBounds.height).toBeLessThanOrEqual(formBounds.y);
+      74 |     await frame.scrollIntoViewIfNeeded();
+    > 75 |     if (isMobile) await frame.tap({ position: { x: 80, y: 80 } });
+         |                                                                   ^
+      76 |     else await frame.click({ position: { x: 80, y: 80 } });
+      77 |     await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+      78 |     await page.screenshot({ path: info.outputPath("contact-artwork-active.png") });
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:75:76
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-390px-mobile/error-context.md
+
+  29) [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 360px ──────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         else expect(bounds.x + bounds.width).toBeLessThanOrEqual(text.x);
+      34 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+    > 35 |         else await frame.click({ position: { x: 40, y: 40 } });
+         |                                                                ^
+      36 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+      37 |
+      38 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-360px-mobile/error-context.md
+
+  30) [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 360px ─
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      33 |         else expect(bounds.x + bounds.width).toBeLessThanOrEqual(text.x);
+      34 |         if (isMobile) await frame.tap({ position: { x: 40, y: 40 } });
+    > 35 |         else await frame.click({ position: { x: 40, y: 40 } });
+         |                                                                ^
+      36 |         await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+      37 |
+      38 |         expect(await img.evaluate(el => getComputedStyle(el).transform)).toBe("none");
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:35:80
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-360px-mobile/error-context.md
+
+  31) [mobile] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 360px ───────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      73 |     else expect(frameBounds.y + frameBounds.height).toBeLessThanOrEqual(formBounds.y);
+      74 |     await frame.scrollIntoViewIfNeeded();
+    > 75 |     if (isMobile) await frame.tap({ position: { x: 80, y: 80 } });
+         |                                                                   ^
+      76 |     else await frame.click({ position: { x: 80, y: 80 } });
+      77 |     await expect.poll(() => page.locator(".image-feedback-layer").count()).toBe(1);
+      78 |     await page.screenshot({ path: info.outputPath("contact-artwork-active.png") });
+        at /Users/pranshudhiman/Desktop/vk and company/tests/e2e/reference-designs.spec.ts:75:76
+
+    Error Context: artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-360px-mobile/error-context.md
+
+  31 failed
+    [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ────
+    [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/domestic 
+    [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/international 
+    [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /about 
+    [desktop] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /contact 
+    [desktop] › tests/e2e/public.spec.ts:84:1 › all four shipping steps show equally sized, eagerly loaded photographs 
+    [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 1440px ──────
+    [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 1440px ─
+    [desktop] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 1440px ───────
+    [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 390px ───────
+    [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 390px ──
+    [desktop] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 390px ────────
+    [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 360px ───────
+    [desktop] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 360px ──
+    [desktop] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 360px ────────
+    [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps / ─────
+    [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/domestic 
+    [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /services/international 
+    [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /about 
+    [mobile] › tests/e2e/image-feedback.spec.ts:15:28 › edge-to-edge photos and bounded taps /contact 
+    [mobile] › tests/e2e/nav-motion.spec.ts:38:1 › frozen navigation and existing page geometry survive depth projection 
+    [mobile] › tests/e2e/public.spec.ts:84:1 › all four shipping steps show equally sized, eagerly loaded photographs 
+    [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 1440px ───────
+    [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 1440px ──
+    [mobile] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 1440px ────────
+    [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 390px ────────
+    [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 390px ───
+    [mobile] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 390px ─────────
+    [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › domestic supplied design at 360px ────────
+    [mobile] › tests/e2e/reference-designs.spec.ts:13:5 › international supplied design at 360px ───
+    [mobile] › tests/e2e/reference-designs.spec.ts:53:3 › Contact supplied design at 360px ─────────
+  2 skipped
+  157 passed (4.5m)

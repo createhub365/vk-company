@@ -1,0 +1,484 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/pranshudhiman/Desktop/vk and company/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "artifacts/submit-tilt-staging/playwright.tilt.config.ts"
+    ],
+    "configFile": "/Users/pranshudhiman/Desktop/vk and company/artifacts/submit-tilt-staging/playwright.tilt.config.ts",
+    "rootDir": "/Users/pranshudhiman/Desktop/vk and company/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/pranshudhiman/Desktop/vk and company/artifacts/submit-tilt-staging/tilt-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/pranshudhiman/Desktop/vk and company/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "service-tilt.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/submit-tilt-staging/tilt-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "service-tilt.spec.ts",
+      "file": "service-tilt.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "service tilt 768px",
+          "file": "service-tilt.spec.ts",
+          "line": 11,
+          "column": 45,
+          "specs": [
+            {
+              "title": "domestic: all three images spring within bounds and leave controls clickable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12192,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:52:45.358Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4e1025f0b668c48404-fe688e2932520eabf3ef",
+              "file": "service-tilt.spec.ts",
+              "line": 13,
+              "column": 53
+            },
+            {
+              "title": "international: all three images spring within bounds and leave controls clickable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12074,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:52:57.620Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4e1025f0b668c48404-3be15ddd81ed217e5469",
+              "file": "service-tilt.spec.ts",
+              "line": 13,
+              "column": 53
+            }
+          ]
+        },
+        {
+          "title": "service tilt 1024px",
+          "file": "service-tilt.spec.ts",
+          "line": 11,
+          "column": 45,
+          "specs": [
+            {
+              "title": "domestic: all three images spring within bounds and leave controls clickable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11943,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:53:09.697Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4e1025f0b668c48404-ec1be15bbd0b0d2d147e",
+              "file": "service-tilt.spec.ts",
+              "line": 13,
+              "column": 53
+            },
+            {
+              "title": "international: all three images spring within bounds and leave controls clickable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12460,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:53:21.645Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4e1025f0b668c48404-977412e93021d71f9cf9",
+              "file": "service-tilt.spec.ts",
+              "line": 13,
+              "column": 53
+            }
+          ]
+        },
+        {
+          "title": "service tilt 1440px",
+          "file": "service-tilt.spec.ts",
+          "line": 11,
+          "column": 45,
+          "specs": [
+            {
+              "title": "domestic: all three images spring within bounds and leave controls clickable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12562,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:53:34.109Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4e1025f0b668c48404-857b54a88edaf6d6c9f2",
+              "file": "service-tilt.spec.ts",
+              "line": 13,
+              "column": 53
+            },
+            {
+              "title": "international: all three images spring within bounds and leave controls clickable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12012,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:53:46.675Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4e1025f0b668c48404-8ed97d17dff98cb820d5",
+              "file": "service-tilt.spec.ts",
+              "line": 13,
+              "column": 53
+            }
+          ]
+        },
+        {
+          "title": "tilt disabled {\"width\":360,\"touch\":false,\"reduced\":false}",
+          "file": "service-tilt.spec.ts",
+          "line": 72,
+          "column": 8,
+          "specs": [
+            {
+              "title": "all six service photos stay flat",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2630,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:53:58.691Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4e1025f0b668c48404-db97dea456e4eb1a2fa0",
+              "file": "service-tilt.spec.ts",
+              "line": 74,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "tilt disabled {\"width\":390,\"touch\":true,\"reduced\":false}",
+          "file": "service-tilt.spec.ts",
+          "line": 72,
+          "column": 8,
+          "specs": [
+            {
+              "title": "all six service photos stay flat",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2623,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:54:01.328Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4e1025f0b668c48404-b2351d8f0774e987b209",
+              "file": "service-tilt.spec.ts",
+              "line": 74,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "tilt disabled {\"width\":1024,\"touch\":true,\"reduced\":false}",
+          "file": "service-tilt.spec.ts",
+          "line": 72,
+          "column": 8,
+          "specs": [
+            {
+              "title": "all six service photos stay flat",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2590,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:54:03.960Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4e1025f0b668c48404-f642f32520e13c277691",
+              "file": "service-tilt.spec.ts",
+              "line": 74,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "tilt disabled {\"width\":1440,\"touch\":false,\"reduced\":true}",
+          "file": "service-tilt.spec.ts",
+          "line": 72,
+          "column": 8,
+          "specs": [
+            {
+              "title": "all six service photos stay flat",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2520,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-16T13:54:06.556Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4e1025f0b668c48404-f11bae9c80e372d40c37",
+              "file": "service-tilt.spec.ts",
+              "line": 74,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-16T13:52:45.152Z",
+    "duration": 83969.348,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
