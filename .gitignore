@@ -1,7 +1,6 @@
 node_modules
 .next
 out
-.env*
 !.env.example
 coverage
 playwright-report
@@ -10,3 +9,4 @@ test-results
 .DS_Store
 artifacts/**/*.webm
 artifacts/**/*.mp4
+config.bat
