@@ -1,0 +1,20 @@
+
+Running 13 tests using 1 worker
+
+(node:33128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 360px › clickable without validation errors (3.5s)
+  ✓   2 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 360px › clickable after repeated validation errors (2.9s)
+  ✓   3 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 390px › clickable without validation errors (2.9s)
+  ✓   4 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 390px › clickable after repeated validation errors (2.5s)
+  ✓   5 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 768px › clickable without validation errors (3.2s)
+  ✓   6 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 768px › clickable after repeated validation errors (2.0s)
+  ✓   7 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1024px › clickable without validation errors (3.3s)
+  ✓   8 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1024px › clickable after repeated validation errors (2.6s)
+  ✓   9 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1440px › clickable without validation errors (3.8s)
+  ✓  10 tests/e2e/quote-hit-testing.spec.ts:25:45 › Quote submit hit testing at 1440px › clickable after repeated validation errors (2.4s)
+  ✓  11 tests/e2e/service-tilt.spec.ts:14:53 › service tilt 1440px › domestic: all three images spring within bounds and leave controls clickable (14.5s)
+  ✓  12 tests/e2e/service-tilt.spec.ts:14:53 › service tilt 1440px › international: all three images spring within bounds and leave controls clickable (15.7s)
+  ✓  13 tests/e2e/service-tilt.spec.ts:75:5 › tilt disabled {"width":1440,"touch":false,"reduced":true} › all six service photos stay flat (4.3s)
+
+  13 passed (1.1m)

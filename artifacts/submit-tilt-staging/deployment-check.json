@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-09-16T14:24:24.606Z",
+  "sha": "5cfc48b6d57d9888460449210d9576afbf9e9dad",
+  "check": {
+    "id": 104835093575,
+    "name": "Cloudflare Pages",
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "5cfc48b6d57d9888460449210d9576afbf9e9dad",
+    "details_url": "https://dash.cloudflare.com/?to=/0490d1c342a5a41d7f3844255ea544ab/pages/view/vk-company/a2e83635-9894-43ed-a9e5-7e3d8c51a08b",
+    "output": {
+      "title": "Deployed successfully",
+      "summary": "<table><tr><td><strong>Latest commit:</strong> </td><td>\n<code>5cfc48b</code>\n</td></tr>\n<tr><td><strong>Status:</strong></td><td>&nbsp;✅&nbsp; Deploy successful!</td></tr>\n<tr><td><strong>Preview URL:</strong></td><td>\n<a href='https://a2e83635.vk-company.pages.dev'>https://a2e83635.vk-company.pages.dev</a>\n</td></tr>\n</table>\n\n[View logs](https://dash.cloudflare.com/?to=/0490d1c342a5a41d7f3844255ea544ab/pages/view/vk-company/a2e83635-9894-43ed-a9e5-7e3d8c51a08b)\n",
+      "text": null,
+      "annotations_count": 0,
+      "annotations_url": "https://api.github.com/repos/createhub365/vk-company/check-runs/104835093575/annotations"
+    }
+  }
+}
