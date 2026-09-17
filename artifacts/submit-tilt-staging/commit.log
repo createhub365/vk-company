@@ -1,0 +1,620 @@
+Staged build inputs match the working tree.
+
+> vk-and-company@1.0.0 verify:content
+> node scripts/verify-content.mjs
+
+
+> vk-and-company@1.0.0 build
+> next build --webpack
+
+▲ Next.js 16.3.4 (webpack)
+✓ Running next.config.ts took 10ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1654ms
+  Running TypeScript ...
+  Finished TypeScript in 1956ms ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/14) ...
+  Generating static pages using 9 workers (3/14) 
+  Generating static pages using 9 workers (6/14) 
+  Generating static pages using 9 workers (10/14) 
+✓ Generating static pages using 9 workers (14/14) in 141ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /faq
+├ ○ /get-a-quote
+├ ○ /privacy
+├ ○ /robots.txt
+├ ○ /services/domestic
+├ ○ /services/international
+├ ○ /sitemap.xml
+├ ○ /terms
+└ ○ /track
+
+
+○  (Static)  prerendered as static content
+
+PASS: 11 page outputs retain copy, sections, headings, links, images, controls, labels, form attributes, details and metadata; image bytes, business sources and static metadata/headers unchanged.
+PASS: Domestic and International editorial prose matches MOTION_AUDIT.md and the pinned baseline byte-for-byte (UTF-8).
+[staging 5cfc48b] fix: isolate quote submit hit testing and add bounded service tilt
+ 609 files changed, 600377 insertions(+), 659 deletions(-)
+ create mode 100644 artifacts/motion-stage-8/REPORT.md
+ create mode 100644 artifacts/motion-stage-8/after/about-1440-motion.png
+ create mode 100644 artifacts/motion-stage-8/after/about-1440.png
+ create mode 100644 artifacts/motion-stage-8/after/about-390-motion.png
+ create mode 100644 artifacts/motion-stage-8/after/about-390.png
+ create mode 100644 artifacts/motion-stage-8/after/contact-1440-motion.png
+ create mode 100644 artifacts/motion-stage-8/after/contact-1440.png
+ create mode 100644 artifacts/motion-stage-8/after/contact-390-motion.png
+ create mode 100644 artifacts/motion-stage-8/after/contact-390.png
+ create mode 100644 artifacts/motion-stage-8/after/layout.json
+ create mode 100644 artifacts/motion-stage-8/after/layout.log
+ create mode 100644 artifacts/motion-stage-8/after/services-domestic-1440-motion.png
+ create mode 100644 artifacts/motion-stage-8/after/services-domestic-1440.png
+ create mode 100644 artifacts/motion-stage-8/after/services-domestic-390-motion.png
+ create mode 100644 artifacts/motion-stage-8/after/services-domestic-390.png
+ create mode 100644 artifacts/motion-stage-8/before/about-1440.png
+ create mode 100644 artifacts/motion-stage-8/before/about-390.png
+ create mode 100644 artifacts/motion-stage-8/before/commit.txt
+ create mode 100644 artifacts/motion-stage-8/before/contact-1440.png
+ create mode 100644 artifacts/motion-stage-8/before/contact-390.png
+ create mode 100644 artifacts/motion-stage-8/before/layout.json
+ create mode 100644 artifacts/motion-stage-8/before/layout.log
+ create mode 100644 artifacts/motion-stage-8/before/services-domestic-1440.png
+ create mode 100644 artifacts/motion-stage-8/before/services-domestic-390.png
+ create mode 100644 artifacts/motion-stage-8/check-layout.mjs
+ create mode 100644 artifacts/motion-stage-8/check-motion.mjs
+ create mode 100644 artifacts/motion-stage-8/dev-review.json
+ create mode 100644 artifacts/motion-stage-8/diff-line-counts.tsv
+ create mode 100644 artifacts/motion-stage-8/layout-differences.json
+ create mode 100644 artifacts/motion-stage-8/lint.log
+ create mode 100644 artifacts/motion-stage-8/motion-results.json
+ create mode 100644 artifacts/motion-stage-8/motion.log
+ create mode 100644 artifacts/motion-stage-8/scope-results.json
+ create mode 100644 artifacts/motion-stage-8/stage-8.patch
+ create mode 100644 artifacts/motion-stage-8/tests.log
+ create mode 100644 artifacts/motion-stage-8/typecheck.log
+ create mode 100644 artifacts/motion-stage-8/verify-content.log
+ create mode 100644 artifacts/motion-stage-9/REPORT.md
+ create mode 100644 artifacts/motion-stage-9/after-pages.log
+ create mode 100644 artifacts/motion-stage-9/after-pages/contact-1.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/contact-2.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/contact-3.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/contact.html
+ create mode 100644 artifacts/motion-stage-9/after-pages/domestic-1.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/domestic-2.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/domestic-3.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/domestic.html
+ create mode 100644 artifacts/motion-stage-9/after-pages/home-1.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/home-2.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/home-3.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/home.html
+ create mode 100644 artifacts/motion-stage-9/after-pages/international-1.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/international-2.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/international-3.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/international.html
+ create mode 100644 artifacts/motion-stage-9/after-pages/lighthouse-summary.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/quote-1.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/quote-2.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/quote-3.json
+ create mode 100644 artifacts/motion-stage-9/after-pages/quote.html
+ create mode 100644 artifacts/motion-stage-9/after/reduced-wrappers.log
+ create mode 100644 artifacts/motion-stage-9/after/scroll-summary.json
+ create mode 100644 artifacts/motion-stage-9/after/scroll.log
+ create mode 100644 artifacts/motion-stage-9/after/verify-content.log
+ create mode 100644 artifacts/motion-stage-9/after/wrappers.log
+ create mode 100644 artifacts/motion-stage-9/after/wrappers/after/about-1440-motion.png
+ create mode 100644 artifacts/motion-stage-9/after/wrappers/after/about-390-motion.png
+ create mode 100644 artifacts/motion-stage-9/after/wrappers/after/contact-1440-motion.png
+ create mode 100644 artifacts/motion-stage-9/after/wrappers/after/contact-390-motion.png
+ create mode 100644 artifacts/motion-stage-9/after/wrappers/after/services-domestic-1440-motion.png
+ create mode 100644 artifacts/motion-stage-9/after/wrappers/after/services-domestic-390-motion.png
+ create mode 100644 artifacts/motion-stage-9/after/wrappers/motion-results.json
+ create mode 100644 artifacts/motion-stage-9/after/wrappers/reduced-motion-results.json
+ create mode 100644 artifacts/motion-stage-9/audit-source.mjs
+ create mode 100644 artifacts/motion-stage-9/before-pages.log
+ create mode 100644 artifacts/motion-stage-9/before-pages/contact-1.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/contact-2.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/contact-3.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/contact.html
+ create mode 100644 artifacts/motion-stage-9/before-pages/domestic-1.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/domestic-2.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/domestic-3.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/domestic.html
+ create mode 100644 artifacts/motion-stage-9/before-pages/home-1.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/home-2.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/home-3.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/home.html
+ create mode 100644 artifacts/motion-stage-9/before-pages/international-1.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/international-2.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/international-3.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/international.html
+ create mode 100644 artifacts/motion-stage-9/before-pages/lighthouse-summary.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/quote-1.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/quote-2.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/quote-3.json
+ create mode 100644 artifacts/motion-stage-9/before-pages/quote.html
+ create mode 100644 artifacts/motion-stage-9/before/contact-1.json
+ create mode 100644 artifacts/motion-stage-9/before/contact-2.json
+ create mode 100644 artifacts/motion-stage-9/before/contact-3.json
+ create mode 100644 artifacts/motion-stage-9/before/contact.html
+ create mode 100644 artifacts/motion-stage-9/before/domestic-1.json
+ create mode 100644 artifacts/motion-stage-9/before/domestic-2.json
+ create mode 100644 artifacts/motion-stage-9/before/domestic-3.json
+ create mode 100644 artifacts/motion-stage-9/before/domestic.html
+ create mode 100644 artifacts/motion-stage-9/before/hashes.json
+ create mode 100644 artifacts/motion-stage-9/before/home-1.json
+ create mode 100644 artifacts/motion-stage-9/before/home-2.json
+ create mode 100644 artifacts/motion-stage-9/before/home-3.json
+ create mode 100644 artifacts/motion-stage-9/before/home.html
+ create mode 100644 artifacts/motion-stage-9/before/international-1.json
+ create mode 100644 artifacts/motion-stage-9/before/international-2.json
+ create mode 100644 artifacts/motion-stage-9/before/international-3.json
+ create mode 100644 artifacts/motion-stage-9/before/international.html
+ create mode 100644 artifacts/motion-stage-9/before/lighthouse-summary.json
+ create mode 100644 artifacts/motion-stage-9/before/lighthouse.log
+ create mode 100644 artifacts/motion-stage-9/before/quote-1.json
+ create mode 100644 artifacts/motion-stage-9/before/quote-2.json
+ create mode 100644 artifacts/motion-stage-9/before/quote-3.json
+ create mode 100644 artifacts/motion-stage-9/before/quote.html
+ create mode 100644 artifacts/motion-stage-9/before/rebuilt-baseline.log
+ create mode 100644 artifacts/motion-stage-9/before/scroll-summary.json
+ create mode 100644 artifacts/motion-stage-9/before/scroll.log
+ create mode 100644 artifacts/motion-stage-9/before/sources.json
+ create mode 100644 artifacts/motion-stage-9/before/verify-content.log
+ create mode 100644 artifacts/motion-stage-9/check-wrappers.mjs
+ create mode 100644 artifacts/motion-stage-9/compare-layout.mjs
+ create mode 100644 artifacts/motion-stage-9/compressed-trial.log
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/contact-1.json
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/contact.html
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/domestic-1.json
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/domestic.html
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/home-1.json
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/home.html
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/international-1.json
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/international.html
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/lighthouse-summary.json
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/quote-1.json
+ create mode 100644 artifacts/motion-stage-9/compressed-trial/quote.html
+ create mode 100644 artifacts/motion-stage-9/diagnose-form-hit.mjs
+ create mode 100644 artifacts/motion-stage-9/domestic-recheck.log
+ create mode 100644 artifacts/motion-stage-9/domestic-recheck/domestic-1.json
+ create mode 100644 artifacts/motion-stage-9/domestic-recheck/domestic-2.json
+ create mode 100644 artifacts/motion-stage-9/domestic-recheck/domestic-3.json
+ create mode 100644 artifacts/motion-stage-9/domestic-recheck/domestic-4.json
+ create mode 100644 artifacts/motion-stage-9/domestic-recheck/domestic-5.json
+ create mode 100644 artifacts/motion-stage-9/domestic-recheck/domestic.html
+ create mode 100644 artifacts/motion-stage-9/domestic-recheck/lighthouse-summary.json
+ create mode 100644 artifacts/motion-stage-9/extra.log
+ create mode 100644 artifacts/motion-stage-9/extra/artifacts/motion-stage-9/extra/results.json
+ create mode 100644 artifacts/motion-stage-9/extra/editorial-motion.spec.ts
+ create mode 100644 artifacts/motion-stage-9/extra/playwright.config.ts
+ create mode 100644 artifacts/motion-stage-9/extra/quote-scene.spec.ts
+ create mode 100644 artifacts/motion-stage-9/extra/results/.last-run.json
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/entrance-width-1440-0.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/entrance-width-1440-1.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/entrance-width-390-0.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/entrance-width-390-1.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/initial-prose-width-1440-0.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/initial-prose-width-1440-1.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/initial-prose-width-390-0.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/initial-prose-width-390-1.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/reduced-width-1440-0.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/reduced-width-1440-1.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/reduced-width-390-0.png
+ create mode 100644 artifacts/motion-stage-9/extra/screenshots/reduced-width-390-1.png
+ create mode 100644 artifacts/motion-stage-9/final-preservation.log
+ create mode 100644 artifacts/motion-stage-9/final-preservation/comparison.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/contact-1.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/contact-2.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/contact-3.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/contact.html
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/domestic-1.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/domestic-2.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/domestic-3.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/domestic.html
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/home-1.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/home-2.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/home-3.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/home.html
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/international-1.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/international-2.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/international-3.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/international.html
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/lighthouse-summary.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/quote-1.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/quote-2.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/quote-3.json
+ create mode 100644 artifacts/motion-stage-9/final-repair-pages/quote.html
+ create mode 100644 artifacts/motion-stage-9/final-repair-scroll/scroll-summary.json
+ create mode 100644 artifacts/motion-stage-9/form-hit-diagnosis.json
+ create mode 100644 artifacts/motion-stage-9/form-hit-diagnosis.log
+ create mode 100644 artifacts/motion-stage-9/form-recheck.log
+ create mode 100644 artifacts/motion-stage-9/lint-final.log
+ create mode 100644 artifacts/motion-stage-9/lint-working.log
+ create mode 100644 artifacts/motion-stage-9/regression.log
+ create mode 100644 artifacts/motion-stage-9/regression/contact-validation.spec.ts
+ create mode 100644 artifacts/motion-stage-9/regression/nav-motion.spec.ts
+ create mode 100644 artifacts/motion-stage-9/regression/playwright.config.ts
+ create mode 100644 artifacts/motion-stage-9/regression/process-motion.spec.ts
+ create mode 100644 artifacts/motion-stage-9/regression/quote-formsubmit.spec.ts
+ create mode 100644 artifacts/motion-stage-9/regression/results/.last-run.json
+ create mode 100644 artifacts/motion-stage-9/regression/results/process-motion-continuous--9d97a--reversible-without-a-timer-width-360/error-context.md
+ create mode 100644 artifacts/motion-stage-9/regression/results/process-motion-reduced-mot-8c66e-ully-visible-and-line-drawn-width-360/error-context.md
+ create mode 100644 artifacts/motion-stage-9/regression/results/process-motion-same-ordere-eb7ff-desktop-and-vertical-mobile-width-360/error-context.md
+ create mode 100644 artifacts/motion-stage-9/regression/results/quote-formsubmit-contradic-2ffd4-never-retries-automatically-width-360/contradictory.png
+ create mode 100644 artifacts/motion-stage-9/regression/results/quote-formsubmit-invalid-i-71558-ver-reach-a-network-request-width-768/error-context.md
+ create mode 100644 artifacts/motion-stage-9/regression/results/quote-formsubmit-malformed-2aa0a-never-retries-automatically-width-360/malformed.png
+ create mode 100644 artifacts/motion-stage-9/regression/results/quote-formsubmit-network-p-f799c-never-retries-automatically-width-360/network.png
+ create mode 100644 artifacts/motion-stage-9/regression/results/quote-formsubmit-timeout-p-cdfce-never-retries-automatically-width-360/timeout.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/contact-1440.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/contact-360.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/contact-390.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/contact-768.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/faq-1440.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/faq-360.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/faq-390.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/faq-768.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-1440-motion-0.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-1440-motion-1.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-1440-motion-2.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-1440-motion-3.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-1440-motion-4.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-1440-reduced-0.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-1440-reduced-1.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-1440-reduced-2.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-1440-reduced-3.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-1440-reduced-4.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-360-motion-0.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-360-motion-1.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-360-motion-2.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-360-motion-3.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-360-motion-4.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-360-reduced-0.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-360-reduced-1.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-360-reduced-2.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-360-reduced-3.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-360-reduced-4.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-390-motion-0.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-390-motion-1.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-390-motion-2.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-390-motion-3.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-390-motion-4.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-390-reduced-0.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-390-reduced-1.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-390-reduced-2.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-390-reduced-3.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-390-reduced-4.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-768-motion-0.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-768-motion-1.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-768-motion-2.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-768-motion-3.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-768-motion-4.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-768-reduced-0.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-768-reduced-1.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-768-reduced-2.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-768-reduced-3.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/focus-width-768-reduced-4.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/footer-1440.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/footer-360.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/footer-390.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/footer-768.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/get-a-quote-1440.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/get-a-quote-360.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/get-a-quote-390.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/get-a-quote-768.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/process-1440.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/process-768.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/reduced-1440.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/reduced-768.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/tall-width-1440.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/tall-width-360.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/tall-width-390.png
+ create mode 100644 artifacts/motion-stage-9/regression/screenshots/tall-width-768.png
+ create mode 100644 artifacts/motion-stage-9/regression/utility-motion.spec.ts
+ create mode 100644 artifacts/motion-stage-9/run-lighthouse.mjs
+ create mode 100644 artifacts/motion-stage-9/scroll-profile.mjs
+ create mode 100644 artifacts/motion-stage-9/source-audit.json
+ create mode 100644 artifacts/motion-stage-9/source-audit.log
+ create mode 100644 artifacts/motion-stage-9/stage-9-and-followup.patch
+ create mode 100644 artifacts/motion-stage-9/trial-lighthouse.log
+ create mode 100644 artifacts/motion-stage-9/trial/contact-1.json
+ create mode 100644 artifacts/motion-stage-9/trial/contact.html
+ create mode 100644 artifacts/motion-stage-9/trial/domestic-1.json
+ create mode 100644 artifacts/motion-stage-9/trial/domestic.html
+ create mode 100644 artifacts/motion-stage-9/trial/home-1.json
+ create mode 100644 artifacts/motion-stage-9/trial/home.html
+ create mode 100644 artifacts/motion-stage-9/trial/international-1.json
+ create mode 100644 artifacts/motion-stage-9/trial/international.html
+ create mode 100644 artifacts/motion-stage-9/trial/lighthouse-summary.json
+ create mode 100644 artifacts/motion-stage-9/trial/quote-1.json
+ create mode 100644 artifacts/motion-stage-9/trial/quote.html
+ create mode 100644 artifacts/motion-stage-9/typecheck-final.log
+ create mode 100644 artifacts/motion-stage-9/typecheck-working.log
+ create mode 100644 artifacts/motion-stage-9/unit-tests.log
+ create mode 100644 artifacts/motion-stage-9/verify-original.mjs
+ create mode 100644 artifacts/motion-stage-9/working-content.log
+ create mode 100644 artifacts/submit-tilt-staging/REPORT.md
+ create mode 100644 artifacts/submit-tilt-staging/before-layout.json
+ create mode 100644 artifacts/submit-tilt-staging/capture-before-layout.mjs
+ create mode 100644 artifacts/submit-tilt-staging/current-changes.patch
+ create mode 100644 artifacts/submit-tilt-staging/diagnose-early-tap.mjs
+ create mode 100644 artifacts/submit-tilt-staging/diagnose-quote.mjs
+ create mode 100644 artifacts/submit-tilt-staging/diagnose-tap.mjs
+ create mode 100644 artifacts/submit-tilt-staging/early-tap-diagnosis.json
+ create mode 100644 artifacts/submit-tilt-staging/feedback-recheck.log
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/.last-run.json
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/image-feedback-edge-to-edg-0e8f9-nded-taps-services-domestic/tap-page-hero-image.png
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/image-feedback-edge-to-edg-0e8f9-nded-taps-services-domestic/tap-service-photo.png
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/reference-designs-domestic-supplied-design-at-1440px/row-Begin with the real shipment details.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/reference-designs-domestic-supplied-design-at-1440px/row-Review before commitment.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/reference-designs-domestic-supplied-design-at-1440px/row-We move it with care.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/reference-designs-domestic-supplied-design-at-360px/row-Begin with the real shipment details.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/reference-designs-domestic-supplied-design-at-360px/row-Review before commitment.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/reference-designs-domestic-supplied-design-at-360px/row-We move it with care.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/reference-designs-domestic-supplied-design-at-390px/row-Begin with the real shipment details.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/reference-designs-domestic-supplied-design-at-390px/row-Review before commitment.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/feedback-results/reference-designs-domestic-supplied-design-at-390px/row-We move it with care.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/fix-artifact-paths.py
+ create mode 100644 artifacts/submit-tilt-staging/full-e2e-first.log
+ create mode 100644 artifacts/submit-tilt-staging/full-e2e-second.log
+ create mode 100644 artifacts/submit-tilt-staging/full-e2e.log
+ create mode 100644 artifacts/submit-tilt-staging/full-results-first.json
+ create mode 100644 artifacts/submit-tilt-staging/full-results-second.json
+ create mode 100644 artifacts/submit-tilt-staging/full-results.json
+ create mode 100644 artifacts/submit-tilt-staging/full-results/.last-run.json
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-0e8f9-nded-taps-services-domestic-desktop/tap-page-hero-image.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-0e8f9-nded-taps-services-domestic-desktop/tap-service-photo.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-0e8f9-nded-taps-services-domestic-mobile/tap-page-hero-image.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-0e8f9-nded-taps-services-domestic-mobile/tap-service-photo.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-897cf-taps-services-international-desktop/tap-page-hero-image.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-897cf-taps-services-international-desktop/tap-service-photo.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-897cf-taps-services-international-mobile/tap-page-hero-image.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edg-897cf-taps-services-international-mobile/tap-service-photo.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--desktop/tap-editorial-image international-aircraft.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--desktop/tap-editorial-image.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--desktop/tap-process-photo process-photo-details.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--desktop/tap-process-photo process-photo-dispatch.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--desktop/tap-process-photo process-photo-review.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--desktop/tap-process-photo process-photo-scan.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--mobile/tap-editorial-image international-aircraft.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--mobile/tap-editorial-image.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--mobile/tap-process-photo process-photo-details.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--mobile/tap-process-photo process-photo-dispatch.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--mobile/tap-process-photo process-photo-review.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps--mobile/tap-process-photo process-photo-scan.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-about-desktop/tap-about-network-image.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-about-desktop/tap-about-thumbnail.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-about-desktop/tap-page-hero-image.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-about-mobile/tap-about-network-image.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-about-mobile/tap-about-thumbnail.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-about-mobile/tap-page-hero-image.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-contact-desktop/tap-service-photo.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/image-feedback-edge-to-edge-photos-and-bounded-taps-contact-mobile/tap-service-photo.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/quote-formsubmit-contradic-2ffd4-never-retries-automatically-desktop/contradictory.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/quote-formsubmit-contradic-2ffd4-never-retries-automatically-mobile/contradictory.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/quote-formsubmit-malformed-2aa0a-never-retries-automatically-desktop/malformed.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/quote-formsubmit-malformed-2aa0a-never-retries-automatically-mobile/malformed.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/quote-formsubmit-network-p-f799c-never-retries-automatically-desktop/network.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/quote-formsubmit-network-p-f799c-never-retries-automatically-mobile/network.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/quote-formsubmit-rejected--db13e-never-retries-automatically-desktop/rejected.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/quote-formsubmit-rejected--db13e-never-retries-automatically-mobile/rejected.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/quote-formsubmit-timeout-p-cdfce-never-retries-automatically-desktop/timeout.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/quote-formsubmit-timeout-p-cdfce-never-retries-automatically-mobile/timeout.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-1440px-desktop/contact-artwork-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-1440px-mobile/contact-artwork-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-360px-desktop/contact-artwork-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-360px-mobile/contact-artwork-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-390px-desktop/contact-artwork-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-Contact-supplied-design-at-390px-mobile/contact-artwork-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-1440px-desktop/row-Begin with the real shipment details.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-1440px-desktop/row-Review before commitment.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-1440px-desktop/row-We move it with care.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-1440px-mobile/row-Begin with the real shipment details.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-1440px-mobile/row-Review before commitment.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-1440px-mobile/row-We move it with care.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-360px-desktop/row-Begin with the real shipment details.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-360px-desktop/row-Review before commitment.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-360px-desktop/row-We move it with care.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-360px-mobile/row-Begin with the real shipment details.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-360px-mobile/row-Review before commitment.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-360px-mobile/row-We move it with care.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-390px-desktop/row-Begin with the real shipment details.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-390px-desktop/row-Review before commitment.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-390px-desktop/row-We move it with care.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-390px-mobile/row-Begin with the real shipment details.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-390px-mobile/row-Review before commitment.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-domestic-supplied-design-at-390px-mobile/row-We move it with care.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-1440px-desktop/row-Clear quotation boundaries.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-1440px-desktop/row-Documentation is shipment-specific.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-1440px-desktop/row-Route and contents review.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-1440px-mobile/row-Clear quotation boundaries.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-1440px-mobile/row-Documentation is shipment-specific.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-1440px-mobile/row-Route and contents review.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-360px-desktop/row-Clear quotation boundaries.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-360px-desktop/row-Documentation is shipment-specific.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-360px-desktop/row-Route and contents review.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-360px-mobile/row-Clear quotation boundaries.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-360px-mobile/row-Documentation is shipment-specific.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-360px-mobile/row-Route and contents review.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-390px-desktop/row-Clear quotation boundaries.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-390px-desktop/row-Documentation is shipment-specific.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-390px-desktop/row-Route and contents review.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-390px-mobile/row-Clear quotation boundaries.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-390px-mobile/row-Documentation is shipment-specific.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/reference-designs-international-supplied-design-at-390px-mobile/row-Route and contents review.-active.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--06bc0-nd-leave-controls-clickable-desktop/domestic-1024-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--06bc0-nd-leave-controls-clickable-mobile/domestic-1024-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--22614-nd-leave-controls-clickable-desktop/international-1440-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--22614-nd-leave-controls-clickable-mobile/international-1440-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--44aad-nd-leave-controls-clickable-desktop/domestic-768-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--44aad-nd-leave-controls-clickable-mobile/domestic-768-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--5f856-nd-leave-controls-clickable-desktop/international-768-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--5f856-nd-leave-controls-clickable-mobile/international-768-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--bc7ef-nd-leave-controls-clickable-desktop/international-1024-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--bc7ef-nd-leave-controls-clickable-mobile/international-1024-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--f4722-nd-leave-controls-clickable-desktop/domestic-1440-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/service-tilt-service-tilt--f4722-nd-leave-controls-clickable-mobile/domestic-1440-tilted.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-desktop/-.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-desktop/-about.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-desktop/-contact.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-desktop/-faq.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-desktop/-get-a-quote.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-desktop/-privacy.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-desktop/-services-domestic.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-desktop/-services-international.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-desktop/-terms.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-desktop/-track.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-mobile/-.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-mobile/-about.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-mobile/-contact.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-mobile/-faq.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-mobile/-get-a-quote.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-mobile/-privacy.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-mobile/-services-domestic.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-mobile/-services-international.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-mobile/-terms.png
+ create mode 100644 artifacts/submit-tilt-staging/full-results/static-export-exported-URL-99157-only-to-public-destinations-mobile/-track.png
+ create mode 100644 artifacts/submit-tilt-staging/full-vs-c4e5357-stat.txt
+ create mode 100644 artifacts/submit-tilt-staging/full-vs-c4e5357.patch
+ create mode 100644 artifacts/submit-tilt-staging/lighthouse-final.log
+ create mode 100644 artifacts/submit-tilt-staging/lint.log
+ create mode 100644 artifacts/submit-tilt-staging/original-content-proof.log
+ create mode 100644 artifacts/submit-tilt-staging/playwright.feedback.config.ts
+ create mode 100644 artifacts/submit-tilt-staging/playwright.full.config.ts
+ create mode 100644 artifacts/submit-tilt-staging/playwright.live.config.ts
+ create mode 100644 artifacts/submit-tilt-staging/playwright.quote.config.ts
+ create mode 100644 artifacts/submit-tilt-staging/playwright.tilt.config.ts
+ create mode 100644 artifacts/submit-tilt-staging/quote-768-before.png
+ create mode 100644 artifacts/submit-tilt-staging/quote-build-content.log
+ create mode 100644 artifacts/submit-tilt-staging/quote-diagnosis.json
+ create mode 100644 artifacts/submit-tilt-staging/quote-diagnosis.log
+ create mode 100644 artifacts/submit-tilt-staging/quote-regression.log
+ create mode 100644 artifacts/submit-tilt-staging/quote-results-first.json
+ create mode 100644 artifacts/submit-tilt-staging/quote-results/.last-run.json
+ create mode 100644 artifacts/submit-tilt-staging/requested-values.json
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/about-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/about-what-we-do-1440.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/about-what-we-do-360.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/about-what-we-do-390.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/about-what-we-do-768.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/contact-approved-1440-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/contact-approved-1440-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/contact-approved-360-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/contact-approved-360-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/contact-approved-390-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/contact-approved-390-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/contact-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/delivery-static-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/delivery-static-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-approved-1440-.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-approved-1440-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-approved-1440-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-approved-360-.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-approved-360-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-approved-360-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-approved-390-.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-approved-390-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-approved-390-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-feature-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/domestic-feature-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/faq-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/faq-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/home-desktop-1024.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/home-desktop-1366.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/home-desktop-1440.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/home-desktop-768.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/home-mobile-360.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/home-mobile-390.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/international-approved-1440-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/international-approved-1440-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/international-approved-360-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/international-approved-360-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/international-approved-390-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/international-approved-390-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/international-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/quote-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/quote-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-desktop-motion-0.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-desktop-motion-1.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-desktop-motion-2.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-desktop-motion-3.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-desktop-motion-4.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-desktop-reduced-0.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-desktop-reduced-1.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-desktop-reduced-2.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-desktop-reduced-3.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-desktop-reduced-4.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-mobile-motion-0.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-mobile-motion-1.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-mobile-motion-2.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-mobile-motion-3.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-mobile-motion-4.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-mobile-reduced-0.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-mobile-reduced-1.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-mobile-reduced-2.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-mobile-reduced-3.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-4/focus-mobile-reduced-4.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/entrance-desktop-0.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/entrance-desktop-1.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/entrance-mobile-0.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/entrance-mobile-1.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/initial-prose-desktop-0.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/initial-prose-desktop-1.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/initial-prose-mobile-0.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/initial-prose-mobile-1.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/reduced-desktop-0.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/reduced-desktop-1.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/reduced-mobile-0.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-5/reduced-mobile-1.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-6/process-1440.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-6/process-390.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-6/reduced-1440.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-6/reduced-390.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-6/tall-desktop.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-6/tall-mobile.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-7/contact-1440.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-7/contact-390.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-7/faq-1440.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-7/faq-390.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-7/footer-1440.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-7/footer-390.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-7/get-a-quote-1440.png
+ create mode 100644 artifacts/submit-tilt-staging/screenshots/stage-7/get-a-quote-390.png
+ create mode 100644 artifacts/submit-tilt-staging/scroll-final.log
+ create mode 100644 artifacts/submit-tilt-staging/source-audit.log
+ create mode 100644 artifacts/submit-tilt-staging/static-export.log
+ create mode 100644 artifacts/submit-tilt-staging/tap-diagnosis.json
+ create mode 100644 artifacts/submit-tilt-staging/tilt-build-content.log
+ create mode 100644 artifacts/submit-tilt-staging/tilt-regression.log
+ create mode 100644 artifacts/submit-tilt-staging/tilt-results-first.json
+ create mode 100644 artifacts/submit-tilt-staging/tilt-results/.last-run.json
+ create mode 100644 artifacts/submit-tilt-staging/tilt-results/service-tilt-service-tilt--06bc0-nd-leave-controls-clickable/domestic-1024.png
+ create mode 100644 artifacts/submit-tilt-staging/tilt-results/service-tilt-service-tilt--22614-nd-leave-controls-clickable/international-1440.png
+ create mode 100644 artifacts/submit-tilt-staging/tilt-results/service-tilt-service-tilt--44aad-nd-leave-controls-clickable/domestic-768.png
+ create mode 100644 artifacts/submit-tilt-staging/tilt-results/service-tilt-service-tilt--5f856-nd-leave-controls-clickable/international-768.png
+ create mode 100644 artifacts/submit-tilt-staging/tilt-results/service-tilt-service-tilt--bc7ef-nd-leave-controls-clickable/international-1024.png
+ create mode 100644 artifacts/submit-tilt-staging/tilt-results/service-tilt-service-tilt--f4722-nd-leave-controls-clickable/domestic-1440.png
+ create mode 100644 artifacts/submit-tilt-staging/typecheck.log
+ create mode 100644 artifacts/submit-tilt-staging/unit-tests.log
+ create mode 100644 artifacts/submit-tilt-staging/verify-content.log
+ create mode 100644 artifacts/submit-tilt-staging/watch-deployment.mjs
+ create mode 100644 components/motion/editorial-heading-runtime.tsx
+ create mode 100644 components/motion/image-feedback-runtime.tsx
+ create mode 100644 components/motion/navigation-runtime.tsx
+ create mode 100644 components/motion/primitives-runtime.tsx
+ create mode 100644 components/motion/process-runtime.tsx
+ create mode 100644 components/motion/quote-media-runtime.tsx
+ create mode 100644 components/motion/utility-runtime.tsx
+ create mode 100644 lib/motion/service-tilt.ts
+ create mode 100644 tests/e2e/quote-hit-testing.spec.ts
+ create mode 100644 tests/e2e/service-tilt.spec.ts
+ create mode 100644 tests/service-tilt.test.ts

@@ -1,0 +1,17 @@
+HTTP/2 200 
+date: Wed, 16 Sep 2026 14:25:20 GMT
+content-type: text/html; charset=utf-8
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+link: </brand/vk-and-company-logo-transparent.png>; rel="preload"; as=image
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-robots-tag: noindex
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=i2as9SZItRhj9uf%2F5tQzJavkQ2Oj1%2FfnnPME6y9W2JnmXkJDZXrs6wAKzeoZTi1R%2B28C0yTcqGDiGVyoOmFraMxJyX7bg7lmMGxDJhWu%2FIsAm%2F%2Bvdm91v0dKVZjjN2QUj7xkUizw2Le%2BJSQVHYaoOeh2ovroi8455L6o9g%3D%3D"}]}
+server: cloudflare
+cf-ray: a3c08a342a5bda6d-DEL
+alt-svc: h3=":443"; ma=86400
+
